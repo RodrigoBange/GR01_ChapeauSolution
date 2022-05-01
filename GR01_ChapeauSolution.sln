@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapeauUI", "GR01_ChapeauSolution\ChapeauUI.csproj", "{D0FB9A9B-D33D-4B9B-B719-2FA1652574D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206} = {9805B563-0B4F-4B82-BD6A-4BE072AD0206}
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1} = {D85B0069-DE27-4EBC-9327-97042B9B7CF1}
+		{5C0A5EB1-ED78-427A-9555-0129D2B2D64E} = {5C0A5EB1-ED78-427A-9555-0129D2B2D64E}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapeauModel", "ChapeauModel\ChapeauModel.csproj", "{9805B563-0B4F-4B82-BD6A-4BE072AD0206}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapeauLogic", "ChapeauLogic\ChapeauLogic.csproj", "{5C0A5EB1-ED78-427A-9555-0129D2B2D64E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206} = {9805B563-0B4F-4B82-BD6A-4BE072AD0206}
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1} = {D85B0069-DE27-4EBC-9327-97042B9B7CF1}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapeauDAL", "ChapeauDAL\ChapeauDAL.csproj", "{D85B0069-DE27-4EBC-9327-97042B9B7CF1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206} = {9805B563-0B4F-4B82-BD6A-4BE072AD0206}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0FB9A9B-D33D-4B9B-B719-2FA1652574D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FB9A9B-D33D-4B9B-B719-2FA1652574D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FB9A9B-D33D-4B9B-B719-2FA1652574D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FB9A9B-D33D-4B9B-B719-2FA1652574D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9805B563-0B4F-4B82-BD6A-4BE072AD0206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C0A5EB1-ED78-427A-9555-0129D2B2D64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C0A5EB1-ED78-427A-9555-0129D2B2D64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C0A5EB1-ED78-427A-9555-0129D2B2D64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C0A5EB1-ED78-427A-9555-0129D2B2D64E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85B0069-DE27-4EBC-9327-97042B9B7CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E82EE195-E4D2-4C34-8074-2B2D0C1BA66C}
+	EndGlobalSection
+EndGlobal
