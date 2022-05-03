@@ -56,6 +56,7 @@ namespace GR01_ChapeauSolution
             lbl_OrderCounter.Visible = true;
             background_OrderCounter.Visible = true;
             btn_User.Visible = true;
+            btn_Return.Visible = true;
 
             //Set border colors (Due to tab control)
             border_Bottom.BackColor = Color.White;
@@ -71,7 +72,7 @@ namespace GR01_ChapeauSolution
         {
             // Change tab to Table View
             tabC_Body.SelectedTab = tab_Tables;
-            lbl_Title.Text = "Table Overview";
+            lbl_Title.Text = "Overview";
 
             // Displays UI, might be handy to check what user type logged in, admin or user and send it through
             DisplayUI();
@@ -116,7 +117,7 @@ namespace GR01_ChapeauSolution
         }
         private void TestAddReservations()
         {
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
                 // Generate dates
                 DateTime startDate = DateTime.Now.AddHours(i);

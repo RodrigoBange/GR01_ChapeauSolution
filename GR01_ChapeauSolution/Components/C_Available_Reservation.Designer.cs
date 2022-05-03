@@ -38,24 +38,27 @@
             // 
             // btn_PlaceReservation
             // 
-            this.btn_PlaceReservation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_PlaceReservation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_PlaceReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_PlaceReservation.FlatAppearance.BorderSize = 0;
             this.btn_PlaceReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_PlaceReservation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_PlaceReservation.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PlaceReservation.ForeColor = System.Drawing.Color.White;
-            this.btn_PlaceReservation.Location = new System.Drawing.Point(143, 64);
+            this.btn_PlaceReservation.Location = new System.Drawing.Point(10, 66);
             this.btn_PlaceReservation.Name = "btn_PlaceReservation";
-            this.btn_PlaceReservation.Size = new System.Drawing.Size(162, 39);
+            this.btn_PlaceReservation.Size = new System.Drawing.Size(300, 39);
             this.btn_PlaceReservation.TabIndex = 0;
             this.btn_PlaceReservation.Text = "Reserve";
+            this.btn_PlaceReservation.UseCompatibleTextRendering = true;
             this.btn_PlaceReservation.UseVisualStyleBackColor = false;
             this.btn_PlaceReservation.Click += new System.EventHandler(this.btn_PlaceReservation_Click);
             // 
             // img_Clock
             // 
-            this.img_Clock.BackColor = System.Drawing.Color.White;
-            this.img_Clock.Location = new System.Drawing.Point(37, 12);
+            this.img_Clock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.img_Clock.BackgroundImage = global::ChapeauUI.Properties.Resources.Clock_White;
+            this.img_Clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.img_Clock.Location = new System.Drawing.Point(10, 11);
             this.img_Clock.Name = "img_Clock";
             this.img_Clock.Size = new System.Drawing.Size(40, 40);
             this.img_Clock.TabIndex = 1;
@@ -65,13 +68,15 @@
             // 
             this.lbl_AvailableTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_AvailableTime.AutoSize = true;
-            this.lbl_AvailableTime.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_AvailableTime.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_AvailableTime.ForeColor = System.Drawing.Color.White;
-            this.lbl_AvailableTime.Location = new System.Drawing.Point(95, 12);
+            this.lbl_AvailableTime.Location = new System.Drawing.Point(56, 12);
             this.lbl_AvailableTime.Name = "lbl_AvailableTime";
-            this.lbl_AvailableTime.Size = new System.Drawing.Size(210, 44);
+            this.lbl_AvailableTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_AvailableTime.Size = new System.Drawing.Size(187, 39);
             this.lbl_AvailableTime.TabIndex = 2;
             this.lbl_AvailableTime.Text = "00:00 - 01:00";
+            this.lbl_AvailableTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // img_Splitter
             // 
