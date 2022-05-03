@@ -151,6 +151,15 @@ namespace GR01_ChapeauSolution
 
 
         /** ORDER VIEW METHODS **/
+        private void TestMenuItems()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                C_Order_MenuItem menuItem = new C_Order_MenuItem();
+
+                flow_Order_Menu.Controls.Add(menuItem);
+            }
+        }
 
 
         /** BILL VIEW METHODS **/
