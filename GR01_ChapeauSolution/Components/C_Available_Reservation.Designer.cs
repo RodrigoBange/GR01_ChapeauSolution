@@ -38,15 +38,15 @@
             // 
             // btn_PlaceReservation
             // 
-            this.btn_PlaceReservation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_PlaceReservation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_PlaceReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_PlaceReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PlaceReservation.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PlaceReservation.ForeColor = System.Drawing.Color.White;
             this.btn_PlaceReservation.Location = new System.Drawing.Point(10, 66);
+            this.btn_PlaceReservation.MaximumSize = new System.Drawing.Size(300, 40);
             this.btn_PlaceReservation.Name = "btn_PlaceReservation";
-            this.btn_PlaceReservation.Size = new System.Drawing.Size(300, 39);
+            this.btn_PlaceReservation.Size = new System.Drawing.Size(300, 40);
             this.btn_PlaceReservation.TabIndex = 0;
             this.btn_PlaceReservation.Text = "Reserve";
             this.btn_PlaceReservation.UseCompatibleTextRendering = true;

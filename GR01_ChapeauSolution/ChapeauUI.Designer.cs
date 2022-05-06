@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 1"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 2"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 3"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
             this.tabC_Body = new System.Windows.Forms.TabControl();
             this.tab_Login = new System.Windows.Forms.TabPage();
@@ -291,7 +291,7 @@
             this.pnl_Login.Controls.Add(this.lbl_Login_Email);
             this.pnl_Login.Controls.Add(this.txtBox_Login_User);
             this.pnl_Login.Controls.Add(this.btn_Login);
-            this.pnl_Login.Location = new System.Drawing.Point(71, 360);
+            this.pnl_Login.Location = new System.Drawing.Point(71, 364);
             this.pnl_Login.Name = "pnl_Login";
             this.pnl_Login.Size = new System.Drawing.Size(645, 527);
             this.pnl_Login.TabIndex = 2;
@@ -425,7 +425,7 @@
             this.pnl_Forgot_Password.Controls.Add(this.lbl_Forgot_Password_Email);
             this.pnl_Forgot_Password.Controls.Add(this.txtBox_Forgot_Password_Email);
             this.pnl_Forgot_Password.Controls.Add(this.btn_Forgot_Password_Login);
-            this.pnl_Forgot_Password.Location = new System.Drawing.Point(71, 307);
+            this.pnl_Forgot_Password.Location = new System.Drawing.Point(71, 308);
             this.pnl_Forgot_Password.Name = "pnl_Forgot_Password";
             this.pnl_Forgot_Password.Size = new System.Drawing.Size(645, 527);
             this.pnl_Forgot_Password.TabIndex = 3;
@@ -539,9 +539,9 @@
             this.tab_Tables.Controls.Add(this.pnl_TableOverview);
             this.tab_Tables.Controls.Add(this.splitter_TableOverview);
             this.tab_Tables.Controls.Add(this.pnl_TableInfo);
-            this.tab_Tables.Location = new System.Drawing.Point(4, 34);
+            this.tab_Tables.Location = new System.Drawing.Point(4, 33);
             this.tab_Tables.Name = "tab_Tables";
-            this.tab_Tables.Size = new System.Drawing.Size(776, 929);
+            this.tab_Tables.Size = new System.Drawing.Size(776, 930);
             this.tab_Tables.TabIndex = 2;
             this.tab_Tables.Text = "Tables";
             // 
@@ -566,7 +566,7 @@
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(776, 676);
+            this.pnl_TableOverview.Size = new System.Drawing.Size(776, 677);
             this.pnl_TableOverview.SplitterDistance = 355;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
@@ -578,7 +578,7 @@
             this.flow_TableOverview.Location = new System.Drawing.Point(0, 68);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(355, 608);
+            this.flow_TableOverview.Size = new System.Drawing.Size(355, 609);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // splitter1
@@ -639,11 +639,11 @@
             this.flow_Tables.Controls.Add(this.btn_Table_8);
             this.flow_Tables.Controls.Add(this.btn_Table_9);
             this.flow_Tables.Controls.Add(this.btn_Table_10);
-            this.flow_Tables.Location = new System.Drawing.Point(58, 0);
+            this.flow_Tables.Location = new System.Drawing.Point(0, 0);
             this.flow_Tables.MaximumSize = new System.Drawing.Size(420, 0);
             this.flow_Tables.Name = "flow_Tables";
             this.flow_Tables.Padding = new System.Windows.Forms.Padding(65, 4, 0, 0);
-            this.flow_Tables.Size = new System.Drawing.Size(420, 720);
+            this.flow_Tables.Size = new System.Drawing.Size(420, 681);
             this.flow_Tables.TabIndex = 0;
             // 
             // btn_Table_1
@@ -882,9 +882,9 @@
             this.tab_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Order.Controls.Add(this.pnl_Menu_And_Order);
             this.tab_Order.Controls.Add(this.pnl_Order_Categories);
-            this.tab_Order.Location = new System.Drawing.Point(4, 33);
+            this.tab_Order.Location = new System.Drawing.Point(4, 34);
             this.tab_Order.Name = "tab_Order";
-            this.tab_Order.Size = new System.Drawing.Size(776, 930);
+            this.tab_Order.Size = new System.Drawing.Size(776, 929);
             this.tab_Order.TabIndex = 3;
             this.tab_Order.Text = "Order";
             // 
@@ -908,7 +908,7 @@
             this.pnl_Menu_And_Order.Panel2.Controls.Add(this.btn_Order_Confirm);
             this.pnl_Menu_And_Order.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnl_Menu_And_Order.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnl_Menu_And_Order.Size = new System.Drawing.Size(776, 870);
+            this.pnl_Menu_And_Order.Size = new System.Drawing.Size(776, 869);
             this.pnl_Menu_And_Order.SplitterDistance = 460;
             this.pnl_Menu_And_Order.TabIndex = 0;
             // 
@@ -919,7 +919,7 @@
             this.flow_Order_Menu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flow_Order_Menu.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Menu.Name = "flow_Order_Menu";
-            this.flow_Order_Menu.Size = new System.Drawing.Size(460, 870);
+            this.flow_Order_Menu.Size = new System.Drawing.Size(460, 869);
             this.flow_Order_Menu.TabIndex = 0;
             this.flow_Order_Menu.WrapContents = false;
             // 
@@ -929,7 +929,7 @@
             this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Order_Items.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Items.Name = "flow_Order_Items";
-            this.flow_Order_Items.Size = new System.Drawing.Size(312, 810);
+            this.flow_Order_Items.Size = new System.Drawing.Size(312, 809);
             this.flow_Order_Items.TabIndex = 0;
             // 
             // btn_Order_Confirm
@@ -940,7 +940,7 @@
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(0, 810);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(0, 809);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
             this.btn_Order_Confirm.Size = new System.Drawing.Size(312, 60);
             this.btn_Order_Confirm.TabIndex = 0;
@@ -1574,9 +1574,9 @@
             this.listView_Management.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView_Management.HideSelection = false;
             this.listView_Management.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.listView_Management.Location = new System.Drawing.Point(0, 0);
             this.listView_Management.Name = "listView_Management";
             this.listView_Management.Size = new System.Drawing.Size(776, 469);
