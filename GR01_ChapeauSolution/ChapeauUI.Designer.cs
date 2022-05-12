@@ -286,10 +286,10 @@
             this.tab_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Login.Controls.Add(this.pnl_Login);
             this.tab_Login.Controls.Add(this.imgLogin_Logo);
-            this.tab_Login.Location = new System.Drawing.Point(4, 30);
+            this.tab_Login.Location = new System.Drawing.Point(4, 33);
             this.tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.tab_Login.Name = "tab_Login";
-            this.tab_Login.Size = new System.Drawing.Size(780, 841);
+            this.tab_Login.Size = new System.Drawing.Size(780, 838);
             this.tab_Login.TabIndex = 0;
             this.tab_Login.Text = "Login";
             // 
@@ -303,7 +303,7 @@
             this.pnl_Login.Controls.Add(this.lbl_Login_Email);
             this.pnl_Login.Controls.Add(this.txtBox_Login_User);
             this.pnl_Login.Controls.Add(this.btn_Login);
-            this.pnl_Login.Location = new System.Drawing.Point(73, 293);
+            this.pnl_Login.Location = new System.Drawing.Point(73, 294);
             this.pnl_Login.Name = "pnl_Login";
             this.pnl_Login.Size = new System.Drawing.Size(645, 527);
             this.pnl_Login.TabIndex = 2;
@@ -314,7 +314,7 @@
             this.lbl_Login_ForgotPassword.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Login_ForgotPassword.Location = new System.Drawing.Point(164, 390);
             this.lbl_Login_ForgotPassword.Name = "lbl_Login_ForgotPassword";
-            this.lbl_Login_ForgotPassword.Size = new System.Drawing.Size(265, 33);
+            this.lbl_Login_ForgotPassword.Size = new System.Drawing.Size(317, 39);
             this.lbl_Login_ForgotPassword.TabIndex = 6;
             this.lbl_Login_ForgotPassword.Text = "Forgot your password?";
             // 
@@ -342,7 +342,7 @@
             this.txtBox_Login_Password.Name = "txtBox_Login_Password";
             this.txtBox_Login_Password.PasswordChar = '●';
             this.txtBox_Login_Password.PlaceholderText = "Enter your password";
-            this.txtBox_Login_Password.Size = new System.Drawing.Size(392, 40);
+            this.txtBox_Login_Password.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Login_Password.TabIndex = 4;
             // 
             // lbl_Login_Password
@@ -351,7 +351,7 @@
             this.lbl_Login_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Login_Password.Location = new System.Drawing.Point(43, 154);
             this.lbl_Login_Password.Name = "lbl_Login_Password";
-            this.lbl_Login_Password.Size = new System.Drawing.Size(138, 33);
+            this.lbl_Login_Password.Size = new System.Drawing.Size(165, 39);
             this.lbl_Login_Password.TabIndex = 3;
             this.lbl_Login_Password.Text = "Password : ";
             // 
@@ -361,7 +361,7 @@
             this.lbl_Login_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Login_Email.Location = new System.Drawing.Point(43, 86);
             this.lbl_Login_Email.Name = "lbl_Login_Email";
-            this.lbl_Login_Email.Size = new System.Drawing.Size(94, 33);
+            this.lbl_Login_Email.Size = new System.Drawing.Size(111, 39);
             this.lbl_Login_Email.TabIndex = 2;
             this.lbl_Login_Email.Text = "Email : ";
             // 
@@ -373,7 +373,7 @@
             this.txtBox_Login_User.Location = new System.Drawing.Point(221, 79);
             this.txtBox_Login_User.Name = "txtBox_Login_User";
             this.txtBox_Login_User.PlaceholderText = "Enter your email";
-            this.txtBox_Login_User.Size = new System.Drawing.Size(392, 40);
+            this.txtBox_Login_User.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Login_User.TabIndex = 1;
             // 
             // btn_Login
@@ -408,10 +408,10 @@
             this.tab_ForgotPassword.Controls.Add(this.pictureBox1);
             this.tab_ForgotPassword.Controls.Add(this.pnl_Forgot_Password);
             this.tab_ForgotPassword.ForeColor = System.Drawing.Color.White;
-            this.tab_ForgotPassword.Location = new System.Drawing.Point(4, 29);
+            this.tab_ForgotPassword.Location = new System.Drawing.Point(4, 33);
             this.tab_ForgotPassword.Margin = new System.Windows.Forms.Padding(0);
             this.tab_ForgotPassword.Name = "tab_ForgotPassword";
-            this.tab_ForgotPassword.Size = new System.Drawing.Size(780, 842);
+            this.tab_ForgotPassword.Size = new System.Drawing.Size(780, 838);
             this.tab_ForgotPassword.TabIndex = 1;
             this.tab_ForgotPassword.Text = "Forgot Password";
             // 
@@ -452,7 +452,7 @@
             this.txtBox_Forgot_Password_PasswordRetry.Name = "txtBox_Forgot_Password_PasswordRetry";
             this.txtBox_Forgot_Password_PasswordRetry.PasswordChar = '●';
             this.txtBox_Forgot_Password_PasswordRetry.PlaceholderText = "Enter your password again";
-            this.txtBox_Forgot_Password_PasswordRetry.Size = new System.Drawing.Size(392, 40);
+            this.txtBox_Forgot_Password_PasswordRetry.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Forgot_Password_PasswordRetry.TabIndex = 8;
             // 
             // lbl_Forgot_Password_PasswordConfirmation
@@ -461,7 +461,7 @@
             this.lbl_Forgot_Password_PasswordConfirmation.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Forgot_Password_PasswordConfirmation.Location = new System.Drawing.Point(43, 225);
             this.lbl_Forgot_Password_PasswordConfirmation.Name = "lbl_Forgot_Password_PasswordConfirmation";
-            this.lbl_Forgot_Password_PasswordConfirmation.Size = new System.Drawing.Size(132, 33);
+            this.lbl_Forgot_Password_PasswordConfirmation.Size = new System.Drawing.Size(158, 39);
             this.lbl_Forgot_Password_PasswordConfirmation.TabIndex = 7;
             this.lbl_Forgot_Password_PasswordConfirmation.Text = "Password :";
             // 
@@ -471,7 +471,7 @@
             this.lbl_Forgot_Password_Login.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Forgot_Password_Login.Location = new System.Drawing.Point(201, 390);
             this.lbl_Forgot_Password_Login.Name = "lbl_Forgot_Password_Login";
-            this.lbl_Forgot_Password_Login.Size = new System.Drawing.Size(175, 33);
+            this.lbl_Forgot_Password_Login.Size = new System.Drawing.Size(207, 39);
             this.lbl_Forgot_Password_Login.TabIndex = 6;
             this.lbl_Forgot_Password_Login.Text = "Want to login?";
             // 
@@ -498,7 +498,7 @@
             this.txtBox_Forgot_Password_Password.Name = "txtBox_Forgot_Password_Password";
             this.txtBox_Forgot_Password_Password.PasswordChar = '●';
             this.txtBox_Forgot_Password_Password.PlaceholderText = "Enter your password";
-            this.txtBox_Forgot_Password_Password.Size = new System.Drawing.Size(392, 40);
+            this.txtBox_Forgot_Password_Password.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Forgot_Password_Password.TabIndex = 4;
             // 
             // lbl_Forgot_Password_Password
@@ -507,7 +507,7 @@
             this.lbl_Forgot_Password_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Forgot_Password_Password.Location = new System.Drawing.Point(43, 154);
             this.lbl_Forgot_Password_Password.Name = "lbl_Forgot_Password_Password";
-            this.lbl_Forgot_Password_Password.Size = new System.Drawing.Size(138, 33);
+            this.lbl_Forgot_Password_Password.Size = new System.Drawing.Size(165, 39);
             this.lbl_Forgot_Password_Password.TabIndex = 3;
             this.lbl_Forgot_Password_Password.Text = "Password : ";
             // 
@@ -517,7 +517,7 @@
             this.lbl_Forgot_Password_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Forgot_Password_Email.Location = new System.Drawing.Point(43, 86);
             this.lbl_Forgot_Password_Email.Name = "lbl_Forgot_Password_Email";
-            this.lbl_Forgot_Password_Email.Size = new System.Drawing.Size(94, 33);
+            this.lbl_Forgot_Password_Email.Size = new System.Drawing.Size(111, 39);
             this.lbl_Forgot_Password_Email.TabIndex = 2;
             this.lbl_Forgot_Password_Email.Text = "Email : ";
             // 
@@ -529,7 +529,7 @@
             this.txtBox_Forgot_Password_Email.Location = new System.Drawing.Point(221, 79);
             this.txtBox_Forgot_Password_Email.Name = "txtBox_Forgot_Password_Email";
             this.txtBox_Forgot_Password_Email.PlaceholderText = "Enter your email";
-            this.txtBox_Forgot_Password_Email.Size = new System.Drawing.Size(392, 40);
+            this.txtBox_Forgot_Password_Email.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Forgot_Password_Email.TabIndex = 1;
             // 
             // btn_Forgot_Password_Login
@@ -551,10 +551,10 @@
             // 
             this.tab_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Account.Controls.Add(this.panel1);
-            this.tab_Account.Location = new System.Drawing.Point(4, 29);
+            this.tab_Account.Location = new System.Drawing.Point(4, 33);
             this.tab_Account.Name = "tab_Account";
             this.tab_Account.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Account.Size = new System.Drawing.Size(780, 842);
+            this.tab_Account.Size = new System.Drawing.Size(780, 838);
             this.tab_Account.TabIndex = 10;
             this.tab_Account.Text = "Account";
             // 
@@ -564,7 +564,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(774, 836);
+            this.panel1.Size = new System.Drawing.Size(774, 832);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -574,7 +574,7 @@
             this.panel2.Controls.Add(this.lbl_Account_Role);
             this.panel2.Controls.Add(this.lbl_Account_Email);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(100, 26);
+            this.panel2.Location = new System.Drawing.Point(100, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(575, 787);
             this.panel2.TabIndex = 0;
@@ -633,9 +633,9 @@
             this.tab_Tables.Controls.Add(this.pnl_TableOverview);
             this.tab_Tables.Controls.Add(this.splitter_TableOverview);
             this.tab_Tables.Controls.Add(this.pnl_TableInfo);
-            this.tab_Tables.Location = new System.Drawing.Point(4, 29);
+            this.tab_Tables.Location = new System.Drawing.Point(4, 33);
             this.tab_Tables.Name = "tab_Tables";
-            this.tab_Tables.Size = new System.Drawing.Size(780, 842);
+            this.tab_Tables.Size = new System.Drawing.Size(780, 838);
             this.tab_Tables.TabIndex = 2;
             this.tab_Tables.Text = "Tables";
             // 
@@ -660,7 +660,7 @@
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(780, 589);
+            this.pnl_TableOverview.Size = new System.Drawing.Size(780, 585);
             this.pnl_TableOverview.SplitterDistance = 355;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
@@ -672,7 +672,7 @@
             this.flow_TableOverview.Location = new System.Drawing.Point(0, 68);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(355, 521);
+            this.flow_TableOverview.Size = new System.Drawing.Size(355, 517);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // splitter1
@@ -722,7 +722,6 @@
             // 
             // flow_Tables
             // 
-            this.flow_Tables.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flow_Tables.Controls.Add(this.btn_Table_1);
             this.flow_Tables.Controls.Add(this.btn_Table_2);
             this.flow_Tables.Controls.Add(this.btn_Table_3);
@@ -733,11 +732,13 @@
             this.flow_Tables.Controls.Add(this.btn_Table_8);
             this.flow_Tables.Controls.Add(this.btn_Table_9);
             this.flow_Tables.Controls.Add(this.btn_Table_10);
-            this.flow_Tables.Location = new System.Drawing.Point(52, -44);
+            this.flow_Tables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow_Tables.Location = new System.Drawing.Point(0, 0);
+            this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Tables.MaximumSize = new System.Drawing.Size(420, 0);
             this.flow_Tables.Name = "flow_Tables";
             this.flow_Tables.Padding = new System.Windows.Forms.Padding(65, 4, 0, 0);
-            this.flow_Tables.Size = new System.Drawing.Size(420, 681);
+            this.flow_Tables.Size = new System.Drawing.Size(420, 585);
             this.flow_Tables.TabIndex = 0;
             // 
             // btn_Table_1
@@ -996,9 +997,9 @@
             this.tab_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Order.Controls.Add(this.pnl_Menu_And_Order);
             this.tab_Order.Controls.Add(this.pnl_Order_Categories);
-            this.tab_Order.Location = new System.Drawing.Point(4, 29);
+            this.tab_Order.Location = new System.Drawing.Point(4, 33);
             this.tab_Order.Name = "tab_Order";
-            this.tab_Order.Size = new System.Drawing.Size(780, 842);
+            this.tab_Order.Size = new System.Drawing.Size(780, 838);
             this.tab_Order.TabIndex = 3;
             this.tab_Order.Text = "Order";
             // 
@@ -1022,7 +1023,7 @@
             this.pnl_Menu_And_Order.Panel2.Controls.Add(this.btn_Order_Confirm);
             this.pnl_Menu_And_Order.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnl_Menu_And_Order.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnl_Menu_And_Order.Size = new System.Drawing.Size(780, 782);
+            this.pnl_Menu_And_Order.Size = new System.Drawing.Size(780, 778);
             this.pnl_Menu_And_Order.SplitterDistance = 460;
             this.pnl_Menu_And_Order.TabIndex = 0;
             // 
@@ -1033,7 +1034,7 @@
             this.flow_Order_Menu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flow_Order_Menu.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Menu.Name = "flow_Order_Menu";
-            this.flow_Order_Menu.Size = new System.Drawing.Size(460, 782);
+            this.flow_Order_Menu.Size = new System.Drawing.Size(460, 778);
             this.flow_Order_Menu.TabIndex = 0;
             this.flow_Order_Menu.WrapContents = false;
             // 
@@ -1043,7 +1044,7 @@
             this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Order_Items.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Items.Name = "flow_Order_Items";
-            this.flow_Order_Items.Size = new System.Drawing.Size(316, 722);
+            this.flow_Order_Items.Size = new System.Drawing.Size(316, 718);
             this.flow_Order_Items.TabIndex = 0;
             // 
             // btn_Order_Confirm
@@ -1054,7 +1055,7 @@
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(0, 722);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(0, 718);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
             this.btn_Order_Confirm.Size = new System.Drawing.Size(316, 60);
             this.btn_Order_Confirm.TabIndex = 0;
@@ -1130,9 +1131,9 @@
             this.tab_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Bill.Controls.Add(this.pnl_Bill);
             this.tab_Bill.Controls.Add(this.pnl_Bill_Prices);
-            this.tab_Bill.Location = new System.Drawing.Point(4, 29);
+            this.tab_Bill.Location = new System.Drawing.Point(4, 33);
             this.tab_Bill.Name = "tab_Bill";
-            this.tab_Bill.Size = new System.Drawing.Size(780, 842);
+            this.tab_Bill.Size = new System.Drawing.Size(780, 838);
             this.tab_Bill.TabIndex = 4;
             this.tab_Bill.Text = "Bill";
             // 
@@ -1145,7 +1146,7 @@
             this.pnl_Bill.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Bill.Name = "pnl_Bill";
             this.pnl_Bill.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_Bill.Size = new System.Drawing.Size(780, 742);
+            this.pnl_Bill.Size = new System.Drawing.Size(780, 738);
             this.pnl_Bill.TabIndex = 1;
             // 
             // flow_Bill
@@ -1157,7 +1158,7 @@
             this.flow_Bill.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Bill.Name = "flow_Bill";
             this.flow_Bill.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
-            this.flow_Bill.Size = new System.Drawing.Size(560, 642);
+            this.flow_Bill.Size = new System.Drawing.Size(560, 638);
             this.flow_Bill.TabIndex = 0;
             // 
             // pnl_Bill_Title
@@ -1198,7 +1199,7 @@
             this.pnl_Bill_Prices.Controls.Add(this.flow_Bill_Prices);
             this.pnl_Bill_Prices.Controls.Add(this.img_pnl_Bill_Prices_Splitter);
             this.pnl_Bill_Prices.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_Bill_Prices.Location = new System.Drawing.Point(0, 742);
+            this.pnl_Bill_Prices.Location = new System.Drawing.Point(0, 738);
             this.pnl_Bill_Prices.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Bill_Prices.Name = "pnl_Bill_Prices";
             this.pnl_Bill_Prices.Size = new System.Drawing.Size(780, 100);
@@ -1224,7 +1225,7 @@
             this.lbl_Bill_Prices_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bill_Prices_Total.Location = new System.Drawing.Point(18, 25);
             this.lbl_Bill_Prices_Total.Name = "lbl_Bill_Prices_Total";
-            this.lbl_Bill_Prices_Total.Size = new System.Drawing.Size(101, 33);
+            this.lbl_Bill_Prices_Total.Size = new System.Drawing.Size(119, 39);
             this.lbl_Bill_Prices_Total.TabIndex = 0;
             this.lbl_Bill_Prices_Total.Text = "Total : €";
             // 
@@ -1234,21 +1235,21 @@
             this.txtBox_Bill_Prices_Total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Bill_Prices_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBox_Bill_Prices_Total.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Bill_Prices_Total.Location = new System.Drawing.Point(125, 25);
+            this.txtBox_Bill_Prices_Total.Location = new System.Drawing.Point(143, 25);
             this.txtBox_Bill_Prices_Total.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.txtBox_Bill_Prices_Total.Name = "txtBox_Bill_Prices_Total";
             this.txtBox_Bill_Prices_Total.ReadOnly = true;
-            this.txtBox_Bill_Prices_Total.Size = new System.Drawing.Size(150, 40);
+            this.txtBox_Bill_Prices_Total.Size = new System.Drawing.Size(150, 47);
             this.txtBox_Bill_Prices_Total.TabIndex = 2;
             // 
             // lbl_Bill_Prices_Tip
             // 
             this.lbl_Bill_Prices_Tip.AutoSize = true;
             this.lbl_Bill_Prices_Tip.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bill_Prices_Tip.Location = new System.Drawing.Point(288, 25);
+            this.lbl_Bill_Prices_Tip.Location = new System.Drawing.Point(306, 25);
             this.lbl_Bill_Prices_Tip.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lbl_Bill_Prices_Tip.Name = "lbl_Bill_Prices_Tip";
-            this.lbl_Bill_Prices_Tip.Size = new System.Drawing.Size(81, 33);
+            this.lbl_Bill_Prices_Tip.Size = new System.Drawing.Size(96, 39);
             this.lbl_Bill_Prices_Tip.TabIndex = 1;
             this.lbl_Bill_Prices_Tip.Text = "Tip : €";
             // 
@@ -1258,10 +1259,10 @@
             this.txtBox_Bill_Prices_Tip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Bill_Prices_Tip.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBox_Bill_Prices_Tip.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Bill_Prices_Tip.Location = new System.Drawing.Point(375, 25);
+            this.txtBox_Bill_Prices_Tip.Location = new System.Drawing.Point(408, 25);
             this.txtBox_Bill_Prices_Tip.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.txtBox_Bill_Prices_Tip.Name = "txtBox_Bill_Prices_Tip";
-            this.txtBox_Bill_Prices_Tip.Size = new System.Drawing.Size(150, 40);
+            this.txtBox_Bill_Prices_Tip.Size = new System.Drawing.Size(150, 47);
             this.txtBox_Bill_Prices_Tip.TabIndex = 3;
             // 
             // btn_Bill_Checkout
@@ -1270,7 +1271,7 @@
             this.btn_Bill_Checkout.FlatAppearance.BorderSize = 0;
             this.btn_Bill_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Bill_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Bill_Checkout.Location = new System.Drawing.Point(553, 28);
+            this.btn_Bill_Checkout.Location = new System.Drawing.Point(586, 28);
             this.btn_Bill_Checkout.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
             this.btn_Bill_Checkout.Name = "btn_Bill_Checkout";
             this.btn_Bill_Checkout.Size = new System.Drawing.Size(158, 45);
@@ -1293,9 +1294,9 @@
             // 
             this.tab_PaymentOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_PaymentOptions.Controls.Add(this.pnl_PaymentOptions);
-            this.tab_PaymentOptions.Location = new System.Drawing.Point(4, 29);
+            this.tab_PaymentOptions.Location = new System.Drawing.Point(4, 33);
             this.tab_PaymentOptions.Name = "tab_PaymentOptions";
-            this.tab_PaymentOptions.Size = new System.Drawing.Size(780, 842);
+            this.tab_PaymentOptions.Size = new System.Drawing.Size(780, 838);
             this.tab_PaymentOptions.TabIndex = 5;
             this.tab_PaymentOptions.Text = "PaymentOptions";
             // 
@@ -1309,7 +1310,7 @@
             this.pnl_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_PaymentOptions.Name = "pnl_PaymentOptions";
             this.pnl_PaymentOptions.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_PaymentOptions.Size = new System.Drawing.Size(780, 842);
+            this.pnl_PaymentOptions.Size = new System.Drawing.Size(780, 838);
             this.pnl_PaymentOptions.TabIndex = 2;
             // 
             // pnl_PaymentOptions_Center
@@ -1319,7 +1320,7 @@
             this.pnl_PaymentOptions_Center.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PaymentOptions_Center.Location = new System.Drawing.Point(110, 158);
             this.pnl_PaymentOptions_Center.Name = "pnl_PaymentOptions_Center";
-            this.pnl_PaymentOptions_Center.Size = new System.Drawing.Size(560, 524);
+            this.pnl_PaymentOptions_Center.Size = new System.Drawing.Size(560, 520);
             this.pnl_PaymentOptions_Center.TabIndex = 2;
             // 
             // flow_PaymentOptions
@@ -1333,7 +1334,7 @@
             this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_4);
             this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_5);
             this.flow_PaymentOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_PaymentOptions.Location = new System.Drawing.Point(2, -14);
+            this.flow_PaymentOptions.Location = new System.Drawing.Point(2, -16);
             this.flow_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
             this.flow_PaymentOptions.Name = "flow_PaymentOptions";
             this.flow_PaymentOptions.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
@@ -1405,7 +1406,7 @@
             // 
             this.pnl_PaymentOptions_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnl_PaymentOptions_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PaymentOptions_Bottom.Location = new System.Drawing.Point(110, 682);
+            this.pnl_PaymentOptions_Bottom.Location = new System.Drawing.Point(110, 678);
             this.pnl_PaymentOptions_Bottom.Name = "pnl_PaymentOptions_Bottom";
             this.pnl_PaymentOptions_Bottom.Size = new System.Drawing.Size(560, 160);
             this.pnl_PaymentOptions_Bottom.TabIndex = 1;
@@ -1430,7 +1431,7 @@
             this.txtBox_Payment_Options_Total.ForeColor = System.Drawing.Color.White;
             this.txtBox_Payment_Options_Total.Location = new System.Drawing.Point(210, 34);
             this.txtBox_Payment_Options_Total.Name = "txtBox_Payment_Options_Total";
-            this.txtBox_Payment_Options_Total.Size = new System.Drawing.Size(150, 40);
+            this.txtBox_Payment_Options_Total.Size = new System.Drawing.Size(150, 47);
             this.txtBox_Payment_Options_Total.TabIndex = 2;
             this.txtBox_Payment_Options_Total.Text = "€ 0.00";
             this.txtBox_Payment_Options_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1450,9 +1451,9 @@
             // 
             this.tab_ProcessPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_ProcessPayment.Controls.Add(this.pnl_ProcessPayment);
-            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 29);
+            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 33);
             this.tab_ProcessPayment.Name = "tab_ProcessPayment";
-            this.tab_ProcessPayment.Size = new System.Drawing.Size(780, 842);
+            this.tab_ProcessPayment.Size = new System.Drawing.Size(780, 838);
             this.tab_ProcessPayment.TabIndex = 6;
             this.tab_ProcessPayment.Text = "Process Payment";
             // 
@@ -1466,7 +1467,7 @@
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProcessPayment.Name = "pnl_ProcessPayment";
             this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_ProcessPayment.Size = new System.Drawing.Size(780, 842);
+            this.pnl_ProcessPayment.Size = new System.Drawing.Size(780, 838);
             this.pnl_ProcessPayment.TabIndex = 3;
             // 
             // pnl_ProcessPayment_Center
@@ -1478,14 +1479,14 @@
             this.pnl_ProcessPayment_Center.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ProcessPayment_Center.Location = new System.Drawing.Point(110, 158);
             this.pnl_ProcessPayment_Center.Name = "pnl_ProcessPayment_Center";
-            this.pnl_ProcessPayment_Center.Size = new System.Drawing.Size(560, 524);
+            this.pnl_ProcessPayment_Center.Size = new System.Drawing.Size(560, 520);
             this.pnl_ProcessPayment_Center.TabIndex = 2;
             // 
             // img_ProcessPayment_Icon
             // 
             this.img_ProcessPayment_Icon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.img_ProcessPayment_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.img_ProcessPayment_Icon.Location = new System.Drawing.Point(184, 82);
+            this.img_ProcessPayment_Icon.Location = new System.Drawing.Point(184, 80);
             this.img_ProcessPayment_Icon.Name = "img_ProcessPayment_Icon";
             this.img_ProcessPayment_Icon.Size = new System.Drawing.Size(200, 200);
             this.img_ProcessPayment_Icon.TabIndex = 2;
@@ -1497,7 +1498,7 @@
             this.btn_ProccessPayment_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
             this.btn_ProccessPayment_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ProccessPayment_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(15, 423);
+            this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(15, 421);
             this.btn_ProccessPayment_Confirm.Name = "btn_ProccessPayment_Confirm";
             this.btn_ProccessPayment_Confirm.Size = new System.Drawing.Size(528, 100);
             this.btn_ProccessPayment_Confirm.TabIndex = 1;
@@ -1508,7 +1509,7 @@
             // 
             this.lbl_ProcessPayment_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_ProcessPayment_Result.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ProcessPayment_Result.Location = new System.Drawing.Point(-1, 285);
+            this.lbl_ProcessPayment_Result.Location = new System.Drawing.Point(-1, 283);
             this.lbl_ProcessPayment_Result.Name = "lbl_ProcessPayment_Result";
             this.lbl_ProcessPayment_Result.Size = new System.Drawing.Size(556, 74);
             this.lbl_ProcessPayment_Result.TabIndex = 0;
@@ -1519,7 +1520,7 @@
             // 
             this.pnl_ProcessPayment_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnl_ProcessPayment_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_ProcessPayment_Bottom.Location = new System.Drawing.Point(110, 682);
+            this.pnl_ProcessPayment_Bottom.Location = new System.Drawing.Point(110, 678);
             this.pnl_ProcessPayment_Bottom.Name = "pnl_ProcessPayment_Bottom";
             this.pnl_ProcessPayment_Bottom.Size = new System.Drawing.Size(560, 160);
             this.pnl_ProcessPayment_Bottom.TabIndex = 1;
@@ -1537,9 +1538,9 @@
             // 
             this.tab_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Management.Controls.Add(this.pnl_Management);
-            this.tab_Management.Location = new System.Drawing.Point(4, 29);
+            this.tab_Management.Location = new System.Drawing.Point(4, 33);
             this.tab_Management.Name = "tab_Management";
-            this.tab_Management.Size = new System.Drawing.Size(780, 842);
+            this.tab_Management.Size = new System.Drawing.Size(780, 838);
             this.tab_Management.TabIndex = 7;
             this.tab_Management.Text = "Management";
             // 
@@ -1550,7 +1551,7 @@
             this.pnl_Management.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Management.Location = new System.Drawing.Point(0, 0);
             this.pnl_Management.Name = "pnl_Management";
-            this.pnl_Management.Size = new System.Drawing.Size(780, 842);
+            this.pnl_Management.Size = new System.Drawing.Size(780, 838);
             this.pnl_Management.TabIndex = 0;
             // 
             // pnl_Management_Main
@@ -1560,14 +1561,14 @@
             this.pnl_Management_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Management_Main.Location = new System.Drawing.Point(0, 60);
             this.pnl_Management_Main.Name = "pnl_Management_Main";
-            this.pnl_Management_Main.Size = new System.Drawing.Size(780, 782);
+            this.pnl_Management_Main.Size = new System.Drawing.Size(780, 778);
             this.pnl_Management_Main.TabIndex = 1;
             // 
             // pnl_Management_InputBoxes
             // 
             this.pnl_Management_InputBoxes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Management_InputBoxes.Controls.Add(this.flow_Management_Inputboxes);
-            this.pnl_Management_InputBoxes.Location = new System.Drawing.Point(10, 471);
+            this.pnl_Management_InputBoxes.Location = new System.Drawing.Point(10, 469);
             this.pnl_Management_InputBoxes.Name = "pnl_Management_InputBoxes";
             this.pnl_Management_InputBoxes.Size = new System.Drawing.Size(760, 149);
             this.pnl_Management_InputBoxes.TabIndex = 2;
@@ -1596,7 +1597,7 @@
             this.lbl_Management_Field1.Location = new System.Drawing.Point(63, 0);
             this.lbl_Management_Field1.Name = "lbl_Management_Field1";
             this.lbl_Management_Field1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field1.Size = new System.Drawing.Size(69, 28);
+            this.lbl_Management_Field1.Size = new System.Drawing.Size(80, 31);
             this.lbl_Management_Field1.TabIndex = 5;
             this.lbl_Management_Field1.Text = "Field 1 : ";
             this.lbl_Management_Field1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1606,19 +1607,19 @@
             this.txtBox_Manangement_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Manangement_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Manangement_1.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_1.Location = new System.Drawing.Point(63, 31);
+            this.txtBox_Manangement_1.Location = new System.Drawing.Point(63, 34);
             this.txtBox_Manangement_1.Margin = new System.Windows.Forms.Padding(3, 3, 80, 3);
             this.txtBox_Manangement_1.Name = "txtBox_Manangement_1";
-            this.txtBox_Manangement_1.Size = new System.Drawing.Size(280, 28);
+            this.txtBox_Manangement_1.Size = new System.Drawing.Size(280, 32);
             this.txtBox_Manangement_1.TabIndex = 2;
             // 
             // lbl_Management_Field2
             // 
             this.lbl_Management_Field2.AutoSize = true;
-            this.lbl_Management_Field2.Location = new System.Drawing.Point(63, 62);
+            this.lbl_Management_Field2.Location = new System.Drawing.Point(63, 69);
             this.lbl_Management_Field2.Name = "lbl_Management_Field2";
             this.lbl_Management_Field2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field2.Size = new System.Drawing.Size(69, 28);
+            this.lbl_Management_Field2.Size = new System.Drawing.Size(80, 31);
             this.lbl_Management_Field2.TabIndex = 6;
             this.lbl_Management_Field2.Text = "Field 2 : ";
             this.lbl_Management_Field2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1628,10 +1629,10 @@
             this.txtBox_Manangement_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Manangement_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Manangement_2.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_2.Location = new System.Drawing.Point(63, 93);
+            this.txtBox_Manangement_2.Location = new System.Drawing.Point(63, 103);
             this.txtBox_Manangement_2.Margin = new System.Windows.Forms.Padding(3, 3, 80, 3);
             this.txtBox_Manangement_2.Name = "txtBox_Manangement_2";
-            this.txtBox_Manangement_2.Size = new System.Drawing.Size(280, 28);
+            this.txtBox_Manangement_2.Size = new System.Drawing.Size(280, 32);
             this.txtBox_Manangement_2.TabIndex = 3;
             // 
             // lbl_Management_Field3
@@ -1640,7 +1641,7 @@
             this.lbl_Management_Field3.Location = new System.Drawing.Point(426, 0);
             this.lbl_Management_Field3.Name = "lbl_Management_Field3";
             this.lbl_Management_Field3.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field3.Size = new System.Drawing.Size(69, 28);
+            this.lbl_Management_Field3.Size = new System.Drawing.Size(80, 31);
             this.lbl_Management_Field3.TabIndex = 7;
             this.lbl_Management_Field3.Text = "Field 3 : ";
             this.lbl_Management_Field3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1650,19 +1651,19 @@
             this.txtBox_Manangement_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Manangement_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Manangement_3.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_3.Location = new System.Drawing.Point(426, 31);
+            this.txtBox_Manangement_3.Location = new System.Drawing.Point(426, 34);
             this.txtBox_Manangement_3.Margin = new System.Windows.Forms.Padding(3, 3, 80, 3);
             this.txtBox_Manangement_3.Name = "txtBox_Manangement_3";
-            this.txtBox_Manangement_3.Size = new System.Drawing.Size(280, 28);
+            this.txtBox_Manangement_3.Size = new System.Drawing.Size(280, 32);
             this.txtBox_Manangement_3.TabIndex = 1;
             // 
             // lbl_Management_Field4
             // 
             this.lbl_Management_Field4.AutoSize = true;
-            this.lbl_Management_Field4.Location = new System.Drawing.Point(426, 62);
+            this.lbl_Management_Field4.Location = new System.Drawing.Point(426, 69);
             this.lbl_Management_Field4.Name = "lbl_Management_Field4";
             this.lbl_Management_Field4.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field4.Size = new System.Drawing.Size(69, 28);
+            this.lbl_Management_Field4.Size = new System.Drawing.Size(80, 31);
             this.lbl_Management_Field4.TabIndex = 8;
             this.lbl_Management_Field4.Text = "Field 4 : ";
             this.lbl_Management_Field4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1672,10 +1673,10 @@
             this.txtBox_Manangement_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Manangement_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_Manangement_4.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_4.Location = new System.Drawing.Point(426, 93);
+            this.txtBox_Manangement_4.Location = new System.Drawing.Point(426, 103);
             this.txtBox_Manangement_4.Margin = new System.Windows.Forms.Padding(3, 3, 80, 3);
             this.txtBox_Manangement_4.Name = "txtBox_Manangement_4";
-            this.txtBox_Manangement_4.Size = new System.Drawing.Size(280, 28);
+            this.txtBox_Manangement_4.Size = new System.Drawing.Size(280, 32);
             this.txtBox_Manangement_4.TabIndex = 4;
             // 
             // listView_Management
@@ -1774,9 +1775,9 @@
             this.tab_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Bar.Controls.Add(this.flow_Bar);
             this.tab_Bar.Controls.Add(this.pnl_Bar_Categories);
-            this.tab_Bar.Location = new System.Drawing.Point(4, 29);
+            this.tab_Bar.Location = new System.Drawing.Point(4, 33);
             this.tab_Bar.Name = "tab_Bar";
-            this.tab_Bar.Size = new System.Drawing.Size(780, 842);
+            this.tab_Bar.Size = new System.Drawing.Size(780, 838);
             this.tab_Bar.TabIndex = 8;
             this.tab_Bar.Text = "Bar";
             // 
@@ -1785,7 +1786,7 @@
             this.flow_Bar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Bar.Location = new System.Drawing.Point(0, 100);
             this.flow_Bar.Name = "flow_Bar";
-            this.flow_Bar.Size = new System.Drawing.Size(780, 742);
+            this.flow_Bar.Size = new System.Drawing.Size(780, 738);
             this.flow_Bar.TabIndex = 0;
             // 
             // pnl_Bar_Categories
@@ -1806,7 +1807,7 @@
             this.lbl_Bar_Type.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bar_Type.Location = new System.Drawing.Point(514, 30);
             this.lbl_Bar_Type.Name = "lbl_Bar_Type";
-            this.lbl_Bar_Type.Size = new System.Drawing.Size(76, 37);
+            this.lbl_Bar_Type.Size = new System.Drawing.Size(88, 44);
             this.lbl_Bar_Type.TabIndex = 1;
             this.lbl_Bar_Type.Text = "Type";
             // 
@@ -1817,7 +1818,7 @@
             this.lbl_Bar_Drink.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bar_Drink.Location = new System.Drawing.Point(298, 30);
             this.lbl_Bar_Drink.Name = "lbl_Bar_Drink";
-            this.lbl_Bar_Drink.Size = new System.Drawing.Size(82, 37);
+            this.lbl_Bar_Drink.Size = new System.Drawing.Size(97, 44);
             this.lbl_Bar_Drink.TabIndex = 2;
             this.lbl_Bar_Drink.Text = "Drink";
             // 
@@ -1828,7 +1829,7 @@
             this.lbl_Bar_Order_Number.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bar_Order_Number.Location = new System.Drawing.Point(24, 30);
             this.lbl_Bar_Order_Number.Name = "lbl_Bar_Order_Number";
-            this.lbl_Bar_Order_Number.Size = new System.Drawing.Size(192, 37);
+            this.lbl_Bar_Order_Number.Size = new System.Drawing.Size(231, 44);
             this.lbl_Bar_Order_Number.TabIndex = 0;
             this.lbl_Bar_Order_Number.Text = "Order number";
             // 
@@ -1837,9 +1838,9 @@
             this.tab_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Kitchen.Controls.Add(this.flow_Kitchen);
             this.tab_Kitchen.Controls.Add(this.pnl_Kitchen_Categories);
-            this.tab_Kitchen.Location = new System.Drawing.Point(4, 29);
+            this.tab_Kitchen.Location = new System.Drawing.Point(4, 33);
             this.tab_Kitchen.Name = "tab_Kitchen";
-            this.tab_Kitchen.Size = new System.Drawing.Size(780, 842);
+            this.tab_Kitchen.Size = new System.Drawing.Size(780, 838);
             this.tab_Kitchen.TabIndex = 9;
             this.tab_Kitchen.Text = "Kitchen";
             // 
@@ -1848,7 +1849,7 @@
             this.flow_Kitchen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Kitchen.Location = new System.Drawing.Point(0, 100);
             this.flow_Kitchen.Name = "flow_Kitchen";
-            this.flow_Kitchen.Size = new System.Drawing.Size(780, 742);
+            this.flow_Kitchen.Size = new System.Drawing.Size(780, 738);
             this.flow_Kitchen.TabIndex = 1;
             // 
             // pnl_Kitchen_Categories
@@ -1869,7 +1870,7 @@
             this.lbl_Kitchen_Type.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Kitchen_Type.Location = new System.Drawing.Point(514, 30);
             this.lbl_Kitchen_Type.Name = "lbl_Kitchen_Type";
-            this.lbl_Kitchen_Type.Size = new System.Drawing.Size(76, 37);
+            this.lbl_Kitchen_Type.Size = new System.Drawing.Size(88, 44);
             this.lbl_Kitchen_Type.TabIndex = 1;
             this.lbl_Kitchen_Type.Text = "Type";
             // 
@@ -1880,7 +1881,7 @@
             this.lbl_Kitchen_Food.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Kitchen_Food.Location = new System.Drawing.Point(298, 30);
             this.lbl_Kitchen_Food.Name = "lbl_Kitchen_Food";
-            this.lbl_Kitchen_Food.Size = new System.Drawing.Size(79, 37);
+            this.lbl_Kitchen_Food.Size = new System.Drawing.Size(93, 44);
             this.lbl_Kitchen_Food.TabIndex = 2;
             this.lbl_Kitchen_Food.Text = "Food";
             // 
@@ -1891,7 +1892,7 @@
             this.lbl_Kitchen_Order_Number.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Kitchen_Order_Number.Location = new System.Drawing.Point(24, 30);
             this.lbl_Kitchen_Order_Number.Name = "lbl_Kitchen_Order_Number";
-            this.lbl_Kitchen_Order_Number.Size = new System.Drawing.Size(192, 37);
+            this.lbl_Kitchen_Order_Number.Size = new System.Drawing.Size(231, 44);
             this.lbl_Kitchen_Order_Number.TabIndex = 0;
             this.lbl_Kitchen_Order_Number.Text = "Order number";
             // 
@@ -1946,7 +1947,7 @@
             this.lbl_OrderCounter.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_OrderCounter.Location = new System.Drawing.Point(586, 22);
             this.lbl_OrderCounter.Name = "lbl_OrderCounter";
-            this.lbl_OrderCounter.Size = new System.Drawing.Size(79, 33);
+            this.lbl_OrderCounter.Size = new System.Drawing.Size(91, 39);
             this.lbl_OrderCounter.TabIndex = 3;
             this.lbl_OrderCounter.Text = "0 / 10";
             this.lbl_OrderCounter.Visible = false;
@@ -2191,7 +2192,8 @@
             // 
             // Form_Chapeau
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(788, 1055);
             this.Controls.Add(this.border_Right);
