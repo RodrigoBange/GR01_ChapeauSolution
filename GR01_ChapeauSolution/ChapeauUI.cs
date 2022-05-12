@@ -1,4 +1,5 @@
 ﻿using ChapeauUI.Components;
+using ChapeauModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,11 @@ namespace GR01_ChapeauSolution
         const string hexColorOrder = "#5fadac";
         const string hexColorCheckout = "#8486f0";
 
+        // Variables 
+        private bool functionButtonActivated = false;
+        private TableFunctions currentFunction;
+
+        #region General
         public Form_Chapeau()
         {
             // Initialize
@@ -66,7 +72,13 @@ namespace GR01_ChapeauSolution
             border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
         }
 
+        private void btn_Return_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Tables;
+        }
+#endregion
 
+        #region Login
         /** LOGIN VIEW METHODS **/
         private void btn_Login_Click(object sender, EventArgs e)
         {
@@ -81,40 +93,112 @@ namespace GR01_ChapeauSolution
             TestAddReservations();
         }
 
-
-        /** FORGOT PASSWORD VIEW METHODS **/
-
-
-        /** TABLE VIEW METHODS **/
-        private void ActivateFunctionButton(string functionType)
+        private void btn_Login_Forgot_Password_Click(object sender, EventArgs e)
         {
-            // Reset all colors first
+            tabC_Body.SelectedTab = tab_ForgotPassword;
+        }
+        #endregion
+
+        #region Forgot Password
+        /** FORGOT PASSWORD VIEW METHODS **/
+        private void btn_Forgot_Password_Login_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Login;
+        }
+        #endregion
+
+        #region Account
+        /** ACCOUNT METHODS **/
+        private void btn_User_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Account;
+            DisableAllButtons();
+        }
+        #endregion
+
+        #region Table View
+        /** TABLE VIEW METHODS **/
+        private void DisableAllButtons()
+        {
+            // Disable all function buttons
+            currentFunction = TableFunctions.None;
+
+            //Reset all colors
             btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorDark);
             btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorDark);
             btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorDark);
 
             pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
-            // Activate functionality
-            if (functionType == "Reserve")
+            //Disable all table buttons
+            btn_Table_1.Enabled = false;
+            btn_Table_2.Enabled = false;
+            btn_Table_3.Enabled = false;
+            btn_Table_4.Enabled = false;
+            btn_Table_5.Enabled = false;
+            btn_Table_6.Enabled = false;
+            btn_Table_7.Enabled = false;
+            btn_Table_8.Enabled = false;
+            btn_Table_9.Enabled = false;
+            btn_Table_10.Enabled = false;
+
+        }
+
+        private void ActivateAllTables()
+        {
+            btn_Table_1.Enabled = true;
+            btn_Table_2.Enabled = true;
+            btn_Table_3.Enabled = true;
+            btn_Table_4.Enabled = true;
+            btn_Table_5.Enabled = true;
+            btn_Table_6.Enabled = true;
+            btn_Table_7.Enabled = true;
+            btn_Table_8.Enabled = true;
+            btn_Table_9.Enabled = true;
+            btn_Table_10.Enabled = true;
+        }
+
+        private void ActivateFunctionButton(TableFunctions function)
+        {
+            // If the new function is not the same as old function...
+            if (function != currentFunction)
             {
-                // Set colors
-                btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorReserve);
-                pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorReserve);
+                DisableAllButtons();
+                if (function == TableFunctions.Reserve)
+                {
+                    currentFunction = TableFunctions.Reserve;
+                    // Set colors
+                    btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorReserve);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorReserve);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+                else if (function == TableFunctions.Order)
+                {
+                    currentFunction = TableFunctions.Order;
+                    // Set colors
+                    btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorOrder);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorOrder);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+                else if (function == TableFunctions.Checkout)
+                {
+                    currentFunction = TableFunctions.Checkout;
+                    // Set colors
+                    btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
             }
-            else if (functionType == "Order")
+            else // If function is the same as old function
             {
-                // Set colors
-                btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorOrder);
-                pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorOrder);
-            }
-            else if (functionType == "Checkout")
-            {
-                // Set colors
-                btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
-                pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
+                functionButtonActivated = !functionButtonActivated;
+                DisableAllButtons();
             }
         }
+
         private void TestAddReservations()
         {
             for (int i = 0; i < 10; i++)
@@ -134,22 +218,90 @@ namespace GR01_ChapeauSolution
         private void btn_ActivateReservation_Click(object sender, EventArgs e)
         {
             // Activate Reserve functionality
-            ActivateFunctionButton("Reserve");
+            ActivateFunctionButton(TableFunctions.Reserve);
         }
 
         private void btn_ActivateOrdering_Click(object sender, EventArgs e)
         {
             // Activate Order functionality
-            ActivateFunctionButton("Order");
+            ActivateFunctionButton(TableFunctions.Order);
         }
 
         private void btn_ActivateCheckout_Click(object sender, EventArgs e)
         {
             // Activate Checkout functionality
-            ActivateFunctionButton("Checkout");
+            ActivateFunctionButton(TableFunctions.Checkout);
         }
 
+        private void DirectToFunctionPage()
+        {
+            if (currentFunction == TableFunctions.Reserve)
+            {
+                
+            }
+            else if (currentFunction == TableFunctions.Order)
+            {
+                tabC_Body.SelectedTab = tab_Order;
+            }
+            else if (currentFunction == TableFunctions.Checkout)
+            {
+                tabC_Body.SelectedTab = tab_Bill;
+            }
+        }
 
+        private void btn_Table_1_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 1";
+        }
+        private void btn_Table_2_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 2";
+        }
+        private void btn_Table_3_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 3";
+        }
+        private void btn_Table_4_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 4";
+        }
+        private void btn_Table_5_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 5";
+        }
+        private void btn_Table_6_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 6";
+        }
+        private void btn_Table_7_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 7";
+        }
+        private void btn_Table_8_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 8";
+        }
+        private void btn_Table_9_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 9";
+        }
+        private void btn_Table_10_Click(object sender, EventArgs e)
+        {
+            DirectToFunctionPage();
+            lbl_TableOverview_Title.Text = "Table 10";
+        }
+        #endregion
+
+        #region Order
         /** ORDER VIEW METHODS **/
         private void TestMenuItems()
         {
@@ -160,25 +312,30 @@ namespace GR01_ChapeauSolution
                 flow_Order_Menu.Controls.Add(menuItem);
             }
         }
+        #endregion
 
-
+        #region Bill
         /** BILL VIEW METHODS **/
+        #endregion
 
-
+        #region Payment View
         /** PAYMENT VIEW METHODS **/
+        #endregion
 
-
+        #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
+        #endregion
 
-
+        #region Kitchen
         /** KITCHEN VIEW METHODS **/
+        #endregion
 
-
+        #region Bar
         /** BAR VIEW METHODS **/
+        #endregion
 
-
+        #region Management
         /** MANAGEMENT METHODS **/
-
-
+        #endregion
     }
 }
