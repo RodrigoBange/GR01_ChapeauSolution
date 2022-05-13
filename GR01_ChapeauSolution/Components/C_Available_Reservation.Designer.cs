@@ -40,6 +40,7 @@
             // 
             this.btn_PlaceReservation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_PlaceReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_PlaceReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PlaceReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PlaceReservation.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PlaceReservation.ForeColor = System.Drawing.Color.White;
@@ -91,7 +92,8 @@
             // 
             // C_Available_Reservation
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.lbl_AvailableTime);
             this.Controls.Add(this.img_Clock);

@@ -737,7 +737,7 @@
             this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Tables.MaximumSize = new System.Drawing.Size(420, 0);
             this.flow_Tables.Name = "flow_Tables";
-            this.flow_Tables.Padding = new System.Windows.Forms.Padding(65, 4, 0, 0);
+            this.flow_Tables.Padding = new System.Windows.Forms.Padding(90, 20, 0, 0);
             this.flow_Tables.Size = new System.Drawing.Size(420, 585);
             this.flow_Tables.TabIndex = 0;
             // 
@@ -748,13 +748,14 @@
             this.btn_Table_1.Enabled = false;
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_1.Location = new System.Drawing.Point(68, 7);
+            this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Table_1.Location = new System.Drawing.Point(93, 23);
             this.btn_Table_1.Margin = new System.Windows.Forms.Padding(3, 3, 60, 20);
             this.btn_Table_1.Name = "btn_Table_1";
-            this.btn_Table_1.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_1.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_1.TabIndex = 0;
             this.btn_Table_1.Text = "1";
+            this.btn_Table_1.UseCompatibleTextRendering = true;
             this.btn_Table_1.UseVisualStyleBackColor = true;
             this.btn_Table_1.Click += new System.EventHandler(this.btn_Table_1_Click);
             // 
@@ -766,11 +767,12 @@
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_2.Location = new System.Drawing.Point(246, 7);
+            this.btn_Table_2.Location = new System.Drawing.Point(246, 23);
             this.btn_Table_2.Name = "btn_Table_2";
-            this.btn_Table_2.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_2.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_2.TabIndex = 1;
             this.btn_Table_2.Text = "2";
+            this.btn_Table_2.UseCompatibleTextRendering = true;
             this.btn_Table_2.UseVisualStyleBackColor = true;
             this.btn_Table_2.Click += new System.EventHandler(this.btn_Table_2_Click);
             // 
@@ -782,12 +784,13 @@
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_3.Location = new System.Drawing.Point(68, 145);
+            this.btn_Table_3.Location = new System.Drawing.Point(93, 136);
             this.btn_Table_3.Margin = new System.Windows.Forms.Padding(3, 3, 60, 20);
             this.btn_Table_3.Name = "btn_Table_3";
-            this.btn_Table_3.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_3.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_3.TabIndex = 2;
             this.btn_Table_3.Text = "3";
+            this.btn_Table_3.UseCompatibleTextRendering = true;
             this.btn_Table_3.UseVisualStyleBackColor = true;
             this.btn_Table_3.Click += new System.EventHandler(this.btn_Table_3_Click);
             // 
@@ -799,11 +802,12 @@
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_4.Location = new System.Drawing.Point(246, 145);
+            this.btn_Table_4.Location = new System.Drawing.Point(246, 136);
             this.btn_Table_4.Name = "btn_Table_4";
-            this.btn_Table_4.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_4.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_4.TabIndex = 3;
             this.btn_Table_4.Text = "4";
+            this.btn_Table_4.UseCompatibleTextRendering = true;
             this.btn_Table_4.UseVisualStyleBackColor = true;
             this.btn_Table_4.Click += new System.EventHandler(this.btn_Table_4_Click);
             // 
@@ -815,12 +819,13 @@
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_5.Location = new System.Drawing.Point(68, 283);
+            this.btn_Table_5.Location = new System.Drawing.Point(93, 249);
             this.btn_Table_5.Margin = new System.Windows.Forms.Padding(3, 3, 60, 20);
             this.btn_Table_5.Name = "btn_Table_5";
-            this.btn_Table_5.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_5.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_5.TabIndex = 4;
             this.btn_Table_5.Text = "5";
+            this.btn_Table_5.UseCompatibleTextRendering = true;
             this.btn_Table_5.UseVisualStyleBackColor = true;
             this.btn_Table_5.Click += new System.EventHandler(this.btn_Table_5_Click);
             // 
@@ -832,11 +837,12 @@
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_6.Location = new System.Drawing.Point(246, 283);
+            this.btn_Table_6.Location = new System.Drawing.Point(246, 249);
             this.btn_Table_6.Name = "btn_Table_6";
-            this.btn_Table_6.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_6.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_6.TabIndex = 5;
             this.btn_Table_6.Text = "6";
+            this.btn_Table_6.UseCompatibleTextRendering = true;
             this.btn_Table_6.UseVisualStyleBackColor = true;
             this.btn_Table_6.Click += new System.EventHandler(this.btn_Table_6_Click);
             // 
@@ -848,12 +854,13 @@
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_7.Location = new System.Drawing.Point(68, 421);
+            this.btn_Table_7.Location = new System.Drawing.Point(93, 362);
             this.btn_Table_7.Margin = new System.Windows.Forms.Padding(3, 3, 60, 20);
             this.btn_Table_7.Name = "btn_Table_7";
-            this.btn_Table_7.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_7.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_7.TabIndex = 6;
             this.btn_Table_7.Text = "7";
+            this.btn_Table_7.UseCompatibleTextRendering = true;
             this.btn_Table_7.UseVisualStyleBackColor = true;
             this.btn_Table_7.Click += new System.EventHandler(this.btn_Table_7_Click);
             // 
@@ -865,11 +872,12 @@
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_8.Location = new System.Drawing.Point(246, 421);
+            this.btn_Table_8.Location = new System.Drawing.Point(246, 362);
             this.btn_Table_8.Name = "btn_Table_8";
-            this.btn_Table_8.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_8.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_8.TabIndex = 7;
             this.btn_Table_8.Text = "8";
+            this.btn_Table_8.UseCompatibleTextRendering = true;
             this.btn_Table_8.UseVisualStyleBackColor = true;
             this.btn_Table_8.Click += new System.EventHandler(this.btn_Table_8_Click);
             // 
@@ -881,12 +889,13 @@
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_9.Location = new System.Drawing.Point(68, 559);
+            this.btn_Table_9.Location = new System.Drawing.Point(93, 475);
             this.btn_Table_9.Margin = new System.Windows.Forms.Padding(3, 3, 60, 3);
             this.btn_Table_9.Name = "btn_Table_9";
-            this.btn_Table_9.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_9.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_9.TabIndex = 8;
             this.btn_Table_9.Text = "9";
+            this.btn_Table_9.UseCompatibleTextRendering = true;
             this.btn_Table_9.UseVisualStyleBackColor = true;
             this.btn_Table_9.Click += new System.EventHandler(this.btn_Table_9_Click);
             // 
@@ -898,11 +907,12 @@
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_10.Location = new System.Drawing.Point(246, 559);
+            this.btn_Table_10.Location = new System.Drawing.Point(246, 475);
             this.btn_Table_10.Name = "btn_Table_10";
-            this.btn_Table_10.Size = new System.Drawing.Size(115, 115);
+            this.btn_Table_10.Size = new System.Drawing.Size(90, 90);
             this.btn_Table_10.TabIndex = 9;
             this.btn_Table_10.Text = "10";
+            this.btn_Table_10.UseCompatibleTextRendering = true;
             this.btn_Table_10.UseVisualStyleBackColor = true;
             this.btn_Table_10.Click += new System.EventHandler(this.btn_Table_10_Click);
             // 
