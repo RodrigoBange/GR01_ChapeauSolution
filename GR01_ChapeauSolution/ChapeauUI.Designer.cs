@@ -280,6 +280,7 @@
             this.tabC_Body.Size = new System.Drawing.Size(788, 875);
             this.tabC_Body.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabC_Body.TabIndex = 0;
+            this.tabC_Body.SelectedIndexChanged += new System.EventHandler(this.SelectedTabChanged);
             // 
             // tab_Login
             // 
@@ -686,14 +687,14 @@
             this.pnl_TableOverview.Panel1.Controls.Add(this.flow_TableOverview);
             this.pnl_TableOverview.Panel1.Controls.Add(this.splitter1);
             this.pnl_TableOverview.Panel1.Controls.Add(this.flow_TableOverview_Title);
-            this.pnl_TableOverview.Panel1MinSize = 355;
+            this.pnl_TableOverview.Panel1MinSize = 0;
             // 
             // pnl_TableOverview.Panel2
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
             this.pnl_TableOverview.Size = new System.Drawing.Size(780, 586);
-            this.pnl_TableOverview.SplitterDistance = 355;
+            this.pnl_TableOverview.SplitterDistance = 354;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
             // 
@@ -704,7 +705,7 @@
             this.flow_TableOverview.Location = new System.Drawing.Point(0, 67);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(355, 519);
+            this.flow_TableOverview.Size = new System.Drawing.Size(354, 519);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // splitter1
@@ -715,7 +716,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 65);
             this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(355, 2);
+            this.splitter1.Size = new System.Drawing.Size(354, 2);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -729,7 +730,7 @@
             this.flow_TableOverview_Title.Margin = new System.Windows.Forms.Padding(2);
             this.flow_TableOverview_Title.Name = "flow_TableOverview_Title";
             this.flow_TableOverview_Title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.flow_TableOverview_Title.Size = new System.Drawing.Size(355, 65);
+            this.flow_TableOverview_Title.Size = new System.Drawing.Size(354, 65);
             this.flow_TableOverview_Title.TabIndex = 0;
             // 
             // img_TableOverview_Title_Table
@@ -753,12 +754,14 @@
             this.lbl_TableOverview_Title.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.lbl_TableOverview_Title.Size = new System.Drawing.Size(264, 65);
             this.lbl_TableOverview_Title.TabIndex = 1;
-            this.lbl_TableOverview_Title.Text = "Table 4";
+            this.lbl_TableOverview_Title.Text = "Table #";
             this.lbl_TableOverview_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_TableOverview_Title.UseCompatibleTextRendering = true;
             // 
             // flow_Tables
             // 
+            this.flow_Tables.AutoSize = true;
+            this.flow_Tables.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flow_Tables.Controls.Add(this.btn_Table_1);
             this.flow_Tables.Controls.Add(this.btn_Table_2);
             this.flow_Tables.Controls.Add(this.btn_Table_3);
@@ -2379,6 +2382,7 @@
             this.pnl_TableOverview.Panel1.ResumeLayout(false);
             this.pnl_TableOverview.Panel1.PerformLayout();
             this.pnl_TableOverview.Panel2.ResumeLayout(false);
+            this.pnl_TableOverview.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_TableOverview)).EndInit();
             this.pnl_TableOverview.ResumeLayout(false);
             this.flow_TableOverview_Title.ResumeLayout(false);

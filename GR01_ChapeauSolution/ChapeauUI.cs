@@ -21,9 +21,13 @@ namespace GR01_ChapeauSolution
         const string hexColorOrder = "#5fadac";
         const string hexColorCheckout = "#8486f0";
 
-        // Variables 
+        // General variables
+        public int tableNumber = 0; 
+
+        // Variables Table Overview
         private bool functionButtonActivated = false;
         private TableFunctions currentFunction;
+
 
         #region General
         public Form_Chapeau()
@@ -72,8 +76,106 @@ namespace GR01_ChapeauSolution
             border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
         }
 
+        private void SelectedTabChanged(object sender, EventArgs e)
+        {
+            // When tab is changed...
+            switch (tabC_Body.SelectedIndex)
+            {
+                // Login View
+                case 0:
+                    {
+                        lbl_Title.Text = "Login";
+                    }
+                    break;
+                // Forgot Password View 
+                case 1:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Forgot Password";
+                    }
+                    break;
+                // Account View 
+                case 2:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Account";
+                    }
+                    break;
+                // Table View 
+                case 3:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Overview";
+
+                        // Test Reservations
+                        TestAddReservations();
+                    }
+                    break;
+                // Order View
+                case 4:
+                    {
+                        // Set title
+                        lbl_Title.Text = $"Order Table #{tableNumber}";
+
+                        //Set border colors (Tab Control)
+                        border_Bottom.BackColor = Color.White;
+                        border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
+                        border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
+                        border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+                        border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
+
+                        // Testing methods
+                        TestMenuItems();
+                    }
+                    break;
+                // Bill View 
+                case 5:
+                    {
+                        // Set title
+                        lbl_Title.Text = $"Bill Table #{tableNumber}";
+                    }
+                    break;
+                // Payment Options View 
+                case 6:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Payment Options";
+                    }
+                    break;
+                // Process Payment View 
+                case 7:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Processing Payment";
+                    }
+                    break;
+                // Management View 
+                case 8:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Management";
+                    }
+                    break;
+                // Bar View 
+                case 9:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Bar Orders";
+                    }
+                    break;
+                // Kitchen View 
+                case 10:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Kitchen Orders";
+                    }
+                    break;
+            }
+        }
+
         private void btn_Return_Click(object sender, EventArgs e)
         {
+            // Return to table view
             tabC_Body.SelectedTab = tab_Tables;
         }
 #endregion
@@ -88,9 +190,6 @@ namespace GR01_ChapeauSolution
 
             // Displays UI, might be handy to check what user type logged in, admin or user and send it through
             DisplayUI();
-
-            // Test Reservations
-            TestAddReservations();
         }
 
         private void btn_Login_Forgot_Password_Click(object sender, EventArgs e)
@@ -251,51 +350,81 @@ namespace GR01_ChapeauSolution
 
         private void btn_Table_1_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 1;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 1";
         }
         private void btn_Table_2_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 2;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 2";
         }
         private void btn_Table_3_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 3;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 3";
         }
         private void btn_Table_4_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 4;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 4";
         }
         private void btn_Table_5_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 5;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 5";
         }
         private void btn_Table_6_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 6;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 6";
         }
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 7;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 7";
         }
         private void btn_Table_8_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 8;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 8";
         }
         private void btn_Table_9_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 9;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 9";
         }
         private void btn_Table_10_Click(object sender, EventArgs e)
         {
+            // Set active table number
+            tableNumber = 10;
+
             DirectToFunctionPage();
             lbl_TableOverview_Title.Text = "Table 10";
         }
@@ -307,6 +436,17 @@ namespace GR01_ChapeauSolution
         {
             for (int i = 0; i < 10; i++)
             {
+                if (i == 0)
+                {
+                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category("Starters");
+                    flow_Order_Menu.Controls.Add(menuCategory);
+                }
+                else if (i == 5)
+                {
+                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category("Main course");
+                    flow_Order_Menu.Controls.Add(menuCategory);
+                }
+
                 C_Order_MenuItem menuItem = new C_Order_MenuItem();
 
                 flow_Order_Menu.Controls.Add(menuItem);
