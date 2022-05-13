@@ -322,6 +322,7 @@
             // 
             this.btn_Login_Forgot_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Login_Forgot_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Login_Forgot_Password.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Login_Forgot_Password.FlatAppearance.BorderSize = 0;
             this.btn_Login_Forgot_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login_Forgot_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -380,6 +381,7 @@
             // 
             this.btn_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -479,6 +481,7 @@
             // 
             this.btn_Forgot_Password_ResetPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Forgot_Password_ResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Forgot_Password_ResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Forgot_Password_ResetPassword.FlatAppearance.BorderSize = 0;
             this.btn_Forgot_Password_ResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Forgot_Password_ResetPassword.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -536,6 +539,7 @@
             // 
             this.btn_Forgot_Password_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Forgot_Password_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Forgot_Password_Login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Forgot_Password_Login.FlatAppearance.BorderSize = 0;
             this.btn_Forgot_Password_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Forgot_Password_Login.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -583,6 +587,7 @@
             // 
             this.btn_Account_Logout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Account_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Account_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Account_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Account_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Account_Logout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -745,6 +750,7 @@
             // 
             this.btn_Table_1.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_1.Enabled = false;
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -763,6 +769,7 @@
             // 
             this.btn_Table_2.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_2.Enabled = false;
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -780,6 +787,7 @@
             // 
             this.btn_Table_3.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_3.Enabled = false;
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -798,6 +806,7 @@
             // 
             this.btn_Table_4.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_4.Enabled = false;
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -815,6 +824,7 @@
             // 
             this.btn_Table_5.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_5.Enabled = false;
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -833,6 +843,7 @@
             // 
             this.btn_Table_6.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_6.Enabled = false;
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -850,6 +861,7 @@
             // 
             this.btn_Table_7.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_7.Enabled = false;
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -868,6 +880,7 @@
             // 
             this.btn_Table_8.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_8.Enabled = false;
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -885,6 +898,7 @@
             // 
             this.btn_Table_9.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_9.Enabled = false;
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -903,6 +917,7 @@
             // 
             this.btn_Table_10.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
             this.btn_Table_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Table_10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Table_10.Enabled = false;
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1060,6 +1075,7 @@
             // btn_Order_Confirm
             // 
             this.btn_Order_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Order_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_Confirm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_Order_Confirm.FlatAppearance.BorderSize = 0;
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1097,6 +1113,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(60, 4);
@@ -1111,6 +1128,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(290, 4);
@@ -1125,6 +1143,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(520, 4);
@@ -1278,6 +1297,7 @@
             // btn_Bill_Checkout
             // 
             this.btn_Bill_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Bill_Checkout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Bill_Checkout.FlatAppearance.BorderSize = 0;
             this.btn_Bill_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Bill_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1355,6 +1375,7 @@
             // 
             this.btn_PaymentOption_1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_PaymentOption_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_PaymentOption_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PaymentOption_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PaymentOption_1.ForeColor = System.Drawing.Color.White;
             this.btn_PaymentOption_1.Location = new System.Drawing.Point(13, 13);
@@ -1367,6 +1388,7 @@
             // btn_PaymentOption_2
             // 
             this.btn_PaymentOption_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_PaymentOption_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PaymentOption_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PaymentOption_2.ForeColor = System.Drawing.Color.White;
             this.btn_PaymentOption_2.Location = new System.Drawing.Point(13, 119);
@@ -1379,6 +1401,7 @@
             // btn_PaymentOption_3
             // 
             this.btn_PaymentOption_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_PaymentOption_3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PaymentOption_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PaymentOption_3.ForeColor = System.Drawing.Color.White;
             this.btn_PaymentOption_3.Location = new System.Drawing.Point(13, 225);
@@ -1391,6 +1414,7 @@
             // btn_PaymentOption_4
             // 
             this.btn_PaymentOption_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_PaymentOption_4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PaymentOption_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PaymentOption_4.ForeColor = System.Drawing.Color.White;
             this.btn_PaymentOption_4.Location = new System.Drawing.Point(13, 331);
@@ -1403,6 +1427,7 @@
             // btn_PaymentOption_5
             // 
             this.btn_PaymentOption_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_PaymentOption_5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PaymentOption_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_PaymentOption_5.ForeColor = System.Drawing.Color.White;
             this.btn_PaymentOption_5.Location = new System.Drawing.Point(13, 437);
@@ -1506,6 +1531,7 @@
             // 
             this.btn_ProccessPayment_Confirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_ProccessPayment_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_ProccessPayment_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ProccessPayment_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ProccessPayment_Confirm.ForeColor = System.Drawing.Color.White;
             this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(15, 421);
@@ -1745,6 +1771,7 @@
             // btn_Management_Category1
             // 
             this.btn_Management_Category1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Management_Category1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Management_Category1.FlatAppearance.BorderSize = 0;
             this.btn_Management_Category1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Management_Category1.Location = new System.Drawing.Point(3, 9);
@@ -1758,6 +1785,7 @@
             // btn_Management_Category2
             // 
             this.btn_Management_Category2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Management_Category2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Management_Category2.FlatAppearance.BorderSize = 0;
             this.btn_Management_Category2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Management_Category2.Location = new System.Drawing.Point(226, 9);
@@ -1771,6 +1799,7 @@
             // btn_Management_Category3
             // 
             this.btn_Management_Category3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Management_Category3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Management_Category3.FlatAppearance.BorderSize = 0;
             this.btn_Management_Category3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Management_Category3.Location = new System.Drawing.Point(449, 9);
@@ -1925,6 +1954,7 @@
             // 
             this.btn_Return.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon;
             this.btn_Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Return.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Return.FlatAppearance.BorderSize = 0;
             this.btn_Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Return.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1938,6 +1968,7 @@
             // 
             // btn_Return_Admin
             // 
+            this.btn_Return_Admin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Return_Admin.FlatAppearance.BorderSize = 0;
             this.btn_Return_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Return_Admin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1979,6 +2010,7 @@
             this.btn_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
             this.btn_User.BackgroundImage = global::ChapeauUI.Properties.Resources.User_Icon;
             this.btn_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.FlatAppearance.BorderSize = 0;
             this.btn_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_User.Location = new System.Drawing.Point(716, 12);
@@ -2018,6 +2050,7 @@
             // 
             // btn_ActivateReservation
             // 
+            this.btn_ActivateReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ActivateReservation.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_ActivateReservation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.btn_ActivateReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2039,6 +2072,7 @@
             // 
             // btn_ActivateOrdering
             // 
+            this.btn_ActivateOrdering.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ActivateOrdering.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_ActivateOrdering.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.btn_ActivateOrdering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2060,6 +2094,7 @@
             // 
             // btn_ActivateCheckout
             // 
+            this.btn_ActivateCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ActivateCheckout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_ActivateCheckout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.btn_ActivateCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
