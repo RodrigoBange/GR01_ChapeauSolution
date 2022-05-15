@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapeauLogic;
 
 namespace GR01_ChapeauSolution
 {
@@ -22,20 +23,29 @@ namespace GR01_ChapeauSolution
         const string hexColorCheckout = "#8486f0";
 
         // General variables
-        public int tableNumber = 0; 
+        public int tableNumber = 0;
+        public List<MenuItem> menuItems;
 
         // Variables Table Overview
         private bool functionButtonActivated = false;
-        private TableFunctions currentFunction;
+        private TableFunction currentFunction;
+
+        // Variables Order Overview
+        private MenuCategory currentCategory = MenuCategory.Lunch;
 
 
         #region General
+        // Constructor
         public Form_Chapeau()
         {
             // Initialize
             InitializeComponent();
+
+            // Initialize menuItems 
+            menuItems = new List<MenuItem>();
         }
 
+        // On Load
         private void FormChapeau_Load(object sender, EventArgs e)
         {
             // Hide tab Control tabs for user
@@ -124,8 +134,9 @@ namespace GR01_ChapeauSolution
                         border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
                         border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
 
-                        // Testing methods
-                        TestMenuItems();
+                        // Load default menu on tab open
+                        currentCategory = MenuCategory.Lunch;
+                        LoadMenu(MenuCategory.Lunch);
                     }
                     break;
                 // Bill View 
@@ -220,7 +231,7 @@ namespace GR01_ChapeauSolution
         private void DisableAllButtons()
         {
             // Disable all function buttons
-            currentFunction = TableFunctions.None;
+            currentFunction = TableFunction.None;
 
             //Reset all colors
             btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorDark);
@@ -257,33 +268,33 @@ namespace GR01_ChapeauSolution
             btn_Table_10.Enabled = true;
         }
 
-        private void ActivateFunctionButton(TableFunctions function)
+        private void ActivateFunctionButton(TableFunction function)
         {
             // If the new function is not the same as old function...
             if (function != currentFunction)
             {
                 DisableAllButtons();
-                if (function == TableFunctions.Reserve)
+                if (function == TableFunction.Reserve)
                 {
-                    currentFunction = TableFunctions.Reserve;
+                    currentFunction = TableFunction.Reserve;
                     // Set colors
                     btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorReserve);
                     pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorReserve);
                     ActivateAllTables();
                     tabC_Body.SelectedTab = tab_Tables;
                 }
-                else if (function == TableFunctions.Order)
+                else if (function == TableFunction.Order)
                 {
-                    currentFunction = TableFunctions.Order;
+                    currentFunction = TableFunction.Order;
                     // Set colors
                     btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorOrder);
                     pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorOrder);
                     ActivateAllTables();
                     tabC_Body.SelectedTab = tab_Tables;
                 }
-                else if (function == TableFunctions.Checkout)
+                else if (function == TableFunction.Checkout)
                 {
-                    currentFunction = TableFunctions.Checkout;
+                    currentFunction = TableFunction.Checkout;
                     // Set colors
                     btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
                     pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
@@ -317,32 +328,32 @@ namespace GR01_ChapeauSolution
         private void btn_ActivateReservation_Click(object sender, EventArgs e)
         {
             // Activate Reserve functionality
-            ActivateFunctionButton(TableFunctions.Reserve);
+            ActivateFunctionButton(TableFunction.Reserve);
         }
 
         private void btn_ActivateOrdering_Click(object sender, EventArgs e)
         {
             // Activate Order functionality
-            ActivateFunctionButton(TableFunctions.Order);
+            ActivateFunctionButton(TableFunction.Order);
         }
 
         private void btn_ActivateCheckout_Click(object sender, EventArgs e)
         {
             // Activate Checkout functionality
-            ActivateFunctionButton(TableFunctions.Checkout);
+            ActivateFunctionButton(TableFunction.Checkout);
         }
 
         private void DirectToFunctionPage()
         {
-            if (currentFunction == TableFunctions.Reserve)
+            if (currentFunction == TableFunction.Reserve)
             {
                 
             }
-            else if (currentFunction == TableFunctions.Order)
+            else if (currentFunction == TableFunction.Order)
             {
                 tabC_Body.SelectedTab = tab_Order;
             }
-            else if (currentFunction == TableFunctions.Checkout)
+            else if (currentFunction == TableFunction.Checkout)
             {
                 tabC_Body.SelectedTab = tab_Bill;
             }
@@ -432,24 +443,78 @@ namespace GR01_ChapeauSolution
 
         #region Order
         /** ORDER VIEW METHODS **/
-        private void TestMenuItems()
+        private void LoadMenu(MenuCategory category)
         {
-            for (int i = 0; i < 10; i++)
+            // Call service to fill list with items 
+            OrderService orderService = new OrderService();
+
+            // Get the menu items from a certain category
+            menuItems = orderService.GetMenuItems(category);
+
+            // Load menu diplay
+            DisplayMenu();
+        }
+
+        private void DisplayMenu()
+        {
+            // Clear previous before loading new
+            flow_Order_Menu.Controls.Clear();
+
+            // Display menu items and sub category titles
+            for (int i = 0; i < menuItems.Count; i++)
             {
-                if (i == 0)
+                if (i == 0 || (menuItems[i].SubCategory != menuItems[i - 1].SubCategory))
                 {
-                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category("Starters");
-                    flow_Order_Menu.Controls.Add(menuCategory);
-                }
-                else if (i == 5)
-                {
-                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category("Main course");
+                    // Add sub category title
+                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category(menuItems[i].SubCategory);
                     flow_Order_Menu.Controls.Add(menuCategory);
                 }
 
-                C_Order_MenuItem menuItem = new C_Order_MenuItem();
+                // Add menu item
+                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(menuItems[i]);
+                flow_Order_Menu.Controls.Add(c_MenuItem);
+            }
+        }
 
-                flow_Order_Menu.Controls.Add(menuItem);
+        private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
+        {
+            // Request the lunch menu
+            // Check before requesting to avoid uneccessary database requests
+            if (currentCategory != MenuCategory.Lunch)
+            {
+                // Set new current category 
+                currentCategory = MenuCategory.Lunch;
+
+                // Load menu
+                LoadMenu(MenuCategory.Lunch);
+            }
+        }
+
+        private void btn_Order_DinnerMenu_Click(object sender, EventArgs e)
+        {
+            // Request the dinner menu
+            // Check before requesting to avoid uneccessary database requests
+            if (currentCategory != MenuCategory.Dinner)
+            {
+                // Set new current category
+                currentCategory = MenuCategory.Dinner;
+
+                // Load menu
+                LoadMenu(MenuCategory.Dinner);
+            }
+        }
+
+        private void btn_Order_DrinksMenu_Click(object sender, EventArgs e)
+        {
+            // Request the drinks menu
+            // Check before requesting to avoid uneccessary database requests
+            if (currentCategory != MenuCategory.Drinks)
+            {
+                // Set new current category
+                currentCategory = MenuCategory.Drinks;
+
+                // Load menu
+                LoadMenu(MenuCategory.Drinks);
             }
         }
         #endregion
@@ -477,5 +542,6 @@ namespace GR01_ChapeauSolution
         #region Management
         /** MANAGEMENT METHODS **/
         #endregion
+
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 1"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 2"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 3"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
             this.tabC_Body = new System.Windows.Forms.TabControl();
             this.tab_Login = new System.Windows.Forms.TabPage();
@@ -96,9 +96,9 @@
             this.btn_Order_Confirm = new System.Windows.Forms.Button();
             this.pnl_Order_Categories = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Order_LunchMenu = new System.Windows.Forms.Button();
+            this.btn_Order_DinnerMenu = new System.Windows.Forms.Button();
+            this.btn_Order_DrinksMenu = new System.Windows.Forms.Button();
             this.tab_Bill = new System.Windows.Forms.TabPage();
             this.pnl_Bill = new System.Windows.Forms.Panel();
             this.flow_Bill = new System.Windows.Forms.FlowLayoutPanel();
@@ -1152,9 +1152,9 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Order_LunchMenu);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Order_DinnerMenu);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Order_DrinksMenu);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -1162,50 +1162,53 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 58);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button1
+            // btn_Order_LunchMenu
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(60, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Lunch";
-            this.button1.UseCompatibleTextRendering = true;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Order_LunchMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.btn_Order_LunchMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Order_LunchMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Order_LunchMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Order_LunchMenu.Location = new System.Drawing.Point(60, 4);
+            this.btn_Order_LunchMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_LunchMenu.Name = "btn_Order_LunchMenu";
+            this.btn_Order_LunchMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_LunchMenu.TabIndex = 0;
+            this.btn_Order_LunchMenu.Text = "Lunch";
+            this.btn_Order_LunchMenu.UseCompatibleTextRendering = true;
+            this.btn_Order_LunchMenu.UseVisualStyleBackColor = false;
+            this.btn_Order_LunchMenu.Click += new System.EventHandler(this.btn_Order_LunchMenu_Click);
             // 
-            // button2
+            // btn_Order_DinnerMenu
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(290, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Dinner";
-            this.button2.UseCompatibleTextRendering = true;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_Order_DinnerMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.btn_Order_DinnerMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Order_DinnerMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Order_DinnerMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Order_DinnerMenu.Location = new System.Drawing.Point(290, 4);
+            this.btn_Order_DinnerMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_DinnerMenu.Name = "btn_Order_DinnerMenu";
+            this.btn_Order_DinnerMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_DinnerMenu.TabIndex = 1;
+            this.btn_Order_DinnerMenu.Text = "Dinner";
+            this.btn_Order_DinnerMenu.UseCompatibleTextRendering = true;
+            this.btn_Order_DinnerMenu.UseVisualStyleBackColor = false;
+            this.btn_Order_DinnerMenu.Click += new System.EventHandler(this.btn_Order_DinnerMenu_Click);
             // 
-            // button3
+            // btn_Order_DrinksMenu
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(520, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Drinks";
-            this.button3.UseCompatibleTextRendering = true;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Order_DrinksMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.btn_Order_DrinksMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Order_DrinksMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Order_DrinksMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Order_DrinksMenu.Location = new System.Drawing.Point(520, 4);
+            this.btn_Order_DrinksMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Order_DrinksMenu.Name = "btn_Order_DrinksMenu";
+            this.btn_Order_DrinksMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_DrinksMenu.TabIndex = 2;
+            this.btn_Order_DrinksMenu.Text = "Drinks";
+            this.btn_Order_DrinksMenu.UseCompatibleTextRendering = true;
+            this.btn_Order_DrinksMenu.UseVisualStyleBackColor = false;
+            this.btn_Order_DrinksMenu.Click += new System.EventHandler(this.btn_Order_DrinksMenu_Click);
             // 
             // tab_Bill
             // 
@@ -1811,9 +1814,9 @@
             this.listView_Management.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView_Management.HideSelection = false;
             this.listView_Management.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
             this.listView_Management.Location = new System.Drawing.Point(0, 0);
             this.listView_Management.Margin = new System.Windows.Forms.Padding(2);
             this.listView_Management.Name = "listView_Management";
@@ -2593,9 +2596,9 @@
         private System.Windows.Forms.Label lbl_TableOverview_Title;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Order_LunchMenu;
+        private System.Windows.Forms.Button btn_Order_DinnerMenu;
+        private System.Windows.Forms.Button btn_Order_DrinksMenu;
         private System.Windows.Forms.TabPage tab_Account;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

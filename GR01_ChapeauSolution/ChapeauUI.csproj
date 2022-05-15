@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChapeauLogic\ChapeauLogic.csproj" />
     <ProjectReference Include="..\ChapeauModel\ChapeauModel.csproj" />
   </ItemGroup>
 

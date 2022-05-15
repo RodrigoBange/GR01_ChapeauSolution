@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ChapeauModel
 {
-    public enum TableFunctions
+    public enum MenuCategory
     {
-        None=0, Reserve, Order, Checkout
+        Lunch = 1, Dinner, Drinks
     }
 }

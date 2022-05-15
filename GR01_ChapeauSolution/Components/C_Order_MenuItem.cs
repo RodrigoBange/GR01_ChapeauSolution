@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChapeauModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,21 +17,18 @@ namespace ChapeauUI.Components
         const string hexColorDark = "#2D2D3A";
 
         // Variables
+        MenuItem menuItem; 
         public string productName = "Test product";
         public double productPrice = 10.59;
 
-        public C_Order_MenuItem()
+        public C_Order_MenuItem(MenuItem item)
         {
             InitializeComponent();
 
-            // Test method for now, needs a Product object later
-            SetProductInfo();
-        }
-
-        private void SetProductInfo()
-        {
-            lbl_ItemName.Text = productName;
-            lbl_Price.Text = productPrice.ToString();
+            // Set and display product information
+            menuItem = item;
+            lbl_ItemName.Text = item.Name;
+            lbl_Price.Text = item.Price.ToString("0.00");
         }
 
         // Click event
