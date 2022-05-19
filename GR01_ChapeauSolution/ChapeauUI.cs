@@ -223,7 +223,33 @@ namespace GR01_ChapeauSolution
         {
             tabC_Body.SelectedTab = tab_Account;
             DisableAllButtons();
+
+            // Set colors
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
         }
+
+        private void btn_Account_Logout_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Login;
+         
+            // Hide header and footer elements
+            lbl_OrderCounter.Visible = false;
+            background_OrderCounter.Visible = false;
+            btn_User.Visible = false;
+            btn_Return.Visible = false;
+            navMenu.Visible = false;
+
+            // Set colors
+            pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
+        }
+
         #endregion
 
         #region Table View
@@ -542,6 +568,5 @@ namespace GR01_ChapeauSolution
         #region Management
         /** MANAGEMENT METHODS **/
         #endregion
-
     }
 }
