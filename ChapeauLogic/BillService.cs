@@ -8,11 +8,11 @@ namespace ChapeauLogic
 {
     public class BillService
     {
-        private BillDao billDAO;
+        private BillDao billDAO = new BillDao();
         
-        public Bill GetBill()
-        {
-            return billDAO.GetBill();
-        }
+        //public Bill GetBill()
+        //{
+        //    return billDAO.GetBill();
+        //}
     }
 }
