@@ -10,9 +10,11 @@ namespace ChapeauLogic
     {
         private BillDao billDAO;
         
-        public Bill GetBill()
+        public Bill GetBill(int billId)
         {
-            return billDAO.GetBill();
+            Bill bill = new Bill(billId);
+            bill.BillItems = billDAO.GetBillItems(billId);
+            return bill;
         }
     }
 }

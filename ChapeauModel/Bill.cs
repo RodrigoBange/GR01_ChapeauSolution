@@ -15,5 +15,11 @@ namespace ChapeauModel
         public float TotalAmountPaid { get { return TotalBillPrice + Tip; } }
         public string RestaurantComment { get; set; }
         public bool IsPaid { get; set; }
+
+        public Bill(int billId)
+        {
+            BillId = billId;
+            BillItems = new List<BillItem>();
+        }
     }
 }
