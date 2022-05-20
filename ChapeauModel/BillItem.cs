@@ -8,7 +8,8 @@ namespace ChapeauModel
     {
         public string Name { get; set; }
         public int Count { get; set; }
-        public int VAT { get; set; }
+        public int VATPercentage { get; set; }
+        public float VATPrice { get { return (float)(PriceWithVAT - BasePrice); } }
         public float BasePrice { get; set; }
         public float PriceWithVAT { get; set; }
         public float TotalPrice { get { return PriceWithVAT * Count; } }

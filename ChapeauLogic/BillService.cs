@@ -12,8 +12,8 @@ namespace ChapeauLogic
         
         public Bill GetBill(int billId)
         {
-            Bill bill = new Bill(billId);
-            bill.BillItems = billDAO.GetBillItems(billId);
+            Bill bill = new Bill(billId, billDAO.GetBillItems(billId));
+            
             return bill;
         }
     }
