@@ -11,7 +11,7 @@ namespace ChapeauDAL
     public class BillDao : BaseDao
     {
         string query;
-        public List<BillItem> GetBillItems(int billId) //Gets all items linked to a bill
+        public List<BillItem> GetBillItems(int billId) //Gets all items linked to a bill (billID)
         {
             query = "SELECT m.itemName, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax "
                 + "FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID "
@@ -82,6 +82,8 @@ namespace ChapeauDAL
                 int billId;
 
                 DataRow dr = dataTable.Rows[0];
+
+                //If datarow is empty, return billId = 0
                 if (!dr.IsNull("orderID"))
                 {
                     billId = (int)dr["orderID"];

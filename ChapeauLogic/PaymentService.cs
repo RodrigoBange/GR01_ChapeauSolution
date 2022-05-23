@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ChapeauModel;
 
-namespace ChapeauDAL
+namespace ChapeauLogic
 {
-    public class PaymentDao
+    internal class PaymentService
     {
-        
-
     }
 }

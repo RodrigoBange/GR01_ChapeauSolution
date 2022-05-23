@@ -16,11 +16,10 @@ namespace ChapeauModel
         public float TotalBillPrice { get { return BaseBillPrice + PriceAlcoholicVAT + PriceNonAlcoholicVAT; } }
         public float Tip { get; set; }
         public float TotalAmountPaid { get { return TotalBillPrice + Tip; } }
-        public string RestaurantComment { get; set; }
+        
         public bool IsPaid { get; set; }
-        public DateTime TimePaid { get; set; }
-
-        public enum PaymentType PaymentType { get; set; }
+        
+        
 
         public Bill(int billId, List<BillItem> items)
         {
