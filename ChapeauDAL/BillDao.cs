@@ -11,7 +11,9 @@ namespace ChapeauDAL
     public class BillDao : BaseDao
     {
         string query;
-        public List<BillItem> GetBillItems(int billId) //Gets all items linked to a bill (billID)
+        
+        //Gets all items linked to a bill (billID)
+        public List<BillItem> GetBillItems(int billId) 
         {
             query = "SELECT m.itemName, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax "
                 + "FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID "
@@ -24,8 +26,8 @@ namespace ChapeauDAL
             return ReadBillItemTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
-
-        public int FindUnpaidBill(int tableNr) //Checks if a table has an unpaid bill, and if so, returns it
+        //Checks if a table has an unpaid bill, and if so, returns it
+        public int FindUnpaidBill(int tableNr) 
         {
             query = "SELECT orderID "
                     + "FROM[ORDER] "
@@ -37,11 +39,6 @@ namespace ChapeauDAL
             int billId = ReadBillIDTable(ExecuteSelectQuery(query, sqlParameters));
 
             return billId;
-        }
-
-        public void InsertPayment(Bill bill)
-        {
-
         }
 
         private List<BillItem> ReadBillItemTable(DataTable dataTable)
