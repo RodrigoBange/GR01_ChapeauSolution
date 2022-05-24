@@ -1,4 +1,5 @@
 ﻿using ChapeauModel;
+using GR01_ChapeauSolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +18,21 @@ namespace ChapeauUI.Components
         const string hexColorDark = "#2D2D3A";
 
         // Variables
+        Form_Chapeau chapeauForm;
         MenuItem menuItem; 
         public string productName = "Test product";
         public double productPrice = 10.59;
 
-        public C_Order_MenuItem(MenuItem item)
+        public C_Order_MenuItem(Form_Chapeau form, MenuItem item)
         {
             InitializeComponent();
 
+            // Set reference to main form
+            chapeauForm = form;
+
             // Set and display product information
             menuItem = item;
-            lbl_ItemName.Text = item.Name;
-            lbl_Price.Text = item.Price.ToString("0.00");
+            lbl_ItemName.Text = item.FullName;
         }
 
         // Click event
@@ -39,8 +43,8 @@ namespace ChapeauUI.Components
             await Task.Delay(200);
             this.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
-            // Display message (Test)
-            MessageBox.Show("Added item.");
+            // Add product
+            chapeauForm.AddProduct(menuItem);
         }
     }
 }

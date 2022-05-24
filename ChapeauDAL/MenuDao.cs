@@ -7,9 +7,8 @@ using System.Text;
 
 namespace ChapeauDAL
 {
-    public class OrderDao : BaseDao
+    public class MenuDao : BaseDao
     {
-        // Not needed anymore!!
         public List<MenuItem> GetMenuItems(MenuCategory category)
         {
             // Decide query here 
@@ -20,17 +19,17 @@ namespace ChapeauDAL
             {
                 case MenuCategory.Lunch:
                     {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN LUNCH_MENU AS L ON M.itemID = L.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Mains%' THEN '2' WHEN M.itemType LIKE 'Desserts%' THEN '3' END ASC, M.itemName; ";
+                        query = "SELECT M.itemID, M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN LUNCH_MENU AS L ON M.itemID = L.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Mains%' THEN '2' WHEN M.itemType LIKE 'Desserts%' THEN '3' END ASC, M.itemName; ";
                     }
                     break;
                 case MenuCategory.Dinner:
                     {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DINNER_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Entrements%' THEN '2' WHEN M.itemType LIKE 'Mains%' THEN '3' WHEN M.itemType LIKE 'Desserts%' THEN '4' END ASC, M.itemName; ";
+                        query = "SELECT M.itemID, M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DINNER_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Entrements%' THEN '2' WHEN M.itemType LIKE 'Mains%' THEN '3' WHEN M.itemType LIKE 'Desserts%' THEN '4' END ASC, M.itemName; ";
                     }
                     break;
                 case MenuCategory.Drinks:
                     {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DRINKS_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Soft%' THEN '1' WHEN M.itemType LIKE 'Beers%' THEN '2' WHEN M.itemType LIKE 'Wines by the glass%' THEN '3' WHEN M.itemType LIKE 'Wines by the bottle%' THEN '4' WHEN M.itemType LIKE 'Spirit%' THEN '5' WHEN M.itemType LIKE 'Coffee%' THEN '6' END ASC, M.itemName; ";
+                        query = "SELECT M.itemID, M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DRINKS_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Soft%' THEN '1' WHEN M.itemType LIKE 'Beers%' THEN '2' WHEN M.itemType LIKE 'Wines by the glass%' THEN '3' WHEN M.itemType LIKE 'Wines by the bottle%' THEN '4' WHEN M.itemType LIKE 'Spirit%' THEN '5' WHEN M.itemType LIKE 'Coffee%' THEN '6' END ASC, M.itemName; ";
                     }
                     break;
             }
@@ -54,6 +53,7 @@ namespace ChapeauDAL
                 {
                     MenuItem item = new MenuItem()
                     {
+                        ItemID = (int)dr["itemID"],
                         FullName = (string)dr["itemName"],
                         SubCategory = (string)dr["itemType"],
                         Price = (double)(decimal)dr["price"]

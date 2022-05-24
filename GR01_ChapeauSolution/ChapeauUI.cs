@@ -25,6 +25,7 @@ namespace GR01_ChapeauSolution
         // General variables
         public int tableNumber = 0;
         public List<MenuItem> menuItems;
+        public List<OrderItem> orderItems;
 
         // Variables Table Overview
         private bool functionButtonActivated = false;
@@ -43,6 +44,9 @@ namespace GR01_ChapeauSolution
 
             // Initialize menuItems 
             menuItems = new List<MenuItem>();
+
+            // Initialize orderItems
+            orderItems = new List<OrderItem>();
         }
 
         // On Load
@@ -137,6 +141,9 @@ namespace GR01_ChapeauSolution
                         // Load default menu on tab open
                         currentCategory = MenuCategory.Lunch;
                         LoadMenu(MenuCategory.Lunch);
+
+                        // Clear orderedItems on launch
+                        orderItems.Clear();
                     }
                     break;
                 // Bill View 
@@ -472,10 +479,10 @@ namespace GR01_ChapeauSolution
         private void LoadMenu(MenuCategory category)
         {
             // Call service to fill list with items 
-            OrderService orderService = new OrderService();
+            MenuService menuService = new MenuService();
 
             // Get the menu items from a certain category
-            menuItems = orderService.GetMenuItems(category);
+            menuItems = menuService.GetMenuItems(category);
 
             // Load menu diplay
             DisplayMenu();
@@ -497,8 +504,69 @@ namespace GR01_ChapeauSolution
                 }
 
                 // Add menu item
-                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(menuItems[i]);
+                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i]);
                 flow_Order_Menu.Controls.Add(c_MenuItem);
+            }
+        }
+
+        public void AddProduct(MenuItem item)
+        {
+            // Add menu item to order list
+            OrderItem orderItem = new OrderItem(item.ItemID);
+
+            // Check if orderItem already exists...
+            foreach (OrderItem orderedItem in orderItems)
+            {
+                if (orderItem.ItemID == orderedItem.ItemID)
+                {
+                    // Update quantity
+                    orderedItem.Quantity++;
+                    return;
+                }
+            }
+
+            // Otherwise continue with adding a new object to list
+            orderItems.Add(orderItem);
+
+            // Create new Order Item Component
+            C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, item);
+
+            // Add component to order list
+            flow_Order_Items.Controls.Add(orderDisplayItem);
+
+            // Resize items if scrollbar is visible
+            CheckOrderedItemsSize();
+        }
+
+        public void RemoveProduct(MenuItem item)
+        {
+            // Add menu item to order list
+            //orderItems.Remove(item);
+
+            // -- quanity of object
+
+            // Resize items if scrollbar is visible
+            CheckOrderedItemsSize();
+        }
+
+        public void CheckOrderedItemsSize()
+        {
+            // Change all ordered item sizes when scrollbar is visible
+            if (flow_Order_Items.VerticalScroll.Visible)
+            {
+                foreach (C_Order_OrderItem item in flow_Order_Items.Controls)
+                {
+                    // Set new minimum size
+                    item.MinimumSize = new Size(344, 137);
+                }
+            }
+            else // Change all ordered item sizes when scrollbar is not visible
+            {
+                foreach (C_Order_OrderItem item in flow_Order_Items.Controls)
+                {
+                    // Set new minimum size
+                    item.MinimumSize = new Size(370, 137);
+                }
             }
         }
 
