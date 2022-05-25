@@ -24,8 +24,9 @@ namespace GR01_ChapeauSolution
 
         // General variables
         public int tableNumber = 0;
+        // Maybe split into 3 menu's that only fill upon opening table screen to avoid constant refilling. 
         public List<MenuItem> menuItems;
-        public List<OrderItem> orderItems;
+        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems;
 
         // Variables Table Overview
         private bool functionButtonActivated = false;
@@ -33,7 +34,6 @@ namespace GR01_ChapeauSolution
 
         // Variables Order Overview
         private MenuCategory currentCategory = MenuCategory.Lunch;
-
 
         #region General
         // Constructor
@@ -46,7 +46,7 @@ namespace GR01_ChapeauSolution
             menuItems = new List<MenuItem>();
 
             // Initialize orderItems
-            orderItems = new List<OrderItem>();
+            orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
         }
 
         // On Load
@@ -504,32 +504,48 @@ namespace GR01_ChapeauSolution
                 }
 
                 // Add menu item
-                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i]);
+                // Get short name later when accessible
+                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i].FullName, menuItems[i].ItemID);
                 flow_Order_Menu.Controls.Add(c_MenuItem);
             }
         }
 
-        public void AddProduct(MenuItem item)
+        public void AddOrderItem(int itemID)
         {
-            // Add menu item to order list
-            OrderItem orderItem = new OrderItem(item.ItemID);
-
-            // Check if orderItem already exists...
-            foreach (OrderItem orderedItem in orderItems)
+            // Check if item already exists in order list
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
-                if (orderItem.ItemID == orderedItem.ItemID)
+                // If the item has already been added...
+                if (item.Item1.ItemID == itemID)
                 {
-                    // Update quantity
-                    orderedItem.Quantity++;
+                    // Add to quantity
+                    item.Item1.Quantity++;
+                    item.Item2.Quantity++;
+
+                    // Update display
+                    item.Item2.UpdateInfo();
+
+                    // Return
                     return;
                 }
             }
 
-            // Otherwise continue with adding a new object to list
-            orderItems.Add(orderItem);
+            // Create a new order item if it doesn't exist... (Should be done differently)
+            CreateNewOrderItem(itemID);
+        }
 
-            // Create new Order Item Component
-            C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, item);
+        public void CreateNewOrderItem(int itemID)
+        {
+            // If item doesn't exist...
+            // Create new orderItem object with the ID
+            OrderItem orderItem = new OrderItem(itemID);
+
+            // Create new OrderItem component 
+            // Requires first to get the MenuItem object with the ID 
+            C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, itemID, "test", 0.50, 1);
+
+            // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
+            orderItems.Add(new Tuple<OrderItem, C_Order_OrderItem>(orderItem, orderDisplayItem));
 
             // Add component to order list
             flow_Order_Items.Controls.Add(orderDisplayItem);
@@ -538,12 +554,32 @@ namespace GR01_ChapeauSolution
             CheckOrderedItemsSize();
         }
 
-        public void RemoveProduct(MenuItem item)
+        public void RemoveOrderItem(int itemID)
         {
-            // Add menu item to order list
-            //orderItems.Remove(item);
+            // Check if item exists in order list
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
+            {
+                // If the item has the correct itemID
+                if (item.Item1.ItemID == itemID)
+                {
+                    // Remove one from quantity
+                    item.Item1.Quantity--;
+                    item.Item2.Quantity--;
 
-            // -- quanity of object
+                    // Update display
+                    item.Item2.UpdateInfo();
+
+                    // If the quantity is 0
+                    if (item.Item1.Quantity == 0)
+                    {
+                        // Delete product from orderItems
+                        orderItems.Remove(item);
+
+                        // Break from loop
+                        break;
+                    }
+                }
+            }
 
             // Resize items if scrollbar is visible
             CheckOrderedItemsSize();

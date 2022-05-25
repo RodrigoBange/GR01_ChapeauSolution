@@ -12,53 +12,58 @@ namespace ChapeauUI.Components
 {
     public partial class C_Order_OrderItem : UserControl
     {
+        // Form_Chapeau object
         private Form_Chapeau chapeauForm;
-        MenuItem item;
-        OrderItem orderItem;
+
+        // Automatic Properties
+        public int ItemID { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
 
         // Constructor
-        public C_Order_OrderItem(Form_Chapeau form, MenuItem item)
+        public C_Order_OrderItem(Form_Chapeau form, int itemID, string itemName, double price, int quantity)
         {
             InitializeComponent();
 
             // Set reference to main form
             chapeauForm = form;
+            
+            // Set variables
+            ItemID = itemID;
+            Price = price;
+            Quantity = quantity;
 
-            // Set OrderID
-            orderItem = new OrderItem(item.ItemID);
-            // Get MenuItem object
-            this.item = item;
-
-            lbl_ProductName.Text = item.FullName;
+            // Set display element text
+            lbl_ProductName.Text = itemName;
+            UpdateInfo();
         }
 
         private void btn_RemoveItem_Click(object sender, EventArgs e)
         {
-            if (orderItem.Quantity == 0)
-            {
-                // Remove ordered item and component from list...
-            }
-            else
-            {
-                // Maybe do this in the chapeauform??
-                // Remove one from quantity
-                orderItem.Quantity--;
-
-                // Update display
-                lbl_Count.Text = orderItem.Quantity.ToString();
-            }
+            // Remove from item
+            chapeauForm.RemoveOrderItem(ItemID);
         }
 
         private void btn_AddItem_Click(object sender, EventArgs e)
         {
-            // Maybe do this in the chapeauform??
-            // This needs to be somehow done in the form due to also being able to add via menu item....
-            // Add one to quantity
-            //chapeauForm.AddProduct(item);
-            orderItem.Quantity++;
+            // Add to item
+            chapeauForm.AddOrderItem(ItemID);
+        }
 
-            // Update display
-            lbl_Count.Text = orderItem.Quantity.ToString();
+        public void UpdateInfo()
+        {
+            // If there is an item to display...
+            if (Quantity != 0)
+            {
+                // Update display information
+                lbl_Count.Text = Quantity.ToString();
+                lbl_ProductTotalPrice.Text = $"€ {Price * Quantity:N2}";
+            }
+            else
+            {
+                // Delete self
+                this.Parent.Controls.Remove(this);
+            }
         }
     }
 }

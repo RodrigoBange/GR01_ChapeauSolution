@@ -17,22 +17,25 @@ namespace ChapeauUI.Components
         const string hexColorBright = "#3C3C4E";
         const string hexColorDark = "#2D2D3A";
 
-        // Variables
+        // Form_Chapeau object
         Form_Chapeau chapeauForm;
-        MenuItem menuItem; 
-        public string productName = "Test product";
-        public double productPrice = 10.59;
 
-        public C_Order_MenuItem(Form_Chapeau form, MenuItem item)
+        // Automatic Property for ItemID
+        public int ItemID { get; set; }
+
+        // Constructor
+        public C_Order_MenuItem(Form_Chapeau form, string itemName, int itemID)
         {
             InitializeComponent();
 
             // Set reference to main form
             chapeauForm = form;
 
+            // Set ItemID
+            ItemID = itemID;
+
             // Set and display product information
-            menuItem = item;
-            lbl_ItemName.Text = item.FullName;
+            lbl_ItemName.Text = itemName;
         }
 
         // Click event
@@ -44,7 +47,7 @@ namespace ChapeauUI.Components
             this.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
             // Add product
-            chapeauForm.AddProduct(menuItem);
+            chapeauForm.AddOrderItem(ItemID);
         }
     }
 }
