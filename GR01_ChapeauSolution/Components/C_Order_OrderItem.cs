@@ -21,7 +21,7 @@ namespace ChapeauUI.Components
         public int Quantity { get; set; }
 
         // Constructor
-        public C_Order_OrderItem(Form_Chapeau form, int itemID, string itemName, double price, int quantity)
+        public C_Order_OrderItem(Form_Chapeau form, int itemID, string itemName, double price)
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace ChapeauUI.Components
             // Set variables
             ItemID = itemID;
             Price = price;
-            Quantity = quantity;
+            Quantity = 1;
 
             // Set display element text
             lbl_ProductName.Text = itemName;
@@ -41,13 +41,23 @@ namespace ChapeauUI.Components
         private void btn_RemoveItem_Click(object sender, EventArgs e)
         {
             // Remove from item
-            chapeauForm.RemoveOrderItem(ItemID);
+            chapeauForm.RemoveFromOrderQuantity(ItemID);
         }
 
         private void btn_AddItem_Click(object sender, EventArgs e)
         {
             // Add to item
-            chapeauForm.AddOrderItem(ItemID);
+            chapeauForm.AddToOrderQuantity(ItemID);
+        }
+
+        private void AddComment(object sender, EventArgs e)
+        {
+            // If textbox contains text
+            if (!string.IsNullOrEmpty(txtBox_Comment.Text))
+            {
+                // Add comment to item
+                chapeauForm.AddOrderComment(ItemID, txtBox_Comment.Text);
+            }
         }
 
         public void UpdateInfo()

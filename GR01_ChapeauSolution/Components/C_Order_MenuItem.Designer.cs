@@ -61,7 +61,7 @@
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(372, 62);
+            this.pnl_Main.Size = new System.Drawing.Size(400, 62);
             this.pnl_Main.TabIndex = 3;
             this.pnl_Main.Click += new System.EventHandler(this.AddItem_Click);
             // 
@@ -73,7 +73,7 @@
             this.splitter.Location = new System.Drawing.Point(15, 0);
             this.splitter.Margin = new System.Windows.Forms.Padding(0);
             this.splitter.Name = "splitter";
-            this.splitter.Size = new System.Drawing.Size(342, 3);
+            this.splitter.Size = new System.Drawing.Size(370, 3);
             this.splitter.TabIndex = 4;
             this.splitter.TabStop = false;
             // 
@@ -84,7 +84,7 @@
             this.pnl_Bottom.Location = new System.Drawing.Point(0, 62);
             this.pnl_Bottom.Name = "pnl_Bottom";
             this.pnl_Bottom.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.pnl_Bottom.Size = new System.Drawing.Size(372, 3);
+            this.pnl_Bottom.Size = new System.Drawing.Size(400, 3);
             this.pnl_Bottom.TabIndex = 3;
             // 
             // C_Order_MenuItem
@@ -98,10 +98,10 @@
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(372, 0);
-            this.MinimumSize = new System.Drawing.Size(372, 65);
+            this.MaximumSize = new System.Drawing.Size(400, 0);
+            this.MinimumSize = new System.Drawing.Size(400, 65);
             this.Name = "C_Order_MenuItem";
-            this.Size = new System.Drawing.Size(372, 65);
+            this.Size = new System.Drawing.Size(400, 65);
             this.Click += new System.EventHandler(this.AddItem_Click);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();

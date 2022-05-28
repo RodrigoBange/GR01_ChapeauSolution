@@ -17,5 +17,11 @@ namespace ChapeauLogic
             // Create new orderDao
             orderDAO = new OrderDao();
         }
+
+        public void PlaceOrder(List<OrderItem> orderItems, int tableNumber, int employeeID)
+        {
+            // Call orderDAO to place order
+            orderDAO.PlaceOrder(orderItems, tableNumber, employeeID);
+        }
     }
 }

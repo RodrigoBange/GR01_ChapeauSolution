@@ -27,9 +27,10 @@ namespace ChapeauModel
         }
 
         // Constructor
-        public OrderItem(int itemID)
+        public OrderItem(int itemID, double price)
         {
             ItemID = itemID;
+            Price = price;  
 
             // Set default quantity
             Quantity = 1; 

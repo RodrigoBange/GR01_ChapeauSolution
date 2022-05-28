@@ -92,12 +92,14 @@
             this.flow_Reservations = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_TableInfo_Panel2_Title = new System.Windows.Forms.Label();
             this.tab_Order = new System.Windows.Forms.TabPage();
-            this.pnl_Menu_And_Order = new System.Windows.Forms.SplitContainer();
+            this.pnl_Order_Menu = new System.Windows.Forms.Panel();
             this.flow_Order_Menu = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_Order_Orders = new System.Windows.Forms.Panel();
             this.flow_Order_Items = new System.Windows.Forms.FlowLayoutPanel();
             this.splitter_Orders_Price = new System.Windows.Forms.Splitter();
             this.lbl_Order_TotalPrice = new System.Windows.Forms.Label();
             this.btn_Order_Confirm = new System.Windows.Forms.Button();
+            this.splitter2 = new System.Windows.Forms.Splitter();
             this.pnl_Order_Categories = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Order_LunchMenu = new System.Windows.Forms.Button();
@@ -217,10 +219,8 @@
             this.pnl_TableInfo.Panel2.SuspendLayout();
             this.pnl_TableInfo.SuspendLayout();
             this.tab_Order.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl_Menu_And_Order)).BeginInit();
-            this.pnl_Menu_And_Order.Panel1.SuspendLayout();
-            this.pnl_Menu_And_Order.Panel2.SuspendLayout();
-            this.pnl_Menu_And_Order.SuspendLayout();
+            this.pnl_Order_Menu.SuspendLayout();
+            this.pnl_Order_Orders.SuspendLayout();
             this.pnl_Order_Categories.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tab_Bill.SuspendLayout();
@@ -1098,7 +1098,8 @@
             // tab_Order
             // 
             this.tab_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.tab_Order.Controls.Add(this.pnl_Menu_And_Order);
+            this.tab_Order.Controls.Add(this.pnl_Order_Menu);
+            this.tab_Order.Controls.Add(this.pnl_Order_Orders);
             this.tab_Order.Controls.Add(this.pnl_Order_Categories);
             this.tab_Order.Location = new System.Drawing.Point(4, 33);
             this.tab_Order.Margin = new System.Windows.Forms.Padding(2);
@@ -1107,63 +1108,64 @@
             this.tab_Order.TabIndex = 3;
             this.tab_Order.Text = "Order";
             // 
-            // pnl_Menu_And_Order
+            // pnl_Order_Menu
             // 
-            this.pnl_Menu_And_Order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Menu_And_Order.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.pnl_Menu_And_Order.IsSplitterFixed = true;
-            this.pnl_Menu_And_Order.Location = new System.Drawing.Point(0, 60);
-            this.pnl_Menu_And_Order.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Menu_And_Order.Name = "pnl_Menu_And_Order";
-            // 
-            // pnl_Menu_And_Order.Panel1
-            // 
-            this.pnl_Menu_And_Order.Panel1.Controls.Add(this.flow_Order_Menu);
-            this.pnl_Menu_And_Order.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            // 
-            // pnl_Menu_And_Order.Panel2
-            // 
-            this.pnl_Menu_And_Order.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.pnl_Menu_And_Order.Panel2.Controls.Add(this.flow_Order_Items);
-            this.pnl_Menu_And_Order.Panel2.Controls.Add(this.splitter_Orders_Price);
-            this.pnl_Menu_And_Order.Panel2.Controls.Add(this.lbl_Order_TotalPrice);
-            this.pnl_Menu_And_Order.Panel2.Controls.Add(this.btn_Order_Confirm);
-            this.pnl_Menu_And_Order.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnl_Menu_And_Order.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnl_Menu_And_Order.Size = new System.Drawing.Size(780, 778);
-            this.pnl_Menu_And_Order.SplitterDistance = 400;
-            this.pnl_Menu_And_Order.TabIndex = 0;
+            this.pnl_Order_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.pnl_Order_Menu.Controls.Add(this.flow_Order_Menu);
+            this.pnl_Order_Menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_Order_Menu.Location = new System.Drawing.Point(0, 60);
+            this.pnl_Order_Menu.Name = "pnl_Order_Menu";
+            this.pnl_Order_Menu.Size = new System.Drawing.Size(400, 778);
+            this.pnl_Order_Menu.TabIndex = 0;
             // 
             // flow_Order_Menu
             // 
             this.flow_Order_Menu.AutoScroll = true;
-            this.flow_Order_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow_Order_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flow_Order_Menu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flow_Order_Menu.Location = new System.Drawing.Point(0, 0);
-            this.flow_Order_Menu.Margin = new System.Windows.Forms.Padding(2);
+            this.flow_Order_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Menu.Name = "flow_Order_Menu";
             this.flow_Order_Menu.Size = new System.Drawing.Size(400, 778);
             this.flow_Order_Menu.TabIndex = 0;
             this.flow_Order_Menu.WrapContents = false;
             // 
+            // pnl_Order_Orders
+            // 
+            this.pnl_Order_Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.pnl_Order_Orders.Controls.Add(this.flow_Order_Items);
+            this.pnl_Order_Orders.Controls.Add(this.splitter_Orders_Price);
+            this.pnl_Order_Orders.Controls.Add(this.lbl_Order_TotalPrice);
+            this.pnl_Order_Orders.Controls.Add(this.btn_Order_Confirm);
+            this.pnl_Order_Orders.Controls.Add(this.splitter2);
+            this.pnl_Order_Orders.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_Order_Orders.Location = new System.Drawing.Point(400, 60);
+            this.pnl_Order_Orders.Name = "pnl_Order_Orders";
+            this.pnl_Order_Orders.Size = new System.Drawing.Size(380, 778);
+            this.pnl_Order_Orders.TabIndex = 0;
+            // 
             // flow_Order_Items
             // 
             this.flow_Order_Items.AutoScroll = true;
-            this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_Order_Items.Location = new System.Drawing.Point(0, 0);
-            this.flow_Order_Items.Margin = new System.Windows.Forms.Padding(2);
+            this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flow_Order_Items.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flow_Order_Items.Location = new System.Drawing.Point(2, 0);
+            this.flow_Order_Items.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Items.Name = "flow_Order_Items";
-            this.flow_Order_Items.Size = new System.Drawing.Size(376, 666);
+            this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(4, 5, 5, 0);
+            this.flow_Order_Items.Size = new System.Drawing.Size(380, 666);
             this.flow_Order_Items.TabIndex = 0;
+            this.flow_Order_Items.WrapContents = false;
             // 
             // splitter_Orders_Price
             // 
             this.splitter_Orders_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
             this.splitter_Orders_Price.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Orders_Price.Enabled = false;
-            this.splitter_Orders_Price.Location = new System.Drawing.Point(0, 666);
+            this.splitter_Orders_Price.Location = new System.Drawing.Point(2, 666);
+            this.splitter_Orders_Price.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_Orders_Price.Name = "splitter_Orders_Price";
-            this.splitter_Orders_Price.Size = new System.Drawing.Size(376, 2);
+            this.splitter_Orders_Price.Size = new System.Drawing.Size(378, 2);
             this.splitter_Orders_Price.TabIndex = 0;
             this.splitter_Orders_Price.TabStop = false;
             // 
@@ -1171,29 +1173,42 @@
             // 
             this.lbl_Order_TotalPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_Order_TotalPrice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(0, 668);
+            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(2, 668);
             this.lbl_Order_TotalPrice.Name = "lbl_Order_TotalPrice";
-            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(376, 50);
+            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(378, 50);
             this.lbl_Order_TotalPrice.TabIndex = 0;
             this.lbl_Order_TotalPrice.Text = "Total : € 0,00";
             this.lbl_Order_TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Order_Confirm
             // 
-            this.btn_Order_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Order_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.btn_Order_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_Confirm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Order_Confirm.Enabled = false;
             this.btn_Order_Confirm.FlatAppearance.BorderSize = 0;
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(0, 718);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(2, 718);
             this.btn_Order_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
-            this.btn_Order_Confirm.Size = new System.Drawing.Size(376, 60);
+            this.btn_Order_Confirm.Size = new System.Drawing.Size(378, 60);
             this.btn_Order_Confirm.TabIndex = 0;
             this.btn_Order_Confirm.Text = "Confirm order";
             this.btn_Order_Confirm.UseVisualStyleBackColor = false;
+            this.btn_Order_Confirm.EnabledChanged += new System.EventHandler(this.btn_Order_Confirm_Enable_Changed);
+            this.btn_Order_Confirm.Click += new System.EventHandler(this.btn_Order_Confirm_Click);
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.splitter2.Enabled = false;
+            this.splitter2.Location = new System.Drawing.Point(0, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(2, 778);
+            this.splitter2.TabIndex = 0;
+            this.splitter2.TabStop = false;
             // 
             // pnl_Order_Categories
             // 
@@ -2456,10 +2471,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnl_TableInfo)).EndInit();
             this.pnl_TableInfo.ResumeLayout(false);
             this.tab_Order.ResumeLayout(false);
-            this.pnl_Menu_And_Order.Panel1.ResumeLayout(false);
-            this.pnl_Menu_And_Order.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl_Menu_And_Order)).EndInit();
-            this.pnl_Menu_And_Order.ResumeLayout(false);
+            this.pnl_Order_Menu.ResumeLayout(false);
+            this.pnl_Order_Orders.ResumeLayout(false);
             this.pnl_Order_Categories.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tab_Bill.ResumeLayout(false);
@@ -2546,7 +2559,6 @@
         private System.Windows.Forms.FlowLayoutPanel flow_ServeOrders;
         private System.Windows.Forms.FlowLayoutPanel flow_Reservations;
         private System.Windows.Forms.Panel pnl_Order_Categories;
-        private System.Windows.Forms.SplitContainer pnl_Menu_And_Order;
         private System.Windows.Forms.TabPage tab_Bar;
         private System.Windows.Forms.TabPage tab_Kitchen;
         private System.Windows.Forms.FlowLayoutPanel flow_Order_Menu;
@@ -2670,5 +2682,8 @@
         private System.Windows.Forms.Label lbl_Security_Question;
         private System.Windows.Forms.Label lbl_Order_TotalPrice;
         private System.Windows.Forms.Splitter splitter_Orders_Price;
+        private System.Windows.Forms.Panel pnl_Order_Menu;
+        private System.Windows.Forms.Panel pnl_Order_Orders;
+        private System.Windows.Forms.Splitter splitter2;
     }
 }

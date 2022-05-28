@@ -9,68 +9,73 @@ namespace ChapeauDAL
 {
     public class OrderDao : BaseDao
     {
-        // Not needed anymore!!
-        public List<MenuItem> GetMenuItems(MenuCategory category)
+        public void PlaceOrder(List<OrderItem> orderItems, int tableNumber, int employeeID)
         {
-            // Decide query here 
-            string query = "";
+            // Lists for query values
+            List<string> values = new List<string>();
 
-            // Set query to collect menu items 
-            switch (category)
+            // Transfer every order item into a query value
+            foreach (OrderItem item in orderItems)
             {
-                case MenuCategory.Lunch:
-                    {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN LUNCH_MENU AS L ON M.itemID = L.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Mains%' THEN '2' WHEN M.itemType LIKE 'Desserts%' THEN '3' END ASC, M.itemName; ";
-                    }
-                    break;
-                case MenuCategory.Dinner:
-                    {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DINNER_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Starters%' THEN '1' WHEN M.itemType LIKE 'Entrements%' THEN '2' WHEN M.itemType LIKE 'Mains%' THEN '3' WHEN M.itemType LIKE 'Desserts%' THEN '4' END ASC, M.itemName; ";
-                    }
-                    break;
-                case MenuCategory.Drinks:
-                    {
-                        query = "SELECT M.itemName, M.itemType, M.price FROM MENU_ITEM AS M JOIN DRINKS_MENU AS D ON M.itemID = D.itemID ORDER BY CASE WHEN M.itemType LIKE 'Soft%' THEN '1' WHEN M.itemType LIKE 'Beers%' THEN '2' WHEN M.itemType LIKE 'Wines by the glass%' THEN '3' WHEN M.itemType LIKE 'Wines by the bottle%' THEN '4' WHEN M.itemType LIKE 'Spirit%' THEN '5' WHEN M.itemType LIKE 'Coffee%' THEN '6' END ASC, M.itemName; ";
-                    }
-                    break;
+                string value = $"'{item.ItemID}', GETDATE(), '{item.Comment}'";
+                values.Add(value);
             }
+
+            // Start query 
+            // If order doesn't exist, create new order and add order items
+            string query = $@"
+                            DECLARE @orderID AS INT 
+                            DECLARE @maxOrderID AS INT 
+                            SELECT @orderID = orderID FROM [ORDER] WHERE tableID = '{tableNumber}' AND isPaid = '0' 
+                            IF @orderID IS NULL 
+                            BEGIN 
+                            INSERT INTO [ORDER] (isPaid, tableID, employeeID) 
+                            VALUES (0, '{tableNumber}', '{employeeID}') 
+                            SELECT @maxOrderID = MAX(orderID) FROM [ORDER] 
+                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
+                            VALUES ";
+
+            // Add values to query
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i < values.Count - 1)
+                {
+                    query += $@"(@maxOrderID, " + values[i] + "), ";
+                }
+                else
+                {
+                    query += $@"(@maxOrderID, " + values[i] + ") ";
+                }
+            }
+
+            // Else if order already exists
+            query += @"END 
+                     ELSE 
+                     BEGIN 
+                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
+                     VALUES ";
+
+            // Add values to query
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i < values.Count - 1)
+                {
+                    query += $@"(@orderID, " + values[i] + "), ";
+                }
+                else
+                {
+                    query += $@"(@orderID, " + values[i] + ") ";
+                }
+            }
+
+            // End query
+            query += "END";
 
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];
 
-            // Return result of query
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
-        }
-
-        private List<MenuItem> ReadTables(DataTable dataTable)
-        {
-            // Create new list of MenuItem objects
-            List<MenuItem> menuItems = new List<MenuItem>();
-
-            try
-            {
-                // For each data row, create new MenuItem object and fill data
-                foreach (DataRow dr in dataTable.Rows)
-                {
-                    MenuItem item = new MenuItem()
-                    {
-                        FullName = (string)dr["itemName"],
-                        SubCategory = (string)dr["itemType"],
-                        Price = (double)(decimal)dr["price"]
-                    };
-
-                    // Add new MenuItem object to the list of menu items 
-                    menuItems.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Throw exception
-                throw new Exception("There is an issue reading the menu item data from the database.");
-            }
-
-            // Return list of menu items 
-            return menuItems;
+            // Edit Database with query
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }

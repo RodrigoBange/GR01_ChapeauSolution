@@ -24,16 +24,10 @@ namespace GR01_ChapeauSolution
 
         // General variables
         public int tableNumber = 0;
-        // Maybe split into 3 menu's that only fill upon opening table screen to avoid constant refilling. 
-        public List<MenuItem> menuItems;
-        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems;
 
         // Variables Table Overview
         private bool functionButtonActivated = false;
         private TableFunction currentFunction;
-
-        // Variables Order Overview
-        private MenuCategory currentCategory = MenuCategory.Lunch;
 
         #region General
         // Constructor
@@ -41,9 +35,6 @@ namespace GR01_ChapeauSolution
         {
             // Initialize
             InitializeComponent();
-
-            // Initialize menuItems 
-            menuItems = new List<MenuItem>();
 
             // Initialize orderItems
             orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
@@ -60,11 +51,6 @@ namespace GR01_ChapeauSolution
             /* FOR TESTING PURPOSES ON DEBUG, change this to your current work tab */
             /*For employee*/
             tabC_Body.SelectedTab = tab_Login;
-
-            /*For manager*/
-            //tabC_Body.SelectedTab = tab_Management;
-            //pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            //navMenuManager.Visible = true;
         }
 
         private void DisplayUI()
@@ -138,12 +124,19 @@ namespace GR01_ChapeauSolution
                         border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
                         border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
 
-                        // Load default menu on tab open
+                        // Fill menus when tab opens (In case products have been updated)
                         currentCategory = MenuCategory.Lunch;
-                        LoadMenu(MenuCategory.Lunch);
+                        LoadMenu();
 
-                        // Clear orderedItems on launch
+                        // Reset all to default
                         orderItems.Clear();
+                        flow_Order_Items.Controls.Clear();
+                        totalOrderPrice = 0.00;
+                        lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
+
+                        // Set the width to hide the scrollbar for a modern mobile design
+                        flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
+                        flow_Order_Items.Width = pnl_Order_Orders.Width + SystemInformation.VerticalScrollBarWidth;
                     }
                     break;
                 // Bill View 
@@ -475,23 +468,57 @@ namespace GR01_ChapeauSolution
         #endregion
 
         #region Order
+        // Variables Order Overview
+        private MenuCategory currentCategory = MenuCategory.Lunch;
+        private double totalOrderPrice = 0.00;
+
+        // Menus
+        public List<MenuItem> lunchMenu;
+        public List<MenuItem> dinnerMenu;
+        public List<MenuItem> drinksMenu;
+
+        // Order items and display component
+        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems;
+
         /** ORDER VIEW METHODS **/
-        private void LoadMenu(MenuCategory category)
+        private void LoadMenu()
         {
-            // Call service to fill list with items 
+            // Initialize new menuService (Maybe make instanced?)
             MenuService menuService = new MenuService();
 
-            // Get the menu items from a certain category
-            menuItems = menuService.GetMenuItems(category);
+            // Reload when opening order view in case of management changing product information
+            // Fill menus with items
+            lunchMenu = menuService.GetMenuItems(MenuCategory.Lunch);
+            dinnerMenu = menuService.GetMenuItems(MenuCategory.Dinner);
+            drinksMenu = menuService.GetMenuItems(MenuCategory.Drinks);
 
             // Load menu diplay
-            DisplayMenu();
+            DisplayMenu(MenuCategory.Lunch);
         }
 
-        private void DisplayMenu()
+        private void DisplayMenu(MenuCategory menuCategory)
         {
-            // Clear previous before loading new
+            // Clear previous menu before loading new menu
             flow_Order_Menu.Controls.Clear();
+
+            pnl_Order_Menu.SuspendLayout();
+
+            // Create new list of menuItems to display
+            List<MenuItem> menuItems;
+
+            // Fill list with items
+            if (menuCategory == MenuCategory.Lunch) // If Lunch
+            {
+                menuItems = lunchMenu;
+            }
+            else if (menuCategory == MenuCategory.Dinner) // If Dinner
+            {
+                menuItems = dinnerMenu;
+            }
+            else // If drinks
+            {
+                menuItems = drinksMenu;
+            }
 
             // Display menu items and sub category titles
             for (int i = 0; i < menuItems.Count; i++)
@@ -499,18 +526,59 @@ namespace GR01_ChapeauSolution
                 if (i == 0 || (menuItems[i].SubCategory != menuItems[i - 1].SubCategory))
                 {
                     // Add sub category title
-                    C_Order_MenuItem_Category menuCategory = new C_Order_MenuItem_Category(menuItems[i].SubCategory);
-                    flow_Order_Menu.Controls.Add(menuCategory);
+                    C_Order_MenuItem_Category categoryTitle = new C_Order_MenuItem_Category(menuItems[i].SubCategory);
+                    flow_Order_Menu.Controls.Add(categoryTitle);
                 }
 
                 // Add menu item
-                // Get short name later when accessible
-                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i].FullName, menuItems[i].ItemID);
+                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i]);
                 flow_Order_Menu.Controls.Add(c_MenuItem);
             }
+
+            pnl_Order_Menu.ResumeLayout();
         }
 
-        public void AddOrderItem(int itemID)
+        public void AddNewOrderItem(MenuItem menuItem)
+        {
+            bool itemExists = false;
+
+            // Check if item already exists in order list
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
+            {
+                // If the item has already been added...
+                if (item.Item1.ItemID == menuItem.ItemID)
+                {
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If item doesn't exist, create a new orderItem
+            if (!itemExists)
+            {
+                // Create new orderItem object with the ID
+                OrderItem orderItem = new OrderItem(menuItem.ItemID, menuItem.Price);
+
+                // Create new OrderItem component 
+                // Requires first to get the MenuItem object with the ID 
+                C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, menuItem.ItemID, menuItem.FullName, menuItem.Price);
+
+                // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
+                orderItems.Add(new Tuple<OrderItem, C_Order_OrderItem>(orderItem, orderDisplayItem));
+
+                // Add component to order list
+                flow_Order_Items.Controls.Add(orderDisplayItem);
+
+                // Add to total price
+                UpdateTotalPrice(orderItem.Price);
+
+                // Activate Checkout button
+                ActivateCheckout();
+            }
+            else { AddToOrderQuantity(menuItem.ItemID); }
+        }
+
+        public void AddToOrderQuantity(int itemID)
         {
             // Check if item already exists in order list
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
@@ -525,126 +593,158 @@ namespace GR01_ChapeauSolution
                     // Update display
                     item.Item2.UpdateInfo();
 
+                    // Add to total price
+                    UpdateTotalPrice(item.Item1.Price);
+
                     // Return
                     return;
                 }
             }
-
-            // Create a new order item if it doesn't exist... (Should be done differently)
-            CreateNewOrderItem(itemID);
         }
 
-        public void CreateNewOrderItem(int itemID)
+        public void RemoveFromOrderQuantity(int itemID)
         {
-            // If item doesn't exist...
-            // Create new orderItem object with the ID
-            OrderItem orderItem = new OrderItem(itemID);
-
-            // Create new OrderItem component 
-            // Requires first to get the MenuItem object with the ID 
-            C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, itemID, "test", 0.50, 1);
-
-            // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
-            orderItems.Add(new Tuple<OrderItem, C_Order_OrderItem>(orderItem, orderDisplayItem));
-
-            // Add component to order list
-            flow_Order_Items.Controls.Add(orderDisplayItem);
-
-            // Resize items if scrollbar is visible
-            CheckOrderedItemsSize();
-        }
-
-        public void RemoveOrderItem(int itemID)
-        {
-            // Check if item exists in order list
-            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
+            // Check what item has the ID
+            for (int i = orderItems.Count -1; i >= 0; i--)
             {
-                // If the item has the correct itemID
-                if (item.Item1.ItemID == itemID)
+                if (orderItems[i].Item1.ItemID == itemID)
                 {
-                    // Remove one from quantity
-                    item.Item1.Quantity--;
-                    item.Item2.Quantity--;
+                    // Remove one from the quantity
+                    orderItems[i].Item1.Quantity--;
+                    orderItems[i].Item2.Quantity--;
 
-                    // Update display
-                    item.Item2.UpdateInfo();
+                    // Update the display information
+                    orderItems[i].Item2.UpdateInfo();
+
+                    // Remove from the total price
+                    UpdateTotalPrice(-orderItems[i].Item1.Price);
 
                     // If the quantity is 0
-                    if (item.Item1.Quantity == 0)
+                    if (orderItems[i].Item1.Quantity == 0)
                     {
-                        // Delete product from orderItems
-                        orderItems.Remove(item);
+                        // Remove from orderItems
+                        orderItems.RemoveAt(i);
+
+                        // Check for checkout functionality
+                        ActivateCheckout();
 
                         // Break from loop
-                        break;
+                        return;
                     }
                 }
             }
-
-            // Resize items if scrollbar is visible
-            CheckOrderedItemsSize();
         }
 
-        public void CheckOrderedItemsSize()
+        private void UpdateTotalPrice(double price)
         {
-            // Change all ordered item sizes when scrollbar is visible
-            if (flow_Order_Items.VerticalScroll.Visible)
+            // Adjust total price
+            totalOrderPrice += price;
+
+            // Update display
+            lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
+        }
+
+        public void AddOrderComment(int itemID, string comment)
+        {
+            // Check for item location...
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
-                foreach (C_Order_OrderItem item in flow_Order_Items.Controls)
+                // If the item has already been added...
+                if (item.Item1.ItemID == itemID)
                 {
-                    // Set new minimum size
-                    item.MinimumSize = new Size(344, 137);
+                    // Add comment to item
+                    item.Item1.Comment = comment;
+
+                    // Return
+                    return;
                 }
             }
-            else // Change all ordered item sizes when scrollbar is not visible
+        }
+
+        private void ActivateCheckout()
+        {
+            // If there are items added, enable checkout option
+            if (orderItems.Count > 0)
             {
-                foreach (C_Order_OrderItem item in flow_Order_Items.Controls)
-                {
-                    // Set new minimum size
-                    item.MinimumSize = new Size(370, 137);
-                }
+                btn_Order_Confirm.Enabled = true;
             }
+            else
+            {
+                btn_Order_Confirm.Enabled = false;
+            }
+        }
+
+        private void btn_Order_Confirm_Enable_Changed(object sender, EventArgs e)
+        {
+            if (btn_Order_Confirm.Enabled)
+            {
+                btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#FE4040");
+            }
+            else
+            {
+                btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#822121");
+            }
+        }
+
+        private void btn_Order_Confirm_Click(object sender, EventArgs e)
+        {
+            // Send order to database but somehow check if there is an open order for the table number in the database
+            // Then add onto that order or create a new one 
+            // Then later deplete from stock 
+            OrderService orderService = new OrderService();
+
+            List<OrderItem> orders = new List<OrderItem>();
+
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
+            {
+                orders.Add(item.Item1);
+            }
+
+            orderService.PlaceOrder(orders, tableNumber, 99);
+
+            MessageBox.Show("Order has been placed.");
+            tabC_Body.SelectedIndex = 3;
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
         {
             // Request the lunch menu
-            // Check before requesting to avoid uneccessary database requests
+            // Check before requesting to avoid uneccessary loading
             if (currentCategory != MenuCategory.Lunch)
             {
                 // Set new current category 
                 currentCategory = MenuCategory.Lunch;
 
-                // Load menu
-                LoadMenu(MenuCategory.Lunch);
+                // Display menu
+                DisplayMenu(MenuCategory.Lunch);
             }
         }
 
         private void btn_Order_DinnerMenu_Click(object sender, EventArgs e)
         {
             // Request the dinner menu
-            // Check before requesting to avoid uneccessary database requests
+            // Check before requesting to avoid uneccessary loading
             if (currentCategory != MenuCategory.Dinner)
             {
                 // Set new current category
                 currentCategory = MenuCategory.Dinner;
 
-                // Load menu
-                LoadMenu(MenuCategory.Dinner);
+                // Display menu
+                DisplayMenu(MenuCategory.Dinner);
             }
         }
 
         private void btn_Order_DrinksMenu_Click(object sender, EventArgs e)
         {
             // Request the drinks menu
-            // Check before requesting to avoid uneccessary database requests
+            // Check before requesting to avoid uneccessary loading
             if (currentCategory != MenuCategory.Drinks)
             {
                 // Set new current category
                 currentCategory = MenuCategory.Drinks;
 
-                // Load menu
-                LoadMenu(MenuCategory.Drinks);
+                // Display menu
+                DisplayMenu(MenuCategory.Drinks);
             }
         }
         #endregion

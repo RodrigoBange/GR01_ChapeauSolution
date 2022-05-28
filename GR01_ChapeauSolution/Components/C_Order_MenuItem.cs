@@ -20,34 +20,37 @@ namespace ChapeauUI.Components
         // Form_Chapeau object
         Form_Chapeau chapeauForm;
 
-        // Automatic Property for ItemID
-        public int ItemID { get; set; }
+        // MenuItem object
+        public MenuItem menuItem; 
 
         // Constructor
-        public C_Order_MenuItem(Form_Chapeau form, string itemName, int itemID)
+        public C_Order_MenuItem(Form_Chapeau form, MenuItem item)
         {
             InitializeComponent();
 
             // Set reference to main form
             chapeauForm = form;
 
-            // Set ItemID
-            ItemID = itemID;
+            // Set MenuItem
+            menuItem = item;
 
             // Set and display product information
-            lbl_ItemName.Text = itemName;
+            lbl_ItemName.Text = menuItem.ShortName;
         }
 
         // Click event
         private async void AddItem_Click(object sender, EventArgs e)
         {
+            // Add new item
+            chapeauForm.AddNewOrderItem(menuItem);
+
             // Color changing event with delay to simulate button click
             this.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            await Task.Delay(200);
+            await Task.Delay(30);
             this.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
-            // Add product
-            chapeauForm.AddOrderItem(ItemID);
+            // Set focus to this control's label
+            this.ActiveControl = lbl_ItemName;
         }
     }
 }

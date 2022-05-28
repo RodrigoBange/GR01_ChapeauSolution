@@ -55,9 +55,9 @@
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnl_Main.ForeColor = System.Drawing.Color.White;
-            this.pnl_Main.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Main.Location = new System.Drawing.Point(1, 0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(370, 122);
+            this.pnl_Main.Size = new System.Drawing.Size(372, 122);
             this.pnl_Main.TabIndex = 0;
             // 
             // txtBox_Comment
@@ -71,8 +71,9 @@
             this.txtBox_Comment.MaxLength = 64;
             this.txtBox_Comment.Name = "txtBox_Comment";
             this.txtBox_Comment.PlaceholderText = "Comment...";
-            this.txtBox_Comment.Size = new System.Drawing.Size(370, 42);
+            this.txtBox_Comment.Size = new System.Drawing.Size(372, 42);
             this.txtBox_Comment.TabIndex = 0;
+            this.txtBox_Comment.Leave += new System.EventHandler(this.AddComment);
             // 
             // pnl_ProductInfo
             // 
@@ -84,7 +85,7 @@
             this.pnl_ProductInfo.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProductInfo.MinimumSize = new System.Drawing.Size(0, 80);
             this.pnl_ProductInfo.Name = "pnl_ProductInfo";
-            this.pnl_ProductInfo.Size = new System.Drawing.Size(370, 80);
+            this.pnl_ProductInfo.Size = new System.Drawing.Size(372, 80);
             this.pnl_ProductInfo.TabIndex = 6;
             // 
             // pnl_ProductName
@@ -96,7 +97,7 @@
             this.pnl_ProductName.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProductName.MinimumSize = new System.Drawing.Size(200, 0);
             this.pnl_ProductName.Name = "pnl_ProductName";
-            this.pnl_ProductName.Size = new System.Drawing.Size(247, 35);
+            this.pnl_ProductName.Size = new System.Drawing.Size(249, 35);
             this.pnl_ProductName.TabIndex = 6;
             // 
             // lbl_ProductName
@@ -120,7 +121,7 @@
             this.pnl_ProductControls.Controls.Add(this.btn_RemoveItem);
             this.pnl_ProductControls.Controls.Add(this.btn_AddItem);
             this.pnl_ProductControls.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_ProductControls.Location = new System.Drawing.Point(247, 0);
+            this.pnl_ProductControls.Location = new System.Drawing.Point(249, 0);
             this.pnl_ProductControls.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProductControls.Name = "pnl_ProductControls";
             this.pnl_ProductControls.Size = new System.Drawing.Size(123, 80);
@@ -181,10 +182,10 @@
             // 
             this.pnl_Bottom.Controls.Add(this.splitter);
             this.pnl_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_Bottom.Location = new System.Drawing.Point(0, 122);
+            this.pnl_Bottom.Location = new System.Drawing.Point(1, 122);
             this.pnl_Bottom.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Bottom.Name = "pnl_Bottom";
-            this.pnl_Bottom.Size = new System.Drawing.Size(370, 15);
+            this.pnl_Bottom.Size = new System.Drawing.Size(372, 15);
             this.pnl_Bottom.TabIndex = 0;
             // 
             // splitter
@@ -194,7 +195,7 @@
             this.splitter.Enabled = false;
             this.splitter.Location = new System.Drawing.Point(0, 12);
             this.splitter.Name = "splitter";
-            this.splitter.Size = new System.Drawing.Size(370, 3);
+            this.splitter.Size = new System.Drawing.Size(372, 3);
             this.splitter.TabIndex = 0;
             this.splitter.TabStop = false;
             // 
@@ -206,10 +207,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.pnl_Main);
             this.Controls.Add(this.pnl_Bottom);
-            this.MaximumSize = new System.Drawing.Size(370, 0);
-            this.MinimumSize = new System.Drawing.Size(370, 137);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximumSize = new System.Drawing.Size(373, 0);
+            this.MinimumSize = new System.Drawing.Size(373, 137);
             this.Name = "C_Order_OrderItem";
-            this.Size = new System.Drawing.Size(370, 137);
+            this.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.Size = new System.Drawing.Size(373, 137);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             this.pnl_ProductInfo.ResumeLayout(false);
