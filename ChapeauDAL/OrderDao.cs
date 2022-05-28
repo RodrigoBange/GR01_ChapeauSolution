@@ -17,7 +17,7 @@ namespace ChapeauDAL
             // Transfer every order item into a query value
             foreach (OrderItem item in orderItems)
             {
-                string value = $"'{item.ItemID}', GETDATE(), '{item.Comment}'";
+                string value = $"'{item.ItemID}', GETDATE(), '{item.Quantity}', '{item.Comment}'";
                 values.Add(value);
             }
 
@@ -32,7 +32,7 @@ namespace ChapeauDAL
                             INSERT INTO [ORDER] (isPaid, tableID, employeeID) 
                             VALUES (0, '{tableNumber}', '{employeeID}') 
                             SELECT @maxOrderID = MAX(orderID) FROM [ORDER] 
-                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
+                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, quantity, comment) 
                             VALUES ";
 
             // Add values to query
@@ -52,7 +52,7 @@ namespace ChapeauDAL
             query += @"END 
                      ELSE 
                      BEGIN 
-                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
+                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, quantity, comment) 
                      VALUES ";
 
             // Add values to query
@@ -69,7 +69,7 @@ namespace ChapeauDAL
             }
 
             // End query
-            query += "END";
+            query += "END;";
 
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];

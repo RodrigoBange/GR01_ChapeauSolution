@@ -688,20 +688,26 @@ namespace GR01_ChapeauSolution
 
         private void btn_Order_Confirm_Click(object sender, EventArgs e)
         {
-            // Send order to database but somehow check if there is an open order for the table number in the database
-            // Then add onto that order or create a new one 
-            // Then later deplete from stock 
+            // Create new order and stock service
             OrderService orderService = new OrderService();
+            StockService stockService = new StockService();
 
+            // Create a list of only orders without their components
             List<OrderItem> orders = new List<OrderItem>();
 
+            // Fill the list with all added items of the order
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
                 orders.Add(item.Item1);
             }
 
-            orderService.PlaceOrder(orders, tableNumber, 99);
+            // Call orderService to place an order
+            orderService.PlaceOrder(orders, tableNumber, 1);
 
+            // Call stockService to remove stock
+            stockService.DepleteStock(orders);
+
+            // Display confirmation
             MessageBox.Show("Order has been placed.");
             tabC_Body.SelectedIndex = 3;
         }

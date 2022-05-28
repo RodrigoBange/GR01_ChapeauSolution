@@ -14,7 +14,7 @@ namespace ChapeauLogic
         // Constructor
         public OrderService()
         {
-            // Create new orderDao
+            // Initialise
             orderDAO = new OrderDao();
         }
 
