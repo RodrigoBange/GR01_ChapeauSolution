@@ -28,37 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 1"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 2"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 3"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
             this.tabC_Body = new System.Windows.Forms.TabControl();
             this.tab_Login = new System.Windows.Forms.TabPage();
             this.pnl_Login = new System.Windows.Forms.Panel();
             this.lbl_Login_ForgotPassword = new System.Windows.Forms.Label();
-            this.btn_Login_Forgot_Password = new System.Windows.Forms.Button();
             this.txtBox_Login_Password = new System.Windows.Forms.TextBox();
             this.lbl_Login_Password = new System.Windows.Forms.Label();
-            this.lbl_Login_Email = new System.Windows.Forms.Label();
+            this.lbl_Login_EmployeeID = new System.Windows.Forms.Label();
             this.txtBox_Login_User = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
             this.imgLogin_Logo = new System.Windows.Forms.PictureBox();
-            this.tab_ForgotPassword = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnl_Forgot_Password = new System.Windows.Forms.Panel();
-            this.tctBox_Security_Answer = new System.Windows.Forms.TextBox();
-            this.lbl_Security_Question = new System.Windows.Forms.Label();
-            this.txtBox_Forgot_Password_PasswordRetry = new System.Windows.Forms.TextBox();
-            this.lbl_Forgot_Password_PasswordConfirmation = new System.Windows.Forms.Label();
-            this.lbl_Forgot_Password_Login = new System.Windows.Forms.Label();
-            this.btn_Forgot_Password_ResetPassword = new System.Windows.Forms.Button();
-            this.txtBox_Forgot_Password_Password = new System.Windows.Forms.TextBox();
-            this.lbl_Forgot_Password_Password = new System.Windows.Forms.Label();
-            this.lbl_Forgot_Password_Email = new System.Windows.Forms.Label();
-            this.txtBox_Forgot_Password_Email = new System.Windows.Forms.TextBox();
-            this.btn_Forgot_Password_Login = new System.Windows.Forms.Button();
             this.tab_Account = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -195,9 +180,6 @@
             this.tab_Login.SuspendLayout();
             this.pnl_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogin_Logo)).BeginInit();
-            this.tab_ForgotPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnl_Forgot_Password.SuspendLayout();
             this.tab_Account.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -263,7 +245,6 @@
             // tabC_Body
             // 
             this.tabC_Body.Controls.Add(this.tab_Login);
-            this.tabC_Body.Controls.Add(this.tab_ForgotPassword);
             this.tabC_Body.Controls.Add(this.tab_Account);
             this.tabC_Body.Controls.Add(this.tab_Tables);
             this.tabC_Body.Controls.Add(this.tab_Order);
@@ -300,10 +281,9 @@
             // 
             this.pnl_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Login.Controls.Add(this.lbl_Login_ForgotPassword);
-            this.pnl_Login.Controls.Add(this.btn_Login_Forgot_Password);
             this.pnl_Login.Controls.Add(this.txtBox_Login_Password);
             this.pnl_Login.Controls.Add(this.lbl_Login_Password);
-            this.pnl_Login.Controls.Add(this.lbl_Login_Email);
+            this.pnl_Login.Controls.Add(this.lbl_Login_EmployeeID);
             this.pnl_Login.Controls.Add(this.txtBox_Login_User);
             this.pnl_Login.Controls.Add(this.btn_Login);
             this.pnl_Login.Location = new System.Drawing.Point(61, 226);
@@ -319,33 +299,15 @@
             this.lbl_Login_ForgotPassword.Location = new System.Drawing.Point(137, 325);
             this.lbl_Login_ForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Login_ForgotPassword.Name = "lbl_Login_ForgotPassword";
-            this.lbl_Login_ForgotPassword.Size = new System.Drawing.Size(265, 33);
+            this.lbl_Login_ForgotPassword.Size = new System.Drawing.Size(0, 33);
             this.lbl_Login_ForgotPassword.TabIndex = 6;
-            this.lbl_Login_ForgotPassword.Text = "Forgot your password?";
-            // 
-            // btn_Login_Forgot_Password
-            // 
-            this.btn_Login_Forgot_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Login_Forgot_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Login_Forgot_Password.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Login_Forgot_Password.FlatAppearance.BorderSize = 0;
-            this.btn_Login_Forgot_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login_Forgot_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Login_Forgot_Password.Location = new System.Drawing.Point(144, 360);
-            this.btn_Login_Forgot_Password.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Login_Forgot_Password.Name = "btn_Login_Forgot_Password";
-            this.btn_Login_Forgot_Password.Size = new System.Drawing.Size(248, 53);
-            this.btn_Login_Forgot_Password.TabIndex = 5;
-            this.btn_Login_Forgot_Password.Text = "Reset password";
-            this.btn_Login_Forgot_Password.UseVisualStyleBackColor = false;
-            this.btn_Login_Forgot_Password.Click += new System.EventHandler(this.btn_Login_Forgot_Password_Click);
             // 
             // txtBox_Login_Password
             // 
             this.txtBox_Login_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Login_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBox_Login_Password.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Login_Password.Location = new System.Drawing.Point(184, 126);
+            this.txtBox_Login_Password.Location = new System.Drawing.Point(184, 153);
             this.txtBox_Login_Password.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Login_Password.Name = "txtBox_Login_Password";
             this.txtBox_Login_Password.PasswordChar = '●';
@@ -357,23 +319,23 @@
             // 
             this.lbl_Login_Password.AutoSize = true;
             this.lbl_Login_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Login_Password.Location = new System.Drawing.Point(36, 128);
+            this.lbl_Login_Password.Location = new System.Drawing.Point(18, 156);
             this.lbl_Login_Password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Login_Password.Name = "lbl_Login_Password";
             this.lbl_Login_Password.Size = new System.Drawing.Size(138, 33);
             this.lbl_Login_Password.TabIndex = 3;
             this.lbl_Login_Password.Text = "Password : ";
             // 
-            // lbl_Login_Email
+            // lbl_Login_EmployeeID
             // 
-            this.lbl_Login_Email.AutoSize = true;
-            this.lbl_Login_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Login_Email.Location = new System.Drawing.Point(36, 72);
-            this.lbl_Login_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Login_Email.Name = "lbl_Login_Email";
-            this.lbl_Login_Email.Size = new System.Drawing.Size(94, 33);
-            this.lbl_Login_Email.TabIndex = 2;
-            this.lbl_Login_Email.Text = "Email : ";
+            this.lbl_Login_EmployeeID.AutoSize = true;
+            this.lbl_Login_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Login_EmployeeID.Location = new System.Drawing.Point(18, 72);
+            this.lbl_Login_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Login_EmployeeID.Name = "lbl_Login_EmployeeID";
+            this.lbl_Login_EmployeeID.Size = new System.Drawing.Size(152, 33);
+            this.lbl_Login_EmployeeID.TabIndex = 2;
+            this.lbl_Login_EmployeeID.Text = "Employee ID";
             // 
             // txtBox_Login_User
             // 
@@ -383,7 +345,7 @@
             this.txtBox_Login_User.Location = new System.Drawing.Point(184, 66);
             this.txtBox_Login_User.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Login_User.Name = "txtBox_Login_User";
-            this.txtBox_Login_User.PlaceholderText = "Enter your email";
+            this.txtBox_Login_User.PlaceholderText = "Enter your employee ID";
             this.txtBox_Login_User.Size = new System.Drawing.Size(327, 40);
             this.txtBox_Login_User.TabIndex = 1;
             // 
@@ -395,7 +357,7 @@
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Login.Location = new System.Drawing.Point(187, 201);
+            this.btn_Login.Location = new System.Drawing.Point(187, 318);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(167, 53);
@@ -415,191 +377,6 @@
             this.imgLogin_Logo.Size = new System.Drawing.Size(649, 229);
             this.imgLogin_Logo.TabIndex = 1;
             this.imgLogin_Logo.TabStop = false;
-            // 
-            // tab_ForgotPassword
-            // 
-            this.tab_ForgotPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.tab_ForgotPassword.Controls.Add(this.pictureBox1);
-            this.tab_ForgotPassword.Controls.Add(this.pnl_Forgot_Password);
-            this.tab_ForgotPassword.ForeColor = System.Drawing.Color.White;
-            this.tab_ForgotPassword.Location = new System.Drawing.Point(4, 30);
-            this.tab_ForgotPassword.Margin = new System.Windows.Forms.Padding(0);
-            this.tab_ForgotPassword.Name = "tab_ForgotPassword";
-            this.tab_ForgotPassword.Size = new System.Drawing.Size(649, 695);
-            this.tab_ForgotPassword.TabIndex = 1;
-            this.tab_ForgotPassword.Text = "Forgot Password";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ChapeauUI.Properties.Resources.Logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(649, 229);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pnl_Forgot_Password
-            // 
-            this.pnl_Forgot_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_Forgot_Password.Controls.Add(this.tctBox_Security_Answer);
-            this.pnl_Forgot_Password.Controls.Add(this.lbl_Security_Question);
-            this.pnl_Forgot_Password.Controls.Add(this.txtBox_Forgot_Password_PasswordRetry);
-            this.pnl_Forgot_Password.Controls.Add(this.lbl_Forgot_Password_PasswordConfirmation);
-            this.pnl_Forgot_Password.Controls.Add(this.lbl_Forgot_Password_Login);
-            this.pnl_Forgot_Password.Controls.Add(this.btn_Forgot_Password_ResetPassword);
-            this.pnl_Forgot_Password.Controls.Add(this.txtBox_Forgot_Password_Password);
-            this.pnl_Forgot_Password.Controls.Add(this.lbl_Forgot_Password_Password);
-            this.pnl_Forgot_Password.Controls.Add(this.lbl_Forgot_Password_Email);
-            this.pnl_Forgot_Password.Controls.Add(this.txtBox_Forgot_Password_Email);
-            this.pnl_Forgot_Password.Controls.Add(this.btn_Forgot_Password_Login);
-            this.pnl_Forgot_Password.Location = new System.Drawing.Point(59, 233);
-            this.pnl_Forgot_Password.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Forgot_Password.Name = "pnl_Forgot_Password";
-            this.pnl_Forgot_Password.Size = new System.Drawing.Size(538, 514);
-            this.pnl_Forgot_Password.TabIndex = 3;
-            // 
-            // tctBox_Security_Answer
-            // 
-            this.tctBox_Security_Answer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.tctBox_Security_Answer.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tctBox_Security_Answer.ForeColor = System.Drawing.Color.White;
-            this.tctBox_Security_Answer.Location = new System.Drawing.Point(47, 210);
-            this.tctBox_Security_Answer.Margin = new System.Windows.Forms.Padding(2);
-            this.tctBox_Security_Answer.Multiline = true;
-            this.tctBox_Security_Answer.Name = "tctBox_Security_Answer";
-            this.tctBox_Security_Answer.PlaceholderText = "Enter your answer";
-            this.tctBox_Security_Answer.Size = new System.Drawing.Size(467, 72);
-            this.tctBox_Security_Answer.TabIndex = 10;
-            // 
-            // lbl_Security_Question
-            // 
-            this.lbl_Security_Question.AutoSize = true;
-            this.lbl_Security_Question.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Security_Question.Location = new System.Drawing.Point(36, 173);
-            this.lbl_Security_Question.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Security_Question.Name = "lbl_Security_Question";
-            this.lbl_Security_Question.Size = new System.Drawing.Size(342, 33);
-            this.lbl_Security_Question.TabIndex = 9;
-            this.lbl_Security_Question.Text = "What is your first pet\'s name?";
-            this.lbl_Security_Question.UseMnemonic = false;
-            // 
-            // txtBox_Forgot_Password_PasswordRetry
-            // 
-            this.txtBox_Forgot_Password_PasswordRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Forgot_Password_PasswordRetry.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Forgot_Password_PasswordRetry.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Forgot_Password_PasswordRetry.Location = new System.Drawing.Point(184, 119);
-            this.txtBox_Forgot_Password_PasswordRetry.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_Forgot_Password_PasswordRetry.Name = "txtBox_Forgot_Password_PasswordRetry";
-            this.txtBox_Forgot_Password_PasswordRetry.PasswordChar = '●';
-            this.txtBox_Forgot_Password_PasswordRetry.PlaceholderText = "Enter your password again";
-            this.txtBox_Forgot_Password_PasswordRetry.Size = new System.Drawing.Size(327, 40);
-            this.txtBox_Forgot_Password_PasswordRetry.TabIndex = 8;
-            // 
-            // lbl_Forgot_Password_PasswordConfirmation
-            // 
-            this.lbl_Forgot_Password_PasswordConfirmation.AutoSize = true;
-            this.lbl_Forgot_Password_PasswordConfirmation.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Forgot_Password_PasswordConfirmation.Location = new System.Drawing.Point(36, 121);
-            this.lbl_Forgot_Password_PasswordConfirmation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Forgot_Password_PasswordConfirmation.Name = "lbl_Forgot_Password_PasswordConfirmation";
-            this.lbl_Forgot_Password_PasswordConfirmation.Size = new System.Drawing.Size(132, 33);
-            this.lbl_Forgot_Password_PasswordConfirmation.TabIndex = 7;
-            this.lbl_Forgot_Password_PasswordConfirmation.Text = "Password :";
-            // 
-            // lbl_Forgot_Password_Login
-            // 
-            this.lbl_Forgot_Password_Login.AutoSize = true;
-            this.lbl_Forgot_Password_Login.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Forgot_Password_Login.Location = new System.Drawing.Point(166, 384);
-            this.lbl_Forgot_Password_Login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Forgot_Password_Login.Name = "lbl_Forgot_Password_Login";
-            this.lbl_Forgot_Password_Login.Size = new System.Drawing.Size(175, 33);
-            this.lbl_Forgot_Password_Login.TabIndex = 6;
-            this.lbl_Forgot_Password_Login.Text = "Want to login?";
-            // 
-            // btn_Forgot_Password_ResetPassword
-            // 
-            this.btn_Forgot_Password_ResetPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Forgot_Password_ResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Forgot_Password_ResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Forgot_Password_ResetPassword.FlatAppearance.BorderSize = 0;
-            this.btn_Forgot_Password_ResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Forgot_Password_ResetPassword.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Forgot_Password_ResetPassword.Location = new System.Drawing.Point(136, 299);
-            this.btn_Forgot_Password_ResetPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Forgot_Password_ResetPassword.Name = "btn_Forgot_Password_ResetPassword";
-            this.btn_Forgot_Password_ResetPassword.Size = new System.Drawing.Size(248, 54);
-            this.btn_Forgot_Password_ResetPassword.TabIndex = 5;
-            this.btn_Forgot_Password_ResetPassword.Text = "Reset password";
-            this.btn_Forgot_Password_ResetPassword.UseVisualStyleBackColor = false;
-            // 
-            // txtBox_Forgot_Password_Password
-            // 
-            this.txtBox_Forgot_Password_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Forgot_Password_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Forgot_Password_Password.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Forgot_Password_Password.Location = new System.Drawing.Point(184, 67);
-            this.txtBox_Forgot_Password_Password.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_Forgot_Password_Password.Name = "txtBox_Forgot_Password_Password";
-            this.txtBox_Forgot_Password_Password.PasswordChar = '●';
-            this.txtBox_Forgot_Password_Password.PlaceholderText = "Enter your password";
-            this.txtBox_Forgot_Password_Password.Size = new System.Drawing.Size(327, 40);
-            this.txtBox_Forgot_Password_Password.TabIndex = 4;
-            // 
-            // lbl_Forgot_Password_Password
-            // 
-            this.lbl_Forgot_Password_Password.AutoSize = true;
-            this.lbl_Forgot_Password_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Forgot_Password_Password.Location = new System.Drawing.Point(36, 69);
-            this.lbl_Forgot_Password_Password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Forgot_Password_Password.Name = "lbl_Forgot_Password_Password";
-            this.lbl_Forgot_Password_Password.Size = new System.Drawing.Size(138, 33);
-            this.lbl_Forgot_Password_Password.TabIndex = 3;
-            this.lbl_Forgot_Password_Password.Text = "Password : ";
-            // 
-            // lbl_Forgot_Password_Email
-            // 
-            this.lbl_Forgot_Password_Email.AutoSize = true;
-            this.lbl_Forgot_Password_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Forgot_Password_Email.Location = new System.Drawing.Point(36, 22);
-            this.lbl_Forgot_Password_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Forgot_Password_Email.Name = "lbl_Forgot_Password_Email";
-            this.lbl_Forgot_Password_Email.Size = new System.Drawing.Size(94, 33);
-            this.lbl_Forgot_Password_Email.TabIndex = 2;
-            this.lbl_Forgot_Password_Email.Text = "Email : ";
-            // 
-            // txtBox_Forgot_Password_Email
-            // 
-            this.txtBox_Forgot_Password_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Forgot_Password_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Forgot_Password_Email.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Forgot_Password_Email.Location = new System.Drawing.Point(184, 16);
-            this.txtBox_Forgot_Password_Email.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_Forgot_Password_Email.Name = "txtBox_Forgot_Password_Email";
-            this.txtBox_Forgot_Password_Email.PlaceholderText = "Enter your email";
-            this.txtBox_Forgot_Password_Email.Size = new System.Drawing.Size(327, 40);
-            this.txtBox_Forgot_Password_Email.TabIndex = 1;
-            // 
-            // btn_Forgot_Password_Login
-            // 
-            this.btn_Forgot_Password_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Forgot_Password_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Forgot_Password_Login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Forgot_Password_Login.FlatAppearance.BorderSize = 0;
-            this.btn_Forgot_Password_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Forgot_Password_Login.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Forgot_Password_Login.Location = new System.Drawing.Point(168, 417);
-            this.btn_Forgot_Password_Login.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Forgot_Password_Login.Name = "btn_Forgot_Password_Login";
-            this.btn_Forgot_Password_Login.Size = new System.Drawing.Size(167, 53);
-            this.btn_Forgot_Password_Login.TabIndex = 0;
-            this.btn_Forgot_Password_Login.Text = "Login";
-            this.btn_Forgot_Password_Login.UseVisualStyleBackColor = false;
-            this.btn_Forgot_Password_Login.Click += new System.EventHandler(this.btn_Forgot_Password_Login_Click);
             // 
             // tab_Account
             // 
@@ -1846,9 +1623,9 @@
             this.listView_Management.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView_Management.HideSelection = false;
             this.listView_Management.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listView_Management.Location = new System.Drawing.Point(0, 0);
             this.listView_Management.Margin = new System.Windows.Forms.Padding(2);
             this.listView_Management.Name = "listView_Management";
@@ -2405,10 +2182,6 @@
             this.pnl_Login.ResumeLayout(false);
             this.pnl_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogin_Logo)).EndInit();
-            this.tab_ForgotPassword.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnl_Forgot_Password.ResumeLayout(false);
-            this.pnl_Forgot_Password.PerformLayout();
             this.tab_Account.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -2594,9 +2367,8 @@
         private System.Windows.Forms.Label lbl_Kitchen_Order_Number;
         private System.Windows.Forms.TextBox txtBox_Login_Password;
         private System.Windows.Forms.Label lbl_Login_Password;
-        private System.Windows.Forms.Label lbl_Login_Email;
+        private System.Windows.Forms.Label lbl_Login_EmployeeID;
         private System.Windows.Forms.Label lbl_Login_ForgotPassword;
-        private System.Windows.Forms.Button btn_Login_Forgot_Password;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnl_Forgot_Password;
         private System.Windows.Forms.TextBox txtBox_Forgot_Password_PasswordRetry;

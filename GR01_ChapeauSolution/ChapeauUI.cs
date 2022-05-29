@@ -199,21 +199,7 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Tables;
             lbl_Title.Text = "Overview";
 
-            // Displays UI, might be handy to check what user type logged in, admin or user and send it through
             DisplayUI();
-        }
-
-        private void btn_Login_Forgot_Password_Click(object sender, EventArgs e)
-        {
-            tabC_Body.SelectedTab = tab_ForgotPassword;
-        }
-        #endregion
-
-        #region Forgot Password
-        /** FORGOT PASSWORD VIEW METHODS **/
-        private void btn_Forgot_Password_Login_Click(object sender, EventArgs e)
-        {
-            tabC_Body.SelectedTab = tab_Login;
         }
         #endregion
 
