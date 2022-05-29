@@ -2432,6 +2432,7 @@
             this.Controls.Add(this.pnl_Footer);
             this.Controls.Add(this.pnl_Body);
             this.Controls.Add(this.pnl_Header);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

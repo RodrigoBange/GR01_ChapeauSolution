@@ -207,6 +207,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.pnl_Main);
             this.Controls.Add(this.pnl_Bottom);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaximumSize = new System.Drawing.Size(373, 0);
             this.MinimumSize = new System.Drawing.Size(373, 137);

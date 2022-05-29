@@ -5,8 +5,28 @@ using System.Text;
 
 namespace ChapeauUI
 {
-    public static class ErrorLogger
+    public class ErrorLogger
     {
+        // Unique ErrorLogger
+        private static ErrorLogger uniqueInstance; 
+    
+        // Constructor
+        private ErrorLogger() { }
+
+        // Static method that delivers an unique instance
+        public static ErrorLogger GetInstance()
+        {
+            // If an instance doesn't exist
+            if (uniqueInstance == null)
+            {
+                // Create new ErrorLogger
+                uniqueInstance = new ErrorLogger();
+            }
+
+            // Return the instance
+            return uniqueInstance;
+        }
+
         // Save Error with file path return
         public static string LogError(Exception ex)
         {

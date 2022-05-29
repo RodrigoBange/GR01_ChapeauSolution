@@ -10,11 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapeauLogic;
+using ChapeauUI.Forms;
+using ChapeauUI;
 
 namespace GR01_ChapeauSolution
 {
     public partial class Form_Chapeau : Form
     {
+        // Error Logger 
+        ErrorLogger logger; 
+
+        // Services
+        MenuService menuService;
+        OrderService orderService;
+        StockService stockService;
+
         // Constant variables
         const string hexColorBright = "#323145";
         const string hexColorDark = "#1C1B2D";
@@ -23,7 +33,7 @@ namespace GR01_ChapeauSolution
         const string hexColorCheckout = "#8486f0";
 
         // General variables
-        public int tableNumber = 0;
+        private int tableNumber = 0;
 
         // Variables Table Overview
         private bool functionButtonActivated = false;
@@ -36,8 +46,13 @@ namespace GR01_ChapeauSolution
             // Initialize
             InitializeComponent();
 
-            // Initialize orderItems
-            orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
+            // Get instance
+            logger = ErrorLogger.GetInstance();
+
+            // Initialize services
+            menuService = new MenuService();
+            orderService = new OrderService();
+            stockService = new StockService();
         }
 
         // On Load
@@ -48,8 +63,7 @@ namespace GR01_ChapeauSolution
             tabC_Body.ItemSize = new Size(0, 1);
             tabC_Body.SizeMode = TabSizeMode.Fixed;
 
-            /* FOR TESTING PURPOSES ON DEBUG, change this to your current work tab */
-            /*For employee*/
+            // Start tab on load
             tabC_Body.SelectedTab = tab_Login;
         }
 
@@ -118,7 +132,6 @@ namespace GR01_ChapeauSolution
                         lbl_Title.Text = $"Order Table #{tableNumber}";
 
                         //Set border colors (Tab Control)
-                        border_Bottom.BackColor = Color.White;
                         border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
                         border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
                         border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
@@ -478,13 +491,13 @@ namespace GR01_ChapeauSolution
         public List<MenuItem> drinksMenu;
 
         // Order items and display component
-        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems;
+        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems ;
 
         /** ORDER VIEW METHODS **/
         private void LoadMenu()
         {
-            // Initialize new menuService (Maybe make instanced?)
-            MenuService menuService = new MenuService();
+            // Initialize orderItems
+            orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
 
             // Reload when opening order view in case of management changing product information
             // Fill menus with items
@@ -501,6 +514,7 @@ namespace GR01_ChapeauSolution
             // Clear previous menu before loading new menu
             flow_Order_Menu.Controls.Clear();
 
+            // Suspend layout
             pnl_Order_Menu.SuspendLayout();
 
             // Create new list of menuItems to display
@@ -535,6 +549,7 @@ namespace GR01_ChapeauSolution
                 flow_Order_Menu.Controls.Add(c_MenuItem);
             }
 
+            // Resume layout
             pnl_Order_Menu.ResumeLayout();
         }
 
@@ -628,7 +643,7 @@ namespace GR01_ChapeauSolution
                         // Check for checkout functionality
                         ActivateCheckout();
 
-                        // Break from loop
+                        // Return
                         return;
                     }
                 }
@@ -676,6 +691,7 @@ namespace GR01_ChapeauSolution
 
         private void btn_Order_Confirm_Enable_Changed(object sender, EventArgs e)
         {
+            // Change color on enable event
             if (btn_Order_Confirm.Enabled)
             {
                 btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#FE4040");
@@ -688,10 +704,6 @@ namespace GR01_ChapeauSolution
 
         private void btn_Order_Confirm_Click(object sender, EventArgs e)
         {
-            // Create new order and stock service
-            OrderService orderService = new OrderService();
-            StockService stockService = new StockService();
-
             // Create a list of only orders without their components
             List<OrderItem> orders = new List<OrderItem>();
 
@@ -701,15 +713,69 @@ namespace GR01_ChapeauSolution
                 orders.Add(item.Item1);
             }
 
-            // Call orderService to place an order
-            orderService.PlaceOrder(orders, tableNumber, 1);
+            // Check storage status
+            List<string> lowStockItems = stockService.CheckStorageStatus(orders);
 
-            // Call stockService to remove stock
-            stockService.DepleteStock(orders);
+            // Check storage before continuing
+            if (lowStockItems == null)
+            {
+                // Call orderService to place an order
+                orderService.PlaceOrder(orders, tableNumber, 1);
 
-            // Display confirmation
-            MessageBox.Show("Order has been placed.");
-            tabC_Body.SelectedIndex = 3;
+                // Call stockService to remove stock
+                stockService.DepleteStock(orders);
+
+                // Display confirmation
+                MessageBox.Show("Order has been placed.");
+                tabC_Body.SelectedIndex = 3;
+            }
+            else
+            {
+                string warningTitle = "Warning - Low Stock";
+                string warningMessage = "The following items are low in stock: " + Environment.NewLine;
+                for (int i = 0; i < lowStockItems.Count; i++)
+                {
+                    if (i < lowStockItems.Count - 1)
+                    {
+                        warningMessage += lowStockItems[i] + ", ";
+                    }
+                    else
+                    {
+                        warningMessage += lowStockItems[i] + ". ";
+                    }
+                }
+
+                string warningQuestion = "Please check the storage before proceeding." + Environment.NewLine + "Would you still like to place the order?";
+
+                // Use the custom messageBox
+                using (MessageBox_YesNo messageBox = new MessageBox_YesNo(warningTitle, warningMessage, warningQuestion))
+                {
+                    // Show the dialog
+                    DialogResult dialogResult = messageBox.ShowDialog();
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        // Call orderService to place an order
+                        orderService.PlaceOrder(orders, tableNumber, 1);
+
+                        // Call stockService to remove from stock
+                        stockService.DepleteStock(orders);
+
+                        // Display confirmation
+                        using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                        {
+                            DialogResult dialogResult_W = messageBox_W.ShowDialog();
+
+                            // When accepted
+                            if (dialogResult_W == DialogResult.OK)
+                            {
+                                // Display table overview
+                                tabC_Body.SelectedIndex = 3;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)

@@ -46,7 +46,7 @@ namespace ChapeauUI.Components
 
             // Color changing event with delay to simulate button click
             this.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            await Task.Delay(30);
+            await Task.Delay(15);
             this.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
             // Set focus to this control's label

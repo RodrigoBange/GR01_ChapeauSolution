@@ -23,5 +23,11 @@ namespace ChapeauLogic
             // call stockDao to deplete stock
             stockDAO.DepleteStock(orderItems);
         }
+
+        public List<string> CheckStorageStatus(List<OrderItem> orderItems)
+        {
+            // call stockDao to check storage status and return names of low stock items
+            return stockDAO.CheckStorageStatus(orderItems);
+        }
     }
 }
