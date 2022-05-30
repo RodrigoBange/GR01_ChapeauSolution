@@ -28,16 +28,9 @@ namespace GR01_ChapeauSolution
         // Constant variables
         const string hexColorBright = "#323145";
         const string hexColorDark = "#1C1B2D";
-        const string hexColorReserve = "#db7a67";
-        const string hexColorOrder = "#5fadac";
-        const string hexColorCheckout = "#8486f0";
 
         // General variables
         private int tableNumber = 0;
-
-        // Variables Table Overview
-        private bool functionButtonActivated = false;
-        private TableFunction currentFunction;
 
         #region General
         // Constructor
@@ -69,13 +62,6 @@ namespace GR01_ChapeauSolution
 
         private void DisplayUI()
         {
-            // Display appropiate UI elements upon login
-
-            // If user...
-            // Display footer elements (table menu buttons)
-            pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            navMenu.Visible = true;
-
             // Display header elements !!Order matters for toggling visibility
             lbl_OrderCounter.Visible = true;
             background_OrderCounter.Visible = true;
@@ -238,7 +224,6 @@ namespace GR01_ChapeauSolution
         private void btn_User_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedTab = tab_Account;
-            DisableAllButtons();
 
             // Set colors
             border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
@@ -256,10 +241,8 @@ namespace GR01_ChapeauSolution
             background_OrderCounter.Visible = false;
             btn_User.Visible = false;
             btn_Return.Visible = false;
-            navMenu.Visible = false;
 
             // Set colors
-            pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
@@ -270,87 +253,6 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
-        private void DisableAllButtons()
-        {
-            // Disable all function buttons
-            currentFunction = TableFunction.None;
-
-            //Reset all colors
-            btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorDark);
-
-            pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorBright);
-
-            //Disable all table buttons
-            btn_Table_1.Enabled = false;
-            btn_Table_2.Enabled = false;
-            btn_Table_3.Enabled = false;
-            btn_Table_4.Enabled = false;
-            btn_Table_5.Enabled = false;
-            btn_Table_6.Enabled = false;
-            btn_Table_7.Enabled = false;
-            btn_Table_8.Enabled = false;
-            btn_Table_9.Enabled = false;
-            btn_Table_10.Enabled = false;
-
-        }
-
-        private void ActivateAllTables()
-        {
-            btn_Table_1.Enabled = true;
-            btn_Table_2.Enabled = true;
-            btn_Table_3.Enabled = true;
-            btn_Table_4.Enabled = true;
-            btn_Table_5.Enabled = true;
-            btn_Table_6.Enabled = true;
-            btn_Table_7.Enabled = true;
-            btn_Table_8.Enabled = true;
-            btn_Table_9.Enabled = true;
-            btn_Table_10.Enabled = true;
-        }
-
-        private void ActivateFunctionButton(TableFunction function)
-        {
-            // If the new function is not the same as old function...
-            if (function != currentFunction)
-            {
-                DisableAllButtons();
-                if (function == TableFunction.Reserve)
-                {
-                    currentFunction = TableFunction.Reserve;
-                    // Set colors
-                    btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorReserve);
-                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorReserve);
-                    ActivateAllTables();
-                    tabC_Body.SelectedTab = tab_Tables;
-                }
-                else if (function == TableFunction.Order)
-                {
-                    currentFunction = TableFunction.Order;
-                    // Set colors
-                    btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorOrder);
-                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorOrder);
-                    ActivateAllTables();
-                    tabC_Body.SelectedTab = tab_Tables;
-                }
-                else if (function == TableFunction.Checkout)
-                {
-                    currentFunction = TableFunction.Checkout;
-                    // Set colors
-                    btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
-                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
-                    ActivateAllTables();
-                    tabC_Body.SelectedTab = tab_Tables;
-                }
-            }
-            else // If function is the same as old function
-            {
-                functionButtonActivated = !functionButtonActivated;
-                DisableAllButtons();
-            }
-        }
-
         private void TestAddReservations()
         {
             for (int i = 0; i < 10; i++)
@@ -367,119 +269,90 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        private void btn_ActivateReservation_Click(object sender, EventArgs e)
-        {
-            // Activate Reserve functionality
-            ActivateFunctionButton(TableFunction.Reserve);
-        }
-
-        private void btn_ActivateOrdering_Click(object sender, EventArgs e)
-        {
-            // Activate Order functionality
-            ActivateFunctionButton(TableFunction.Order);
-        }
-
-        private void btn_ActivateCheckout_Click(object sender, EventArgs e)
-        {
-            // Activate Checkout functionality
-            ActivateFunctionButton(TableFunction.Checkout);
-        }
-
-        private void DirectToFunctionPage()
-        {
-            if (currentFunction == TableFunction.Reserve)
-            {
-                
-            }
-            else if (currentFunction == TableFunction.Order)
-            {
-                tabC_Body.SelectedTab = tab_Order;
-            }
-            else if (currentFunction == TableFunction.Checkout)
-            {
-                tabC_Body.SelectedTab = tab_Bill;
-            }
-        }
-
         private void btn_Table_1_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 1;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 1";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_2_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 2;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 2";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_3_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 3;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 3";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_4_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 4;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 4";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_5_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 5;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 5";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_6_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 6;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 6";
+            tabC_Body.SelectedIndex = 3;
         }
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 7;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 7";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
+
         private void btn_Table_8_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 8;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 8";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
         private void btn_Table_9_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 9;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 9";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
         private void btn_Table_10_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 10;
 
-            DirectToFunctionPage();
-            lbl_TableOverview_Title.Text = "Table 10";
+            // Open order view
+            tabC_Body.SelectedTab = tab_Order;
         }
         #endregion
 
