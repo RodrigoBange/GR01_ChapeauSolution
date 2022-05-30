@@ -180,7 +180,7 @@ namespace GR01_ChapeauSolution
         private void btn_Return_Click(object sender, EventArgs e)
         {
             // Return to table view
-            tabC_Body.SelectedTab = tab_NewTables;
+            tabC_Body.SelectedTab = tab_Tables;
         }
 #endregion
 
@@ -189,7 +189,7 @@ namespace GR01_ChapeauSolution
         private void btn_Login_Click(object sender, EventArgs e)
         {
             // Change tab to Table View
-            tabC_Body.SelectedTab = tab_NewTables;
+            tabC_Body.SelectedTab = tab_Tables;
             lbl_Title.Text = "Overview";
 
             DisplayUI();
