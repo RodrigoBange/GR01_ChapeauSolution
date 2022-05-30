@@ -87,22 +87,15 @@ namespace GR01_ChapeauSolution
                         lbl_Title.Text = "Login";
                     }
                     break;
-                // Forgot Password View 
-                case 1:
-                    {
-                        // Set title
-                        lbl_Title.Text = "Forgot Password";
-                    }
-                    break;
                 // Account View 
-                case 2:
+                case 1:
                     {
                         // Set title
                         lbl_Title.Text = "Account";
                     }
                     break;
                 // Table View 
-                case 3:
+                case 2:
                     {
                         // Set title
                         lbl_Title.Text = "Overview";
@@ -112,7 +105,7 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Order View
-                case 4:
+                case 3:
                     {
                         // Set title
                         lbl_Title.Text = $"Order Table #{tableNumber}";
@@ -142,42 +135,42 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Bill View 
-                case 5:
+                case 4:
                     {
                         // Set title
                         lbl_Title.Text = $"Bill Table #{tableNumber}";
                     }
                     break;
                 // Payment Options View 
-                case 6:
+                case 5:
                     {
                         // Set title
                         lbl_Title.Text = "Payment Options";
                     }
                     break;
                 // Process Payment View 
-                case 7:
+                case 6:
                     {
                         // Set title
                         lbl_Title.Text = "Processing Payment";
                     }
                     break;
                 // Management View 
-                case 8:
+                case 7:
                     {
                         // Set title
                         lbl_Title.Text = "Management";
                     }
                     break;
                 // Bar View 
-                case 9:
+                case 8:
                     {
                         // Set title
                         lbl_Title.Text = "Bar Orders";
                     }
                     break;
                 // Kitchen View 
-                case 10:
+                case 9:
                     {
                         // Set title
                         lbl_Title.Text = "Kitchen Orders";
@@ -203,11 +196,6 @@ namespace GR01_ChapeauSolution
 
             // Displays UI, might be handy to check what user type logged in, admin or user and send it through
             DisplayUI();
-        }
-
-        private void btn_Login_Forgot_Password_Click(object sender, EventArgs e)
-        {
-            tabC_Body.SelectedTab = tab_ForgotPassword;
         }
         #endregion
 
@@ -615,7 +603,7 @@ namespace GR01_ChapeauSolution
                         if (dialogResult_W == DialogResult.OK)
                         {
                             // Display table overview
-                            tabC_Body.SelectedIndex = 3;
+                            tabC_Body.SelectedTab = tab_Tables;
                         }
                     }
                 }
@@ -661,7 +649,7 @@ namespace GR01_ChapeauSolution
                                 if (dialogResult_W == DialogResult.OK)
                                 {
                                     // Display table overview
-                                    tabC_Body.SelectedIndex = 3;
+                                    tabC_Body.SelectedTab = tab_Tables;
                                 }
                             }
                         }
