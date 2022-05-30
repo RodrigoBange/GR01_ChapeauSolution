@@ -91,7 +91,7 @@ namespace ChapeauDAL
             }                 
             
             // End query
-            query += $"AND stock < 100;";
+            query += $"AND stock < 20;";
 
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];
