@@ -14,12 +14,7 @@ namespace ChapeauModel
         public float PriceAlcoholicVAT { get; private set; }
         public float PriceNonAlcoholicVAT { get; private set; }
         public float TotalBillPrice { get { return BaseBillPrice + PriceAlcoholicVAT + PriceNonAlcoholicVAT; } }
-        public float Tip { get; set; }
-        public float TotalAmountPaid { get { return TotalBillPrice + Tip; } }
-        
         public bool IsPaid { get; set; }
-        
-        
 
         public Bill(int billId, List<BillItem> items)
         {
@@ -31,9 +26,9 @@ namespace ChapeauModel
 
         public void CalculatePrices()
         {
-            PriceNonAlcoholicVAT = 0.00f;
-            PriceAlcoholicVAT = 0.00f;
             BaseBillPrice = 0.00f;
+            PriceAlcoholicVAT = 0.00f;
+            PriceNonAlcoholicVAT = 0.00f;
 
             foreach (BillItem item in BillItems)
             {

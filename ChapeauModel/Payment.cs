@@ -10,10 +10,12 @@ namespace ChapeauModel
         public DateTime TimePaid { get; private set; }
         public EnumPaymentType PaymentType { get; set; }
         public string RestaurantComment { get; set; }
+        public float Tip { get; set; }
+        public float TotalAmountPaid { get { return Bill.TotalBillPrice + Tip; } }
 
-        //When Payment object is made, set the time of payment to now.
         public Payment()
         {
+            //Set TimePaid to when the Payment object is created
             TimePaid = DateTime.Now;
         }
     }
