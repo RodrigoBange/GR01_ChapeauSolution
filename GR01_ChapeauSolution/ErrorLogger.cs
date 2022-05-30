@@ -28,7 +28,7 @@ namespace ChapeauUI
         }
 
         // Save Error with file path return
-        public static string LogError(Exception ex)
+        public string LogError(Exception ex)
         {
             //Get file path to save to Log.txt
             string writePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);

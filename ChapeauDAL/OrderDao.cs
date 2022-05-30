@@ -74,8 +74,48 @@ namespace ChapeauDAL
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];
 
-            // Edit Database with query
-            ExecuteEditQuery(query, sqlParameters);
+            try
+            {
+                // Edit Database with query
+                ExecuteEditQuery(query, sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("There is an issue placing the order into the database.");
+            }
+        }
+
+        public bool CheckOrderStatus(int tableNumber)
+        {
+            // Create query 
+            string query = $"SELECT orderID FROM [ORDER] WHERE tableID = {tableNumber} AND isPaid = 0;";
+
+            // Set SqlParameter
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+
+            try
+            {
+                // If a row exists...
+                return ReadOrderStatus(ExecuteSelectQuery(query, sqlParameters));
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("There is an issue checking for existing and open orders.");
+            }
+        }
+
+        private bool ReadOrderStatus(DataTable dataTable)
+        {
+            // If a record has been found return true
+            if (dataTable.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                // If none have been found, return false
+                return false;
+            }
         }
     }
 }

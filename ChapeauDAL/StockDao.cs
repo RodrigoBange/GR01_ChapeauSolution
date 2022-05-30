@@ -47,8 +47,16 @@ namespace ChapeauDAL
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];
 
-            // Edit Database with query
-            ExecuteEditQuery(query, sqlParameters);
+            try
+            {
+                // Edit Database with query
+                ExecuteEditQuery(query, sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("There is an issue adjusting the stock in the database.");
+            }
+
         }
 
         public List<string> CheckStorageStatus(List<OrderItem> orderItems)
@@ -88,8 +96,16 @@ namespace ChapeauDAL
             // Set SqlParameter
             SqlParameter[] sqlParameters = new SqlParameter[0];
 
-            // Select from database with query 
-            return ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
+
+            try
+            {
+                // Select from database with query and return list
+                return ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("There is an issue reading the stock status from the database.");
+            }
         }
 
         private List<string> ReadStorageData(DataTable dataTable)
@@ -97,26 +113,19 @@ namespace ChapeauDAL
             // Create new list
             List<string> values = new List<string>();
 
-            try
+            // If a record has been found
+            if (dataTable.Rows.Count > 0)
             {
-                // If a record has been found
-                if (dataTable.Rows.Count > 0)
+                // Add all short item names to list
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    // Add all short item names to list
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        values.Add((string)row["itemNameShort"].ToString());
-                    }
-                }
-                else
-                {
-                    // If none have been found, return null
-                    return null;
+                    values.Add((string)row["itemNameShort"].ToString());
                 }
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("There is an issue reading the storage status from the database.");
+                // If none have been found, return null
+                return null;
             }
 
             // Return the list of names

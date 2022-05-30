@@ -99,7 +99,9 @@
             this.splitter_Orders_Price = new System.Windows.Forms.Splitter();
             this.lbl_Order_TotalPrice = new System.Windows.Forms.Label();
             this.btn_Order_Confirm = new System.Windows.Forms.Button();
-            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.splitter_Checkout = new System.Windows.Forms.Splitter();
+            this.btn_Order_Checkout = new System.Windows.Forms.Button();
+            this.splitter_OrderMenu = new System.Windows.Forms.Splitter();
             this.pnl_Order_Categories = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Order_LunchMenu = new System.Windows.Forms.Button();
@@ -1137,7 +1139,9 @@
             this.pnl_Order_Orders.Controls.Add(this.splitter_Orders_Price);
             this.pnl_Order_Orders.Controls.Add(this.lbl_Order_TotalPrice);
             this.pnl_Order_Orders.Controls.Add(this.btn_Order_Confirm);
-            this.pnl_Order_Orders.Controls.Add(this.splitter2);
+            this.pnl_Order_Orders.Controls.Add(this.splitter_Checkout);
+            this.pnl_Order_Orders.Controls.Add(this.btn_Order_Checkout);
+            this.pnl_Order_Orders.Controls.Add(this.splitter_OrderMenu);
             this.pnl_Order_Orders.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_Order_Orders.Location = new System.Drawing.Point(400, 60);
             this.pnl_Order_Orders.Name = "pnl_Order_Orders";
@@ -1153,7 +1157,7 @@
             this.flow_Order_Items.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Items.Name = "flow_Order_Items";
             this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(4, 5, 5, 0);
-            this.flow_Order_Items.Size = new System.Drawing.Size(380, 666);
+            this.flow_Order_Items.Size = new System.Drawing.Size(380, 603);
             this.flow_Order_Items.TabIndex = 0;
             this.flow_Order_Items.WrapContents = false;
             // 
@@ -1162,7 +1166,7 @@
             this.splitter_Orders_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
             this.splitter_Orders_Price.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Orders_Price.Enabled = false;
-            this.splitter_Orders_Price.Location = new System.Drawing.Point(2, 666);
+            this.splitter_Orders_Price.Location = new System.Drawing.Point(2, 603);
             this.splitter_Orders_Price.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_Orders_Price.Name = "splitter_Orders_Price";
             this.splitter_Orders_Price.Size = new System.Drawing.Size(378, 2);
@@ -1173,7 +1177,7 @@
             // 
             this.lbl_Order_TotalPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_Order_TotalPrice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(2, 668);
+            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(2, 605);
             this.lbl_Order_TotalPrice.Name = "lbl_Order_TotalPrice";
             this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(378, 50);
             this.lbl_Order_TotalPrice.TabIndex = 0;
@@ -1190,7 +1194,7 @@
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(2, 718);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(2, 655);
             this.btn_Order_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
             this.btn_Order_Confirm.Size = new System.Drawing.Size(378, 60);
@@ -1200,15 +1204,46 @@
             this.btn_Order_Confirm.EnabledChanged += new System.EventHandler(this.btn_Order_Confirm_Enable_Changed);
             this.btn_Order_Confirm.Click += new System.EventHandler(this.btn_Order_Confirm_Click);
             // 
-            // splitter2
+            // splitter_Checkout
             // 
-            this.splitter2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
-            this.splitter2.Enabled = false;
-            this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(2, 778);
-            this.splitter2.TabIndex = 0;
-            this.splitter2.TabStop = false;
+            this.splitter_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.splitter_Checkout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter_Checkout.Enabled = false;
+            this.splitter_Checkout.Location = new System.Drawing.Point(2, 715);
+            this.splitter_Checkout.Name = "splitter_Checkout";
+            this.splitter_Checkout.Size = new System.Drawing.Size(378, 3);
+            this.splitter_Checkout.TabIndex = 2;
+            this.splitter_Checkout.TabStop = false;
+            // 
+            // btn_Order_Checkout
+            // 
+            this.btn_Order_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Order_Checkout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Order_Checkout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Order_Checkout.FlatAppearance.BorderSize = 0;
+            this.btn_Order_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Order_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Order_Checkout.ForeColor = System.Drawing.Color.White;
+            this.btn_Order_Checkout.Location = new System.Drawing.Point(2, 718);
+            this.btn_Order_Checkout.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Order_Checkout.Name = "btn_Order_Checkout";
+            this.btn_Order_Checkout.Size = new System.Drawing.Size(378, 60);
+            this.btn_Order_Checkout.TabIndex = 1;
+            this.btn_Order_Checkout.Text = "Checkout ";
+            this.btn_Order_Checkout.UseVisualStyleBackColor = false;
+            this.btn_Order_Checkout.Visible = false;
+            this.btn_Order_Checkout.Click += new System.EventHandler(this.btn_Order_Checkout_Click);
+            // 
+            // splitter_OrderMenu
+            // 
+            this.splitter_OrderMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.splitter_OrderMenu.Enabled = false;
+            this.splitter_OrderMenu.Location = new System.Drawing.Point(0, 0);
+            this.splitter_OrderMenu.Name = "splitter_OrderMenu";
+            this.splitter_OrderMenu.Size = new System.Drawing.Size(2, 778);
+            this.splitter_OrderMenu.TabIndex = 0;
+            this.splitter_OrderMenu.TabStop = false;
+            this.splitter_OrderMenu.Visible = false;
             // 
             // pnl_Order_Categories
             // 
@@ -2685,6 +2720,8 @@
         private System.Windows.Forms.Splitter splitter_Orders_Price;
         private System.Windows.Forms.Panel pnl_Order_Menu;
         private System.Windows.Forms.Panel pnl_Order_Orders;
-        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.Splitter splitter_OrderMenu;
+        private System.Windows.Forms.Button btn_Order_Checkout;
+        private System.Windows.Forms.Splitter splitter_Checkout;
     }
 }

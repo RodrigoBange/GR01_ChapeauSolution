@@ -23,5 +23,11 @@ namespace ChapeauLogic
             // Call orderDAO to place order
             orderDAO.PlaceOrder(orderItems, tableNumber, employeeID);
         }
+
+        public bool CheckOrderStatus(int tableNumber)
+        {
+            // Call orderDAO to check if order exists
+            return orderDAO.CheckOrderStatus(tableNumber);
+        }
     }
 }
