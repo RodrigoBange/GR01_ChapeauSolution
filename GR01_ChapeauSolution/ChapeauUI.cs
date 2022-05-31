@@ -27,6 +27,7 @@ namespace GR01_ChapeauSolution
         public List<MenuItem> menuItems;
 
         // Variables Table Overview
+        private bool functionButtonActivated = false;
         private TableFunction currentFunction;
 
         // Variables Order Overview
@@ -65,6 +66,12 @@ namespace GR01_ChapeauSolution
         private void DisplayUI()
         {
             // Display appropiate UI elements upon login
+
+            // If user...
+            // Display footer elements (table menu buttons)
+            pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            navMenu.Visible = true;
+
             // Display header elements !!Order matters for toggling visibility
             lbl_OrderCounter.Visible = true;
             background_OrderCounter.Visible = true;
@@ -180,7 +187,7 @@ namespace GR01_ChapeauSolution
         private void btn_Return_Click(object sender, EventArgs e)
         {
             // Return to table view
-            tabC_Body.SelectedTab = tab_NewTables;
+            tabC_Body.SelectedTab = tab_Tables;
         }
 #endregion
 
@@ -189,7 +196,7 @@ namespace GR01_ChapeauSolution
         private void btn_Login_Click(object sender, EventArgs e)
         {
             // Change tab to Table View
-            tabC_Body.SelectedTab = tab_NewTables;
+            tabC_Body.SelectedTab = tab_Tables;
             lbl_Title.Text = "Overview";
 
             DisplayUI();
@@ -219,8 +226,10 @@ namespace GR01_ChapeauSolution
             background_OrderCounter.Visible = false;
             btn_User.Visible = false;
             btn_Return.Visible = false;
+            navMenu.Visible = false;
 
             // Set colors
+            pnl_Footer.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
             border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
@@ -235,6 +244,11 @@ namespace GR01_ChapeauSolution
         {
             // Disable all function buttons
             currentFunction = TableFunction.None;
+
+            //Reset all colors
+            btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorDark);
 
             pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
@@ -266,6 +280,47 @@ namespace GR01_ChapeauSolution
             btn_Table_10.Enabled = true;
         }
 
+        private void ActivateFunctionButton(TableFunction function)
+        {
+            // If the new function is not the same as old function...
+            if (function != currentFunction)
+            {
+                DisableAllButtons();
+                if (function == TableFunction.Reserve)
+                {
+                    currentFunction = TableFunction.Reserve;
+                    // Set colors
+                    btn_ActivateReservation.BackColor = ColorTranslator.FromHtml(hexColorReserve);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorReserve);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+                else if (function == TableFunction.Order)
+                {
+                    currentFunction = TableFunction.Order;
+                    // Set colors
+                    btn_ActivateOrdering.BackColor = ColorTranslator.FromHtml(hexColorOrder);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorOrder);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+                else if (function == TableFunction.Checkout)
+                {
+                    currentFunction = TableFunction.Checkout;
+                    // Set colors
+                    btn_ActivateCheckout.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
+                    pnl_TableOverview.Panel2.BackColor = ColorTranslator.FromHtml(hexColorCheckout);
+                    ActivateAllTables();
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+            }
+            else // If function is the same as old function
+            {
+                functionButtonActivated = !functionButtonActivated;
+                DisableAllButtons();
+            }
+        }
+
         private void TestAddReservations()
         {
             for (int i = 0; i < 10; i++)
@@ -280,6 +335,24 @@ namespace GR01_ChapeauSolution
                 // Add reservation to flow panel
                 flow_TableOverview.Controls.Add(available_Reservation1);
             }
+        }
+
+        private void btn_ActivateReservation_Click(object sender, EventArgs e)
+        {
+            // Activate Reserve functionality
+            ActivateFunctionButton(TableFunction.Reserve);
+        }
+
+        private void btn_ActivateOrdering_Click(object sender, EventArgs e)
+        {
+            // Activate Order functionality
+            ActivateFunctionButton(TableFunction.Order);
+        }
+
+        private void btn_ActivateCheckout_Click(object sender, EventArgs e)
+        {
+            // Activate Checkout functionality
+            ActivateFunctionButton(TableFunction.Checkout);
         }
 
         private void DirectToFunctionPage()
