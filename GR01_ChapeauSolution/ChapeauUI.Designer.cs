@@ -49,7 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Account_Logout = new System.Windows.Forms.Button();
             this.lbl_Account_Role = new System.Windows.Forms.Label();
-            this.lbl_Account_EmployeeID = new System.Windows.Forms.Label();
+            this.lbl_Account_Email = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tab_Tables = new System.Windows.Forms.TabPage();
             this.pnl_TableOverview = new System.Windows.Forms.SplitContainer();
@@ -405,7 +405,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.btn_Account_Logout);
             this.panel2.Controls.Add(this.lbl_Account_Role);
-            this.panel2.Controls.Add(this.lbl_Account_EmployeeID);
+            this.panel2.Controls.Add(this.lbl_Account_Email);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(83, 20);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -440,20 +440,20 @@
             this.lbl_Account_Role.Name = "lbl_Account_Role";
             this.lbl_Account_Role.Size = new System.Drawing.Size(479, 28);
             this.lbl_Account_Role.TabIndex = 4;
-            this.lbl_Account_Role.Text = "Waiter";
+            this.lbl_Account_Role.Text = "fdsa";
             this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Account_EmployeeID
+            // lbl_Account_Email
             // 
-            this.lbl_Account_EmployeeID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Account_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(4, 314);
-            this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Account_EmployeeID.Name = "lbl_Account_EmployeeID";
-            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(479, 28);
-            this.lbl_Account_EmployeeID.TabIndex = 3;
-            this.lbl_Account_EmployeeID.Text = "001";
-            this.lbl_Account_EmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Account_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Account_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Account_Email.Location = new System.Drawing.Point(4, 314);
+            this.lbl_Account_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_Email.Name = "lbl_Account_Email";
+            this.lbl_Account_Email.Size = new System.Drawing.Size(479, 28);
+            this.lbl_Account_Email.TabIndex = 3;
+            this.lbl_Account_Email.Text = "fdsagdfs@fdsag";
+            this.lbl_Account_Email.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -2409,7 +2409,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_Account_Logout;
         private System.Windows.Forms.Label lbl_Account_Role;
-        private System.Windows.Forms.Label lbl_Account_EmployeeID;
+        private System.Windows.Forms.Label lbl_Account_Email;
         private System.Windows.Forms.TextBox tctBox_Security_Answer;
         private System.Windows.Forms.Label lbl_Security_Question;
     }
