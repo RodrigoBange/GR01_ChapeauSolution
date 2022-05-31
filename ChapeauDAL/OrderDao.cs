@@ -17,8 +17,13 @@ namespace ChapeauDAL
             // Transfer every order item into a query value
             foreach (OrderItem item in orderItems)
             {
-                string value = $"'{item.ItemID}', GETDATE(), '{item.Quantity}', '{item.Comment}'";
-                values.Add(value);
+                // Check item quantity
+                for (int i = 0; i < item.Quantity; i++)
+                {
+                    // Wrap this in a loop with item quantity
+                    string value = $"'{item.ItemID}', '{DateTime.Now}', '{item.Comment}', 0, 0";
+                    values.Add(value);
+                }
             }
 
             // Start query 
@@ -32,7 +37,7 @@ namespace ChapeauDAL
                             INSERT INTO [ORDER] (isPaid, tableID, employeeID) 
                             VALUES (0, '{tableNumber}', '{employeeID}') 
                             SELECT @maxOrderID = MAX(orderID) FROM [ORDER] 
-                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, quantity, comment) 
+                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
                             VALUES ";
 
             // Add values to query
@@ -52,7 +57,7 @@ namespace ChapeauDAL
             query += @"END 
                      ELSE 
                      BEGIN 
-                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, quantity, comment) 
+                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
                      VALUES ";
 
             // Add values to query
