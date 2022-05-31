@@ -11,8 +11,8 @@ namespace ChapeauDAL
     public class BillDao : BaseDao
     {
         string query;
-        
-        //Gets all items linked to a bill (billID)
+
+        //Gets all items linked to a bill, formats it to class BillItem
         public List<BillItem> GetBillItems(int billId) 
         {
             query = "SELECT m.itemName, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax "
@@ -26,7 +26,8 @@ namespace ChapeauDAL
             return ReadBillItemTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        //Checks if a table has an unpaid bill, and if so, returns it
+        //Checks if a table has an unpaid bill, and if so, returns it. Otherwise, returns 0
+        //(Can also be used by Table View to identify active tables)
         public int FindUnpaidBill(int tableNr) 
         {
             query = "SELECT orderID "
@@ -36,11 +37,13 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@tableNr", tableNr);
             
+            //This method returns billId if an unpaid bill is found, otherwise it returns 0
             int billId = ReadBillIDTable(ExecuteSelectQuery(query, sqlParameters));
 
             return billId;
         }
 
+        //Reads BillItems from Database and returns it to the bill
         private List<BillItem> ReadBillItemTable(DataTable dataTable)
         {
             // Create new list of Bill items
@@ -70,7 +73,7 @@ namespace ChapeauDAL
                 throw new Exception("Something went wrong while reading bill data from the database.");
             }
         }
-
+        //Tries to find an unpaid bill, using a table nr
         private int ReadBillIDTable(DataTable dataTable)
         {
             try
