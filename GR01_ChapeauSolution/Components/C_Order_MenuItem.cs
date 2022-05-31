@@ -1,4 +1,5 @@
 ﻿using ChapeauModel;
+using GR01_ChapeauSolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,31 +17,40 @@ namespace ChapeauUI.Components
         const string hexColorBright = "#3C3C4E";
         const string hexColorDark = "#2D2D3A";
 
-        // Variables
-        MenuItem menuItem; 
-        public string productName = "Test product";
-        public double productPrice = 10.59;
+        // Form_Chapeau object
+        Form_Chapeau chapeauForm;
 
-        public C_Order_MenuItem(MenuItem item)
+        // MenuItem object
+        public MenuItem menuItem; 
+
+        // Constructor
+        public C_Order_MenuItem(Form_Chapeau form, MenuItem item)
         {
             InitializeComponent();
 
-            // Set and display product information
+            // Set reference to main form
+            chapeauForm = form;
+
+            // Set MenuItem
             menuItem = item;
-            lbl_ItemName.Text = item.Name;
-            lbl_Price.Text = item.Price.ToString("0.00");
+
+            // Set and display product information
+            lbl_ItemName.Text = menuItem.ShortName;
         }
 
         // Click event
         private async void AddItem_Click(object sender, EventArgs e)
         {
+            // Add new item
+            chapeauForm.AddNewOrderItem(menuItem);
+
             // Color changing event with delay to simulate button click
             this.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            await Task.Delay(200);
+            await Task.Delay(15);
             this.BackColor = ColorTranslator.FromHtml(hexColorBright);
 
-            // Display message (Test)
-            MessageBox.Show("Added item.");
+            // Set focus to this control's label
+            this.ActiveControl = lbl_ItemName;
         }
     }
 }
