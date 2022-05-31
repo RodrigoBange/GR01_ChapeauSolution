@@ -25,7 +25,7 @@ namespace ChapeauDAL
                     conn.Open();
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 //Print.ErrorLog(e);
                 throw;
@@ -48,7 +48,7 @@ namespace ChapeauDAL
                 adapter.InsertCommand = command;
                 command.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 //Print.ErrorLog(e);
                 throw;
@@ -68,7 +68,7 @@ namespace ChapeauDAL
                 adapter.InsertCommand = command;
                 command.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
                 // Print.ErrorLog(e);
                 throw;
@@ -96,7 +96,7 @@ namespace ChapeauDAL
                 adapter.Fill(dataSet);
                 dataTable = dataSet.Tables[0];
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
                 // Print.ErrorLog(e);
                 return null;
