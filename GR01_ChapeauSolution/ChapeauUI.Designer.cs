@@ -38,6 +38,11 @@
             System.Windows.Forms.PictureBox pictureBox18;
             System.Windows.Forms.PictureBox pictureBox4;
             System.Windows.Forms.PictureBox pictureBox6;
+            System.Windows.Forms.PictureBox pictureBox20;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chapeau));
+            System.Windows.Forms.PictureBox pictureBox22;
+            System.Windows.Forms.PictureBox pictureBox24;
+            System.Windows.Forms.PictureBox pictureBox25;
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Item 1"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, null);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -61,6 +66,18 @@
             this.lbl_Account_Email = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tab_Tables = new System.Windows.Forms.TabPage();
+            this.border_ColorMeaning = new System.Windows.Forms.PictureBox();
+            this.flow_Table_ColorMeaning = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnl_TableOverview = new System.Windows.Forms.SplitContainer();
             this.flow_TableOverview = new System.Windows.Forms.FlowLayoutPanel();
             this.flow_Tables = new System.Windows.Forms.FlowLayoutPanel();
@@ -202,6 +219,10 @@
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox4 = new System.Windows.Forms.PictureBox();
             pictureBox6 = new System.Windows.Forms.PictureBox();
+            pictureBox20 = new System.Windows.Forms.PictureBox();
+            pictureBox22 = new System.Windows.Forms.PictureBox();
+            pictureBox24 = new System.Windows.Forms.PictureBox();
+            pictureBox25 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(img_Drink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox8)).BeginInit();
@@ -212,6 +233,10 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox25)).BeginInit();
             this.tabC_Body.SuspendLayout();
             this.tab_Login.SuspendLayout();
             this.pnl_Login.SuspendLayout();
@@ -221,6 +246,14 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tab_Tables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.border_ColorMeaning)).BeginInit();
+            this.flow_Table_ColorMeaning.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_TableOverview)).BeginInit();
             this.pnl_TableOverview.Panel1.SuspendLayout();
             this.pnl_TableOverview.Panel2.SuspendLayout();
@@ -396,6 +429,51 @@
             pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            pictureBox20.InitialImage = null;
+            pictureBox20.Location = new System.Drawing.Point(0, 0);
+            pictureBox20.Margin = new System.Windows.Forms.Padding(0);
+            pictureBox20.Name = "pictureBox20";
+            pictureBox20.Size = new System.Drawing.Size(31, 37);
+            pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox20.TabIndex = 1;
+            pictureBox20.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            pictureBox22.Image = global::ChapeauUI.Properties.Resources.drink2;
+            pictureBox22.Location = new System.Drawing.Point(0, 0);
+            pictureBox22.Margin = new System.Windows.Forms.Padding(0);
+            pictureBox22.Name = "pictureBox22";
+            pictureBox22.Size = new System.Drawing.Size(31, 31);
+            pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox22.TabIndex = 1;
+            pictureBox22.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            pictureBox24.Image = global::ChapeauUI.Properties.Resources.Table_White;
+            pictureBox24.Location = new System.Drawing.Point(0, 0);
+            pictureBox24.Margin = new System.Windows.Forms.Padding(0);
+            pictureBox24.Name = "pictureBox24";
+            pictureBox24.Size = new System.Drawing.Size(31, 31);
+            pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox24.TabIndex = 1;
+            pictureBox24.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
+            pictureBox25.Location = new System.Drawing.Point(0, 0);
+            pictureBox25.Margin = new System.Windows.Forms.Padding(0);
+            pictureBox25.Name = "pictureBox25";
+            pictureBox25.Size = new System.Drawing.Size(31, 37);
+            pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox25.TabIndex = 1;
+            pictureBox25.TabStop = false;
             // 
             // tabC_Body
             // 
@@ -613,6 +691,8 @@
             // tab_Tables
             // 
             this.tab_Tables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.tab_Tables.Controls.Add(this.border_ColorMeaning);
+            this.tab_Tables.Controls.Add(this.flow_Table_ColorMeaning);
             this.tab_Tables.Controls.Add(this.pnl_TableOverview);
             this.tab_Tables.Controls.Add(this.splitter_TableOverview);
             this.tab_Tables.Location = new System.Drawing.Point(4, 30);
@@ -622,11 +702,145 @@
             this.tab_Tables.TabIndex = 2;
             this.tab_Tables.Text = "Tables";
             // 
+            // border_ColorMeaning
+            // 
+            this.border_ColorMeaning.BackColor = System.Drawing.Color.White;
+            this.border_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.border_ColorMeaning.Location = new System.Drawing.Point(0, 14);
+            this.border_ColorMeaning.Margin = new System.Windows.Forms.Padding(0);
+            this.border_ColorMeaning.Name = "border_ColorMeaning";
+            this.border_ColorMeaning.Size = new System.Drawing.Size(652, 2);
+            this.border_ColorMeaning.TabIndex = 5;
+            this.border_ColorMeaning.TabStop = false;
+            // 
+            // flow_Table_ColorMeaning
+            // 
+            this.flow_Table_ColorMeaning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel3);
+            this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel2);
+            this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel4);
+            this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel5);
+            this.flow_Table_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flow_Table_ColorMeaning.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flow_Table_ColorMeaning.Location = new System.Drawing.Point(0, 2);
+            this.flow_Table_ColorMeaning.Name = "flow_Table_ColorMeaning";
+            this.flow_Table_ColorMeaning.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flow_Table_ColorMeaning.Size = new System.Drawing.Size(652, 40);
+            this.flow_Table_ColorMeaning.TabIndex = 0;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(pictureBox22);
+            this.flowLayoutPanel3.Controls.Add(this.pictureBox23);
+            this.flowLayoutPanel3.Controls.Add(this.label2);
+            this.flowLayoutPanel3.ForeColor = System.Drawing.Color.White;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(13, 3);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(201, 38);
+            this.flowLayoutPanel3.TabIndex = 4;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Image = global::ChapeauUI.Properties.Resources.food;
+            this.pictureBox23.Location = new System.Drawing.Point(31, 0);
+            this.pictureBox23.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox23.TabIndex = 2;
+            this.pictureBox23.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(64, 4);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 24);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Running order";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(pictureBox20);
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox21);
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(227, 3);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(181, 38);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::ChapeauUI.Properties.Resources.foodRed;
+            this.pictureBox21.Location = new System.Drawing.Point(31, 0);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 2;
+            this.pictureBox21.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(64, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Order ready";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(pictureBox24);
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(421, 3);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(85, 38);
+            this.flowLayoutPanel4.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(33, 4);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 4, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Free";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(pictureBox25);
+            this.flowLayoutPanel5.Controls.Add(this.label4);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(519, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(124, 38);
+            this.flowLayoutPanel5.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(31, 4);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Occupied";
+            // 
             // pnl_TableOverview
             // 
-            this.pnl_TableOverview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_TableOverview.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_TableOverview.IsSplitterFixed = true;
-            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 2);
+            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 16);
             this.pnl_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_TableOverview.Name = "pnl_TableOverview";
             // 
@@ -640,7 +854,7 @@
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(652, 776);
+            this.pnl_TableOverview.Size = new System.Drawing.Size(652, 762);
             this.pnl_TableOverview.SplitterDistance = 325;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
@@ -652,7 +866,7 @@
             this.flow_TableOverview.Location = new System.Drawing.Point(0, 0);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(325, 776);
+            this.flow_TableOverview.Size = new System.Drawing.Size(325, 762);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // flow_Tables
@@ -684,9 +898,9 @@
             this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Tables.MaximumSize = new System.Drawing.Size(350, 0);
             this.flow_Tables.Name = "flow_Tables";
-            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flow_Tables.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flow_Tables.Size = new System.Drawing.Size(326, 776);
+            this.flow_Tables.Size = new System.Drawing.Size(326, 762);
             this.flow_Tables.TabIndex = 0;
             // 
             // btn_Table_1
@@ -697,7 +911,7 @@
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_1.Location = new System.Drawing.Point(20, 55);
+            this.btn_Table_1.Location = new System.Drawing.Point(20, 35);
             this.btn_Table_1.Margin = new System.Windows.Forms.Padding(20, 25, 0, 50);
             this.btn_Table_1.Name = "btn_Table_1";
             this.btn_Table_1.Size = new System.Drawing.Size(95, 95);
@@ -711,7 +925,7 @@
             // 
             this.pnl_FoodDrink.Controls.Add(img_Drink);
             this.pnl_FoodDrink.Controls.Add(this.img_Food);
-            this.pnl_FoodDrink.Location = new System.Drawing.Point(120, 30);
+            this.pnl_FoodDrink.Location = new System.Drawing.Point(120, 10);
             this.pnl_FoodDrink.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.pnl_FoodDrink.Name = "pnl_FoodDrink";
             this.pnl_FoodDrink.Size = new System.Drawing.Size(38, 124);
@@ -736,7 +950,7 @@
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_2.Location = new System.Drawing.Point(173, 55);
+            this.btn_Table_2.Location = new System.Drawing.Point(173, 35);
             this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 25, 0, 2);
             this.btn_Table_2.Name = "btn_Table_2";
             this.btn_Table_2.Size = new System.Drawing.Size(95, 95);
@@ -750,7 +964,7 @@
             // 
             this.panel3.Controls.Add(pictureBox1);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(273, 30);
+            this.panel3.Location = new System.Drawing.Point(273, 10);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(38, 124);
@@ -775,7 +989,7 @@
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_3.Location = new System.Drawing.Point(20, 202);
+            this.btn_Table_3.Location = new System.Drawing.Point(20, 182);
             this.btn_Table_3.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_3.Name = "btn_Table_3";
             this.btn_Table_3.Size = new System.Drawing.Size(95, 95);
@@ -789,7 +1003,7 @@
             // 
             this.panel4.Controls.Add(pictureBox4);
             this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Location = new System.Drawing.Point(120, 200);
+            this.panel4.Location = new System.Drawing.Point(120, 180);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(38, 124);
@@ -814,7 +1028,7 @@
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_4.Location = new System.Drawing.Point(175, 202);
+            this.btn_Table_4.Location = new System.Drawing.Point(175, 182);
             this.btn_Table_4.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_4.Name = "btn_Table_4";
             this.btn_Table_4.Size = new System.Drawing.Size(95, 95);
@@ -828,7 +1042,7 @@
             // 
             this.panel5.Controls.Add(pictureBox6);
             this.panel5.Controls.Add(this.pictureBox7);
-            this.panel5.Location = new System.Drawing.Point(277, 200);
+            this.panel5.Location = new System.Drawing.Point(277, 180);
             this.panel5.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(38, 124);
@@ -853,7 +1067,7 @@
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_5.Location = new System.Drawing.Point(20, 349);
+            this.btn_Table_5.Location = new System.Drawing.Point(20, 329);
             this.btn_Table_5.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_5.Name = "btn_Table_5";
             this.btn_Table_5.Size = new System.Drawing.Size(95, 95);
@@ -867,7 +1081,7 @@
             // 
             this.panel6.Controls.Add(pictureBox8);
             this.panel6.Controls.Add(this.pictureBox9);
-            this.panel6.Location = new System.Drawing.Point(120, 347);
+            this.panel6.Location = new System.Drawing.Point(120, 327);
             this.panel6.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(38, 124);
@@ -892,7 +1106,7 @@
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_6.Location = new System.Drawing.Point(175, 349);
+            this.btn_Table_6.Location = new System.Drawing.Point(175, 329);
             this.btn_Table_6.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_6.Name = "btn_Table_6";
             this.btn_Table_6.Size = new System.Drawing.Size(95, 95);
@@ -906,7 +1120,7 @@
             // 
             this.panel7.Controls.Add(pictureBox10);
             this.panel7.Controls.Add(this.pictureBox11);
-            this.panel7.Location = new System.Drawing.Point(277, 347);
+            this.panel7.Location = new System.Drawing.Point(277, 327);
             this.panel7.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(38, 124);
@@ -931,7 +1145,7 @@
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_7.Location = new System.Drawing.Point(20, 496);
+            this.btn_Table_7.Location = new System.Drawing.Point(20, 476);
             this.btn_Table_7.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_7.Name = "btn_Table_7";
             this.btn_Table_7.Size = new System.Drawing.Size(95, 95);
@@ -945,7 +1159,7 @@
             // 
             this.panel8.Controls.Add(pictureBox12);
             this.panel8.Controls.Add(this.pictureBox13);
-            this.panel8.Location = new System.Drawing.Point(120, 494);
+            this.panel8.Location = new System.Drawing.Point(120, 474);
             this.panel8.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(38, 119);
@@ -970,7 +1184,7 @@
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_8.Location = new System.Drawing.Point(175, 496);
+            this.btn_Table_8.Location = new System.Drawing.Point(175, 476);
             this.btn_Table_8.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_8.Name = "btn_Table_8";
             this.btn_Table_8.Size = new System.Drawing.Size(95, 95);
@@ -984,7 +1198,7 @@
             // 
             this.panel10.Controls.Add(pictureBox16);
             this.panel10.Controls.Add(this.pictureBox17);
-            this.panel10.Location = new System.Drawing.Point(277, 494);
+            this.panel10.Location = new System.Drawing.Point(277, 474);
             this.panel10.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(38, 124);
@@ -1009,7 +1223,7 @@
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_9.Location = new System.Drawing.Point(20, 643);
+            this.btn_Table_9.Location = new System.Drawing.Point(20, 623);
             this.btn_Table_9.Margin = new System.Windows.Forms.Padding(20, 2, 0, 2);
             this.btn_Table_9.Name = "btn_Table_9";
             this.btn_Table_9.Size = new System.Drawing.Size(95, 95);
@@ -1023,7 +1237,7 @@
             // 
             this.panel9.Controls.Add(pictureBox14);
             this.panel9.Controls.Add(this.pictureBox15);
-            this.panel9.Location = new System.Drawing.Point(120, 641);
+            this.panel9.Location = new System.Drawing.Point(120, 621);
             this.panel9.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(38, 119);
@@ -1048,7 +1262,7 @@
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_10.Location = new System.Drawing.Point(175, 643);
+            this.btn_Table_10.Location = new System.Drawing.Point(175, 623);
             this.btn_Table_10.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_10.Name = "btn_Table_10";
             this.btn_Table_10.Size = new System.Drawing.Size(95, 95);
@@ -1062,7 +1276,7 @@
             // 
             this.panel11.Controls.Add(pictureBox18);
             this.panel11.Controls.Add(this.pictureBox19);
-            this.panel11.Location = new System.Drawing.Point(277, 641);
+            this.panel11.Location = new System.Drawing.Point(277, 621);
             this.panel11.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(38, 124);
@@ -2334,6 +2548,10 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox25)).EndInit();
             this.tabC_Body.ResumeLayout(false);
             this.tab_Login.ResumeLayout(false);
             this.pnl_Login.ResumeLayout(false);
@@ -2344,6 +2562,18 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tab_Tables.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.border_ColorMeaning)).EndInit();
+            this.flow_Table_ColorMeaning.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.pnl_TableOverview.Panel1.ResumeLayout(false);
             this.pnl_TableOverview.Panel2.ResumeLayout(false);
             this.pnl_TableOverview.Panel2.PerformLayout();
@@ -2569,5 +2799,17 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.FlowLayoutPanel flow_Table_ColorMeaning;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox border_ColorMeaning;
     }
 }
