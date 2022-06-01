@@ -245,15 +245,11 @@ namespace GR01_ChapeauSolution
         {
             for (int i = 0; i < 10; i++)
             {
-                // Generate dates
-                DateTime startDate = DateTime.Now.AddHours(i);
-                DateTime endDate = DateTime.Now.AddHours(i + 1);
-
-                // Create new Reservation
-                C_Available_Reservation available_Reservation1 = new C_Available_Reservation(startDate, endDate);
+                // Create new Table order
+                C_Table_Order table_order = new C_Table_Order();
 
                 // Add reservation to flow panel
-                flow_TableOverview.Controls.Add(available_Reservation1);
+                flow_TableOverview.Controls.Add(table_order);
             }
         }
 
