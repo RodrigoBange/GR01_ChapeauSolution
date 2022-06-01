@@ -694,7 +694,7 @@ namespace GR01_ChapeauSolution
         private void btn_Order_Checkout_Click(object sender, EventArgs e)
         {
             // Open the bill
-            tabC_Body.SelectedIndex = 5;
+            tabC_Body.SelectedIndex = 4;
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
