@@ -61,10 +61,9 @@
             this.tab_Account = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_Account_EmployeeName = new System.Windows.Forms.Label();
             this.btn_Account_Logout = new System.Windows.Forms.Button();
             this.lbl_Account_Role = new System.Windows.Forms.Label();
-            this.lbl_Account_EmployeeID = new System.Windows.Forms.Label();
+            this.lbl_Account_Email = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tab_Tables = new System.Windows.Forms.TabPage();
             this.border_ColorMeaning = new System.Windows.Forms.PictureBox();
@@ -200,6 +199,7 @@
             this.lbl_Kitchen_Order_Number = new System.Windows.Forms.Label();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_Return = new System.Windows.Forms.Button();
+            this.btn_Return_Admin = new System.Windows.Forms.Button();
             this.lbl_OrderCounter = new System.Windows.Forms.Label();
             this.background_OrderCounter = new System.Windows.Forms.PictureBox();
             this.btn_User = new System.Windows.Forms.Button();
@@ -536,7 +536,6 @@
             this.txtBox_Login_Password.PlaceholderText = "Enter your password";
             this.txtBox_Login_Password.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Login_Password.TabIndex = 4;
-            this.txtBox_Login_Password.UseSystemPasswordChar = true;
             // 
             // lbl_Login_Password
             // 
@@ -571,7 +570,6 @@
             this.txtBox_Login_User.PlaceholderText = "Enter your employee ID";
             this.txtBox_Login_User.Size = new System.Drawing.Size(392, 47);
             this.txtBox_Login_User.TabIndex = 1;
-            this.txtBox_Login_User.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Login_User_KeyPress);
             // 
             // btn_Login
             // 
@@ -628,28 +626,15 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.lbl_Account_EmployeeName);
             this.panel2.Controls.Add(this.btn_Account_Logout);
             this.panel2.Controls.Add(this.lbl_Account_Role);
-            this.panel2.Controls.Add(this.lbl_Account_EmployeeID);
+            this.panel2.Controls.Add(this.lbl_Account_Email);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(100, 76);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(575, 787);
             this.panel2.TabIndex = 0;
-            // 
-            // lbl_Account_EmployeeName
-            // 
-            this.lbl_Account_EmployeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Account_EmployeeName.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(140, 331);
-            this.lbl_Account_EmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Account_EmployeeName.Name = "lbl_Account_EmployeeName";
-            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(205, 44);
-            this.lbl_Account_EmployeeName.TabIndex = 6;
-            this.lbl_Account_EmployeeName.Text = "Name";
-            this.lbl_Account_EmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Account_Logout
             // 
@@ -681,17 +666,17 @@
             this.lbl_Account_Role.Text = "Role";
             this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_Account_EmployeeID
+            // lbl_Account_Email
             // 
-            this.lbl_Account_EmployeeID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Account_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(143, 287);
-            this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Account_EmployeeID.Name = "lbl_Account_EmployeeID";
-            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(205, 44);
-            this.lbl_Account_EmployeeID.TabIndex = 3;
-            this.lbl_Account_EmployeeID.Text = "Employee ID";
-            this.lbl_Account_EmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Account_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Account_Email.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Account_Email.Location = new System.Drawing.Point(5, 377);
+            this.lbl_Account_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_Email.Name = "lbl_Account_Email";
+            this.lbl_Account_Email.Size = new System.Drawing.Size(575, 53);
+            this.lbl_Account_Email.TabIndex = 3;
+            this.lbl_Account_Email.Text = "Employee ID";
+            this.lbl_Account_Email.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -2381,6 +2366,7 @@
             // 
             this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnl_Header.Controls.Add(this.btn_Return);
+            this.pnl_Header.Controls.Add(this.btn_Return_Admin);
             this.pnl_Header.Controls.Add(this.lbl_OrderCounter);
             this.pnl_Header.Controls.Add(this.background_OrderCounter);
             this.pnl_Header.Controls.Add(this.btn_User);
@@ -2394,7 +2380,7 @@
             // 
             // btn_Return
             // 
-            this.btn_Return.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon_New1;
+            this.btn_Return.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon;
             this.btn_Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Return.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Return.FlatAppearance.BorderSize = 0;
@@ -2408,6 +2394,21 @@
             this.btn_Return.UseVisualStyleBackColor = true;
             this.btn_Return.Visible = false;
             this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
+            // 
+            // btn_Return_Admin
+            // 
+            this.btn_Return_Admin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Return_Admin.FlatAppearance.BorderSize = 0;
+            this.btn_Return_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Return_Admin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Return_Admin.Location = new System.Drawing.Point(155, 12);
+            this.btn_Return_Admin.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Return_Admin.Name = "btn_Return_Admin";
+            this.btn_Return_Admin.Size = new System.Drawing.Size(125, 60);
+            this.btn_Return_Admin.TabIndex = 5;
+            this.btn_Return_Admin.Text = "Admin";
+            this.btn_Return_Admin.UseVisualStyleBackColor = true;
+            this.btn_Return_Admin.Visible = false;
             // 
             // lbl_OrderCounter
             // 
@@ -2734,6 +2735,7 @@
         private System.Windows.Forms.Label lbl_Management_Field4;
         private System.Windows.Forms.TextBox txtBox_Manangement_4;
         private System.Windows.Forms.Button btn_Return;
+        private System.Windows.Forms.Button btn_Return_Admin;
         private System.Windows.Forms.Panel pnl_Login;
         private System.Windows.Forms.TextBox txtBox_Login_User;
         private System.Windows.Forms.FlowLayoutPanel flow_Bar;
@@ -2760,7 +2762,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_Account_Logout;
         private System.Windows.Forms.Label lbl_Account_Role;
-        private System.Windows.Forms.Label lbl_Account_EmployeeID;
+        private System.Windows.Forms.Label lbl_Account_Email;
         private System.Windows.Forms.Label lbl_Order_TotalPrice;
         private System.Windows.Forms.Splitter splitter_Orders_Price;
         private System.Windows.Forms.Panel pnl_Order_Menu;
@@ -2813,6 +2815,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox border_ColorMeaning;
-        private System.Windows.Forms.Label lbl_Account_EmployeeName;
     }
 }
