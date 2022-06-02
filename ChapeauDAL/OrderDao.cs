@@ -21,7 +21,7 @@ namespace ChapeauDAL
                 for (int i = 0; i < item.Quantity; i++)
                 {
                     // Wrap this in a loop with item quantity
-                    string value = $"'{item.ItemID}', '{DateTime.Now}', '{item.Comment}', 0, 0";
+                    string value = $"'{item.ItemID}', '@dateTime', '{item.Comment}', 0";
                     values.Add(value);
                 }
             }
@@ -31,13 +31,13 @@ namespace ChapeauDAL
             string query = $@"
                             DECLARE @orderID AS INT 
                             DECLARE @maxOrderID AS INT 
-                            SELECT @orderID = orderID FROM [ORDER] WHERE tableID = '{tableNumber}' AND isPaid = '0' 
+                            SELECT @orderID = orderID FROM [ORDER] WHERE tableID = '@tableNumber' AND isPaid = '0' 
                             IF @orderID IS NULL 
                             BEGIN 
                             INSERT INTO [ORDER] (isPaid, tableID, employeeID) 
-                            VALUES (0, '{tableNumber}', '{employeeID}') 
+                            VALUES (0, '@tableNumber', '@employeeID') 
                             SELECT @maxOrderID = MAX(orderID) FROM [ORDER] 
-                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
+                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed) 
                             VALUES ";
 
             // Add values to query
@@ -57,7 +57,7 @@ namespace ChapeauDAL
             query += @"END 
                      ELSE 
                      BEGIN 
-                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
+                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed) 
                      VALUES ";
 
             // Add values to query
@@ -77,7 +77,10 @@ namespace ChapeauDAL
             query += "END;";
 
             // Set SqlParameter
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            SqlParameter[] sqlParameters = new SqlParameter[3];
+            sqlParameters[0] = new SqlParameter("@tableNumber", tableNumber);
+            sqlParameters[1] = new SqlParameter("@employeeID", employeeID);
+            sqlParameters[2] = new SqlParameter("@dateTime", DateTime.Now);
 
             try
             {
@@ -93,10 +96,11 @@ namespace ChapeauDAL
         public bool CheckOrderStatus(int tableNumber)
         {
             // Create query 
-            string query = $"SELECT orderID FROM [ORDER] WHERE tableID = {tableNumber} AND isPaid = 0;";
+            string query = $"SELECT orderID FROM [ORDER] WHERE tableID = '@tableNumber' AND isPaid = 0;";
 
             // Set SqlParameter
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@tableNumber", tableNumber);
 
             try
             {

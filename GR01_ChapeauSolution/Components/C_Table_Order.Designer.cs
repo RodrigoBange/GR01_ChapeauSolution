@@ -67,8 +67,9 @@
             this.pnl_TableOrder.Controls.Add(this.flow_Item2);
             this.pnl_TableOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_TableOrder.Location = new System.Drawing.Point(0, 0);
+            this.pnl_TableOrder.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_TableOrder.Name = "pnl_TableOrder";
-            this.pnl_TableOrder.Size = new System.Drawing.Size(298, 188);
+            this.pnl_TableOrder.Size = new System.Drawing.Size(358, 226);
             this.pnl_TableOrder.TabIndex = 0;
             this.pnl_TableOrder.Click += new System.EventHandler(this.pnl_TableOrder_Click);
             // 
@@ -81,7 +82,7 @@
             this.lbl_TableTime.Location = new System.Drawing.Point(0, 0);
             this.lbl_TableTime.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_TableTime.Name = "lbl_TableTime";
-            this.lbl_TableTime.Size = new System.Drawing.Size(195, 37);
+            this.lbl_TableTime.Size = new System.Drawing.Size(231, 44);
             this.lbl_TableTime.TabIndex = 7;
             this.lbl_TableTime.Text = "Table # - 00:00";
             // 
@@ -90,9 +91,10 @@
             this.flow_Item3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.flow_Item3.Controls.Add(this.panel3);
             this.flow_Item3.Controls.Add(this.panel4);
-            this.flow_Item3.Location = new System.Drawing.Point(-1, 137);
+            this.flow_Item3.Location = new System.Drawing.Point(-1, 164);
+            this.flow_Item3.Margin = new System.Windows.Forms.Padding(4);
             this.flow_Item3.Name = "flow_Item3";
-            this.flow_Item3.Size = new System.Drawing.Size(295, 44);
+            this.flow_Item3.Size = new System.Drawing.Size(354, 53);
             this.flow_Item3.TabIndex = 10;
             // 
             // panel3
@@ -102,7 +104,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(301, 40);
+            this.panel3.Size = new System.Drawing.Size(361, 48);
             this.panel3.TabIndex = 4;
             // 
             // label2
@@ -113,10 +115,10 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.MaximumSize = new System.Drawing.Size(310, 0);
+            this.label2.MaximumSize = new System.Drawing.Size(372, 0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.label2.Size = new System.Drawing.Size(89, 47);
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label2.Size = new System.Drawing.Size(107, 57);
             this.label2.TabIndex = 0;
             this.label2.Text = "Item 3";
             this.label2.UseCompatibleTextRendering = true;
@@ -125,11 +127,11 @@
             // 
             this.panel4.Controls.Add(this.splitter2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(2, 42);
+            this.panel4.Location = new System.Drawing.Point(2, 50);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel4.Size = new System.Drawing.Size(301, 2);
+            this.panel4.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.panel4.Size = new System.Drawing.Size(361, 2);
             this.panel4.TabIndex = 5;
             // 
             // splitter2
@@ -137,10 +139,10 @@
             this.splitter2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(105)))), ((int)(((byte)(123)))));
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter2.Enabled = false;
-            this.splitter2.Location = new System.Drawing.Point(12, 0);
+            this.splitter2.Location = new System.Drawing.Point(14, 0);
             this.splitter2.Margin = new System.Windows.Forms.Padding(0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(277, 2);
+            this.splitter2.Size = new System.Drawing.Size(333, 2);
             this.splitter2.TabIndex = 4;
             this.splitter2.TabStop = false;
             // 
@@ -149,9 +151,10 @@
             this.flow_Item1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.flow_Item1.Controls.Add(this.pnl_Main);
             this.flow_Item1.Controls.Add(this.pnl_Bottom);
-            this.flow_Item1.Location = new System.Drawing.Point(-1, 49);
+            this.flow_Item1.Location = new System.Drawing.Point(-1, 59);
+            this.flow_Item1.Margin = new System.Windows.Forms.Padding(4);
             this.flow_Item1.Name = "flow_Item1";
-            this.flow_Item1.Size = new System.Drawing.Size(295, 44);
+            this.flow_Item1.Size = new System.Drawing.Size(354, 53);
             this.flow_Item1.TabIndex = 8;
             // 
             // pnl_Main
@@ -161,7 +164,7 @@
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(301, 40);
+            this.pnl_Main.Size = new System.Drawing.Size(361, 48);
             this.pnl_Main.TabIndex = 4;
             // 
             // lbl_ItemName
@@ -172,10 +175,10 @@
             this.lbl_ItemName.ForeColor = System.Drawing.Color.White;
             this.lbl_ItemName.Location = new System.Drawing.Point(0, 0);
             this.lbl_ItemName.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_ItemName.MaximumSize = new System.Drawing.Size(310, 0);
+            this.lbl_ItemName.MaximumSize = new System.Drawing.Size(372, 0);
             this.lbl_ItemName.Name = "lbl_ItemName";
-            this.lbl_ItemName.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lbl_ItemName.Size = new System.Drawing.Size(89, 47);
+            this.lbl_ItemName.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lbl_ItemName.Size = new System.Drawing.Size(107, 57);
             this.lbl_ItemName.TabIndex = 0;
             this.lbl_ItemName.Text = "Item 1";
             this.lbl_ItemName.UseCompatibleTextRendering = true;
@@ -184,11 +187,11 @@
             // 
             this.pnl_Bottom.Controls.Add(this.splitter);
             this.pnl_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_Bottom.Location = new System.Drawing.Point(2, 42);
+            this.pnl_Bottom.Location = new System.Drawing.Point(2, 50);
             this.pnl_Bottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Bottom.Name = "pnl_Bottom";
-            this.pnl_Bottom.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.pnl_Bottom.Size = new System.Drawing.Size(301, 2);
+            this.pnl_Bottom.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.pnl_Bottom.Size = new System.Drawing.Size(361, 2);
             this.pnl_Bottom.TabIndex = 5;
             // 
             // splitter
@@ -196,10 +199,10 @@
             this.splitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(105)))), ((int)(((byte)(123)))));
             this.splitter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter.Enabled = false;
-            this.splitter.Location = new System.Drawing.Point(12, 0);
+            this.splitter.Location = new System.Drawing.Point(14, 0);
             this.splitter.Margin = new System.Windows.Forms.Padding(0);
             this.splitter.Name = "splitter";
-            this.splitter.Size = new System.Drawing.Size(277, 2);
+            this.splitter.Size = new System.Drawing.Size(333, 2);
             this.splitter.TabIndex = 4;
             this.splitter.TabStop = false;
             // 
@@ -208,9 +211,10 @@
             this.flow_Item2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.flow_Item2.Controls.Add(this.panel1);
             this.flow_Item2.Controls.Add(this.panel2);
-            this.flow_Item2.Location = new System.Drawing.Point(-1, 93);
+            this.flow_Item2.Location = new System.Drawing.Point(-1, 112);
+            this.flow_Item2.Margin = new System.Windows.Forms.Padding(4);
             this.flow_Item2.Name = "flow_Item2";
-            this.flow_Item2.Size = new System.Drawing.Size(295, 44);
+            this.flow_Item2.Size = new System.Drawing.Size(354, 53);
             this.flow_Item2.TabIndex = 9;
             // 
             // panel1
@@ -220,7 +224,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 40);
+            this.panel1.Size = new System.Drawing.Size(361, 48);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -231,10 +235,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.MaximumSize = new System.Drawing.Size(310, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(372, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.label1.Size = new System.Drawing.Size(89, 47);
+            this.label1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label1.Size = new System.Drawing.Size(107, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "Item 2";
             this.label1.UseCompatibleTextRendering = true;
@@ -243,11 +247,11 @@
             // 
             this.panel2.Controls.Add(this.splitter1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(2, 42);
+            this.panel2.Location = new System.Drawing.Point(2, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel2.Size = new System.Drawing.Size(301, 2);
+            this.panel2.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.panel2.Size = new System.Drawing.Size(361, 2);
             this.panel2.TabIndex = 5;
             // 
             // splitter1
@@ -255,23 +259,24 @@
             this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(105)))), ((int)(((byte)(123)))));
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter1.Enabled = false;
-            this.splitter1.Location = new System.Drawing.Point(12, 0);
+            this.splitter1.Location = new System.Drawing.Point(14, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(277, 2);
+            this.splitter1.Size = new System.Drawing.Size(333, 2);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
             // C_Table_Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.pnl_TableOrder);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "C_Table_Order";
-            this.Size = new System.Drawing.Size(298, 188);
+            this.Size = new System.Drawing.Size(358, 226);
             this.pnl_TableOrder.ResumeLayout(false);
             this.pnl_TableOrder.PerformLayout();
             this.flow_Item3.ResumeLayout(false);

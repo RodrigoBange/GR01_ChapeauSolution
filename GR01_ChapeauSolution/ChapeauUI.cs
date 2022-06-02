@@ -303,7 +303,7 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 6;
 
-            tabC_Body.SelectedIndex = 3;
+            tabC_Body.SelectedTab= tab_Order;
         }
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
