@@ -79,8 +79,6 @@ namespace GR01_ChapeauSolution
                         txtBox_Login_Password.Text = null;
 
                         // Hide header and footer elements
-                        lbl_OrderCounter.Visible = false;
-                        background_OrderCounter.Visible = false;
                         btn_User.Visible = false;
                         btn_Return.Visible = false;
 
@@ -130,8 +128,11 @@ namespace GR01_ChapeauSolution
                         // Reset all to default
                         orderItems.Clear();
                         flow_Order_Items.Controls.Clear();
-                        totalOrderPrice = 0.00;
-                        lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
+
+                        // Reset total price
+                        UpdateTotalPrice(-totalOrderPrice);
+
+                        btn_Order_Confirm.Enabled = false;
 
                         // Set the width to hide the scrollbar for a modern mobile design
                         flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
@@ -185,8 +186,17 @@ namespace GR01_ChapeauSolution
 
         private void btn_Return_Click(object sender, EventArgs e)
         {
-            // Return to table view
-            tabC_Body.SelectedTab = tab_Tables;
+            if (tabC_Body.SelectedTab != tab_Tables)
+            {
+                using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Return", "Are you sure you want to return to the table overview?", ""))
+                {
+                    if (messageBox_YN.ShowDialog() == DialogResult.Yes)
+                    {
+                        // Return to table view
+                        tabC_Body.SelectedTab = tab_Tables;
+                    }
+                }
+            }
         }
         #endregion
 
@@ -233,38 +243,46 @@ namespace GR01_ChapeauSolution
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            //Get employeeID amd password
-            int employeeID = int.Parse(txtBox_Login_User.Text);
-            string employeePassword = txtBox_Login_Password.Text;
-
-            employee = employeeService.GetEmployee(employeeID);
-
-            if (employee != null)
+            if (!String.IsNullOrEmpty(txtBox_Login_User.Text) || !String.IsNullOrEmpty(txtBox_Login_Password.Text))
             {
-                PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-                HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
-                string convertedPassword = convertedHash.Digest;
+                //Get employeeID amd password
+                int employeeID = int.Parse(txtBox_Login_User.Text);
+                string employeePassword = txtBox_Login_Password.Text;
 
-                if (convertedPassword == employee.Hash)
+                employee = employeeService.GetEmployee(employeeID);
+
+                if (employee != null)
                 {
-                    // Succesfullly logged in
-                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Succesfully logged in");
-                    messageBox.ShowDialog();
+                    PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+                    HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
+                    string convertedPassword = convertedHash.Digest;
 
-                    // Change tab to Table View
-                    OpenView();
+                    if (convertedPassword == employee.Hash)
+                    {
+                        // Succesfullly logged in
+                        MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Succesfully logged in");
+                        messageBox.ShowDialog();
+
+                        // Change tab to Table View
+                        OpenView();
+                    }
+                    else
+                    {
+                        // Incorrect password
+                        MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Incorrect password");
+                        messageBox.ShowDialog();
+                    }
                 }
                 else
                 {
-                    // Incorrect password
-                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Incorrect password");
+                    // Employee doesn't exist
+                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Employee doesn't exist");
                     messageBox.ShowDialog();
                 }
             }
             else
             {
-                // Employee doesn't exist
-                MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Employee doesn't exist");
+                MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Please fill in all your information.");
                 messageBox.ShowDialog();
             }
         }
@@ -545,8 +563,9 @@ namespace GR01_ChapeauSolution
                 // Add to total price
                 UpdateTotalPrice(orderItem.Price);
 
-                // Activate Checkout button
-                ActivateCheckout();
+                // Check for place order and clear order functionality
+                ActivateOrderConfirmation();
+                ActivateClearOrders();
             }
             else { AddToOrderQuantity(menuItem.ItemID); }
         }
@@ -598,8 +617,9 @@ namespace GR01_ChapeauSolution
                         // Remove from orderItems
                         orderItems.RemoveAt(i);
 
-                        // Check for checkout functionality
-                        ActivateCheckout();
+                        // Check for place order and clear order functionality
+                        ActivateOrderConfirmation();
+                        ActivateClearOrders();
 
                         // Return
                         return;
@@ -653,20 +673,20 @@ namespace GR01_ChapeauSolution
                 // Check storage before continuing
                 if (lowStockItems == null)
                 {
-                    // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, 1);
-
-                    // Call stockService to remove stock
-                    stockService.DepleteStock(orders);
-
-                    // Display confirmation
-                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                    using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Confirmation", "Are you sure you want to place the order?", ""))
                     {
-                        DialogResult dialogResult_W = messageBox_W.ShowDialog();
-
-                        // When accepted
-                        if (dialogResult_W == DialogResult.OK)
+                        if (messageBox_YN.ShowDialog() == DialogResult.Yes)
                         {
+                            // Call orderService to place an order
+                            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
+
+                            // Call stockService to remove stock
+                            stockService.DepleteStock(orders);
+
+                            // Display confirmation
+                            MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed.");
+                            messageBox_W.ShowDialog();
+
                             // Display table overview
                             tabC_Body.SelectedTab = tab_Tables;
                         }
@@ -694,29 +714,20 @@ namespace GR01_ChapeauSolution
                     // Use the custom messageBox
                     using (MessageBox_YesNo messageBox = new MessageBox_YesNo(warningTitle, warningMessage, warningQuestion))
                     {
-                        // Show the dialog
-                        DialogResult dialogResult = messageBox.ShowDialog();
-
-                        if (dialogResult == DialogResult.Yes)
+                        if (messageBox.ShowDialog() == DialogResult.Yes)
                         {
                             // Call orderService to place an order
-                            orderService.PlaceOrder(orders, tableNumber, 1);
+                            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
 
                             // Call stockService to remove from stock
                             stockService.DepleteStock(orders);
 
-                            // Display confirmation
-                            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
-                            {
-                                DialogResult dialogResult_W = messageBox_W.ShowDialog();
+                            // Display confirmation 
+                            MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed.");
+                            messageBox_W.ShowDialog();
 
-                                // When accepted
-                                if (dialogResult_W == DialogResult.OK)
-                                {
-                                    // Display table overview
-                                    tabC_Body.SelectedTab = tab_Tables;
-                                }
-                            }
+                            // Display table overview 
+                            tabC_Body.SelectedTab = tab_Tables;
                         }
                     }
                 }
@@ -728,7 +739,7 @@ namespace GR01_ChapeauSolution
             }            
         }
 
-        private void ActivateCheckout()
+        private void ActivateOrderConfirmation()
         {
             // If there are items added, enable checkout option
             if (orderItems.Count > 0)
@@ -738,6 +749,19 @@ namespace GR01_ChapeauSolution
             else
             {
                 btn_Order_Confirm.Enabled = false;
+            }
+        }
+
+        private void ActivateClearOrders()
+        {
+            // If there are items added, enable clear order items option
+            if (orderItems.Count > 0)
+            {
+                btn_Order_ClearOrder.Visible = true;
+            }
+            else
+            {
+                btn_Order_ClearOrder.Visible = false;
             }
         }
 
@@ -764,6 +788,29 @@ namespace GR01_ChapeauSolution
         {
             // Open the bill
             tabC_Body.SelectedIndex = 5;
+        }
+
+        private void btn_Order_ClearOrder_Click(object sender, EventArgs e)
+        {
+            using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Clear orders", "Are you sure you want to clear all added items?", ""))
+            {
+                if (messageBox_YN.ShowDialog() == DialogResult.Yes)
+                {
+                    // Clear display list of items
+                    flow_Order_Items.Controls.Clear();
+
+                    // Clear list of items
+                    orderItems.Clear();
+
+                    // Reset total price
+                    UpdateTotalPrice(-totalOrderPrice);
+
+                    // Check for place order and clear order functionality
+                    ActivateOrderConfirmation();
+                    ActivateClearOrders();
+                }
+            }
+
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
