@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChapeauModel
 {
-    public enum EnumPaymentType
+    public enum PaymentType
     {
         Cash = 1, Debit, Credit
     }

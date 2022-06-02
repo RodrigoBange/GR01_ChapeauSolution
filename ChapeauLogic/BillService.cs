@@ -28,6 +28,9 @@ namespace ChapeauLogic
 
             //If bill ID is valid, a bill object can be created by retrieving a list of bill items.
             Bill bill = new Bill(billId, billDAO.GetBillItems(billId));
+
+            if (bill.BillItems == null)
+                throw new Exception("The bill is empty.");
             
             return bill;
         }

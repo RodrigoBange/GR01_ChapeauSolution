@@ -10,12 +10,13 @@ namespace ChapeauModel
 
         public int BillId { get; private set; }
         public List<BillItem> BillItems { get; private set; }
-        public float BaseBillPrice { get; private set; }
-        public float PriceAlcoholicVAT { get; private set; }
-        public float PriceNonAlcoholicVAT { get; private set; }
-        public float TotalBillPrice { get { return BaseBillPrice + PriceAlcoholicVAT + PriceNonAlcoholicVAT; } }
+        public double BaseBillPrice { get; private set; }
+        public double PriceAlcoholicVAT { get; private set; }
+        public double PriceNonAlcoholicVAT { get; private set; }
+        public double TotalBillPrice { get { return BaseBillPrice + PriceAlcoholicVAT + PriceNonAlcoholicVAT; } }
         public bool IsPaid { get; set; }
 
+        //Constructor
         public Bill(int billId, List<BillItem> items)
         {
             BillId = billId;
@@ -24,23 +25,25 @@ namespace ChapeauModel
             IsPaid = false;
         }
 
+        //Calculate Prices (called in constructor)
         public void CalculatePrices()
         {
-            BaseBillPrice = 0.00f;
-            PriceAlcoholicVAT = 0.00f;
-            PriceNonAlcoholicVAT = 0.00f;
+            BaseBillPrice = 0.00;
+            PriceAlcoholicVAT = 0.00;
+            PriceNonAlcoholicVAT = 0.00;
 
             foreach (BillItem item in BillItems)
             {
                 if (item.VATPercentage == NonAlcholicVATPercentage)
                 {
-                    PriceNonAlcoholicVAT += item.VATPrice;
+                    PriceNonAlcoholicVAT += (item.VATPrice * item.Count);
                 }
                 else
                 {
-                    PriceAlcoholicVAT += item.VATPrice;
+                    PriceAlcoholicVAT += (item.VATPrice * item.Count);
                 }
-                BaseBillPrice += item.BasePrice;
+                
+                BaseBillPrice += (item.BasePrice * item.Count);
             }
         }
     }

@@ -8,10 +8,10 @@ namespace ChapeauModel
     {
         public Bill Bill { get; set; }
         public DateTime TimePaid { get; private set; }
-        public EnumPaymentType PaymentType { get; set; }
+        public PaymentType PaymentType { get; set; }
         public string RestaurantComment { get; set; }
-        public float Tip { get; set; }
-        public float TotalAmountPaid { get { return Bill.TotalBillPrice + Tip; } }
+        public double Tip { get; set; }
+        public double TotalAmountPaid { get { return Bill.TotalBillPrice + Tip; } }
 
         public Payment()
         {

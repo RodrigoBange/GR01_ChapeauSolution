@@ -10,15 +10,12 @@ namespace ChapeauDAL
 {
     public class BillDao : BaseDao
     {
-        string query;
+        //string query;
 
         //Gets all items linked to a bill, formats it to class BillItem
         public List<BillItem> GetBillItems(int billId) 
         {
-            query = "SELECT m.itemName, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax "
-                + "FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID "
-                + "WHERE O.orderID = @billId "
-                + "GROUP BY O.itemID, M.itemName, M.price, M.tax, M.priceBeforeTax;";
+            string query = "SELECT m.itemNameShort, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID GROUP BY O.orderID, O.itemID, M.itemNameShort, M.price, M.tax, M.priceBeforeTax HAVING O.orderID = @billId;";
 
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@billId", billId);
@@ -30,8 +27,8 @@ namespace ChapeauDAL
         //(Can also be used by Table View to identify active tables)
         public int FindUnpaidBill(int tableNr) 
         {
-            query = "SELECT orderID "
-                    + "FROM[ORDER] "
+            string query = "SELECT orderID "
+                    + "FROM [ORDER] "
                     + "WHERE tableID = @tableNr AND isPaid = 0;";
 
             SqlParameter[] sqlParameters = new SqlParameter[1];
@@ -56,23 +53,24 @@ namespace ChapeauDAL
                 {
                     BillItem item = new BillItem()
                     {
-                        Name = (string)dr["itemName"],
+                        Name = (string)dr["itemNameShort"],
                         Count = (int)dr["count"],
-                        PriceWithVAT = (float)dr["price"],
-                        VATPercentage = (int)dr["tax"],
-                        BasePrice = (float)dr["priceBeforeTax"]
+                        PriceWithVAT = (double)(decimal)dr["price"],
+                        VATPercentage = (int)(decimal)dr["tax"],
+                        BasePrice = (double)(decimal)dr["priceBeforeTax"]
                     };
                     billItems.Add(item);
                 }
                 // Return list of bill items
                 return billItems;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Throw exception
                 throw new Exception("Something went wrong while reading bill data from the database.");
             }
         }
+
         //Tries to find an unpaid bill, using a table nr
         private int ReadBillIDTable(DataTable dataTable)
         {
@@ -95,7 +93,7 @@ namespace ChapeauDAL
 
                 return billId;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Throw exception
                 throw new Exception("Something went wrong while reading bill data from the database.");
