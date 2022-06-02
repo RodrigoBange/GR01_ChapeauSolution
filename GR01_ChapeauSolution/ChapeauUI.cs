@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using ChapeauLogic;
 using ChapeauUI.Forms;
 using ChapeauUI;
+using System.Security.Cryptography;
 
 namespace GR01_ChapeauSolution
 {
@@ -24,6 +25,7 @@ namespace GR01_ChapeauSolution
         MenuService menuService;
         OrderService orderService;
         StockService stockService;
+        EmployeeService employeeService;
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -31,6 +33,8 @@ namespace GR01_ChapeauSolution
 
         // General variables
         private int tableNumber = 0;
+
+        Employee employee;
 
         #region General
         // Constructor
@@ -46,6 +50,7 @@ namespace GR01_ChapeauSolution
             menuService = new MenuService();
             orderService = new OrderService();
             stockService = new StockService();
+            employeeService = new EmployeeService();
         }
 
         // On Load
@@ -60,22 +65,6 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Login;
         }
 
-        private void DisplayUI()
-        {
-            // Display header elements !!Order matters for toggling visibility
-            lbl_OrderCounter.Visible = true;
-            background_OrderCounter.Visible = true;
-            btn_User.Visible = true;
-            btn_Return.Visible = true;
-
-            //Set border colors (Due to tab control)
-            border_Bottom.BackColor = Color.White;
-            border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Top.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
-        }
-
         private void SelectedTabChanged(object sender, EventArgs e)
         {
             // When tab is changed...
@@ -85,6 +74,21 @@ namespace GR01_ChapeauSolution
                 case 0:
                     {
                         lbl_Title.Text = "Login";
+
+                        txtBox_Login_User.Text = null;
+                        txtBox_Login_Password.Text = null;
+
+                        // Hide header and footer elements
+                        lbl_OrderCounter.Visible = false;
+                        background_OrderCounter.Visible = false;
+                        btn_User.Visible = false;
+                        btn_Return.Visible = false;
+
+                        // Set colors
+                        border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+                        border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+                        border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+                        border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
                     }
                     break;
                 // Account View 
@@ -166,14 +170,14 @@ namespace GR01_ChapeauSolution
                 case 8:
                     {
                         // Set title
-                        lbl_Title.Text = "Bar Orders";
+                        lbl_Title.Text = "Bar View";
                     }
                     break;
                 // Kitchen View 
                 case 9:
                     {
                         // Set title
-                        lbl_Title.Text = "Kitchen Orders";
+                        lbl_Title.Text = "Kitchen View";
                     }
                     break;
             }
@@ -184,57 +188,122 @@ namespace GR01_ChapeauSolution
             // Return to table view
             tabC_Body.SelectedTab = tab_Tables;
         }
-#endregion
+        #endregion
 
         #region Login
         /** LOGIN VIEW METHODS **/
+        private void txtBox_Login_User_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow to enter numbers in the employeeID
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CreateUser()
+        {
+            string password = "password1";
+            PasswordWithSaltHasher passwordWithSaltHasher = new PasswordWithSaltHasher();
+            HashWithSaltResult hashWithSaltResult = passwordWithSaltHasher.HashWithSalt(password, 64, SHA256.Create());
+            
+            string password2 = "password2";
+            PasswordWithSaltHasher passwordWithSaltHasher2 = new PasswordWithSaltHasher();
+            HashWithSaltResult hashWithSaltResult2 = passwordWithSaltHasher2.HashWithSalt(password2, 64, SHA256.Create());
+
+            string password3 = "password3";
+            PasswordWithSaltHasher passwordWithSaltHasher3 = new PasswordWithSaltHasher();
+            HashWithSaltResult hashWithSaltResult3 = passwordWithSaltHasher3.HashWithSalt(password3, 64, SHA256.Create());
+
+            string password4 = "password4";
+            PasswordWithSaltHasher passwordWithSaltHasher4 = new PasswordWithSaltHasher();
+            HashWithSaltResult hashWithSaltResult4 = passwordWithSaltHasher4.HashWithSalt(password4, 64, SHA256.Create());
+
+            string password5 = "password5";
+            PasswordWithSaltHasher passwordWithSaltHasher5 = new PasswordWithSaltHasher();
+            HashWithSaltResult hashWithSaltResult5 = passwordWithSaltHasher5.HashWithSalt(password5, 64, SHA256.Create());
+
+            employeeService.CreateEmployee("Alba Placeres", "Waiter", hashWithSaltResult.Salt, hashWithSaltResult.Digest);
+            employeeService.CreateEmployee("Johnny Depp", "Waiter", hashWithSaltResult2.Salt, hashWithSaltResult2.Digest);
+            employeeService.CreateEmployee("Rafa Nadal", "Waiter", hashWithSaltResult3.Salt, hashWithSaltResult3.Digest);
+            employeeService.CreateEmployee("Pepe", "Chef", hashWithSaltResult4.Salt, hashWithSaltResult4.Digest);
+            employeeService.CreateEmployee("Ana de Armas", "Bartender", hashWithSaltResult5.Salt, hashWithSaltResult5.Digest);
+        }
+
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            // Change tab to Table View
-            tabC_Body.SelectedTab = tab_Tables;
-            lbl_Title.Text = "Overview";
+            //Get employeeID amd password
+            int employeeID = int.Parse(txtBox_Login_User.Text);
+            string employeePassword = txtBox_Login_Password.Text;
 
-            // Displays UI, might be handy to check what user type logged in, admin or user and send it through
-            DisplayUI();
+            employee = employeeService.GetEmployee(employeeID);
+
+            if (employee != null)
+            {
+                PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+                HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
+                string convertedPassword = convertedHash.Digest;
+
+                if (convertedPassword == employee.Hash)
+                {
+                    // Succesfullly logged in
+                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Succesfully logged in");
+                    messageBox.ShowDialog();
+
+                    // Change tab to Table View
+                    OpenView();
+                }
+                else
+                {
+                    // Incorrect password
+                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Incorrect password");
+                    messageBox.ShowDialog();
+                }
+            }
+            else
+            {
+                // Employee doesn't exist
+                MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Employee doesn't exist");
+                messageBox.ShowDialog();
+            }
         }
-        #endregion
 
-        #region Forgot Password
-        /** FORGOT PASSWORD VIEW METHODS **/
-        private void btn_Forgot_Password_Login_Click(object sender, EventArgs e)
+        private void OpenView()
         {
-            tabC_Body.SelectedTab = tab_Login;
+            btn_User.Visible = true;
+            btn_Return.Visible = true;
+            if (employee.EmployeeRole == "Waiter")
+            {
+                tabC_Body.SelectedTab = tab_Tables;
+            }
+            else if (employee.EmployeeRole == "Chef")
+            {
+                tabC_Body.SelectedTab = tab_Kitchen;
+            }
+            else if (employee.EmployeeRole == "Bartender")
+            {
+                tabC_Body.SelectedTab = tab_Bar;
+            }
         }
+
         #endregion
 
         #region Account
         /** ACCOUNT METHODS **/
         private void btn_User_Click(object sender, EventArgs e)
         {
+            lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
+            lbl_Account_EmployeeName.Text = employee.EmployeeName;
+            lbl_Account_Role.Text = employee.EmployeeRole;
             tabC_Body.SelectedTab = tab_Account;
-
-            // Set colors
-            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
         }
 
         private void btn_Account_Logout_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedTab = tab_Login;
-         
-            // Hide header and footer elements
-            lbl_OrderCounter.Visible = false;
-            background_OrderCounter.Visible = false;
-            btn_User.Visible = false;
-            btn_Return.Visible = false;
 
-            // Set colors
-            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
-            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            employee = null;
         }
 
         #endregion

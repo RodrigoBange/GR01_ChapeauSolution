@@ -63,6 +63,16 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChapeauLogo {
+            get {
+                object obj = ResourceManager.GetObject("ChapeauLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkout_Icon {
             get {
                 object obj = ResourceManager.GetObject("Checkout_Icon", resourceCulture);
@@ -153,6 +163,26 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Home_Icon_New {
+            get {
+                object obj = ResourceManager.GetObject("Home_Icon_New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Home_Icon_New1 {
+            get {
+                object obj = ResourceManager.GetObject("Home_Icon_New1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -206,6 +236,16 @@ namespace ChapeauUI.Properties {
         internal static System.Drawing.Bitmap tableRed {
             get {
                 object obj = ResourceManager.GetObject("tableRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tableRed1 {
+            get {
+                object obj = ResourceManager.GetObject("tableRed1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
