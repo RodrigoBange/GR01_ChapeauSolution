@@ -8,7 +8,6 @@ namespace ChapeauLogic
 {
     public class PasswordWithSaltHasher
     {
-        // Create new password
         public HashWithSaltResult HashWithSalt(string password, int saltLength, HashAlgorithm hashAlgo)
         {
             // Create new RandomNumberGenerator object
@@ -31,7 +30,6 @@ namespace ChapeauLogic
             return new HashWithSaltResult(Convert.ToBase64String(saltBytes), Convert.ToBase64String(digestBytes));
         }
 
-        // Converts password
         public HashWithSaltResult ConvertedHashWithSalt(string password, string salt)
         {
             // Transfer password and salt to bytes
