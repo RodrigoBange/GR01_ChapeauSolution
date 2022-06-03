@@ -6,7 +6,7 @@ using ChapeauModel;
 
 namespace ChapeauLogic
 {
-    internal class PaymentService
+    public class PaymentService
     {
         private PaymentDao paymentDao;
         private Random rnd = new Random();
@@ -18,9 +18,9 @@ namespace ChapeauLogic
         }
 
         //
-        public bool ProcessPayment()
+        public bool SuccessfulPayment()
         {
-            int randomNumber = rnd.Next(1, 7);
+            int randomNumber = rnd.Next(1, 11);
 
             return (randomNumber != 1);
         }

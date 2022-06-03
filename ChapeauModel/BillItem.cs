@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ChapeauModel
 {
+    //Object used for displaying products on the bill
     public class BillItem
     {
         public string Name { get; set; }

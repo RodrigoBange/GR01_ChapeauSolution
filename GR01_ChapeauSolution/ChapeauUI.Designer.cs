@@ -87,12 +87,10 @@
             this.btn_Order_DrinksMenu = new System.Windows.Forms.Button();
             this.tab_Bill = new System.Windows.Forms.TabPage();
             this.pnl_Bill = new System.Windows.Forms.Panel();
+            this.Bill_lbl_RemainingPrice = new System.Windows.Forms.Label();
+            this.Bill_lbl_StillToPayTitle = new System.Windows.Forms.Label();
             this.Bill_lbl_TotalAmount = new System.Windows.Forms.Label();
             this.Bill_lbl_TotalTitle = new System.Windows.Forms.Label();
-            this.Bill_grpbox_AmountToPay = new System.Windows.Forms.GroupBox();
-            this.Bill_radbtn_CustomAmount = new System.Windows.Forms.RadioButton();
-            this.Bill_radbtn_FullAmount = new System.Windows.Forms.RadioButton();
-            this.Bill_num_Amount = new System.Windows.Forms.NumericUpDown();
             this.Bill_lv_VAT = new System.Windows.Forms.ListView();
             this.VAT_ColVAT = new System.Windows.Forms.ColumnHeader();
             this.VAT_ColBasePrice = new System.Windows.Forms.ColumnHeader();
@@ -112,7 +110,7 @@
             this.Bill_ColPriceTotal = new System.Windows.Forms.ColumnHeader();
             this.tab_CashPayment = new System.Windows.Forms.TabPage();
             this.pnl_Cash = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Payment_Btn_Pay = new System.Windows.Forms.Button();
             this.Payment_lbl_AmountGivenOrTip = new System.Windows.Forms.Label();
             this.Payment_lbl_BillTotal = new System.Windows.Forms.Label();
             this.Payment_lbl_ChangeOrTotalToPay = new System.Windows.Forms.Label();
@@ -180,8 +178,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tab_Bill.SuspendLayout();
             this.pnl_Bill.SuspendLayout();
-            this.Bill_grpbox_AmountToPay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_num_Amount)).BeginInit();
             this.Bill_grpbox_PaymentMethod.SuspendLayout();
             this.tab_CashPayment.SuspendLayout();
             this.pnl_Cash.SuspendLayout();
@@ -1049,9 +1045,10 @@
             // 
             // pnl_Bill
             // 
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_RemainingPrice);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_StillToPayTitle);
             this.pnl_Bill.Controls.Add(this.Bill_lbl_TotalAmount);
             this.pnl_Bill.Controls.Add(this.Bill_lbl_TotalTitle);
-            this.pnl_Bill.Controls.Add(this.Bill_grpbox_AmountToPay);
             this.pnl_Bill.Controls.Add(this.Bill_lv_VAT);
             this.pnl_Bill.Controls.Add(this.Bill_btn_Pay);
             this.pnl_Bill.Controls.Add(this.Bill_lbl_Bill);
@@ -1065,6 +1062,23 @@
             this.pnl_Bill.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
             this.pnl_Bill.Size = new System.Drawing.Size(521, 622);
             this.pnl_Bill.TabIndex = 1;
+            // 
+            // Bill_lbl_RemainingPrice
+            // 
+            this.Bill_lbl_RemainingPrice.Location = new System.Drawing.Point(391, 388);
+            this.Bill_lbl_RemainingPrice.Name = "Bill_lbl_RemainingPrice";
+            this.Bill_lbl_RemainingPrice.Size = new System.Drawing.Size(89, 21);
+            this.Bill_lbl_RemainingPrice.TabIndex = 18;
+            this.Bill_lbl_RemainingPrice.Text = "RemainingPrice";
+            // 
+            // Bill_lbl_StillToPayTitle
+            // 
+            this.Bill_lbl_StillToPayTitle.AutoSize = true;
+            this.Bill_lbl_StillToPayTitle.Location = new System.Drawing.Point(299, 388);
+            this.Bill_lbl_StillToPayTitle.Name = "Bill_lbl_StillToPayTitle";
+            this.Bill_lbl_StillToPayTitle.Size = new System.Drawing.Size(81, 19);
+            this.Bill_lbl_StillToPayTitle.TabIndex = 17;
+            this.Bill_lbl_StillToPayTitle.Text = "Still to Pay:";
             // 
             // Bill_lbl_TotalAmount
             // 
@@ -1083,64 +1097,6 @@
             this.Bill_lbl_TotalTitle.TabIndex = 15;
             this.Bill_lbl_TotalTitle.Text = "Total:";
             // 
-            // Bill_grpbox_AmountToPay
-            // 
-            this.Bill_grpbox_AmountToPay.Controls.Add(this.Bill_radbtn_CustomAmount);
-            this.Bill_grpbox_AmountToPay.Controls.Add(this.Bill_radbtn_FullAmount);
-            this.Bill_grpbox_AmountToPay.Controls.Add(this.Bill_num_Amount);
-            this.Bill_grpbox_AmountToPay.ForeColor = System.Drawing.Color.White;
-            this.Bill_grpbox_AmountToPay.Location = new System.Drawing.Point(232, 490);
-            this.Bill_grpbox_AmountToPay.Name = "Bill_grpbox_AmountToPay";
-            this.Bill_grpbox_AmountToPay.Size = new System.Drawing.Size(148, 124);
-            this.Bill_grpbox_AmountToPay.TabIndex = 14;
-            this.Bill_grpbox_AmountToPay.TabStop = false;
-            this.Bill_grpbox_AmountToPay.Text = "Amount To Pay";
-            // 
-            // Bill_radbtn_CustomAmount
-            // 
-            this.Bill_radbtn_CustomAmount.AutoSize = true;
-            this.Bill_radbtn_CustomAmount.Location = new System.Drawing.Point(13, 59);
-            this.Bill_radbtn_CustomAmount.Name = "Bill_radbtn_CustomAmount";
-            this.Bill_radbtn_CustomAmount.Size = new System.Drawing.Size(134, 23);
-            this.Bill_radbtn_CustomAmount.TabIndex = 2;
-            this.Bill_radbtn_CustomAmount.TabStop = true;
-            this.Bill_radbtn_CustomAmount.Text = "Custom Amount:";
-            this.Bill_radbtn_CustomAmount.UseVisualStyleBackColor = true;
-            this.Bill_radbtn_CustomAmount.CheckedChanged += new System.EventHandler(this.Bill_radbtn_CustomAmount_Checked);
-            // 
-            // Bill_radbtn_FullAmount
-            // 
-            this.Bill_radbtn_FullAmount.AutoSize = true;
-            this.Bill_radbtn_FullAmount.Location = new System.Drawing.Point(13, 30);
-            this.Bill_radbtn_FullAmount.Name = "Bill_radbtn_FullAmount";
-            this.Bill_radbtn_FullAmount.Size = new System.Drawing.Size(104, 23);
-            this.Bill_radbtn_FullAmount.TabIndex = 1;
-            this.Bill_radbtn_FullAmount.TabStop = true;
-            this.Bill_radbtn_FullAmount.Text = "Full Amount";
-            this.Bill_radbtn_FullAmount.UseVisualStyleBackColor = true;
-            this.Bill_radbtn_FullAmount.CheckedChanged += new System.EventHandler(this.Bill_radbtn_FullAmount_Checked);
-            // 
-            // Bill_num_Amount
-            // 
-            this.Bill_num_Amount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.Bill_num_Amount.DecimalPlaces = 2;
-            this.Bill_num_Amount.ForeColor = System.Drawing.Color.White;
-            this.Bill_num_Amount.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.Bill_num_Amount.Location = new System.Drawing.Point(13, 91);
-            this.Bill_num_Amount.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.Bill_num_Amount.Name = "Bill_num_Amount";
-            this.Bill_num_Amount.Size = new System.Drawing.Size(120, 27);
-            this.Bill_num_Amount.TabIndex = 0;
-            this.Bill_num_Amount.ThousandsSeparator = true;
-            // 
             // Bill_lv_VAT
             // 
             this.Bill_lv_VAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
@@ -1151,9 +1107,9 @@
             this.VAT_ColTotalSum});
             this.Bill_lv_VAT.ForeColor = System.Drawing.Color.White;
             this.Bill_lv_VAT.HideSelection = false;
-            this.Bill_lv_VAT.Location = new System.Drawing.Point(48, 402);
+            this.Bill_lv_VAT.Location = new System.Drawing.Point(48, 410);
             this.Bill_lv_VAT.Name = "Bill_lv_VAT";
-            this.Bill_lv_VAT.Size = new System.Drawing.Size(284, 69);
+            this.Bill_lv_VAT.Size = new System.Drawing.Size(332, 74);
             this.Bill_lv_VAT.TabIndex = 12;
             this.Bill_lv_VAT.UseCompatibleStateImageBehavior = false;
             this.Bill_lv_VAT.View = System.Windows.Forms.View.Details;
@@ -1176,12 +1132,13 @@
             // VAT_ColTotalSum
             // 
             this.VAT_ColTotalSum.Text = "Total";
+            this.VAT_ColTotalSum.Width = 90;
             // 
             // Bill_btn_Pay
             // 
             this.Bill_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Bill_btn_Pay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_btn_Pay.Location = new System.Drawing.Point(385, 535);
+            this.Bill_btn_Pay.Location = new System.Drawing.Point(363, 529);
             this.Bill_btn_Pay.Name = "Bill_btn_Pay";
             this.Bill_btn_Pay.Size = new System.Drawing.Size(127, 50);
             this.Bill_btn_Pay.TabIndex = 11;
@@ -1206,7 +1163,7 @@
             this.Bill_grpbox_PaymentMethod.Controls.Add(this.Bill_radbtn_Debit);
             this.Bill_grpbox_PaymentMethod.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_grpbox_PaymentMethod.ForeColor = System.Drawing.Color.White;
-            this.Bill_grpbox_PaymentMethod.Location = new System.Drawing.Point(18, 490);
+            this.Bill_grpbox_PaymentMethod.Location = new System.Drawing.Point(48, 490);
             this.Bill_grpbox_PaymentMethod.Name = "Bill_grpbox_PaymentMethod";
             this.Bill_grpbox_PaymentMethod.Size = new System.Drawing.Size(208, 124);
             this.Bill_grpbox_PaymentMethod.TabIndex = 7;
@@ -1306,7 +1263,7 @@
             // 
             // pnl_Cash
             // 
-            this.pnl_Cash.Controls.Add(this.button1);
+            this.pnl_Cash.Controls.Add(this.Payment_Btn_Pay);
             this.pnl_Cash.Controls.Add(this.Payment_lbl_AmountGivenOrTip);
             this.pnl_Cash.Controls.Add(this.Payment_lbl_BillTotal);
             this.pnl_Cash.Controls.Add(this.Payment_lbl_ChangeOrTotalToPay);
@@ -1323,14 +1280,16 @@
             this.pnl_Cash.Size = new System.Drawing.Size(521, 622);
             this.pnl_Cash.TabIndex = 0;
             // 
-            // button1
+            // Payment_Btn_Pay
             // 
-            this.button1.Location = new System.Drawing.Point(199, 508);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Payment_Btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Payment_Btn_Pay.Location = new System.Drawing.Point(193, 508);
+            this.Payment_Btn_Pay.Name = "Payment_Btn_Pay";
+            this.Payment_Btn_Pay.Size = new System.Drawing.Size(126, 40);
+            this.Payment_Btn_Pay.TabIndex = 9;
+            this.Payment_Btn_Pay.Text = "button1";
+            this.Payment_Btn_Pay.UseVisualStyleBackColor = false;
+            this.Payment_Btn_Pay.Click += new System.EventHandler(this.Payment_Btn_Pay_Click);
             // 
             // Payment_lbl_AmountGivenOrTip
             // 
@@ -1346,7 +1305,7 @@
             // 
             this.Payment_lbl_BillTotal.AutoSize = true;
             this.Payment_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Payment_lbl_BillTotal.Location = new System.Drawing.Point(276, 195);
+            this.Payment_lbl_BillTotal.Location = new System.Drawing.Point(301, 195);
             this.Payment_lbl_BillTotal.Name = "Payment_lbl_BillTotal";
             this.Payment_lbl_BillTotal.Size = new System.Drawing.Size(59, 23);
             this.Payment_lbl_BillTotal.TabIndex = 7;
@@ -1366,11 +1325,11 @@
             // 
             this.Payment_lbl_BillTotalTitle.AutoSize = true;
             this.Payment_lbl_BillTotalTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Payment_lbl_BillTotalTitle.Location = new System.Drawing.Point(189, 195);
+            this.Payment_lbl_BillTotalTitle.Location = new System.Drawing.Point(166, 195);
             this.Payment_lbl_BillTotalTitle.Name = "Payment_lbl_BillTotalTitle";
-            this.Payment_lbl_BillTotalTitle.Size = new System.Drawing.Size(77, 23);
+            this.Payment_lbl_BillTotalTitle.Size = new System.Drawing.Size(129, 23);
             this.Payment_lbl_BillTotalTitle.TabIndex = 5;
-            this.Payment_lbl_BillTotalTitle.Text = "Bill Total:";
+            this.Payment_lbl_BillTotalTitle.Text = "Amount to Pay:";
             // 
             // Payment_btn_Cancel
             // 
@@ -1414,6 +1373,7 @@
             this.Payment_Num_2.Name = "Payment_Num_2";
             this.Payment_Num_2.Size = new System.Drawing.Size(120, 27);
             this.Payment_Num_2.TabIndex = 2;
+            this.Payment_Num_2.ValueChanged += new System.EventHandler(this.Payment_Num_2_ValueChanged);
             // 
             // Payment_num_1
             // 
@@ -1435,6 +1395,7 @@
             this.Payment_num_1.Name = "Payment_num_1";
             this.Payment_num_1.Size = new System.Drawing.Size(120, 27);
             this.Payment_num_1.TabIndex = 1;
+            this.Payment_num_1.ValueChanged += new System.EventHandler(this.Payment_num_1_ValueChanged);
             // 
             // Payment_lbl_MethodTitle
             // 
@@ -1878,9 +1839,6 @@
             this.tab_Bill.ResumeLayout(false);
             this.pnl_Bill.ResumeLayout(false);
             this.pnl_Bill.PerformLayout();
-            this.Bill_grpbox_AmountToPay.ResumeLayout(false);
-            this.Bill_grpbox_AmountToPay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_num_Amount)).EndInit();
             this.Bill_grpbox_PaymentMethod.ResumeLayout(false);
             this.Bill_grpbox_PaymentMethod.PerformLayout();
             this.tab_CashPayment.ResumeLayout(false);
@@ -2012,10 +1970,6 @@
         private System.Windows.Forms.RadioButton Bill_radbtn_Credit;
         private System.Windows.Forms.RadioButton Bill_radbtn_Debit;
         private System.Windows.Forms.ListView Bill_lv_VAT;
-        private System.Windows.Forms.GroupBox Bill_grpbox_AmountToPay;
-        private System.Windows.Forms.RadioButton Bill_radbtn_CustomAmount;
-        private System.Windows.Forms.RadioButton Bill_radbtn_FullAmount;
-        private System.Windows.Forms.NumericUpDown Bill_num_Amount;
         private System.Windows.Forms.Label Bill_lbl_TotalAmount;
         private System.Windows.Forms.Label Bill_lbl_TotalTitle;
         private System.Windows.Forms.ColumnHeader Bill_ColQuantity;
@@ -2036,6 +1990,8 @@
         private System.Windows.Forms.Label Payment_lbl_ChangeOrTotalToPay;
         private System.Windows.Forms.Label Payment_lbl_BillTotalTitle;
         private System.Windows.Forms.Label Payment_lbl_AmountGivenOrTip;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Payment_Btn_Pay;
+        private System.Windows.Forms.Label Bill_lbl_StillToPayTitle;
+        private System.Windows.Forms.Label Bill_lbl_RemainingPrice;
     }
 }

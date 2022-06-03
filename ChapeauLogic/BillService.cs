@@ -9,10 +9,12 @@ namespace ChapeauLogic
     public class BillService
     {
         private BillDao billDAO;
+        private PaymentDao paymentDAO;
 
         public BillService()
         {
             billDAO = new BillDao();
+            paymentDAO = new PaymentDao();
         }
         
         public Bill GetBill(int tableNr)
@@ -28,11 +30,13 @@ namespace ChapeauLogic
 
             //If bill ID is valid, a bill object can be created by retrieving a list of bill items.
             Bill bill = new Bill(billId, billDAO.GetBillItems(billId));
-
-            if (bill.BillItems == null)
-                throw new Exception("The bill is empty.");
             
             return bill;
+        }
+
+        public double GetRemainingPrice(Bill bill)
+        {
+            return (bill.TotalBillPrice - (double)paymentDAO.GetPaidAmount(bill));
         }
     }
 }

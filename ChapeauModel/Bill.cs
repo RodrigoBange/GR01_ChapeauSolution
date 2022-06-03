@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ChapeauModel
 {
+    //Collective list of items registered to a bill, with calculated collective properties
     public class Bill
     {
         public const int NonAlcholicVATPercentage = 6;
@@ -10,11 +11,18 @@ namespace ChapeauModel
 
         public int BillId { get; private set; }
         public List<BillItem> BillItems { get; private set; }
-        public double BaseBillPrice { get; private set; }
-        public double PriceAlcoholicVAT { get; private set; }
-        public double PriceNonAlcoholicVAT { get; private set; }
-        public double TotalBillPrice { get { return BaseBillPrice + PriceAlcoholicVAT + PriceNonAlcoholicVAT; } }
-        public bool IsPaid { get; set; }
+        
+        public double PriceExclVATAlcoholic { get; private set; }
+        public double VATAlcoholic { get; private set; }
+        public double PriceInclVATAlcoholic { get { return (PriceExclVATAlcoholic + VATAlcoholic); } }
+        
+        public double PriceExclVATNonAlcoholic { get; private set; }
+        public double VATNonAlcoholic { get; private set; }
+        public double PriceInclVATNonAlcoholic { get { return (PriceExclVATNonAlcoholic + VATNonAlcoholic); } }
+
+        public double TotalBillPrice { get { return (PriceInclVATNonAlcoholic + PriceInclVATAlcoholic); } }
+        public double PriceRemaining { get; set; }
+        public bool IsPaid { get { return (PriceRemaining <= 0); } }
 
         //Constructor
         public Bill(int billId, List<BillItem> items)
@@ -22,28 +30,28 @@ namespace ChapeauModel
             BillId = billId;
             BillItems = items;
             CalculatePrices();
-            IsPaid = false;
         }
 
         //Calculate Prices (called in constructor)
         public void CalculatePrices()
         {
-            BaseBillPrice = 0.00;
-            PriceAlcoholicVAT = 0.00;
-            PriceNonAlcoholicVAT = 0.00;
+            PriceExclVATAlcoholic = 0.00;
+            PriceExclVATNonAlcoholic = 0.00;
+            VATAlcoholic = 0.00;
+            VATNonAlcoholic = 0.00;
 
             foreach (BillItem item in BillItems)
             {
                 if (item.VATPercentage == NonAlcholicVATPercentage)
                 {
-                    PriceNonAlcoholicVAT += (item.VATPrice * item.Count);
+                    PriceExclVATNonAlcoholic += (item.BasePrice * item.Count);
+                    VATNonAlcoholic += (item.VATPrice * item.Count);
                 }
                 else
                 {
-                    PriceAlcoholicVAT += (item.VATPrice * item.Count);
+                    PriceExclVATAlcoholic += (item.BasePrice * item.Count);
+                    VATAlcoholic += (item.VATPrice * item.Count);
                 }
-                
-                BaseBillPrice += (item.BasePrice * item.Count);
             }
         }
     }

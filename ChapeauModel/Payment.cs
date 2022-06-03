@@ -11,12 +11,11 @@ namespace ChapeauModel
         public PaymentType PaymentType { get; set; }
         public string RestaurantComment { get; set; }
         public double Tip { get; set; }
-        public double TotalAmountPaid { get { return Bill.TotalBillPrice + Tip; } }
+        public double TotalAmountPaid { get; set; }
 
         public Payment()
         {
-            //Set TimePaid to when the Payment object is created
-            TimePaid = DateTime.Now;
+           
         }
     }
 }

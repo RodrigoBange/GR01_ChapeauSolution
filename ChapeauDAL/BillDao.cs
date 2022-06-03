@@ -40,6 +40,8 @@ namespace ChapeauDAL
             return billId;
         }
 
+        
+
         //Reads BillItems from Database and returns it to the bill
         private List<BillItem> ReadBillItemTable(DataTable dataTable)
         {
@@ -99,5 +101,7 @@ namespace ChapeauDAL
                 throw new Exception("Something went wrong while reading bill data from the database.");
             }
         }
+
+        
     }
 }
