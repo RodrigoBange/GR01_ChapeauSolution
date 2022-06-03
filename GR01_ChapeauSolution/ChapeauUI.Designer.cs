@@ -87,61 +87,46 @@
             this.btn_Order_DrinksMenu = new System.Windows.Forms.Button();
             this.tab_Bill = new System.Windows.Forms.TabPage();
             this.pnl_Bill = new System.Windows.Forms.Panel();
-            this.flow_Bill = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_Bill_Title = new System.Windows.Forms.Panel();
-            this.img_pnl_Bill_Title_Splitter = new System.Windows.Forms.PictureBox();
-            this.lbl_Bill_Title = new System.Windows.Forms.Label();
-            this.pnl_Bill_Prices = new System.Windows.Forms.Panel();
-            this.flow_Bill_Prices = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl_Bill_Prices_Total = new System.Windows.Forms.Label();
-            this.txtBox_Bill_Prices_Total = new System.Windows.Forms.TextBox();
-            this.lbl_Bill_Prices_Tip = new System.Windows.Forms.Label();
-            this.txtBox_Bill_Prices_Tip = new System.Windows.Forms.TextBox();
-            this.btn_Bill_Checkout = new System.Windows.Forms.Button();
-            this.img_pnl_Bill_Prices_Splitter = new System.Windows.Forms.PictureBox();
-            this.tab_PaymentOptions = new System.Windows.Forms.TabPage();
-            this.pnl_PaymentOptions = new System.Windows.Forms.Panel();
-            this.pnl_PaymentOptions_Center = new System.Windows.Forms.Panel();
-            this.flow_PaymentOptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_PaymentOption_1 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_2 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_3 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_4 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_5 = new System.Windows.Forms.Button();
-            this.pnl_PaymentOptions_Bottom = new System.Windows.Forms.Panel();
-            this.pnl_PaymentOptions_Top = new System.Windows.Forms.Panel();
-            this.txtBox_Payment_Options_Total = new System.Windows.Forms.TextBox();
-            this.lbl_PaymentOptions = new System.Windows.Forms.Label();
+            this.Bill_lbl_RemainingPrice = new System.Windows.Forms.Label();
+            this.Bill_lbl_StillToPayTitle = new System.Windows.Forms.Label();
+            this.Bill_lbl_TotalAmount = new System.Windows.Forms.Label();
+            this.Bill_lbl_TotalTitle = new System.Windows.Forms.Label();
+            this.Bill_lv_VAT = new System.Windows.Forms.ListView();
+            this.VAT_ColVAT = new System.Windows.Forms.ColumnHeader();
+            this.VAT_ColBasePrice = new System.Windows.Forms.ColumnHeader();
+            this.VAT_ColVATAmount = new System.Windows.Forms.ColumnHeader();
+            this.VAT_ColTotalSum = new System.Windows.Forms.ColumnHeader();
+            this.Bill_btn_Pay = new System.Windows.Forms.Button();
+            this.Bill_lbl_Bill = new System.Windows.Forms.Label();
+            this.Bill_grpbox_PaymentMethod = new System.Windows.Forms.GroupBox();
+            this.Bill_radbtn_Credit = new System.Windows.Forms.RadioButton();
+            this.Bill_radbtn_Cash = new System.Windows.Forms.RadioButton();
+            this.Bill_radbtn_Debit = new System.Windows.Forms.RadioButton();
+            this.Bill_lv_Bill = new System.Windows.Forms.ListView();
+            this.Bill_ColQuantity = new System.Windows.Forms.ColumnHeader();
+            this.Bill_ColName = new System.Windows.Forms.ColumnHeader();
+            this.Bill_ColVAT = new System.Windows.Forms.ColumnHeader();
+            this.Bill_ColPrice = new System.Windows.Forms.ColumnHeader();
+            this.Bill_ColPriceTotal = new System.Windows.Forms.ColumnHeader();
+            this.tab_CashPayment = new System.Windows.Forms.TabPage();
+            this.pnl_Cash = new System.Windows.Forms.Panel();
+            this.Payment_Btn_Pay = new System.Windows.Forms.Button();
+            this.Payment_lbl_AmountGivenOrTip = new System.Windows.Forms.Label();
+            this.Payment_lbl_BillTotal = new System.Windows.Forms.Label();
+            this.Payment_lbl_ChangeOrTotalToPay = new System.Windows.Forms.Label();
+            this.Payment_lbl_BillTotalTitle = new System.Windows.Forms.Label();
+            this.Payment_btn_Cancel = new System.Windows.Forms.Button();
+            this.Payment_lbl_Method = new System.Windows.Forms.Label();
+            this.Payment_Num_2 = new System.Windows.Forms.NumericUpDown();
+            this.Payment_num_1 = new System.Windows.Forms.NumericUpDown();
+            this.Payment_lbl_MethodTitle = new System.Windows.Forms.Label();
             this.tab_ProcessPayment = new System.Windows.Forms.TabPage();
             this.pnl_ProcessPayment = new System.Windows.Forms.Panel();
-            this.pnl_ProcessPayment_Center = new System.Windows.Forms.Panel();
-            this.img_ProcessPayment_Icon = new System.Windows.Forms.PictureBox();
             this.btn_ProccessPayment_Confirm = new System.Windows.Forms.Button();
+            this.img_ProcessPayment_Icon = new System.Windows.Forms.PictureBox();
             this.lbl_ProcessPayment_Result = new System.Windows.Forms.Label();
-            this.pnl_ProcessPayment_Bottom = new System.Windows.Forms.Panel();
-            this.pnl_ProcessPayment_Top = new System.Windows.Forms.Panel();
-            this.tab_Management = new System.Windows.Forms.TabPage();
-            this.pnl_Management = new System.Windows.Forms.Panel();
-            this.pnl_Management_Main = new System.Windows.Forms.Panel();
-            this.pnl_Management_InputBoxes = new System.Windows.Forms.Panel();
-            this.flow_Management_Inputboxes = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl_Management_Field1 = new System.Windows.Forms.Label();
-            this.txtBox_Manangement_1 = new System.Windows.Forms.TextBox();
-            this.lbl_Management_Field2 = new System.Windows.Forms.Label();
-            this.txtBox_Manangement_2 = new System.Windows.Forms.TextBox();
-            this.lbl_Management_Field3 = new System.Windows.Forms.Label();
-            this.txtBox_Manangement_3 = new System.Windows.Forms.TextBox();
-            this.lbl_Management_Field4 = new System.Windows.Forms.Label();
-            this.txtBox_Manangement_4 = new System.Windows.Forms.TextBox();
-            this.listView_Management = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.pnl_Management_Options = new System.Windows.Forms.Panel();
-            this.flow_Management_Options = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_Management_Category1 = new System.Windows.Forms.Button();
-            this.btn_Management_Category2 = new System.Windows.Forms.Button();
-            this.btn_Management_Category3 = new System.Windows.Forms.Button();
+            this.tab_PaymentComplete = new System.Windows.Forms.TabPage();
+            this.pnl_PaymentOptions = new System.Windows.Forms.Panel();
             this.tab_Bar = new System.Windows.Forms.TabPage();
             this.flow_Bar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Bar_Categories = new System.Windows.Forms.Panel();
@@ -193,27 +178,15 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tab_Bill.SuspendLayout();
             this.pnl_Bill.SuspendLayout();
-            this.pnl_Bill_Title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Title_Splitter)).BeginInit();
-            this.pnl_Bill_Prices.SuspendLayout();
-            this.flow_Bill_Prices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Prices_Splitter)).BeginInit();
-            this.tab_PaymentOptions.SuspendLayout();
-            this.pnl_PaymentOptions.SuspendLayout();
-            this.pnl_PaymentOptions_Center.SuspendLayout();
-            this.flow_PaymentOptions.SuspendLayout();
-            this.pnl_PaymentOptions_Top.SuspendLayout();
+            this.Bill_grpbox_PaymentMethod.SuspendLayout();
+            this.tab_CashPayment.SuspendLayout();
+            this.pnl_Cash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_Num_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_num_1)).BeginInit();
             this.tab_ProcessPayment.SuspendLayout();
             this.pnl_ProcessPayment.SuspendLayout();
-            this.pnl_ProcessPayment_Center.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).BeginInit();
-            this.tab_Management.SuspendLayout();
-            this.pnl_Management.SuspendLayout();
-            this.pnl_Management_Main.SuspendLayout();
-            this.pnl_Management_InputBoxes.SuspendLayout();
-            this.flow_Management_Inputboxes.SuspendLayout();
-            this.pnl_Management_Options.SuspendLayout();
-            this.flow_Management_Options.SuspendLayout();
+            this.tab_PaymentComplete.SuspendLayout();
             this.tab_Bar.SuspendLayout();
             this.pnl_Bar_Categories.SuspendLayout();
             this.tab_Kitchen.SuspendLayout();
@@ -234,9 +207,9 @@
             this.tabC_Body.Controls.Add(this.tab_Tables);
             this.tabC_Body.Controls.Add(this.tab_Order);
             this.tabC_Body.Controls.Add(this.tab_Bill);
-            this.tabC_Body.Controls.Add(this.tab_PaymentOptions);
+            this.tabC_Body.Controls.Add(this.tab_CashPayment);
             this.tabC_Body.Controls.Add(this.tab_ProcessPayment);
-            this.tabC_Body.Controls.Add(this.tab_Management);
+            this.tabC_Body.Controls.Add(this.tab_PaymentComplete);
             this.tabC_Body.Controls.Add(this.tab_Bar);
             this.tabC_Body.Controls.Add(this.tab_Kitchen);
             this.tabC_Body.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -245,7 +218,7 @@
             this.tabC_Body.Name = "tabC_Body";
             this.tabC_Body.Padding = new System.Drawing.Point(0, 0);
             this.tabC_Body.SelectedIndex = 0;
-            this.tabC_Body.Size = new System.Drawing.Size(787, 974);
+            this.tabC_Body.Size = new System.Drawing.Size(529, 650);
             this.tabC_Body.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabC_Body.TabIndex = 0;
             this.tabC_Body.SelectedIndexChanged += new System.EventHandler(this.SelectedTabChanged);
@@ -255,10 +228,10 @@
             this.tab_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Login.Controls.Add(this.pnl_Login);
             this.tab_Login.Controls.Add(this.imgLogin_Logo);
-            this.tab_Login.Location = new System.Drawing.Point(4, 33);
+            this.tab_Login.Location = new System.Drawing.Point(4, 24);
             this.tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.tab_Login.Name = "tab_Login";
-            this.tab_Login.Size = new System.Drawing.Size(779, 937);
+            this.tab_Login.Size = new System.Drawing.Size(521, 622);
             this.tab_Login.TabIndex = 0;
             this.tab_Login.Text = "Login";
             // 
@@ -270,10 +243,10 @@
             this.pnl_Login.Controls.Add(this.lbl_Login_EmployeeID);
             this.pnl_Login.Controls.Add(this.txtBox_Login_User);
             this.pnl_Login.Controls.Add(this.btn_Login);
-            this.pnl_Login.Location = new System.Drawing.Point(73, 322);
-            this.pnl_Login.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Login.Location = new System.Drawing.Point(51, 214);
+            this.pnl_Login.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Login.Name = "pnl_Login";
-            this.pnl_Login.Size = new System.Drawing.Size(646, 527);
+            this.pnl_Login.Size = new System.Drawing.Size(431, 351);
             this.pnl_Login.TabIndex = 2;
             // 
             // txtBox_Login_Password
@@ -281,22 +254,22 @@
             this.txtBox_Login_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Login_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBox_Login_Password.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Login_Password.Location = new System.Drawing.Point(221, 151);
-            this.txtBox_Login_Password.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_Login_Password.Location = new System.Drawing.Point(147, 101);
+            this.txtBox_Login_Password.Margin = new System.Windows.Forms.Padding(1);
             this.txtBox_Login_Password.Name = "txtBox_Login_Password";
             this.txtBox_Login_Password.PasswordChar = '●';
             this.txtBox_Login_Password.PlaceholderText = "Enter your password";
-            this.txtBox_Login_Password.Size = new System.Drawing.Size(392, 47);
+            this.txtBox_Login_Password.Size = new System.Drawing.Size(263, 34);
             this.txtBox_Login_Password.TabIndex = 4;
             // 
             // lbl_Login_Password
             // 
             this.lbl_Login_Password.AutoSize = true;
             this.lbl_Login_Password.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Login_Password.Location = new System.Drawing.Point(17, 154);
-            this.lbl_Login_Password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Login_Password.Location = new System.Drawing.Point(11, 103);
+            this.lbl_Login_Password.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Login_Password.Name = "lbl_Login_Password";
-            this.lbl_Login_Password.Size = new System.Drawing.Size(165, 39);
+            this.lbl_Login_Password.Size = new System.Drawing.Size(116, 27);
             this.lbl_Login_Password.TabIndex = 3;
             this.lbl_Login_Password.Text = "Password : ";
             // 
@@ -304,10 +277,10 @@
             // 
             this.lbl_Login_EmployeeID.AutoSize = true;
             this.lbl_Login_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Login_EmployeeID.Location = new System.Drawing.Point(16, 86);
-            this.lbl_Login_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Login_EmployeeID.Location = new System.Drawing.Point(11, 57);
+            this.lbl_Login_EmployeeID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Login_EmployeeID.Name = "lbl_Login_EmployeeID";
-            this.lbl_Login_EmployeeID.Size = new System.Drawing.Size(204, 39);
+            this.lbl_Login_EmployeeID.Size = new System.Drawing.Size(143, 27);
             this.lbl_Login_EmployeeID.TabIndex = 2;
             this.lbl_Login_EmployeeID.Text = "Employee ID : ";
             // 
@@ -316,11 +289,11 @@
             this.txtBox_Login_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.txtBox_Login_User.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBox_Login_User.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Login_User.Location = new System.Drawing.Point(221, 79);
-            this.txtBox_Login_User.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_Login_User.Location = new System.Drawing.Point(147, 53);
+            this.txtBox_Login_User.Margin = new System.Windows.Forms.Padding(1);
             this.txtBox_Login_User.Name = "txtBox_Login_User";
             this.txtBox_Login_User.PlaceholderText = "Enter your employee ID";
-            this.txtBox_Login_User.Size = new System.Drawing.Size(392, 47);
+            this.txtBox_Login_User.Size = new System.Drawing.Size(263, 34);
             this.txtBox_Login_User.TabIndex = 1;
             // 
             // btn_Login
@@ -331,10 +304,10 @@
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Login.Location = new System.Drawing.Point(224, 241);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Login.Location = new System.Drawing.Point(149, 161);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(200, 64);
+            this.btn_Login.Size = new System.Drawing.Size(133, 43);
             this.btn_Login.TabIndex = 0;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;
@@ -346,9 +319,9 @@
             this.imgLogin_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgLogin_Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogin_Logo.Location = new System.Drawing.Point(0, 0);
-            this.imgLogin_Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogin_Logo.Margin = new System.Windows.Forms.Padding(1);
             this.imgLogin_Logo.Name = "imgLogin_Logo";
-            this.imgLogin_Logo.Size = new System.Drawing.Size(779, 275);
+            this.imgLogin_Logo.Size = new System.Drawing.Size(521, 183);
             this.imgLogin_Logo.TabIndex = 1;
             this.imgLogin_Logo.TabStop = false;
             // 
@@ -356,11 +329,11 @@
             // 
             this.tab_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Account.Controls.Add(this.panel1);
-            this.tab_Account.Location = new System.Drawing.Point(4, 33);
-            this.tab_Account.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_Account.Location = new System.Drawing.Point(4, 24);
+            this.tab_Account.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Account.Name = "tab_Account";
-            this.tab_Account.Padding = new System.Windows.Forms.Padding(2);
-            this.tab_Account.Size = new System.Drawing.Size(779, 937);
+            this.tab_Account.Padding = new System.Windows.Forms.Padding(1);
+            this.tab_Account.Size = new System.Drawing.Size(521, 622);
             this.tab_Account.TabIndex = 10;
             this.tab_Account.Text = "Account";
             // 
@@ -368,10 +341,10 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 933);
+            this.panel1.Size = new System.Drawing.Size(519, 620);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -381,10 +354,10 @@
             this.panel2.Controls.Add(this.lbl_Account_Role);
             this.panel2.Controls.Add(this.lbl_Account_Email);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(100, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(68, 50);
+            this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(575, 787);
+            this.panel2.Size = new System.Drawing.Size(383, 525);
             this.panel2.TabIndex = 0;
             // 
             // btn_Account_Logout
@@ -395,10 +368,10 @@
             this.btn_Account_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Account_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Account_Logout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Account_Logout.Location = new System.Drawing.Point(194, 614);
-            this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Account_Logout.Location = new System.Drawing.Point(129, 409);
+            this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Account_Logout.Name = "btn_Account_Logout";
-            this.btn_Account_Logout.Size = new System.Drawing.Size(200, 64);
+            this.btn_Account_Logout.Size = new System.Drawing.Size(133, 43);
             this.btn_Account_Logout.TabIndex = 5;
             this.btn_Account_Logout.Text = "Logout";
             this.btn_Account_Logout.UseVisualStyleBackColor = false;
@@ -409,10 +382,10 @@
             this.lbl_Account_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_Role.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Account_Role.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_Account_Role.Location = new System.Drawing.Point(4, 455);
-            this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_Role.Location = new System.Drawing.Point(3, 300);
+            this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Account_Role.Name = "lbl_Account_Role";
-            this.lbl_Account_Role.Size = new System.Drawing.Size(575, 34);
+            this.lbl_Account_Role.Size = new System.Drawing.Size(383, 23);
             this.lbl_Account_Role.TabIndex = 4;
             this.lbl_Account_Role.Text = "fdsa";
             this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -433,10 +406,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ChapeauUI.Properties.Resources.User_Icon;
-            this.pictureBox2.Location = new System.Drawing.Point(172, 86);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(115, 57);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(242, 230);
+            this.pictureBox2.Size = new System.Drawing.Size(161, 153);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -458,7 +431,7 @@
             // 
             this.pnl_TableOverview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_TableOverview.IsSplitterFixed = true;
-            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 23);
+            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 168);
             this.pnl_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_TableOverview.Name = "pnl_TableOverview";
             // 
@@ -474,8 +447,8 @@
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(779, 914);
-            this.pnl_TableOverview.SplitterDistance = 386;
+            this.pnl_TableOverview.Size = new System.Drawing.Size(521, 454);
+            this.pnl_TableOverview.SplitterDistance = 234;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
             // 
@@ -556,7 +529,7 @@
             this.flow_Tables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Tables.Location = new System.Drawing.Point(0, 0);
             this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_Tables.MaximumSize = new System.Drawing.Size(420, 0);
+            this.flow_Tables.MaximumSize = new System.Drawing.Size(280, 0);
             this.flow_Tables.Name = "flow_Tables";
             this.flow_Tables.Padding = new System.Windows.Forms.Padding(60, 13, 0, 0);
             this.flow_Tables.Size = new System.Drawing.Size(280, 454);
@@ -570,10 +543,10 @@
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_1.Location = new System.Drawing.Point(24, 42);
-            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(24, 30, 0, 60);
+            this.btn_Table_1.Location = new System.Drawing.Point(61, 14);
+            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(1, 1, 40, 13);
             this.btn_Table_1.Name = "btn_Table_1";
-            this.btn_Table_1.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_1.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_1.TabIndex = 0;
             this.btn_Table_1.Text = "1";
             this.btn_Table_1.UseCompatibleTextRendering = true;
@@ -588,10 +561,10 @@
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_2.Location = new System.Drawing.Point(208, 42);
-            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 30, 0, 2);
+            this.btn_Table_2.Location = new System.Drawing.Point(162, 14);
+            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Table_2.Name = "btn_Table_2";
-            this.btn_Table_2.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_2.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_2.TabIndex = 1;
             this.btn_Table_2.Text = "2";
             this.btn_Table_2.UseCompatibleTextRendering = true;
@@ -606,10 +579,10 @@
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_3.Location = new System.Drawing.Point(24, 218);
-            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(24, 2, 0, 60);
+            this.btn_Table_3.Location = new System.Drawing.Point(61, 88);
+            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(1, 1, 40, 13);
             this.btn_Table_3.Name = "btn_Table_3";
-            this.btn_Table_3.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_3.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_3.TabIndex = 2;
             this.btn_Table_3.Text = "3";
             this.btn_Table_3.UseCompatibleTextRendering = true;
@@ -624,10 +597,10 @@
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_4.Location = new System.Drawing.Point(210, 218);
-            this.btn_Table_4.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Table_4.Location = new System.Drawing.Point(162, 88);
+            this.btn_Table_4.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Table_4.Name = "btn_Table_4";
-            this.btn_Table_4.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_4.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_4.TabIndex = 3;
             this.btn_Table_4.Text = "4";
             this.btn_Table_4.UseCompatibleTextRendering = true;
@@ -642,10 +615,10 @@
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_5.Location = new System.Drawing.Point(24, 394);
-            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(24, 2, 0, 60);
+            this.btn_Table_5.Location = new System.Drawing.Point(61, 162);
+            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(1, 1, 40, 13);
             this.btn_Table_5.Name = "btn_Table_5";
-            this.btn_Table_5.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_5.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_5.TabIndex = 4;
             this.btn_Table_5.Text = "5";
             this.btn_Table_5.UseCompatibleTextRendering = true;
@@ -660,10 +633,10 @@
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_6.Location = new System.Drawing.Point(210, 394);
-            this.btn_Table_6.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Table_6.Location = new System.Drawing.Point(162, 162);
+            this.btn_Table_6.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Table_6.Name = "btn_Table_6";
-            this.btn_Table_6.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_6.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_6.TabIndex = 5;
             this.btn_Table_6.Text = "6";
             this.btn_Table_6.UseCompatibleTextRendering = true;
@@ -678,10 +651,10 @@
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_7.Location = new System.Drawing.Point(24, 570);
-            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(24, 2, 0, 60);
+            this.btn_Table_7.Location = new System.Drawing.Point(61, 236);
+            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(1, 1, 40, 13);
             this.btn_Table_7.Name = "btn_Table_7";
-            this.btn_Table_7.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_7.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_7.TabIndex = 6;
             this.btn_Table_7.Text = "7";
             this.btn_Table_7.UseCompatibleTextRendering = true;
@@ -696,10 +669,10 @@
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_8.Location = new System.Drawing.Point(210, 570);
-            this.btn_Table_8.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Table_8.Location = new System.Drawing.Point(162, 236);
+            this.btn_Table_8.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Table_8.Name = "btn_Table_8";
-            this.btn_Table_8.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_8.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_8.TabIndex = 7;
             this.btn_Table_8.Text = "8";
             this.btn_Table_8.UseCompatibleTextRendering = true;
@@ -714,10 +687,10 @@
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_9.Location = new System.Drawing.Point(24, 746);
-            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(24, 2, 0, 2);
+            this.btn_Table_9.Location = new System.Drawing.Point(61, 310);
+            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(1, 1, 40, 1);
             this.btn_Table_9.Name = "btn_Table_9";
-            this.btn_Table_9.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_9.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_9.TabIndex = 8;
             this.btn_Table_9.Text = "9";
             this.btn_Table_9.UseCompatibleTextRendering = true;
@@ -732,10 +705,10 @@
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_10.Location = new System.Drawing.Point(210, 746);
-            this.btn_Table_10.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Table_10.Location = new System.Drawing.Point(162, 310);
+            this.btn_Table_10.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Table_10.Name = "btn_Table_10";
-            this.btn_Table_10.Size = new System.Drawing.Size(114, 114);
+            this.btn_Table_10.Size = new System.Drawing.Size(60, 60);
             this.btn_Table_10.TabIndex = 9;
             this.btn_Table_10.Text = "10";
             this.btn_Table_10.UseCompatibleTextRendering = true;
@@ -841,10 +814,10 @@
             this.tab_Order.Controls.Add(this.pnl_Order_Menu);
             this.tab_Order.Controls.Add(this.pnl_Order_Orders);
             this.tab_Order.Controls.Add(this.pnl_Order_Categories);
-            this.tab_Order.Location = new System.Drawing.Point(4, 33);
-            this.tab_Order.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_Order.Location = new System.Drawing.Point(4, 24);
+            this.tab_Order.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Order.Name = "tab_Order";
-            this.tab_Order.Size = new System.Drawing.Size(779, 937);
+            this.tab_Order.Size = new System.Drawing.Size(521, 622);
             this.tab_Order.TabIndex = 3;
             this.tab_Order.Text = "Order";
             // 
@@ -853,10 +826,10 @@
             this.pnl_Order_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.pnl_Order_Menu.Controls.Add(this.flow_Order_Menu);
             this.pnl_Order_Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_Order_Menu.Location = new System.Drawing.Point(0, 60);
+            this.pnl_Order_Menu.Location = new System.Drawing.Point(0, 40);
             this.pnl_Order_Menu.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Order_Menu.Name = "pnl_Order_Menu";
-            this.pnl_Order_Menu.Size = new System.Drawing.Size(400, 877);
+            this.pnl_Order_Menu.Size = new System.Drawing.Size(267, 582);
             this.pnl_Order_Menu.TabIndex = 0;
             // 
             // flow_Order_Menu
@@ -867,7 +840,7 @@
             this.flow_Order_Menu.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Menu.Name = "flow_Order_Menu";
-            this.flow_Order_Menu.Size = new System.Drawing.Size(400, 877);
+            this.flow_Order_Menu.Size = new System.Drawing.Size(267, 582);
             this.flow_Order_Menu.TabIndex = 0;
             this.flow_Order_Menu.WrapContents = false;
             // 
@@ -882,10 +855,10 @@
             this.pnl_Order_Orders.Controls.Add(this.btn_Order_Checkout);
             this.pnl_Order_Orders.Controls.Add(this.splitter_OrderMenu);
             this.pnl_Order_Orders.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_Order_Orders.Location = new System.Drawing.Point(399, 60);
+            this.pnl_Order_Orders.Location = new System.Drawing.Point(268, 40);
             this.pnl_Order_Orders.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Order_Orders.Name = "pnl_Order_Orders";
-            this.pnl_Order_Orders.Size = new System.Drawing.Size(380, 877);
+            this.pnl_Order_Orders.Size = new System.Drawing.Size(253, 582);
             this.pnl_Order_Orders.TabIndex = 0;
             // 
             // flow_Order_Items
@@ -893,11 +866,11 @@
             this.flow_Order_Items.AutoScroll = true;
             this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Left;
             this.flow_Order_Items.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_Order_Items.Location = new System.Drawing.Point(2, 52);
+            this.flow_Order_Items.Location = new System.Drawing.Point(1, 0);
             this.flow_Order_Items.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Items.Name = "flow_Order_Items";
-            this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(4, 5, 5, 0);
-            this.flow_Order_Items.Size = new System.Drawing.Size(380, 651);
+            this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.flow_Order_Items.Size = new System.Drawing.Size(253, 466);
             this.flow_Order_Items.TabIndex = 0;
             this.flow_Order_Items.WrapContents = false;
             // 
@@ -906,10 +879,10 @@
             this.splitter_Orders_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
             this.splitter_Orders_Price.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Orders_Price.Enabled = false;
-            this.splitter_Orders_Price.Location = new System.Drawing.Point(2, 703);
+            this.splitter_Orders_Price.Location = new System.Drawing.Point(1, 466);
             this.splitter_Orders_Price.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_Orders_Price.Name = "splitter_Orders_Price";
-            this.splitter_Orders_Price.Size = new System.Drawing.Size(378, 2);
+            this.splitter_Orders_Price.Size = new System.Drawing.Size(252, 1);
             this.splitter_Orders_Price.TabIndex = 0;
             this.splitter_Orders_Price.TabStop = false;
             // 
@@ -917,10 +890,10 @@
             // 
             this.lbl_Order_TotalPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_Order_TotalPrice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(2, 705);
+            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(1, 467);
             this.lbl_Order_TotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Order_TotalPrice.Name = "lbl_Order_TotalPrice";
-            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(378, 50);
+            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(252, 33);
             this.lbl_Order_TotalPrice.TabIndex = 0;
             this.lbl_Order_TotalPrice.Text = "Total : € 0,00";
             this.lbl_Order_TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -935,10 +908,10 @@
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(2, 755);
-            this.btn_Order_Confirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(1, 500);
+            this.btn_Order_Confirm.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
-            this.btn_Order_Confirm.Size = new System.Drawing.Size(378, 60);
+            this.btn_Order_Confirm.Size = new System.Drawing.Size(252, 40);
             this.btn_Order_Confirm.TabIndex = 0;
             this.btn_Order_Confirm.Text = "Confirm order";
             this.btn_Order_Confirm.UseVisualStyleBackColor = false;
@@ -950,10 +923,10 @@
             this.splitter_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.splitter_Checkout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Checkout.Enabled = false;
-            this.splitter_Checkout.Location = new System.Drawing.Point(2, 815);
+            this.splitter_Checkout.Location = new System.Drawing.Point(1, 540);
             this.splitter_Checkout.Margin = new System.Windows.Forms.Padding(2);
             this.splitter_Checkout.Name = "splitter_Checkout";
-            this.splitter_Checkout.Size = new System.Drawing.Size(378, 2);
+            this.splitter_Checkout.Size = new System.Drawing.Size(252, 2);
             this.splitter_Checkout.TabIndex = 2;
             this.splitter_Checkout.TabStop = false;
             // 
@@ -966,10 +939,10 @@
             this.btn_Order_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Checkout.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Checkout.Location = new System.Drawing.Point(2, 817);
-            this.btn_Order_Checkout.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Order_Checkout.Location = new System.Drawing.Point(1, 542);
+            this.btn_Order_Checkout.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Order_Checkout.Name = "btn_Order_Checkout";
-            this.btn_Order_Checkout.Size = new System.Drawing.Size(378, 60);
+            this.btn_Order_Checkout.Size = new System.Drawing.Size(252, 40);
             this.btn_Order_Checkout.TabIndex = 1;
             this.btn_Order_Checkout.Text = "Checkout ";
             this.btn_Order_Checkout.UseVisualStyleBackColor = false;
@@ -983,7 +956,7 @@
             this.splitter_OrderMenu.Location = new System.Drawing.Point(0, 0);
             this.splitter_OrderMenu.Margin = new System.Windows.Forms.Padding(2);
             this.splitter_OrderMenu.Name = "splitter_OrderMenu";
-            this.splitter_OrderMenu.Size = new System.Drawing.Size(2, 877);
+            this.splitter_OrderMenu.Size = new System.Drawing.Size(1, 582);
             this.splitter_OrderMenu.TabIndex = 0;
             this.splitter_OrderMenu.TabStop = false;
             this.splitter_OrderMenu.Visible = false;
@@ -993,9 +966,9 @@
             this.pnl_Order_Categories.Controls.Add(this.flowLayoutPanel1);
             this.pnl_Order_Categories.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Order_Categories.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Order_Categories.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Order_Categories.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Order_Categories.Name = "pnl_Order_Categories";
-            this.pnl_Order_Categories.Size = new System.Drawing.Size(779, 60);
+            this.pnl_Order_Categories.Size = new System.Drawing.Size(521, 40);
             this.pnl_Order_Categories.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -1004,11 +977,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_LunchMenu);
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_DinnerMenu);
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_DrinksMenu);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(60, 4, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 58);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 3, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(517, 39);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_Order_LunchMenu
@@ -1017,10 +990,10 @@
             this.btn_Order_LunchMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_LunchMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_LunchMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_LunchMenu.Location = new System.Drawing.Point(60, 4);
-            this.btn_Order_LunchMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_LunchMenu.Location = new System.Drawing.Point(40, 3);
+            this.btn_Order_LunchMenu.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.btn_Order_LunchMenu.Name = "btn_Order_LunchMenu";
-            this.btn_Order_LunchMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_LunchMenu.Size = new System.Drawing.Size(133, 33);
             this.btn_Order_LunchMenu.TabIndex = 0;
             this.btn_Order_LunchMenu.Text = "Lunch";
             this.btn_Order_LunchMenu.UseCompatibleTextRendering = true;
@@ -1033,10 +1006,10 @@
             this.btn_Order_DinnerMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_DinnerMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_DinnerMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_DinnerMenu.Location = new System.Drawing.Point(290, 4);
-            this.btn_Order_DinnerMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_DinnerMenu.Location = new System.Drawing.Point(193, 3);
+            this.btn_Order_DinnerMenu.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.btn_Order_DinnerMenu.Name = "btn_Order_DinnerMenu";
-            this.btn_Order_DinnerMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_DinnerMenu.Size = new System.Drawing.Size(133, 33);
             this.btn_Order_DinnerMenu.TabIndex = 1;
             this.btn_Order_DinnerMenu.Text = "Dinner";
             this.btn_Order_DinnerMenu.UseCompatibleTextRendering = true;
@@ -1049,10 +1022,10 @@
             this.btn_Order_DrinksMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_DrinksMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_DrinksMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_DrinksMenu.Location = new System.Drawing.Point(520, 4);
+            this.btn_Order_DrinksMenu.Location = new System.Drawing.Point(346, 3);
             this.btn_Order_DrinksMenu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Order_DrinksMenu.Name = "btn_Order_DrinksMenu";
-            this.btn_Order_DrinksMenu.Size = new System.Drawing.Size(200, 50);
+            this.btn_Order_DrinksMenu.Size = new System.Drawing.Size(133, 33);
             this.btn_Order_DrinksMenu.TabIndex = 2;
             this.btn_Order_DrinksMenu.Text = "Drinks";
             this.btn_Order_DrinksMenu.UseCompatibleTextRendering = true;
@@ -1063,394 +1036,400 @@
             // 
             this.tab_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Bill.Controls.Add(this.pnl_Bill);
-            this.tab_Bill.Controls.Add(this.pnl_Bill_Prices);
-            this.tab_Bill.Location = new System.Drawing.Point(4, 33);
-            this.tab_Bill.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_Bill.Location = new System.Drawing.Point(4, 24);
+            this.tab_Bill.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Bill.Name = "tab_Bill";
-            this.tab_Bill.Size = new System.Drawing.Size(779, 937);
+            this.tab_Bill.Size = new System.Drawing.Size(521, 622);
             this.tab_Bill.TabIndex = 4;
             this.tab_Bill.Text = "Bill";
             // 
             // pnl_Bill
             // 
-            this.pnl_Bill.Controls.Add(this.flow_Bill);
-            this.pnl_Bill.Controls.Add(this.pnl_Bill_Title);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_RemainingPrice);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_StillToPayTitle);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TotalAmount);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TotalTitle);
+            this.pnl_Bill.Controls.Add(this.Bill_lv_VAT);
+            this.pnl_Bill.Controls.Add(this.Bill_btn_Pay);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_Bill);
+            this.pnl_Bill.Controls.Add(this.Bill_grpbox_PaymentMethod);
+            this.pnl_Bill.Controls.Add(this.Bill_lv_Bill);
             this.pnl_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Bill.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnl_Bill.Location = new System.Drawing.Point(0, 0);
             this.pnl_Bill.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Bill.Name = "pnl_Bill";
-            this.pnl_Bill.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_Bill.Size = new System.Drawing.Size(779, 837);
+            this.pnl_Bill.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.pnl_Bill.Size = new System.Drawing.Size(521, 622);
             this.pnl_Bill.TabIndex = 1;
             // 
-            // flow_Bill
+            // Bill_lbl_RemainingPrice
             // 
-            this.flow_Bill.AutoScroll = true;
-            this.flow_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.flow_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_Bill.Location = new System.Drawing.Point(110, 100);
-            this.flow_Bill.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_Bill.Name = "flow_Bill";
-            this.flow_Bill.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
-            this.flow_Bill.Size = new System.Drawing.Size(559, 737);
-            this.flow_Bill.TabIndex = 0;
+            this.Bill_lbl_RemainingPrice.Location = new System.Drawing.Point(391, 388);
+            this.Bill_lbl_RemainingPrice.Name = "Bill_lbl_RemainingPrice";
+            this.Bill_lbl_RemainingPrice.Size = new System.Drawing.Size(89, 21);
+            this.Bill_lbl_RemainingPrice.TabIndex = 18;
+            this.Bill_lbl_RemainingPrice.Text = "RemainingPrice";
             // 
-            // pnl_Bill_Title
+            // Bill_lbl_StillToPayTitle
             // 
-            this.pnl_Bill_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.pnl_Bill_Title.Controls.Add(this.img_pnl_Bill_Title_Splitter);
-            this.pnl_Bill_Title.Controls.Add(this.lbl_Bill_Title);
-            this.pnl_Bill_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Bill_Title.Location = new System.Drawing.Point(110, 0);
-            this.pnl_Bill_Title.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Bill_Title.Name = "pnl_Bill_Title";
-            this.pnl_Bill_Title.Size = new System.Drawing.Size(559, 100);
-            this.pnl_Bill_Title.TabIndex = 0;
+            this.Bill_lbl_StillToPayTitle.AutoSize = true;
+            this.Bill_lbl_StillToPayTitle.Location = new System.Drawing.Point(299, 388);
+            this.Bill_lbl_StillToPayTitle.Name = "Bill_lbl_StillToPayTitle";
+            this.Bill_lbl_StillToPayTitle.Size = new System.Drawing.Size(81, 19);
+            this.Bill_lbl_StillToPayTitle.TabIndex = 17;
+            this.Bill_lbl_StillToPayTitle.Text = "Still to Pay:";
             // 
-            // img_pnl_Bill_Title_Splitter
+            // Bill_lbl_TotalAmount
             // 
-            this.img_pnl_Bill_Title_Splitter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.img_pnl_Bill_Title_Splitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
-            this.img_pnl_Bill_Title_Splitter.Location = new System.Drawing.Point(32, 96);
-            this.img_pnl_Bill_Title_Splitter.Margin = new System.Windows.Forms.Padding(2);
-            this.img_pnl_Bill_Title_Splitter.Name = "img_pnl_Bill_Title_Splitter";
-            this.img_pnl_Bill_Title_Splitter.Size = new System.Drawing.Size(500, 4);
-            this.img_pnl_Bill_Title_Splitter.TabIndex = 1;
-            this.img_pnl_Bill_Title_Splitter.TabStop = false;
+            this.Bill_lbl_TotalAmount.Location = new System.Drawing.Point(391, 369);
+            this.Bill_lbl_TotalAmount.Name = "Bill_lbl_TotalAmount";
+            this.Bill_lbl_TotalAmount.Size = new System.Drawing.Size(89, 21);
+            this.Bill_lbl_TotalAmount.TabIndex = 16;
+            this.Bill_lbl_TotalAmount.Text = "TotalAmount";
             // 
-            // lbl_Bill_Title
+            // Bill_lbl_TotalTitle
             // 
-            this.lbl_Bill_Title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_Bill_Title.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bill_Title.Location = new System.Drawing.Point(0, 4);
-            this.lbl_Bill_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Bill_Title.Name = "lbl_Bill_Title";
-            this.lbl_Bill_Title.Size = new System.Drawing.Size(559, 96);
-            this.lbl_Bill_Title.TabIndex = 0;
-            this.lbl_Bill_Title.Text = "Bill - Table #";
-            this.lbl_Bill_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Bill_lbl_TotalTitle.AutoSize = true;
+            this.Bill_lbl_TotalTitle.Location = new System.Drawing.Point(335, 369);
+            this.Bill_lbl_TotalTitle.Name = "Bill_lbl_TotalTitle";
+            this.Bill_lbl_TotalTitle.Size = new System.Drawing.Size(45, 19);
+            this.Bill_lbl_TotalTitle.TabIndex = 15;
+            this.Bill_lbl_TotalTitle.Text = "Total:";
             // 
-            // pnl_Bill_Prices
+            // Bill_lv_VAT
             // 
-            this.pnl_Bill_Prices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.pnl_Bill_Prices.Controls.Add(this.flow_Bill_Prices);
-            this.pnl_Bill_Prices.Controls.Add(this.img_pnl_Bill_Prices_Splitter);
-            this.pnl_Bill_Prices.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_Bill_Prices.Location = new System.Drawing.Point(0, 837);
-            this.pnl_Bill_Prices.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_Bill_Prices.Name = "pnl_Bill_Prices";
-            this.pnl_Bill_Prices.Size = new System.Drawing.Size(779, 100);
-            this.pnl_Bill_Prices.TabIndex = 0;
+            this.Bill_lv_VAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.Bill_lv_VAT.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.VAT_ColVAT,
+            this.VAT_ColBasePrice,
+            this.VAT_ColVATAmount,
+            this.VAT_ColTotalSum});
+            this.Bill_lv_VAT.ForeColor = System.Drawing.Color.White;
+            this.Bill_lv_VAT.HideSelection = false;
+            this.Bill_lv_VAT.Location = new System.Drawing.Point(48, 410);
+            this.Bill_lv_VAT.Name = "Bill_lv_VAT";
+            this.Bill_lv_VAT.Size = new System.Drawing.Size(332, 74);
+            this.Bill_lv_VAT.TabIndex = 12;
+            this.Bill_lv_VAT.UseCompatibleStateImageBehavior = false;
+            this.Bill_lv_VAT.View = System.Windows.Forms.View.Details;
             // 
-            // flow_Bill_Prices
+            // VAT_ColVAT
             // 
-            this.flow_Bill_Prices.Controls.Add(this.lbl_Bill_Prices_Total);
-            this.flow_Bill_Prices.Controls.Add(this.txtBox_Bill_Prices_Total);
-            this.flow_Bill_Prices.Controls.Add(this.lbl_Bill_Prices_Tip);
-            this.flow_Bill_Prices.Controls.Add(this.txtBox_Bill_Prices_Tip);
-            this.flow_Bill_Prices.Controls.Add(this.btn_Bill_Checkout);
-            this.flow_Bill_Prices.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flow_Bill_Prices.Location = new System.Drawing.Point(3, 4);
-            this.flow_Bill_Prices.Margin = new System.Windows.Forms.Padding(2);
-            this.flow_Bill_Prices.Name = "flow_Bill_Prices";
-            this.flow_Bill_Prices.Padding = new System.Windows.Forms.Padding(14, 25, 0, 0);
-            this.flow_Bill_Prices.Size = new System.Drawing.Size(776, 96);
-            this.flow_Bill_Prices.TabIndex = 1;
+            this.VAT_ColVAT.Text = "VAT";
+            this.VAT_ColVAT.Width = 50;
             // 
-            // lbl_Bill_Prices_Total
+            // VAT_ColBasePrice
             // 
-            this.lbl_Bill_Prices_Total.AutoSize = true;
-            this.lbl_Bill_Prices_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bill_Prices_Total.Location = new System.Drawing.Point(16, 25);
-            this.lbl_Bill_Prices_Total.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Bill_Prices_Total.Name = "lbl_Bill_Prices_Total";
-            this.lbl_Bill_Prices_Total.Size = new System.Drawing.Size(119, 39);
-            this.lbl_Bill_Prices_Total.TabIndex = 0;
-            this.lbl_Bill_Prices_Total.Text = "Total : €";
+            this.VAT_ColBasePrice.Text = "Base Price";
+            this.VAT_ColBasePrice.Width = 80;
             // 
-            // txtBox_Bill_Prices_Total
+            // VAT_ColVATAmount
             // 
-            this.txtBox_Bill_Prices_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Bill_Prices_Total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Bill_Prices_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Bill_Prices_Total.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Bill_Prices_Total.Location = new System.Drawing.Point(139, 25);
-            this.txtBox_Bill_Prices_Total.Margin = new System.Windows.Forms.Padding(2, 0, 2, 2);
-            this.txtBox_Bill_Prices_Total.Name = "txtBox_Bill_Prices_Total";
-            this.txtBox_Bill_Prices_Total.ReadOnly = true;
-            this.txtBox_Bill_Prices_Total.Size = new System.Drawing.Size(150, 47);
-            this.txtBox_Bill_Prices_Total.TabIndex = 2;
+            this.VAT_ColVATAmount.Text = "VAT Amount";
+            this.VAT_ColVATAmount.Width = 90;
             // 
-            // lbl_Bill_Prices_Tip
+            // VAT_ColTotalSum
             // 
-            this.lbl_Bill_Prices_Tip.AutoSize = true;
-            this.lbl_Bill_Prices_Tip.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bill_Prices_Tip.Location = new System.Drawing.Point(301, 25);
-            this.lbl_Bill_Prices_Tip.Margin = new System.Windows.Forms.Padding(10, 0, 2, 0);
-            this.lbl_Bill_Prices_Tip.Name = "lbl_Bill_Prices_Tip";
-            this.lbl_Bill_Prices_Tip.Size = new System.Drawing.Size(96, 39);
-            this.lbl_Bill_Prices_Tip.TabIndex = 1;
-            this.lbl_Bill_Prices_Tip.Text = "Tip : €";
+            this.VAT_ColTotalSum.Text = "Total";
+            this.VAT_ColTotalSum.Width = 90;
             // 
-            // txtBox_Bill_Prices_Tip
+            // Bill_btn_Pay
             // 
-            this.txtBox_Bill_Prices_Tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Bill_Prices_Tip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Bill_Prices_Tip.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Bill_Prices_Tip.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Bill_Prices_Tip.Location = new System.Drawing.Point(401, 25);
-            this.txtBox_Bill_Prices_Tip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 2);
-            this.txtBox_Bill_Prices_Tip.Name = "txtBox_Bill_Prices_Tip";
-            this.txtBox_Bill_Prices_Tip.Size = new System.Drawing.Size(150, 47);
-            this.txtBox_Bill_Prices_Tip.TabIndex = 3;
+            this.Bill_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Bill_btn_Pay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_btn_Pay.Location = new System.Drawing.Point(363, 529);
+            this.Bill_btn_Pay.Name = "Bill_btn_Pay";
+            this.Bill_btn_Pay.Size = new System.Drawing.Size(127, 50);
+            this.Bill_btn_Pay.TabIndex = 11;
+            this.Bill_btn_Pay.Text = "Next Screen";
+            this.Bill_btn_Pay.UseVisualStyleBackColor = false;
+            this.Bill_btn_Pay.Click += new System.EventHandler(this.Bill_btn_Pay_Click);
             // 
-            // btn_Bill_Checkout
+            // Bill_lbl_Bill
             // 
-            this.btn_Bill_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Bill_Checkout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Bill_Checkout.FlatAppearance.BorderSize = 0;
-            this.btn_Bill_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bill_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Bill_Checkout.Location = new System.Drawing.Point(578, 27);
-            this.btn_Bill_Checkout.Margin = new System.Windows.Forms.Padding(25, 2, 2, 2);
-            this.btn_Bill_Checkout.Name = "btn_Bill_Checkout";
-            this.btn_Bill_Checkout.Size = new System.Drawing.Size(158, 46);
-            this.btn_Bill_Checkout.TabIndex = 4;
-            this.btn_Bill_Checkout.Text = "Checkout";
-            this.btn_Bill_Checkout.UseCompatibleTextRendering = true;
-            this.btn_Bill_Checkout.UseVisualStyleBackColor = false;
+            this.Bill_lbl_Bill.AutoSize = true;
+            this.Bill_lbl_Bill.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_Bill.Location = new System.Drawing.Point(245, 10);
+            this.Bill_lbl_Bill.Name = "Bill_lbl_Bill";
+            this.Bill_lbl_Bill.Size = new System.Drawing.Size(32, 22);
+            this.Bill_lbl_Bill.TabIndex = 9;
+            this.Bill_lbl_Bill.Text = "Bill";
             // 
-            // img_pnl_Bill_Prices_Splitter
+            // Bill_grpbox_PaymentMethod
             // 
-            this.img_pnl_Bill_Prices_Splitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
-            this.img_pnl_Bill_Prices_Splitter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.img_pnl_Bill_Prices_Splitter.Location = new System.Drawing.Point(0, 0);
-            this.img_pnl_Bill_Prices_Splitter.Margin = new System.Windows.Forms.Padding(2);
-            this.img_pnl_Bill_Prices_Splitter.Name = "img_pnl_Bill_Prices_Splitter";
-            this.img_pnl_Bill_Prices_Splitter.Size = new System.Drawing.Size(779, 4);
-            this.img_pnl_Bill_Prices_Splitter.TabIndex = 0;
-            this.img_pnl_Bill_Prices_Splitter.TabStop = false;
+            this.Bill_grpbox_PaymentMethod.Controls.Add(this.Bill_radbtn_Credit);
+            this.Bill_grpbox_PaymentMethod.Controls.Add(this.Bill_radbtn_Cash);
+            this.Bill_grpbox_PaymentMethod.Controls.Add(this.Bill_radbtn_Debit);
+            this.Bill_grpbox_PaymentMethod.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_grpbox_PaymentMethod.ForeColor = System.Drawing.Color.White;
+            this.Bill_grpbox_PaymentMethod.Location = new System.Drawing.Point(48, 490);
+            this.Bill_grpbox_PaymentMethod.Name = "Bill_grpbox_PaymentMethod";
+            this.Bill_grpbox_PaymentMethod.Size = new System.Drawing.Size(208, 124);
+            this.Bill_grpbox_PaymentMethod.TabIndex = 7;
+            this.Bill_grpbox_PaymentMethod.TabStop = false;
+            this.Bill_grpbox_PaymentMethod.Text = "Payment Method";
             // 
-            // tab_PaymentOptions
+            // Bill_radbtn_Credit
             // 
-            this.tab_PaymentOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.tab_PaymentOptions.Controls.Add(this.pnl_PaymentOptions);
-            this.tab_PaymentOptions.Location = new System.Drawing.Point(4, 33);
-            this.tab_PaymentOptions.Margin = new System.Windows.Forms.Padding(2);
-            this.tab_PaymentOptions.Name = "tab_PaymentOptions";
-            this.tab_PaymentOptions.Size = new System.Drawing.Size(779, 937);
-            this.tab_PaymentOptions.TabIndex = 5;
-            this.tab_PaymentOptions.Text = "PaymentOptions";
+            this.Bill_radbtn_Credit.AutoSize = true;
+            this.Bill_radbtn_Credit.Location = new System.Drawing.Point(18, 80);
+            this.Bill_radbtn_Credit.Name = "Bill_radbtn_Credit";
+            this.Bill_radbtn_Credit.Size = new System.Drawing.Size(183, 23);
+            this.Bill_radbtn_Credit.TabIndex = 9;
+            this.Bill_radbtn_Credit.TabStop = true;
+            this.Bill_radbtn_Credit.Text = "Credit Card (Visa/Amex)";
+            this.Bill_radbtn_Credit.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Credit.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Credit_Checked);
             // 
-            // pnl_PaymentOptions
+            // Bill_radbtn_Cash
             // 
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Center);
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Bottom);
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Top);
-            this.pnl_PaymentOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PaymentOptions.Location = new System.Drawing.Point(0, 0);
-            this.pnl_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_PaymentOptions.Name = "pnl_PaymentOptions";
-            this.pnl_PaymentOptions.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_PaymentOptions.Size = new System.Drawing.Size(779, 937);
-            this.pnl_PaymentOptions.TabIndex = 2;
+            this.Bill_radbtn_Cash.AutoSize = true;
+            this.Bill_radbtn_Cash.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_radbtn_Cash.Location = new System.Drawing.Point(18, 26);
+            this.Bill_radbtn_Cash.Name = "Bill_radbtn_Cash";
+            this.Bill_radbtn_Cash.Size = new System.Drawing.Size(59, 23);
+            this.Bill_radbtn_Cash.TabIndex = 8;
+            this.Bill_radbtn_Cash.TabStop = true;
+            this.Bill_radbtn_Cash.Text = "Cash";
+            this.Bill_radbtn_Cash.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Cash.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Cash_Checked);
             // 
-            // pnl_PaymentOptions_Center
+            // Bill_radbtn_Debit
             // 
-            this.pnl_PaymentOptions_Center.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Center.Controls.Add(this.flow_PaymentOptions);
-            this.pnl_PaymentOptions_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PaymentOptions_Center.Location = new System.Drawing.Point(110, 158);
-            this.pnl_PaymentOptions_Center.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_PaymentOptions_Center.Name = "pnl_PaymentOptions_Center";
-            this.pnl_PaymentOptions_Center.Size = new System.Drawing.Size(559, 619);
-            this.pnl_PaymentOptions_Center.TabIndex = 2;
+            this.Bill_radbtn_Debit.AutoSize = true;
+            this.Bill_radbtn_Debit.Location = new System.Drawing.Point(18, 53);
+            this.Bill_radbtn_Debit.Name = "Bill_radbtn_Debit";
+            this.Bill_radbtn_Debit.Size = new System.Drawing.Size(96, 23);
+            this.Bill_radbtn_Debit.TabIndex = 9;
+            this.Bill_radbtn_Debit.TabStop = true;
+            this.Bill_radbtn_Debit.Text = "Debit Card";
+            this.Bill_radbtn_Debit.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Debit.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Debit_Checked);
             // 
-            // flow_PaymentOptions
+            // Bill_lv_Bill
             // 
-            this.flow_PaymentOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flow_PaymentOptions.AutoScroll = true;
-            this.flow_PaymentOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_1);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_2);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_3);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_4);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_5);
-            this.flow_PaymentOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_PaymentOptions.Location = new System.Drawing.Point(2, 35);
-            this.flow_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_PaymentOptions.Name = "flow_PaymentOptions";
-            this.flow_PaymentOptions.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.flow_PaymentOptions.Size = new System.Drawing.Size(556, 552);
-            this.flow_PaymentOptions.TabIndex = 0;
+            this.Bill_lv_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.Bill_lv_Bill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Bill_ColQuantity,
+            this.Bill_ColName,
+            this.Bill_ColVAT,
+            this.Bill_ColPrice,
+            this.Bill_ColPriceTotal});
+            this.Bill_lv_Bill.ForeColor = System.Drawing.Color.White;
+            this.Bill_lv_Bill.HideSelection = false;
+            this.Bill_lv_Bill.Location = new System.Drawing.Point(48, 35);
+            this.Bill_lv_Bill.Name = "Bill_lv_Bill";
+            this.Bill_lv_Bill.Size = new System.Drawing.Size(442, 331);
+            this.Bill_lv_Bill.TabIndex = 1;
+            this.Bill_lv_Bill.UseCompatibleStateImageBehavior = false;
+            this.Bill_lv_Bill.View = System.Windows.Forms.View.Details;
             // 
-            // btn_PaymentOption_1
+            // Bill_ColQuantity
             // 
-            this.btn_PaymentOption_1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_PaymentOption_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_1.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_1.Location = new System.Drawing.Point(12, 12);
-            this.btn_PaymentOption_1.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_PaymentOption_1.Name = "btn_PaymentOption_1";
-            this.btn_PaymentOption_1.Size = new System.Drawing.Size(528, 100);
-            this.btn_PaymentOption_1.TabIndex = 0;
-            this.btn_PaymentOption_1.Text = "Payment option 1";
-            this.btn_PaymentOption_1.UseVisualStyleBackColor = false;
+            this.Bill_ColQuantity.Text = "Quantity";
+            this.Bill_ColQuantity.Width = 70;
             // 
-            // btn_PaymentOption_2
+            // Bill_ColName
             // 
-            this.btn_PaymentOption_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_2.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_2.Location = new System.Drawing.Point(12, 116);
-            this.btn_PaymentOption_2.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_PaymentOption_2.Name = "btn_PaymentOption_2";
-            this.btn_PaymentOption_2.Size = new System.Drawing.Size(528, 100);
-            this.btn_PaymentOption_2.TabIndex = 1;
-            this.btn_PaymentOption_2.Text = "Payment option 2";
-            this.btn_PaymentOption_2.UseVisualStyleBackColor = false;
+            this.Bill_ColName.Text = "Name";
+            this.Bill_ColName.Width = 140;
             // 
-            // btn_PaymentOption_3
+            // Bill_ColVAT
             // 
-            this.btn_PaymentOption_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_3.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_3.Location = new System.Drawing.Point(12, 220);
-            this.btn_PaymentOption_3.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_PaymentOption_3.Name = "btn_PaymentOption_3";
-            this.btn_PaymentOption_3.Size = new System.Drawing.Size(528, 100);
-            this.btn_PaymentOption_3.TabIndex = 2;
-            this.btn_PaymentOption_3.Text = "Payment option 3";
-            this.btn_PaymentOption_3.UseVisualStyleBackColor = false;
+            this.Bill_ColVAT.Text = "VAT";
+            this.Bill_ColVAT.Width = 50;
             // 
-            // btn_PaymentOption_4
+            // Bill_ColPrice
             // 
-            this.btn_PaymentOption_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_4.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_4.Location = new System.Drawing.Point(12, 324);
-            this.btn_PaymentOption_4.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_PaymentOption_4.Name = "btn_PaymentOption_4";
-            this.btn_PaymentOption_4.Size = new System.Drawing.Size(528, 100);
-            this.btn_PaymentOption_4.TabIndex = 3;
-            this.btn_PaymentOption_4.Text = "Payment option 4";
-            this.btn_PaymentOption_4.UseVisualStyleBackColor = false;
+            this.Bill_ColPrice.Text = "Price";
+            this.Bill_ColPrice.Width = 70;
             // 
-            // btn_PaymentOption_5
+            // Bill_ColPriceTotal
             // 
-            this.btn_PaymentOption_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_5.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_5.Location = new System.Drawing.Point(12, 428);
-            this.btn_PaymentOption_5.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_PaymentOption_5.Name = "btn_PaymentOption_5";
-            this.btn_PaymentOption_5.Size = new System.Drawing.Size(528, 100);
-            this.btn_PaymentOption_5.TabIndex = 4;
-            this.btn_PaymentOption_5.Text = "Payment option 5";
-            this.btn_PaymentOption_5.UseVisualStyleBackColor = false;
+            this.Bill_ColPriceTotal.Text = "Price Total";
+            this.Bill_ColPriceTotal.Width = 90;
             // 
-            // pnl_PaymentOptions_Bottom
+            // tab_CashPayment
             // 
-            this.pnl_PaymentOptions_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PaymentOptions_Bottom.Location = new System.Drawing.Point(110, 777);
-            this.pnl_PaymentOptions_Bottom.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_PaymentOptions_Bottom.Name = "pnl_PaymentOptions_Bottom";
-            this.pnl_PaymentOptions_Bottom.Size = new System.Drawing.Size(559, 160);
-            this.pnl_PaymentOptions_Bottom.TabIndex = 1;
+            this.tab_CashPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.tab_CashPayment.Controls.Add(this.pnl_Cash);
+            this.tab_CashPayment.Location = new System.Drawing.Point(4, 24);
+            this.tab_CashPayment.Margin = new System.Windows.Forms.Padding(1);
+            this.tab_CashPayment.Name = "tab_CashPayment";
+            this.tab_CashPayment.Size = new System.Drawing.Size(521, 622);
+            this.tab_CashPayment.TabIndex = 7;
+            this.tab_CashPayment.Text = "Payment";
             // 
-            // pnl_PaymentOptions_Top
+            // pnl_Cash
             // 
-            this.pnl_PaymentOptions_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Top.Controls.Add(this.txtBox_Payment_Options_Total);
-            this.pnl_PaymentOptions_Top.Controls.Add(this.lbl_PaymentOptions);
-            this.pnl_PaymentOptions_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_PaymentOptions_Top.Location = new System.Drawing.Point(110, 0);
-            this.pnl_PaymentOptions_Top.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_PaymentOptions_Top.Name = "pnl_PaymentOptions_Top";
-            this.pnl_PaymentOptions_Top.Size = new System.Drawing.Size(559, 158);
-            this.pnl_PaymentOptions_Top.TabIndex = 0;
+            this.pnl_Cash.Controls.Add(this.Payment_Btn_Pay);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_AmountGivenOrTip);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_BillTotal);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_ChangeOrTotalToPay);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_BillTotalTitle);
+            this.pnl_Cash.Controls.Add(this.Payment_btn_Cancel);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_Method);
+            this.pnl_Cash.Controls.Add(this.Payment_Num_2);
+            this.pnl_Cash.Controls.Add(this.Payment_num_1);
+            this.pnl_Cash.Controls.Add(this.Payment_lbl_MethodTitle);
+            this.pnl_Cash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Cash.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Cash.Margin = new System.Windows.Forms.Padding(1);
+            this.pnl_Cash.Name = "pnl_Cash";
+            this.pnl_Cash.Size = new System.Drawing.Size(521, 622);
+            this.pnl_Cash.TabIndex = 0;
             // 
-            // txtBox_Payment_Options_Total
+            // Payment_Btn_Pay
             // 
-            this.txtBox_Payment_Options_Total.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBox_Payment_Options_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Payment_Options_Total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Payment_Options_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Payment_Options_Total.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Payment_Options_Total.Location = new System.Drawing.Point(209, 34);
-            this.txtBox_Payment_Options_Total.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_Payment_Options_Total.Name = "txtBox_Payment_Options_Total";
-            this.txtBox_Payment_Options_Total.Size = new System.Drawing.Size(150, 47);
-            this.txtBox_Payment_Options_Total.TabIndex = 2;
-            this.txtBox_Payment_Options_Total.Text = "€ 0.00";
-            this.txtBox_Payment_Options_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Payment_Btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Payment_Btn_Pay.Location = new System.Drawing.Point(193, 508);
+            this.Payment_Btn_Pay.Name = "Payment_Btn_Pay";
+            this.Payment_Btn_Pay.Size = new System.Drawing.Size(126, 40);
+            this.Payment_Btn_Pay.TabIndex = 9;
+            this.Payment_Btn_Pay.Text = "button1";
+            this.Payment_Btn_Pay.UseVisualStyleBackColor = false;
+            this.Payment_Btn_Pay.Click += new System.EventHandler(this.Payment_Btn_Pay_Click);
             // 
-            // lbl_PaymentOptions
+            // Payment_lbl_AmountGivenOrTip
             // 
-            this.lbl_PaymentOptions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_PaymentOptions.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PaymentOptions.Location = new System.Drawing.Point(0, 84);
-            this.lbl_PaymentOptions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_PaymentOptions.Name = "lbl_PaymentOptions";
-            this.lbl_PaymentOptions.Size = new System.Drawing.Size(559, 74);
-            this.lbl_PaymentOptions.TabIndex = 0;
-            this.lbl_PaymentOptions.Text = "Select a payment option";
-            this.lbl_PaymentOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Payment_lbl_AmountGivenOrTip.AutoSize = true;
+            this.Payment_lbl_AmountGivenOrTip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_AmountGivenOrTip.Location = new System.Drawing.Point(199, 253);
+            this.Payment_lbl_AmountGivenOrTip.Name = "Payment_lbl_AmountGivenOrTip";
+            this.Payment_lbl_AmountGivenOrTip.Size = new System.Drawing.Size(122, 19);
+            this.Payment_lbl_AmountGivenOrTip.TabIndex = 8;
+            this.Payment_lbl_AmountGivenOrTip.Text = "AmountGiven/Tip";
+            // 
+            // Payment_lbl_BillTotal
+            // 
+            this.Payment_lbl_BillTotal.AutoSize = true;
+            this.Payment_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_BillTotal.Location = new System.Drawing.Point(301, 195);
+            this.Payment_lbl_BillTotal.Name = "Payment_lbl_BillTotal";
+            this.Payment_lbl_BillTotal.Size = new System.Drawing.Size(59, 23);
+            this.Payment_lbl_BillTotal.TabIndex = 7;
+            this.Payment_lbl_BillTotal.Text = "€ 0.00";
+            // 
+            // Payment_lbl_ChangeOrTotalToPay
+            // 
+            this.Payment_lbl_ChangeOrTotalToPay.AutoSize = true;
+            this.Payment_lbl_ChangeOrTotalToPay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_ChangeOrTotalToPay.Location = new System.Drawing.Point(199, 329);
+            this.Payment_lbl_ChangeOrTotalToPay.Name = "Payment_lbl_ChangeOrTotalToPay";
+            this.Payment_lbl_ChangeOrTotalToPay.Size = new System.Drawing.Size(134, 19);
+            this.Payment_lbl_ChangeOrTotalToPay.TabIndex = 6;
+            this.Payment_lbl_ChangeOrTotalToPay.Text = "Change/TotalToPay";
+            // 
+            // Payment_lbl_BillTotalTitle
+            // 
+            this.Payment_lbl_BillTotalTitle.AutoSize = true;
+            this.Payment_lbl_BillTotalTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_BillTotalTitle.Location = new System.Drawing.Point(166, 195);
+            this.Payment_lbl_BillTotalTitle.Name = "Payment_lbl_BillTotalTitle";
+            this.Payment_lbl_BillTotalTitle.Size = new System.Drawing.Size(129, 23);
+            this.Payment_lbl_BillTotalTitle.TabIndex = 5;
+            this.Payment_lbl_BillTotalTitle.Text = "Amount to Pay:";
+            // 
+            // Payment_btn_Cancel
+            // 
+            this.Payment_btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.Payment_btn_Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_btn_Cancel.Location = new System.Drawing.Point(134, 104);
+            this.Payment_btn_Cancel.Name = "Payment_btn_Cancel";
+            this.Payment_btn_Cancel.Size = new System.Drawing.Size(75, 29);
+            this.Payment_btn_Cancel.TabIndex = 4;
+            this.Payment_btn_Cancel.Text = "Back";
+            this.Payment_btn_Cancel.UseVisualStyleBackColor = false;
+            this.Payment_btn_Cancel.Click += new System.EventHandler(this.Payment_btn_Cancel_Click);
+            // 
+            // Payment_lbl_Method
+            // 
+            this.Payment_lbl_Method.AutoSize = true;
+            this.Payment_lbl_Method.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_Method.Location = new System.Drawing.Point(281, 70);
+            this.Payment_lbl_Method.Name = "Payment_lbl_Method";
+            this.Payment_lbl_Method.Size = new System.Drawing.Size(123, 22);
+            this.Payment_lbl_Method.TabIndex = 3;
+            this.Payment_lbl_Method.Text = "CurrentMethod";
+            // 
+            // Payment_Num_2
+            // 
+            this.Payment_Num_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.Payment_Num_2.DecimalPlaces = 2;
+            this.Payment_Num_2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_Num_2.ForeColor = System.Drawing.Color.White;
+            this.Payment_Num_2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.Payment_Num_2.Location = new System.Drawing.Point(199, 351);
+            this.Payment_Num_2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.Payment_Num_2.Name = "Payment_Num_2";
+            this.Payment_Num_2.Size = new System.Drawing.Size(120, 27);
+            this.Payment_Num_2.TabIndex = 2;
+            this.Payment_Num_2.ValueChanged += new System.EventHandler(this.Payment_Num_2_ValueChanged);
+            // 
+            // Payment_num_1
+            // 
+            this.Payment_num_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
+            this.Payment_num_1.DecimalPlaces = 2;
+            this.Payment_num_1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_num_1.ForeColor = System.Drawing.Color.White;
+            this.Payment_num_1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.Payment_num_1.Location = new System.Drawing.Point(199, 275);
+            this.Payment_num_1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.Payment_num_1.Name = "Payment_num_1";
+            this.Payment_num_1.Size = new System.Drawing.Size(120, 27);
+            this.Payment_num_1.TabIndex = 1;
+            this.Payment_num_1.ValueChanged += new System.EventHandler(this.Payment_num_1_ValueChanged);
+            // 
+            // Payment_lbl_MethodTitle
+            // 
+            this.Payment_lbl_MethodTitle.AutoSize = true;
+            this.Payment_lbl_MethodTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_lbl_MethodTitle.Location = new System.Drawing.Point(134, 70);
+            this.Payment_lbl_MethodTitle.Name = "Payment_lbl_MethodTitle";
+            this.Payment_lbl_MethodTitle.Size = new System.Drawing.Size(141, 22);
+            this.Payment_lbl_MethodTitle.TabIndex = 0;
+            this.Payment_lbl_MethodTitle.Text = "Payment Method:";
             // 
             // tab_ProcessPayment
             // 
             this.tab_ProcessPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_ProcessPayment.Controls.Add(this.pnl_ProcessPayment);
-            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 33);
-            this.tab_ProcessPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 24);
+            this.tab_ProcessPayment.Margin = new System.Windows.Forms.Padding(1);
             this.tab_ProcessPayment.Name = "tab_ProcessPayment";
-            this.tab_ProcessPayment.Size = new System.Drawing.Size(779, 937);
+            this.tab_ProcessPayment.Size = new System.Drawing.Size(521, 622);
             this.tab_ProcessPayment.TabIndex = 6;
             this.tab_ProcessPayment.Text = "Process Payment";
             // 
             // pnl_ProcessPayment
             // 
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Center);
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Bottom);
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Top);
+            this.pnl_ProcessPayment.Controls.Add(this.btn_ProccessPayment_Confirm);
+            this.pnl_ProcessPayment.Controls.Add(this.img_ProcessPayment_Icon);
+            this.pnl_ProcessPayment.Controls.Add(this.lbl_ProcessPayment_Result);
             this.pnl_ProcessPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ProcessPayment.Location = new System.Drawing.Point(0, 0);
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProcessPayment.Name = "pnl_ProcessPayment";
-            this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(110, 0, 110, 0);
-            this.pnl_ProcessPayment.Size = new System.Drawing.Size(779, 937);
+            this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.pnl_ProcessPayment.Size = new System.Drawing.Size(521, 622);
             this.pnl_ProcessPayment.TabIndex = 3;
-            // 
-            // pnl_ProcessPayment_Center
-            // 
-            this.pnl_ProcessPayment_Center.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.pnl_ProcessPayment_Center.Controls.Add(this.img_ProcessPayment_Icon);
-            this.pnl_ProcessPayment_Center.Controls.Add(this.btn_ProccessPayment_Confirm);
-            this.pnl_ProcessPayment_Center.Controls.Add(this.lbl_ProcessPayment_Result);
-            this.pnl_ProcessPayment_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_ProcessPayment_Center.Location = new System.Drawing.Point(110, 158);
-            this.pnl_ProcessPayment_Center.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_ProcessPayment_Center.Name = "pnl_ProcessPayment_Center";
-            this.pnl_ProcessPayment_Center.Size = new System.Drawing.Size(559, 619);
-            this.pnl_ProcessPayment_Center.TabIndex = 2;
-            // 
-            // img_ProcessPayment_Icon
-            // 
-            this.img_ProcessPayment_Icon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.img_ProcessPayment_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.img_ProcessPayment_Icon.Location = new System.Drawing.Point(182, 131);
-            this.img_ProcessPayment_Icon.Margin = new System.Windows.Forms.Padding(2);
-            this.img_ProcessPayment_Icon.Name = "img_ProcessPayment_Icon";
-            this.img_ProcessPayment_Icon.Size = new System.Drawing.Size(200, 200);
-            this.img_ProcessPayment_Icon.TabIndex = 2;
-            this.img_ProcessPayment_Icon.TabStop = false;
             // 
             // btn_ProccessPayment_Confirm
             // 
@@ -1459,317 +1438,77 @@
             this.btn_ProccessPayment_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ProccessPayment_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ProccessPayment_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(14, 471);
-            this.btn_ProccessPayment_Confirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(10, 420);
+            this.btn_ProccessPayment_Confirm.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ProccessPayment_Confirm.Name = "btn_ProccessPayment_Confirm";
-            this.btn_ProccessPayment_Confirm.Size = new System.Drawing.Size(528, 100);
+            this.btn_ProccessPayment_Confirm.Size = new System.Drawing.Size(352, 67);
             this.btn_ProccessPayment_Confirm.TabIndex = 1;
             this.btn_ProccessPayment_Confirm.Text = "Confirm / Retry";
             this.btn_ProccessPayment_Confirm.UseVisualStyleBackColor = false;
+            // 
+            // img_ProcessPayment_Icon
+            // 
+            this.img_ProcessPayment_Icon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.img_ProcessPayment_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.img_ProcessPayment_Icon.Location = new System.Drawing.Point(122, 193);
+            this.img_ProcessPayment_Icon.Margin = new System.Windows.Forms.Padding(1);
+            this.img_ProcessPayment_Icon.Name = "img_ProcessPayment_Icon";
+            this.img_ProcessPayment_Icon.Size = new System.Drawing.Size(133, 133);
+            this.img_ProcessPayment_Icon.TabIndex = 2;
+            this.img_ProcessPayment_Icon.TabStop = false;
             // 
             // lbl_ProcessPayment_Result
             // 
             this.lbl_ProcessPayment_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_ProcessPayment_Result.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ProcessPayment_Result.Location = new System.Drawing.Point(-2, 333);
-            this.lbl_ProcessPayment_Result.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ProcessPayment_Result.Location = new System.Drawing.Point(0, 328);
+            this.lbl_ProcessPayment_Result.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_ProcessPayment_Result.Name = "lbl_ProcessPayment_Result";
-            this.lbl_ProcessPayment_Result.Size = new System.Drawing.Size(556, 74);
+            this.lbl_ProcessPayment_Result.Size = new System.Drawing.Size(371, 49);
             this.lbl_ProcessPayment_Result.TabIndex = 0;
             this.lbl_ProcessPayment_Result.Text = "Payment Succesful / Failure";
             this.lbl_ProcessPayment_Result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl_ProcessPayment_Bottom
+            // tab_PaymentComplete
             // 
-            this.pnl_ProcessPayment_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_ProcessPayment_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_ProcessPayment_Bottom.Location = new System.Drawing.Point(110, 777);
-            this.pnl_ProcessPayment_Bottom.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_ProcessPayment_Bottom.Name = "pnl_ProcessPayment_Bottom";
-            this.pnl_ProcessPayment_Bottom.Size = new System.Drawing.Size(559, 160);
-            this.pnl_ProcessPayment_Bottom.TabIndex = 1;
+            this.tab_PaymentComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.tab_PaymentComplete.Controls.Add(this.pnl_PaymentOptions);
+            this.tab_PaymentComplete.Location = new System.Drawing.Point(4, 24);
+            this.tab_PaymentComplete.Margin = new System.Windows.Forms.Padding(1);
+            this.tab_PaymentComplete.Name = "tab_PaymentComplete";
+            this.tab_PaymentComplete.Size = new System.Drawing.Size(521, 622);
+            this.tab_PaymentComplete.TabIndex = 5;
+            this.tab_PaymentComplete.Text = "CardPayment";
             // 
-            // pnl_ProcessPayment_Top
+            // pnl_PaymentOptions
             // 
-            this.pnl_ProcessPayment_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_ProcessPayment_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_ProcessPayment_Top.Location = new System.Drawing.Point(110, 0);
-            this.pnl_ProcessPayment_Top.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_ProcessPayment_Top.Name = "pnl_ProcessPayment_Top";
-            this.pnl_ProcessPayment_Top.Size = new System.Drawing.Size(559, 158);
-            this.pnl_ProcessPayment_Top.TabIndex = 0;
-            // 
-            // tab_Management
-            // 
-            this.tab_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.tab_Management.Controls.Add(this.pnl_Management);
-            this.tab_Management.Location = new System.Drawing.Point(4, 33);
-            this.tab_Management.Margin = new System.Windows.Forms.Padding(2);
-            this.tab_Management.Name = "tab_Management";
-            this.tab_Management.Size = new System.Drawing.Size(779, 937);
-            this.tab_Management.TabIndex = 7;
-            this.tab_Management.Text = "Management";
-            // 
-            // pnl_Management
-            // 
-            this.pnl_Management.Controls.Add(this.pnl_Management_Main);
-            this.pnl_Management.Controls.Add(this.pnl_Management_Options);
-            this.pnl_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Management.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Management.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Management.Name = "pnl_Management";
-            this.pnl_Management.Size = new System.Drawing.Size(779, 937);
-            this.pnl_Management.TabIndex = 0;
-            // 
-            // pnl_Management_Main
-            // 
-            this.pnl_Management_Main.Controls.Add(this.pnl_Management_InputBoxes);
-            this.pnl_Management_Main.Controls.Add(this.listView_Management);
-            this.pnl_Management_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Management_Main.Location = new System.Drawing.Point(0, 60);
-            this.pnl_Management_Main.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Management_Main.Name = "pnl_Management_Main";
-            this.pnl_Management_Main.Size = new System.Drawing.Size(779, 877);
-            this.pnl_Management_Main.TabIndex = 1;
-            // 
-            // pnl_Management_InputBoxes
-            // 
-            this.pnl_Management_InputBoxes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_Management_InputBoxes.Controls.Add(this.flow_Management_Inputboxes);
-            this.pnl_Management_InputBoxes.Location = new System.Drawing.Point(9, 517);
-            this.pnl_Management_InputBoxes.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Management_InputBoxes.Name = "pnl_Management_InputBoxes";
-            this.pnl_Management_InputBoxes.Size = new System.Drawing.Size(760, 149);
-            this.pnl_Management_InputBoxes.TabIndex = 2;
-            // 
-            // flow_Management_Inputboxes
-            // 
-            this.flow_Management_Inputboxes.Controls.Add(this.lbl_Management_Field1);
-            this.flow_Management_Inputboxes.Controls.Add(this.txtBox_Manangement_1);
-            this.flow_Management_Inputboxes.Controls.Add(this.lbl_Management_Field2);
-            this.flow_Management_Inputboxes.Controls.Add(this.txtBox_Manangement_2);
-            this.flow_Management_Inputboxes.Controls.Add(this.lbl_Management_Field3);
-            this.flow_Management_Inputboxes.Controls.Add(this.txtBox_Manangement_3);
-            this.flow_Management_Inputboxes.Controls.Add(this.lbl_Management_Field4);
-            this.flow_Management_Inputboxes.Controls.Add(this.txtBox_Manangement_4);
-            this.flow_Management_Inputboxes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flow_Management_Inputboxes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_Management_Inputboxes.Location = new System.Drawing.Point(0, 0);
-            this.flow_Management_Inputboxes.Margin = new System.Windows.Forms.Padding(2);
-            this.flow_Management_Inputboxes.Name = "flow_Management_Inputboxes";
-            this.flow_Management_Inputboxes.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.flow_Management_Inputboxes.Size = new System.Drawing.Size(760, 146);
-            this.flow_Management_Inputboxes.TabIndex = 6;
-            // 
-            // lbl_Management_Field1
-            // 
-            this.lbl_Management_Field1.AutoSize = true;
-            this.lbl_Management_Field1.Location = new System.Drawing.Point(62, 0);
-            this.lbl_Management_Field1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Management_Field1.Name = "lbl_Management_Field1";
-            this.lbl_Management_Field1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field1.Size = new System.Drawing.Size(80, 31);
-            this.lbl_Management_Field1.TabIndex = 5;
-            this.lbl_Management_Field1.Text = "Field 1 : ";
-            this.lbl_Management_Field1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBox_Manangement_1
-            // 
-            this.txtBox_Manangement_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Manangement_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Manangement_1.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_1.Location = new System.Drawing.Point(62, 33);
-            this.txtBox_Manangement_1.Margin = new System.Windows.Forms.Padding(2, 2, 80, 2);
-            this.txtBox_Manangement_1.Name = "txtBox_Manangement_1";
-            this.txtBox_Manangement_1.Size = new System.Drawing.Size(280, 32);
-            this.txtBox_Manangement_1.TabIndex = 2;
-            // 
-            // lbl_Management_Field2
-            // 
-            this.lbl_Management_Field2.AutoSize = true;
-            this.lbl_Management_Field2.Location = new System.Drawing.Point(62, 67);
-            this.lbl_Management_Field2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Management_Field2.Name = "lbl_Management_Field2";
-            this.lbl_Management_Field2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field2.Size = new System.Drawing.Size(80, 31);
-            this.lbl_Management_Field2.TabIndex = 6;
-            this.lbl_Management_Field2.Text = "Field 2 : ";
-            this.lbl_Management_Field2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBox_Manangement_2
-            // 
-            this.txtBox_Manangement_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Manangement_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Manangement_2.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_2.Location = new System.Drawing.Point(62, 100);
-            this.txtBox_Manangement_2.Margin = new System.Windows.Forms.Padding(2, 2, 80, 2);
-            this.txtBox_Manangement_2.Name = "txtBox_Manangement_2";
-            this.txtBox_Manangement_2.Size = new System.Drawing.Size(280, 32);
-            this.txtBox_Manangement_2.TabIndex = 3;
-            // 
-            // lbl_Management_Field3
-            // 
-            this.lbl_Management_Field3.AutoSize = true;
-            this.lbl_Management_Field3.Location = new System.Drawing.Point(424, 0);
-            this.lbl_Management_Field3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Management_Field3.Name = "lbl_Management_Field3";
-            this.lbl_Management_Field3.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field3.Size = new System.Drawing.Size(80, 31);
-            this.lbl_Management_Field3.TabIndex = 7;
-            this.lbl_Management_Field3.Text = "Field 3 : ";
-            this.lbl_Management_Field3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBox_Manangement_3
-            // 
-            this.txtBox_Manangement_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Manangement_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Manangement_3.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_3.Location = new System.Drawing.Point(424, 33);
-            this.txtBox_Manangement_3.Margin = new System.Windows.Forms.Padding(2, 2, 80, 2);
-            this.txtBox_Manangement_3.Name = "txtBox_Manangement_3";
-            this.txtBox_Manangement_3.Size = new System.Drawing.Size(280, 32);
-            this.txtBox_Manangement_3.TabIndex = 1;
-            // 
-            // lbl_Management_Field4
-            // 
-            this.lbl_Management_Field4.AutoSize = true;
-            this.lbl_Management_Field4.Location = new System.Drawing.Point(424, 67);
-            this.lbl_Management_Field4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Management_Field4.Name = "lbl_Management_Field4";
-            this.lbl_Management_Field4.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.lbl_Management_Field4.Size = new System.Drawing.Size(80, 31);
-            this.lbl_Management_Field4.TabIndex = 8;
-            this.lbl_Management_Field4.Text = "Field 4 : ";
-            this.lbl_Management_Field4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBox_Manangement_4
-            // 
-            this.txtBox_Manangement_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Manangement_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Manangement_4.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Manangement_4.Location = new System.Drawing.Point(424, 100);
-            this.txtBox_Manangement_4.Margin = new System.Windows.Forms.Padding(2, 2, 80, 2);
-            this.txtBox_Manangement_4.Name = "txtBox_Manangement_4";
-            this.txtBox_Manangement_4.Size = new System.Drawing.Size(280, 32);
-            this.txtBox_Manangement_4.TabIndex = 4;
-            // 
-            // listView_Management
-            // 
-            this.listView_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.listView_Management.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView_Management.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listView_Management.HideSelection = false;
-            this.listView_Management.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
-            this.listView_Management.Location = new System.Drawing.Point(0, 0);
-            this.listView_Management.Margin = new System.Windows.Forms.Padding(2);
-            this.listView_Management.Name = "listView_Management";
-            this.listView_Management.Size = new System.Drawing.Size(779, 470);
-            this.listView_Management.TabIndex = 0;
-            this.listView_Management.UseCompatibleStateImageBehavior = false;
-            this.listView_Management.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Width = 100;
-            // 
-            // pnl_Management_Options
-            // 
-            this.pnl_Management_Options.Controls.Add(this.flow_Management_Options);
-            this.pnl_Management_Options.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Management_Options.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Management_Options.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Management_Options.Name = "pnl_Management_Options";
-            this.pnl_Management_Options.Size = new System.Drawing.Size(779, 60);
-            this.pnl_Management_Options.TabIndex = 0;
-            // 
-            // flow_Management_Options
-            // 
-            this.flow_Management_Options.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flow_Management_Options.Controls.Add(this.btn_Management_Category1);
-            this.flow_Management_Options.Controls.Add(this.btn_Management_Category2);
-            this.flow_Management_Options.Controls.Add(this.btn_Management_Category3);
-            this.flow_Management_Options.Location = new System.Drawing.Point(65, 0);
-            this.flow_Management_Options.Margin = new System.Windows.Forms.Padding(2);
-            this.flow_Management_Options.Name = "flow_Management_Options";
-            this.flow_Management_Options.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.flow_Management_Options.Size = new System.Drawing.Size(652, 60);
-            this.flow_Management_Options.TabIndex = 0;
-            // 
-            // btn_Management_Category1
-            // 
-            this.btn_Management_Category1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Management_Category1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Management_Category1.FlatAppearance.BorderSize = 0;
-            this.btn_Management_Category1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Management_Category1.Location = new System.Drawing.Point(2, 8);
-            this.btn_Management_Category1.Margin = new System.Windows.Forms.Padding(2, 2, 20, 2);
-            this.btn_Management_Category1.Name = "btn_Management_Category1";
-            this.btn_Management_Category1.Size = new System.Drawing.Size(200, 46);
-            this.btn_Management_Category1.TabIndex = 0;
-            this.btn_Management_Category1.Text = "Employees";
-            this.btn_Management_Category1.UseVisualStyleBackColor = false;
-            // 
-            // btn_Management_Category2
-            // 
-            this.btn_Management_Category2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Management_Category2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Management_Category2.FlatAppearance.BorderSize = 0;
-            this.btn_Management_Category2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Management_Category2.Location = new System.Drawing.Point(224, 8);
-            this.btn_Management_Category2.Margin = new System.Windows.Forms.Padding(2, 2, 20, 2);
-            this.btn_Management_Category2.Name = "btn_Management_Category2";
-            this.btn_Management_Category2.Size = new System.Drawing.Size(200, 46);
-            this.btn_Management_Category2.TabIndex = 1;
-            this.btn_Management_Category2.Text = "Stock";
-            this.btn_Management_Category2.UseVisualStyleBackColor = false;
-            // 
-            // btn_Management_Category3
-            // 
-            this.btn_Management_Category3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_Management_Category3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Management_Category3.FlatAppearance.BorderSize = 0;
-            this.btn_Management_Category3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Management_Category3.Location = new System.Drawing.Point(446, 8);
-            this.btn_Management_Category3.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Management_Category3.Name = "btn_Management_Category3";
-            this.btn_Management_Category3.Size = new System.Drawing.Size(200, 46);
-            this.btn_Management_Category3.TabIndex = 2;
-            this.btn_Management_Category3.Text = "Menu";
-            this.btn_Management_Category3.UseVisualStyleBackColor = false;
+            this.pnl_PaymentOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_PaymentOptions.Location = new System.Drawing.Point(0, 0);
+            this.pnl_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_PaymentOptions.Name = "pnl_PaymentOptions";
+            this.pnl_PaymentOptions.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.pnl_PaymentOptions.Size = new System.Drawing.Size(521, 622);
+            this.pnl_PaymentOptions.TabIndex = 2;
             // 
             // tab_Bar
             // 
             this.tab_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Bar.Controls.Add(this.flow_Bar);
             this.tab_Bar.Controls.Add(this.pnl_Bar_Categories);
-            this.tab_Bar.Location = new System.Drawing.Point(4, 33);
-            this.tab_Bar.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_Bar.Location = new System.Drawing.Point(4, 24);
+            this.tab_Bar.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Bar.Name = "tab_Bar";
-            this.tab_Bar.Size = new System.Drawing.Size(779, 937);
+            this.tab_Bar.Size = new System.Drawing.Size(521, 622);
             this.tab_Bar.TabIndex = 8;
             this.tab_Bar.Text = "Bar";
             // 
             // flow_Bar
             // 
             this.flow_Bar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_Bar.Location = new System.Drawing.Point(0, 100);
-            this.flow_Bar.Margin = new System.Windows.Forms.Padding(2);
+            this.flow_Bar.Location = new System.Drawing.Point(0, 67);
+            this.flow_Bar.Margin = new System.Windows.Forms.Padding(1);
             this.flow_Bar.Name = "flow_Bar";
-            this.flow_Bar.Size = new System.Drawing.Size(779, 837);
+            this.flow_Bar.Size = new System.Drawing.Size(521, 555);
             this.flow_Bar.TabIndex = 0;
             // 
             // pnl_Bar_Categories
@@ -1779,9 +1518,9 @@
             this.pnl_Bar_Categories.Controls.Add(this.lbl_Bar_Order_Number);
             this.pnl_Bar_Categories.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Bar_Categories.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Bar_Categories.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Bar_Categories.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Bar_Categories.Name = "pnl_Bar_Categories";
-            this.pnl_Bar_Categories.Size = new System.Drawing.Size(779, 100);
+            this.pnl_Bar_Categories.Size = new System.Drawing.Size(521, 67);
             this.pnl_Bar_Categories.TabIndex = 0;
             // 
             // lbl_Bar_Type
@@ -1789,10 +1528,10 @@
             this.lbl_Bar_Type.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Bar_Type.AutoSize = true;
             this.lbl_Bar_Type.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bar_Type.Location = new System.Drawing.Point(513, 30);
-            this.lbl_Bar_Type.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Bar_Type.Location = new System.Drawing.Point(342, 20);
+            this.lbl_Bar_Type.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Bar_Type.Name = "lbl_Bar_Type";
-            this.lbl_Bar_Type.Size = new System.Drawing.Size(88, 44);
+            this.lbl_Bar_Type.Size = new System.Drawing.Size(60, 29);
             this.lbl_Bar_Type.TabIndex = 1;
             this.lbl_Bar_Type.Text = "Type";
             // 
@@ -1801,10 +1540,10 @@
             this.lbl_Bar_Drink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Bar_Drink.AutoSize = true;
             this.lbl_Bar_Drink.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bar_Drink.Location = new System.Drawing.Point(297, 30);
-            this.lbl_Bar_Drink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Bar_Drink.Location = new System.Drawing.Point(198, 20);
+            this.lbl_Bar_Drink.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Bar_Drink.Name = "lbl_Bar_Drink";
-            this.lbl_Bar_Drink.Size = new System.Drawing.Size(97, 44);
+            this.lbl_Bar_Drink.Size = new System.Drawing.Size(66, 29);
             this.lbl_Bar_Drink.TabIndex = 2;
             this.lbl_Bar_Drink.Text = "Drink";
             // 
@@ -1813,10 +1552,10 @@
             this.lbl_Bar_Order_Number.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Bar_Order_Number.AutoSize = true;
             this.lbl_Bar_Order_Number.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bar_Order_Number.Location = new System.Drawing.Point(23, 30);
-            this.lbl_Bar_Order_Number.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Bar_Order_Number.Location = new System.Drawing.Point(16, 20);
+            this.lbl_Bar_Order_Number.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Bar_Order_Number.Name = "lbl_Bar_Order_Number";
-            this.lbl_Bar_Order_Number.Size = new System.Drawing.Size(231, 44);
+            this.lbl_Bar_Order_Number.Size = new System.Drawing.Size(153, 29);
             this.lbl_Bar_Order_Number.TabIndex = 0;
             this.lbl_Bar_Order_Number.Text = "Order number";
             // 
@@ -1825,20 +1564,20 @@
             this.tab_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Kitchen.Controls.Add(this.flow_Kitchen);
             this.tab_Kitchen.Controls.Add(this.pnl_Kitchen_Categories);
-            this.tab_Kitchen.Location = new System.Drawing.Point(4, 33);
-            this.tab_Kitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.tab_Kitchen.Location = new System.Drawing.Point(4, 24);
+            this.tab_Kitchen.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Kitchen.Name = "tab_Kitchen";
-            this.tab_Kitchen.Size = new System.Drawing.Size(779, 937);
+            this.tab_Kitchen.Size = new System.Drawing.Size(521, 622);
             this.tab_Kitchen.TabIndex = 9;
             this.tab_Kitchen.Text = "Kitchen";
             // 
             // flow_Kitchen
             // 
             this.flow_Kitchen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_Kitchen.Location = new System.Drawing.Point(0, 100);
-            this.flow_Kitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.flow_Kitchen.Location = new System.Drawing.Point(0, 67);
+            this.flow_Kitchen.Margin = new System.Windows.Forms.Padding(1);
             this.flow_Kitchen.Name = "flow_Kitchen";
-            this.flow_Kitchen.Size = new System.Drawing.Size(779, 837);
+            this.flow_Kitchen.Size = new System.Drawing.Size(521, 555);
             this.flow_Kitchen.TabIndex = 1;
             // 
             // pnl_Kitchen_Categories
@@ -1848,9 +1587,9 @@
             this.pnl_Kitchen_Categories.Controls.Add(this.lbl_Kitchen_Order_Number);
             this.pnl_Kitchen_Categories.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Kitchen_Categories.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Kitchen_Categories.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Kitchen_Categories.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Kitchen_Categories.Name = "pnl_Kitchen_Categories";
-            this.pnl_Kitchen_Categories.Size = new System.Drawing.Size(779, 100);
+            this.pnl_Kitchen_Categories.Size = new System.Drawing.Size(521, 67);
             this.pnl_Kitchen_Categories.TabIndex = 2;
             // 
             // lbl_Kitchen_Type
@@ -1858,10 +1597,10 @@
             this.lbl_Kitchen_Type.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Kitchen_Type.AutoSize = true;
             this.lbl_Kitchen_Type.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Kitchen_Type.Location = new System.Drawing.Point(513, 30);
-            this.lbl_Kitchen_Type.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Kitchen_Type.Location = new System.Drawing.Point(342, 20);
+            this.lbl_Kitchen_Type.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Kitchen_Type.Name = "lbl_Kitchen_Type";
-            this.lbl_Kitchen_Type.Size = new System.Drawing.Size(88, 44);
+            this.lbl_Kitchen_Type.Size = new System.Drawing.Size(60, 29);
             this.lbl_Kitchen_Type.TabIndex = 1;
             this.lbl_Kitchen_Type.Text = "Type";
             // 
@@ -1870,10 +1609,10 @@
             this.lbl_Kitchen_Food.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Kitchen_Food.AutoSize = true;
             this.lbl_Kitchen_Food.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Kitchen_Food.Location = new System.Drawing.Point(297, 30);
-            this.lbl_Kitchen_Food.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Kitchen_Food.Location = new System.Drawing.Point(198, 20);
+            this.lbl_Kitchen_Food.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Kitchen_Food.Name = "lbl_Kitchen_Food";
-            this.lbl_Kitchen_Food.Size = new System.Drawing.Size(93, 44);
+            this.lbl_Kitchen_Food.Size = new System.Drawing.Size(63, 29);
             this.lbl_Kitchen_Food.TabIndex = 2;
             this.lbl_Kitchen_Food.Text = "Food";
             // 
@@ -1882,10 +1621,10 @@
             this.lbl_Kitchen_Order_Number.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Kitchen_Order_Number.AutoSize = true;
             this.lbl_Kitchen_Order_Number.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Kitchen_Order_Number.Location = new System.Drawing.Point(23, 30);
-            this.lbl_Kitchen_Order_Number.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Kitchen_Order_Number.Location = new System.Drawing.Point(16, 20);
+            this.lbl_Kitchen_Order_Number.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Kitchen_Order_Number.Name = "lbl_Kitchen_Order_Number";
-            this.lbl_Kitchen_Order_Number.Size = new System.Drawing.Size(231, 44);
+            this.lbl_Kitchen_Order_Number.Size = new System.Drawing.Size(153, 29);
             this.lbl_Kitchen_Order_Number.TabIndex = 0;
             this.lbl_Kitchen_Order_Number.Text = "Order number";
             // 
@@ -1900,9 +1639,9 @@
             this.pnl_Header.Controls.Add(this.lbl_Title);
             this.pnl_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Header.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Header.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Header.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(787, 80);
+            this.pnl_Header.Size = new System.Drawing.Size(529, 53);
             this.pnl_Header.TabIndex = 0;
             // 
             // btn_Return
@@ -1913,10 +1652,10 @@
             this.btn_Return.FlatAppearance.BorderSize = 0;
             this.btn_Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Return.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Return.Location = new System.Drawing.Point(2, 0);
-            this.btn_Return.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Return.Location = new System.Drawing.Point(1, 0);
+            this.btn_Return.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(110, 80);
+            this.btn_Return.Size = new System.Drawing.Size(73, 53);
             this.btn_Return.TabIndex = 4;
             this.btn_Return.UseVisualStyleBackColor = true;
             this.btn_Return.Visible = false;
@@ -1972,10 +1711,10 @@
             this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.FlatAppearance.BorderSize = 0;
             this.btn_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_User.Location = new System.Drawing.Point(715, 12);
-            this.btn_User.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_User.Location = new System.Drawing.Point(481, 8);
+            this.btn_User.Margin = new System.Windows.Forms.Padding(1);
             this.btn_User.Name = "btn_User";
-            this.btn_User.Size = new System.Drawing.Size(60, 60);
+            this.btn_User.Size = new System.Drawing.Size(40, 40);
             this.btn_User.TabIndex = 0;
             this.btn_User.UseVisualStyleBackColor = false;
             this.btn_User.Visible = false;
@@ -1988,9 +1727,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.lbl_Title.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Title.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(787, 80);
+            this.lbl_Title.Size = new System.Drawing.Size(529, 53);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Login";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1999,58 +1738,58 @@
             // 
             this.pnl_Body.Controls.Add(this.tabC_Body);
             this.pnl_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Body.Location = new System.Drawing.Point(0, 80);
+            this.pnl_Body.Location = new System.Drawing.Point(0, 53);
             this.pnl_Body.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(787, 974);
+            this.pnl_Body.Size = new System.Drawing.Size(529, 650);
             this.pnl_Body.TabIndex = 0;
             // 
             // border_Left
             // 
             this.border_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.border_Left.Location = new System.Drawing.Point(0, 86);
+            this.border_Left.Location = new System.Drawing.Point(0, 57);
             this.border_Left.Margin = new System.Windows.Forms.Padding(0);
             this.border_Left.Name = "border_Left";
-            this.border_Left.Size = new System.Drawing.Size(5, 963);
+            this.border_Left.Size = new System.Drawing.Size(3, 643);
             this.border_Left.TabIndex = 2;
             this.border_Left.TabStop = false;
             // 
             // border_Right
             // 
             this.border_Right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.border_Right.Location = new System.Drawing.Point(782, 86);
+            this.border_Right.Location = new System.Drawing.Point(526, 57);
             this.border_Right.Margin = new System.Windows.Forms.Padding(0);
             this.border_Right.Name = "border_Right";
-            this.border_Right.Size = new System.Drawing.Size(5, 963);
+            this.border_Right.Size = new System.Drawing.Size(3, 643);
             this.border_Right.TabIndex = 1;
             this.border_Right.TabStop = false;
             // 
             // border_Bottom
             // 
             this.border_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.border_Bottom.Location = new System.Drawing.Point(0, 1049);
+            this.border_Bottom.Location = new System.Drawing.Point(0, 700);
             this.border_Bottom.Margin = new System.Windows.Forms.Padding(0);
             this.border_Bottom.Name = "border_Bottom";
-            this.border_Bottom.Size = new System.Drawing.Size(787, 5);
+            this.border_Bottom.Size = new System.Drawing.Size(529, 3);
             this.border_Bottom.TabIndex = 3;
             this.border_Bottom.TabStop = false;
             // 
             // border_Top
             // 
             this.border_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.border_Top.Location = new System.Drawing.Point(0, 80);
+            this.border_Top.Location = new System.Drawing.Point(0, 53);
             this.border_Top.Margin = new System.Windows.Forms.Padding(0);
             this.border_Top.Name = "border_Top";
-            this.border_Top.Size = new System.Drawing.Size(787, 6);
+            this.border_Top.Size = new System.Drawing.Size(529, 4);
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
             // 
             // Form_Chapeau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.ClientSize = new System.Drawing.Size(787, 1054);
+            this.ClientSize = new System.Drawing.Size(529, 703);
             this.Controls.Add(this.border_Right);
             this.Controls.Add(this.border_Left);
             this.Controls.Add(this.border_Top);
@@ -2061,10 +1800,10 @@
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(809, 1110);
-            this.MinimumSize = new System.Drawing.Size(809, 1016);
+            this.MaximumSize = new System.Drawing.Size(545, 754);
+            this.MinimumSize = new System.Drawing.Size(545, 705);
             this.Name = "Form_Chapeau";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Restaurant Chapeau Ordering System";
@@ -2099,30 +1838,18 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tab_Bill.ResumeLayout(false);
             this.pnl_Bill.ResumeLayout(false);
-            this.pnl_Bill_Title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Title_Splitter)).EndInit();
-            this.pnl_Bill_Prices.ResumeLayout(false);
-            this.flow_Bill_Prices.ResumeLayout(false);
-            this.flow_Bill_Prices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Prices_Splitter)).EndInit();
-            this.tab_PaymentOptions.ResumeLayout(false);
-            this.pnl_PaymentOptions.ResumeLayout(false);
-            this.pnl_PaymentOptions_Center.ResumeLayout(false);
-            this.flow_PaymentOptions.ResumeLayout(false);
-            this.pnl_PaymentOptions_Top.ResumeLayout(false);
-            this.pnl_PaymentOptions_Top.PerformLayout();
+            this.pnl_Bill.PerformLayout();
+            this.Bill_grpbox_PaymentMethod.ResumeLayout(false);
+            this.Bill_grpbox_PaymentMethod.PerformLayout();
+            this.tab_CashPayment.ResumeLayout(false);
+            this.pnl_Cash.ResumeLayout(false);
+            this.pnl_Cash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_Num_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_num_1)).EndInit();
             this.tab_ProcessPayment.ResumeLayout(false);
             this.pnl_ProcessPayment.ResumeLayout(false);
-            this.pnl_ProcessPayment_Center.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).EndInit();
-            this.tab_Management.ResumeLayout(false);
-            this.pnl_Management.ResumeLayout(false);
-            this.pnl_Management_Main.ResumeLayout(false);
-            this.pnl_Management_InputBoxes.ResumeLayout(false);
-            this.flow_Management_Inputboxes.ResumeLayout(false);
-            this.flow_Management_Inputboxes.PerformLayout();
-            this.pnl_Management_Options.ResumeLayout(false);
-            this.flow_Management_Options.ResumeLayout(false);
+            this.tab_PaymentComplete.ResumeLayout(false);
             this.tab_Bar.ResumeLayout(false);
             this.pnl_Bar_Categories.ResumeLayout(false);
             this.pnl_Bar_Categories.PerformLayout();
@@ -2159,9 +1886,9 @@
         private System.Windows.Forms.TabPage tab_Tables;
         private System.Windows.Forms.TabPage tab_Order;
         private System.Windows.Forms.TabPage tab_Bill;
-        private System.Windows.Forms.TabPage tab_PaymentOptions;
+        private System.Windows.Forms.TabPage tab_PaymentComplete;
         private System.Windows.Forms.TabPage tab_ProcessPayment;
-        private System.Windows.Forms.TabPage tab_Management;
+        private System.Windows.Forms.TabPage tab_CashPayment;
         private System.Windows.Forms.PictureBox imgLogin_Logo;
         private System.Windows.Forms.SplitContainer pnl_TableOverview;
         private System.Windows.Forms.SplitContainer pnl_TableInfo;
@@ -2174,59 +1901,13 @@
         private System.Windows.Forms.FlowLayoutPanel flow_Order_Menu;
         private System.Windows.Forms.FlowLayoutPanel flow_Order_Items;
         private System.Windows.Forms.Button btn_Order_Confirm;
-        private System.Windows.Forms.FlowLayoutPanel flow_Bill;
-        private System.Windows.Forms.Panel pnl_Bill_Prices;
         private System.Windows.Forms.Panel pnl_Bill;
-        private System.Windows.Forms.Panel pnl_Bill_Title;
-        private System.Windows.Forms.Label lbl_Bill_Title;
-        private System.Windows.Forms.PictureBox img_pnl_Bill_Prices_Splitter;
-        private System.Windows.Forms.PictureBox img_pnl_Bill_Title_Splitter;
-        private System.Windows.Forms.FlowLayoutPanel flow_Bill_Prices;
-        private System.Windows.Forms.Label lbl_Bill_Prices_Total;
-        private System.Windows.Forms.TextBox txtBox_Bill_Prices_Total;
-        private System.Windows.Forms.Label lbl_Bill_Prices_Tip;
-        private System.Windows.Forms.TextBox txtBox_Bill_Prices_Tip;
-        private System.Windows.Forms.Button btn_Bill_Checkout;
         private System.Windows.Forms.Panel pnl_PaymentOptions;
-        private System.Windows.Forms.FlowLayoutPanel flow_PaymentOptions;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Bottom;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Top;
-        private System.Windows.Forms.TextBox txtBox_Payment_Options_Total;
-        private System.Windows.Forms.Label lbl_PaymentOptions;
-        private System.Windows.Forms.Button btn_PaymentOption_1;
-        private System.Windows.Forms.Button btn_PaymentOption_2;
-        private System.Windows.Forms.Button btn_PaymentOption_3;
-        private System.Windows.Forms.Button btn_PaymentOption_4;
-        private System.Windows.Forms.Button btn_PaymentOption_5;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Center;
         private System.Windows.Forms.Panel pnl_ProcessPayment;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Center;
         private System.Windows.Forms.PictureBox img_ProcessPayment_Icon;
         private System.Windows.Forms.Button btn_ProccessPayment_Confirm;
         private System.Windows.Forms.Label lbl_ProcessPayment_Result;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Bottom;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Top;
-        private System.Windows.Forms.Panel pnl_Management;
-        private System.Windows.Forms.Panel pnl_Management_Options;
-        private System.Windows.Forms.FlowLayoutPanel flow_Management_Options;
-        private System.Windows.Forms.Button btn_Management_Category1;
-        private System.Windows.Forms.Button btn_Management_Category2;
-        private System.Windows.Forms.Button btn_Management_Category3;
-        private System.Windows.Forms.Panel pnl_Management_Main;
-        private System.Windows.Forms.ListView listView_Management;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Panel pnl_Management_InputBoxes;
-        private System.Windows.Forms.FlowLayoutPanel flow_Management_Inputboxes;
-        private System.Windows.Forms.Label lbl_Management_Field1;
-        private System.Windows.Forms.TextBox txtBox_Manangement_1;
-        private System.Windows.Forms.Label lbl_Management_Field2;
-        private System.Windows.Forms.TextBox txtBox_Manangement_2;
-        private System.Windows.Forms.Label lbl_Management_Field3;
-        private System.Windows.Forms.TextBox txtBox_Manangement_3;
-        private System.Windows.Forms.Label lbl_Management_Field4;
-        private System.Windows.Forms.TextBox txtBox_Manangement_4;
+        private System.Windows.Forms.Panel pnl_Cash;
         private System.Windows.Forms.Button btn_Return;
         private System.Windows.Forms.Button btn_Return_Admin;
         private System.Windows.Forms.Panel pnl_Login;
@@ -2263,5 +1944,54 @@
         private System.Windows.Forms.PictureBox img_TableOverview_Title_Table;
         private System.Windows.Forms.Label lbl_TableOverview_Title;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_Order_LunchMenu;
+        private System.Windows.Forms.Button btn_Order_DinnerMenu;
+        private System.Windows.Forms.Button btn_Order_DrinksMenu;
+        private System.Windows.Forms.TabPage tab_Account;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_Account_Logout;
+        private System.Windows.Forms.Label lbl_Account_Role;
+        private System.Windows.Forms.Label lbl_Account_Email;
+        private System.Windows.Forms.Label lbl_Order_TotalPrice;
+        private System.Windows.Forms.Splitter splitter_Orders_Price;
+        private System.Windows.Forms.Panel pnl_Order_Menu;
+        private System.Windows.Forms.Panel pnl_Order_Orders;
+        private System.Windows.Forms.Splitter splitter_OrderMenu;
+        private System.Windows.Forms.Button btn_Order_Checkout;
+        private System.Windows.Forms.Splitter splitter_Checkout;
+        private System.Windows.Forms.ListView Bill_lv_Bill;
+        private System.Windows.Forms.Button Bill_btn_Pay;
+        private System.Windows.Forms.Label Bill_lbl_Bill;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Cash;
+        private System.Windows.Forms.GroupBox Bill_grpbox_PaymentMethod;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Credit;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Debit;
+        private System.Windows.Forms.ListView Bill_lv_VAT;
+        private System.Windows.Forms.Label Bill_lbl_TotalAmount;
+        private System.Windows.Forms.Label Bill_lbl_TotalTitle;
+        private System.Windows.Forms.ColumnHeader Bill_ColQuantity;
+        private System.Windows.Forms.ColumnHeader Bill_ColName;
+        private System.Windows.Forms.ColumnHeader Bill_ColVAT;
+        private System.Windows.Forms.ColumnHeader Bill_ColPrice;
+        private System.Windows.Forms.ColumnHeader Bill_ColPriceTotal;
+        private System.Windows.Forms.ColumnHeader VAT_ColVAT;
+        private System.Windows.Forms.ColumnHeader VAT_ColBasePrice;
+        private System.Windows.Forms.ColumnHeader VAT_ColVATAmount;
+        private System.Windows.Forms.ColumnHeader VAT_ColTotalSum;
+        private System.Windows.Forms.Label Payment_lbl_Method;
+        private System.Windows.Forms.NumericUpDown Payment_Num_2;
+        private System.Windows.Forms.NumericUpDown Payment_num_1;
+        private System.Windows.Forms.Label Payment_lbl_MethodTitle;
+        private System.Windows.Forms.Button Payment_btn_Cancel;
+        private System.Windows.Forms.Label Payment_lbl_BillTotal;
+        private System.Windows.Forms.Label Payment_lbl_ChangeOrTotalToPay;
+        private System.Windows.Forms.Label Payment_lbl_BillTotalTitle;
+        private System.Windows.Forms.Label Payment_lbl_AmountGivenOrTip;
+        private System.Windows.Forms.Button Payment_Btn_Pay;
+        private System.Windows.Forms.Label Bill_lbl_StillToPayTitle;
+        private System.Windows.Forms.Label Bill_lbl_RemainingPrice;
     }
 }
