@@ -63,6 +63,16 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CautiousImpassionedBoubou_size_restricted {
+            get {
+                object obj = ResourceManager.GetObject("CautiousImpassionedBoubou-size_restricted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkout_Icon {
             get {
                 object obj = ResourceManager.GetObject("Checkout_Icon", resourceCulture);

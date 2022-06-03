@@ -10,7 +10,8 @@ namespace ChapeauDAL
 {
     public class PaymentDao : BaseDao
     {
-        public void InsertPayment(Payment payment) //Insert new payment into db table
+        //Insert new payment into db table
+        public void InsertPayment(Payment payment) 
         {
             //Query for inserting new payment
             string query = "INSERT INTO PAYMENT VALUES (@BillId, @TimePaid, @Tip, @TotalPrice, @PaidAmount, @PaymentType, @Comment)";
@@ -30,8 +31,8 @@ namespace ChapeauDAL
         }
 
 
-        
-        private void MarkBillAsPaid(int billId) //Update bill to isPaid in db table
+        //Update bill to isPaid in db table
+        private void MarkBillAsPaid(int billId) 
         {
             string query = "UPDATE [ORDER] SET isPaid = 1 WHERE OrderID = @BillId;";
             
@@ -40,7 +41,8 @@ namespace ChapeauDAL
 
             ExecuteEditQuery(query, sqlParameters);
         }
-        //Looks up a bill in the database and retrieves how much of the bill is paid, for RemainingPrice calculations.
+        
+        //Retrieves payments made for a bill to calculate remaining price
         public decimal GetPaidAmount(Bill bill)
         {
             string query = "SELECT totalAmountPaid FROM PAYMENT WHERE OrderID = @billId";
@@ -62,7 +64,6 @@ namespace ChapeauDAL
             }
             catch (Exception)
             {
-
                 throw new Exception("Something went wrong while collecting payment data.");
             }
         }

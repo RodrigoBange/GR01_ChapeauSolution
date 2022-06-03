@@ -17,7 +17,7 @@ namespace ChapeauLogic
             paymentDao = new PaymentDao();
         }
 
-        //
+        //Dictates whether or not Card payment is successfully processed
         public bool SuccessfulPayment()
         {
             int randomNumber = rnd.Next(1, 11);
@@ -25,11 +25,13 @@ namespace ChapeauLogic
             return (randomNumber != 1);
         }
 
+        //Insert payment into db
         public void InsertPayment(Payment payment)
         {
             paymentDao.InsertPayment(payment);
         }
 
+        //Insert comment into db
         public void InsertComment(string comment)
         {
 

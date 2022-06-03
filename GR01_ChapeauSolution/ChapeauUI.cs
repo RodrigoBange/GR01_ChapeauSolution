@@ -760,9 +760,13 @@ namespace GR01_ChapeauSolution
             Bill_lv_Bill.Items.Clear();
             Bill_lv_VAT.Items.Clear();
 
+            //Clear RadButtons
+            Bill_radbtn_Cash.Checked = false;
+            Bill_radbtn_Debit.Checked = false;
+            Bill_radbtn_Credit.Checked = false;
+            
             //Disable Pay button (visually, not functionally)
             Bill_DisablePayButton();
-
 
             try
             {
@@ -826,7 +830,6 @@ namespace GR01_ChapeauSolution
         //Code for Pay button 
         private void Bill_btn_Pay_Click(object sender, EventArgs e)
         {
-            
             if (Bill_radbtn_Cash.Checked) //If cash option is checked, open cash payment screen
             {
                 payment = new Payment();
@@ -895,12 +898,20 @@ namespace GR01_ChapeauSolution
         #region Payment View
         /** PAYMENT VIEW METHODS **/
         Payment payment;
+        private void LoadPaymentView()
+        {
+            Payment_num_AmountGivenOrTip.Value = 0;
+            Payment_num_ChangeOrTotal.Value = 0;
+        }
+            
         private void LoadCashPaymentView(Bill bill)
         {
             Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
             Payment_lbl_AmountGivenOrTip.Text = "Amount Given:";
             Payment_lbl_ChangeOrTotalToPay.Text = "Change";
             Payment_Btn_Pay.Text = "Complete Payment";
+
+            
         }
 
         private void LoadCardPaymentView(Bill bill)
@@ -920,14 +931,12 @@ namespace GR01_ChapeauSolution
         {
             if (payment.PaymentType == PaymentType.Cash)
             {
-                if (Payment_num_1.Value >= (decimal)bill.PriceRemaining)
-                {
-                    Payment_Num_2.Value = (Payment_num_1.Value - (decimal)bill.PriceRemaining);
-                }
+                if (Payment_num_AmountGivenOrTip.Value >= (decimal)bill.PriceRemaining)
+                    Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value - (decimal)bill.PriceRemaining);
             }
             else
             {
-                Payment_Num_2.Value = (Payment_num_1.Value + (decimal)bill.PriceRemaining);
+                Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value + (decimal)bill.PriceRemaining);
             }
         }
 
@@ -935,11 +944,11 @@ namespace GR01_ChapeauSolution
         {
             if (payment.PaymentType == PaymentType.Cash)
             {
-
+                Payment_num_AmountGivenOrTip.Value = ((decimal)bill.PriceRemaining + Payment_num_ChangeOrTotal.Value);
             }
             else
             {
-                Payment_num_1.Value = (Payment_Num_2.Value - (decimal)bill.PriceRemaining);
+                Payment_num_AmountGivenOrTip.Value = (Payment_num_ChangeOrTotal.Value - (decimal)bill.PriceRemaining);
             }
         }
 
@@ -947,28 +956,27 @@ namespace GR01_ChapeauSolution
         {
             if (payment.PaymentType == PaymentType.Cash)
             {
-                payment.TotalAmountPaid = (double)Payment_num_1.Value;
-                tabC_Body.SelectedIndex = 6;
+                payment.TotalAmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
+                tabC_Body.SelectedIndex = 7;
             }
             else
             {
-                payment.TotalAmountPaid = (double)Payment_Num_2.Value;
-                payment.Tip = (double)Payment_num_1.Value;
+                payment.TotalAmountPaid = (double)Payment_num_ChangeOrTotal.Value;
+                payment.Tip = (double)Payment_num_AmountGivenOrTip.Value;
+                tabC_Body.SelectedIndex = 6;
 
-                if (paymentService.SuccessfulPayment())
-                {
-
-                }
-                else
-                {
-
-                }
             }
         }
         #endregion
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
+
+        private void LoadPaymentProcessingView()
+        {
+
+        }
+
         #endregion
 
         #region Kitchen
