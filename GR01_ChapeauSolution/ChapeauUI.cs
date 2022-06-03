@@ -26,8 +26,7 @@ namespace GR01_ChapeauSolution
         MenuService menuService;
         OrderService orderService;
         StockService stockService;
-        BillService billService;
-        PaymentService paymentService;
+        EmployeeService employeeService;
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -35,6 +34,8 @@ namespace GR01_ChapeauSolution
 
         // General variables
         private int tableNumber = 0;
+
+        Employee employee;
 
         #region General
         // Constructor
@@ -54,8 +55,6 @@ namespace GR01_ChapeauSolution
 
             // Set employee
             this.employee = employee;
-            billService = new BillService();
-            paymentService = new PaymentService();
         }
 
         // On Load
@@ -70,22 +69,6 @@ namespace GR01_ChapeauSolution
 
             // Start tab on load
             tabC_Body.SelectedTab = tab_Tables;
-        }
-
-        private void DisplayUI()
-        {
-            // Display header elements !!Order matters for toggling visibility
-            lbl_OrderCounter.Visible = true;
-            background_OrderCounter.Visible = true;
-            btn_User.Visible = true;
-            btn_Return.Visible = true;
-
-            //Set border colors (Due to tab control)
-            border_Bottom.BackColor = Color.White;
-            border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Top.BackColor = ColorTranslator.FromHtml(hexColorDark);
-            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -169,7 +152,7 @@ namespace GR01_ChapeauSolution
             // Return to table view
             tabC_Body.SelectedTab = tab_Tables;
         }
-#endregion
+        #endregion
 
         #region Account
         /** ACCOUNT METHODS **/
@@ -197,15 +180,11 @@ namespace GR01_ChapeauSolution
         {
             for (int i = 0; i < 10; i++)
             {
-                // Generate dates
-                DateTime startDate = DateTime.Now.AddHours(i);
-                DateTime endDate = DateTime.Now.AddHours(i + 1);
-
-                // Create new Reservation
-                C_Available_Reservation available_Reservation1 = new C_Available_Reservation(startDate, endDate);
+                // Create new Table order
+                C_Table_Order table_order = new C_Table_Order();
 
                 // Add reservation to flow panel
-                flow_TableOverview.Controls.Add(available_Reservation1);
+                flow_TableOverview.Controls.Add(table_order);
             }
         }
 
@@ -661,8 +640,7 @@ namespace GR01_ChapeauSolution
         private void btn_Order_Checkout_Click(object sender, EventArgs e)
         {
             // Open the bill
-            tabC_Body.SelectedIndex = 4;
-            Bill_LoadBillView(tableNumber);
+            tabC_Body.SelectedIndex = 5;
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
@@ -710,232 +688,14 @@ namespace GR01_ChapeauSolution
 
         #region Bill
         /** BILL VIEW METHODS **/
-        private Bill bill;
-
-        //Load Bill View, called when pressing Checkout Button in the Order View
-        private void Bill_LoadBillView(int tableNr)
-        {
-            //Clear listviews
-            Bill_lv_Bill.Items.Clear();
-            Bill_lv_VAT.Items.Clear();
-
-            //Clear RadButtons
-            Bill_radbtn_Cash.Checked = false;
-            Bill_radbtn_Debit.Checked = false;
-            Bill_radbtn_Credit.Checked = false;
-            
-            //Disable Pay button (visually, not functionally)
-            Bill_DisablePayButton();
-
-            try
-            {
-                //Retrieve bill from the database
-                bill = billService.GetBill(tableNr);
-                
-                //Retrieve the bill's remaining price
-                bill.PriceRemaining = billService.GetRemainingPrice(bill);
-
-                //Call method to load the Bill listview
-                Bill_LoadBill(bill);
-
-                //Call method to load the VAT section
-                Bill_LoadVATSection(bill);
-                
-            }
-            catch (Exception ex)
-            {
-                DisplayError(ex);
-            }
-            
-        }
-        //Load bill listview
-        private void Bill_LoadBill(Bill bill)
-        {
-            //Load BillItems into the bill listview
-            foreach (BillItem billItem in bill.BillItems)
-            {
-                ListViewItem listItem = new ListViewItem(billItem.Count.ToString());
-
-                listItem.SubItems.Add(billItem.Name);
-                listItem.SubItems.Add($"{billItem.VATPercentage}%");
-                listItem.SubItems.Add("€"+billItem.PriceWithVAT.ToString("0.00"));
-                listItem.SubItems.Add("€"+billItem.TotalPrice.ToString("0.00"));
-                listItem.Tag = billItem;
-
-                Bill_lv_Bill.Items.Add(listItem);
-            }
-            Bill_lbl_TotalAmount.Text = $"€{bill.TotalBillPrice.ToString("0.00")}";
-            Bill_lbl_RemainingPrice.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
-        }
-
-        //Load VAT stats into the VAT section listview
-        private void Bill_LoadVATSection(Bill bill)
-        {
-            //Load listviewItem for Non-Alcoholic VAT
-            ListViewItem listItem1 = new ListViewItem($"{Bill.NonAlcholicVATPercentage}%");
-            listItem1.SubItems.Add(bill.PriceExclVATNonAlcoholic.ToString("0.00"));
-            listItem1.SubItems.Add(bill.VATNonAlcoholic.ToString("0.00"));
-            listItem1.SubItems.Add(bill.PriceInclVATNonAlcoholic.ToString("0.00"));
-            Bill_lv_VAT.Items.Add(listItem1);
-
-            //Load listviewItem for Alcoholic VAT
-            ListViewItem listItem2 = new ListViewItem($"{Bill.AlcholicVATPercentage}%");
-            listItem2.SubItems.Add(bill.PriceExclVATAlcoholic.ToString("0.00"));
-            listItem2.SubItems.Add(bill.VATAlcoholic.ToString("0.00"));
-            listItem2.SubItems.Add(bill.PriceInclVATAlcoholic.ToString("0.00"));
-            Bill_lv_VAT.Items.Add(listItem2);
-        }
-        
-        //Code for Pay button 
-        private void Bill_btn_Pay_Click(object sender, EventArgs e)
-        {
-            if (Bill_radbtn_Cash.Checked) //If cash option is checked, open cash payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Cash";
-                payment.PaymentType = PaymentType.Cash;
-                LoadCashPaymentView(bill);
-                
-                tabC_Body.SelectedIndex = 5;
-            }
-            else if (Bill_radbtn_Credit.Checked) //If credit option is checked, open credit payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Credit Card";
-                payment.PaymentType = PaymentType.Credit;
-                LoadCardPaymentView(bill);
-                tabC_Body.SelectedIndex = 5;
-            }
-            else if (Bill_radbtn_Debit.Checked) //If debit option is checked, open credit payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Debit Card";
-                payment.PaymentType = PaymentType.Debit;
-                LoadCardPaymentView(bill);
-                tabC_Body.SelectedIndex = 5;
-            }
-            else //No payment method selected, throw messagebox with instructions
-            {
-                MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
-                messageBox.ShowDialog();
-            }
-        }
-
-        //Enable the "Next Screen" button when a Payment method selected
-        private void Bill_radbtn_Cash_Checked(object sender, EventArgs e)
-        {
-            Bill_EnablePayButton();
-        }
-
-        private void Bill_radbtn_Debit_Checked(object sender, EventArgs e)
-        {
-            Bill_EnablePayButton();
-        }
-
-        private void Bill_radbtn_Credit_Checked(object sender, EventArgs e)
-        {
-            Bill_EnablePayButton();
-        }
-
-        //Disable Pay button (visually, not functionally)
-        private void Bill_DisablePayButton()
-        {
-            Bill_btn_Pay.ForeColor = Color.LightGray;
-            Bill_btn_Pay.BackColor = Color.DarkRed;
-        }
-
-        //Enable Pay button (visually, not functionally)
-        private void Bill_EnablePayButton()
-        {
-            Bill_btn_Pay.ForeColor = Color.White;
-            Bill_btn_Pay.BackColor = ColorTranslator.FromHtml("254, 60, 60");
-        }
-
-
         #endregion
 
         #region Payment View
         /** PAYMENT VIEW METHODS **/
-        Payment payment;
-        private void LoadPaymentView()
-        {
-            Payment_num_AmountGivenOrTip.Value = 0;
-            Payment_num_ChangeOrTotal.Value = 0;
-        }
-            
-        private void LoadCashPaymentView(Bill bill)
-        {
-            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
-            Payment_lbl_AmountGivenOrTip.Text = "Amount Given:";
-            Payment_lbl_ChangeOrTotalToPay.Text = "Change";
-            Payment_Btn_Pay.Text = "Complete Payment";
-
-            
-        }
-
-        private void LoadCardPaymentView(Bill bill)
-        {
-            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
-            Payment_lbl_AmountGivenOrTip.Text = "Tip:";
-            Payment_lbl_ChangeOrTotalToPay.Text = "Total to Pay:";
-            Payment_Btn_Pay.Text = "Process Payment";
-        }
-
-        private void Payment_btn_Cancel_Click(object sender, EventArgs e)
-        {
-            tabC_Body.SelectedIndex = 4;
-        }
-
-        private void Payment_num_1_ValueChanged(object sender, EventArgs e)
-        {
-            if (payment.PaymentType == PaymentType.Cash)
-            {
-                if (Payment_num_AmountGivenOrTip.Value >= (decimal)bill.PriceRemaining)
-                    Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value - (decimal)bill.PriceRemaining);
-            }
-            else
-            {
-                Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value + (decimal)bill.PriceRemaining);
-            }
-        }
-
-        private void Payment_Num_2_ValueChanged(object sender, EventArgs e)
-        {
-            if (payment.PaymentType == PaymentType.Cash)
-            {
-                Payment_num_AmountGivenOrTip.Value = ((decimal)bill.PriceRemaining + Payment_num_ChangeOrTotal.Value);
-            }
-            else
-            {
-                Payment_num_AmountGivenOrTip.Value = (Payment_num_ChangeOrTotal.Value - (decimal)bill.PriceRemaining);
-            }
-        }
-
-        private void Payment_Btn_Pay_Click(object sender, EventArgs e)
-        {
-            if (payment.PaymentType == PaymentType.Cash)
-            {
-                payment.TotalAmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
-                tabC_Body.SelectedIndex = 7;
-            }
-            else
-            {
-                payment.TotalAmountPaid = (double)Payment_num_ChangeOrTotal.Value;
-                payment.Tip = (double)Payment_num_AmountGivenOrTip.Value;
-                tabC_Body.SelectedIndex = 6;
-
-            }
-        }
         #endregion
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
-
-        private void LoadPaymentProcessingView()
-        {
-
-        }
-
         #endregion
 
         #region Kitchen
@@ -964,19 +724,6 @@ namespace GR01_ChapeauSolution
                 DialogResult dialogResult_W = messageBox_W.ShowDialog();
             }
         }
-
-
-
-
-
-
-
         #endregion
-
-        
-
-        
-
-        
     }
 }
