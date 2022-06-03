@@ -13,6 +13,7 @@ using ChapeauLogic;
 using ChapeauUI.Forms;
 using ChapeauUI;
 using System.Security.Cryptography;
+using ChapeauUI.Properties;
 
 namespace GR01_ChapeauSolution
 {
@@ -38,7 +39,7 @@ namespace GR01_ChapeauSolution
 
         #region General
         // Constructor
-        public Form_Chapeau()
+        public Form_Chapeau(Employee employee)
         {
             // Initialize
             InitializeComponent();
@@ -51,6 +52,9 @@ namespace GR01_ChapeauSolution
             orderService = new OrderService();
             stockService = new StockService();
             employeeService = new EmployeeService();
+
+            // Set employee
+            this.employee = employee;
         }
 
         // On Load
@@ -60,9 +64,11 @@ namespace GR01_ChapeauSolution
             tabC_Body.Appearance = TabAppearance.FlatButtons;
             tabC_Body.ItemSize = new Size(0, 1);
             tabC_Body.SizeMode = TabSizeMode.Fixed;
+            btn_User.Visible = true;
+            btn_Return.Visible = true;
 
             // Start tab on load
-            tabC_Body.SelectedTab = tab_Login;
+            tabC_Body.SelectedTab = tab_Tables;
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -70,36 +76,15 @@ namespace GR01_ChapeauSolution
             // When tab is changed...
             switch (tabC_Body.SelectedIndex)
             {
-                // Login View
-                case 0:
-                    {
-                        lbl_Title.Text = "Login";
-
-                        txtBox_Login_User.Text = null;
-                        txtBox_Login_Password.Text = null;
-
-                        // Hide header and footer elements
-                        lbl_OrderCounter.Visible = false;
-                        background_OrderCounter.Visible = false;
-                        btn_User.Visible = false;
-                        btn_Return.Visible = false;
-
-                        // Set colors
-                        border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
-                        border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
-                        border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
-                        border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
-                    }
-                    break;
                 // Account View 
-                case 1:
+                case 0:
                     {
                         // Set title
                         lbl_Title.Text = "Account";
                     }
                     break;
                 // Table View 
-                case 2:
+                case 1:
                     {
                         // Set title
                         lbl_Title.Text = "Overview";
@@ -109,7 +94,7 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Order View
-                case 3:
+                case 2:
                     {
                         // Set title
                         lbl_Title.Text = $"Order Table #{tableNumber}";
@@ -139,45 +124,24 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Bill View 
-                case 4:
+                case 3:
                     {
                         // Set title
                         lbl_Title.Text = $"Bill Table #{tableNumber}";
                     }
                     break;
                 // Payment Options View 
-                case 5:
+                case 4:
                     {
                         // Set title
                         lbl_Title.Text = "Payment Options";
                     }
                     break;
                 // Process Payment View 
-                case 6:
+                case 5:
                     {
                         // Set title
                         lbl_Title.Text = "Processing Payment";
-                    }
-                    break;
-                // Management View 
-                case 7:
-                    {
-                        // Set title
-                        lbl_Title.Text = "Management";
-                    }
-                    break;
-                // Bar View 
-                case 8:
-                    {
-                        // Set title
-                        lbl_Title.Text = "Bar View";
-                    }
-                    break;
-                // Kitchen View 
-                case 9:
-                    {
-                        // Set title
-                        lbl_Title.Text = "Kitchen View";
                     }
                     break;
             }
@@ -190,119 +154,21 @@ namespace GR01_ChapeauSolution
         }
         #endregion
 
-        #region Login
-        /** LOGIN VIEW METHODS **/
-        private void txtBox_Login_User_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Only allow to enter numbers in the employeeID
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void CreateUser()
-        {
-            string password = "password1";
-            PasswordWithSaltHasher passwordWithSaltHasher = new PasswordWithSaltHasher();
-            HashWithSaltResult hashWithSaltResult = passwordWithSaltHasher.HashWithSalt(password, 64, SHA256.Create());
-            
-            string password2 = "password2";
-            PasswordWithSaltHasher passwordWithSaltHasher2 = new PasswordWithSaltHasher();
-            HashWithSaltResult hashWithSaltResult2 = passwordWithSaltHasher2.HashWithSalt(password2, 64, SHA256.Create());
-
-            string password3 = "password3";
-            PasswordWithSaltHasher passwordWithSaltHasher3 = new PasswordWithSaltHasher();
-            HashWithSaltResult hashWithSaltResult3 = passwordWithSaltHasher3.HashWithSalt(password3, 64, SHA256.Create());
-
-            string password4 = "password4";
-            PasswordWithSaltHasher passwordWithSaltHasher4 = new PasswordWithSaltHasher();
-            HashWithSaltResult hashWithSaltResult4 = passwordWithSaltHasher4.HashWithSalt(password4, 64, SHA256.Create());
-
-            string password5 = "password5";
-            PasswordWithSaltHasher passwordWithSaltHasher5 = new PasswordWithSaltHasher();
-            HashWithSaltResult hashWithSaltResult5 = passwordWithSaltHasher5.HashWithSalt(password5, 64, SHA256.Create());
-
-            employeeService.CreateEmployee("Alba Placeres", "Waiter", hashWithSaltResult.Salt, hashWithSaltResult.Digest);
-            employeeService.CreateEmployee("Johnny Depp", "Waiter", hashWithSaltResult2.Salt, hashWithSaltResult2.Digest);
-            employeeService.CreateEmployee("Rafa Nadal", "Waiter", hashWithSaltResult3.Salt, hashWithSaltResult3.Digest);
-            employeeService.CreateEmployee("Pepe", "Chef", hashWithSaltResult4.Salt, hashWithSaltResult4.Digest);
-            employeeService.CreateEmployee("Ana de Armas", "Bartender", hashWithSaltResult5.Salt, hashWithSaltResult5.Digest);
-        }
-
-        private void btn_Login_Click(object sender, EventArgs e)
-        {
-            //Get employeeID amd password
-            int employeeID = int.Parse(txtBox_Login_User.Text);
-            string employeePassword = txtBox_Login_Password.Text;
-
-            employee = employeeService.GetEmployee(employeeID);
-
-            if (employee != null)
-            {
-                PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-                HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
-                string convertedPassword = convertedHash.Digest;
-
-                if (convertedPassword == employee.Hash)
-                {
-                    // Succesfullly logged in
-                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Succesfully logged in");
-                    messageBox.ShowDialog();
-
-                    // Change tab to Table View
-                    OpenView();
-                }
-                else
-                {
-                    // Incorrect password
-                    MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Incorrect password");
-                    messageBox.ShowDialog();
-                }
-            }
-            else
-            {
-                // Employee doesn't exist
-                MessageBox_Ok messageBox = new MessageBox_Ok("Login", "Employee doesn't exist");
-                messageBox.ShowDialog();
-            }
-        }
-
-        private void OpenView()
-        {
-            btn_User.Visible = true;
-            btn_Return.Visible = true;
-            if (employee.EmployeeRole == "Waiter")
-            {
-                tabC_Body.SelectedTab = tab_Tables;
-            }
-            else if (employee.EmployeeRole == "Chef")
-            {
-                tabC_Body.SelectedTab = tab_Kitchen;
-            }
-            else if (employee.EmployeeRole == "Bartender")
-            {
-                tabC_Body.SelectedTab = tab_Bar;
-            }
-        }
-
-        #endregion
-
         #region Account
         /** ACCOUNT METHODS **/
         private void btn_User_Click(object sender, EventArgs e)
         {
+            tabC_Body.SelectedTab = tab_Account;
             lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
             lbl_Account_EmployeeName.Text = employee.EmployeeName;
             lbl_Account_Role.Text = employee.EmployeeRole;
-            tabC_Body.SelectedTab = tab_Account;
         }
 
         private void btn_Account_Logout_Click(object sender, EventArgs e)
         {
-            tabC_Body.SelectedTab = tab_Login;
-
+            this.Hide();
+            Login login = new Login();
+            login.Show();
             employee = null;
         }
 
@@ -322,13 +188,24 @@ namespace GR01_ChapeauSolution
             }
         }
 
+        private void FreeTable(Button table, int tableNumber)
+        {
+            if (table.Image == Resources.Table_White)
+            {
+                MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber);
+                messageBox.ShowDialog();
+                // DialogResult result = messageBox.ShowDialog();
+            }
+        }
+
         private void btn_Table_1_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 1;
 
             // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            FreeTable(btn_Table_1, 1);
+            //tabC_Body.SelectedTab = tab_Order;
         }
 
         private void btn_Table_2_Click(object sender, EventArgs e)
