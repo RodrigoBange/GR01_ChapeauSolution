@@ -10,7 +10,6 @@ namespace ChapeauModel
         public string comment = ""; 
 
         // Properties
-        public int OrderItemID { get; set; }
         public int ItemID { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
