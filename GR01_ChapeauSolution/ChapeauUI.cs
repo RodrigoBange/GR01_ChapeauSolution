@@ -552,7 +552,7 @@ namespace GR01_ChapeauSolution
                 else
                 {
                     string warningTitle = "Warning - Low Stock";
-                    string warningMessage = "The ingredients for the following items are low:" + Environment.NewLine;
+                    string warningMessage = "The ingredients for the following items are low or out of stock:" + Environment.NewLine;
 
                     for (int i = 0; i < lowStockItems.Count; i++)
                     {

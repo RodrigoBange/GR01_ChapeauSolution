@@ -43,8 +43,8 @@
             // 
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.lbl_Question.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_Question.Location = new System.Drawing.Point(1, 279);
+            this.lbl_Question.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Question.Location = new System.Drawing.Point(3, 90);
             this.lbl_Question.MaximumSize = new System.Drawing.Size(598, 0);
             this.lbl_Question.MinimumSize = new System.Drawing.Size(598, 40);
             this.lbl_Question.Name = "lbl_Question";
@@ -71,8 +71,8 @@
             this.pnl_Buttons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.pnl_Buttons.Controls.Add(this.btn_Accept);
             this.pnl_Buttons.Controls.Add(this.btn_Decline);
-            this.pnl_Buttons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_Buttons.Location = new System.Drawing.Point(1, 319);
+            this.pnl_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Buttons.Location = new System.Drawing.Point(1, 186);
             this.pnl_Buttons.Name = "pnl_Buttons";
             this.pnl_Buttons.Size = new System.Drawing.Size(598, 80);
             this.pnl_Buttons.TabIndex = 5;
@@ -129,11 +129,14 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.flowLayoutPanel1.Controls.Add(this.lbl_Message);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Controls.Add(this.lbl_Question);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 56);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(598, 0);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(0, 130);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(598, 223);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(598, 130);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // MessageBox_YesNo
@@ -143,11 +146,10 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(600, 267);
+            this.Controls.Add(this.pnl_Buttons);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lbl_Title);
-            this.Controls.Add(this.lbl_Question);
-            this.Controls.Add(this.pnl_Buttons);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
@@ -155,6 +157,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(600, 800);
+            this.MinimumSize = new System.Drawing.Size(600, 267);
             this.Name = "MessageBox_YesNo";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

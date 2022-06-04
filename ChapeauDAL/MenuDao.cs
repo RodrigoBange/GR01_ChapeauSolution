@@ -42,13 +42,10 @@ namespace ChapeauDAL
                     break;
             }
 
-            // Set SqlParameter
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-
             try
             {
                 // Return result of query with list 
-                return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+                return ReadTables(ExecuteSelectQuery(query, new SqlParameter[0]));
             }
             catch (Exception ex)
             {
