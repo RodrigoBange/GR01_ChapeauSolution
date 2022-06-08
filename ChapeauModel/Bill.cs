@@ -17,17 +17,16 @@ namespace ChapeauModel
         public double PriceRemaining { get; set; }
         public bool IsPaid { get { return (PriceRemaining <= 0); } }
 
-        //Alcoholic VAT properties
+        //Alcoholic VAT properties (for UI VAT Section)
         public double PriceExclVATAlcoholic { get; private set; }
         public double VATAlcoholic { get; private set; }
         public double PriceInclVATAlcoholic { get { return (PriceExclVATAlcoholic + VATAlcoholic); } }
-        
-        //Non-Alcoholic VAT properties
+
+        //Non-Alcoholic VAT properties (for UI VAT Section)
         public double PriceExclVATNonAlcoholic { get; private set; }
         public double VATNonAlcoholic { get; private set; }
         public double PriceInclVATNonAlcoholic { get { return (PriceExclVATNonAlcoholic + VATNonAlcoholic); } }
 
-        
 
         //Constructor
         public Bill(int billId, List<BillItem> items)

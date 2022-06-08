@@ -20,7 +20,7 @@ namespace ChapeauLogic
         //Dictates whether or not Card payment is successfully processed
         public bool SuccessfulPayment()
         {
-            int randomNumber = rnd.Next(1, 11);
+            int randomNumber = rnd.Next(1, 21);
 
             return (randomNumber != 1);
         }

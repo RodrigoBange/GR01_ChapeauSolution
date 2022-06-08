@@ -703,7 +703,7 @@ namespace GR01_ChapeauSolution
         private void btn_Order_Checkout_Click(object sender, EventArgs e)
         {
             // Open the bill
-            tabC_Body.SelectedIndex = 4;
+            
             Bill_LoadBillView(tableNumber);
         }
 
@@ -757,6 +757,9 @@ namespace GR01_ChapeauSolution
         //Load Bill View, called when pressing Checkout Button in the Order View
         private void Bill_LoadBillView(int tableNr)
         {
+            //Switch to bill tab
+            tabC_Body.SelectedTab = tab_Bill;
+
             //Clear listviews
             Bill_lv_Bill.Items.Clear();
             Bill_lv_VAT.Items.Clear();
@@ -844,14 +847,14 @@ namespace GR01_ChapeauSolution
             Bill_EnablePayButton();
         }
 
-        //Disable Pay button (visually, not functionally)
+        //Disable "Next Screen" button (visually, not functionally)
         private void Bill_DisablePayButton()
         {
             Bill_btn_Pay.ForeColor = Color.LightGray;
             Bill_btn_Pay.BackColor = Color.DarkRed;
         }
 
-        //Enable Pay button (visually, not functionally)
+        //Enable "Next Screen" button (visually, not functionally)
         private void Bill_EnablePayButton()
         {
             Bill_btn_Pay.ForeColor = Color.White;
@@ -861,32 +864,30 @@ namespace GR01_ChapeauSolution
         //Code for Pay button 
         private void Bill_btn_Pay_Click(object sender, EventArgs e)
         {
-            if (Bill_radbtn_Cash.Checked) //If cash option is checked, open cash payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Cash";
-                payment.PaymentMethod = PaymentMethod.Cash;
-                LoadPaymentView(bill);
+            payment = new Payment(bill);
 
+            //If cash option is checked, open cash payment screen
+            if (Bill_radbtn_Cash.Checked) 
+            {
+                payment.PaymentMethod = PaymentMethod.Cash;
+                LoadPaymentView();
                 tabC_Body.SelectedIndex = 5;
             }
-            else if (Bill_radbtn_Credit.Checked) //If credit option is checked, open credit payment screen
+            //If credit option is checked, open credit payment screen
+            else if (Bill_radbtn_Credit.Checked) 
             {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Credit Card";
                 payment.PaymentMethod = PaymentMethod.Credit;
-                LoadPaymentView(bill);
+                LoadPaymentView();
                 tabC_Body.SelectedIndex = 5;
             }
-            else if (Bill_radbtn_Debit.Checked) //If debit option is checked, open credit payment screen
+            //If debit option is checked, open credit payment screen
+            else if (Bill_radbtn_Debit.Checked)
             {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Debit Card";
                 payment.PaymentMethod = PaymentMethod.Debit;
-                LoadPaymentView(bill);
+                LoadPaymentView();
                 tabC_Body.SelectedIndex = 5;
             }
-            else //No payment method selected, throw messagebox with instructions
+            else //No payment method selected, display instructions for the user
             {
                 MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
                 messageBox.ShowDialog();
@@ -898,50 +899,72 @@ namespace GR01_ChapeauSolution
         #region Payment View
         /** PAYMENT VIEW METHODS **/
         Payment payment;
-        private void LoadPaymentView(Bill bill)
+        private void LoadPaymentView()
         {
             Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
-            Payment_num_AmountGivenOrTip.Value = 0;
+            
             Payment_num_ChangeOrTotal.Value = 0;
 
             if (payment.PaymentMethod == PaymentMethod.Cash)
-                LoadCashPaymentView(bill);
+                LoadCashPaymentView();
+            else if (payment.PaymentMethod == PaymentMethod.Debit)
+                LoadDebitPaymentView();
             else
-                LoadCardPaymentView(bill);
+                LoadCreditPaymentView();
         }
-            
-        private void LoadCashPaymentView(Bill bill)
+
+        private void LoadCashPaymentView()
         {
             //Change input types specific to cash payment
+            Payment_lbl_Method.Text = "Cash";
             Payment_lbl_AmountGivenOrTip.Text = "Amount Given:";
             Payment_lbl_ChangeOrTotalToPay.Text = "Change";
             Payment_Btn_Pay.Text = "Complete Payment";
-
+            
+            Payment_num_AmountGivenOrTip.Value = (decimal)bill.PriceRemaining;
+            Payment_num_ChangeOrTotal.Value = 0;
         }
 
-        private void LoadCardPaymentView(Bill bill)
+        private void LoadDebitPaymentView()
         {
+            Payment_lbl_Method.Text = "Debit Card";
+            LoadCardPaymentView();
+        }
+
+        private void LoadCreditPaymentView()
+        {
+            Payment_lbl_Method.Text = "Credit Card";
+            LoadCardPaymentView();
+        }
+
+        private void LoadCardPaymentView()
+        {
+
             //Change input types specific to card payment
             Payment_lbl_AmountGivenOrTip.Text = "Tip:";
             Payment_lbl_ChangeOrTotalToPay.Text = "Total to Pay:";
             Payment_Btn_Pay.Text = "Process Payment";
+            
+            Payment_num_ChangeOrTotal.Value = (decimal)bill.PriceRemaining;
+            Payment_num_AmountGivenOrTip.Value = 0;
         }
-        
-        //Cancel button takes you back to payment screen, keeps previous user input
+
+        //Cancel button takes you back to bill screen
         private void Payment_btn_Cancel_Click(object sender, EventArgs e)
         {
-            tabC_Body.SelectedIndex = 4;
+            tabC_Body.SelectedTab = tab_Bill;
         }
 
         //Depending on the payment method, calculates values different when new user input is given
         private void Payment_num_1_ValueChanged(object sender, EventArgs e)
         {
+            //If method is cash, calculate change to give
             if (payment.PaymentMethod == PaymentMethod.Cash)
             {
                 if (Payment_num_AmountGivenOrTip.Value >= (decimal)bill.PriceRemaining)
                     Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value - (decimal)bill.PriceRemaining);
             }
-            else
+            else //If method is card, calculate tip
                 Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value + (decimal)bill.PriceRemaining);
         }
 
@@ -960,12 +983,12 @@ namespace GR01_ChapeauSolution
             //If pay button is pressed when payment method = cash, go to payment complete view (no process).
             if (payment.PaymentMethod == PaymentMethod.Cash)
             {
-                payment.TotalAmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
+                payment.AmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
                 tabC_Body.SelectedIndex = 7;
             }
             else //Else go to payment process view
             {
-                payment.TotalAmountPaid = (double)Payment_num_ChangeOrTotal.Value;
+                payment.AmountPaid = (double)Payment_num_ChangeOrTotal.Value;
                 payment.Tip = (double)Payment_num_AmountGivenOrTip.Value;
                 LoadPaymentProcessingView(payment);
             }
@@ -1005,7 +1028,7 @@ namespace GR01_ChapeauSolution
                     PaymentProcess_lbl_Status.Text = "Robbing bank...";
                     break;
                 case 1:
-                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    PaymentProcess_lbl_Status.Text = "Counting change...";
                     break;
                 case 0:
                     PaymentProcess_lbl_Status.Text = "Finalising payment...";

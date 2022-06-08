@@ -38,5 +38,10 @@ namespace ChapeauLogic
         {
             return (bill.TotalBillPrice - (double)paymentDAO.GetPaidAmount(bill));
         }
+
+        public bool IsBillPaid(Bill bill)
+        {
+            return (bill.TotalBillPrice <= (double)paymentDAO.GetPaidAmount(bill));
+        }
     }
 }

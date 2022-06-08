@@ -142,6 +142,7 @@
             this.lbl_Kitchen_Type = new System.Windows.Forms.Label();
             this.lbl_Kitchen_Food = new System.Windows.Forms.Label();
             this.lbl_Kitchen_Order_Number = new System.Windows.Forms.Label();
+            this.tab_PaymentFailed = new System.Windows.Forms.TabPage();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_Return = new System.Windows.Forms.Button();
             this.btn_Return_Admin = new System.Windows.Forms.Button();
@@ -155,6 +156,14 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
+            this.PaymentFailed_pnl1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.PaymentComplete_lbl_Complete = new System.Windows.Forms.Label();
+            this.PaymentComplete_txt_Comment = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PaymentFail_lbl_Fail = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabC_Body.SuspendLayout();
             this.tab_Login.SuspendLayout();
             this.pnl_Login.SuspendLayout();
@@ -197,6 +206,7 @@
             this.pnl_Bar_Categories.SuspendLayout();
             this.tab_Kitchen.SuspendLayout();
             this.pnl_Kitchen_Categories.SuspendLayout();
+            this.tab_PaymentFailed.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.background_OrderCounter)).BeginInit();
             this.pnl_Body.SuspendLayout();
@@ -204,6 +214,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
+            this.PaymentFailed_pnl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabC_Body
@@ -218,6 +230,7 @@
             this.tabC_Body.Controls.Add(this.tab_PaymentComplete);
             this.tabC_Body.Controls.Add(this.tab_Bar);
             this.tabC_Body.Controls.Add(this.tab_Kitchen);
+            this.tabC_Body.Controls.Add(this.tab_PaymentFailed);
             this.tabC_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabC_Body.Location = new System.Drawing.Point(0, 0);
             this.tabC_Body.Margin = new System.Windows.Forms.Padding(0);
@@ -1289,7 +1302,7 @@
             // Payment_Btn_Pay
             // 
             this.Payment_Btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Payment_Btn_Pay.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Payment_Btn_Pay.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Payment_Btn_Pay.Location = new System.Drawing.Point(166, 494);
             this.Payment_Btn_Pay.Name = "Payment_Btn_Pay";
             this.Payment_Btn_Pay.Size = new System.Drawing.Size(173, 54);
@@ -1479,7 +1492,7 @@
             // 
             this.PaymentProcess_lbl_Status.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PaymentProcess_lbl_Status.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(84, 335);
+            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(76, 316);
             this.PaymentProcess_lbl_Status.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.PaymentProcess_lbl_Status.Name = "PaymentProcess_lbl_Status";
             this.PaymentProcess_lbl_Status.Size = new System.Drawing.Size(371, 49);
@@ -1500,6 +1513,9 @@
             // 
             // pnl_PaymentComplete
             // 
+            this.pnl_PaymentComplete.Controls.Add(this.button1);
+            this.pnl_PaymentComplete.Controls.Add(this.PaymentComplete_txt_Comment);
+            this.pnl_PaymentComplete.Controls.Add(this.PaymentComplete_lbl_Complete);
             this.pnl_PaymentComplete.Controls.Add(this.pictureBox1);
             this.pnl_PaymentComplete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PaymentComplete.Location = new System.Drawing.Point(0, 0);
@@ -1513,8 +1529,8 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pictureBox1.Image = global::ChapeauUI.Properties.Resources.verify_success_success_tick_icon_with_png_and_vector_format_372259;
-            this.pictureBox1.Location = new System.Drawing.Point(192, 133);
+            this.pictureBox1.Image = global::ChapeauUI.Properties.Resources.ConfirmationIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(200, 131);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 133);
@@ -1659,6 +1675,16 @@
             this.lbl_Kitchen_Order_Number.Size = new System.Drawing.Size(153, 29);
             this.lbl_Kitchen_Order_Number.TabIndex = 0;
             this.lbl_Kitchen_Order_Number.Text = "Order number";
+            // 
+            // tab_PaymentFailed
+            // 
+            this.tab_PaymentFailed.Controls.Add(this.PaymentFailed_pnl1);
+            this.tab_PaymentFailed.Location = new System.Drawing.Point(4, 24);
+            this.tab_PaymentFailed.Name = "tab_PaymentFailed";
+            this.tab_PaymentFailed.Size = new System.Drawing.Size(521, 622);
+            this.tab_PaymentFailed.TabIndex = 11;
+            this.tab_PaymentFailed.Text = "Payment Failed";
+            this.tab_PaymentFailed.UseVisualStyleBackColor = true;
             // 
             // pnl_Header
             // 
@@ -1821,6 +1847,94 @@
             this.PaymentProcessTimer1.Interval = 1000;
             this.PaymentProcessTimer1.Tick += new System.EventHandler(this.PaymentProcessTimer1_Tick);
             // 
+            // PaymentFailed_pnl1
+            // 
+            this.PaymentFailed_pnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.PaymentFailed_pnl1.Controls.Add(this.button3);
+            this.PaymentFailed_pnl1.Controls.Add(this.button2);
+            this.PaymentFailed_pnl1.Controls.Add(this.PaymentFail_lbl_Fail);
+            this.PaymentFailed_pnl1.Controls.Add(this.pictureBox3);
+            this.PaymentFailed_pnl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PaymentFailed_pnl1.Location = new System.Drawing.Point(0, 0);
+            this.PaymentFailed_pnl1.Margin = new System.Windows.Forms.Padding(0);
+            this.PaymentFailed_pnl1.Name = "PaymentFailed_pnl1";
+            this.PaymentFailed_pnl1.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.PaymentFailed_pnl1.Size = new System.Drawing.Size(521, 622);
+            this.PaymentFailed_pnl1.TabIndex = 3;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pictureBox3.Image = global::ChapeauUI.Properties.Resources.FailureIcon;
+            this.pictureBox3.Location = new System.Drawing.Point(200, 131);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(133, 133);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // PaymentComplete_lbl_Complete
+            // 
+            this.PaymentComplete_lbl_Complete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PaymentComplete_lbl_Complete.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentComplete_lbl_Complete.Location = new System.Drawing.Point(84, 320);
+            this.PaymentComplete_lbl_Complete.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.PaymentComplete_lbl_Complete.Name = "PaymentComplete_lbl_Complete";
+            this.PaymentComplete_lbl_Complete.Size = new System.Drawing.Size(371, 49);
+            this.PaymentComplete_lbl_Complete.TabIndex = 4;
+            this.PaymentComplete_lbl_Complete.Text = "Payment Successful !";
+            this.PaymentComplete_lbl_Complete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PaymentComplete_txt_Comment
+            // 
+            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(200, 417);
+            this.PaymentComplete_txt_Comment.Name = "PaymentComplete_txt_Comment";
+            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(132, 24);
+            this.PaymentComplete_txt_Comment.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(179, 484);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 54);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // PaymentFail_lbl_Fail
+            // 
+            this.PaymentFail_lbl_Fail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PaymentFail_lbl_Fail.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentFail_lbl_Fail.Location = new System.Drawing.Point(75, 287);
+            this.PaymentFail_lbl_Fail.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.PaymentFail_lbl_Fail.Name = "PaymentFail_lbl_Fail";
+            this.PaymentFail_lbl_Fail.Size = new System.Drawing.Size(371, 57);
+            this.PaymentFail_lbl_Fail.TabIndex = 5;
+            this.PaymentFail_lbl_Fail.Text = "Something went wrong in the payment terminal!";
+            this.PaymentFail_lbl_Fail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(154, 446);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(290, 446);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form_Chapeau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1888,6 +2002,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProcessPayment_ProcessingIcon)).EndInit();
             this.tab_PaymentComplete.ResumeLayout(false);
             this.pnl_PaymentComplete.ResumeLayout(false);
+            this.pnl_PaymentComplete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tab_Bar.ResumeLayout(false);
             this.pnl_Bar_Categories.ResumeLayout(false);
@@ -1895,6 +2010,7 @@
             this.tab_Kitchen.ResumeLayout(false);
             this.pnl_Kitchen_Categories.ResumeLayout(false);
             this.pnl_Kitchen_Categories.PerformLayout();
+            this.tab_PaymentFailed.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.background_OrderCounter)).EndInit();
@@ -1903,6 +2019,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
+            this.PaymentFailed_pnl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2035,5 +2153,14 @@
         private System.Windows.Forms.Timer PaymentProcessTimer1;
         private System.Windows.Forms.Label PaymentProcess_lbl_FunFactTitle;
         private System.Windows.Forms.Label PaymentProcess_lbl_FunFact;
+        private System.Windows.Forms.TabPage tab_PaymentFailed;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox PaymentComplete_txt_Comment;
+        private System.Windows.Forms.Label PaymentComplete_lbl_Complete;
+        private System.Windows.Forms.Panel PaymentFailed_pnl1;
+        private System.Windows.Forms.Label PaymentFail_lbl_Fail;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

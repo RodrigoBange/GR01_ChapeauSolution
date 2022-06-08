@@ -14,24 +14,35 @@ namespace ChapeauDAL
         public void InsertPayment(Payment payment) 
         {
             //Query for inserting new payment
-            string query = "INSERT INTO PAYMENT VALUES (@BillId, @TimePaid, @Tip, @TotalPrice, @PaidAmount, @PaymentMethod, @Comment)";
+            string query = "INSERT INTO [PAYMENT] VALUES (@BillId, @TimePaid, @PaidAmount, @Tip, @PaymentMethod)";
 
-            SqlParameter[] sqlParameters = new SqlParameter[7];
+            SqlParameter[] sqlParameters = new SqlParameter[5];
             sqlParameters[0] = new SqlParameter("@BillId", payment.Bill.BillId);
             sqlParameters[1] = new SqlParameter("@TimePaid", DateTime.Now);
-            sqlParameters[2] = new SqlParameter("@Tip", payment.Tip);
-            sqlParameters[3] = new SqlParameter("@TotalPrice", payment.Bill.TotalBillPrice);
-            sqlParameters[4] = new SqlParameter("@PaidAmount", payment.TotalAmountPaid);
-            sqlParameters[5] = new SqlParameter("@PaymentMethod", (int)payment.PaymentMethod);
-            sqlParameters[6] = new SqlParameter("@Comment", payment.RestaurantComment);
-
-            //Insert payment and call method to mark the bill as paid in the bills table
+            sqlParameters[2] = new SqlParameter("@PaidAmount", payment.AmountPaid);
+            sqlParameters[3] = new SqlParameter("@Tip", payment.Tip);
+            sqlParameters[4] = new SqlParameter("@PaymentMethod", (int)payment.PaymentMethod);
+            
+            //Insert payment
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        private void InsertComment()
+        private void InsertComment(string comment)
         {
-            //string query = ""
+            string query = "INSERT INTO [RESTAURANTCOMMENT] VALUES (@Comment)";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@Comment", comment);
+            
+            try
+            {
+                ExecuteEditQuery(query, sqlParameters);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Something went wrong while inserting the comment into the database.");
+            }
+            
         }
 
         //Update bill to isPaid in db table
@@ -42,7 +53,16 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BillId", billId);
 
-            ExecuteEditQuery(query, sqlParameters);
+            try
+            {
+                ExecuteEditQuery(query, sqlParameters);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Something went wrong while marking the bill as paid in the database.");
+            }
+            
         }
         
         //Retrieves payments made for a bill to calculate remaining price
@@ -73,23 +93,14 @@ namespace ChapeauDAL
 
         private List<decimal> ReadPaymentAmountTable(DataTable dataTable)
         {
-            try
-            {
                 List<decimal> payments = new List<decimal>();
                 foreach (DataRow dr in dataTable.Rows)
                 {
-                    decimal payment = (decimal)dr["totalAmountPaid"];
+                    decimal payment = (decimal)dr["amountPaid"];
                     payments.Add(payment);
                 }
 
                 return payments;
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Something went wrong while collecting payment data.");
-            }
-            
         }
     }
 }

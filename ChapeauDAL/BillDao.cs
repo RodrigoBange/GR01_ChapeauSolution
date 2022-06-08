@@ -13,7 +13,7 @@ namespace ChapeauDAL
         //Gets all items linked to a bill from dbo.ORDER, formats it to class BillItem
         public List<BillItem> GetBillItems(int billId) 
         {
-            string query = "SELECT m.itemNameShort, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID GROUP BY O.orderID, O.itemID, M.itemNameShort, M.price, M.tax, M.priceBeforeTax HAVING O.orderID = @billId;";
+            string query = "SELECT M.itemNameShort, O.quantity, M.price, M.tax, M.priceBeforeTax FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID GROUP BY O.orderID, O.quantity, O.itemID, M.itemNameShort, M.price, M.tax, M.priceBeforeTax HAVING O.orderID = @billId;";
 
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@billId", billId);
@@ -54,7 +54,7 @@ namespace ChapeauDAL
                     BillItem item = new BillItem()
                     {
                         Name = (string)dr["itemNameShort"],
-                        Count = (int)dr["count"],
+                        Count = (int)dr["quantity"],
                         PriceWithVAT = (double)(decimal)dr["price"],
                         VATPercentage = (int)(decimal)dr["tax"],
                         BasePrice = (double)(decimal)dr["priceBeforeTax"]
