@@ -34,7 +34,7 @@ namespace ChapeauLogic
         //Insert comment into db
         public void InsertComment(string comment)
         {
-
+            //paymentDao.InsertComment();
         }
     }
 }

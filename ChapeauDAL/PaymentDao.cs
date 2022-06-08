@@ -14,7 +14,7 @@ namespace ChapeauDAL
         public void InsertPayment(Payment payment) 
         {
             //Query for inserting new payment
-            string query = "INSERT INTO PAYMENT VALUES (@BillId, @TimePaid, @Tip, @TotalPrice, @PaidAmount, @PaymentType, @Comment)";
+            string query = "INSERT INTO PAYMENT VALUES (@BillId, @TimePaid, @Tip, @TotalPrice, @PaidAmount, @PaymentMethod, @Comment)";
 
             SqlParameter[] sqlParameters = new SqlParameter[7];
             sqlParameters[0] = new SqlParameter("@BillId", payment.Bill.BillId);
@@ -22,14 +22,17 @@ namespace ChapeauDAL
             sqlParameters[2] = new SqlParameter("@Tip", payment.Tip);
             sqlParameters[3] = new SqlParameter("@TotalPrice", payment.Bill.TotalBillPrice);
             sqlParameters[4] = new SqlParameter("@PaidAmount", payment.TotalAmountPaid);
-            sqlParameters[5] = new SqlParameter("@PaymentType", (int)payment.PaymentType);
+            sqlParameters[5] = new SqlParameter("@PaymentMethod", (int)payment.PaymentMethod);
             sqlParameters[6] = new SqlParameter("@Comment", payment.RestaurantComment);
 
             //Insert payment and call method to mark the bill as paid in the bills table
             ExecuteEditQuery(query, sqlParameters);
-            MarkBillAsPaid(payment.Bill.BillId);
         }
 
+        private void InsertComment()
+        {
+            //string query = ""
+        }
 
         //Update bill to isPaid in db table
         private void MarkBillAsPaid(int billId) 

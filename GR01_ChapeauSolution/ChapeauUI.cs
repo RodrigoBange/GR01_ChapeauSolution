@@ -26,6 +26,7 @@ namespace GR01_ChapeauSolution
         StockService stockService;
         BillService billService;
         PaymentService paymentService;
+        Random rnd = new Random();
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -826,41 +827,6 @@ namespace GR01_ChapeauSolution
             listItem2.SubItems.Add(bill.PriceInclVATAlcoholic.ToString("0.00"));
             Bill_lv_VAT.Items.Add(listItem2);
         }
-        
-        //Code for Pay button 
-        private void Bill_btn_Pay_Click(object sender, EventArgs e)
-        {
-            if (Bill_radbtn_Cash.Checked) //If cash option is checked, open cash payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Cash";
-                payment.PaymentType = PaymentType.Cash;
-                LoadCashPaymentView(bill);
-                
-                tabC_Body.SelectedIndex = 5;
-            }
-            else if (Bill_radbtn_Credit.Checked) //If credit option is checked, open credit payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Credit Card";
-                payment.PaymentType = PaymentType.Credit;
-                LoadCardPaymentView(bill);
-                tabC_Body.SelectedIndex = 5;
-            }
-            else if (Bill_radbtn_Debit.Checked) //If debit option is checked, open credit payment screen
-            {
-                payment = new Payment();
-                Payment_lbl_Method.Text = "Debit Card";
-                payment.PaymentType = PaymentType.Debit;
-                LoadCardPaymentView(bill);
-                tabC_Body.SelectedIndex = 5;
-            }
-            else //No payment method selected, throw messagebox with instructions
-            {
-                MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
-                messageBox.ShowDialog();
-            }
-        }
 
         //Enable the "Next Screen" button when a Payment method selected
         private void Bill_radbtn_Cash_Checked(object sender, EventArgs e)
@@ -892,91 +858,186 @@ namespace GR01_ChapeauSolution
             Bill_btn_Pay.BackColor = ColorTranslator.FromHtml("254, 60, 60");
         }
 
+        //Code for Pay button 
+        private void Bill_btn_Pay_Click(object sender, EventArgs e)
+        {
+            if (Bill_radbtn_Cash.Checked) //If cash option is checked, open cash payment screen
+            {
+                payment = new Payment();
+                Payment_lbl_Method.Text = "Cash";
+                payment.PaymentMethod = PaymentMethod.Cash;
+                LoadPaymentView(bill);
+
+                tabC_Body.SelectedIndex = 5;
+            }
+            else if (Bill_radbtn_Credit.Checked) //If credit option is checked, open credit payment screen
+            {
+                payment = new Payment();
+                Payment_lbl_Method.Text = "Credit Card";
+                payment.PaymentMethod = PaymentMethod.Credit;
+                LoadPaymentView(bill);
+                tabC_Body.SelectedIndex = 5;
+            }
+            else if (Bill_radbtn_Debit.Checked) //If debit option is checked, open credit payment screen
+            {
+                payment = new Payment();
+                Payment_lbl_Method.Text = "Debit Card";
+                payment.PaymentMethod = PaymentMethod.Debit;
+                LoadPaymentView(bill);
+                tabC_Body.SelectedIndex = 5;
+            }
+            else //No payment method selected, throw messagebox with instructions
+            {
+                MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
+                messageBox.ShowDialog();
+            }
+        }
 
         #endregion
 
         #region Payment View
         /** PAYMENT VIEW METHODS **/
         Payment payment;
-        private void LoadPaymentView()
+        private void LoadPaymentView(Bill bill)
         {
+            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
             Payment_num_AmountGivenOrTip.Value = 0;
             Payment_num_ChangeOrTotal.Value = 0;
+
+            if (payment.PaymentMethod == PaymentMethod.Cash)
+                LoadCashPaymentView(bill);
+            else
+                LoadCardPaymentView(bill);
         }
             
         private void LoadCashPaymentView(Bill bill)
         {
-            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
+            //Change input types specific to cash payment
             Payment_lbl_AmountGivenOrTip.Text = "Amount Given:";
             Payment_lbl_ChangeOrTotalToPay.Text = "Change";
             Payment_Btn_Pay.Text = "Complete Payment";
 
-            
         }
 
         private void LoadCardPaymentView(Bill bill)
         {
-            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
+            //Change input types specific to card payment
             Payment_lbl_AmountGivenOrTip.Text = "Tip:";
             Payment_lbl_ChangeOrTotalToPay.Text = "Total to Pay:";
             Payment_Btn_Pay.Text = "Process Payment";
         }
-
+        
+        //Cancel button takes you back to payment screen, keeps previous user input
         private void Payment_btn_Cancel_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedIndex = 4;
         }
 
+        //Depending on the payment method, calculates values different when new user input is given
         private void Payment_num_1_ValueChanged(object sender, EventArgs e)
         {
-            if (payment.PaymentType == PaymentType.Cash)
+            if (payment.PaymentMethod == PaymentMethod.Cash)
             {
                 if (Payment_num_AmountGivenOrTip.Value >= (decimal)bill.PriceRemaining)
                     Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value - (decimal)bill.PriceRemaining);
             }
             else
-            {
                 Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value + (decimal)bill.PriceRemaining);
-            }
         }
 
+        //Depending on the payment method, calculates values different when new user input is given
         private void Payment_Num_2_ValueChanged(object sender, EventArgs e)
         {
-            if (payment.PaymentType == PaymentType.Cash)
-            {
+            if (payment.PaymentMethod == PaymentMethod.Cash)
                 Payment_num_AmountGivenOrTip.Value = ((decimal)bill.PriceRemaining + Payment_num_ChangeOrTotal.Value);
-            }
             else
-            {
                 Payment_num_AmountGivenOrTip.Value = (Payment_num_ChangeOrTotal.Value - (decimal)bill.PriceRemaining);
-            }
         }
 
+        
         private void Payment_Btn_Pay_Click(object sender, EventArgs e)
         {
-            if (payment.PaymentType == PaymentType.Cash)
+            //If pay button is pressed when payment method = cash, go to payment complete view (no process).
+            if (payment.PaymentMethod == PaymentMethod.Cash)
             {
                 payment.TotalAmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
                 tabC_Body.SelectedIndex = 7;
             }
-            else
+            else //Else go to payment process view
             {
                 payment.TotalAmountPaid = (double)Payment_num_ChangeOrTotal.Value;
                 payment.Tip = (double)Payment_num_AmountGivenOrTip.Value;
-                tabC_Body.SelectedIndex = 6;
-
+                LoadPaymentProcessingView(payment);
             }
         }
         #endregion
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
+        int timeLeft = 5;
 
-        private void LoadPaymentProcessingView()
+        private void LoadPaymentProcessingView(Payment payment)
         {
-
+            tabC_Body.SelectedIndex = 6;
+            PaymentProcess_lbl_FunFact.Text = LoadFunFact();
+            timeLeft = 6;
+            PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
+            PaymentProcessTimer1.Interval = 1200;
+            PaymentProcessTimer1.Start();
         }
 
+        private void PaymentProcessTimer1_Tick(object sender, EventArgs e)
+        {
+            timeLeft--;
+            
+            switch (timeLeft)
+            {
+                case 5:
+                    PaymentProcess_lbl_Status.Text = "Crunching numbers...";
+                    break;
+                case 4:
+                    PaymentProcess_lbl_Status.Text = "Checking bank...";
+                    break;
+                case 3:
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    break;
+                case 2:
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    break;
+                case 1:
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    break;
+                case 0:
+                    PaymentProcess_lbl_Status.Text = "Finalising payment...";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private string LoadFunFact()
+        {
+            List<string> funFacts = CreateFunFactsList();
+            string funfact = funFacts[rnd.Next(0, funFacts.Count)];
+
+            return funfact;
+        }
+
+        private List<string> CreateFunFactsList()
+        {
+            List<string> funFacts = new List<string>();
+            
+            funFacts.Add("Due to thermal expansion, the Eiffel Tower can grow up to 15 cm taller in the summer.");
+            funFacts.Add("A chef's hat has 100 pleats. It is supposed to represent the 100 ways you can cook an egg.");
+            funFacts.Add("In France, baguettes can be bought out of vending machines.");
+            funFacts.Add("The average French citizen eats 500 snails each year.");
+            funFacts.Add("French fries are not actually French. They were invented in America.");
+            funFacts.Add("French people usually eat their burgers with cutlery.");
+            funFacts.Add("Croissants are not actually French. They were invented by an Austrian.");
+            funFacts.Add("The most famous French desert is a cheese plate.");
+            
+            return funFacts;
+        }
         #endregion
 
         #region Kitchen
@@ -1012,11 +1073,13 @@ namespace GR01_ChapeauSolution
 
 
 
+
+
+
+
+
+
         #endregion
-
-        
-
-        
 
         
     }

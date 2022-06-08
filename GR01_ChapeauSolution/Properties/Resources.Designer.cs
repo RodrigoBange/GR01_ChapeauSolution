@@ -159,5 +159,15 @@ namespace ChapeauUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verify_success_success_tick_icon_with_png_and_vector_format_372259 {
+            get {
+                object obj = ResourceManager.GetObject("verify-success-success-tick-icon-with-png-and-vector-format-372259", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

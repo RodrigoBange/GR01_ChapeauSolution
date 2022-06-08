@@ -10,9 +10,7 @@ namespace ChapeauDAL
 {
     public class BillDao : BaseDao
     {
-        //string query;
-
-        //Gets all items linked to a bill, formats it to class BillItem
+        //Gets all items linked to a bill from dbo.ORDER, formats it to class BillItem
         public List<BillItem> GetBillItems(int billId) 
         {
             string query = "SELECT m.itemNameShort, COUNT(*) AS [count], M.price, M.tax, M.priceBeforeTax FROM ORDER_ITEMS AS O JOIN [MENU_ITEM] AS M ON O.itemID = M.itemID GROUP BY O.orderID, O.itemID, M.itemNameShort, M.price, M.tax, M.priceBeforeTax HAVING O.orderID = @billId;";

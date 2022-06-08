@@ -123,9 +123,10 @@
             this.Payment_lbl_MethodTitle = new System.Windows.Forms.Label();
             this.tab_ProcessPayment = new System.Windows.Forms.TabPage();
             this.pnl_ProcessPayment = new System.Windows.Forms.Panel();
+            this.PaymentProcess_lbl_FunFact = new System.Windows.Forms.Label();
             this.PaymentProcess_lbl_FunFactTitle = new System.Windows.Forms.Label();
             this.ProcessPayment_ProcessingIcon = new System.Windows.Forms.PictureBox();
-            this.lbl_ProcessPayment_Status = new System.Windows.Forms.Label();
+            this.PaymentProcess_lbl_Status = new System.Windows.Forms.Label();
             this.tab_PaymentComplete = new System.Windows.Forms.TabPage();
             this.pnl_PaymentComplete = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -154,7 +155,6 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
-            this.PaymentProcess_lbl_FunFact = new System.Windows.Forms.Label();
             this.tabC_Body.SuspendLayout();
             this.tab_Login.SuspendLayout();
             this.pnl_Login.SuspendLayout();
@@ -1290,9 +1290,9 @@
             // 
             this.Payment_Btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Payment_Btn_Pay.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Payment_Btn_Pay.Location = new System.Drawing.Point(193, 508);
+            this.Payment_Btn_Pay.Location = new System.Drawing.Point(166, 494);
             this.Payment_Btn_Pay.Name = "Payment_Btn_Pay";
-            this.Payment_Btn_Pay.Size = new System.Drawing.Size(126, 40);
+            this.Payment_Btn_Pay.Size = new System.Drawing.Size(173, 54);
             this.Payment_Btn_Pay.TabIndex = 9;
             this.Payment_Btn_Pay.Text = "button1";
             this.Payment_Btn_Pay.UseVisualStyleBackColor = false;
@@ -1430,7 +1430,7 @@
             this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_FunFact);
             this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_FunFactTitle);
             this.pnl_ProcessPayment.Controls.Add(this.ProcessPayment_ProcessingIcon);
-            this.pnl_ProcessPayment.Controls.Add(this.lbl_ProcessPayment_Status);
+            this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_Status);
             this.pnl_ProcessPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ProcessPayment.Location = new System.Drawing.Point(0, 0);
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
@@ -1439,17 +1439,28 @@
             this.pnl_ProcessPayment.Size = new System.Drawing.Size(521, 622);
             this.pnl_ProcessPayment.TabIndex = 3;
             // 
+            // PaymentProcess_lbl_FunFact
+            // 
+            this.PaymentProcess_lbl_FunFact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PaymentProcess_lbl_FunFact.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_FunFact.Location = new System.Drawing.Point(74, 475);
+            this.PaymentProcess_lbl_FunFact.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.PaymentProcess_lbl_FunFact.Name = "PaymentProcess_lbl_FunFact";
+            this.PaymentProcess_lbl_FunFact.Size = new System.Drawing.Size(371, 49);
+            this.PaymentProcess_lbl_FunFact.TabIndex = 4;
+            this.PaymentProcess_lbl_FunFact.Text = "Fun fact:";
+            // 
             // PaymentProcess_lbl_FunFactTitle
             // 
             this.PaymentProcess_lbl_FunFactTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PaymentProcess_lbl_FunFactTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_FunFactTitle.Location = new System.Drawing.Point(74, 437);
+            this.PaymentProcess_lbl_FunFactTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_FunFactTitle.Location = new System.Drawing.Point(74, 426);
             this.PaymentProcess_lbl_FunFactTitle.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.PaymentProcess_lbl_FunFactTitle.Name = "PaymentProcess_lbl_FunFactTitle";
-            this.PaymentProcess_lbl_FunFactTitle.Size = new System.Drawing.Size(88, 49);
+            this.PaymentProcess_lbl_FunFactTitle.Size = new System.Drawing.Size(78, 49);
             this.PaymentProcess_lbl_FunFactTitle.TabIndex = 3;
             this.PaymentProcess_lbl_FunFactTitle.Text = "Fun fact:";
-            this.PaymentProcess_lbl_FunFactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PaymentProcess_lbl_FunFactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProcessPayment_ProcessingIcon
             // 
@@ -1464,17 +1475,17 @@
             this.ProcessPayment_ProcessingIcon.TabIndex = 2;
             this.ProcessPayment_ProcessingIcon.TabStop = false;
             // 
-            // lbl_ProcessPayment_Status
+            // PaymentProcess_lbl_Status
             // 
-            this.lbl_ProcessPayment_Status.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_ProcessPayment_Status.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ProcessPayment_Status.Location = new System.Drawing.Point(84, 335);
-            this.lbl_ProcessPayment_Status.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_ProcessPayment_Status.Name = "lbl_ProcessPayment_Status";
-            this.lbl_ProcessPayment_Status.Size = new System.Drawing.Size(371, 49);
-            this.lbl_ProcessPayment_Status.TabIndex = 0;
-            this.lbl_ProcessPayment_Status.Text = "Processing Payment...";
-            this.lbl_ProcessPayment_Status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PaymentProcess_lbl_Status.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PaymentProcess_lbl_Status.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(84, 335);
+            this.PaymentProcess_lbl_Status.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.PaymentProcess_lbl_Status.Name = "PaymentProcess_lbl_Status";
+            this.PaymentProcess_lbl_Status.Size = new System.Drawing.Size(371, 49);
+            this.PaymentProcess_lbl_Status.TabIndex = 0;
+            this.PaymentProcess_lbl_Status.Text = "Processing Payment...";
+            this.PaymentProcess_lbl_Status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tab_PaymentComplete
             // 
@@ -1501,11 +1512,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pictureBox1.Image = global::ChapeauUI.Properties.Resources.verify_success_success_tick_icon_with_png_and_vector_format_372259;
             this.pictureBox1.Location = new System.Drawing.Point(192, 133);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -1806,18 +1819,7 @@
             // PaymentProcessTimer1
             // 
             this.PaymentProcessTimer1.Interval = 1000;
-            // 
-            // PaymentProcess_lbl_FunFact
-            // 
-            this.PaymentProcess_lbl_FunFact.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PaymentProcess_lbl_FunFact.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_FunFact.Location = new System.Drawing.Point(74, 475);
-            this.PaymentProcess_lbl_FunFact.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.PaymentProcess_lbl_FunFact.Name = "PaymentProcess_lbl_FunFact";
-            this.PaymentProcess_lbl_FunFact.Size = new System.Drawing.Size(371, 49);
-            this.PaymentProcess_lbl_FunFact.TabIndex = 4;
-            this.PaymentProcess_lbl_FunFact.Text = "Fun fact:";
-            this.PaymentProcess_lbl_FunFact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PaymentProcessTimer1.Tick += new System.EventHandler(this.PaymentProcessTimer1_Tick);
             // 
             // Form_Chapeau
             // 
@@ -1942,7 +1944,7 @@
         private System.Windows.Forms.Panel pnl_PaymentComplete;
         private System.Windows.Forms.Panel pnl_ProcessPayment;
         private System.Windows.Forms.PictureBox ProcessPayment_ProcessingIcon;
-        private System.Windows.Forms.Label lbl_ProcessPayment_Status;
+        private System.Windows.Forms.Label PaymentProcess_lbl_Status;
         private System.Windows.Forms.Panel pnl_Cash;
         private System.Windows.Forms.Button btn_Return;
         private System.Windows.Forms.Button btn_Return_Admin;
