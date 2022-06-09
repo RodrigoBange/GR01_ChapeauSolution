@@ -122,7 +122,7 @@ namespace ChapeauDAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("There is an issue adding items to new order.");
+                    throw new Exception("There is an issue adding items to a the newest order.");
                 }
 
             }
@@ -140,7 +140,7 @@ namespace ChapeauDAL
             }
             catch (Exception ex)
             {
-                throw new Exception("There is an issue receiving the newest orderID");
+                throw new Exception("There is an issue retrieving the newest order ID");
             }
 
         }

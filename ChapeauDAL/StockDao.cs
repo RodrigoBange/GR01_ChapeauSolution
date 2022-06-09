@@ -64,9 +64,9 @@ namespace ChapeauDAL
                     string itemName = ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
                     if (itemName != null) { lowStockItems.Add(itemName); }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw new Exception("There is an issue reading the stock status from the database.");
+                    throw new Exception("There is an issue retrieving the stock status from the database.");
                 }
             }
 
