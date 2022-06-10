@@ -2207,6 +2207,7 @@
             // 
             // PaymentFail_PicFail
             // 
+            this.PaymentFail_PicFail.Image = global::ChapeauUI.Properties.Resources.FailureIcon;
             this.PaymentFail_PicFail.Location = new System.Drawing.Point(198, 81);
             this.PaymentFail_PicFail.Name = "PaymentFail_PicFail";
             this.PaymentFail_PicFail.Size = new System.Drawing.Size(130, 130);
@@ -2274,6 +2275,7 @@
             // 
             // PaymentComplete_PicSuccess
             // 
+            this.PaymentComplete_PicSuccess.Image = global::ChapeauUI.Properties.Resources.ConfirmationIcon;
             this.PaymentComplete_PicSuccess.Location = new System.Drawing.Point(198, 81);
             this.PaymentComplete_PicSuccess.Name = "PaymentComplete_PicSuccess";
             this.PaymentComplete_PicSuccess.Size = new System.Drawing.Size(130, 130);
