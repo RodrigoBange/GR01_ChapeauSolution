@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ChapeauLogic
+namespace ChapeauDAL
 {
-    internal class PaymentService
+    internal class PaymentDao
     {
 
     }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ChapeauDAL
+namespace ChapeauModel
 {
-    internal class PaymentService
+    internal enum PaymentMethod
     {
+
     }
 }
