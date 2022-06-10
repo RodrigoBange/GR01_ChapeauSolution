@@ -48,5 +48,7 @@ namespace ChapeauDAL
                 throw new Exception("Something went wrong while reading the items data from the database.");
             }
         }
+
+
     }
 }

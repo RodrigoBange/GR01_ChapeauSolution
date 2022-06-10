@@ -16,6 +16,7 @@ namespace ChapeauUI
         public KitchenBar_UI()
         {
             InitializeComponent();
+            label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
             listView_Bar.CheckBoxes = true;
             btn_User.Show();
             lbl_TitleKitchen.Hide();
@@ -49,10 +50,16 @@ namespace ChapeauUI
             List<KitchenBar> BarList = barService.GetBarItems();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btn_Ready_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-            label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+
+            for(int i=0; i<listView_Bar.Items.Count; i++)
+            {
+               if(listView_Bar.CheckBoxes==true)
+                {
+
+                }
+            }
         }
     }
 }
