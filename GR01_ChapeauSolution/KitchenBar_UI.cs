@@ -15,10 +15,6 @@ namespace ChapeauUI
     {
         Employee employee;
 
-        public KitchenBar_UI()
-        {
-        }
-
         public KitchenBar_UI(Employee employee)
         {
             InitializeComponent();
@@ -28,8 +24,6 @@ namespace ChapeauUI
             if (this.employee.EmployeeRole == "Chef")
             {
                 // Display Kitchen panel
-                pnl_Kitchen.Visible = true;
-                pnl_Bar.Visible = false;
                 btn_User.Show();
                 listView_Bar.CheckBoxes = true;
                 label_Time.Show();
@@ -38,8 +32,6 @@ namespace ChapeauUI
             else if (this.employee.EmployeeRole == "Bartender")
             {
                 // Display Bar panel
-                pnl_Bar.Visible = true;
-                pnl_Kitchen.Visible = false;
                 btn_User.Show();
                 FillBar();
                 listView_Bar.CheckBoxes = true;

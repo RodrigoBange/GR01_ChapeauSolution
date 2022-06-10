@@ -55,5 +55,21 @@ namespace ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        public void SetTableUnOccupied(int tableNumber)
+        {
+            // Creating query
+            string query = @"UPDATE [TABLE]
+                            SET isOccupied = 0
+                            WHERE tableID = @tableNumber;";
+
+            // Set sql parameter
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@tableNumber", tableNumber)
+            };
+
+            // Excuting query
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }
