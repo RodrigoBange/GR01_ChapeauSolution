@@ -37,14 +37,15 @@ namespace ChapeauUI
             this.lbl_TitleKitchen = new System.Windows.Forms.Label();
             this.lbl_TitleBar = new System.Windows.Forms.Label();
             this.listView_Bar = new System.Windows.Forms.ListView();
+            this.Checcck = new System.Windows.Forms.ColumnHeader();
+            this.Order = new System.Windows.Forms.ColumnHeader();
             this.Type = new System.Windows.Forms.ColumnHeader();
             this.Drink_Name = new System.Windows.Forms.ColumnHeader();
             this.Ammount = new System.Windows.Forms.ColumnHeader();
             this.Comment = new System.Windows.Forms.ColumnHeader();
             this.Time = new System.Windows.Forms.ColumnHeader();
-            this.Checcck = new System.Windows.Forms.ColumnHeader();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Order = new System.Windows.Forms.ColumnHeader();
+            this.btn_Ready = new System.Windows.Forms.Button();
             this.pnl_Bar.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +62,7 @@ namespace ChapeauUI
             // pnl_Header
             // 
             this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_Header.Controls.Add(this.btn_Ready);
             this.pnl_Header.Controls.Add(this.label_Time);
             this.pnl_Header.Controls.Add(this.btn_User);
             this.pnl_Header.Controls.Add(this.lbl_TitleKitchen);
@@ -75,7 +77,7 @@ namespace ChapeauUI
             // label_Time
             // 
             this.label_Time.AutoSize = true;
-            this.label_Time.Location = new System.Drawing.Point(13, 28);
+            this.label_Time.Location = new System.Drawing.Point(782, 28);
             this.label_Time.Name = "label_Time";
             this.label_Time.Size = new System.Drawing.Size(0, 20);
             this.label_Time.TabIndex = 1;
@@ -147,6 +149,15 @@ namespace ChapeauUI
             this.listView_Bar.View = System.Windows.Forms.View.Details;
             this.listView_Bar.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // Checcck
+            // 
+            this.Checcck.Text = "Status";
+            // 
+            // Order
+            // 
+            this.Order.Text = "Order";
+            this.Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Type
             // 
             this.Type.Text = "Type";
@@ -177,19 +188,20 @@ namespace ChapeauUI
             this.Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Time.Width = 130;
             // 
-            // Checcck
-            // 
-            this.Checcck.Text = "Status";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             // 
-            // Order
+            // btn_Ready
             // 
-            this.Order.Text = "Order";
-            this.Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Ready.Location = new System.Drawing.Point(35, 22);
+            this.btn_Ready.Name = "btn_Ready";
+            this.btn_Ready.Size = new System.Drawing.Size(94, 29);
+            this.btn_Ready.TabIndex = 3;
+            this.btn_Ready.Text = "Ready";
+            this.btn_Ready.UseVisualStyleBackColor = true;
+            this.btn_Ready.Click += new System.EventHandler(this.btn_Ready_Click);
             // 
             // KitchenBar_UI
             // 
@@ -220,10 +232,11 @@ namespace ChapeauUI
         private System.Windows.Forms.ColumnHeader Comment;
         private System.Windows.Forms.ColumnHeader Time;
         private System.Windows.Forms.Label label_Time;
-        public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_TitleKitchen;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ColumnHeader Checcck;
         private System.Windows.Forms.ColumnHeader Order;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_Ready;
     }
 }
