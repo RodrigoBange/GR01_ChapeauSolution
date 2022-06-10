@@ -13,9 +13,27 @@ namespace ChapeauUI
 {
     public partial class KitchenBar_UI : Form
     {
-        public KitchenBar_UI()
+        Employee employee;
+
+        public KitchenBar_UI(Employee employee)
         {
             InitializeComponent();
+
+            this.employee = employee;
+
+            if (this.employee.EmployeeRole == "Chef")
+            {
+                // Display Kitchen panel
+                pnl_Kitchen.Visible = true;
+                pnl_Bar.Visible = false;
+            }
+            else if (this.employee.EmployeeRole == "Bartender")
+            {
+                // Display Bar panel
+                pnl_Bar.Visible = true;
+                pnl_Kitchen.Visible = false;
+            }
+
             label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
             listView_Bar.CheckBoxes = true;
             btn_User.Show();
