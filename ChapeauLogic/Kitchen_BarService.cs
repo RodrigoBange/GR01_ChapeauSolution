@@ -22,5 +22,15 @@ namespace ChapeauLogic
         {
             return kitchen_BarDao.GetBarItems();
         }
+
+        public List<KitchenBar> GetLunchItems()
+        {
+            return kitchen_BarDao.GetLunchItems();
+        }
+
+        public List<KitchenBar> GetDinnerItems()
+        {
+            return kitchen_BarDao.GetDinnerhItems();
+        }
     }
 }
