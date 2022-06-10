@@ -199,6 +199,17 @@ namespace GR01_ChapeauSolution
                         tabC_Body.SelectedTab = tab_Tables;
                     }
                 }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred (comment will be checked in service layer). 
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                try
+                {
+                    paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+                }
+                catch (Exception ex)
+                {
+                    DisplayError(ex);
+                }
             }
             else
             {
@@ -223,6 +234,17 @@ namespace GR01_ChapeauSolution
                         // Open account overview
                         tabC_Body.SelectedTab = tab_Account;
                     }
+                }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred (comment will be checked in service layer). 
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                try
+                {
+                    paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+                }
+                catch (Exception ex)
+                {
+                    DisplayError(ex);
                 }
             }
             else
@@ -947,7 +969,7 @@ namespace GR01_ChapeauSolution
                 payment.PaymentMethod = PaymentMethod.Debit;
                 LoadDebitPaymentView();
             }
-            else //No payment method selected, display instructions for the user
+            else //No payment method selected, display instructions in an error message for the user
             {
                 MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
                 messageBox.ShowDialog();
@@ -966,25 +988,31 @@ namespace GR01_ChapeauSolution
             PayCash_num_Change.Value = 0;
             tabC_Body.SelectedTab = tab_CashPayment;
         }
-
-        //Back button takes you back to bill screen
+        
         private void Cash_btn_Back_Click(object sender, EventArgs e)
         {
+            //Back button takes user back to bill screen (with user input still intact)
             tabC_Body.SelectedTab = tab_Bill;
         }
 
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
         {
             //If entered amount given is more than the bill price, calculate change
-            if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
+            if (PayCash_num_AmountGiven.Value > (decimal)bill.PriceRemaining)
+            {
                 PayCash_num_Change.Value = (PayCash_num_AmountGiven.Value - (decimal)bill.PriceRemaining);
+            }
+            else //If given amount is lower, make the change amount 0
+            {
+                PayCash_num_Change.Value = 0;
+            }
         }
 
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
         {
-            //If they want a certain amount of change, can also reverse-calculate the given amount
+            //If user enters a certain amount of change, system will reverse-calculate the given amount
             PayCash_num_AmountGiven.Value = ((decimal)bill.PriceRemaining + PayCash_num_Change.Value);
         }
 
@@ -1042,9 +1070,10 @@ namespace GR01_ChapeauSolution
                 PayCard_Num_Total.Value = (decimal)bill.PriceRemaining + PayCard_Num_Tip.Value;
             }
         }
+        
         private void PayCard_btn_Back_Click(object sender, EventArgs e)
         {
-            //Back to bill view with user input still loaded
+            //Back button takes user back to bill screen (with user input still intact)
             tabC_Body.SelectedTab = tab_Bill;
         }
 
@@ -1162,6 +1191,7 @@ namespace GR01_ChapeauSolution
         {
             try
             {
+                //Insert comment to the database (comment will be checked in service layer)
                 paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
             }
             catch (Exception ex)
