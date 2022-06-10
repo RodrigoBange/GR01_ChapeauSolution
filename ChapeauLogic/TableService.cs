@@ -26,5 +26,11 @@ namespace ChapeauLogic
             // Set table as occupied
             tableDao.SetTableOccupied(tableNumber);
         }
+
+        public void SetTableUnoccupied(int tableNumber)
+        {
+            // Set table as unoccupied
+            tableDao.SetTableUnOccupied(tableNumber);
+        }
     }
 }

@@ -97,7 +97,7 @@ namespace GR01_ChapeauSolution
             {
                 // Kitchen and bar view is not yet created
                 this.Hide();
-                KitchenBar_UI kitchenBar_View = new KitchenBar_UI();
+                KitchenBar_UI kitchenBar_View = new KitchenBar_UI(employee);
                 kitchenBar_View.Show();
             }
         }

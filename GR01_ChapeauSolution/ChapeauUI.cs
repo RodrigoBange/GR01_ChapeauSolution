@@ -26,7 +26,6 @@ namespace GR01_ChapeauSolution
         MenuService menuService;
         OrderService orderService;
         StockService stockService;
-        EmployeeService employeeService;
         TableService tableService;
         BillService billService;
         PaymentService paymentService;
@@ -56,7 +55,6 @@ namespace GR01_ChapeauSolution
             menuService = new MenuService();
             orderService = new OrderService();
             stockService = new StockService();
-            employeeService = new EmployeeService();
             tableService = new TableService();
             billService = new BillService();
             paymentService = new PaymentService();
@@ -1162,6 +1160,7 @@ namespace GR01_ChapeauSolution
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
                     bill.IsPaid = true;
+                    tableService.SetTableUnoccupied(tableNumber);
                 }
                 else
                 {
