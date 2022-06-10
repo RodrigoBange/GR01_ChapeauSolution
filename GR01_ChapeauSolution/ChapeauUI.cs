@@ -129,6 +129,9 @@ namespace GR01_ChapeauSolution
                         totalOrderPrice = 0.00;
                         lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
 
+                        // Disable Place Order
+                        ActivatePlaceOrder();
+
                         // Set the width to hide the scrollbar for a modern mobile design
                         flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
                         flow_Order_Items.Width = pnl_Order_Orders.Width + SystemInformation.VerticalScrollBarWidth;
@@ -454,8 +457,8 @@ namespace GR01_ChapeauSolution
                 // Add to total price
                 UpdateTotalPrice(orderItem.Price);
 
-                // Activate Checkout button
-                ActivateCheckout();
+                // Activate Place Order button
+                ActivatePlaceOrder();
             }
             else { AddToOrderQuantity(menuItem.ItemID); }
         }
@@ -508,7 +511,7 @@ namespace GR01_ChapeauSolution
                         orderItems.RemoveAt(i);
 
                         // Check for checkout functionality
-                        ActivateCheckout();
+                        ActivatePlaceOrder();
 
                         // Return
                         return;
@@ -638,7 +641,7 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        private void ActivateCheckout()
+        private void ActivatePlaceOrder()
         {
             // If there are items added, enable checkout option
             if (orderItems.Count > 0)
