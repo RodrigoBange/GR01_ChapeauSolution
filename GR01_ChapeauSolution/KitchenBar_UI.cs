@@ -15,6 +15,10 @@ namespace ChapeauUI
     {
         Employee employee;
 
+        public KitchenBar_UI()
+        {
+        }
+
         public KitchenBar_UI(Employee employee)
         {
             InitializeComponent();

@@ -119,7 +119,6 @@
             // 
             // btn_OrderServed10
             // 
-            this.btn_OrderServed10.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed10.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed10.Name = "btn_OrderServed10";
@@ -171,7 +170,6 @@
             // 
             // btn_OrderServed9
             // 
-            this.btn_OrderServed9.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed9.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed9.Name = "btn_OrderServed9";
@@ -223,7 +221,6 @@
             // 
             // btn_OrderServed8
             // 
-            this.btn_OrderServed8.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed8.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed8.Name = "btn_OrderServed8";
@@ -275,7 +272,6 @@
             // 
             // btn_OrderServed7
             // 
-            this.btn_OrderServed7.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed7.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed7.Name = "btn_OrderServed7";
@@ -327,7 +323,6 @@
             // 
             // btn_OrderServed6
             // 
-            this.btn_OrderServed6.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed6.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed6.Name = "btn_OrderServed6";
@@ -379,7 +374,6 @@
             // 
             // btn_OrderServed5
             // 
-            this.btn_OrderServed5.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed5.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed5.Name = "btn_OrderServed5";
@@ -460,7 +454,6 @@
             // 
             // btn_OrderServed4
             // 
-            this.btn_OrderServed4.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed4.Location = new System.Drawing.Point(240, 8);
             this.btn_OrderServed4.Name = "btn_OrderServed4";
@@ -497,7 +490,6 @@
             // 
             // btn_OrderServed3
             // 
-            this.btn_OrderServed3.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed3.Location = new System.Drawing.Point(240, 8);
             this.btn_OrderServed3.Name = "btn_OrderServed3";
@@ -535,7 +527,6 @@
             // 
             // btn_OrderServed2
             // 
-            this.btn_OrderServed2.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed2.Location = new System.Drawing.Point(240, 6);
             this.btn_OrderServed2.Name = "btn_OrderServed2";
@@ -601,7 +592,6 @@
             // 
             // btn_OrderServed1
             // 
-            this.btn_OrderServed1.BackgroundImage = global::ChapeauUI.Properties.Resources.crossIcon;
             this.btn_OrderServed1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_OrderServed1.Location = new System.Drawing.Point(240, 5);
             this.btn_OrderServed1.Name = "btn_OrderServed1";

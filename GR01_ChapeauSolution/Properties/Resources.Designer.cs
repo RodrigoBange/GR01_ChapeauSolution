@@ -93,12 +93,19 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap crossIcon {
-            get {
-                object obj = ResourceManager.GetObject("crossIcon", resourceCulture);
         internal static System.Drawing.Bitmap ConfirmationIcon {
             get {
                 object obj = ResourceManager.GetObject("ConfirmationIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crossIcon {
+            get {
+                object obj = ResourceManager.GetObject("crossIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
