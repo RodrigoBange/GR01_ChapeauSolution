@@ -172,9 +172,6 @@
             this.lbl_Kitchen_Order_Number = new System.Windows.Forms.Label();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_Return = new System.Windows.Forms.Button();
-            this.btn_Return_Admin = new System.Windows.Forms.Button();
-            this.lbl_OrderCounter = new System.Windows.Forms.Label();
-            this.background_OrderCounter = new System.Windows.Forms.PictureBox();
             this.btn_User = new System.Windows.Forms.Button();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pnl_Body = new System.Windows.Forms.Panel();
@@ -235,12 +232,85 @@
             this.tab_Kitchen.SuspendLayout();
             this.pnl_Kitchen_Categories.SuspendLayout();
             this.pnl_Header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.background_OrderCounter)).BeginInit();
             this.pnl_Body.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
+            this.tab_ProcessPayment.SuspendLayout();
+            this.pnl_ProcessPayment.SuspendLayout();
+            this.pnl_ProcessPayment_Center.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).BeginInit();
+            this.tab_PaymentOptions.SuspendLayout();
+            this.pnl_PaymentOptions.SuspendLayout();
+            this.pnl_PaymentOptions_Top.SuspendLayout();
+            this.pnl_PaymentOptions_Center.SuspendLayout();
+            this.flow_PaymentOptions.SuspendLayout();
+            this.tab_Bill.SuspendLayout();
+            this.pnl_Bill_Prices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Prices_Splitter)).BeginInit();
+            this.flow_Bill_Prices.SuspendLayout();
+            this.pnl_Bill.SuspendLayout();
+            this.pnl_Bill_Title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Title_Splitter)).BeginInit();
+            this.tab_Order.SuspendLayout();
+            this.pnl_Order_Categories.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.pnl_Order_Orders.SuspendLayout();
+            this.pnl_Order_Menu.SuspendLayout();
+            this.tab_Tables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnl_TableOverview)).BeginInit();
+            this.pnl_TableOverview.Panel1.SuspendLayout();
+            this.pnl_TableOverview.Panel2.SuspendLayout();
+            this.pnl_TableOverview.SuspendLayout();
+            this.flow_Tables.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox18)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox14)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox16)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox12)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox10)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox8)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox6)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            this.pnl_FoodDrink.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Food)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(img_Drink)).BeginInit();
+            this.flow_Table_ColorMeaning.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox25)).BeginInit();
+            this.flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox24)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox20)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.border_ColorMeaning)).BeginInit();
+            this.tab_Account.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabC_Body.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabC_Body
@@ -2048,75 +2118,31 @@
             // 
             this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnl_Header.Controls.Add(this.btn_Return);
-            this.pnl_Header.Controls.Add(this.btn_Return_Admin);
-            this.pnl_Header.Controls.Add(this.lbl_OrderCounter);
-            this.pnl_Header.Controls.Add(this.background_OrderCounter);
             this.pnl_Header.Controls.Add(this.btn_User);
             this.pnl_Header.Controls.Add(this.lbl_Title);
             this.pnl_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Header.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Header.Margin = new System.Windows.Forms.Padding(1);
+            this.pnl_Header.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(529, 53);
+            this.pnl_Header.Size = new System.Drawing.Size(660, 67);
             this.pnl_Header.TabIndex = 0;
             // 
             // btn_Return
             // 
-            this.btn_Return.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon;
+            this.btn_Return.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon_New1;
             this.btn_Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Return.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Return.FlatAppearance.BorderSize = 0;
             this.btn_Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Return.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Return.Location = new System.Drawing.Point(1, 0);
-            this.btn_Return.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Return.Location = new System.Drawing.Point(2, 0);
+            this.btn_Return.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(73, 53);
+            this.btn_Return.Size = new System.Drawing.Size(92, 67);
             this.btn_Return.TabIndex = 4;
             this.btn_Return.UseVisualStyleBackColor = true;
             this.btn_Return.Visible = false;
             this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
-            // 
-            // btn_Return_Admin
-            // 
-            this.btn_Return_Admin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Return_Admin.FlatAppearance.BorderSize = 0;
-            this.btn_Return_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Return_Admin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Return_Admin.Location = new System.Drawing.Point(103, 8);
-            this.btn_Return_Admin.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_Return_Admin.Name = "btn_Return_Admin";
-            this.btn_Return_Admin.Size = new System.Drawing.Size(83, 40);
-            this.btn_Return_Admin.TabIndex = 5;
-            this.btn_Return_Admin.Text = "Admin";
-            this.btn_Return_Admin.UseVisualStyleBackColor = true;
-            this.btn_Return_Admin.Visible = false;
-            // 
-            // lbl_OrderCounter
-            // 
-            this.lbl_OrderCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_OrderCounter.AutoSize = true;
-            this.lbl_OrderCounter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.lbl_OrderCounter.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_OrderCounter.Location = new System.Drawing.Point(395, 15);
-            this.lbl_OrderCounter.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_OrderCounter.Name = "lbl_OrderCounter";
-            this.lbl_OrderCounter.Size = new System.Drawing.Size(64, 27);
-            this.lbl_OrderCounter.TabIndex = 3;
-            this.lbl_OrderCounter.Text = "0 / 10";
-            this.lbl_OrderCounter.Visible = false;
-            // 
-            // background_OrderCounter
-            // 
-            this.background_OrderCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.background_OrderCounter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.background_OrderCounter.Location = new System.Drawing.Point(385, 8);
-            this.background_OrderCounter.Margin = new System.Windows.Forms.Padding(1);
-            this.background_OrderCounter.Name = "background_OrderCounter";
-            this.background_OrderCounter.Size = new System.Drawing.Size(80, 40);
-            this.background_OrderCounter.TabIndex = 2;
-            this.background_OrderCounter.TabStop = false;
-            this.background_OrderCounter.Visible = false;
             // 
             // btn_User
             // 
@@ -2127,10 +2153,10 @@
             this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.FlatAppearance.BorderSize = 0;
             this.btn_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_User.Location = new System.Drawing.Point(481, 8);
-            this.btn_User.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_User.Location = new System.Drawing.Point(600, 10);
+            this.btn_User.Margin = new System.Windows.Forms.Padding(2);
             this.btn_User.Name = "btn_User";
-            this.btn_User.Size = new System.Drawing.Size(40, 40);
+            this.btn_User.Size = new System.Drawing.Size(50, 50);
             this.btn_User.TabIndex = 0;
             this.btn_User.UseVisualStyleBackColor = false;
             this.btn_User.Visible = false;
@@ -2143,9 +2169,9 @@
             this.lbl_Title.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.lbl_Title.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Title.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(529, 53);
+            this.lbl_Title.Size = new System.Drawing.Size(660, 67);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Login";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2154,53 +2180,53 @@
             // 
             this.pnl_Body.Controls.Add(this.tabC_Body);
             this.pnl_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Body.Location = new System.Drawing.Point(0, 53);
+            this.pnl_Body.Location = new System.Drawing.Point(0, 67);
             this.pnl_Body.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(529, 650);
+            this.pnl_Body.Size = new System.Drawing.Size(660, 812);
             this.pnl_Body.TabIndex = 0;
             // 
             // border_Left
             // 
             this.border_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.border_Left.Location = new System.Drawing.Point(0, 57);
+            this.border_Left.Location = new System.Drawing.Point(0, 72);
             this.border_Left.Margin = new System.Windows.Forms.Padding(0);
             this.border_Left.Name = "border_Left";
-            this.border_Left.Size = new System.Drawing.Size(3, 643);
+            this.border_Left.Size = new System.Drawing.Size(4, 803);
             this.border_Left.TabIndex = 2;
             this.border_Left.TabStop = false;
             // 
             // border_Right
             // 
             this.border_Right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.border_Right.Location = new System.Drawing.Point(526, 57);
+            this.border_Right.Location = new System.Drawing.Point(656, 72);
             this.border_Right.Margin = new System.Windows.Forms.Padding(0);
             this.border_Right.Name = "border_Right";
-            this.border_Right.Size = new System.Drawing.Size(3, 643);
+            this.border_Right.Size = new System.Drawing.Size(4, 803);
             this.border_Right.TabIndex = 1;
             this.border_Right.TabStop = false;
             // 
             // border_Bottom
             // 
             this.border_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.border_Bottom.Location = new System.Drawing.Point(0, 700);
+            this.border_Bottom.Location = new System.Drawing.Point(0, 875);
             this.border_Bottom.Margin = new System.Windows.Forms.Padding(0);
             this.border_Bottom.Name = "border_Bottom";
-            this.border_Bottom.Size = new System.Drawing.Size(529, 3);
+            this.border_Bottom.Size = new System.Drawing.Size(660, 4);
             this.border_Bottom.TabIndex = 3;
             this.border_Bottom.TabStop = false;
             // 
             // border_Top
             // 
             this.border_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.border_Top.Location = new System.Drawing.Point(0, 53);
+            this.border_Top.Location = new System.Drawing.Point(0, 67);
             this.border_Top.Margin = new System.Windows.Forms.Padding(0);
             this.border_Top.Name = "border_Top";
-            this.border_Top.Size = new System.Drawing.Size(529, 4);
+            this.border_Top.Size = new System.Drawing.Size(660, 5);
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
             // 
-            // PaymentProcessTimer1
+            // tab_ProcessPayment
             // 
             this.PaymentProcessTimer1.Interval = 1000;
             this.PaymentProcessTimer1.Tick += new System.EventHandler(this.PaymentProcessTimer1_Tick);
@@ -2225,10 +2251,10 @@
             // 
             // Form_Chapeau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.ClientSize = new System.Drawing.Size(529, 703);
+            this.ClientSize = new System.Drawing.Size(660, 879);
             this.Controls.Add(this.border_Right);
             this.Controls.Add(this.border_Left);
             this.Controls.Add(this.border_Top);
@@ -2239,10 +2265,10 @@
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(545, 754);
-            this.MinimumSize = new System.Drawing.Size(545, 705);
+            this.MaximumSize = new System.Drawing.Size(678, 934);
+            this.MinimumSize = new System.Drawing.Size(678, 856);
             this.Name = "Form_Chapeau";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Restaurant Chapeau Ordering System";
@@ -2307,24 +2333,99 @@
             this.pnl_Kitchen_Categories.ResumeLayout(false);
             this.pnl_Kitchen_Categories.PerformLayout();
             this.pnl_Header.ResumeLayout(false);
-            this.pnl_Header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.background_OrderCounter)).EndInit();
             this.pnl_Body.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
+            this.tab_ProcessPayment.ResumeLayout(false);
+            this.pnl_ProcessPayment.ResumeLayout(false);
+            this.pnl_ProcessPayment_Center.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).EndInit();
+            this.tab_PaymentOptions.ResumeLayout(false);
+            this.pnl_PaymentOptions.ResumeLayout(false);
+            this.pnl_PaymentOptions_Top.ResumeLayout(false);
+            this.pnl_PaymentOptions_Top.PerformLayout();
+            this.pnl_PaymentOptions_Center.ResumeLayout(false);
+            this.flow_PaymentOptions.ResumeLayout(false);
+            this.tab_Bill.ResumeLayout(false);
+            this.pnl_Bill_Prices.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Prices_Splitter)).EndInit();
+            this.flow_Bill_Prices.ResumeLayout(false);
+            this.flow_Bill_Prices.PerformLayout();
+            this.pnl_Bill.ResumeLayout(false);
+            this.pnl_Bill_Title.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_pnl_Bill_Title_Splitter)).EndInit();
+            this.tab_Order.ResumeLayout(false);
+            this.pnl_Order_Categories.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.pnl_Order_Orders.ResumeLayout(false);
+            this.pnl_Order_Menu.ResumeLayout(false);
+            this.tab_Tables.ResumeLayout(false);
+            this.pnl_TableOverview.Panel1.ResumeLayout(false);
+            this.pnl_TableOverview.Panel2.ResumeLayout(false);
+            this.pnl_TableOverview.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnl_TableOverview)).EndInit();
+            this.pnl_TableOverview.ResumeLayout(false);
+            this.flow_Tables.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox18)).EndInit();
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox14)).EndInit();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox16)).EndInit();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox12)).EndInit();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox10)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox8)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox6)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            this.pnl_FoodDrink.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_Food)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(img_Drink)).EndInit();
+            this.flow_Table_ColorMeaning.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox25)).EndInit();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox24)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox20)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.border_ColorMeaning)).EndInit();
+            this.tab_Account.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabC_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabC_Body;
-        private System.Windows.Forms.TabPage tab_Login;
         private System.Windows.Forms.Panel pnl_Header;
         private System.Windows.Forms.Panel pnl_Body;
-        private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.PictureBox border_Left;
         private System.Windows.Forms.PictureBox border_Right;
         private System.Windows.Forms.PictureBox border_Bottom;
@@ -2358,41 +2459,74 @@
         private System.Windows.Forms.Label PaymentProcess_lbl_Status;
         private System.Windows.Forms.Panel PayCash_pnl;
         private System.Windows.Forms.Button btn_Return;
-        private System.Windows.Forms.Button btn_Return_Admin;
-        private System.Windows.Forms.Panel pnl_Login;
-        private System.Windows.Forms.TextBox txtBox_Login_User;
-        private System.Windows.Forms.FlowLayoutPanel flow_Bar;
-        private System.Windows.Forms.Panel pnl_Bar_Categories;
-        private System.Windows.Forms.Label lbl_Bar_Type;
-        private System.Windows.Forms.Label lbl_Bar_Drink;
-        private System.Windows.Forms.Label lbl_Bar_Order_Number;
-        private System.Windows.Forms.FlowLayoutPanel flow_Kitchen;
-        private System.Windows.Forms.Panel pnl_Kitchen_Categories;
-        private System.Windows.Forms.Label lbl_Kitchen_Type;
-        private System.Windows.Forms.Label lbl_Kitchen_Food;
-        private System.Windows.Forms.Label lbl_Kitchen_Order_Number;
-        private System.Windows.Forms.TextBox txtBox_Login_Password;
-        private System.Windows.Forms.Label lbl_Login_Password;
-        private System.Windows.Forms.Label lbl_Login_EmployeeID;
+        private System.Windows.Forms.TabControl tabC_Body;
+        private System.Windows.Forms.TabPage tab_Account;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbl_Account_EmployeeName;
+        private System.Windows.Forms.Button btn_Account_Logout;
+        private System.Windows.Forms.Label lbl_Account_Role;
+        private System.Windows.Forms.Label lbl_Account_EmployeeID;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TabPage tab_Tables;
+        private System.Windows.Forms.PictureBox border_ColorMeaning;
+        private System.Windows.Forms.FlowLayoutPanel flow_Table_ColorMeaning;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.SplitContainer pnl_TableOverview;
+        private System.Windows.Forms.FlowLayoutPanel flow_TableOverview;
         private System.Windows.Forms.FlowLayoutPanel flow_Tables;
         private System.Windows.Forms.Button btn_Table_1;
+        private System.Windows.Forms.Panel pnl_FoodDrink;
+        private System.Windows.Forms.PictureBox img_Food;
         private System.Windows.Forms.Button btn_Table_2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_Table_3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btn_Table_4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button btn_Table_5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button btn_Table_6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button btn_Table_7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Button btn_Table_8;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Button btn_Table_9;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Button btn_Table_10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.Splitter splitter_TableOverview;
-        private System.Windows.Forms.Splitter splitter_Table_Top;
-        private System.Windows.Forms.Label lbl_TableInfo_Panel1_Title;
-        private System.Windows.Forms.Label lbl_TableInfo_Panel2_Title;
-        private System.Windows.Forms.FlowLayoutPanel flow_TableOverview_Title;
-        private System.Windows.Forms.PictureBox img_TableOverview_Title_Table;
-        private System.Windows.Forms.Label lbl_TableOverview_Title;
-        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.TabPage tab_Order;
+        private System.Windows.Forms.Panel pnl_Order_Menu;
+        private System.Windows.Forms.FlowLayoutPanel flow_Order_Menu;
+        private System.Windows.Forms.Panel pnl_Order_Orders;
+        private System.Windows.Forms.FlowLayoutPanel flow_Order_Items;
+        private System.Windows.Forms.Splitter splitter_Orders_Price;
+        private System.Windows.Forms.Label lbl_Order_TotalPrice;
+        private System.Windows.Forms.Button btn_Order_Confirm;
+        private System.Windows.Forms.Splitter splitter_Checkout;
+        private System.Windows.Forms.Button btn_Order_Checkout;
+        private System.Windows.Forms.Splitter splitter_OrderMenu;
+        private System.Windows.Forms.Panel pnl_Order_Categories;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btn_Order_LunchMenu;
         private System.Windows.Forms.Button btn_Order_DinnerMenu;
