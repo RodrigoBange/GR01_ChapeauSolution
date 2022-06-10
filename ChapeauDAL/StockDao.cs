@@ -11,83 +11,125 @@ namespace ChapeauDAL
     {
         public void DepleteStock(List<OrderItem> orderItems)
         {
+            // Create new list of values
+            List<string> values = new List<string>();
+
+            // Get IDs of each orderItem
             foreach (OrderItem item in orderItems)
             {
-                // Create query
-                string query = @"UPDATE [PRODUCT] 
-                                SET stock = stock - I.quantity 
-                                FROM [PRODUCT] AS P 
-                                INNER JOIN [INGREDIENTS] AS I 
-                                ON P.productID = I.productID 
-                                WHERE I.itemID = @itemID";
+                string value = $"I.itemID = {item.ItemID} ";
+                values.Add(value);
+            }
 
-                // Set SqlParameter
-                SqlParameter[] sqlParameters =
+            // Start query
+            string query = $@"
+                            UPDATE[PRODUCT]
+                            SET stock = stock - I.quantity
+                            FROM [PRODUCT] AS P
+                            INNER JOIN [INGREDIENTS] AS I
+                            ON P.productID = I.productID
+                            WHERE ";
+                            
+            // Add values to update to query
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i < values.Count - 1)
                 {
-                    new SqlParameter("@itemID", item.ItemID)
-                };
-
-                try
-                {
-                    // Deplete item stock in database
-                    ExecuteEditQuery(query, sqlParameters);
+                    query += values[i] + "OR ";
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("There is an issue adjusting the stock in the database.");
+                    query += values[i] + ";";
                 }
             }
+            // End query 
+
+            // Set SqlParameter
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+
+            try
+            {
+                // Edit Database with query
+                ExecuteEditQuery(query, sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("There is an issue adjusting the stock in the database.");
+            }
+
         }
 
         public List<string> CheckStorageStatus(List<OrderItem> orderItems)
         {
-            // Create new list of low stock item names
-            List<string> lowStockItems = new List<string>();
+            List<string> values = new List<string>();
 
-            foreach (OrderItem orderItem in orderItems)
+            // Get IDs of each orderItem
+            foreach (OrderItem item in orderItems)
             {
-                // Create query
-                string query = $@"SELECT itemNameShort FROM [MENU_ITEM] AS M
-                                JOIN [INGREDIENTS] AS I ON M.itemID = I.itemID
-                                JOIN [PRODUCT] AS P ON I.productID = P.productID
-                                WHERE M.itemID = @itemID AND stock < 20;";
-
-                // Set parameters
-                SqlParameter[] sqlParameters =
-                {
-                    new SqlParameter("@itemID", orderItem.ItemID)
-                };
-
-                try
-                {
-                    // Select from database with query and add to list
-                    string itemName = ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
-                    if (itemName != null) { lowStockItems.Add(itemName); }
-                }
-                catch (Exception)
-                {
-                    throw new Exception("There is an issue retrieving the stock status from the database.");
-                }
+                string value = $"M.itemID = {item.ItemID} ";
+                values.Add(value);
             }
 
-            // Return list
-            if (lowStockItems.Count > 0) { return lowStockItems; }
-            else { return null; }
+            // Start query
+            string query = $@"
+                            SELECT itemNameShort FROM [MENU_ITEM] AS M
+                            JOIN [INGREDIENTS] AS I ON M.itemID = I.itemID
+                            JOIN [PRODUCT] AS P ON I.productID = P.productID
+                            WHERE (";
+                            
+            // Add values to query 
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i < values.Count - 1)
+                {
+                    query += values[i] + "OR ";
+                }
+                else
+                {
+                    query += values[i] + ") ";
+                }
+            }                 
+            
+            // End query
+            query += $"AND stock < 20;";
+
+            // Set SqlParameter
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+
+
+            try
+            {
+                // Select from database with query and return list
+                return ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("There is an issue reading the stock status from the database.");
+            }
         }
 
-        private string ReadStorageData(DataTable dataTable)
+        private List<string> ReadStorageData(DataTable dataTable)
         {
+            // Create new list
+            List<string> values = new List<string>();
+
             // If a record has been found
             if (dataTable.Rows.Count > 0)
             {
-                // Return item name
-                return dataTable.Rows[0]["itemNameShort"].ToString();
+                // Add all short item names to list
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    values.Add((string)row["itemNameShort"].ToString());
+                }
             }
             else
             {
                 // If none have been found, return null
                 return null;
             }
+
+            // Return the list of names
+            return values;
         }
     }
 }

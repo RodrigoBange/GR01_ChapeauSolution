@@ -97,11 +97,6 @@ namespace GR01_ChapeauSolution
                     {
                         // Set title
                         lbl_Title.Text = "Account";
-                        
-                        // Set account information
-                        lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
-                        lbl_Account_EmployeeName.Text = employee.EmployeeName;
-                        lbl_Account_Role.Text = employee.EmployeeRole;
                     }
                     break;
                 // Table View 
@@ -191,24 +186,8 @@ namespace GR01_ChapeauSolution
 
         private void btn_Return_Click(object sender, EventArgs e)
         {
-            // If Orderview is open and there are currently items listed in the order...
-            if (tabC_Body.SelectedTab == tab_Order && orderItems.Count > 0)
-            {
-                // Ask for confirmation before returning
-                using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to return to the table overview and clear all items from the order.", "Are you sure you want to proceed?"))
-                {
-                    if (messageBox.ShowDialog() == DialogResult.Yes)
-                    {
-                        // Return to table view
-                        tabC_Body.SelectedTab = tab_Tables;
-                    }
-                }
-            }
-            else
-            {
-                // Return to table view
-                tabC_Body.SelectedTab = tab_Tables;
-            }
+            // Return to table view
+            tabC_Body.SelectedTab = tab_Tables;
         }
 #endregion
 
@@ -237,24 +216,13 @@ namespace GR01_ChapeauSolution
         /** ACCOUNT METHODS **/
         private void btn_User_Click(object sender, EventArgs e)
         {
-            // If Orderview is open and there are currently items listed in the order...
-            if (tabC_Body.SelectedTab == tab_Order && orderItems.Count > 0)
-            {
-                // Ask for confirmation before returning
-                using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to open the account overview and clear all items from the order.", "Are you sure you want to proceed?"))
-                {
-                    if (messageBox.ShowDialog() == DialogResult.Yes)
-                    {
-                        // Open account overview
-                        tabC_Body.SelectedTab = tab_Account;
-                    }
-                }
-            }
-            else
-            {
-                // Open account overview
-                tabC_Body.SelectedTab = tab_Account;
-            }
+            tabC_Body.SelectedTab = tab_Account;
+
+            // Set colors
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
         }
 
         private void btn_Account_Logout_Click(object sender, EventArgs e)
@@ -430,9 +398,18 @@ namespace GR01_ChapeauSolution
             List<MenuItem> menuItems;
 
             // Fill list with items
-            if (menuCategory == MenuCategory.Lunch) { menuItems = lunchMenu; }
-            else if (menuCategory == MenuCategory.Dinner) { menuItems = dinnerMenu; }
-            else { menuItems = drinksMenu; }
+            if (menuCategory == MenuCategory.Lunch) // If Lunch
+            {
+                menuItems = lunchMenu;
+            }
+            else if (menuCategory == MenuCategory.Dinner) // If Dinner
+            {
+                menuItems = dinnerMenu;
+            }
+            else // If drinks
+            {
+                menuItems = drinksMenu;
+            }
 
             // Display menu items and sub category titles
             for (int i = 0; i < menuItems.Count; i++)
@@ -613,11 +590,11 @@ namespace GR01_ChapeauSolution
                 // Check storage status
                 List<string> lowStockItems = stockService.CheckStorageStatus(orders);
 
-                // Check if list is empty
+                // Check storage before continuing
                 if (lowStockItems == null)
                 {
                     // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
+                    orderService.PlaceOrder(orders, tableNumber, 1);
 
                     // Call stockService to remove stock
                     stockService.DepleteStock(orders);
@@ -625,8 +602,10 @@ namespace GR01_ChapeauSolution
                     // Display confirmation
                     using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
                     {
+                        DialogResult dialogResult_W = messageBox_W.ShowDialog();
+
                         // When accepted
-                        if (messageBox_W.ShowDialog() == DialogResult.OK)
+                        if (dialogResult_W == DialogResult.OK)
                         {
                             // Display table overview
                             tabC_Body.SelectedTab = tab_Tables;
@@ -635,8 +614,51 @@ namespace GR01_ChapeauSolution
                 }
                 else
                 {
-                    // Confirmation of low stock before placing order
-                    LowStockConfirmation(lowStockItems, orders);
+                    string warningTitle = "Warning - Low Stock";
+                    string warningMessage = "The ingredients for the following items are low:" + Environment.NewLine;
+
+                    for (int i = 0; i < lowStockItems.Count; i++)
+                    {
+                        if (i < lowStockItems.Count - 1)
+                        {
+                            warningMessage += lowStockItems[i] + ", ";
+                        }
+                        else
+                        {
+                            warningMessage += lowStockItems[i] + ". ";
+                        }
+                    }
+
+                    string warningQuestion = "Please check the stock before proceeding." + Environment.NewLine + "Would you still like to place the order?";
+
+                    // Use the custom messageBox
+                    using (MessageBox_YesNo messageBox = new MessageBox_YesNo(warningTitle, warningMessage, warningQuestion))
+                    {
+                        // Show the dialog
+                        DialogResult dialogResult = messageBox.ShowDialog();
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            // Call orderService to place an order
+                            orderService.PlaceOrder(orders, tableNumber, 1);
+
+                            // Call stockService to remove from stock
+                            stockService.DepleteStock(orders);
+
+                            // Display confirmation
+                            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                            {
+                                DialogResult dialogResult_W = messageBox_W.ShowDialog();
+
+                                // When accepted
+                                if (dialogResult_W == DialogResult.OK)
+                                {
+                                    // Display table overview
+                                    tabC_Body.SelectedTab = tab_Tables;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -644,45 +666,6 @@ namespace GR01_ChapeauSolution
                 // Log and display error
                 DisplayError(ex);
             }            
-        }
-
-        private void LowStockConfirmation(List<String> lowStockItems, List<OrderItem> orders)
-        {
-            // Prepare warning message
-            string warningMessage = "The ingredients for the following items are low or out of stock:" + Environment.NewLine;
-
-            // Add items to warning message text
-            for (int i = 0; i < lowStockItems.Count; i++)
-            {
-                if (i < lowStockItems.Count - 1) { warningMessage += lowStockItems[i] + ", "; }
-                else { warningMessage += lowStockItems[i] + ". "; }
-            }
-
-            string warningQuestion = "Please check the stock before proceeding." + Environment.NewLine + "Would you still like to place the order?";
-
-            // Use the custom messageBox
-            using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Warning - Low stock", warningMessage, warningQuestion))
-            {
-                if (messageBox.ShowDialog() == DialogResult.Yes)
-                {
-                    // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
-
-                    // Call stockService to remove from stock
-                    stockService.DepleteStock(orders);
-
-                    // Display confirmation
-                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
-                    {
-                        // When accepted
-                        if (messageBox_W.ShowDialog() == DialogResult.OK) 
-                        {
-                            // Display table overview
-                            tabC_Body.SelectedTab = tab_Tables;
-                        }
-                    }
-                }
-            }
         }
 
         private void ActivateCheckout()
@@ -704,18 +687,10 @@ namespace GR01_ChapeauSolution
             if (btn_Order_Confirm.Enabled)
             {
                 btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#FE4040");
-
-                // Set Clear order button to visible (As this goes together with order button)
-                splitter_ClearOrder.Visible = true;
-                btn_Clear_Order.Visible = true;
             }
             else
             {
                 btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#822121");
-
-                // Set Clear order button to invisible (As this goes together with order button)
-                splitter_ClearOrder.Visible= false;
-                btn_Clear_Order.Visible = false;
             }
         }
 
@@ -730,26 +705,6 @@ namespace GR01_ChapeauSolution
             // Open the bill
             
             Bill_LoadBillView(tableNumber);
-        }
-
-        private void btn_Clear_Order_Click(object sender, EventArgs e)
-        {
-            // Display confirmation message
-            using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to clear all items from the order.", "Are you sure you want to proceed?"))
-            {
-                if (messageBox.ShowDialog() == DialogResult.Yes)
-                {
-                    // Clear all orders
-                    orderItems.Clear();
-                    flow_Order_Items.Controls.Clear();
-
-                    // Set price to 0
-                    UpdateTotalPrice(-totalOrderPrice);
-
-                    // Set order button to disabled
-                    btn_Order_Confirm.Enabled = false;
-                }
-            }
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
@@ -1210,10 +1165,10 @@ namespace GR01_ChapeauSolution
             // Log error
             string filePath = logger.LogError(ex);
 
-            string errorMessage = ex.Message + Environment.NewLine + "Apologies, if this keeps happening please refer the log to your IT specialist." + " Log location: " + Environment.NewLine + filePath;
+            string errorMessage = ex.Message + Environment.NewLine + "Apologies, please try again." + " Log location: " + Environment.NewLine + filePath;
 
             // Display error 
-            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Oops, something went wrong!", errorMessage))
+            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Oops, an error occured!", errorMessage))
             {
                 DialogResult dialogResult_W = messageBox_W.ShowDialog();
             }
