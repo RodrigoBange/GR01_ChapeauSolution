@@ -1076,10 +1076,12 @@ namespace GR01_ChapeauSolution
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
                     bill.IsPaid = true;
+                    PaymentComplete_lbl_Instruction.Text = "Go back to the table view.";
                 }
                 else
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
+                    PaymentComplete_lbl_Instruction.Text = "Go back to the payment view.";
                 }
             }
             catch (Exception ex)
