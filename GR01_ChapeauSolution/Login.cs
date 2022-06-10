@@ -1,5 +1,6 @@
 ﻿using ChapeauLogic;
 using ChapeauModel;
+using ChapeauUI;
 using ChapeauUI.Forms;
 using System;
 using System.Collections.Generic;
@@ -97,8 +98,8 @@ namespace GR01_ChapeauSolution
             else if (employee.EmployeeRole == "Chef" || employee.EmployeeRole == "Bartender")
             {
                 this.Hide();
-                Form_Chapeau Chapeau = new Form_Chapeau(employee);
-                Chapeau.Show();
+                KitchenBar_UI kitchenBar_View = new KitchenBar_UI();
+                kitchenBar_View.Show();
             }
         }
 

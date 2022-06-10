@@ -17,5 +17,10 @@ namespace ChapeauLogic
             // Initialise
             kitchen_BarDao = new Kitchen_BarDao();
         }
+
+        public List<KitchenBar> GetBarItems()
+        {
+            return kitchen_BarDao.GetBarItems();
+        }
     }
 }

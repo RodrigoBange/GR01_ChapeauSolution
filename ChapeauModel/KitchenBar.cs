@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ChapeauModel
 {
-    public class Kitchen_Bar
+    public class KitchenBar
     {
         // Fields
         public string comment = "";

@@ -11,7 +11,7 @@ namespace ChapeauDAL
     public class Kitchen_BarDao : BaseDao
     {
         //Gets all items
-        public List<Kitchen_Bar> GetBarItems()
+        public List<KitchenBar> GetBarItems()
         {
             string query = "SELECT [ORDER].orderID AS [orderId], itemType AS [item_Type], itemNameShort AS [ShortName], quantity AS [Quantity], comment AS [Comment], orderTime AS [Date_Time], isServed AS [Status], [DRINKS_MENU].itemID AS isDrink FROM [ORDER] JOIN [ORDER_ITEMS] on ORDER_ITEMS.orderID=[ORDER].orderID JOIN [MENU_ITEM] on [MENU_ITEM].itemID=[ORDER_ITEMS].itemID JOIN [DRINKS_MENU] on [DRINKS_MENU].itemID=[ORDER_ITEMS].itemID ORDER BY [ORDER].orderID, Menu_Item.itemID;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -19,15 +19,15 @@ namespace ChapeauDAL
         }
 
 
-        private List<Kitchen_Bar> ReadBarItems(DataTable dataTable)
+        private List<KitchenBar> ReadBarItems(DataTable dataTable)
         {
-            List<Kitchen_Bar> BarItems = new List<Kitchen_Bar>();
+            List<KitchenBar> BarItems = new List<KitchenBar>();
 
             try
             {
                 foreach (DataRow dr in dataTable.Rows)
                 {
-                    Kitchen_Bar BarItem = new Kitchen_Bar()
+                    KitchenBar BarItem = new KitchenBar()
                     {
                         OrderID = (int)dr["orderId"],
                         Item_Type = (string)dr["item_Type"],
