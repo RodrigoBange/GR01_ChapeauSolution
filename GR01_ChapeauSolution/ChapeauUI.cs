@@ -938,12 +938,15 @@ namespace GR01_ChapeauSolution
 
         #region Card Payment
         /** CARD PAYMENT METHODS **/
+        
+        //Load debit payment view
         private void LoadDebitPaymentView()
         {
             PayCard_lbl_Method.Text = "Debit Card";
             LoadCardPaymentView();
         }
 
+        //Load credit payment view
         private void LoadCreditPaymentView()
         {
             PayCard_lbl_Method.Text = "Credit Card";
@@ -987,8 +990,10 @@ namespace GR01_ChapeauSolution
 
         private void PayCard_btn_Pay_Click(object sender, EventArgs e)
         {
+            //Take user input
             payment.Tip = (double)PayCard_Num_Tip.Value;
             payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
+            //Load to processing view
             LoadPaymentProcessingView();
         }
         
@@ -996,13 +1001,13 @@ namespace GR01_ChapeauSolution
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
-        int timeLeft = 5;
+        int paymentTimeLeft;
 
         private void LoadPaymentProcessingView()
         {
             tabC_Body.SelectedTab = tab_ProcessPayment;
             PaymentProcess_lbl_FunFact.Text = LoadFunFact();
-            timeLeft = 6;
+            paymentTimeLeft = 6;
             PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
             PaymentProcessTimer1.Interval = 1500;
             PaymentProcessTimer1.Start();
@@ -1010,9 +1015,9 @@ namespace GR01_ChapeauSolution
 
         private void PaymentProcessTimer1_Tick(object sender, EventArgs e)
         {
-            timeLeft--;
+            paymentTimeLeft--;
             
-            switch (timeLeft)
+            switch (paymentTimeLeft)
             {
                 case 5:
                     PaymentProcess_lbl_Status.Text = "Crunching numbers...";
@@ -1034,9 +1039,7 @@ namespace GR01_ChapeauSolution
                     PaymentProcessTimer1.Stop();
 
                     if (paymentService.SuccessfulPayment())
-                    {
                         LoadPaymentSuccessfulView();
-                    }
                     else
                         tabC_Body.SelectedTab = tab_PaymentFailed;
                     break;
@@ -1045,6 +1048,7 @@ namespace GR01_ChapeauSolution
             }
         }
 
+        //Load a fun fact to display while processing the payment
         private string LoadFunFact()
         {
             List<string> funFacts = paymentService.CreateFunFactsList();
@@ -1060,27 +1064,30 @@ namespace GR01_ChapeauSolution
         /** PAYMENT SUCCESS VIEW METHODS **/
         private void LoadPaymentSuccessfulView()
         {
-            PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Italic);
-            PaymentComplete_txt_Comment.Text = "Ask the guest for a review of their experience and enter here.";
+            //Reset comment textbox to the instruction              
+            ResetCommentTextbox();
             
             try
             {
+                //Insert the payment into the database
                 paymentService.InsertPayment(payment);
+                //Insert 
+                if (paymentService.IsBillPaid(bill))
+                {
+                    PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
+                    bill.IsPaid = true;
+                }
+                else
+                {
+                    PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                DisplayError(new Exception("Was not able to insert the payment in the database."));
+                DisplayError(ex);
                 tabC_Body.SelectedTab = tab_PaymentFailed;
             }
-
-            if (paymentService.IsBillPaid(bill))
-            {
-                PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
-            }
-            else
-            {
-                PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
-            }
+            
             tabC_Body.SelectedTab = tab_PaymentComplete;
         }
 
@@ -1096,18 +1103,40 @@ namespace GR01_ChapeauSolution
 
         private void PaymentComplete_btn_BackToTableView_Click(object sender, EventArgs e)
         {
-            paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
-            payment = null;
-            bill = null;
+            try
+            {
+                paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+            }
+
+            //If the bill is paid, return to the table view, if there are still payments remaining, return to bill view
+            if (bill.IsPaid)
+            {
+                tabC_Body.SelectedTab = tab_Tables;
+                payment = null;
+                bill = null;
+            }
+            else
+                Bill_LoadBillView(tableNumber);
+            
         }
 
+        //Method to reset comment textbox
+        private void ResetCommentTextbox()
+        {
+            PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Italic);
+            PaymentComplete_txt_Comment.Text = "Ask the guest for a review of their experience and enter here.";
+        }
         #endregion
 
         #region PaymentFailed
         /** PAYMENT FAILED METHODS **/
         private void PaymentFailure_btn_ChangeMethod_Click(object sender, EventArgs e)
         {
-            tabC_Body.SelectedTab = tab_Bill;
+            Bill_LoadBillView(tableNumber);
         }
 
         private void PaymentFailure_btn_TryAgain_Click(object sender, EventArgs e)

@@ -58,53 +58,43 @@ namespace ChapeauDAL
             }
             catch (Exception)
             {
-
                 throw new Exception("Something went wrong while marking the bill as paid in the database.");
             }
-            
         }
         
         //Retrieves payments made for a bill to calculate remaining price
         public decimal GetPaidAmount(Bill bill)
         {
-            string query = "SELECT totalAmountPaid FROM PAYMENT WHERE OrderID = @billId";
+            string query = "SELECT amountPaid FROM PAYMENT WHERE OrderID = @billId";
             
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BillId", bill.BillId);
 
-            try
+            
+            List<decimal> payments = ReadPaymentAmountTable(ExecuteSelectQuery(query, sqlParameters));
+            decimal paidAmount = 0;
+
+            //If no payments have been made yet, payments will be returned as null, then 0 must be returned
+            if (payments == null)
             {
-                List<decimal> payments = ReadPaymentAmountTable(ExecuteSelectQuery(query, sqlParameters));
-                decimal paidAmount = 0;
-
-                //If no payments have been made yet, payments will be returned as null, then 0 must be returned
-                if (payments == null)
-                {
-                    return 0;
-                }
-
-                foreach (decimal payment in payments)
-                {
-                    paidAmount += payment;
-                }
-
-                return paidAmount;
+                return 0;
             }
-            catch (Exception)
+
+            foreach (decimal payment in payments)
             {
-                throw new Exception("Something went wrong while collecting payment data.");
+                paidAmount += payment;
             }
+
+            return paidAmount;
+            
         }
 
         private List<decimal> ReadPaymentAmountTable(DataTable dataTable)
         {
             List<decimal> payments = new List<decimal>();
+
             //If no payments have been made yet, datatable will be null
-            if (dataTable == null)
-            {
-                return payments;
-            }
-            else
+            if (dataTable != null)
             {
                 foreach (DataRow dr in dataTable.Rows)
                 {
@@ -114,6 +104,11 @@ namespace ChapeauDAL
 
                 return payments;
             }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

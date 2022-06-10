@@ -146,7 +146,6 @@
             this.PaymentProcess_lbl_Status = new System.Windows.Forms.Label();
             this.tab_PaymentFailed = new System.Windows.Forms.TabPage();
             this.PaymentFailed_pnl1 = new System.Windows.Forms.Panel();
-            this.PaymentFailed_lbl_Instruction2 = new System.Windows.Forms.Label();
             this.PaymentFailed_lbl_Instruction1 = new System.Windows.Forms.Label();
             this.PaymentFailure_btn_TryAgain = new System.Windows.Forms.Button();
             this.PaymentFailure_btn_ChangeMethod = new System.Windows.Forms.Button();
@@ -184,6 +183,8 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabC_Body.SuspendLayout();
             this.tab_Login.SuspendLayout();
             this.pnl_Login.SuspendLayout();
@@ -1338,6 +1339,7 @@
             // 
             // PayCash_pnl
             // 
+            this.PayCash_pnl.Controls.Add(this.label2);
             this.PayCash_pnl.Controls.Add(this.PayCash_lbl_Instruction);
             this.PayCash_pnl.Controls.Add(this.PayCash_Btn_Pay);
             this.PayCash_pnl.Controls.Add(this.PayCash_lbl_AmountGivenOrTip);
@@ -1361,7 +1363,7 @@
             this.PayCash_lbl_Instruction.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_lbl_Instruction.Location = new System.Drawing.Point(8, 269);
             this.PayCash_lbl_Instruction.Name = "PayCash_lbl_Instruction";
-            this.PayCash_lbl_Instruction.Size = new System.Drawing.Size(146, 84);
+            this.PayCash_lbl_Instruction.Size = new System.Drawing.Size(146, 53);
             this.PayCash_lbl_Instruction.TabIndex = 22;
             this.PayCash_lbl_Instruction.Text = "Enter a given amount or specify how much change the guest wants.";
             // 
@@ -1384,13 +1386,13 @@
             this.PayCash_lbl_AmountGivenOrTip.Name = "PayCash_lbl_AmountGivenOrTip";
             this.PayCash_lbl_AmountGivenOrTip.Size = new System.Drawing.Size(126, 23);
             this.PayCash_lbl_AmountGivenOrTip.TabIndex = 8;
-            this.PayCash_lbl_AmountGivenOrTip.Text = "Amount Given:";
+            this.PayCash_lbl_AmountGivenOrTip.Text = "Given Amount:";
             // 
             // PayCash_lbl_BillTotal
             // 
             this.PayCash_lbl_BillTotal.AutoSize = true;
             this.PayCash_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(301, 197);
+            this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(301, 195);
             this.PayCash_lbl_BillTotal.Name = "PayCash_lbl_BillTotal";
             this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(59, 23);
             this.PayCash_lbl_BillTotal.TabIndex = 7;
@@ -1410,7 +1412,7 @@
             // 
             this.PayCash_lbl_BillTotalTitle.AutoSize = true;
             this.PayCash_lbl_BillTotalTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_BillTotalTitle.Location = new System.Drawing.Point(166, 197);
+            this.PayCash_lbl_BillTotalTitle.Location = new System.Drawing.Point(166, 195);
             this.PayCash_lbl_BillTotalTitle.Name = "PayCash_lbl_BillTotalTitle";
             this.PayCash_lbl_BillTotalTitle.Size = new System.Drawing.Size(129, 23);
             this.PayCash_lbl_BillTotalTitle.TabIndex = 5;
@@ -1505,6 +1507,7 @@
             // 
             // PayCard_pnl
             // 
+            this.PayCard_pnl.Controls.Add(this.label3);
             this.PayCard_pnl.Controls.Add(this.label1);
             this.PayCard_pnl.Controls.Add(this.PayCard_btn_Pay);
             this.PayCard_pnl.Controls.Add(this.PayCard_lbl_TitleTip);
@@ -1526,9 +1529,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(8, 266);
+            this.label1.Location = new System.Drawing.Point(8, 272);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 112);
+            this.label1.Size = new System.Drawing.Size(160, 64);
             this.label1.TabIndex = 23;
             this.label1.Text = "Enter how much the guest wants to pay, or the tip they wish to give.";
             // 
@@ -1536,7 +1539,7 @@
             // 
             this.PayCard_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PayCard_btn_Pay.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_btn_Pay.Location = new System.Drawing.Point(166, 446);
+            this.PayCard_btn_Pay.Location = new System.Drawing.Point(166, 448);
             this.PayCard_btn_Pay.Name = "PayCard_btn_Pay";
             this.PayCard_btn_Pay.Size = new System.Drawing.Size(182, 38);
             this.PayCard_btn_Pay.TabIndex = 9;
@@ -1747,7 +1750,6 @@
             // PaymentFailed_pnl1
             // 
             this.PaymentFailed_pnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.PaymentFailed_pnl1.Controls.Add(this.PaymentFailed_lbl_Instruction2);
             this.PaymentFailed_pnl1.Controls.Add(this.PaymentFailed_lbl_Instruction1);
             this.PaymentFailed_pnl1.Controls.Add(this.PaymentFailure_btn_TryAgain);
             this.PaymentFailed_pnl1.Controls.Add(this.PaymentFailure_btn_ChangeMethod);
@@ -1761,23 +1763,14 @@
             this.PaymentFailed_pnl1.Size = new System.Drawing.Size(521, 622);
             this.PaymentFailed_pnl1.TabIndex = 3;
             // 
-            // PaymentFailed_lbl_Instruction2
-            // 
-            this.PaymentFailed_lbl_Instruction2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailed_lbl_Instruction2.Location = new System.Drawing.Point(304, 413);
-            this.PaymentFailed_lbl_Instruction2.Name = "PaymentFailed_lbl_Instruction2";
-            this.PaymentFailed_lbl_Instruction2.Size = new System.Drawing.Size(211, 41);
-            this.PaymentFailed_lbl_Instruction2.TabIndex = 25;
-            this.PaymentFailed_lbl_Instruction2.Text = "Try processing the payment again with the selected payment method.";
-            // 
             // PaymentFailed_lbl_Instruction1
             // 
             this.PaymentFailed_lbl_Instruction1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailed_lbl_Instruction1.Location = new System.Drawing.Point(75, 430);
+            this.PaymentFailed_lbl_Instruction1.Location = new System.Drawing.Point(76, 389);
             this.PaymentFailed_lbl_Instruction1.Name = "PaymentFailed_lbl_Instruction1";
-            this.PaymentFailed_lbl_Instruction1.Size = new System.Drawing.Size(211, 24);
+            this.PaymentFailed_lbl_Instruction1.Size = new System.Drawing.Size(326, 24);
             this.PaymentFailed_lbl_Instruction1.TabIndex = 24;
-            this.PaymentFailed_lbl_Instruction1.Text = "Select a different payment method.";
+            this.PaymentFailed_lbl_Instruction1.Text = "Select what you want to do to try the payment again.";
             // 
             // PaymentFailure_btn_TryAgain
             // 
@@ -2212,6 +2205,24 @@
             this.PaymentProcessTimer1.Interval = 1000;
             this.PaymentProcessTimer1.Tick += new System.EventHandler(this.PaymentProcessTimer1_Tick);
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(8, 336);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 41);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Partial payments also possible.";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(8, 336);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 41);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Partial payments also possible.";
+            // 
             // Form_Chapeau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2461,8 +2472,9 @@
         private System.Windows.Forms.Label Bill_lbl_Instruction;
         private System.Windows.Forms.Label PayCash_lbl_Instruction;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label PaymentFailed_lbl_Instruction2;
         private System.Windows.Forms.Label PaymentFailed_lbl_Instruction1;
         private System.Windows.Forms.Label PaymentComplete_lbl_Instruction;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

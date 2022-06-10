@@ -15,7 +15,7 @@ namespace ChapeauModel
         public List<BillItem> BillItems { get; private set; }
         public double TotalBillPrice { get { return (PriceInclVATNonAlcoholic + PriceInclVATAlcoholic); } }
         public double PriceRemaining { get; set; }
-        public bool IsPaid { get { return (PriceRemaining <= 0); } }
+        public bool IsPaid { get; set; }
 
         //Alcoholic VAT properties (for UI VAT Section)
         public double PriceExclVATAlcoholic { get; private set; }

@@ -44,41 +44,44 @@ namespace ChapeauDAL
             // Create new list of Bill items
             List<BillItem> billItems = new List<BillItem>();
             
-            if (dataTable == null)
+            if (dataTable != null)
+            {
+                // Fill list of Bill items
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    BillItem item = new BillItem()
+                    {
+                        Name = (string)dr["itemNameShort"],
+                        Count = (int)dr["quantity"],
+                        PriceWithVAT = (double)(decimal)dr["price"],
+                        VATPercentage = (int)(decimal)dr["tax"],
+                        BasePrice = (double)(decimal)dr["priceBeforeTax"]
+                    };
+                    billItems.Add(item);
+                }
+                // Return list of bill items
+                return billItems;
+            }
+            else
             {
                 throw new Exception("Something went wrong while reading bill items from the database.");
             }
-            
-            // Fill list of Bill items
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                BillItem item = new BillItem()
-                {
-                    Name = (string)dr["itemNameShort"],
-                    Count = (int)dr["quantity"],
-                    PriceWithVAT = (double)(decimal)dr["price"],
-                    VATPercentage = (int)(decimal)dr["tax"],
-                    BasePrice = (double)(decimal)dr["priceBeforeTax"]
-                };
-                billItems.Add(item);
-            }
-            // Return list of bill items
-            return billItems;
         }
 
         //Tries to find a bill ID
         private int ReadBillIDTable(DataTable dataTable)
         {
             //Retrieve billID
+            if (dataTable != null)
+            {
+                DataRow dr = dataTable.Rows[0];
 
-            if (dataTable == null)
+                return (int)dr["orderID"];
+            }
+            else
             {
                 return 0;
             }
-            
-            DataRow dr = dataTable.Rows[0];
-            
-            return (int)dr["orderID"];
         }
     }
 }
