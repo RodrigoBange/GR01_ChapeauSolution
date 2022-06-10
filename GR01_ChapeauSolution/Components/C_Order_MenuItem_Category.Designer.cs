@@ -41,9 +41,8 @@
             this.pnl_Main.Controls.Add(this.splitter);
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Main.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(333, 42);
+            this.pnl_Main.Size = new System.Drawing.Size(400, 50);
             this.pnl_Main.TabIndex = 0;
             // 
             // lbl_Category
@@ -54,7 +53,7 @@
             this.lbl_Category.Location = new System.Drawing.Point(0, 3);
             this.lbl_Category.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Category.Name = "lbl_Category";
-            this.lbl_Category.Size = new System.Drawing.Size(126, 37);
+            this.lbl_Category.Size = new System.Drawing.Size(150, 44);
             this.lbl_Category.TabIndex = 1;
             this.lbl_Category.Text = "Category";
             // 
@@ -63,16 +62,16 @@
             this.splitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.splitter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter.Enabled = false;
-            this.splitter.Location = new System.Drawing.Point(0, 40);
+            this.splitter.Location = new System.Drawing.Point(0, 47);
             this.splitter.Margin = new System.Windows.Forms.Padding(0);
             this.splitter.Name = "splitter";
-            this.splitter.Size = new System.Drawing.Size(333, 2);
+            this.splitter.Size = new System.Drawing.Size(400, 3);
             this.splitter.TabIndex = 0;
             this.splitter.TabStop = false;
             // 
             // C_Order_MenuItem_Category
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.Controls.Add(this.pnl_Main);
@@ -80,10 +79,10 @@
             this.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(333, 0);
-            this.MinimumSize = new System.Drawing.Size(333, 42);
+            this.MaximumSize = new System.Drawing.Size(400, 0);
+            this.MinimumSize = new System.Drawing.Size(400, 50);
             this.Name = "C_Order_MenuItem_Category";
-            this.Size = new System.Drawing.Size(333, 42);
+            this.Size = new System.Drawing.Size(400, 50);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             this.ResumeLayout(false);

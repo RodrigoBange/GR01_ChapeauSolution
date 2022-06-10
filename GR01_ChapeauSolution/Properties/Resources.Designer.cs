@@ -63,9 +63,9 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChapeauLogo {
+        internal static System.Drawing.Bitmap CautiousImpassionedBoubou_size_restricted {
             get {
-                object obj = ResourceManager.GetObject("ChapeauLogo", resourceCulture);
+                object obj = ResourceManager.GetObject("CautiousImpassionedBoubou-size_restricted", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap drink {
+        internal static System.Drawing.Bitmap ConfirmationIcon {
             get {
-                object obj = ResourceManager.GetObject("drink", resourceCulture);
+                object obj = ResourceManager.GetObject("ConfirmationIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,49 +103,9 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap drink1 {
+        internal static System.Drawing.Bitmap FailureIcon {
             get {
-                object obj = ResourceManager.GetObject("drink1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap drink2 {
-            get {
-                object obj = ResourceManager.GetObject("drink2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap drinkRed {
-            get {
-                object obj = ResourceManager.GetObject("drinkRed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap food {
-            get {
-                object obj = ResourceManager.GetObject("food", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap foodRed {
-            get {
-                object obj = ResourceManager.GetObject("foodRed", resourceCulture);
+                object obj = ResourceManager.GetObject("FailureIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,26 +116,6 @@ namespace ChapeauUI.Properties {
         internal static System.Drawing.Bitmap Home_Icon {
             get {
                 object obj = ResourceManager.GetObject("Home_Icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Home_Icon_New {
-            get {
-                object obj = ResourceManager.GetObject("Home_Icon_New", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Home_Icon_New1 {
-            get {
-                object obj = ResourceManager.GetObject("Home_Icon_New1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,29 +173,19 @@ namespace ChapeauUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tableRed {
-            get {
-                object obj = ResourceManager.GetObject("tableRed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tableRed1 {
-            get {
-                object obj = ResourceManager.GetObject("tableRed1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap User_Icon {
             get {
                 object obj = ResourceManager.GetObject("User_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verify_success_success_tick_icon_with_png_and_vector_format_372259 {
+            get {
+                object obj = ResourceManager.GetObject("verify-success-success-tick-icon-with-png-and-vector-format-372259", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

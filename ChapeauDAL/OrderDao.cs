@@ -11,162 +11,92 @@ namespace ChapeauDAL
     {
         public void PlaceOrder(List<OrderItem> orderItems, int tableNumber, int employeeID)
         {
-            // Create query
-            string query = "SELECT orderID FROM [ORDER] WHERE tableID = @tableNumber AND isPaid = @isPaid;";
+            // Lists for query values
+            List<string> values = new List<string>();
 
-            // Set parameters
-            SqlParameter[] sqlParameters =
-            {
-                new SqlParameter("@tableNumber", tableNumber),
-                new SqlParameter("@isPaid", (object)0)
-            };
-
-            // Check if order exists and save orderID
-            int orderID = RunningOrderExists(ExecuteSelectQuery(query, sqlParameters));
-
-            // Check if order already exists and return value
-            if (orderID != 0)
-            {
-                AddToExistingOrder(orderItems, orderID);
-            }
-            else
-            {
-                AddNewOrder(orderItems, tableNumber, employeeID);
-            }
-        }
-
-        private int RunningOrderExists(DataTable dataTable)
-        {
-            // If a record has been found return the orderID
-            if (dataTable.Rows.Count > 0)
-            {
-                return int.Parse(dataTable.Rows[0]["orderID"].ToString());
-            }
-            else { return 0; }
-        }
-
-        private void AddToExistingOrder(List<OrderItem> orderItems, int orderID)
-        {
+            // Transfer every order item into a query value
             foreach (OrderItem item in orderItems)
             {
-                // Else if order already exists
-                string addToExistingOrderQuery = @"IF EXISTS (SELECT 1 FROM ORDER_ITEMS WHERE orderID = @orderID AND ItemID = @itemID) 
-                                                UPDATE ORDER_ITEMS 
-                                                SET quantity = quantity + @quantity WHERE orderID = @orderID AND itemID = @itemID 
-                                                ELSE 
-                                                INSERT INTO ORDER_ITEMS (orderID, itemID, orderTime, comment) 
-                                                VALUES (@orderID, @itemID, @dateTime, @comment)";
-
-                // Set parameters
-                SqlParameter[] sqlParametersAddToExistingOrder =
+                // Check item quantity
+                for (int i = 0; i < item.Quantity; i++)
                 {
-                    new SqlParameter("@orderID", orderID),
-                    new SqlParameter("@itemID", item.ItemID),
-                    new SqlParameter("@quantity", item.Quantity),
-                    new SqlParameter("@dateTime", DateTime.Now),
-                    new SqlParameter("@comment", item.Comment)
-                };
-
-
-                // Update row or add row to database
-                ExecuteEditQuery(addToExistingOrderQuery, sqlParametersAddToExistingOrder);
+                    // Wrap this in a loop with item quantity
+                    string value = $"'{item.ItemID}', '{DateTime.Now}', '{item.Comment}', 0, 0";
+                    values.Add(value);
+                }
             }
-        }
 
-        private void AddNewOrder(List<OrderItem> orderItems ,int tableNumber, int employeeID)
-        {
-            // Create query 
-            string newOrderQuery = @"INSERT INTO [ORDER] (tableID, employeeID) 
-                                    VALUES (@tableNumber, @employeeID)";
+            // Start query 
+            // If order doesn't exist, create new order and add order items
+            string query = $@"
+                            DECLARE @orderID AS INT 
+                            DECLARE @maxOrderID AS INT 
+                            SELECT @orderID = orderID FROM [ORDER] WHERE tableID = '{tableNumber}' AND isPaid = '0' 
+                            IF @orderID IS NULL 
+                            BEGIN 
+                            INSERT INTO [ORDER] (isPaid, tableID, employeeID) 
+                            VALUES (0, '{tableNumber}', '{employeeID}') 
+                            SELECT @maxOrderID = MAX(orderID) FROM [ORDER] 
+                            INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
+                            VALUES ";
 
-            // Set parameters
-            SqlParameter[] sqlParametersNewOrder =
+            // Add values to query
+            for (int i = 0; i < values.Count; i++)
             {
-                new SqlParameter("@tableNumber", tableNumber),
-                new SqlParameter("@employeeID", employeeID)
-            };
+                if (i < values.Count - 1)
+                {
+                    query += $@"(@maxOrderID, " + values[i] + "), ";
+                }
+                else
+                {
+                    query += $@"(@maxOrderID, " + values[i] + ") ";
+                }
+            }
+
+            // Else if order already exists
+            query += @"END 
+                     ELSE 
+                     BEGIN 
+                     INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment, isServed, isPaid) 
+                     VALUES ";
+
+            // Add values to query
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (i < values.Count - 1)
+                {
+                    query += $@"(@orderID, " + values[i] + "), ";
+                }
+                else
+                {
+                    query += $@"(@orderID, " + values[i] + ") ";
+                }
+            }
+
+            // End query
+            query += "END;";
+
+            // Set SqlParameter
+            SqlParameter[] sqlParameters = new SqlParameter[0];
 
             try
             {
-                // Create new order in database
-                ExecuteEditQuery(newOrderQuery, sqlParametersNewOrder);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("There is an issue creating a new order.");
-            }
-
-
-            // Get the new MaxOrderID
-            int maxOrderID = GetMaxOrderID();
-
-            foreach (OrderItem item in orderItems)
-            {
-                // Create query
-                string addToNewestOrderQuery = @"INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
-                                                VALUES (@maxOrderID, @itemID, @dateTime, @comment)";
-
-                // Set parameters for new order
-                SqlParameter[] sqlParametersAddToNewOrder =
-                {
-                    new SqlParameter("@maxOrderID", maxOrderID),
-                    new SqlParameter("@itemID", item.ItemID),
-                    new SqlParameter("@dateTime", DateTime.Now),
-                    new SqlParameter("@comment", item.Comment)
-                };
-
-                try
-                {
-                    // Add item to database
-                    ExecuteEditQuery(addToNewestOrderQuery, sqlParametersAddToNewOrder);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("There is an issue adding items to a the newest order.");
-                }
-
-            }
-        }
-
-        private int GetMaxOrderID()
-        {
-            // Create query
-            string query = @"SELECT MAX(orderID) AS 'maxID' from [ORDER]";
-
-            try
-            {
-                // Return value
-                return ReadMaxOrderID(ExecuteSelectQuery(query, new SqlParameter[0]));
+                // Edit Database with query
+                ExecuteEditQuery(query, sqlParameters);
             }
             catch (Exception ex)
             {
-                throw new Exception("There is an issue retrieving the newest order ID");
+                throw new Exception("There is an issue placing the order into the database.");
             }
-
-        }
-
-        private int ReadMaxOrderID(DataTable datatable)
-        {
-            // If a record exists
-            if (datatable.Rows.Count > 0)
-            {
-                // Return the value
-                return int.Parse(datatable.Rows[0]["maxID"].ToString());
-            }
-            else { return 0; }
         }
 
         public bool CheckOrderStatus(int tableNumber)
         {
             // Create query 
-            string query = "SELECT orderID FROM [ORDER] WHERE tableID = @tableNumber AND isPaid = @isPaid;";
+            string query = $"SELECT orderID FROM [ORDER] WHERE tableID = {tableNumber} AND isPaid = 0;";
 
             // Set SqlParameter
-            SqlParameter[] sqlParameters =
-            {
-                new SqlParameter("@tableNumber", tableNumber),
-                new SqlParameter("@isPaid", (object)0)
-            };
+            SqlParameter[] sqlParameters = new SqlParameter[0];
 
             try
             {
