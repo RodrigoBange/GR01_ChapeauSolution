@@ -172,6 +172,10 @@ namespace GR01_ChapeauSolution
                         tabC_Body.SelectedTab = tab_Tables;
                     }
                 }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred.
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
             }
             else
             {
@@ -197,6 +201,10 @@ namespace GR01_ChapeauSolution
                         tabC_Body.SelectedTab = tab_Account;
                     }
                 }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred.
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
             }
             else
             {
@@ -909,7 +917,7 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Bill;
         }
 
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
         {
             //If entered amount given is more than the bill price, calculate change
@@ -923,7 +931,7 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
         {
             //If they want a certain amount of change, can also reverse-calculate the given amount
