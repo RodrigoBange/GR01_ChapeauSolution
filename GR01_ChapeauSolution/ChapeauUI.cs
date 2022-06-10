@@ -29,6 +29,7 @@ namespace GR01_ChapeauSolution
         EmployeeService employeeService;
         BillService billService;
         PaymentService paymentService;
+        Random rnd;
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -56,6 +57,7 @@ namespace GR01_ChapeauSolution
             employeeService = new EmployeeService();
             billService = new BillService();
             paymentService = new PaymentService();
+            rnd = new Random();
 
             // Set employee
             this.employee = employee;
@@ -992,7 +994,7 @@ namespace GR01_ChapeauSolution
         private void LoadPaymentProcessingView()
         {
             tabC_Body.SelectedTab = tab_CardPayment;
-            PaymentProcess_lbl_FunFact.Text = LoadFunFact();
+            PaymentProcess_lbl_TitleFunFact.Text = LoadFunFact();
             paymentTimeLeft = 6;
             PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
             PaymentProcessTimer1.Interval = 1500;
@@ -1060,12 +1062,10 @@ namespace GR01_ChapeauSolution
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
                     bill.IsPaid = true;
-                    PaymentComplete_lbl_Instruction.Text = "Go back to the table view.";
                 }
                 else
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
-                    PaymentComplete_lbl_Instruction.Text = "Go back to the payment view.";
                 }
             }
             catch (Exception ex)

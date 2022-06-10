@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox18;
             System.Windows.Forms.PictureBox pictureBox14;
             System.Windows.Forms.PictureBox pictureBox16;
@@ -174,17 +175,28 @@
             this.PayCard_lbl_TitleMethod = new System.Windows.Forms.Label();
             this.tab_ProcessPayment = new System.Windows.Forms.TabPage();
             this.pnl_ProcessPayment = new System.Windows.Forms.Panel();
+            this.PaymentProcess_lbl_FunFact = new System.Windows.Forms.Label();
+            this.PaymentProcess_lbl_Status = new System.Windows.Forms.Label();
+            this.PaymentProcess_lbl_TitleFunFact = new System.Windows.Forms.Label();
+            this.Process_ProcessGIF = new System.Windows.Forms.PictureBox();
             this.tab_PaymentFailed = new System.Windows.Forms.TabPage();
             this.pnl_PaymentFailed = new System.Windows.Forms.Panel();
+            this.PaymentFailure_lbl_MainInstruction = new System.Windows.Forms.Label();
+            this.PaymentFailure_lbl_Title = new System.Windows.Forms.Label();
+            this.PaymentFailure_btn_TryAgain = new System.Windows.Forms.Button();
+            this.PaymentFailure_btn_ChangeMethod = new System.Windows.Forms.Button();
+            this.PaymentFail_PicFail = new System.Windows.Forms.PictureBox();
             this.tab_PaymentComplete = new System.Windows.Forms.TabPage();
             this.pnl_PaymentComplete = new System.Windows.Forms.Panel();
+            this.PaymentComplete_btn_BackToTableView = new System.Windows.Forms.Button();
+            this.PaymentComplete_txt_Comment = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PaymentComplete_PicSuccess = new System.Windows.Forms.PictureBox();
             this.border_Left = new System.Windows.Forms.PictureBox();
             this.border_Right = new System.Windows.Forms.PictureBox();
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox14 = new System.Windows.Forms.PictureBox();
             pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -272,17 +284,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Tip)).BeginInit();
             this.tab_ProcessPayment.SuspendLayout();
             this.pnl_ProcessPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Process_ProcessGIF)).BeginInit();
             this.tab_PaymentFailed.SuspendLayout();
             this.pnl_PaymentFailed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentFail_PicFail)).BeginInit();
             this.tab_PaymentComplete.SuspendLayout();
             this.pnl_PaymentComplete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentComplete_PicSuccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox18
@@ -1723,7 +1735,7 @@
             this.tab_CashPayment.Name = "tab_CashPayment";
             this.tab_CashPayment.Size = new System.Drawing.Size(521, 622);
             this.tab_CashPayment.TabIndex = 5;
-            this.tab_CashPayment.Text = "Pay Cash";
+            this.tab_CashPayment.Text = "PayCash";
             // 
             // Cash_pnl
             // 
@@ -1871,7 +1883,7 @@
             this.tab_CardPayment.Name = "tab_CardPayment";
             this.tab_CardPayment.Size = new System.Drawing.Size(521, 622);
             this.tab_CardPayment.TabIndex = 6;
-            this.tab_CardPayment.Text = "Pay Card";
+            this.tab_CardPayment.Text = "PayCard";
             // 
             // Card_pnl
             // 
@@ -2023,7 +2035,10 @@
             // pnl_ProcessPayment
             // 
             this.pnl_ProcessPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_ProcessPayment.Controls.Add(this.pictureBox26);
+            this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_FunFact);
+            this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_Status);
+            this.pnl_ProcessPayment.Controls.Add(this.PaymentProcess_lbl_TitleFunFact);
+            this.pnl_ProcessPayment.Controls.Add(this.Process_ProcessGIF);
             this.pnl_ProcessPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ProcessPayment.Location = new System.Drawing.Point(0, 0);
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
@@ -2031,6 +2046,44 @@
             this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
             this.pnl_ProcessPayment.Size = new System.Drawing.Size(521, 622);
             this.pnl_ProcessPayment.TabIndex = 4;
+            // 
+            // PaymentProcess_lbl_FunFact
+            // 
+            this.PaymentProcess_lbl_FunFact.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_FunFact.Location = new System.Drawing.Point(76, 399);
+            this.PaymentProcess_lbl_FunFact.Name = "PaymentProcess_lbl_FunFact";
+            this.PaymentProcess_lbl_FunFact.Size = new System.Drawing.Size(355, 73);
+            this.PaymentProcess_lbl_FunFact.TabIndex = 13;
+            this.PaymentProcess_lbl_FunFact.Text = "FunFact";
+            // 
+            // PaymentProcess_lbl_Status
+            // 
+            this.PaymentProcess_lbl_Status.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(89, 260);
+            this.PaymentProcess_lbl_Status.Name = "PaymentProcess_lbl_Status";
+            this.PaymentProcess_lbl_Status.Size = new System.Drawing.Size(342, 55);
+            this.PaymentProcess_lbl_Status.TabIndex = 12;
+            this.PaymentProcess_lbl_Status.Text = "Processing";
+            this.PaymentProcess_lbl_Status.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PaymentProcess_lbl_TitleFunFact
+            // 
+            this.PaymentProcess_lbl_TitleFunFact.AutoSize = true;
+            this.PaymentProcess_lbl_TitleFunFact.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentProcess_lbl_TitleFunFact.Location = new System.Drawing.Point(76, 363);
+            this.PaymentProcess_lbl_TitleFunFact.Name = "PaymentProcess_lbl_TitleFunFact";
+            this.PaymentProcess_lbl_TitleFunFact.Size = new System.Drawing.Size(76, 22);
+            this.PaymentProcess_lbl_TitleFunFact.TabIndex = 3;
+            this.PaymentProcess_lbl_TitleFunFact.Text = "Fun Fact:";
+            // 
+            // Process_ProcessGIF
+            // 
+            this.Process_ProcessGIF.Location = new System.Drawing.Point(198, 81);
+            this.Process_ProcessGIF.Name = "Process_ProcessGIF";
+            this.Process_ProcessGIF.Size = new System.Drawing.Size(130, 130);
+            this.Process_ProcessGIF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Process_ProcessGIF.TabIndex = 0;
+            this.Process_ProcessGIF.TabStop = false;
             // 
             // tab_PaymentFailed
             // 
@@ -2045,7 +2098,11 @@
             // pnl_PaymentFailed
             // 
             this.pnl_PaymentFailed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentFailed.Controls.Add(this.pictureBox27);
+            this.pnl_PaymentFailed.Controls.Add(this.PaymentFailure_lbl_MainInstruction);
+            this.pnl_PaymentFailed.Controls.Add(this.PaymentFailure_lbl_Title);
+            this.pnl_PaymentFailed.Controls.Add(this.PaymentFailure_btn_TryAgain);
+            this.pnl_PaymentFailed.Controls.Add(this.PaymentFailure_btn_ChangeMethod);
+            this.pnl_PaymentFailed.Controls.Add(this.PaymentFail_PicFail);
             this.pnl_PaymentFailed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PaymentFailed.Location = new System.Drawing.Point(0, 0);
             this.pnl_PaymentFailed.Margin = new System.Windows.Forms.Padding(0);
@@ -2053,6 +2110,59 @@
             this.pnl_PaymentFailed.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
             this.pnl_PaymentFailed.Size = new System.Drawing.Size(521, 622);
             this.pnl_PaymentFailed.TabIndex = 4;
+            // 
+            // PaymentFailure_lbl_MainInstruction
+            // 
+            this.PaymentFailure_lbl_MainInstruction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentFailure_lbl_MainInstruction.Location = new System.Drawing.Point(76, 339);
+            this.PaymentFailure_lbl_MainInstruction.Name = "PaymentFailure_lbl_MainInstruction";
+            this.PaymentFailure_lbl_MainInstruction.Size = new System.Drawing.Size(342, 50);
+            this.PaymentFailure_lbl_MainInstruction.TabIndex = 12;
+            this.PaymentFailure_lbl_MainInstruction.Text = "Select what you want to do next. We can retry with the same settings, or choose a" +
+    "nother method.";
+            // 
+            // PaymentFailure_lbl_Title
+            // 
+            this.PaymentFailure_lbl_Title.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentFailure_lbl_Title.Location = new System.Drawing.Point(93, 241);
+            this.PaymentFailure_lbl_Title.Name = "PaymentFailure_lbl_Title";
+            this.PaymentFailure_lbl_Title.Size = new System.Drawing.Size(342, 63);
+            this.PaymentFailure_lbl_Title.TabIndex = 11;
+            this.PaymentFailure_lbl_Title.Text = "Something went wrong in the payment terminal!";
+            this.PaymentFailure_lbl_Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PaymentFailure_btn_TryAgain
+            // 
+            this.PaymentFailure_btn_TryAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PaymentFailure_btn_TryAgain.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentFailure_btn_TryAgain.Location = new System.Drawing.Point(287, 404);
+            this.PaymentFailure_btn_TryAgain.Name = "PaymentFailure_btn_TryAgain";
+            this.PaymentFailure_btn_TryAgain.Size = new System.Drawing.Size(158, 58);
+            this.PaymentFailure_btn_TryAgain.TabIndex = 10;
+            this.PaymentFailure_btn_TryAgain.Text = "Try Again";
+            this.PaymentFailure_btn_TryAgain.UseVisualStyleBackColor = false;
+            this.PaymentFailure_btn_TryAgain.Click += new System.EventHandler(this.PaymentFailure_btn_TryAgain_Click);
+            // 
+            // PaymentFailure_btn_ChangeMethod
+            // 
+            this.PaymentFailure_btn_ChangeMethod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PaymentFailure_btn_ChangeMethod.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentFailure_btn_ChangeMethod.Location = new System.Drawing.Point(76, 404);
+            this.PaymentFailure_btn_ChangeMethod.Name = "PaymentFailure_btn_ChangeMethod";
+            this.PaymentFailure_btn_ChangeMethod.Size = new System.Drawing.Size(158, 58);
+            this.PaymentFailure_btn_ChangeMethod.TabIndex = 9;
+            this.PaymentFailure_btn_ChangeMethod.Text = "Change Payment Method";
+            this.PaymentFailure_btn_ChangeMethod.UseVisualStyleBackColor = false;
+            this.PaymentFailure_btn_ChangeMethod.Click += new System.EventHandler(this.PaymentFailure_btn_ChangeMethod_Click);
+            // 
+            // PaymentFail_PicFail
+            // 
+            this.PaymentFail_PicFail.Location = new System.Drawing.Point(198, 81);
+            this.PaymentFail_PicFail.Name = "PaymentFail_PicFail";
+            this.PaymentFail_PicFail.Size = new System.Drawing.Size(130, 130);
+            this.PaymentFail_PicFail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PaymentFail_PicFail.TabIndex = 1;
+            this.PaymentFail_PicFail.TabStop = false;
             // 
             // tab_PaymentComplete
             // 
@@ -2067,7 +2177,10 @@
             // pnl_PaymentComplete
             // 
             this.pnl_PaymentComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentComplete.Controls.Add(this.pictureBox28);
+            this.pnl_PaymentComplete.Controls.Add(this.PaymentComplete_btn_BackToTableView);
+            this.pnl_PaymentComplete.Controls.Add(this.PaymentComplete_txt_Comment);
+            this.pnl_PaymentComplete.Controls.Add(this.label6);
+            this.pnl_PaymentComplete.Controls.Add(this.PaymentComplete_PicSuccess);
             this.pnl_PaymentComplete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PaymentComplete.Location = new System.Drawing.Point(0, 0);
             this.pnl_PaymentComplete.Margin = new System.Windows.Forms.Padding(0);
@@ -2075,6 +2188,48 @@
             this.pnl_PaymentComplete.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
             this.pnl_PaymentComplete.Size = new System.Drawing.Size(521, 622);
             this.pnl_PaymentComplete.TabIndex = 4;
+            // 
+            // PaymentComplete_btn_BackToTableView
+            // 
+            this.PaymentComplete_btn_BackToTableView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PaymentComplete_btn_BackToTableView.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PaymentComplete_btn_BackToTableView.Location = new System.Drawing.Point(166, 440);
+            this.PaymentComplete_btn_BackToTableView.Name = "PaymentComplete_btn_BackToTableView";
+            this.PaymentComplete_btn_BackToTableView.Size = new System.Drawing.Size(194, 52);
+            this.PaymentComplete_btn_BackToTableView.TabIndex = 14;
+            this.PaymentComplete_btn_BackToTableView.Text = "Boutton";
+            this.PaymentComplete_btn_BackToTableView.UseVisualStyleBackColor = false;
+            this.PaymentComplete_btn_BackToTableView.Click += new System.EventHandler(this.PaymentComplete_btn_BackToTableView_Click);
+            // 
+            // PaymentComplete_txt_Comment
+            // 
+            this.PaymentComplete_txt_Comment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PaymentComplete_txt_Comment.ForeColor = System.Drawing.Color.White;
+            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(124, 359);
+            this.PaymentComplete_txt_Comment.Name = "PaymentComplete_txt_Comment";
+            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(278, 24);
+            this.PaymentComplete_txt_Comment.TabIndex = 13;
+            this.PaymentComplete_txt_Comment.Text = "Ask the guest for a review and enter it here.";
+            this.PaymentComplete_txt_Comment.Click += new System.EventHandler(this.PaymentComplete_txt_Comment_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(90, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(342, 33);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Payment Successful !";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PaymentComplete_PicSuccess
+            // 
+            this.PaymentComplete_PicSuccess.Location = new System.Drawing.Point(198, 81);
+            this.PaymentComplete_PicSuccess.Name = "PaymentComplete_PicSuccess";
+            this.PaymentComplete_PicSuccess.Size = new System.Drawing.Size(130, 130);
+            this.PaymentComplete_PicSuccess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PaymentComplete_PicSuccess.TabIndex = 1;
+            this.PaymentComplete_PicSuccess.TabStop = false;
             // 
             // border_Left
             // 
@@ -2115,30 +2270,6 @@
             this.border_Top.Size = new System.Drawing.Size(529, 4);
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Location = new System.Drawing.Point(169, 153);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox26.TabIndex = 0;
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Location = new System.Drawing.Point(220, 89);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox27.TabIndex = 0;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Location = new System.Drawing.Point(241, 131);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox28.TabIndex = 0;
-            this.pictureBox28.TabStop = false;
             // 
             // Form_Chapeau
             // 
@@ -2246,17 +2377,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Tip)).EndInit();
             this.tab_ProcessPayment.ResumeLayout(false);
             this.pnl_ProcessPayment.ResumeLayout(false);
+            this.pnl_ProcessPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Process_ProcessGIF)).EndInit();
             this.tab_PaymentFailed.ResumeLayout(false);
             this.pnl_PaymentFailed.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentFail_PicFail)).EndInit();
             this.tab_PaymentComplete.ResumeLayout(false);
             this.pnl_PaymentComplete.ResumeLayout(false);
+            this.pnl_PaymentComplete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentComplete_PicSuccess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2401,8 +2534,19 @@
         private System.Windows.Forms.Label PayCard_lbl_AmountTitle;
         private System.Windows.Forms.Label PayCard_lbl_Method;
         private System.Windows.Forms.Label PayCard_lbl_TitleMethod;
-        private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.PictureBox pictureBox27;
-        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox Process_ProcessGIF;
+        private System.Windows.Forms.PictureBox PaymentFail_PicFail;
+        private System.Windows.Forms.PictureBox PaymentComplete_PicSuccess;
+        private System.Windows.Forms.Button PaymentFailure_btn_ChangeMethod;
+        private System.Windows.Forms.Button PaymentFailure_btn_TryAgain;
+        private System.Windows.Forms.Label PaymentFailure_lbl_MainInstruction;
+        private System.Windows.Forms.Label PaymentFailure_lbl_Title;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox PaymentComplete_txt_Comment;
+        private System.Windows.Forms.Button PaymentComplete_btn_BackToTableView;
+        private System.Windows.Forms.Label PaymentProcess_lbl_TitleFunFact;
+        private System.Windows.Forms.Label PaymentProcess_lbl_Status;
+        private System.Windows.Forms.Label PaymentProcess_lbl_FunFact;
+        private System.Windows.Forms.Timer PaymentProcessTimer1;
     }
 }
