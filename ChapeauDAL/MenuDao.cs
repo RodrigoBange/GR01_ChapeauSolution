@@ -42,16 +42,8 @@ namespace ChapeauDAL
                     break;
             }
 
-            try
-            {
-                // Return result of query with list 
-                return ReadTables(ExecuteSelectQuery(query, new SqlParameter[0]));
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("There is an issue reading the menu item data from the database.");
-            }
-
+            // Return result of query with list 
+            return ReadTables(ExecuteSelectQuery(query, new SqlParameter[0]));
         }
 
         private List<MenuItem> ReadTables(DataTable dataTable)
@@ -59,20 +51,28 @@ namespace ChapeauDAL
             // Create new list of MenuItem objects
             List<MenuItem> menuItems = new List<MenuItem>();
 
-            // For each data row, create new MenuItem object and fill data
-            foreach (DataRow dr in dataTable.Rows)
+            // If datatable contains values...
+            if (dataTable != null)
             {
-                MenuItem item = new MenuItem()
+                // For each data row, create new MenuItem object and fill data
+                foreach (DataRow dr in dataTable.Rows)
                 {
-                    ItemID = (int)dr["itemID"],
-                    FullName = (string)dr["itemName"],
-                    ShortName = (string)dr["itemNameShort"],
-                    SubCategory = (string)dr["itemType"],
-                    Price = (double)(decimal)dr["price"]
-                };
+                    MenuItem item = new MenuItem()
+                    {
+                        ItemID = (int)dr["itemID"],
+                        FullName = (string)dr["itemName"],
+                        ShortName = (string)dr["itemNameShort"],
+                        SubCategory = (string)dr["itemType"],
+                        Price = (double)(decimal)dr["price"]
+                    };
 
-                // Add new MenuItem object to the list of menu items 
-                menuItems.Add(item);
+                    // Add new MenuItem object to the list of menu items 
+                    menuItems.Add(item);
+                }
+            }
+            else
+            {
+                throw new Exception("There is an issue retrieving the menu data from the database.");
             }
 
             // Return list of menu items 

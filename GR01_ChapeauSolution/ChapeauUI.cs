@@ -28,6 +28,9 @@ namespace GR01_ChapeauSolution
         StockService stockService;
         EmployeeService employeeService;
         TableService tableService;
+        BillService billService;
+        PaymentService paymentService;
+        Random rnd;
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -55,6 +58,9 @@ namespace GR01_ChapeauSolution
             stockService = new StockService();
             employeeService = new EmployeeService();
             tableService = new TableService();
+            billService = new BillService();
+            paymentService = new PaymentService();
+            rnd = new Random();
 
             // Set employee
             this.employee = employee;
@@ -105,6 +111,11 @@ namespace GR01_ChapeauSolution
                     {
                         // Set title
                         lbl_Title.Text = "Account";
+                        
+                        // Set account information
+                        lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
+                        lbl_Account_EmployeeName.Text = employee.EmployeeName;
+                        lbl_Account_Role.Text = employee.EmployeeRole;
                     }
                     break;
                 // Table View 
@@ -142,6 +153,9 @@ namespace GR01_ChapeauSolution
                         totalOrderPrice = 0.00;
                         lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
 
+                        // Disable Place Order
+                        ActivatePlaceOrder();
+
                         // Set the width to hide the scrollbar for a modern mobile design
                         flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
                         flow_Order_Items.Width = pnl_Order_Orders.Width + SystemInformation.VerticalScrollBarWidth;
@@ -173,8 +187,24 @@ namespace GR01_ChapeauSolution
 
         private void btn_Return_Click(object sender, EventArgs e)
         {
-            // Return to table view
-            tabC_Body.SelectedTab = tab_Tables;
+            // If Orderview is open and there are currently items listed in the order...
+            if (tabC_Body.SelectedTab == tab_Order && orderItems.Count > 0)
+            {
+                // Ask for confirmation before returning
+                using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to return to the table overview and clear all items from the order.", "Are you sure you want to proceed?"))
+                {
+                    if (messageBox.ShowDialog() == DialogResult.Yes)
+                    {
+                        // Return to table view
+                        tabC_Body.SelectedTab = tab_Tables;
+                    }
+                }
+            }
+            else
+            {
+                // Return to table view
+                tabC_Body.SelectedTab = tab_Tables;
+            }
         }
         #endregion
 
@@ -182,10 +212,24 @@ namespace GR01_ChapeauSolution
         /** ACCOUNT METHODS **/
         private void btn_User_Click(object sender, EventArgs e)
         {
-            tabC_Body.SelectedTab = tab_Account;
-            lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
-            lbl_Account_EmployeeName.Text = employee.EmployeeName;
-            lbl_Account_Role.Text = employee.EmployeeRole;
+            // If Orderview is open and there are currently items listed in the order...
+            if (tabC_Body.SelectedTab == tab_Order && orderItems.Count > 0)
+            {
+                // Ask for confirmation before returning
+                using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to open the account overview and clear all items from the order.", "Are you sure you want to proceed?"))
+                {
+                    if (messageBox.ShowDialog() == DialogResult.Yes)
+                    {
+                        // Open account overview
+                        tabC_Body.SelectedTab = tab_Account;
+                    }
+                }
+            }
+            else
+            {
+                // Open account overview
+                tabC_Body.SelectedTab = tab_Account;
+            }
         }
 
         private void btn_Account_Logout_Click(object sender, EventArgs e)
@@ -396,18 +440,9 @@ namespace GR01_ChapeauSolution
             List<MenuItem> menuItems;
 
             // Fill list with items
-            if (menuCategory == MenuCategory.Lunch) // If Lunch
-            {
-                menuItems = lunchMenu;
-            }
-            else if (menuCategory == MenuCategory.Dinner) // If Dinner
-            {
-                menuItems = dinnerMenu;
-            }
-            else // If drinks
-            {
-                menuItems = drinksMenu;
-            }
+            if (menuCategory == MenuCategory.Lunch) { menuItems = lunchMenu; }
+            else if (menuCategory == MenuCategory.Dinner) { menuItems = dinnerMenu; }
+            else { menuItems = drinksMenu; }
 
             // Display menu items and sub category titles
             for (int i = 0; i < menuItems.Count; i++)
@@ -483,8 +518,8 @@ namespace GR01_ChapeauSolution
                 // Add to total price
                 UpdateTotalPrice(orderItem.Price);
 
-                // Activate Checkout button
-                ActivateCheckout();
+                // Activate Place Order button
+                ActivatePlaceOrder();
             }
             else { AddToOrderQuantity(menuItem.ItemID); }
         }
@@ -537,7 +572,7 @@ namespace GR01_ChapeauSolution
                         orderItems.RemoveAt(i);
 
                         // Check for checkout functionality
-                        ActivateCheckout();
+                        ActivatePlaceOrder();
 
                         // Return
                         return;
@@ -588,68 +623,24 @@ namespace GR01_ChapeauSolution
                 // Check storage status
                 List<string> lowStockItems = stockService.CheckStorageStatus(orders);
 
-                // Check storage before continuing
+                // Check if list is empty
                 if (lowStockItems == null)
                 {
-                    // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, 1);
-
-                    // Call stockService to remove stock
-                    stockService.DepleteStock(orders);
-
-                    // Display confirmation
-                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                    using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Confirmation", "You are about to place an order.", "Are you sure you want to continue?"))
                     {
-                        DialogResult dialogResult_W = messageBox_W.ShowDialog();
-
-                        // When accepted
-                        if (dialogResult_W == DialogResult.OK)
-                        {
-                            // Display table overview
-                            tabC_Body.SelectedTab = tab_Tables;
-                        }
-                    }
-                }
-                else
-                {
-                    string warningTitle = "Warning - Low Stock";
-                    string warningMessage = "The ingredients for the following items are low or out of stock:" + Environment.NewLine;
-
-                    for (int i = 0; i < lowStockItems.Count; i++)
-                    {
-                        if (i < lowStockItems.Count - 1)
-                        {
-                            warningMessage += lowStockItems[i] + ", ";
-                        }
-                        else
-                        {
-                            warningMessage += lowStockItems[i] + ". ";
-                        }
-                    }
-
-                    string warningQuestion = "Please check the stock before proceeding." + Environment.NewLine + "Would you still like to place the order?";
-
-                    // Use the custom messageBox
-                    using (MessageBox_YesNo messageBox = new MessageBox_YesNo(warningTitle, warningMessage, warningQuestion))
-                    {
-                        // Show the dialog
-                        DialogResult dialogResult = messageBox.ShowDialog();
-
-                        if (dialogResult == DialogResult.Yes)
+                        if (messageBox_YN.ShowDialog() == DialogResult.Yes)
                         {
                             // Call orderService to place an order
-                            orderService.PlaceOrder(orders, tableNumber, 1);
+                            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
 
-                            // Call stockService to remove from stock
+                            // Call stockService to remove stock
                             stockService.DepleteStock(orders);
 
                             // Display confirmation
                             using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
                             {
-                                DialogResult dialogResult_W = messageBox_W.ShowDialog();
-
                                 // When accepted
-                                if (dialogResult_W == DialogResult.OK)
+                                if (messageBox_W.ShowDialog() == DialogResult.OK)
                                 {
                                     // Display table overview
                                     tabC_Body.SelectedTab = tab_Tables;
@@ -657,6 +648,12 @@ namespace GR01_ChapeauSolution
                             }
                         }
                     }
+
+                }
+                else
+                {
+                    // Confirmation of low stock before placing order
+                    LowStockConfirmation(lowStockItems, orders);
                 }
             }
             catch (Exception ex)
@@ -666,7 +663,46 @@ namespace GR01_ChapeauSolution
             }            
         }
 
-        private void ActivateCheckout()
+        private void LowStockConfirmation(List<String> lowStockItems, List<OrderItem> orders)
+        {
+            // Prepare warning message
+            string warningMessage = "The ingredients for the following items are low or out of stock:" + Environment.NewLine;
+
+            // Add items to warning message text
+            for (int i = 0; i < lowStockItems.Count; i++)
+            {
+                if (i < lowStockItems.Count - 1) { warningMessage += lowStockItems[i] + ", "; }
+                else { warningMessage += lowStockItems[i] + ". "; }
+            }
+
+            string warningQuestion = "Please check the stock before proceeding." + Environment.NewLine + "Would you still like to place the order?";
+
+            // Use the custom messageBox
+            using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Warning - Low stock", warningMessage, warningQuestion))
+            {
+                if (messageBox.ShowDialog() == DialogResult.Yes)
+                {
+                    // Call orderService to place an order
+                    orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
+
+                    // Call stockService to remove from stock
+                    stockService.DepleteStock(orders);
+
+                    // Display confirmation
+                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                    {
+                        // When accepted
+                        if (messageBox_W.ShowDialog() == DialogResult.OK) 
+                        {
+                            // Display table overview
+                            tabC_Body.SelectedTab = tab_Tables;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ActivatePlaceOrder()
         {
             // If there are items added, enable checkout option
             if (orderItems.Count > 0)
@@ -685,10 +721,18 @@ namespace GR01_ChapeauSolution
             if (btn_Order_Confirm.Enabled)
             {
                 btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#FE4040");
+
+                // Set Clear order button to visible (As this goes together with order button)
+                splitter_ClearOrder.Visible = true;
+                btn_Clear_Order.Visible = true;
             }
             else
             {
                 btn_Order_Confirm.BackColor = ColorTranslator.FromHtml("#822121");
+
+                // Set Clear order button to invisible (As this goes together with order button)
+                splitter_ClearOrder.Visible= false;
+                btn_Clear_Order.Visible = false;
             }
         }
 
@@ -701,7 +745,27 @@ namespace GR01_ChapeauSolution
         private void btn_Order_Checkout_Click(object sender, EventArgs e)
         {
             // Open the bill
-            tabC_Body.SelectedIndex = 5;
+            Bill_LoadBillView(tableNumber);
+        }
+
+        private void btn_Clear_Order_Click(object sender, EventArgs e)
+        {
+            // Display confirmation message
+            using (MessageBox_YesNo messageBox = new MessageBox_YesNo("Confirmation", "You are about to clear all items from the order.", "Are you sure you want to proceed?"))
+            {
+                if (messageBox.ShowDialog() == DialogResult.Yes)
+                {
+                    // Clear all orders
+                    orderItems.Clear();
+                    flow_Order_Items.Controls.Clear();
+
+                    // Set price to 0
+                    UpdateTotalPrice(-totalOrderPrice);
+
+                    // Set order button to disabled
+                    btn_Order_Confirm.Enabled = false;
+                }
+            }
         }
 
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
@@ -749,14 +813,393 @@ namespace GR01_ChapeauSolution
 
         #region Bill
         /** BILL VIEW METHODS **/
+        private Bill bill;
+
+        //Load Bill View, called when pressing Checkout Button in the Order View
+        private void Bill_LoadBillView(int tableNr)
+        {
+            //Clear listviews
+            Bill_lv_Bill.Items.Clear();
+            Bill_lv_VAT.Items.Clear();
+
+            //Clear RadButtons
+            Bill_radbtn_Cash.Checked = false;
+            Bill_radbtn_Debit.Checked = false;
+            Bill_radbtn_Credit.Checked = false;
+
+            //Disable Pay button (visually, not functionally)
+            Bill_DisablePayButton();
+
+            try
+            {
+                //Retrieve bill from the database
+                bill = billService.GetBill(tableNr);
+
+                //Retrieve the bill's remaining price
+                bill.PriceRemaining = paymentService.GetRemainingPrice(bill);
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+            }
+
+            //Load the Bill listview
+            Bill_LoadBill(bill);
+
+            //Load the VAT section
+            Bill_LoadVATSection(bill);
+
+            //Switch to bill tab
+            tabC_Body.SelectedTab = tab_Bill;
+        }
+        //Load bill listview
+        private void Bill_LoadBill(Bill bill)
+        {
+            //Load BillItems into the bill listview
+            foreach (BillItem billItem in bill.BillItems)
+            {
+                ListViewItem listItem = new ListViewItem(billItem.Count.ToString());
+
+                listItem.SubItems.Add(billItem.Name);
+                listItem.SubItems.Add($"{billItem.VATPercentage}%");
+                listItem.SubItems.Add("€" + billItem.PriceWithVAT.ToString("0.00"));
+                listItem.SubItems.Add("€" + billItem.TotalPrice.ToString("0.00"));
+                listItem.Tag = billItem;
+
+                Bill_lv_Bill.Items.Add(listItem);
+            }
+
+            //Display additional info
+            Bill_lbl_TotalAmount.Text = $"€{bill.TotalBillPrice.ToString("0.00")}";
+            Bill_lbl_amountPaid.Text = $"€{(bill.TotalBillPrice - bill.PriceRemaining).ToString("0.00")}";
+            Bill_lbl_RemainingPrice.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
+        }
+
+        //Load VAT stats into the VAT section listview
+        private void Bill_LoadVATSection(Bill bill)
+        {
+            //Load listviewItem for Non-Alcoholic VAT
+            ListViewItem listItem1 = new ListViewItem($"{Bill.NonAlcholicVATPercentage}%");
+            listItem1.SubItems.Add($"€{bill.PriceExclVATNonAlcoholic.ToString("0.00")}");
+            listItem1.SubItems.Add($"€{bill.VATNonAlcoholic.ToString("0.00")}");
+            listItem1.SubItems.Add($"€{bill.PriceInclVATNonAlcoholic.ToString("0.00")}");
+            Bill_lv_VAT.Items.Add(listItem1);
+
+            //Load listviewItem for Alcoholic VAT
+            ListViewItem listItem2 = new ListViewItem($"{Bill.AlcholicVATPercentage}%");
+            listItem2.SubItems.Add($"€{bill.PriceExclVATAlcoholic.ToString("0.00")}");
+            listItem2.SubItems.Add($"€{bill.VATAlcoholic.ToString("0.00")}");
+            listItem2.SubItems.Add($"€{bill.PriceInclVATAlcoholic.ToString("0.00")}");
+            Bill_lv_VAT.Items.Add(listItem2);
+        }
+
+        //Enable the "Next Screen" button when a Payment method selected
+        private void Bill_radbtn_Cash_CheckedChanged(object sender, EventArgs e)
+        {
+            Bill_EnablePayButton();
+        }
+
+        private void Bill_radbtn_Debit_CheckedChanged(object sender, EventArgs e)
+        {
+            Bill_EnablePayButton();
+        }
+
+        private void Bill_radbtn_Credit_CheckedChanged(object sender, EventArgs e)
+        {
+            Bill_EnablePayButton();
+        }
+
+        //Disable "Next Screen" button (visually, not functionally)
+        private void Bill_DisablePayButton()
+        {
+            Bill_btn_Pay.ForeColor = Color.LightGray;
+            Bill_btn_Pay.BackColor = Color.DarkRed;
+        }
+
+        //Enable "Next Screen" button (visually, not functionally)
+        private void Bill_EnablePayButton()
+        {
+            Bill_btn_Pay.ForeColor = Color.White;
+            Bill_btn_Pay.BackColor = ColorTranslator.FromHtml("254, 60, 60");
+        }
+
+        //Code for Pay button 
+        Payment payment;
+        private void Bill_btn_Pay_Click(object sender, EventArgs e)
+        {
+            payment = new Payment(bill);
+
+            //If cash option is checked, open cash payment screen
+            if (Bill_radbtn_Cash.Checked)
+            {
+                payment.PaymentMethod = PaymentMethod.Cash;
+                LoadCashPaymentView();
+            }
+            //If credit option is checked, open credit payment screen
+            else if (Bill_radbtn_Credit.Checked)
+            {
+                payment.PaymentMethod = PaymentMethod.Credit;
+                LoadCreditPaymentView();
+            }
+            //If debit option is checked, open credit payment screen
+            else if (Bill_radbtn_Debit.Checked)
+            {
+                payment.PaymentMethod = PaymentMethod.Debit;
+                LoadDebitPaymentView();
+            }
+            else //No payment method selected, display instructions for the user
+            {
+                MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
+                messageBox.ShowDialog();
+            }
+        }
         #endregion
 
-        #region Payment View
-        /** PAYMENT VIEW METHODS **/
+        #region Cash Payment
+        /** CASH PAYMENT METHODS **/
+        private void LoadCashPaymentView()
+        {
+            //Change input types specific to cash payment
+            PayCash_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
+
+            PayCash_num_AmountGiven.Value = (decimal)bill.PriceRemaining;
+            PayCash_num_Change.Value = 0;
+            tabC_Body.SelectedTab = tab_CashPayment;
+        }
+
+        //Back button takes you back to bill screen
+        private void Cash_btn_Back_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Bill;
+        }
+
+        //Depending on the payment method, calculates values different when new user input is given
+        private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
+        {
+            //If entered amount given is more than the bill price, calculate change
+            if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
+                PayCash_num_Change.Value = (PayCash_num_AmountGiven.Value - (decimal)bill.PriceRemaining);
+        }
+
+        //Depending on the payment method, calculates values different when new user input is given
+        private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
+        {
+            //If they want a certain amount of change, can also reverse-calculate the given amount
+            PayCash_num_AmountGiven.Value = ((decimal)bill.PriceRemaining + PayCash_num_Change.Value);
+        }
+
+        private void Cash_btn_Pay_Click(object sender, EventArgs e)
+        {
+            //If pay button is pressed, insert payment, go to payment complete view (no process).
+            payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
+            LoadPaymentSuccessfulView();
+        }
+        #endregion
+
+        #region Card Payment
+        /** CARD PAYMENT METHODS **/
+
+        //Load debit payment view
+        private void LoadDebitPaymentView()
+        {
+            PayCard_lbl_Method.Text = "Debit Card";
+            LoadCardPaymentView();
+        }
+
+        //Load credit payment view
+        private void LoadCreditPaymentView()
+        {
+            PayCard_lbl_Method.Text = "Credit Card";
+            LoadCardPaymentView();
+        }
+
+        private void LoadCardPaymentView()
+        {
+            PayCard_Num_Tip.Value = 0;
+            PayCard_Num_Total.Value = (decimal)bill.PriceRemaining;
+            PayCard_lbl_AmountToPay.Text = "€" + bill.PriceRemaining.ToString("0.00");
+            tabC_Body.SelectedTab = tab_CardPayment;
+        }
+
+        private void PayCard_Num_Total_ValueChanged(object sender, EventArgs e)
+        {
+            //Automatically calculate tip only if specified amount is more than the bill
+            if (PayCard_Num_Total.Value > (decimal)bill.PriceRemaining)
+            {
+                PayCard_Num_Tip.Value = (PayCard_Num_Total.Value - (decimal)bill.PriceRemaining);
+            }
+        }
+
+        private void PayCard_Num_Tip_ValueChanged(object sender, EventArgs e)
+        {
+            //Partial payment, add tip to specified amount
+            if (PayCard_Num_Total.Value < (decimal)bill.PriceRemaining)
+            {
+                PayCard_Num_Total.Value = PayCard_Num_Total.Value + PayCard_Num_Tip.Value;
+            }
+            else //Full payment, add tip to total price
+            {
+                PayCard_Num_Total.Value = (decimal)bill.PriceRemaining + PayCard_Num_Tip.Value;
+            }
+        }
+        private void PayCard_btn_Back_Click(object sender, EventArgs e)
+        {
+            //Back to bill view with user input still loaded
+            tabC_Body.SelectedTab = tab_Bill;
+        }
+
+        private void PayCard_btn_Pay_Click(object sender, EventArgs e)
+        {
+            //Take user input
+            payment.Tip = (double)PayCard_Num_Tip.Value;
+            payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
+            //Load to processing view
+            LoadPaymentProcessingView();
+        }
         #endregion
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
+        int paymentTimeLeft;
+
+        private void LoadPaymentProcessingView()
+        {
+            tabC_Body.SelectedTab = tab_ProcessPayment;
+            PaymentProcess_lbl_FunFact.Text = LoadFunFact();
+            paymentTimeLeft = 6;
+            PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
+            PaymentProcessTimer1.Interval = 1500;
+            PaymentProcessTimer1.Start();
+        }
+
+        private void PaymentProcessTimer1_Tick(object sender, EventArgs e)
+        {
+            paymentTimeLeft--;
+
+            switch (paymentTimeLeft)
+            {
+                case 5:
+                    PaymentProcess_lbl_Status.Text = "Crunching numbers...";
+                    break;
+                case 4:
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    break;
+                case 3:
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    break;
+                case 2:
+                    PaymentProcess_lbl_Status.Text = "Counting change...";
+                    break;
+                case 1:
+                    PaymentProcess_lbl_Status.Text = "Finalising payment...";
+                    break;
+                case 0:
+                    PaymentProcess_lbl_Status.Text = "Finalising payment...";
+                    PaymentProcessTimer1.Stop();
+
+                    if (paymentService.SuccessfulPayment())
+                        LoadPaymentSuccessfulView();
+                    else
+                        tabC_Body.SelectedTab = tab_PaymentFailed;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //Load a fun fact to display while processing the payment
+        private string LoadFunFact()
+        {
+            List<string> funFacts = paymentService.CreateFunFactsList();
+            string funfact = funFacts[rnd.Next(0, funFacts.Count)];
+
+            return funfact;
+        }
+        #endregion
+
+        #region PaymentSuccessful
+        /** PAYMENT SUCCESS VIEW METHODS **/
+        private void LoadPaymentSuccessfulView()
+        {
+            //Reset comment textbox to the instruction              
+            ResetCommentTextbox();
+
+            try
+            {
+                //Insert the payment into the database
+                paymentService.InsertPayment(payment);
+                //Insert 
+                if (paymentService.IsBillPaid(bill))
+                {
+                    PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
+                    bill.IsPaid = true;
+                }
+                else
+                {
+                    PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+                tabC_Body.SelectedTab = tab_PaymentFailed;
+            }
+
+            tabC_Body.SelectedTab = tab_PaymentComplete;
+        }
+
+        private void PaymentComplete_txt_Comment_Click(object sender, EventArgs e)
+        {
+            //Clear instruction when user clicks the textbox.
+            if (PaymentComplete_txt_Comment.Text == "Ask the guest for a review of their experience and enter here.")
+            {
+                PaymentComplete_txt_Comment.Text = "";
+                PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Regular);
+            }
+        }
+
+        private void PaymentComplete_btn_BackToTableView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+            }
+
+            //If the bill is paid, return to the table view, if there are still payments remaining, return to bill view
+            if (bill.IsPaid)
+            {
+                tabC_Body.SelectedTab = tab_Tables;
+                payment = null;
+                bill = null;
+            }
+            else
+                Bill_LoadBillView(tableNumber);
+
+        }
+
+        //Method to reset comment textbox
+        private void ResetCommentTextbox()
+        {
+            PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Italic);
+            PaymentComplete_txt_Comment.Text = "Ask the guest for a review of their experience and enter here.";
+        }
+        #endregion
+
+        #region PaymentFailed
+        /** PAYMENT FAILED METHODS **/
+        private void PaymentFailure_btn_ChangeMethod_Click(object sender, EventArgs e)
+        {
+            Bill_LoadBillView(tableNumber);
+        }
+
+        private void PaymentFailure_btn_TryAgain_Click(object sender, EventArgs e)
+        {
+            LoadPaymentProcessingView();
+        }
         #endregion
 
         #region Kitchen
@@ -767,24 +1210,23 @@ namespace GR01_ChapeauSolution
         /** BAR VIEW METHODS **/
         #endregion
 
-        #region Management
-        /** MANAGEMENT METHODS **/
-        #endregion
-
         #region Error Management
         private void DisplayError(Exception ex)
         {
             // Log error
             string filePath = logger.LogError(ex);
 
-            string errorMessage = ex.Message + Environment.NewLine + "Apologies, please try again." + " Log location: " + Environment.NewLine + filePath;
+            string errorMessage = ex.Message + Environment.NewLine + "Apologies, if this keeps happening please refer the log to your IT specialist." + " Log location: " + Environment.NewLine + filePath;
 
             // Display error 
-            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Oops, an error occured!", errorMessage))
+            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Oops, something went wrong!", errorMessage))
             {
                 DialogResult dialogResult_W = messageBox_W.ShowDialog();
             }
         }
+
         #endregion
+
+        
     }
 }

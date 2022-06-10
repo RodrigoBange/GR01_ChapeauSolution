@@ -1,5 +1,6 @@
 ﻿using ChapeauLogic;
 using ChapeauModel;
+using ChapeauUI;
 using ChapeauUI.Forms;
 using System;
 using System.Collections.Generic;
@@ -96,8 +97,8 @@ namespace GR01_ChapeauSolution
             {
                 // Kitchen and bar view is not yet created
                 this.Hide();
-                Form_Chapeau Chapeau = new Form_Chapeau(employee);
-                Chapeau.Show();
+                KitchenBar_UI kitchenBar_View = new KitchenBar_UI();
+                kitchenBar_View.Show();
             }
         }
 
