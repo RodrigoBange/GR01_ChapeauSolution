@@ -27,6 +27,8 @@ namespace GR01_ChapeauSolution
         OrderService orderService;
         StockService stockService;
         EmployeeService employeeService;
+        BillService billService;
+        PaymentService paymentService;
 
         // Constant variables
         const string hexColorBright = "#323145";
@@ -52,6 +54,8 @@ namespace GR01_ChapeauSolution
             orderService = new OrderService();
             stockService = new StockService();
             employeeService = new EmployeeService();
+            billService = new BillService();
+            paymentService = new PaymentService();
 
             // Set employee
             this.employee = employee;
@@ -891,13 +895,13 @@ namespace GR01_ChapeauSolution
         }
 
         //Back button takes you back to bill screen
-        private void PayCash_btn_Cancel_Click(object sender, EventArgs e)
+        private void Cash_btn_Back_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedTab = tab_Bill;
         }
 
         //Depending on the payment method, calculates values different when new user input is given
-        private void PayCash_num_AmountGivenOrTip_ValueChanged(object sender, EventArgs e)
+        private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
         {
             //If entered amount given is more than the bill price, calculate change
             if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
@@ -905,18 +909,17 @@ namespace GR01_ChapeauSolution
         }
 
         //Depending on the payment method, calculates values different when new user input is given
-        private void PayCash_num_ChangeOrTotal_ValueChanged(object sender, EventArgs e)
+        private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
         {
             //If they want a certain amount of change, can also reverse-calculate the given amount
             PayCash_num_AmountGiven.Value = ((decimal)bill.PriceRemaining + PayCash_num_Change.Value);
         }
 
-        private void PayCash_Btn_Pay_Click(object sender, EventArgs e)
+        private void Cash_btn_Pay_Click(object sender, EventArgs e)
         {
             //If pay button is pressed, insert payment, go to payment complete view (no process).
             payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
-            paymentService.InsertPayment(payment);
-            tabC_Body.SelectedTab = tab_PaymentComplete;
+            LoadPaymentSuccessfulView();
         }
         #endregion
 
@@ -1136,10 +1139,6 @@ namespace GR01_ChapeauSolution
         /** BAR VIEW METHODS **/
         #endregion
 
-        #region Management
-        /** MANAGEMENT METHODS **/
-        #endregion
-
         #region Error Management
         private void DisplayError(Exception ex)
         {
@@ -1154,6 +1153,8 @@ namespace GR01_ChapeauSolution
                 DialogResult dialogResult_W = messageBox_W.ShowDialog();
             }
         }
+
         #endregion
+
     }
 }

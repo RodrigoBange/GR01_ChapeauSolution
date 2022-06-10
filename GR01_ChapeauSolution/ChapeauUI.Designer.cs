@@ -124,35 +124,67 @@
             this.btn_Order_DrinksMenu = new System.Windows.Forms.Button();
             this.tab_Bill = new System.Windows.Forms.TabPage();
             this.pnl_Bill = new System.Windows.Forms.Panel();
+            this.Bill_lbl_RemainingPrice = new System.Windows.Forms.Label();
+            this.Bill_lbl_amountPaid = new System.Windows.Forms.Label();
+            this.Bill_lbl_TotalAmount = new System.Windows.Forms.Label();
+            this.Bill_lbl_TitleLeft = new System.Windows.Forms.Label();
+            this.Bill_lbl_TitlePaid = new System.Windows.Forms.Label();
+            this.Bill_lbl_TitleTotal = new System.Windows.Forms.Label();
+            this.Bill_btn_Pay = new System.Windows.Forms.Button();
+            this.Bill_GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.Bill_radbtn_Credit = new System.Windows.Forms.RadioButton();
+            this.Bill_radbtn_Debit = new System.Windows.Forms.RadioButton();
+            this.Bill_radbtn_Cash = new System.Windows.Forms.RadioButton();
+            this.Bill_lbl_MainInstruction = new System.Windows.Forms.Label();
+            this.Bill_lbl_Title = new System.Windows.Forms.Label();
+            this.Bill_lv_VAT = new System.Windows.Forms.ListView();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.Bill_lv_Bill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.tab_CashPayment = new System.Windows.Forms.TabPage();
-            this.pnl_PaymentOptions = new System.Windows.Forms.Panel();
-            this.pnl_PaymentOptions_Center = new System.Windows.Forms.Panel();
-            this.flow_PaymentOptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_PaymentOption_1 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_2 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_3 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_4 = new System.Windows.Forms.Button();
-            this.btn_PaymentOption_5 = new System.Windows.Forms.Button();
-            this.pnl_PaymentOptions_Bottom = new System.Windows.Forms.Panel();
-            this.pnl_PaymentOptions_Top = new System.Windows.Forms.Panel();
-            this.txtBox_Payment_Options_Total = new System.Windows.Forms.TextBox();
-            this.lbl_PaymentOptions = new System.Windows.Forms.Label();
+            this.Cash_pnl = new System.Windows.Forms.Panel();
+            this.Cash_btn_Back = new System.Windows.Forms.Button();
+            this.Cash_btn_Pay = new System.Windows.Forms.Button();
+            this.PayCash_num_Change = new System.Windows.Forms.NumericUpDown();
+            this.PayCash_num_AmountGiven = new System.Windows.Forms.NumericUpDown();
+            this.PayCash_lbl_TitleChange = new System.Windows.Forms.Label();
+            this.PayCash_TitleAmountGiven = new System.Windows.Forms.Label();
+            this.PayCash_lbl_BillTotal = new System.Windows.Forms.Label();
+            this.Cash_lbl_AmountTitle = new System.Windows.Forms.Label();
+            this.Cash_lbl_Method = new System.Windows.Forms.Label();
+            this.Cash_lbl_MethodTitle = new System.Windows.Forms.Label();
             this.tab_CardPayment = new System.Windows.Forms.TabPage();
+            this.Card_pnl = new System.Windows.Forms.Panel();
+            this.PayCard_btn_Back = new System.Windows.Forms.Button();
+            this.PayCard_btn_Pay = new System.Windows.Forms.Button();
+            this.PayCard_Num_Total = new System.Windows.Forms.NumericUpDown();
+            this.PayCard_Num_Tip = new System.Windows.Forms.NumericUpDown();
+            this.PayCard_lbl_TitleTotalAmount = new System.Windows.Forms.Label();
+            this.PayCard_lbl_TipTitle = new System.Windows.Forms.Label();
+            this.PayCard_lbl_AmountToPay = new System.Windows.Forms.Label();
+            this.PayCard_lbl_AmountTitle = new System.Windows.Forms.Label();
+            this.PayCard_lbl_Method = new System.Windows.Forms.Label();
+            this.PayCard_lbl_TitleMethod = new System.Windows.Forms.Label();
+            this.tab_ProcessPayment = new System.Windows.Forms.TabPage();
             this.pnl_ProcessPayment = new System.Windows.Forms.Panel();
-            this.pnl_ProcessPayment_Center = new System.Windows.Forms.Panel();
-            this.img_ProcessPayment_Icon = new System.Windows.Forms.PictureBox();
-            this.btn_ProccessPayment_Confirm = new System.Windows.Forms.Button();
-            this.lbl_ProcessPayment_Result = new System.Windows.Forms.Label();
-            this.pnl_ProcessPayment_Bottom = new System.Windows.Forms.Panel();
-            this.pnl_ProcessPayment_Top = new System.Windows.Forms.Panel();
+            this.tab_PaymentFailed = new System.Windows.Forms.TabPage();
+            this.pnl_PaymentFailed = new System.Windows.Forms.Panel();
+            this.tab_PaymentComplete = new System.Windows.Forms.TabPage();
+            this.pnl_PaymentComplete = new System.Windows.Forms.Panel();
             this.border_Left = new System.Windows.Forms.PictureBox();
             this.border_Right = new System.Windows.Forms.PictureBox();
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
-            this.tab_PaymentComplete = new System.Windows.Forms.TabPage();
-            this.tab_PaymentFailed = new System.Windows.Forms.TabPage();
-            this.tab_ProcessPayment = new System.Windows.Forms.TabPage();
-            this.Cash_pnl = new System.Windows.Forms.Panel();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox14 = new System.Windows.Forms.PictureBox();
             pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -228,19 +260,29 @@
             this.pnl_Order_Categories.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tab_Bill.SuspendLayout();
+            this.pnl_Bill.SuspendLayout();
+            this.Bill_GroupBox1.SuspendLayout();
             this.tab_CashPayment.SuspendLayout();
-            this.pnl_PaymentOptions.SuspendLayout();
-            this.pnl_PaymentOptions_Center.SuspendLayout();
-            this.flow_PaymentOptions.SuspendLayout();
-            this.pnl_PaymentOptions_Top.SuspendLayout();
+            this.Cash_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCash_num_Change)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCash_num_AmountGiven)).BeginInit();
             this.tab_CardPayment.SuspendLayout();
+            this.Card_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Total)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Tip)).BeginInit();
+            this.tab_ProcessPayment.SuspendLayout();
             this.pnl_ProcessPayment.SuspendLayout();
-            this.pnl_ProcessPayment_Center.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).BeginInit();
+            this.tab_PaymentFailed.SuspendLayout();
+            this.pnl_PaymentFailed.SuspendLayout();
+            this.tab_PaymentComplete.SuspendLayout();
+            this.pnl_PaymentComplete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox18
@@ -1478,6 +1520,18 @@
             // 
             // pnl_Bill
             // 
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_RemainingPrice);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_amountPaid);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TotalAmount);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TitleLeft);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TitlePaid);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_TitleTotal);
+            this.pnl_Bill.Controls.Add(this.Bill_btn_Pay);
+            this.pnl_Bill.Controls.Add(this.Bill_GroupBox1);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_MainInstruction);
+            this.pnl_Bill.Controls.Add(this.Bill_lbl_Title);
+            this.pnl_Bill.Controls.Add(this.Bill_lv_VAT);
+            this.pnl_Bill.Controls.Add(this.Bill_lv_Bill);
             this.pnl_Bill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Bill.Location = new System.Drawing.Point(0, 0);
             this.pnl_Bill.Margin = new System.Windows.Forms.Padding(0);
@@ -1486,11 +1540,184 @@
             this.pnl_Bill.Size = new System.Drawing.Size(521, 622);
             this.pnl_Bill.TabIndex = 1;
             // 
+            // Bill_lbl_RemainingPrice
+            // 
+            this.Bill_lbl_RemainingPrice.AutoSize = true;
+            this.Bill_lbl_RemainingPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_RemainingPrice.Location = new System.Drawing.Point(439, 540);
+            this.Bill_lbl_RemainingPrice.Name = "Bill_lbl_RemainingPrice";
+            this.Bill_lbl_RemainingPrice.Size = new System.Drawing.Size(67, 19);
+            this.Bill_lbl_RemainingPrice.TabIndex = 11;
+            this.Bill_lbl_RemainingPrice.Text = "lefttopay";
+            // 
+            // Bill_lbl_amountPaid
+            // 
+            this.Bill_lbl_amountPaid.AutoSize = true;
+            this.Bill_lbl_amountPaid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_amountPaid.Location = new System.Drawing.Point(439, 512);
+            this.Bill_lbl_amountPaid.Name = "Bill_lbl_amountPaid";
+            this.Bill_lbl_amountPaid.Size = new System.Drawing.Size(37, 19);
+            this.Bill_lbl_amountPaid.TabIndex = 10;
+            this.Bill_lbl_amountPaid.Text = "paid";
+            // 
+            // Bill_lbl_TotalAmount
+            // 
+            this.Bill_lbl_TotalAmount.AutoSize = true;
+            this.Bill_lbl_TotalAmount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_TotalAmount.Location = new System.Drawing.Point(439, 485);
+            this.Bill_lbl_TotalAmount.Name = "Bill_lbl_TotalAmount";
+            this.Bill_lbl_TotalAmount.Size = new System.Drawing.Size(41, 19);
+            this.Bill_lbl_TotalAmount.TabIndex = 9;
+            this.Bill_lbl_TotalAmount.Text = "Total";
+            // 
+            // Bill_lbl_TitleLeft
+            // 
+            this.Bill_lbl_TitleLeft.AutoSize = true;
+            this.Bill_lbl_TitleLeft.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_TitleLeft.Location = new System.Drawing.Point(351, 540);
+            this.Bill_lbl_TitleLeft.Name = "Bill_lbl_TitleLeft";
+            this.Bill_lbl_TitleLeft.Size = new System.Drawing.Size(82, 19);
+            this.Bill_lbl_TitleLeft.TabIndex = 8;
+            this.Bill_lbl_TitleLeft.Text = "Left to pay:";
+            // 
+            // Bill_lbl_TitlePaid
+            // 
+            this.Bill_lbl_TitlePaid.AutoSize = true;
+            this.Bill_lbl_TitlePaid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_TitlePaid.Location = new System.Drawing.Point(339, 512);
+            this.Bill_lbl_TitlePaid.Name = "Bill_lbl_TitlePaid";
+            this.Bill_lbl_TitlePaid.Size = new System.Drawing.Size(94, 19);
+            this.Bill_lbl_TitlePaid.TabIndex = 7;
+            this.Bill_lbl_TitlePaid.Text = "Already paid:";
+            // 
+            // Bill_lbl_TitleTotal
+            // 
+            this.Bill_lbl_TitleTotal.AutoSize = true;
+            this.Bill_lbl_TitleTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_TitleTotal.Location = new System.Drawing.Point(388, 485);
+            this.Bill_lbl_TitleTotal.Name = "Bill_lbl_TitleTotal";
+            this.Bill_lbl_TitleTotal.Size = new System.Drawing.Size(45, 19);
+            this.Bill_lbl_TitleTotal.TabIndex = 6;
+            this.Bill_lbl_TitleTotal.Text = "Total:";
+            // 
+            // Bill_btn_Pay
+            // 
+            this.Bill_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Bill_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_btn_Pay.Location = new System.Drawing.Point(367, 562);
+            this.Bill_btn_Pay.Name = "Bill_btn_Pay";
+            this.Bill_btn_Pay.Size = new System.Drawing.Size(127, 52);
+            this.Bill_btn_Pay.TabIndex = 5;
+            this.Bill_btn_Pay.Text = "Next Screen";
+            this.Bill_btn_Pay.UseVisualStyleBackColor = false;
+            // 
+            // Bill_GroupBox1
+            // 
+            this.Bill_GroupBox1.Controls.Add(this.Bill_radbtn_Credit);
+            this.Bill_GroupBox1.Controls.Add(this.Bill_radbtn_Debit);
+            this.Bill_GroupBox1.Controls.Add(this.Bill_radbtn_Cash);
+            this.Bill_GroupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_GroupBox1.ForeColor = System.Drawing.Color.White;
+            this.Bill_GroupBox1.Location = new System.Drawing.Point(31, 505);
+            this.Bill_GroupBox1.Name = "Bill_GroupBox1";
+            this.Bill_GroupBox1.Size = new System.Drawing.Size(227, 109);
+            this.Bill_GroupBox1.TabIndex = 4;
+            this.Bill_GroupBox1.TabStop = false;
+            this.Bill_GroupBox1.Text = "Payment Method";
+            // 
+            // Bill_radbtn_Credit
+            // 
+            this.Bill_radbtn_Credit.AutoSize = true;
+            this.Bill_radbtn_Credit.Location = new System.Drawing.Point(6, 77);
+            this.Bill_radbtn_Credit.Name = "Bill_radbtn_Credit";
+            this.Bill_radbtn_Credit.Size = new System.Drawing.Size(193, 23);
+            this.Bill_radbtn_Credit.TabIndex = 2;
+            this.Bill_radbtn_Credit.TabStop = true;
+            this.Bill_radbtn_Credit.Text = "Credit Card (VISA / Amex)";
+            this.Bill_radbtn_Credit.UseVisualStyleBackColor = true;
+            // 
+            // Bill_radbtn_Debit
+            // 
+            this.Bill_radbtn_Debit.AutoSize = true;
+            this.Bill_radbtn_Debit.Location = new System.Drawing.Point(6, 50);
+            this.Bill_radbtn_Debit.Name = "Bill_radbtn_Debit";
+            this.Bill_radbtn_Debit.Size = new System.Drawing.Size(96, 23);
+            this.Bill_radbtn_Debit.TabIndex = 1;
+            this.Bill_radbtn_Debit.TabStop = true;
+            this.Bill_radbtn_Debit.Text = "Debit Card";
+            this.Bill_radbtn_Debit.UseVisualStyleBackColor = true;
+            // 
+            // Bill_radbtn_Cash
+            // 
+            this.Bill_radbtn_Cash.AutoSize = true;
+            this.Bill_radbtn_Cash.Location = new System.Drawing.Point(6, 23);
+            this.Bill_radbtn_Cash.Name = "Bill_radbtn_Cash";
+            this.Bill_radbtn_Cash.Size = new System.Drawing.Size(59, 23);
+            this.Bill_radbtn_Cash.TabIndex = 0;
+            this.Bill_radbtn_Cash.TabStop = true;
+            this.Bill_radbtn_Cash.Text = "Cash";
+            this.Bill_radbtn_Cash.UseVisualStyleBackColor = true;
+            // 
+            // Bill_lbl_MainInstruction
+            // 
+            this.Bill_lbl_MainInstruction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_MainInstruction.Location = new System.Drawing.Point(31, 407);
+            this.Bill_lbl_MainInstruction.Name = "Bill_lbl_MainInstruction";
+            this.Bill_lbl_MainInstruction.Size = new System.Drawing.Size(154, 70);
+            this.Bill_lbl_MainInstruction.TabIndex = 3;
+            this.Bill_lbl_MainInstruction.Text = "Select a payment method to advance to the next screen.";
+            // 
+            // Bill_lbl_Title
+            // 
+            this.Bill_lbl_Title.AutoSize = true;
+            this.Bill_lbl_Title.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lbl_Title.Location = new System.Drawing.Point(244, 12);
+            this.Bill_lbl_Title.Name = "Bill_lbl_Title";
+            this.Bill_lbl_Title.Size = new System.Drawing.Size(36, 24);
+            this.Bill_lbl_Title.TabIndex = 2;
+            this.Bill_lbl_Title.Text = "Bill";
+            // 
+            // Bill_lv_VAT
+            // 
+            this.Bill_lv_VAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.Bill_lv_VAT.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.Bill_lv_VAT.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lv_VAT.ForeColor = System.Drawing.Color.White;
+            this.Bill_lv_VAT.HideSelection = false;
+            this.Bill_lv_VAT.Location = new System.Drawing.Point(200, 380);
+            this.Bill_lv_VAT.Name = "Bill_lv_VAT";
+            this.Bill_lv_VAT.Size = new System.Drawing.Size(294, 97);
+            this.Bill_lv_VAT.TabIndex = 1;
+            this.Bill_lv_VAT.UseCompatibleStateImageBehavior = false;
+            this.Bill_lv_VAT.View = System.Windows.Forms.View.Details;
+            // 
+            // Bill_lv_Bill
+            // 
+            this.Bill_lv_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.Bill_lv_Bill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.Bill_lv_Bill.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bill_lv_Bill.ForeColor = System.Drawing.Color.White;
+            this.Bill_lv_Bill.HideSelection = false;
+            this.Bill_lv_Bill.Location = new System.Drawing.Point(31, 39);
+            this.Bill_lv_Bill.Name = "Bill_lv_Bill";
+            this.Bill_lv_Bill.Size = new System.Drawing.Size(463, 335);
+            this.Bill_lv_Bill.TabIndex = 0;
+            this.Bill_lv_Bill.UseCompatibleStateImageBehavior = false;
+            this.Bill_lv_Bill.View = System.Windows.Forms.View.Details;
+            // 
             // tab_CashPayment
             // 
             this.tab_CashPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_CashPayment.Controls.Add(this.Cash_pnl);
-            this.tab_CashPayment.Controls.Add(this.pnl_PaymentOptions);
             this.tab_CashPayment.Location = new System.Drawing.Point(4, 24);
             this.tab_CashPayment.Margin = new System.Windows.Forms.Padding(1);
             this.tab_CashPayment.Name = "tab_CashPayment";
@@ -1498,172 +1725,147 @@
             this.tab_CashPayment.TabIndex = 5;
             this.tab_CashPayment.Text = "Pay Cash";
             // 
-            // pnl_PaymentOptions
+            // Cash_pnl
             // 
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Center);
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Bottom);
-            this.pnl_PaymentOptions.Controls.Add(this.pnl_PaymentOptions_Top);
-            this.pnl_PaymentOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PaymentOptions.Location = new System.Drawing.Point(0, 0);
-            this.pnl_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_PaymentOptions.Name = "pnl_PaymentOptions";
-            this.pnl_PaymentOptions.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
-            this.pnl_PaymentOptions.Size = new System.Drawing.Size(521, 622);
-            this.pnl_PaymentOptions.TabIndex = 2;
+            this.Cash_pnl.Controls.Add(this.Cash_btn_Back);
+            this.Cash_pnl.Controls.Add(this.Cash_btn_Pay);
+            this.Cash_pnl.Controls.Add(this.PayCash_num_Change);
+            this.Cash_pnl.Controls.Add(this.PayCash_num_AmountGiven);
+            this.Cash_pnl.Controls.Add(this.PayCash_lbl_TitleChange);
+            this.Cash_pnl.Controls.Add(this.PayCash_TitleAmountGiven);
+            this.Cash_pnl.Controls.Add(this.PayCash_lbl_BillTotal);
+            this.Cash_pnl.Controls.Add(this.Cash_lbl_AmountTitle);
+            this.Cash_pnl.Controls.Add(this.Cash_lbl_Method);
+            this.Cash_pnl.Controls.Add(this.Cash_lbl_MethodTitle);
+            this.Cash_pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cash_pnl.Location = new System.Drawing.Point(0, 0);
+            this.Cash_pnl.Margin = new System.Windows.Forms.Padding(0);
+            this.Cash_pnl.Name = "Cash_pnl";
+            this.Cash_pnl.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.Cash_pnl.Size = new System.Drawing.Size(521, 622);
+            this.Cash_pnl.TabIndex = 3;
             // 
-            // pnl_PaymentOptions_Center
+            // Cash_btn_Back
             // 
-            this.pnl_PaymentOptions_Center.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Center.Controls.Add(this.flow_PaymentOptions);
-            this.pnl_PaymentOptions_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PaymentOptions_Center.Location = new System.Drawing.Point(73, 105);
-            this.pnl_PaymentOptions_Center.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_PaymentOptions_Center.Name = "pnl_PaymentOptions_Center";
-            this.pnl_PaymentOptions_Center.Size = new System.Drawing.Size(375, 410);
-            this.pnl_PaymentOptions_Center.TabIndex = 2;
+            this.Cash_btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.Cash_btn_Back.Location = new System.Drawing.Point(127, 128);
+            this.Cash_btn_Back.Name = "Cash_btn_Back";
+            this.Cash_btn_Back.Size = new System.Drawing.Size(75, 27);
+            this.Cash_btn_Back.TabIndex = 9;
+            this.Cash_btn_Back.Text = "Back";
+            this.Cash_btn_Back.UseVisualStyleBackColor = false;
+            this.Cash_btn_Back.Click += new System.EventHandler(this.Cash_btn_Back_Click);
             // 
-            // flow_PaymentOptions
+            // Cash_btn_Pay
             // 
-            this.flow_PaymentOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flow_PaymentOptions.AutoScroll = true;
-            this.flow_PaymentOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_1);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_2);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_3);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_4);
-            this.flow_PaymentOptions.Controls.Add(this.btn_PaymentOption_5);
-            this.flow_PaymentOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_PaymentOptions.Location = new System.Drawing.Point(2, 22);
-            this.flow_PaymentOptions.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_PaymentOptions.Name = "flow_PaymentOptions";
-            this.flow_PaymentOptions.Padding = new System.Windows.Forms.Padding(7, 7, 7, 0);
-            this.flow_PaymentOptions.Size = new System.Drawing.Size(371, 368);
-            this.flow_PaymentOptions.TabIndex = 0;
+            this.Cash_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Cash_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_btn_Pay.Location = new System.Drawing.Point(167, 474);
+            this.Cash_btn_Pay.Name = "Cash_btn_Pay";
+            this.Cash_btn_Pay.Size = new System.Drawing.Size(158, 36);
+            this.Cash_btn_Pay.TabIndex = 8;
+            this.Cash_btn_Pay.Text = "Complete Payment";
+            this.Cash_btn_Pay.UseVisualStyleBackColor = false;
+            this.Cash_btn_Pay.Click += new System.EventHandler(this.Cash_btn_Pay_Click);
             // 
-            // btn_PaymentOption_1
+            // PayCash_num_Change
             // 
-            this.btn_PaymentOption_1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_PaymentOption_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_1.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_1.Location = new System.Drawing.Point(8, 8);
-            this.btn_PaymentOption_1.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_PaymentOption_1.Name = "btn_PaymentOption_1";
-            this.btn_PaymentOption_1.Size = new System.Drawing.Size(352, 67);
-            this.btn_PaymentOption_1.TabIndex = 0;
-            this.btn_PaymentOption_1.Text = "Payment option 1";
-            this.btn_PaymentOption_1.UseVisualStyleBackColor = false;
+            this.PayCash_num_Change.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PayCash_num_Change.DecimalPlaces = 2;
+            this.PayCash_num_Change.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_num_Change.ForeColor = System.Drawing.Color.White;
+            this.PayCash_num_Change.Location = new System.Drawing.Point(184, 382);
+            this.PayCash_num_Change.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PayCash_num_Change.Name = "PayCash_num_Change";
+            this.PayCash_num_Change.Size = new System.Drawing.Size(120, 25);
+            this.PayCash_num_Change.TabIndex = 7;
+            this.PayCash_num_Change.ValueChanged += new System.EventHandler(this.PayCash_num_Change_ValueChanged);
             // 
-            // btn_PaymentOption_2
+            // PayCash_num_AmountGiven
             // 
-            this.btn_PaymentOption_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_2.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_2.Location = new System.Drawing.Point(8, 77);
-            this.btn_PaymentOption_2.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_PaymentOption_2.Name = "btn_PaymentOption_2";
-            this.btn_PaymentOption_2.Size = new System.Drawing.Size(352, 67);
-            this.btn_PaymentOption_2.TabIndex = 1;
-            this.btn_PaymentOption_2.Text = "Payment option 2";
-            this.btn_PaymentOption_2.UseVisualStyleBackColor = false;
+            this.PayCash_num_AmountGiven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PayCash_num_AmountGiven.DecimalPlaces = 2;
+            this.PayCash_num_AmountGiven.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_num_AmountGiven.ForeColor = System.Drawing.Color.White;
+            this.PayCash_num_AmountGiven.Location = new System.Drawing.Point(184, 275);
+            this.PayCash_num_AmountGiven.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PayCash_num_AmountGiven.Name = "PayCash_num_AmountGiven";
+            this.PayCash_num_AmountGiven.Size = new System.Drawing.Size(120, 25);
+            this.PayCash_num_AmountGiven.TabIndex = 6;
+            this.PayCash_num_AmountGiven.ValueChanged += new System.EventHandler(this.PayCash_num_AmountGiven_ValueChanged);
             // 
-            // btn_PaymentOption_3
+            // PayCash_lbl_TitleChange
             // 
-            this.btn_PaymentOption_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_3.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_3.Location = new System.Drawing.Point(8, 146);
-            this.btn_PaymentOption_3.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_PaymentOption_3.Name = "btn_PaymentOption_3";
-            this.btn_PaymentOption_3.Size = new System.Drawing.Size(352, 67);
-            this.btn_PaymentOption_3.TabIndex = 2;
-            this.btn_PaymentOption_3.Text = "Payment option 3";
-            this.btn_PaymentOption_3.UseVisualStyleBackColor = false;
+            this.PayCash_lbl_TitleChange.AutoSize = true;
+            this.PayCash_lbl_TitleChange.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_TitleChange.Location = new System.Drawing.Point(184, 361);
+            this.PayCash_lbl_TitleChange.Name = "PayCash_lbl_TitleChange";
+            this.PayCash_lbl_TitleChange.Size = new System.Drawing.Size(58, 18);
+            this.PayCash_lbl_TitleChange.TabIndex = 5;
+            this.PayCash_lbl_TitleChange.Text = "Change:";
             // 
-            // btn_PaymentOption_4
+            // PayCash_TitleAmountGiven
             // 
-            this.btn_PaymentOption_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_4.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_4.Location = new System.Drawing.Point(8, 215);
-            this.btn_PaymentOption_4.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_PaymentOption_4.Name = "btn_PaymentOption_4";
-            this.btn_PaymentOption_4.Size = new System.Drawing.Size(352, 67);
-            this.btn_PaymentOption_4.TabIndex = 3;
-            this.btn_PaymentOption_4.Text = "Payment option 4";
-            this.btn_PaymentOption_4.UseVisualStyleBackColor = false;
+            this.PayCash_TitleAmountGiven.AutoSize = true;
+            this.PayCash_TitleAmountGiven.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_TitleAmountGiven.Location = new System.Drawing.Point(184, 254);
+            this.PayCash_TitleAmountGiven.Name = "PayCash_TitleAmountGiven";
+            this.PayCash_TitleAmountGiven.Size = new System.Drawing.Size(99, 18);
+            this.PayCash_TitleAmountGiven.TabIndex = 4;
+            this.PayCash_TitleAmountGiven.Text = "Amount given:";
             // 
-            // btn_PaymentOption_5
+            // PayCash_lbl_BillTotal
             // 
-            this.btn_PaymentOption_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_PaymentOption_5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PaymentOption_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_PaymentOption_5.ForeColor = System.Drawing.Color.White;
-            this.btn_PaymentOption_5.Location = new System.Drawing.Point(8, 284);
-            this.btn_PaymentOption_5.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_PaymentOption_5.Name = "btn_PaymentOption_5";
-            this.btn_PaymentOption_5.Size = new System.Drawing.Size(352, 67);
-            this.btn_PaymentOption_5.TabIndex = 4;
-            this.btn_PaymentOption_5.Text = "Payment option 5";
-            this.btn_PaymentOption_5.UseVisualStyleBackColor = false;
+            this.PayCash_lbl_BillTotal.AutoSize = true;
+            this.PayCash_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(275, 186);
+            this.PayCash_lbl_BillTotal.Name = "PayCash_lbl_BillTotal";
+            this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(67, 22);
+            this.PayCash_lbl_BillTotal.TabIndex = 3;
+            this.PayCash_lbl_BillTotal.Text = "amount";
             // 
-            // pnl_PaymentOptions_Bottom
+            // Cash_lbl_AmountTitle
             // 
-            this.pnl_PaymentOptions_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PaymentOptions_Bottom.Location = new System.Drawing.Point(73, 515);
-            this.pnl_PaymentOptions_Bottom.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_PaymentOptions_Bottom.Name = "pnl_PaymentOptions_Bottom";
-            this.pnl_PaymentOptions_Bottom.Size = new System.Drawing.Size(375, 107);
-            this.pnl_PaymentOptions_Bottom.TabIndex = 1;
+            this.Cash_lbl_AmountTitle.AutoSize = true;
+            this.Cash_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_lbl_AmountTitle.Location = new System.Drawing.Point(153, 186);
+            this.Cash_lbl_AmountTitle.Name = "Cash_lbl_AmountTitle";
+            this.Cash_lbl_AmountTitle.Size = new System.Drawing.Size(123, 22);
+            this.Cash_lbl_AmountTitle.TabIndex = 2;
+            this.Cash_lbl_AmountTitle.Text = "Amount to Pay:";
             // 
-            // pnl_PaymentOptions_Top
+            // Cash_lbl_Method
             // 
-            this.pnl_PaymentOptions_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_PaymentOptions_Top.Controls.Add(this.txtBox_Payment_Options_Total);
-            this.pnl_PaymentOptions_Top.Controls.Add(this.lbl_PaymentOptions);
-            this.pnl_PaymentOptions_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_PaymentOptions_Top.Location = new System.Drawing.Point(73, 0);
-            this.pnl_PaymentOptions_Top.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_PaymentOptions_Top.Name = "pnl_PaymentOptions_Top";
-            this.pnl_PaymentOptions_Top.Size = new System.Drawing.Size(375, 105);
-            this.pnl_PaymentOptions_Top.TabIndex = 0;
+            this.Cash_lbl_Method.AutoSize = true;
+            this.Cash_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_lbl_Method.Location = new System.Drawing.Point(299, 101);
+            this.Cash_lbl_Method.Name = "Cash_lbl_Method";
+            this.Cash_lbl_Method.Size = new System.Drawing.Size(50, 24);
+            this.Cash_lbl_Method.TabIndex = 1;
+            this.Cash_lbl_Method.Text = "Cash";
             // 
-            // txtBox_Payment_Options_Total
+            // Cash_lbl_MethodTitle
             // 
-            this.txtBox_Payment_Options_Total.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBox_Payment_Options_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.txtBox_Payment_Options_Total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBox_Payment_Options_Total.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_Payment_Options_Total.ForeColor = System.Drawing.Color.White;
-            this.txtBox_Payment_Options_Total.Location = new System.Drawing.Point(140, 23);
-            this.txtBox_Payment_Options_Total.Margin = new System.Windows.Forms.Padding(1);
-            this.txtBox_Payment_Options_Total.Name = "txtBox_Payment_Options_Total";
-            this.txtBox_Payment_Options_Total.Size = new System.Drawing.Size(101, 34);
-            this.txtBox_Payment_Options_Total.TabIndex = 2;
-            this.txtBox_Payment_Options_Total.Text = "€ 0.00";
-            this.txtBox_Payment_Options_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbl_PaymentOptions
-            // 
-            this.lbl_PaymentOptions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_PaymentOptions.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PaymentOptions.Location = new System.Drawing.Point(0, 56);
-            this.lbl_PaymentOptions.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_PaymentOptions.Name = "lbl_PaymentOptions";
-            this.lbl_PaymentOptions.Size = new System.Drawing.Size(375, 49);
-            this.lbl_PaymentOptions.TabIndex = 0;
-            this.lbl_PaymentOptions.Text = "Select a payment option";
-            this.lbl_PaymentOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Cash_lbl_MethodTitle.AutoSize = true;
+            this.Cash_lbl_MethodTitle.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_lbl_MethodTitle.Location = new System.Drawing.Point(127, 101);
+            this.Cash_lbl_MethodTitle.Name = "Cash_lbl_MethodTitle";
+            this.Cash_lbl_MethodTitle.Size = new System.Drawing.Size(165, 24);
+            this.Cash_lbl_MethodTitle.TabIndex = 0;
+            this.Cash_lbl_MethodTitle.Text = "Payment Method: ";
             // 
             // tab_CardPayment
             // 
             this.tab_CardPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.tab_CardPayment.Controls.Add(this.pnl_ProcessPayment);
+            this.tab_CardPayment.Controls.Add(this.Card_pnl);
             this.tab_CardPayment.Location = new System.Drawing.Point(4, 24);
             this.tab_CardPayment.Margin = new System.Windows.Forms.Padding(1);
             this.tab_CardPayment.Name = "tab_CardPayment";
@@ -1671,89 +1873,208 @@
             this.tab_CardPayment.TabIndex = 6;
             this.tab_CardPayment.Text = "Pay Card";
             // 
+            // Card_pnl
+            // 
+            this.Card_pnl.Controls.Add(this.PayCard_btn_Back);
+            this.Card_pnl.Controls.Add(this.PayCard_btn_Pay);
+            this.Card_pnl.Controls.Add(this.PayCard_Num_Total);
+            this.Card_pnl.Controls.Add(this.PayCard_Num_Tip);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_TitleTotalAmount);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_TipTitle);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_AmountToPay);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_AmountTitle);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_Method);
+            this.Card_pnl.Controls.Add(this.PayCard_lbl_TitleMethod);
+            this.Card_pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Card_pnl.Location = new System.Drawing.Point(0, 0);
+            this.Card_pnl.Margin = new System.Windows.Forms.Padding(0);
+            this.Card_pnl.Name = "Card_pnl";
+            this.Card_pnl.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.Card_pnl.Size = new System.Drawing.Size(521, 622);
+            this.Card_pnl.TabIndex = 4;
+            // 
+            // PayCard_btn_Back
+            // 
+            this.PayCard_btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PayCard_btn_Back.Location = new System.Drawing.Point(127, 128);
+            this.PayCard_btn_Back.Name = "PayCard_btn_Back";
+            this.PayCard_btn_Back.Size = new System.Drawing.Size(75, 27);
+            this.PayCard_btn_Back.TabIndex = 9;
+            this.PayCard_btn_Back.Text = "Back";
+            this.PayCard_btn_Back.UseVisualStyleBackColor = false;
+            this.PayCard_btn_Back.Click += new System.EventHandler(this.PayCard_btn_Back_Click);
+            // 
+            // PayCard_btn_Pay
+            // 
+            this.PayCard_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PayCard_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_btn_Pay.Location = new System.Drawing.Point(167, 474);
+            this.PayCard_btn_Pay.Name = "PayCard_btn_Pay";
+            this.PayCard_btn_Pay.Size = new System.Drawing.Size(158, 36);
+            this.PayCard_btn_Pay.TabIndex = 8;
+            this.PayCard_btn_Pay.Text = "Process Payment";
+            this.PayCard_btn_Pay.UseVisualStyleBackColor = false;
+            this.PayCard_btn_Pay.Click += new System.EventHandler(this.PayCard_btn_Pay_Click);
+            // 
+            // PayCard_Num_Total
+            // 
+            this.PayCard_Num_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PayCard_Num_Total.DecimalPlaces = 2;
+            this.PayCard_Num_Total.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_Num_Total.ForeColor = System.Drawing.Color.White;
+            this.PayCard_Num_Total.Location = new System.Drawing.Point(184, 382);
+            this.PayCard_Num_Total.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PayCard_Num_Total.Name = "PayCard_Num_Total";
+            this.PayCard_Num_Total.Size = new System.Drawing.Size(120, 25);
+            this.PayCard_Num_Total.TabIndex = 7;
+            this.PayCard_Num_Total.ValueChanged += new System.EventHandler(this.PayCard_Num_Total_ValueChanged);
+            // 
+            // PayCard_Num_Tip
+            // 
+            this.PayCard_Num_Tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PayCard_Num_Tip.DecimalPlaces = 2;
+            this.PayCard_Num_Tip.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_Num_Tip.ForeColor = System.Drawing.Color.White;
+            this.PayCard_Num_Tip.Location = new System.Drawing.Point(184, 275);
+            this.PayCard_Num_Tip.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PayCard_Num_Tip.Name = "PayCard_Num_Tip";
+            this.PayCard_Num_Tip.Size = new System.Drawing.Size(120, 25);
+            this.PayCard_Num_Tip.TabIndex = 6;
+            this.PayCard_Num_Tip.ValueChanged += new System.EventHandler(this.PayCard_Num_Tip_ValueChanged);
+            // 
+            // PayCard_lbl_TitleTotalAmount
+            // 
+            this.PayCard_lbl_TitleTotalAmount.AutoSize = true;
+            this.PayCard_lbl_TitleTotalAmount.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_TitleTotalAmount.Location = new System.Drawing.Point(183, 361);
+            this.PayCard_lbl_TitleTotalAmount.Name = "PayCard_lbl_TitleTotalAmount";
+            this.PayCard_lbl_TitleTotalAmount.Size = new System.Drawing.Size(93, 18);
+            this.PayCard_lbl_TitleTotalAmount.TabIndex = 5;
+            this.PayCard_lbl_TitleTotalAmount.Text = "Total amount:";
+            // 
+            // PayCard_lbl_TipTitle
+            // 
+            this.PayCard_lbl_TipTitle.AutoSize = true;
+            this.PayCard_lbl_TipTitle.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_TipTitle.Location = new System.Drawing.Point(184, 254);
+            this.PayCard_lbl_TipTitle.Name = "PayCard_lbl_TipTitle";
+            this.PayCard_lbl_TipTitle.Size = new System.Drawing.Size(31, 18);
+            this.PayCard_lbl_TipTitle.TabIndex = 4;
+            this.PayCard_lbl_TipTitle.Text = "Tip:";
+            // 
+            // PayCard_lbl_AmountToPay
+            // 
+            this.PayCard_lbl_AmountToPay.AutoSize = true;
+            this.PayCard_lbl_AmountToPay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_AmountToPay.Location = new System.Drawing.Point(275, 186);
+            this.PayCard_lbl_AmountToPay.Name = "PayCard_lbl_AmountToPay";
+            this.PayCard_lbl_AmountToPay.Size = new System.Drawing.Size(67, 22);
+            this.PayCard_lbl_AmountToPay.TabIndex = 3;
+            this.PayCard_lbl_AmountToPay.Text = "amount";
+            // 
+            // PayCard_lbl_AmountTitle
+            // 
+            this.PayCard_lbl_AmountTitle.AutoSize = true;
+            this.PayCard_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_AmountTitle.Location = new System.Drawing.Point(153, 186);
+            this.PayCard_lbl_AmountTitle.Name = "PayCard_lbl_AmountTitle";
+            this.PayCard_lbl_AmountTitle.Size = new System.Drawing.Size(123, 22);
+            this.PayCard_lbl_AmountTitle.TabIndex = 2;
+            this.PayCard_lbl_AmountTitle.Text = "Amount to Pay:";
+            // 
+            // PayCard_lbl_Method
+            // 
+            this.PayCard_lbl_Method.AutoSize = true;
+            this.PayCard_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_Method.Location = new System.Drawing.Point(299, 101);
+            this.PayCard_lbl_Method.Name = "PayCard_lbl_Method";
+            this.PayCard_lbl_Method.Size = new System.Drawing.Size(49, 24);
+            this.PayCard_lbl_Method.TabIndex = 1;
+            this.PayCard_lbl_Method.Text = "Card";
+            // 
+            // PayCard_lbl_TitleMethod
+            // 
+            this.PayCard_lbl_TitleMethod.AutoSize = true;
+            this.PayCard_lbl_TitleMethod.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_TitleMethod.Location = new System.Drawing.Point(127, 101);
+            this.PayCard_lbl_TitleMethod.Name = "PayCard_lbl_TitleMethod";
+            this.PayCard_lbl_TitleMethod.Size = new System.Drawing.Size(165, 24);
+            this.PayCard_lbl_TitleMethod.TabIndex = 0;
+            this.PayCard_lbl_TitleMethod.Text = "Payment Method: ";
+            // 
+            // tab_ProcessPayment
+            // 
+            this.tab_ProcessPayment.Controls.Add(this.pnl_ProcessPayment);
+            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 24);
+            this.tab_ProcessPayment.Name = "tab_ProcessPayment";
+            this.tab_ProcessPayment.Size = new System.Drawing.Size(521, 622);
+            this.tab_ProcessPayment.TabIndex = 13;
+            this.tab_ProcessPayment.Text = "ProcessPayment";
+            this.tab_ProcessPayment.UseVisualStyleBackColor = true;
+            // 
             // pnl_ProcessPayment
             // 
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Center);
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Bottom);
-            this.pnl_ProcessPayment.Controls.Add(this.pnl_ProcessPayment_Top);
+            this.pnl_ProcessPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_ProcessPayment.Controls.Add(this.pictureBox26);
             this.pnl_ProcessPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_ProcessPayment.Location = new System.Drawing.Point(0, 0);
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProcessPayment.Name = "pnl_ProcessPayment";
             this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
             this.pnl_ProcessPayment.Size = new System.Drawing.Size(521, 622);
-            this.pnl_ProcessPayment.TabIndex = 3;
+            this.pnl_ProcessPayment.TabIndex = 4;
             // 
-            // pnl_ProcessPayment_Center
+            // tab_PaymentFailed
             // 
-            this.pnl_ProcessPayment_Center.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
-            this.pnl_ProcessPayment_Center.Controls.Add(this.img_ProcessPayment_Icon);
-            this.pnl_ProcessPayment_Center.Controls.Add(this.btn_ProccessPayment_Confirm);
-            this.pnl_ProcessPayment_Center.Controls.Add(this.lbl_ProcessPayment_Result);
-            this.pnl_ProcessPayment_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_ProcessPayment_Center.Location = new System.Drawing.Point(73, 105);
-            this.pnl_ProcessPayment_Center.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_ProcessPayment_Center.Name = "pnl_ProcessPayment_Center";
-            this.pnl_ProcessPayment_Center.Size = new System.Drawing.Size(375, 410);
-            this.pnl_ProcessPayment_Center.TabIndex = 2;
+            this.tab_PaymentFailed.Controls.Add(this.pnl_PaymentFailed);
+            this.tab_PaymentFailed.Location = new System.Drawing.Point(4, 24);
+            this.tab_PaymentFailed.Name = "tab_PaymentFailed";
+            this.tab_PaymentFailed.Size = new System.Drawing.Size(521, 622);
+            this.tab_PaymentFailed.TabIndex = 12;
+            this.tab_PaymentFailed.Text = "PaymentFailed";
+            this.tab_PaymentFailed.UseVisualStyleBackColor = true;
             // 
-            // img_ProcessPayment_Icon
+            // pnl_PaymentFailed
             // 
-            this.img_ProcessPayment_Icon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.img_ProcessPayment_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.img_ProcessPayment_Icon.Location = new System.Drawing.Point(122, 86);
-            this.img_ProcessPayment_Icon.Margin = new System.Windows.Forms.Padding(1);
-            this.img_ProcessPayment_Icon.Name = "img_ProcessPayment_Icon";
-            this.img_ProcessPayment_Icon.Size = new System.Drawing.Size(133, 133);
-            this.img_ProcessPayment_Icon.TabIndex = 2;
-            this.img_ProcessPayment_Icon.TabStop = false;
+            this.pnl_PaymentFailed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_PaymentFailed.Controls.Add(this.pictureBox27);
+            this.pnl_PaymentFailed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_PaymentFailed.Location = new System.Drawing.Point(0, 0);
+            this.pnl_PaymentFailed.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_PaymentFailed.Name = "pnl_PaymentFailed";
+            this.pnl_PaymentFailed.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.pnl_PaymentFailed.Size = new System.Drawing.Size(521, 622);
+            this.pnl_PaymentFailed.TabIndex = 4;
             // 
-            // btn_ProccessPayment_Confirm
+            // tab_PaymentComplete
             // 
-            this.btn_ProccessPayment_Confirm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ProccessPayment_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
-            this.btn_ProccessPayment_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ProccessPayment_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ProccessPayment_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_ProccessPayment_Confirm.Location = new System.Drawing.Point(10, 313);
-            this.btn_ProccessPayment_Confirm.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_ProccessPayment_Confirm.Name = "btn_ProccessPayment_Confirm";
-            this.btn_ProccessPayment_Confirm.Size = new System.Drawing.Size(352, 67);
-            this.btn_ProccessPayment_Confirm.TabIndex = 1;
-            this.btn_ProccessPayment_Confirm.Text = "Confirm / Retry";
-            this.btn_ProccessPayment_Confirm.UseVisualStyleBackColor = false;
+            this.tab_PaymentComplete.Controls.Add(this.pnl_PaymentComplete);
+            this.tab_PaymentComplete.Location = new System.Drawing.Point(4, 24);
+            this.tab_PaymentComplete.Name = "tab_PaymentComplete";
+            this.tab_PaymentComplete.Size = new System.Drawing.Size(521, 622);
+            this.tab_PaymentComplete.TabIndex = 11;
+            this.tab_PaymentComplete.Text = "PaymentComplete";
+            this.tab_PaymentComplete.UseVisualStyleBackColor = true;
             // 
-            // lbl_ProcessPayment_Result
+            // pnl_PaymentComplete
             // 
-            this.lbl_ProcessPayment_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_ProcessPayment_Result.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ProcessPayment_Result.Location = new System.Drawing.Point(0, 221);
-            this.lbl_ProcessPayment_Result.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_ProcessPayment_Result.Name = "lbl_ProcessPayment_Result";
-            this.lbl_ProcessPayment_Result.Size = new System.Drawing.Size(371, 49);
-            this.lbl_ProcessPayment_Result.TabIndex = 0;
-            this.lbl_ProcessPayment_Result.Text = "Payment Succesful / Failure";
-            this.lbl_ProcessPayment_Result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl_ProcessPayment_Bottom
-            // 
-            this.pnl_ProcessPayment_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_ProcessPayment_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_ProcessPayment_Bottom.Location = new System.Drawing.Point(73, 515);
-            this.pnl_ProcessPayment_Bottom.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_ProcessPayment_Bottom.Name = "pnl_ProcessPayment_Bottom";
-            this.pnl_ProcessPayment_Bottom.Size = new System.Drawing.Size(375, 107);
-            this.pnl_ProcessPayment_Bottom.TabIndex = 1;
-            // 
-            // pnl_ProcessPayment_Top
-            // 
-            this.pnl_ProcessPayment_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnl_ProcessPayment_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_ProcessPayment_Top.Location = new System.Drawing.Point(73, 0);
-            this.pnl_ProcessPayment_Top.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_ProcessPayment_Top.Name = "pnl_ProcessPayment_Top";
-            this.pnl_ProcessPayment_Top.Size = new System.Drawing.Size(375, 105);
-            this.pnl_ProcessPayment_Top.TabIndex = 0;
+            this.pnl_PaymentComplete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_PaymentComplete.Controls.Add(this.pictureBox28);
+            this.pnl_PaymentComplete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_PaymentComplete.Location = new System.Drawing.Point(0, 0);
+            this.pnl_PaymentComplete.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_PaymentComplete.Name = "pnl_PaymentComplete";
+            this.pnl_PaymentComplete.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
+            this.pnl_PaymentComplete.Size = new System.Drawing.Size(521, 622);
+            this.pnl_PaymentComplete.TabIndex = 4;
             // 
             // border_Left
             // 
@@ -1795,42 +2116,29 @@
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
             // 
-            // tab_PaymentComplete
+            // pictureBox26
             // 
-            this.tab_PaymentComplete.Location = new System.Drawing.Point(4, 24);
-            this.tab_PaymentComplete.Name = "tab_PaymentComplete";
-            this.tab_PaymentComplete.Size = new System.Drawing.Size(521, 622);
-            this.tab_PaymentComplete.TabIndex = 11;
-            this.tab_PaymentComplete.Text = "PaymentComplete";
-            this.tab_PaymentComplete.UseVisualStyleBackColor = true;
+            this.pictureBox26.Location = new System.Drawing.Point(169, 153);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox26.TabIndex = 0;
+            this.pictureBox26.TabStop = false;
             // 
-            // tab_PaymentFailed
+            // pictureBox27
             // 
-            this.tab_PaymentFailed.Location = new System.Drawing.Point(4, 24);
-            this.tab_PaymentFailed.Name = "tab_PaymentFailed";
-            this.tab_PaymentFailed.Size = new System.Drawing.Size(521, 622);
-            this.tab_PaymentFailed.TabIndex = 12;
-            this.tab_PaymentFailed.Text = "PaymentFailed";
-            this.tab_PaymentFailed.UseVisualStyleBackColor = true;
+            this.pictureBox27.Location = new System.Drawing.Point(220, 89);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox27.TabIndex = 0;
+            this.pictureBox27.TabStop = false;
             // 
-            // tab_ProcessPayment
+            // pictureBox28
             // 
-            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 24);
-            this.tab_ProcessPayment.Name = "tab_ProcessPayment";
-            this.tab_ProcessPayment.Size = new System.Drawing.Size(521, 622);
-            this.tab_ProcessPayment.TabIndex = 13;
-            this.tab_ProcessPayment.Text = "ProcessPayment";
-            this.tab_ProcessPayment.UseVisualStyleBackColor = true;
-            // 
-            // Cash_pnl
-            // 
-            this.Cash_pnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Cash_pnl.Location = new System.Drawing.Point(0, 0);
-            this.Cash_pnl.Margin = new System.Windows.Forms.Padding(0);
-            this.Cash_pnl.Name = "Cash_pnl";
-            this.Cash_pnl.Padding = new System.Windows.Forms.Padding(73, 0, 73, 0);
-            this.Cash_pnl.Size = new System.Drawing.Size(521, 622);
-            this.Cash_pnl.TabIndex = 3;
+            this.pictureBox28.Location = new System.Drawing.Point(241, 131);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox28.TabIndex = 0;
+            this.pictureBox28.TabStop = false;
             // 
             // Form_Chapeau
             // 
@@ -1922,20 +2230,33 @@
             this.pnl_Order_Categories.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tab_Bill.ResumeLayout(false);
+            this.pnl_Bill.ResumeLayout(false);
+            this.pnl_Bill.PerformLayout();
+            this.Bill_GroupBox1.ResumeLayout(false);
+            this.Bill_GroupBox1.PerformLayout();
             this.tab_CashPayment.ResumeLayout(false);
-            this.pnl_PaymentOptions.ResumeLayout(false);
-            this.pnl_PaymentOptions_Center.ResumeLayout(false);
-            this.flow_PaymentOptions.ResumeLayout(false);
-            this.pnl_PaymentOptions_Top.ResumeLayout(false);
-            this.pnl_PaymentOptions_Top.PerformLayout();
+            this.Cash_pnl.ResumeLayout(false);
+            this.Cash_pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCash_num_Change)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCash_num_AmountGiven)).EndInit();
             this.tab_CardPayment.ResumeLayout(false);
+            this.Card_pnl.ResumeLayout(false);
+            this.Card_pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Total)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PayCard_Num_Tip)).EndInit();
+            this.tab_ProcessPayment.ResumeLayout(false);
             this.pnl_ProcessPayment.ResumeLayout(false);
-            this.pnl_ProcessPayment_Center.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_ProcessPayment_Icon)).EndInit();
+            this.tab_PaymentFailed.ResumeLayout(false);
+            this.pnl_PaymentFailed.ResumeLayout(false);
+            this.tab_PaymentComplete.ResumeLayout(false);
+            this.pnl_PaymentComplete.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.border_Left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2025,31 +2346,63 @@
         private System.Windows.Forms.TabPage tab_Bill;
         private System.Windows.Forms.Panel pnl_Bill;
         private System.Windows.Forms.TabPage tab_CashPayment;
-        private System.Windows.Forms.Panel pnl_PaymentOptions;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Center;
-        private System.Windows.Forms.FlowLayoutPanel flow_PaymentOptions;
-        private System.Windows.Forms.Button btn_PaymentOption_1;
-        private System.Windows.Forms.Button btn_PaymentOption_2;
-        private System.Windows.Forms.Button btn_PaymentOption_3;
-        private System.Windows.Forms.Button btn_PaymentOption_4;
-        private System.Windows.Forms.Button btn_PaymentOption_5;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Bottom;
-        private System.Windows.Forms.Panel pnl_PaymentOptions_Top;
-        private System.Windows.Forms.TextBox txtBox_Payment_Options_Total;
-        private System.Windows.Forms.Label lbl_PaymentOptions;
         private System.Windows.Forms.TabPage tab_CardPayment;
-        private System.Windows.Forms.Panel pnl_ProcessPayment;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Center;
-        private System.Windows.Forms.PictureBox img_ProcessPayment_Icon;
-        private System.Windows.Forms.Button btn_ProccessPayment_Confirm;
-        private System.Windows.Forms.Label lbl_ProcessPayment_Result;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Bottom;
-        private System.Windows.Forms.Panel pnl_ProcessPayment_Top;
         private System.Windows.Forms.Button btn_Clear_Order;
         private System.Windows.Forms.Splitter splitter_ClearOrder;
         private System.Windows.Forms.Panel Cash_pnl;
         private System.Windows.Forms.TabPage tab_ProcessPayment;
         private System.Windows.Forms.TabPage tab_PaymentFailed;
         private System.Windows.Forms.TabPage tab_PaymentComplete;
+        private System.Windows.Forms.Label Bill_lbl_Title;
+        private System.Windows.Forms.ListView Bill_lv_VAT;
+        private System.Windows.Forms.ListView Bill_lv_Bill;
+        private System.Windows.Forms.Button Bill_btn_Pay;
+        private System.Windows.Forms.GroupBox Bill_GroupBox1;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Credit;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Debit;
+        private System.Windows.Forms.RadioButton Bill_radbtn_Cash;
+        private System.Windows.Forms.Label Bill_lbl_MainInstruction;
+        private System.Windows.Forms.Panel pnl_ProcessPayment;
+        private System.Windows.Forms.Panel pnl_PaymentFailed;
+        private System.Windows.Forms.Panel pnl_PaymentComplete;
+        private System.Windows.Forms.Label Bill_lbl_RemainingPrice;
+        private System.Windows.Forms.Label Bill_lbl_amountPaid;
+        private System.Windows.Forms.Label Bill_lbl_TotalAmount;
+        private System.Windows.Forms.Label Bill_lbl_TitleLeft;
+        private System.Windows.Forms.Label Bill_lbl_TitlePaid;
+        private System.Windows.Forms.Label Bill_lbl_TitleTotal;
+        private System.Windows.Forms.Label Cash_lbl_Method;
+        private System.Windows.Forms.Label Cash_lbl_MethodTitle;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button Cash_btn_Back;
+        private System.Windows.Forms.Button Cash_btn_Pay;
+        private System.Windows.Forms.NumericUpDown PayCash_num_Change;
+        private System.Windows.Forms.NumericUpDown PayCash_num_AmountGiven;
+        private System.Windows.Forms.Label PayCash_lbl_TitleChange;
+        private System.Windows.Forms.Label PayCash_TitleAmountGiven;
+        private System.Windows.Forms.Label PayCash_lbl_BillTotal;
+        private System.Windows.Forms.Label Cash_lbl_AmountTitle;
+        private System.Windows.Forms.Panel Card_pnl;
+        private System.Windows.Forms.Button PayCard_btn_Back;
+        private System.Windows.Forms.Button PayCard_btn_Pay;
+        private System.Windows.Forms.NumericUpDown PayCard_Num_Total;
+        private System.Windows.Forms.NumericUpDown PayCard_Num_Tip;
+        private System.Windows.Forms.Label PayCard_lbl_TitleTotalAmount;
+        private System.Windows.Forms.Label PayCard_lbl_TipTitle;
+        private System.Windows.Forms.Label PayCard_lbl_AmountToPay;
+        private System.Windows.Forms.Label PayCard_lbl_AmountTitle;
+        private System.Windows.Forms.Label PayCard_lbl_Method;
+        private System.Windows.Forms.Label PayCard_lbl_TitleMethod;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox28;
     }
 }
