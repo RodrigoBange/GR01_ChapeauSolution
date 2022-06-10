@@ -17,13 +17,15 @@ namespace ChapeauLogic
             employeeDao = new EmployeeDao();
         }
 
-        public List<Employee> GetAllEmployees()
+        public Employee GetEmployee(int employeeID)
         {
-            // Get list of employees
-            List<Employee> employees = employeeDao.GetAllEmployees("SELECT employeeName, employeeRole, email, passwordSalt, passwordHash, isFirstLogin, securityQuestion, securityAnswer FROM [EMPLOYEE]");
+            // Get employee by employeeID
+            return employeeDao.GetEmployee(employeeID);
+        }
 
-            // Return list
-            return employees;
+        public void CreateEmployee(string name, string role, string salt, string digest)
+        {
+            employeeDao.CreateUser(name, role, salt, digest);
         }
     }
 }
