@@ -2127,6 +2127,7 @@
             // 
             // Process_ProcessGIF
             // 
+            this.Process_ProcessGIF.Image = global::ChapeauUI.Properties.Resources.ZZ5H;
             this.Process_ProcessGIF.Location = new System.Drawing.Point(198, 81);
             this.Process_ProcessGIF.Name = "Process_ProcessGIF";
             this.Process_ProcessGIF.Size = new System.Drawing.Size(130, 130);
