@@ -988,7 +988,7 @@ namespace GR01_ChapeauSolution
 
         private void LoadPaymentProcessingView()
         {
-            tabC_Body.SelectedTab = tab_ProcessPayment;
+            tabC_Body.SelectedTab = tab_CardPayment;
             PaymentProcess_lbl_FunFact.Text = LoadFunFact();
             paymentTimeLeft = 6;
             PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
