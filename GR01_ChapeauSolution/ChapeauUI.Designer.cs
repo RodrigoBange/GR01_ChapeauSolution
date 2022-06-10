@@ -2255,10 +2255,12 @@
             // PaymentComplete_txt_Comment
             // 
             this.PaymentComplete_txt_Comment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.PaymentComplete_txt_Comment.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.PaymentComplete_txt_Comment.ForeColor = System.Drawing.Color.White;
-            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(124, 359);
+            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(136, 333);
+            this.PaymentComplete_txt_Comment.Multiline = true;
             this.PaymentComplete_txt_Comment.Name = "PaymentComplete_txt_Comment";
-            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(278, 24);
+            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(249, 61);
             this.PaymentComplete_txt_Comment.TabIndex = 13;
             this.PaymentComplete_txt_Comment.Text = "Ask the guest for a review and enter it here.";
             this.PaymentComplete_txt_Comment.Click += new System.EventHandler(this.PaymentComplete_txt_Comment_Click);
