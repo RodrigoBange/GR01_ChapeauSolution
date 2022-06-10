@@ -913,8 +913,14 @@ namespace GR01_ChapeauSolution
         private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
         {
             //If entered amount given is more than the bill price, calculate change
-            if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
+            if (PayCash_num_AmountGiven.Value > (decimal)bill.PriceRemaining)
+            {
                 PayCash_num_Change.Value = (PayCash_num_AmountGiven.Value - (decimal)bill.PriceRemaining);
+            }
+            else //If given amount is lower, make change amount 0
+            {
+                PayCash_num_Change.Value = 0;
+            }
         }
 
         //Depending on the payment method, calculates values different when new user input is given

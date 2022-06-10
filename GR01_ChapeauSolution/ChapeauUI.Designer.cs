@@ -197,6 +197,10 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
+            this.PayCash_lbl_Instruction1 = new System.Windows.Forms.Label();
+            this.PayCash_lbl_Instruction2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox14 = new System.Windows.Forms.PictureBox();
             pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -1788,6 +1792,8 @@
             // 
             // Cash_pnl
             // 
+            this.Cash_pnl.Controls.Add(this.PayCash_lbl_Instruction2);
+            this.Cash_pnl.Controls.Add(this.PayCash_lbl_Instruction1);
             this.Cash_pnl.Controls.Add(this.Cash_btn_Back);
             this.Cash_pnl.Controls.Add(this.Cash_btn_Pay);
             this.Cash_pnl.Controls.Add(this.PayCash_num_Change);
@@ -1820,10 +1826,10 @@
             // Cash_btn_Pay
             // 
             this.Cash_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Cash_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_btn_Pay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cash_btn_Pay.Location = new System.Drawing.Point(167, 474);
             this.Cash_btn_Pay.Name = "Cash_btn_Pay";
-            this.Cash_btn_Pay.Size = new System.Drawing.Size(158, 36);
+            this.Cash_btn_Pay.Size = new System.Drawing.Size(158, 58);
             this.Cash_btn_Pay.TabIndex = 8;
             this.Cash_btn_Pay.Text = "Complete Payment";
             this.Cash_btn_Pay.UseVisualStyleBackColor = false;
@@ -1833,7 +1839,7 @@
             // 
             this.PayCash_num_Change.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.PayCash_num_Change.DecimalPlaces = 2;
-            this.PayCash_num_Change.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_num_Change.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_num_Change.ForeColor = System.Drawing.Color.White;
             this.PayCash_num_Change.Location = new System.Drawing.Point(184, 382);
             this.PayCash_num_Change.Maximum = new decimal(new int[] {
@@ -1842,7 +1848,7 @@
             0,
             0});
             this.PayCash_num_Change.Name = "PayCash_num_Change";
-            this.PayCash_num_Change.Size = new System.Drawing.Size(120, 25);
+            this.PayCash_num_Change.Size = new System.Drawing.Size(120, 27);
             this.PayCash_num_Change.TabIndex = 7;
             this.PayCash_num_Change.ValueChanged += new System.EventHandler(this.PayCash_num_Change_ValueChanged);
             // 
@@ -1850,7 +1856,7 @@
             // 
             this.PayCash_num_AmountGiven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.PayCash_num_AmountGiven.DecimalPlaces = 2;
-            this.PayCash_num_AmountGiven.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_num_AmountGiven.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_num_AmountGiven.ForeColor = System.Drawing.Color.White;
             this.PayCash_num_AmountGiven.Location = new System.Drawing.Point(184, 275);
             this.PayCash_num_AmountGiven.Maximum = new decimal(new int[] {
@@ -1859,47 +1865,47 @@
             0,
             0});
             this.PayCash_num_AmountGiven.Name = "PayCash_num_AmountGiven";
-            this.PayCash_num_AmountGiven.Size = new System.Drawing.Size(120, 25);
+            this.PayCash_num_AmountGiven.Size = new System.Drawing.Size(120, 27);
             this.PayCash_num_AmountGiven.TabIndex = 6;
             this.PayCash_num_AmountGiven.ValueChanged += new System.EventHandler(this.PayCash_num_AmountGiven_ValueChanged);
             // 
             // PayCash_lbl_TitleChange
             // 
             this.PayCash_lbl_TitleChange.AutoSize = true;
-            this.PayCash_lbl_TitleChange.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_TitleChange.Location = new System.Drawing.Point(184, 361);
+            this.PayCash_lbl_TitleChange.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_TitleChange.Location = new System.Drawing.Point(184, 360);
             this.PayCash_lbl_TitleChange.Name = "PayCash_lbl_TitleChange";
-            this.PayCash_lbl_TitleChange.Size = new System.Drawing.Size(58, 18);
+            this.PayCash_lbl_TitleChange.Size = new System.Drawing.Size(62, 19);
             this.PayCash_lbl_TitleChange.TabIndex = 5;
             this.PayCash_lbl_TitleChange.Text = "Change:";
             // 
             // PayCash_TitleAmountGiven
             // 
             this.PayCash_TitleAmountGiven.AutoSize = true;
-            this.PayCash_TitleAmountGiven.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_TitleAmountGiven.Location = new System.Drawing.Point(184, 254);
+            this.PayCash_TitleAmountGiven.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_TitleAmountGiven.Location = new System.Drawing.Point(184, 253);
             this.PayCash_TitleAmountGiven.Name = "PayCash_TitleAmountGiven";
-            this.PayCash_TitleAmountGiven.Size = new System.Drawing.Size(99, 18);
+            this.PayCash_TitleAmountGiven.Size = new System.Drawing.Size(102, 19);
             this.PayCash_TitleAmountGiven.TabIndex = 4;
             this.PayCash_TitleAmountGiven.Text = "Amount given:";
             // 
             // PayCash_lbl_BillTotal
             // 
             this.PayCash_lbl_BillTotal.AutoSize = true;
-            this.PayCash_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(275, 186);
             this.PayCash_lbl_BillTotal.Name = "PayCash_lbl_BillTotal";
-            this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(67, 22);
+            this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(70, 23);
             this.PayCash_lbl_BillTotal.TabIndex = 3;
             this.PayCash_lbl_BillTotal.Text = "amount";
             // 
             // Cash_lbl_AmountTitle
             // 
             this.Cash_lbl_AmountTitle.AutoSize = true;
-            this.Cash_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_lbl_AmountTitle.Location = new System.Drawing.Point(153, 186);
+            this.Cash_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cash_lbl_AmountTitle.Location = new System.Drawing.Point(140, 186);
             this.Cash_lbl_AmountTitle.Name = "Cash_lbl_AmountTitle";
-            this.Cash_lbl_AmountTitle.Size = new System.Drawing.Size(123, 22);
+            this.Cash_lbl_AmountTitle.Size = new System.Drawing.Size(129, 23);
             this.Cash_lbl_AmountTitle.TabIndex = 2;
             this.Cash_lbl_AmountTitle.Text = "Amount to Pay:";
             // 
@@ -1907,7 +1913,7 @@
             // 
             this.Cash_lbl_Method.AutoSize = true;
             this.Cash_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_lbl_Method.Location = new System.Drawing.Point(299, 101);
+            this.Cash_lbl_Method.Location = new System.Drawing.Point(292, 101);
             this.Cash_lbl_Method.Name = "Cash_lbl_Method";
             this.Cash_lbl_Method.Size = new System.Drawing.Size(50, 24);
             this.Cash_lbl_Method.TabIndex = 1;
@@ -1936,6 +1942,8 @@
             // 
             // Card_pnl
             // 
+            this.Card_pnl.Controls.Add(this.label7);
+            this.Card_pnl.Controls.Add(this.label5);
             this.Card_pnl.Controls.Add(this.PayCard_btn_Back);
             this.Card_pnl.Controls.Add(this.PayCard_btn_Pay);
             this.Card_pnl.Controls.Add(this.PayCard_Num_Total);
@@ -1968,7 +1976,7 @@
             // PayCard_btn_Pay
             // 
             this.PayCard_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PayCard_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_btn_Pay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_btn_Pay.Location = new System.Drawing.Point(167, 474);
             this.PayCard_btn_Pay.Name = "PayCard_btn_Pay";
             this.PayCard_btn_Pay.Size = new System.Drawing.Size(158, 36);
@@ -1981,7 +1989,7 @@
             // 
             this.PayCard_Num_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.PayCard_Num_Total.DecimalPlaces = 2;
-            this.PayCard_Num_Total.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_Num_Total.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_Num_Total.ForeColor = System.Drawing.Color.White;
             this.PayCard_Num_Total.Location = new System.Drawing.Point(184, 382);
             this.PayCard_Num_Total.Maximum = new decimal(new int[] {
@@ -1990,7 +1998,7 @@
             0,
             0});
             this.PayCard_Num_Total.Name = "PayCard_Num_Total";
-            this.PayCard_Num_Total.Size = new System.Drawing.Size(120, 25);
+            this.PayCard_Num_Total.Size = new System.Drawing.Size(120, 27);
             this.PayCard_Num_Total.TabIndex = 7;
             this.PayCard_Num_Total.ValueChanged += new System.EventHandler(this.PayCard_Num_Total_ValueChanged);
             // 
@@ -1998,7 +2006,7 @@
             // 
             this.PayCard_Num_Tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.PayCard_Num_Tip.DecimalPlaces = 2;
-            this.PayCard_Num_Tip.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_Num_Tip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_Num_Tip.ForeColor = System.Drawing.Color.White;
             this.PayCard_Num_Tip.Location = new System.Drawing.Point(184, 275);
             this.PayCard_Num_Tip.Maximum = new decimal(new int[] {
@@ -2007,47 +2015,47 @@
             0,
             0});
             this.PayCard_Num_Tip.Name = "PayCard_Num_Tip";
-            this.PayCard_Num_Tip.Size = new System.Drawing.Size(120, 25);
+            this.PayCard_Num_Tip.Size = new System.Drawing.Size(120, 27);
             this.PayCard_Num_Tip.TabIndex = 6;
             this.PayCard_Num_Tip.ValueChanged += new System.EventHandler(this.PayCard_Num_Tip_ValueChanged);
             // 
             // PayCard_lbl_TitleTotalAmount
             // 
             this.PayCard_lbl_TitleTotalAmount.AutoSize = true;
-            this.PayCard_lbl_TitleTotalAmount.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_TitleTotalAmount.Location = new System.Drawing.Point(183, 361);
+            this.PayCard_lbl_TitleTotalAmount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_TitleTotalAmount.Location = new System.Drawing.Point(184, 360);
             this.PayCard_lbl_TitleTotalAmount.Name = "PayCard_lbl_TitleTotalAmount";
-            this.PayCard_lbl_TitleTotalAmount.Size = new System.Drawing.Size(93, 18);
+            this.PayCard_lbl_TitleTotalAmount.Size = new System.Drawing.Size(98, 19);
             this.PayCard_lbl_TitleTotalAmount.TabIndex = 5;
             this.PayCard_lbl_TitleTotalAmount.Text = "Total amount:";
             // 
             // PayCard_lbl_TipTitle
             // 
             this.PayCard_lbl_TipTitle.AutoSize = true;
-            this.PayCard_lbl_TipTitle.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_TipTitle.Location = new System.Drawing.Point(184, 254);
+            this.PayCard_lbl_TipTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_TipTitle.Location = new System.Drawing.Point(184, 253);
             this.PayCard_lbl_TipTitle.Name = "PayCard_lbl_TipTitle";
-            this.PayCard_lbl_TipTitle.Size = new System.Drawing.Size(31, 18);
+            this.PayCard_lbl_TipTitle.Size = new System.Drawing.Size(33, 19);
             this.PayCard_lbl_TipTitle.TabIndex = 4;
             this.PayCard_lbl_TipTitle.Text = "Tip:";
             // 
             // PayCard_lbl_AmountToPay
             // 
             this.PayCard_lbl_AmountToPay.AutoSize = true;
-            this.PayCard_lbl_AmountToPay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_AmountToPay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_lbl_AmountToPay.Location = new System.Drawing.Point(275, 186);
             this.PayCard_lbl_AmountToPay.Name = "PayCard_lbl_AmountToPay";
-            this.PayCard_lbl_AmountToPay.Size = new System.Drawing.Size(67, 22);
+            this.PayCard_lbl_AmountToPay.Size = new System.Drawing.Size(70, 23);
             this.PayCard_lbl_AmountToPay.TabIndex = 3;
             this.PayCard_lbl_AmountToPay.Text = "amount";
             // 
             // PayCard_lbl_AmountTitle
             // 
             this.PayCard_lbl_AmountTitle.AutoSize = true;
-            this.PayCard_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_AmountTitle.Location = new System.Drawing.Point(153, 186);
+            this.PayCard_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCard_lbl_AmountTitle.Location = new System.Drawing.Point(140, 186);
             this.PayCard_lbl_AmountTitle.Name = "PayCard_lbl_AmountTitle";
-            this.PayCard_lbl_AmountTitle.Size = new System.Drawing.Size(123, 22);
+            this.PayCard_lbl_AmountTitle.Size = new System.Drawing.Size(129, 23);
             this.PayCard_lbl_AmountTitle.TabIndex = 2;
             this.PayCard_lbl_AmountTitle.Text = "Amount to Pay:";
             // 
@@ -2055,7 +2063,7 @@
             // 
             this.PayCard_lbl_Method.AutoSize = true;
             this.PayCard_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_Method.Location = new System.Drawing.Point(299, 101);
+            this.PayCard_lbl_Method.Location = new System.Drawing.Point(293, 101);
             this.PayCard_lbl_Method.Name = "PayCard_lbl_Method";
             this.PayCard_lbl_Method.Size = new System.Drawing.Size(49, 24);
             this.PayCard_lbl_Method.TabIndex = 1;
@@ -2324,6 +2332,42 @@
             this.border_Top.Size = new System.Drawing.Size(529, 4);
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
+            // 
+            // PayCash_lbl_Instruction1
+            // 
+            this.PayCash_lbl_Instruction1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_Instruction1.Location = new System.Drawing.Point(8, 253);
+            this.PayCash_lbl_Instruction1.Name = "PayCash_lbl_Instruction1";
+            this.PayCash_lbl_Instruction1.Size = new System.Drawing.Size(170, 94);
+            this.PayCash_lbl_Instruction1.TabIndex = 10;
+            this.PayCash_lbl_Instruction1.Text = "Enter the amount the guest gives in order to calculate the change.";
+            // 
+            // PayCash_lbl_Instruction2
+            // 
+            this.PayCash_lbl_Instruction2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCash_lbl_Instruction2.Location = new System.Drawing.Point(8, 329);
+            this.PayCash_lbl_Instruction2.Name = "PayCash_lbl_Instruction2";
+            this.PayCash_lbl_Instruction2.Size = new System.Drawing.Size(143, 50);
+            this.PayCash_lbl_Instruction2.TabIndex = 11;
+            this.PayCash_lbl_Instruction2.Text = "Partial payments are also possible.";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(8, 347);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 50);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Partial payments are also possible.";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(8, 254);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 80);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "The tip can be entered manually or calculated by altering the total amount.";
             // 
             // Form_Chapeau
             // 
@@ -2606,5 +2650,9 @@
         private System.Windows.Forms.ColumnHeader VATcolBasePrice;
         private System.Windows.Forms.ColumnHeader VATcolVatAmount;
         private System.Windows.Forms.ColumnHeader VATcolTotal;
+        private System.Windows.Forms.Label PayCash_lbl_Instruction2;
+        private System.Windows.Forms.Label PayCash_lbl_Instruction1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }
