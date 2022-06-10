@@ -45,12 +45,11 @@ namespace ChapeauUI
             this.Comment = new System.Windows.Forms.ColumnHeader();
             this.Time = new System.Windows.Forms.ColumnHeader();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_Food = new System.Windows.Forms.Panel();
             this.pnl_Kitchen = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_TitleKitchen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView_Food = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
@@ -58,10 +57,11 @@ namespace ChapeauUI
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.lbl_TitleKitchen = new System.Windows.Forms.Label();
+            this.Lunch = new System.Windows.Forms.Button();
+            this.Dinner = new System.Windows.Forms.Button();
             this.pnl_Bar.SuspendLayout();
             this.pnl_Header.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnl_Food.SuspendLayout();
             this.pnl_Kitchen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,22 +203,22 @@ namespace ChapeauUI
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             // 
-            // panel1
+            // pnl_Food
             // 
-            this.panel1.Controls.Add(this.pnl_Kitchen);
-            this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(-2, -4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 638);
-            this.panel1.TabIndex = 1;
+            this.pnl_Food.Controls.Add(this.pnl_Kitchen);
+            this.pnl_Food.Controls.Add(this.listView_Food);
+            this.pnl_Food.Location = new System.Drawing.Point(-2, -4);
+            this.pnl_Food.Name = "pnl_Food";
+            this.pnl_Food.Size = new System.Drawing.Size(913, 638);
+            this.pnl_Food.TabIndex = 1;
             // 
             // pnl_Kitchen
             // 
             this.pnl_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_Kitchen.Controls.Add(this.Dinner);
+            this.pnl_Kitchen.Controls.Add(this.Lunch);
             this.pnl_Kitchen.Controls.Add(this.lbl_TitleKitchen);
-            this.pnl_Kitchen.Controls.Add(this.button1);
             this.pnl_Kitchen.Controls.Add(this.label1);
-            this.pnl_Kitchen.Controls.Add(this.button2);
             this.pnl_Kitchen.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Kitchen.Location = new System.Drawing.Point(0, 0);
             this.pnl_Kitchen.Margin = new System.Windows.Forms.Padding(2);
@@ -226,14 +226,19 @@ namespace ChapeauUI
             this.pnl_Kitchen.Size = new System.Drawing.Size(913, 67);
             this.pnl_Kitchen.TabIndex = 1;
             // 
-            // button1
+            // lbl_TitleKitchen
             // 
-            this.button1.Location = new System.Drawing.Point(35, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ready";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbl_TitleKitchen.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_TitleKitchen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_TitleKitchen.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TitleKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.lbl_TitleKitchen.Location = new System.Drawing.Point(0, 0);
+            this.lbl_TitleKitchen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_TitleKitchen.Name = "lbl_TitleKitchen";
+            this.lbl_TitleKitchen.Size = new System.Drawing.Size(913, 67);
+            this.lbl_TitleKitchen.TabIndex = 4;
+            this.lbl_TitleKitchen.Text = "Kitchen View";
+            this.lbl_TitleKitchen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -243,28 +248,11 @@ namespace ChapeauUI
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 1;
             // 
-            // button2
+            // listView_Food
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
-            this.button2.BackgroundImage = global::ChapeauUI.Properties.Resources.User_Icon;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1560, 11);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.listView1.CheckBoxes = true;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_Food.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.listView_Food.CheckBoxes = true;
+            this.listView_Food.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -272,14 +260,14 @@ namespace ChapeauUI
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
-            this.listView1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 81);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(883, 538);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView_Food.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.listView_Food.HideSelection = false;
+            this.listView_Food.Location = new System.Drawing.Point(12, 81);
+            this.listView_Food.Name = "listView_Food";
+            this.listView_Food.Size = new System.Drawing.Size(883, 538);
+            this.listView_Food.TabIndex = 2;
+            this.listView_Food.UseCompatibleStateImageBehavior = false;
+            this.listView_Food.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -320,19 +308,25 @@ namespace ChapeauUI
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 130;
             // 
-            // lbl_TitleKitchen
+            // Lunch
             // 
-            this.lbl_TitleKitchen.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TitleKitchen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_TitleKitchen.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TitleKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
-            this.lbl_TitleKitchen.Location = new System.Drawing.Point(0, 0);
-            this.lbl_TitleKitchen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_TitleKitchen.Name = "lbl_TitleKitchen";
-            this.lbl_TitleKitchen.Size = new System.Drawing.Size(913, 67);
-            this.lbl_TitleKitchen.TabIndex = 4;
-            this.lbl_TitleKitchen.Text = "Kitchen View";
-            this.lbl_TitleKitchen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lunch.Location = new System.Drawing.Point(14, 32);
+            this.Lunch.Name = "Lunch";
+            this.Lunch.Size = new System.Drawing.Size(94, 29);
+            this.Lunch.TabIndex = 5;
+            this.Lunch.Text = "Lunch";
+            this.Lunch.UseVisualStyleBackColor = true;
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
+            // 
+            // Dinner
+            // 
+            this.Dinner.Location = new System.Drawing.Point(114, 32);
+            this.Dinner.Name = "Dinner";
+            this.Dinner.Size = new System.Drawing.Size(94, 29);
+            this.Dinner.TabIndex = 6;
+            this.Dinner.Text = "Dinner";
+            this.Dinner.UseVisualStyleBackColor = true;
+            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
             // 
             // KitchenBar_UI
             // 
@@ -340,14 +334,14 @@ namespace ChapeauUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(908, 631);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_Food);
             this.Controls.Add(this.pnl_Bar);
             this.Name = "KitchenBar_UI";
             this.Text = "Form1";
             this.pnl_Bar.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnl_Food.ResumeLayout(false);
             this.pnl_Kitchen.ResumeLayout(false);
             this.pnl_Kitchen.PerformLayout();
             this.ResumeLayout(false);
@@ -372,13 +366,11 @@ namespace ChapeauUI
         private System.Windows.Forms.ColumnHeader Order;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_Ready;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_Food;
         private System.Windows.Forms.Panel pnl_Kitchen;
         private System.Windows.Forms.Label lbl_TitleKitchen;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView_Food;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -386,5 +378,7 @@ namespace ChapeauUI
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button Dinner;
+        private System.Windows.Forms.Button Lunch;
     }
 }
