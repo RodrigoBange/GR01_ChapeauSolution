@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChapeauLogic
 {
-    internal class PaymentService
+    public class PaymentService
     {
 
     }

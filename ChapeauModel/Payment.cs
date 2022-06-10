@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChapeauModel
 {
-    internal class Payment
+    public class Payment
     {
         public Bill Bill { get; set; }
         public DateTime TimePaid { get; private set; }
