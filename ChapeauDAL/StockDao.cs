@@ -27,15 +27,8 @@ namespace ChapeauDAL
                     new SqlParameter("@itemID", item.ItemID)
                 };
 
-                try
-                {
-                    // Deplete item stock in database
-                    ExecuteEditQuery(query, sqlParameters);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("There is an issue adjusting the stock in the database.");
-                }
+                // Deplete item stock in database
+                ExecuteEditQuery(query, sqlParameters);
             }
         }
 
@@ -58,16 +51,9 @@ namespace ChapeauDAL
                     new SqlParameter("@itemID", orderItem.ItemID)
                 };
 
-                try
-                {
-                    // Select from database with query and add to list
-                    string itemName = ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
-                    if (itemName != null) { lowStockItems.Add(itemName); }
-                }
-                catch (Exception)
-                {
-                    throw new Exception("There is an issue retrieving the stock status from the database.");
-                }
+                // Select from database with query and add to list
+                string itemName = ReadStorageData(ExecuteSelectQuery(query, sqlParameters));
+                if (itemName != null) { lowStockItems.Add(itemName); }
             }
 
             // Return list
@@ -78,14 +64,14 @@ namespace ChapeauDAL
         private string ReadStorageData(DataTable dataTable)
         {
             // If a record has been found
-            if (dataTable.Rows.Count > 0)
+            if (dataTable != null && dataTable.Rows.Count > 0)
             {
                 // Return item name
                 return dataTable.Rows[0]["itemNameShort"].ToString();
             }
             else
             {
-                // If none have been found, return null
+                // If a record hasn't been found
                 return null;
             }
         }

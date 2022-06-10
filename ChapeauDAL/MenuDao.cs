@@ -44,7 +44,6 @@ namespace ChapeauDAL
 
             // Return result of query with list 
             return ReadTables(ExecuteSelectQuery(query, new SqlParameter[0]));
-
         }
 
         private List<MenuItem> ReadTables(DataTable dataTable)
@@ -52,7 +51,8 @@ namespace ChapeauDAL
             // Create new list of MenuItem objects
             List<MenuItem> menuItems = new List<MenuItem>();
 
-            try
+            // If datatable contains values...
+            if (dataTable != null)
             {
                 // For each data row, create new MenuItem object and fill data
                 foreach (DataRow dr in dataTable.Rows)
@@ -70,7 +70,7 @@ namespace ChapeauDAL
                     menuItems.Add(item);
                 }
             }
-            catch (NullReferenceException)
+            else
             {
                 throw new Exception("There is an issue retrieving the menu data from the database.");
             }
