@@ -27,6 +27,7 @@ namespace GR01_ChapeauSolution
         OrderService orderService;
         StockService stockService;
         EmployeeService employeeService;
+        TableService tableService;
         BillService billService;
         PaymentService paymentService;
         Random rnd;
@@ -36,7 +37,8 @@ namespace GR01_ChapeauSolution
         const string hexColorDark = "#1C1B2D";
 
         // General variables
-        private int tableNumber = 0;
+        private int tableNumber = 1;
+        private List<Tuple<Button, Table>> tables = new List<Tuple<Button, Table>>();
 
         Employee employee;
 
@@ -55,6 +57,7 @@ namespace GR01_ChapeauSolution
             orderService = new OrderService();
             stockService = new StockService();
             employeeService = new EmployeeService();
+            tableService = new TableService();
             billService = new BillService();
             paymentService = new PaymentService();
             rnd = new Random();
@@ -75,6 +78,27 @@ namespace GR01_ChapeauSolution
 
             // Start tab on load
             tabC_Body.SelectedTab = tab_Tables;
+
+            // Fill table list
+            tables.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_2, new Table(2, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_3, new Table(3, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_4, new Table(4, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_5, new Table(5, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_6, new Table(6, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_7, new Table(7, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_8, new Table(8, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_9, new Table(9, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_10, new Table(10, false)));
+
+            // Check for table occupied
+            CheckTableStatuses();
+
+            // Load running orders
+            List<OrderItem> items = new List<OrderItem>();
+            C_Table_Order tab_tableOrder = new C_Table_Order(items);
+            flow_TableOverview.Controls.Add(tab_tableOrder);
+
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -100,8 +124,8 @@ namespace GR01_ChapeauSolution
                         // Set title
                         lbl_Title.Text = "Overview";
 
-                        // Test Reservations
-                        TestAddReservations();
+                        // Check for table occupied
+                        CheckTableStatuses();
                     }
                     break;
                 // Order View
@@ -128,6 +152,9 @@ namespace GR01_ChapeauSolution
                         flow_Order_Items.Controls.Clear();
                         totalOrderPrice = 0.00;
                         lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
+
+                        // Disable Place Order
+                        ActivatePlaceOrder();
 
                         // Set the width to hide the scrollbar for a modern mobile design
                         flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
@@ -225,26 +252,63 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
-        private void TestAddReservations()
+        private void CheckTableStatuses()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i < tables.Count + 1; i++)
             {
-                // Create new Table order
-                C_Table_Order table_order = new C_Table_Order();
-
-                // Add reservation to flow panel
-                flow_TableOverview.Controls.Add(table_order);
+                if (tableService.TableOccupied(i))
+                {
+                    tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
+                    tables[i - 1].Item2.IsOccupied = true;
+                }
             }
         }
 
-        private void FreeTable(Button table, int tableNumber)
-        {
-            if (table.Image == Resources.Table_White)
+        private void OccupiedTable()
+        {            
+            if (tables[tableNumber - 1].Item2.IsOccupied)
             {
-                MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber);
-                messageBox.ShowDialog();
-                // DialogResult result = messageBox.ShowDialog();
+                tabC_Body.SelectedTab = tab_Order;
             }
+            else
+            {
+                using (MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber))
+                {
+                    if (messageBox.ShowDialog() == DialogResult.Yes)
+                    {
+                        tableService.SetTableOccupied(tableNumber);
+                        tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                        tables[tableNumber - 1].Item2.IsOccupied = true;
+                    }
+                    else
+                        tabC_Body.SelectedTab = tab_Order;
+                }
+            }
+        }
+
+        private void UpdateOrders()
+        {
+            List<OrderItem> items = orderService.GetOrderItems();
+            List<OrderItem> tempOrderedOrders = new List<OrderItem>();
+
+            C_Table_Order tab_tableOrder = new C_Table_Order(items);
+
+            foreach (OrderItem item in items)
+            {
+                if (item.TableID == 1)
+                {
+                    
+                }
+            }
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i == 0 || items[i].OrderID != items[i - 1].OrderID)
+                {
+                    tempOrderedOrders.Clear();
+                    tempOrderedOrders.Add(items[i]);
+                }
+            }            
         }
 
         private void btn_Table_1_Click(object sender, EventArgs e)
@@ -252,9 +316,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 1;
 
-            // Open order view
-            FreeTable(btn_Table_1, 1);
-            //tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_2_Click(object sender, EventArgs e)
@@ -262,8 +325,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 2;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_3_Click(object sender, EventArgs e)
@@ -271,8 +334,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 3;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_4_Click(object sender, EventArgs e)
@@ -280,8 +343,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 4;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_5_Click(object sender, EventArgs e)
@@ -289,8 +352,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 5;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_6_Click(object sender, EventArgs e)
@@ -298,15 +361,16 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 6;
 
-            tabC_Body.SelectedIndex = 3;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 7;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_8_Click(object sender, EventArgs e)
@@ -314,24 +378,24 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 8;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_9_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 9;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_10_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 10;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         #endregion
 
@@ -462,8 +526,8 @@ namespace GR01_ChapeauSolution
                 // Add to total price
                 UpdateTotalPrice(orderItem.Price);
 
-                // Activate Checkout button
-                ActivateCheckout();
+                // Activate Place Order button
+                ActivatePlaceOrder();
             }
             else { AddToOrderQuantity(menuItem.ItemID); }
         }
@@ -516,7 +580,7 @@ namespace GR01_ChapeauSolution
                         orderItems.RemoveAt(i);
 
                         // Check for checkout functionality
-                        ActivateCheckout();
+                        ActivatePlaceOrder();
 
                         // Return
                         return;
@@ -646,7 +710,7 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        private void ActivateCheckout()
+        private void ActivatePlaceOrder()
         {
             // If there are items added, enable checkout option
             if (orderItems.Count > 0)

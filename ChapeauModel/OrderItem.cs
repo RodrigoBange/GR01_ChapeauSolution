@@ -14,6 +14,11 @@ namespace ChapeauModel
         public double Price { get; set; }
         public int Quantity { get; set; }
         public int OrderID { get; set; }
+        public int OrderItemID { get; set; }
+        public DateTime OrderTime { get; set; }
+        public int TableID { get; set; }
+        public string ItemName { get; set; }
+
         public string Comment 
         { 
             get { return comment; }
@@ -26,7 +31,9 @@ namespace ChapeauModel
             }
         }
 
-        // Constructor
+        // Constructors
+        public OrderItem() { }
+
         public OrderItem(int itemID, double price)
         {
             ItemID = itemID;

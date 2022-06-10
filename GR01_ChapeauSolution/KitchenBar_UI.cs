@@ -13,14 +13,40 @@ namespace ChapeauUI
 {
     public partial class KitchenBar_UI : Form
     {
+        Employee employee;
+
         public KitchenBar_UI()
         {
+        }
+
+        public KitchenBar_UI(Employee employee)
+        {
             InitializeComponent();
-            listView_Bar.CheckBoxes = true;
-            btn_User.Show();
-            lbl_TitleKitchen.Hide();
-            label_Time.Show();
-            FillBar();
+
+            this.employee = employee;
+
+            if (this.employee.EmployeeRole == "Chef")
+            {
+                // Display Kitchen panel
+                pnl_Kitchen.Visible = true;
+                pnl_Bar.Visible = false;
+                btn_User.Show();
+                listView_Bar.CheckBoxes = true;
+                label_Time.Show();
+                label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+            else if (this.employee.EmployeeRole == "Bartender")
+            {
+                // Display Bar panel
+                pnl_Bar.Visible = true;
+                pnl_Kitchen.Visible = false;
+                btn_User.Show();
+                FillBar();
+                listView_Bar.CheckBoxes = true;
+                label_Time.Show();
+                label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+            
 
         }
 
@@ -43,16 +69,63 @@ namespace ChapeauUI
             }
         }
 
+        public void FillLunch()
+        {
+            Kitchen_BarService LunchService = new Kitchen_BarService();
+            List<KitchenBar> LunchList = LunchService.GetLunchItems();
+
+            foreach (KitchenBar item in LunchList)
+            {
+                ListViewItem item1 = new ListViewItem(" ");
+                item1.SubItems.Add(item.OrderID.ToString());
+                item1.SubItems.Add(item.Item_Type.ToString());
+                item1.SubItems.Add(item.ShortName.ToString());
+                item1.SubItems.Add(item.Quantity.ToString());
+                item1.SubItems.Add(item.Comment.ToString());
+                item1.SubItems.Add(item.Date_Time.ToString("HH:mm:ss"));
+
+                listView_Food.Items.Add(item1);
+            }
+        }
+
+        public void FillDinner()
+        {
+            Kitchen_BarService DinnerService = new Kitchen_BarService();
+            List<KitchenBar> DinnerList = DinnerService.GetDinnerItems();
+
+            foreach (KitchenBar item in DinnerList)
+            {
+                ListViewItem item1 = new ListViewItem(" ");
+                item1.SubItems.Add(item.OrderID.ToString());
+                item1.SubItems.Add(item.Item_Type.ToString());
+                item1.SubItems.Add(item.ShortName.ToString());
+                item1.SubItems.Add(item.Quantity.ToString());
+                item1.SubItems.Add(item.Comment.ToString());
+                item1.SubItems.Add(item.Date_Time.ToString("HH:mm:ss"));
+
+                listView_Food.Items.Add(item1);
+            }
+        }
+
         public void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Kitchen_BarService barService = new Kitchen_BarService();
             List<KitchenBar> BarList = barService.GetBarItems();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btn_Ready_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-            label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+
+        }
+
+        private void Lunch_Click(object sender, EventArgs e)
+        {
+            FillLunch();
+        }
+
+        private void Dinner_Click(object sender, EventArgs e)
+        {
+            FillDinner();
         }
     }
 }

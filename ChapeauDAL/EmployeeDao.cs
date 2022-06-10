@@ -24,24 +24,28 @@ namespace ChapeauDAL
 
         private Employee GetEmployeeInfo(DataTable dataTable)
         {
-            if (dataTable.Rows.Count > 0)
+            // Create a new employee
+            Employee employee = new Employee();
+
+            try
             {
-                // Create new list of employees
-                Employee employee = new Employee()
+                if (dataTable.Rows.Count > 0)
                 {
-                    EmployeeId = (int)dataTable.Rows[0]["employeeID"],
-                    EmployeeName = (string)dataTable.Rows[0]["employeeName"],
-                    EmployeeRole = (string)dataTable.Rows[0]["employeeRole"],
-                    Salt = (string)dataTable.Rows[0]["passwordSalt"],
-                    Hash = (string)dataTable.Rows[0]["passwordHash"],
-                };
-                // Return employee
-                return employee;
+                    employee.EmployeeId = (int)dataTable.Rows[0]["employeeID"];
+                    employee.EmployeeName = (string)dataTable.Rows[0]["employeeName"];
+                    employee.EmployeeRole = (string)dataTable.Rows[0]["employeeRole"];
+                    employee.Salt = (string)dataTable.Rows[0]["passwordSalt"];
+                    employee.Hash = (string)dataTable.Rows[0]["passwordHash"];
+                }
             }
-            else
-            { 
-                return null;
+            catch(Exception ex)
+            {
+                // Throw exception
+                throw new Exception("Something went wrong while reading employee data from the database.");
             }
+
+            // Return employee
+            return employee;
         }
 
         public void CreateUser(string name, string role, string salt, string digest)

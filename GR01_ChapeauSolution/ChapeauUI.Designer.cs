@@ -304,10 +304,10 @@
             // pictureBox18
             // 
             pictureBox18.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox18.Location = new System.Drawing.Point(4, -9);
-            pictureBox18.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox18.Location = new System.Drawing.Point(5, -11);
+            pictureBox18.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox18.Name = "pictureBox18";
-            pictureBox18.Size = new System.Drawing.Size(25, 53);
+            pictureBox18.Size = new System.Drawing.Size(31, 67);
             pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox18.TabIndex = 0;
             pictureBox18.TabStop = false;
@@ -315,10 +315,10 @@
             // pictureBox14
             // 
             pictureBox14.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox14.Location = new System.Drawing.Point(4, -9);
-            pictureBox14.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox14.Location = new System.Drawing.Point(5, -11);
+            pictureBox14.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new System.Drawing.Size(25, 53);
+            pictureBox14.Size = new System.Drawing.Size(31, 67);
             pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox14.TabIndex = 0;
             pictureBox14.TabStop = false;
@@ -326,10 +326,10 @@
             // pictureBox16
             // 
             pictureBox16.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox16.Location = new System.Drawing.Point(4, -9);
-            pictureBox16.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox16.Location = new System.Drawing.Point(5, -12);
+            pictureBox16.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new System.Drawing.Size(25, 53);
+            pictureBox16.Size = new System.Drawing.Size(31, 67);
             pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox16.TabIndex = 0;
             pictureBox16.TabStop = false;
@@ -337,10 +337,10 @@
             // pictureBox12
             // 
             pictureBox12.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox12.Location = new System.Drawing.Point(4, -9);
-            pictureBox12.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox12.Location = new System.Drawing.Point(5, -11);
+            pictureBox12.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new System.Drawing.Size(25, 53);
+            pictureBox12.Size = new System.Drawing.Size(31, 67);
             pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 0;
             pictureBox12.TabStop = false;
@@ -348,10 +348,10 @@
             // pictureBox10
             // 
             pictureBox10.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox10.Location = new System.Drawing.Point(4, -8);
-            pictureBox10.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox10.Location = new System.Drawing.Point(5, -10);
+            pictureBox10.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new System.Drawing.Size(25, 53);
+            pictureBox10.Size = new System.Drawing.Size(31, 67);
             pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 0;
             pictureBox10.TabStop = false;
@@ -359,10 +359,10 @@
             // pictureBox8
             // 
             pictureBox8.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox8.Location = new System.Drawing.Point(4, -7);
-            pictureBox8.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox8.Location = new System.Drawing.Point(5, -9);
+            pictureBox8.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new System.Drawing.Size(25, 53);
+            pictureBox8.Size = new System.Drawing.Size(31, 67);
             pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -370,10 +370,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox6.Location = new System.Drawing.Point(4, -9);
-            pictureBox6.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox6.Location = new System.Drawing.Point(5, -11);
+            pictureBox6.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new System.Drawing.Size(25, 53);
+            pictureBox6.Size = new System.Drawing.Size(31, 67);
             pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
@@ -381,10 +381,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox4.Location = new System.Drawing.Point(4, -9);
-            pictureBox4.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox4.Location = new System.Drawing.Point(5, -11);
+            pictureBox4.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new System.Drawing.Size(25, 53);
+            pictureBox4.Size = new System.Drawing.Size(31, 67);
             pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
@@ -392,10 +392,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox1.Location = new System.Drawing.Point(4, 9);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            pictureBox1.Location = new System.Drawing.Point(5, 12);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(25, 53);
+            pictureBox1.Size = new System.Drawing.Size(31, 67);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -403,10 +403,10 @@
             // img_Drink
             // 
             img_Drink.Image = global::ChapeauUI.Properties.Resources.drink2;
-            img_Drink.Location = new System.Drawing.Point(4, 9);
-            img_Drink.Margin = new System.Windows.Forms.Padding(0, 0, 24, 0);
+            img_Drink.Location = new System.Drawing.Point(5, 12);
+            img_Drink.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             img_Drink.Name = "img_Drink";
-            img_Drink.Size = new System.Drawing.Size(25, 53);
+            img_Drink.Size = new System.Drawing.Size(31, 67);
             img_Drink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             img_Drink.TabIndex = 0;
             img_Drink.TabStop = false;
@@ -417,7 +417,7 @@
             pictureBox25.Location = new System.Drawing.Point(0, 0);
             pictureBox25.Margin = new System.Windows.Forms.Padding(0);
             pictureBox25.Name = "pictureBox25";
-            pictureBox25.Size = new System.Drawing.Size(25, 29);
+            pictureBox25.Size = new System.Drawing.Size(31, 37);
             pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox25.TabIndex = 1;
             pictureBox25.TabStop = false;
@@ -428,7 +428,7 @@
             pictureBox24.Location = new System.Drawing.Point(0, 0);
             pictureBox24.Margin = new System.Windows.Forms.Padding(0);
             pictureBox24.Name = "pictureBox24";
-            pictureBox24.Size = new System.Drawing.Size(25, 25);
+            pictureBox24.Size = new System.Drawing.Size(31, 31);
             pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox24.TabIndex = 1;
             pictureBox24.TabStop = false;
@@ -451,7 +451,7 @@
             pictureBox22.Location = new System.Drawing.Point(0, 0);
             pictureBox22.Margin = new System.Windows.Forms.Padding(0);
             pictureBox22.Name = "pictureBox22";
-            pictureBox22.Size = new System.Drawing.Size(25, 25);
+            pictureBox22.Size = new System.Drawing.Size(31, 31);
             pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox22.TabIndex = 1;
             pictureBox22.TabStop = false;
@@ -545,7 +545,7 @@
             this.tabC_Body.Name = "tabC_Body";
             this.tabC_Body.Padding = new System.Drawing.Point(0, 0);
             this.tabC_Body.SelectedIndex = 0;
-            this.tabC_Body.Size = new System.Drawing.Size(529, 650);
+            this.tabC_Body.Size = new System.Drawing.Size(660, 812);
             this.tabC_Body.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabC_Body.TabIndex = 0;
             this.tabC_Body.SelectedIndexChanged += new System.EventHandler(this.SelectedTabChanged);
@@ -554,11 +554,11 @@
             // 
             this.tab_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Account.Controls.Add(this.panel1);
-            this.tab_Account.Location = new System.Drawing.Point(4, 24);
-            this.tab_Account.Margin = new System.Windows.Forms.Padding(1);
+            this.tab_Account.Location = new System.Drawing.Point(4, 30);
+            this.tab_Account.Margin = new System.Windows.Forms.Padding(2);
             this.tab_Account.Name = "tab_Account";
-            this.tab_Account.Padding = new System.Windows.Forms.Padding(1);
-            this.tab_Account.Size = new System.Drawing.Size(521, 622);
+            this.tab_Account.Padding = new System.Windows.Forms.Padding(2);
+            this.tab_Account.Size = new System.Drawing.Size(652, 778);
             this.tab_Account.TabIndex = 10;
             this.tab_Account.Text = "Account";
             // 
@@ -567,9 +567,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 620);
+            this.panel1.Size = new System.Drawing.Size(648, 774);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -580,19 +580,19 @@
             this.panel2.Controls.Add(this.lbl_Account_Role);
             this.panel2.Controls.Add(this.lbl_Account_EmployeeID);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(68, 50);
+            this.panel2.Location = new System.Drawing.Point(85, 62);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(383, 525);
+            this.panel2.Size = new System.Drawing.Size(479, 656);
             this.panel2.TabIndex = 0;
             // 
             // lbl_Account_EmployeeName
             // 
             this.lbl_Account_EmployeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_EmployeeName.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(112, 265);
-            this.lbl_Account_EmployeeName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(140, 331);
+            this.lbl_Account_EmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_EmployeeName.Name = "lbl_Account_EmployeeName";
-            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(164, 35);
+            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(205, 44);
             this.lbl_Account_EmployeeName.TabIndex = 6;
             this.lbl_Account_EmployeeName.Text = "Name";
             this.lbl_Account_EmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,10 +605,10 @@
             this.btn_Account_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Account_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Account_Logout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Account_Logout.Location = new System.Drawing.Point(129, 409);
-            this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Account_Logout.Location = new System.Drawing.Point(162, 512);
+            this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Account_Logout.Name = "btn_Account_Logout";
-            this.btn_Account_Logout.Size = new System.Drawing.Size(133, 43);
+            this.btn_Account_Logout.Size = new System.Drawing.Size(167, 53);
             this.btn_Account_Logout.TabIndex = 5;
             this.btn_Account_Logout.Text = "Logout";
             this.btn_Account_Logout.UseVisualStyleBackColor = false;
@@ -619,10 +619,10 @@
             this.lbl_Account_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_Role.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Account_Role.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_Account_Role.Location = new System.Drawing.Point(3, 303);
-            this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_Account_Role.Location = new System.Drawing.Point(3, 379);
+            this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_Role.Name = "lbl_Account_Role";
-            this.lbl_Account_Role.Size = new System.Drawing.Size(383, 23);
+            this.lbl_Account_Role.Size = new System.Drawing.Size(479, 28);
             this.lbl_Account_Role.TabIndex = 4;
             this.lbl_Account_Role.Text = "Role";
             this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -631,10 +631,10 @@
             // 
             this.lbl_Account_EmployeeID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(115, 229);
-            this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(143, 287);
+            this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_EmployeeID.Name = "lbl_Account_EmployeeID";
-            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(164, 35);
+            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(205, 44);
             this.lbl_Account_EmployeeID.TabIndex = 3;
             this.lbl_Account_EmployeeID.Text = "Employee ID";
             this.lbl_Account_EmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -643,10 +643,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ChapeauUI.Properties.Resources.User_Icon;
-            this.pictureBox2.Location = new System.Drawing.Point(115, 57);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox2.Location = new System.Drawing.Point(143, 72);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(161, 153);
+            this.pictureBox2.Size = new System.Drawing.Size(202, 192);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -658,10 +658,10 @@
             this.tab_Tables.Controls.Add(this.flow_Table_ColorMeaning);
             this.tab_Tables.Controls.Add(this.pnl_TableOverview);
             this.tab_Tables.Controls.Add(this.splitter_TableOverview);
-            this.tab_Tables.Location = new System.Drawing.Point(4, 24);
-            this.tab_Tables.Margin = new System.Windows.Forms.Padding(1);
+            this.tab_Tables.Location = new System.Drawing.Point(4, 30);
+            this.tab_Tables.Margin = new System.Windows.Forms.Padding(2);
             this.tab_Tables.Name = "tab_Tables";
-            this.tab_Tables.Size = new System.Drawing.Size(521, 622);
+            this.tab_Tables.Size = new System.Drawing.Size(652, 778);
             this.tab_Tables.TabIndex = 2;
             this.tab_Tables.Text = "Tables";
             // 
@@ -669,10 +669,10 @@
             // 
             this.border_ColorMeaning.BackColor = System.Drawing.Color.White;
             this.border_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.border_ColorMeaning.Location = new System.Drawing.Point(0, 12);
+            this.border_ColorMeaning.Location = new System.Drawing.Point(0, 14);
             this.border_ColorMeaning.Margin = new System.Windows.Forms.Padding(0);
             this.border_ColorMeaning.Name = "border_ColorMeaning";
-            this.border_ColorMeaning.Size = new System.Drawing.Size(521, 1);
+            this.border_ColorMeaning.Size = new System.Drawing.Size(652, 2);
             this.border_ColorMeaning.TabIndex = 5;
             this.border_ColorMeaning.TabStop = false;
             // 
@@ -685,10 +685,10 @@
             this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel5);
             this.flow_Table_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Top;
             this.flow_Table_ColorMeaning.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flow_Table_ColorMeaning.Location = new System.Drawing.Point(0, 1);
+            this.flow_Table_ColorMeaning.Location = new System.Drawing.Point(0, 2);
             this.flow_Table_ColorMeaning.Name = "flow_Table_ColorMeaning";
-            this.flow_Table_ColorMeaning.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.flow_Table_ColorMeaning.Size = new System.Drawing.Size(521, 32);
+            this.flow_Table_ColorMeaning.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.flow_Table_ColorMeaning.Size = new System.Drawing.Size(652, 40);
             this.flow_Table_ColorMeaning.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -697,19 +697,19 @@
             this.flowLayoutPanel3.Controls.Add(this.pictureBox23);
             this.flowLayoutPanel3.Controls.Add(this.label2);
             this.flowLayoutPanel3.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 3);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(13, 3);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(161, 31);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(201, 38);
             this.flowLayoutPanel3.TabIndex = 4;
             // 
             // pictureBox23
             // 
             this.pictureBox23.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox23.Location = new System.Drawing.Point(25, 0);
+            this.pictureBox23.Location = new System.Drawing.Point(31, 0);
             this.pictureBox23.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(27, 29);
+            this.pictureBox23.Size = new System.Drawing.Size(33, 37);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 2;
             this.pictureBox23.TabStop = false;
@@ -718,10 +718,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(52, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
+            this.label2.Location = new System.Drawing.Point(64, 4);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.Size = new System.Drawing.Size(130, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Running order";
             // 
@@ -730,19 +730,19 @@
             this.flowLayoutPanel2.Controls.Add(pictureBox20);
             this.flowLayoutPanel2.Controls.Add(this.pictureBox21);
             this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(183, 3);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(227, 3);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(145, 31);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(181, 38);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // pictureBox21
             // 
             this.pictureBox21.Image = global::ChapeauUI.Properties.Resources.foodRed;
-            this.pictureBox21.Location = new System.Drawing.Point(25, 0);
+            this.pictureBox21.Location = new System.Drawing.Point(31, 0);
             this.pictureBox21.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(27, 29);
+            this.pictureBox21.Size = new System.Drawing.Size(33, 37);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
@@ -751,10 +751,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(52, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
+            this.label1.Location = new System.Drawing.Point(64, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(110, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Order ready";
             // 
@@ -762,20 +762,20 @@
             // 
             this.flowLayoutPanel4.Controls.Add(pictureBox24);
             this.flowLayoutPanel4.Controls.Add(this.label3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(339, 3);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(421, 3);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(68, 31);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(85, 38);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(26, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(1, 3, 3, 0);
+            this.label3.Location = new System.Drawing.Point(33, 4);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 4, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 19);
+            this.label3.Size = new System.Drawing.Size(46, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Free";
             // 
@@ -783,19 +783,19 @@
             // 
             this.flowLayoutPanel5.Controls.Add(pictureBox25);
             this.flowLayoutPanel5.Controls.Add(this.label4);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(418, 3);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(519, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(99, 31);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(124, 38);
             this.flowLayoutPanel5.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(25, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
+            this.label4.Location = new System.Drawing.Point(31, 4);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 4, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 19);
+            this.label4.Size = new System.Drawing.Size(87, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Occupied";
             // 
@@ -803,7 +803,7 @@
             // 
             this.pnl_TableOverview.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_TableOverview.IsSplitterFixed = true;
-            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 13);
+            this.pnl_TableOverview.Location = new System.Drawing.Point(0, 16);
             this.pnl_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_TableOverview.Name = "pnl_TableOverview";
             // 
@@ -817,8 +817,8 @@
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(521, 609);
-            this.pnl_TableOverview.SplitterDistance = 257;
+            this.pnl_TableOverview.Size = new System.Drawing.Size(652, 762);
+            this.pnl_TableOverview.SplitterDistance = 325;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
             // 
@@ -829,7 +829,7 @@
             this.flow_TableOverview.Location = new System.Drawing.Point(0, 0);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(257, 609);
+            this.flow_TableOverview.Size = new System.Drawing.Size(325, 762);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // flow_Tables
@@ -859,11 +859,11 @@
             this.flow_Tables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Tables.Location = new System.Drawing.Point(0, 0);
             this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_Tables.MaximumSize = new System.Drawing.Size(280, 0);
+            this.flow_Tables.MaximumSize = new System.Drawing.Size(350, 0);
             this.flow_Tables.Name = "flow_Tables";
-            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flow_Tables.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flow_Tables.Size = new System.Drawing.Size(263, 609);
+            this.flow_Tables.Size = new System.Drawing.Size(326, 762);
             this.flow_Tables.TabIndex = 0;
             // 
             // btn_Table_1
@@ -874,10 +874,10 @@
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_1.Location = new System.Drawing.Point(16, 28);
-            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(16, 20, 0, 40);
+            this.btn_Table_1.Location = new System.Drawing.Point(20, 35);
+            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(20, 25, 0, 50);
             this.btn_Table_1.Name = "btn_Table_1";
-            this.btn_Table_1.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_1.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_1.TabIndex = 0;
             this.btn_Table_1.Text = "1";
             this.btn_Table_1.UseCompatibleTextRendering = true;
@@ -888,19 +888,19 @@
             // 
             this.pnl_FoodDrink.Controls.Add(img_Drink);
             this.pnl_FoodDrink.Controls.Add(this.img_Food);
-            this.pnl_FoodDrink.Location = new System.Drawing.Point(96, 8);
-            this.pnl_FoodDrink.Margin = new System.Windows.Forms.Padding(4, 0, 12, 0);
+            this.pnl_FoodDrink.Location = new System.Drawing.Point(120, 10);
+            this.pnl_FoodDrink.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.pnl_FoodDrink.Name = "pnl_FoodDrink";
-            this.pnl_FoodDrink.Size = new System.Drawing.Size(31, 99);
+            this.pnl_FoodDrink.Size = new System.Drawing.Size(38, 124);
             this.pnl_FoodDrink.TabIndex = 0;
             // 
             // img_Food
             // 
             this.img_Food.Image = global::ChapeauUI.Properties.Resources.food;
-            this.img_Food.Location = new System.Drawing.Point(3, 55);
-            this.img_Food.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.img_Food.Location = new System.Drawing.Point(3, 69);
+            this.img_Food.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.img_Food.Name = "img_Food";
-            this.img_Food.Size = new System.Drawing.Size(27, 40);
+            this.img_Food.Size = new System.Drawing.Size(33, 50);
             this.img_Food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Food.TabIndex = 0;
             this.img_Food.TabStop = false;
@@ -913,10 +913,10 @@
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_2.Location = new System.Drawing.Point(139, 28);
-            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 20, 0, 1);
+            this.btn_Table_2.Location = new System.Drawing.Point(173, 35);
+            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 25, 0, 2);
             this.btn_Table_2.Name = "btn_Table_2";
-            this.btn_Table_2.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_2.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_2.TabIndex = 1;
             this.btn_Table_2.Text = "2";
             this.btn_Table_2.UseCompatibleTextRendering = true;
@@ -927,19 +927,19 @@
             // 
             this.panel3.Controls.Add(pictureBox1);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(219, 8);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel3.Location = new System.Drawing.Point(273, 10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(31, 99);
+            this.panel3.Size = new System.Drawing.Size(38, 124);
             this.panel3.TabIndex = 10;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 55);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 69);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -952,10 +952,10 @@
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_3.Location = new System.Drawing.Point(16, 145);
-            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(16, 1, 0, 40);
+            this.btn_Table_3.Location = new System.Drawing.Point(20, 182);
+            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_3.Name = "btn_Table_3";
-            this.btn_Table_3.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_3.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_3.TabIndex = 2;
             this.btn_Table_3.Text = "3";
             this.btn_Table_3.UseCompatibleTextRendering = true;
@@ -966,19 +966,19 @@
             // 
             this.panel4.Controls.Add(pictureBox4);
             this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Location = new System.Drawing.Point(96, 144);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 0, 12, 0);
+            this.panel4.Location = new System.Drawing.Point(120, 180);
+            this.panel4.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(31, 99);
+            this.panel4.Size = new System.Drawing.Size(38, 124);
             this.panel4.TabIndex = 1;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 46);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox5.Size = new System.Drawing.Size(33, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -991,10 +991,10 @@
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_4.Location = new System.Drawing.Point(140, 145);
-            this.btn_Table_4.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Table_4.Location = new System.Drawing.Point(175, 182);
+            this.btn_Table_4.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_4.Name = "btn_Table_4";
-            this.btn_Table_4.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_4.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_4.TabIndex = 3;
             this.btn_Table_4.Text = "4";
             this.btn_Table_4.UseCompatibleTextRendering = true;
@@ -1005,19 +1005,19 @@
             // 
             this.panel5.Controls.Add(pictureBox6);
             this.panel5.Controls.Add(this.pictureBox7);
-            this.panel5.Location = new System.Drawing.Point(221, 144);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel5.Location = new System.Drawing.Point(277, 180);
+            this.panel5.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(31, 99);
+            this.panel5.Size = new System.Drawing.Size(38, 124);
             this.panel5.TabIndex = 11;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox7.Location = new System.Drawing.Point(3, 46);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox7.Size = new System.Drawing.Size(33, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
@@ -1030,10 +1030,10 @@
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_5.Location = new System.Drawing.Point(16, 262);
-            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(16, 1, 0, 40);
+            this.btn_Table_5.Location = new System.Drawing.Point(20, 329);
+            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_5.Name = "btn_Table_5";
-            this.btn_Table_5.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_5.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_5.TabIndex = 4;
             this.btn_Table_5.Text = "5";
             this.btn_Table_5.UseCompatibleTextRendering = true;
@@ -1044,19 +1044,19 @@
             // 
             this.panel6.Controls.Add(pictureBox8);
             this.panel6.Controls.Add(this.pictureBox9);
-            this.panel6.Location = new System.Drawing.Point(96, 261);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 0, 12, 0);
+            this.panel6.Location = new System.Drawing.Point(120, 327);
+            this.panel6.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(31, 99);
+            this.panel6.Size = new System.Drawing.Size(38, 124);
             this.panel6.TabIndex = 13;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 39);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox9.Location = new System.Drawing.Point(3, 48);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox9.Size = new System.Drawing.Size(33, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
@@ -1069,10 +1069,10 @@
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_6.Location = new System.Drawing.Point(140, 262);
-            this.btn_Table_6.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Table_6.Location = new System.Drawing.Point(175, 329);
+            this.btn_Table_6.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_6.Name = "btn_Table_6";
-            this.btn_Table_6.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_6.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_6.TabIndex = 5;
             this.btn_Table_6.Text = "6";
             this.btn_Table_6.UseCompatibleTextRendering = true;
@@ -1083,19 +1083,19 @@
             // 
             this.panel7.Controls.Add(pictureBox10);
             this.panel7.Controls.Add(this.pictureBox11);
-            this.panel7.Location = new System.Drawing.Point(221, 261);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel7.Location = new System.Drawing.Point(277, 327);
+            this.panel7.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(31, 99);
+            this.panel7.Size = new System.Drawing.Size(38, 124);
             this.panel7.TabIndex = 14;
             // 
             // pictureBox11
             // 
             this.pictureBox11.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox11.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox11.Location = new System.Drawing.Point(3, 47);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox11.Size = new System.Drawing.Size(33, 50);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 0;
             this.pictureBox11.TabStop = false;
@@ -1108,10 +1108,10 @@
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_7.Location = new System.Drawing.Point(16, 379);
-            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(16, 1, 0, 40);
+            this.btn_Table_7.Location = new System.Drawing.Point(20, 476);
+            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(20, 2, 0, 50);
             this.btn_Table_7.Name = "btn_Table_7";
-            this.btn_Table_7.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_7.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_7.TabIndex = 6;
             this.btn_Table_7.Text = "7";
             this.btn_Table_7.UseCompatibleTextRendering = true;
@@ -1122,19 +1122,19 @@
             // 
             this.panel8.Controls.Add(pictureBox12);
             this.panel8.Controls.Add(this.pictureBox13);
-            this.panel8.Location = new System.Drawing.Point(96, 378);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 0, 12, 0);
+            this.panel8.Location = new System.Drawing.Point(120, 474);
+            this.panel8.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(31, 95);
+            this.panel8.Size = new System.Drawing.Size(38, 119);
             this.panel8.TabIndex = 12;
             // 
             // pictureBox13
             // 
             this.pictureBox13.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox13.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox13.Location = new System.Drawing.Point(3, 46);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox13.Size = new System.Drawing.Size(33, 50);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 0;
             this.pictureBox13.TabStop = false;
@@ -1147,10 +1147,10 @@
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_8.Location = new System.Drawing.Point(140, 379);
-            this.btn_Table_8.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Table_8.Location = new System.Drawing.Point(175, 476);
+            this.btn_Table_8.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_8.Name = "btn_Table_8";
-            this.btn_Table_8.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_8.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_8.TabIndex = 7;
             this.btn_Table_8.Text = "8";
             this.btn_Table_8.UseCompatibleTextRendering = true;
@@ -1161,19 +1161,19 @@
             // 
             this.panel10.Controls.Add(pictureBox16);
             this.panel10.Controls.Add(this.pictureBox17);
-            this.panel10.Location = new System.Drawing.Point(221, 378);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel10.Location = new System.Drawing.Point(277, 474);
+            this.panel10.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(31, 99);
+            this.panel10.Size = new System.Drawing.Size(38, 124);
             this.panel10.TabIndex = 11;
             // 
             // pictureBox17
             // 
             this.pictureBox17.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox17.Location = new System.Drawing.Point(3, 36);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox17.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox17.Size = new System.Drawing.Size(33, 50);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 0;
             this.pictureBox17.TabStop = false;
@@ -1186,10 +1186,10 @@
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_9.Location = new System.Drawing.Point(16, 496);
-            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(16, 1, 0, 1);
+            this.btn_Table_9.Location = new System.Drawing.Point(20, 623);
+            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(20, 2, 0, 2);
             this.btn_Table_9.Name = "btn_Table_9";
-            this.btn_Table_9.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_9.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_9.TabIndex = 8;
             this.btn_Table_9.Text = "9";
             this.btn_Table_9.UseCompatibleTextRendering = true;
@@ -1200,19 +1200,19 @@
             // 
             this.panel9.Controls.Add(pictureBox14);
             this.panel9.Controls.Add(this.pictureBox15);
-            this.panel9.Location = new System.Drawing.Point(96, 495);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 0, 12, 0);
+            this.panel9.Location = new System.Drawing.Point(120, 621);
+            this.panel9.Margin = new System.Windows.Forms.Padding(5, 0, 15, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(31, 95);
+            this.panel9.Size = new System.Drawing.Size(38, 119);
             this.panel9.TabIndex = 12;
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox15.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox15.Location = new System.Drawing.Point(3, 46);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox15.Size = new System.Drawing.Size(33, 50);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 0;
             this.pictureBox15.TabStop = false;
@@ -1225,10 +1225,10 @@
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_10.Location = new System.Drawing.Point(140, 496);
-            this.btn_Table_10.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Table_10.Location = new System.Drawing.Point(175, 623);
+            this.btn_Table_10.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_10.Name = "btn_Table_10";
-            this.btn_Table_10.Size = new System.Drawing.Size(76, 76);
+            this.btn_Table_10.Size = new System.Drawing.Size(95, 95);
             this.btn_Table_10.TabIndex = 9;
             this.btn_Table_10.Text = "10";
             this.btn_Table_10.UseCompatibleTextRendering = true;
@@ -1239,19 +1239,19 @@
             // 
             this.panel11.Controls.Add(pictureBox18);
             this.panel11.Controls.Add(this.pictureBox19);
-            this.panel11.Location = new System.Drawing.Point(221, 495);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel11.Location = new System.Drawing.Point(277, 621);
+            this.panel11.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(31, 99);
+            this.panel11.Size = new System.Drawing.Size(38, 124);
             this.panel11.TabIndex = 11;
             // 
             // pictureBox19
             // 
             this.pictureBox19.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox19.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(0, 68, 0, 0);
+            this.pictureBox19.Location = new System.Drawing.Point(3, 46);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(0, 85, 0, 0);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox19.Size = new System.Drawing.Size(33, 50);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox19.TabIndex = 0;
             this.pictureBox19.TabStop = false;
@@ -1263,7 +1263,7 @@
             this.splitter_TableOverview.Location = new System.Drawing.Point(0, 0);
             this.splitter_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_TableOverview.Name = "splitter_TableOverview";
-            this.splitter_TableOverview.Size = new System.Drawing.Size(521, 1);
+            this.splitter_TableOverview.Size = new System.Drawing.Size(652, 2);
             this.splitter_TableOverview.TabIndex = 0;
             this.splitter_TableOverview.TabStop = false;
             // 

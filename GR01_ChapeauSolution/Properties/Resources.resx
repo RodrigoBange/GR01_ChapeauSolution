@@ -169,6 +169,9 @@
   <data name="Checkout_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checkout_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="foodRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foodRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="drink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +186,9 @@
   </data>
   <data name="Home_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crossIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ConfirmationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConfirmationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
