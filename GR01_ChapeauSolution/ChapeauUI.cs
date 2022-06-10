@@ -562,22 +562,29 @@ namespace GR01_ChapeauSolution
                 // Check if list is empty
                 if (lowStockItems == null)
                 {
-                    // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
-
-                    // Call stockService to remove stock
-                    stockService.DepleteStock(orders);
-
-                    // Display confirmation
-                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                    using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Confirmation", "You are about to place an order.", "Are you sure you want to continue?"))
                     {
-                        // When accepted
-                        if (messageBox_W.ShowDialog() == DialogResult.OK)
+                        if (messageBox_YN.ShowDialog() == DialogResult.Yes)
                         {
-                            // Display table overview
-                            tabC_Body.SelectedTab = tab_Tables;
+                            // Call orderService to place an order
+                            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
+
+                            // Call stockService to remove stock
+                            stockService.DepleteStock(orders);
+
+                            // Display confirmation
+                            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+                            {
+                                // When accepted
+                                if (messageBox_W.ShowDialog() == DialogResult.OK)
+                                {
+                                    // Display table overview
+                                    tabC_Body.SelectedTab = tab_Tables;
+                                }
+                            }
                         }
                     }
+
                 }
                 else
                 {

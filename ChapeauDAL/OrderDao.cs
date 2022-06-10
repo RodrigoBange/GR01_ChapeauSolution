@@ -37,12 +37,20 @@ namespace ChapeauDAL
 
         private int RunningOrderExists(DataTable dataTable)
         {
-            // If a record has been found return the orderID
-            if (dataTable.Rows.Count > 0)
+            if (dataTable != null)
             {
-                return int.Parse(dataTable.Rows[0]["orderID"].ToString());
+                // If a record has been found return the orderID
+                if (dataTable.Rows.Count > 0)
+                {
+                    return int.Parse(dataTable.Rows[0]["orderID"].ToString());
+                }
+                else { return 0; }
             }
-            else { return 0; }
+            else
+            {
+                throw new Exception("There was an issue finding a running order from the database.");
+            }
+
         }
 
         private void AddToExistingOrder(List<OrderItem> orderItems, int orderID)
@@ -86,16 +94,8 @@ namespace ChapeauDAL
                 new SqlParameter("@employeeID", employeeID)
             };
 
-            try
-            {
-                // Create new order in database
-                ExecuteEditQuery(newOrderQuery, sqlParametersNewOrder);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("There is an issue creating a new order.");
-            }
-
+            // Create new order in database
+            ExecuteEditQuery(newOrderQuery, sqlParametersNewOrder);
 
             // Get the new MaxOrderID
             int maxOrderID = GetMaxOrderID();
@@ -115,16 +115,8 @@ namespace ChapeauDAL
                     new SqlParameter("@comment", item.Comment)
                 };
 
-                try
-                {
-                    // Add item to database
-                    ExecuteEditQuery(addToNewestOrderQuery, sqlParametersAddToNewOrder);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("There is an issue adding items to a the newest order.");
-                }
-
+                // Add item to database
+                ExecuteEditQuery(addToNewestOrderQuery, sqlParametersAddToNewOrder);
             }
         }
 
@@ -133,25 +125,17 @@ namespace ChapeauDAL
             // Create query
             string query = @"SELECT MAX(orderID) AS 'maxID' from [ORDER]";
 
-            try
-            {
-                // Return value
-                return ReadMaxOrderID(ExecuteSelectQuery(query, new SqlParameter[0]));
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("There is an issue retrieving the newest order ID");
-            }
-
+            // Return value
+            return ReadMaxOrderID(ExecuteSelectQuery(query, new SqlParameter[0]));
         }
 
-        private int ReadMaxOrderID(DataTable datatable)
+        private int ReadMaxOrderID(DataTable dataTable)
         {
             // If a record exists
-            if (datatable.Rows.Count > 0)
+            if  (dataTable != null && dataTable.Rows.Count > 0)
             {
                 // Return the value
-                return int.Parse(datatable.Rows[0]["maxID"].ToString());
+                return int.Parse(dataTable.Rows[0]["maxID"].ToString());
             }
             else { return 0; }
         }
@@ -168,29 +152,30 @@ namespace ChapeauDAL
                 new SqlParameter("@isPaid", (object)0)
             };
 
-            try
-            {
-                // If a row exists...
-                return ReadOrderStatus(ExecuteSelectQuery(query, sqlParameters));
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("There is an issue checking for existing and open orders.");
-            }
+            // If a row exists...
+            return ReadOrderStatus(ExecuteSelectQuery(query, sqlParameters));
         }
 
         private bool ReadOrderStatus(DataTable dataTable)
         {
-            // If a record has been found return true
-            if (dataTable.Rows.Count > 0)
+            if (dataTable != null)
             {
-                return true;
+                // If a record has been found return true
+                if (dataTable.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    // If none have been found, return false
+                    return false;
+                }
             }
             else
             {
-                // If none have been found, return false
-                return false;
+                throw new Exception("There is an issue checking for existing and open orders.");
             }
+
         }
     }
 }
