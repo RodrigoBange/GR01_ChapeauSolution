@@ -757,9 +757,6 @@ namespace GR01_ChapeauSolution
         //Load Bill View, called when pressing Checkout Button in the Order View
         private void Bill_LoadBillView(int tableNr)
         {
-            //Switch to bill tab
-            tabC_Body.SelectedTab = tab_Bill;
-
             //Clear listviews
             Bill_lv_Bill.Items.Clear();
             Bill_lv_VAT.Items.Clear();
@@ -778,20 +775,21 @@ namespace GR01_ChapeauSolution
                 bill = billService.GetBill(tableNr);
                 
                 //Retrieve the bill's remaining price
-                bill.PriceRemaining = billService.GetRemainingPrice(bill);
-
-                //Call method to load the Bill listview
-                Bill_LoadBill(bill);
-
-                //Call method to load the VAT section
-                Bill_LoadVATSection(bill);
-                
+                bill.PriceRemaining = paymentService.GetRemainingPrice(bill);
             }
             catch (Exception ex)
             {
                 DisplayError(ex);
             }
             
+            //Load the Bill listview
+            Bill_LoadBill(bill);
+
+            //Load the VAT section
+            Bill_LoadVATSection(bill);
+
+            //Switch to bill tab
+            tabC_Body.SelectedTab = tab_Bill;
         }
         //Load bill listview
         private void Bill_LoadBill(Bill bill)
@@ -809,7 +807,10 @@ namespace GR01_ChapeauSolution
 
                 Bill_lv_Bill.Items.Add(listItem);
             }
+            
+            //Display additional info
             Bill_lbl_TotalAmount.Text = $"€{bill.TotalBillPrice.ToString("0.00")}";
+            Bill_lbl_amountPaid.Text = $"€{(bill.TotalBillPrice - bill.PriceRemaining).ToString("0.00")}";
             Bill_lbl_RemainingPrice.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
         }
 
@@ -818,16 +819,16 @@ namespace GR01_ChapeauSolution
         {
             //Load listviewItem for Non-Alcoholic VAT
             ListViewItem listItem1 = new ListViewItem($"{Bill.NonAlcholicVATPercentage}%");
-            listItem1.SubItems.Add(bill.PriceExclVATNonAlcoholic.ToString("0.00"));
-            listItem1.SubItems.Add(bill.VATNonAlcoholic.ToString("0.00"));
-            listItem1.SubItems.Add(bill.PriceInclVATNonAlcoholic.ToString("0.00"));
+            listItem1.SubItems.Add($"€{bill.PriceExclVATNonAlcoholic.ToString("0.00")}");
+            listItem1.SubItems.Add($"€{bill.VATNonAlcoholic.ToString("0.00")}");
+            listItem1.SubItems.Add($"€{bill.PriceInclVATNonAlcoholic.ToString("0.00")}");
             Bill_lv_VAT.Items.Add(listItem1);
 
             //Load listviewItem for Alcoholic VAT
             ListViewItem listItem2 = new ListViewItem($"{Bill.AlcholicVATPercentage}%");
-            listItem2.SubItems.Add(bill.PriceExclVATAlcoholic.ToString("0.00"));
-            listItem2.SubItems.Add(bill.VATAlcoholic.ToString("0.00"));
-            listItem2.SubItems.Add(bill.PriceInclVATAlcoholic.ToString("0.00"));
+            listItem2.SubItems.Add($"€{bill.PriceExclVATAlcoholic.ToString("0.00")}");
+            listItem2.SubItems.Add($"€{bill.VATAlcoholic.ToString("0.00")}");
+            listItem2.SubItems.Add($"€{bill.PriceInclVATAlcoholic.ToString("0.00")}");
             Bill_lv_VAT.Items.Add(listItem2);
         }
 
@@ -862,6 +863,7 @@ namespace GR01_ChapeauSolution
         }
 
         //Code for Pay button 
+        Payment payment;
         private void Bill_btn_Pay_Click(object sender, EventArgs e)
         {
             payment = new Payment(bill);
@@ -870,22 +872,19 @@ namespace GR01_ChapeauSolution
             if (Bill_radbtn_Cash.Checked) 
             {
                 payment.PaymentMethod = PaymentMethod.Cash;
-                LoadPaymentView();
-                tabC_Body.SelectedIndex = 5;
+                LoadCashPaymentView();
             }
             //If credit option is checked, open credit payment screen
             else if (Bill_radbtn_Credit.Checked) 
             {
                 payment.PaymentMethod = PaymentMethod.Credit;
-                LoadPaymentView();
-                tabC_Body.SelectedIndex = 5;
+                LoadCreditPaymentView();
             }
             //If debit option is checked, open credit payment screen
             else if (Bill_radbtn_Debit.Checked)
             {
                 payment.PaymentMethod = PaymentMethod.Debit;
-                LoadPaymentView();
-                tabC_Body.SelectedIndex = 5;
+                LoadDebitPaymentView();
             }
             else //No payment method selected, display instructions for the user
             {
@@ -893,119 +892,119 @@ namespace GR01_ChapeauSolution
                 messageBox.ShowDialog();
             }
         }
-
         #endregion
 
-        #region Payment View
-        /** PAYMENT VIEW METHODS **/
-        Payment payment;
-        private void LoadPaymentView()
-        {
-            Payment_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
-            
-            Payment_num_ChangeOrTotal.Value = 0;
-
-            if (payment.PaymentMethod == PaymentMethod.Cash)
-                LoadCashPaymentView();
-            else if (payment.PaymentMethod == PaymentMethod.Debit)
-                LoadDebitPaymentView();
-            else
-                LoadCreditPaymentView();
-        }
-
+        #region Cash Payment
+        /** CASH PAYMENT METHODS **/
         private void LoadCashPaymentView()
         {
             //Change input types specific to cash payment
-            Payment_lbl_Method.Text = "Cash";
-            Payment_lbl_AmountGivenOrTip.Text = "Amount Given:";
-            Payment_lbl_ChangeOrTotalToPay.Text = "Change";
-            Payment_Btn_Pay.Text = "Complete Payment";
+            PayCash_lbl_BillTotal.Text = $"€{bill.PriceRemaining.ToString("0.00")}";
             
-            Payment_num_AmountGivenOrTip.Value = (decimal)bill.PriceRemaining;
-            Payment_num_ChangeOrTotal.Value = 0;
+            PayCash_num_AmountGiven.Value = (decimal)bill.PriceRemaining;
+            PayCash_num_Change.Value = 0;
+            tabC_Body.SelectedTab = tab_CashPayment;
         }
 
-        private void LoadDebitPaymentView()
-        {
-            Payment_lbl_Method.Text = "Debit Card";
-            LoadCardPaymentView();
-        }
-
-        private void LoadCreditPaymentView()
-        {
-            Payment_lbl_Method.Text = "Credit Card";
-            LoadCardPaymentView();
-        }
-
-        private void LoadCardPaymentView()
-        {
-
-            //Change input types specific to card payment
-            Payment_lbl_AmountGivenOrTip.Text = "Tip:";
-            Payment_lbl_ChangeOrTotalToPay.Text = "Total to Pay:";
-            Payment_Btn_Pay.Text = "Process Payment";
-            
-            Payment_num_ChangeOrTotal.Value = (decimal)bill.PriceRemaining;
-            Payment_num_AmountGivenOrTip.Value = 0;
-        }
-
-        //Cancel button takes you back to bill screen
-        private void Payment_btn_Cancel_Click(object sender, EventArgs e)
+        //Back button takes you back to bill screen
+        private void PayCash_btn_Cancel_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedTab = tab_Bill;
         }
 
         //Depending on the payment method, calculates values different when new user input is given
-        private void Payment_num_1_ValueChanged(object sender, EventArgs e)
+        private void PayCash_num_AmountGivenOrTip_ValueChanged(object sender, EventArgs e)
         {
-            //If method is cash, calculate change to give
-            if (payment.PaymentMethod == PaymentMethod.Cash)
-            {
-                if (Payment_num_AmountGivenOrTip.Value >= (decimal)bill.PriceRemaining)
-                    Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value - (decimal)bill.PriceRemaining);
-            }
-            else //If method is card, calculate tip
-                Payment_num_ChangeOrTotal.Value = (Payment_num_AmountGivenOrTip.Value + (decimal)bill.PriceRemaining);
+            //If entered amount given is more than the bill price, calculate change
+            if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
+                PayCash_num_Change.Value = (PayCash_num_AmountGiven.Value - (decimal)bill.PriceRemaining);
         }
 
         //Depending on the payment method, calculates values different when new user input is given
-        private void Payment_Num_2_ValueChanged(object sender, EventArgs e)
+        private void PayCash_num_ChangeOrTotal_ValueChanged(object sender, EventArgs e)
         {
-            if (payment.PaymentMethod == PaymentMethod.Cash)
-                Payment_num_AmountGivenOrTip.Value = ((decimal)bill.PriceRemaining + Payment_num_ChangeOrTotal.Value);
-            else
-                Payment_num_AmountGivenOrTip.Value = (Payment_num_ChangeOrTotal.Value - (decimal)bill.PriceRemaining);
+            //If they want a certain amount of change, can also reverse-calculate the given amount
+            PayCash_num_AmountGiven.Value = ((decimal)bill.PriceRemaining + PayCash_num_Change.Value);
+        }
+        
+        private void PayCash_Btn_Pay_Click(object sender, EventArgs e)
+        {
+            //If pay button is pressed, insert payment, go to payment complete view (no process).
+            payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
+            paymentService.InsertPayment(payment);
+            tabC_Body.SelectedTab = tab_PaymentComplete;
+        }
+        #endregion
+
+        #region Card Payment
+        /** CARD PAYMENT METHODS **/
+        private void LoadDebitPaymentView()
+        {
+            PayCard_lbl_Method.Text = "Debit Card";
+            LoadCardPaymentView();
         }
 
-        
-        private void Payment_Btn_Pay_Click(object sender, EventArgs e)
+        private void LoadCreditPaymentView()
         {
-            //If pay button is pressed when payment method = cash, go to payment complete view (no process).
-            if (payment.PaymentMethod == PaymentMethod.Cash)
+            PayCard_lbl_Method.Text = "Credit Card";
+            LoadCardPaymentView();
+        }
+
+        private void LoadCardPaymentView()
+        {
+            PayCard_Num_Tip.Value = 0;
+            PayCard_Num_Total.Value = (decimal)bill.PriceRemaining;
+            PayCard_lbl_AmountToPay.Text = "€"+ bill.PriceRemaining.ToString("0.00");
+            tabC_Body.SelectedTab = tab_CardPayment;
+        }
+
+        private void PayCard_Num_Total_ValueChanged(object sender, EventArgs e)
+        {
+            //Automatically calculate tip only if specified amount is more than the bill
+            if (PayCard_Num_Total.Value > (decimal)bill.PriceRemaining)
             {
-                payment.AmountPaid = (double)Payment_num_AmountGivenOrTip.Value;
-                tabC_Body.SelectedIndex = 7;
-            }
-            else //Else go to payment process view
-            {
-                payment.AmountPaid = (double)Payment_num_ChangeOrTotal.Value;
-                payment.Tip = (double)Payment_num_AmountGivenOrTip.Value;
-                LoadPaymentProcessingView(payment);
+                PayCard_Num_Tip.Value = (PayCard_Num_Total.Value - (decimal)bill.PriceRemaining);
             }
         }
+
+        private void PayCard_Num_Tip_ValueChanged(object sender, EventArgs e)
+        {
+            //Partial payment, add tip to specified amount
+            if (PayCard_Num_Total.Value < (decimal)bill.PriceRemaining)
+            {
+                PayCard_Num_Total.Value = PayCard_Num_Total.Value + PayCard_Num_Tip.Value;
+            }
+            else //Full payment, add tip to total price
+            {
+                PayCard_Num_Total.Value = (decimal)bill.PriceRemaining + PayCard_Num_Tip.Value;
+            }
+        }
+        private void PayCard_btn_Back_Click(object sender, EventArgs e)
+        {
+            //Back to bill view with user input still loaded
+            tabC_Body.SelectedTab = tab_Bill;
+        }
+
+        private void PayCard_btn_Pay_Click(object sender, EventArgs e)
+        {
+            payment.Tip = (double)PayCard_Num_Tip.Value;
+            payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
+            LoadPaymentProcessingView();
+        }
+        
         #endregion
 
         #region Payment Processing
         /** PAYMENT PROCESSING METHODS **/
         int timeLeft = 5;
 
-        private void LoadPaymentProcessingView(Payment payment)
+        private void LoadPaymentProcessingView()
         {
-            tabC_Body.SelectedIndex = 6;
+            tabC_Body.SelectedTab = tab_ProcessPayment;
             PaymentProcess_lbl_FunFact.Text = LoadFunFact();
             timeLeft = 6;
             PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
-            PaymentProcessTimer1.Interval = 1200;
+            PaymentProcessTimer1.Interval = 1500;
             PaymentProcessTimer1.Start();
         }
 
@@ -1019,19 +1018,27 @@ namespace GR01_ChapeauSolution
                     PaymentProcess_lbl_Status.Text = "Crunching numbers...";
                     break;
                 case 4:
-                    PaymentProcess_lbl_Status.Text = "Checking bank...";
+                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
                     break;
                 case 3:
                     PaymentProcess_lbl_Status.Text = "Robbing bank...";
                     break;
                 case 2:
-                    PaymentProcess_lbl_Status.Text = "Robbing bank...";
+                    PaymentProcess_lbl_Status.Text = "Counting change...";
                     break;
                 case 1:
-                    PaymentProcess_lbl_Status.Text = "Counting change...";
+                    PaymentProcess_lbl_Status.Text = "Finalising payment...";
                     break;
                 case 0:
                     PaymentProcess_lbl_Status.Text = "Finalising payment...";
+                    PaymentProcessTimer1.Stop();
+
+                    if (paymentService.SuccessfulPayment())
+                    {
+                        LoadPaymentSuccessfulView();
+                    }
+                    else
+                        tabC_Body.SelectedTab = tab_PaymentFailed;
                     break;
                 default:
                     break;
@@ -1040,26 +1047,72 @@ namespace GR01_ChapeauSolution
 
         private string LoadFunFact()
         {
-            List<string> funFacts = CreateFunFactsList();
+            List<string> funFacts = paymentService.CreateFunFactsList();
             string funfact = funFacts[rnd.Next(0, funFacts.Count)];
 
             return funfact;
         }
 
-        private List<string> CreateFunFactsList()
+        
+        #endregion
+
+        #region PaymentSuccessful
+        /** PAYMENT SUCCESS VIEW METHODS **/
+        private void LoadPaymentSuccessfulView()
         {
-            List<string> funFacts = new List<string>();
+            PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Italic);
+            PaymentComplete_txt_Comment.Text = "Ask the guest for a review of their experience and enter here.";
             
-            funFacts.Add("Due to thermal expansion, the Eiffel Tower can grow up to 15 cm taller in the summer.");
-            funFacts.Add("A chef's hat has 100 pleats. It is supposed to represent the 100 ways you can cook an egg.");
-            funFacts.Add("In France, baguettes can be bought out of vending machines.");
-            funFacts.Add("The average French citizen eats 500 snails each year.");
-            funFacts.Add("French fries are not actually French. They were invented in America.");
-            funFacts.Add("French people usually eat their burgers with cutlery.");
-            funFacts.Add("Croissants are not actually French. They were invented by an Austrian.");
-            funFacts.Add("The most famous French desert is a cheese plate.");
-            
-            return funFacts;
+            try
+            {
+                paymentService.InsertPayment(payment);
+            }
+            catch (Exception)
+            {
+                DisplayError(new Exception("Was not able to insert the payment in the database."));
+                tabC_Body.SelectedTab = tab_PaymentFailed;
+            }
+
+            if (paymentService.IsBillPaid(bill))
+            {
+                PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
+            }
+            else
+            {
+                PaymentComplete_btn_BackToTableView.Text = "Issue Another Payment";
+            }
+            tabC_Body.SelectedTab = tab_PaymentComplete;
+        }
+
+        private void PaymentComplete_txt_Comment_Click(object sender, EventArgs e)
+        {
+            //Clear instruction when user clicks the textbox.
+            if (PaymentComplete_txt_Comment.Text == "Ask the guest for a review of their experience and enter here.")
+            {
+                PaymentComplete_txt_Comment.Text = "";
+                PaymentComplete_txt_Comment.Font = new Font(PaymentComplete_txt_Comment.Font, FontStyle.Regular);
+            }
+        }
+
+        private void PaymentComplete_btn_BackToTableView_Click(object sender, EventArgs e)
+        {
+            paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+            payment = null;
+            bill = null;
+        }
+
+        #endregion
+
+        #region PaymentFailed
+        /** PAYMENT FAILED METHODS **/
+        private void PaymentFailure_btn_ChangeMethod_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Bill;
+        }
+
+        private void PaymentFailure_btn_TryAgain_Click(object sender, EventArgs e)
+        {
+            LoadPaymentProcessingView();
         }
         #endregion
 
@@ -1089,10 +1142,6 @@ namespace GR01_ChapeauSolution
                 DialogResult dialogResult_W = messageBox_W.ShowDialog();
             }
         }
-
-
-
-
 
 
 

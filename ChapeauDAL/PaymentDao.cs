@@ -27,7 +27,7 @@ namespace ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        private void InsertComment(string comment)
+        public void InsertComment(string comment)
         {
             string query = "INSERT INTO [RESTAURANTCOMMENT] VALUES (@Comment)";
             SqlParameter[] sqlParameters = new SqlParameter[1];
@@ -39,14 +39,13 @@ namespace ChapeauDAL
             }
             catch (Exception)
             {
-
                 throw new Exception("Something went wrong while inserting the comment into the database.");
             }
             
         }
 
         //Update bill to isPaid in db table
-        private void MarkBillAsPaid(int billId) 
+        public void MarkBillAsPaid(int billId) 
         {
             string query = "UPDATE [ORDER] SET isPaid = 1 WHERE OrderID = @BillId;";
             
@@ -78,6 +77,12 @@ namespace ChapeauDAL
                 List<decimal> payments = ReadPaymentAmountTable(ExecuteSelectQuery(query, sqlParameters));
                 decimal paidAmount = 0;
 
+                //If no payments have been made yet, payments will be returned as null, then 0 must be returned
+                if (payments == null)
+                {
+                    return 0;
+                }
+
                 foreach (decimal payment in payments)
                 {
                     paidAmount += payment;
@@ -93,7 +98,14 @@ namespace ChapeauDAL
 
         private List<decimal> ReadPaymentAmountTable(DataTable dataTable)
         {
-                List<decimal> payments = new List<decimal>();
+            List<decimal> payments = new List<decimal>();
+            //If no payments have been made yet, datatable will be null
+            if (dataTable == null)
+            {
+                return payments;
+            }
+            else
+            {
                 foreach (DataRow dr in dataTable.Rows)
                 {
                     decimal payment = (decimal)dr["amountPaid"];
@@ -101,6 +113,7 @@ namespace ChapeauDAL
                 }
 
                 return payments;
+            }
         }
     }
 }

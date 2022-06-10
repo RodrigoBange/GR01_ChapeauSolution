@@ -34,14 +34,6 @@ namespace ChapeauLogic
             return bill;
         }
 
-        public double GetRemainingPrice(Bill bill)
-        {
-            return (bill.TotalBillPrice - (double)paymentDAO.GetPaidAmount(bill));
-        }
-
-        public bool IsBillPaid(Bill bill)
-        {
-            return (bill.TotalBillPrice <= (double)paymentDAO.GetPaidAmount(bill));
-        }
+        
     }
 }

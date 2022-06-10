@@ -38,68 +38,47 @@ namespace ChapeauDAL
             return billId;
         }
 
-        
-
         //Reads BillItems from Database and returns it to the bill
         private List<BillItem> ReadBillItemTable(DataTable dataTable)
         {
             // Create new list of Bill items
             List<BillItem> billItems = new List<BillItem>();
-
-            try
+            
+            if (dataTable == null)
             {
-                // Fill list of Bill items
-                foreach (DataRow dr in dataTable.Rows)
+                throw new Exception("Something went wrong while reading bill items from the database.");
+            }
+            
+            // Fill list of Bill items
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                BillItem item = new BillItem()
                 {
-                    BillItem item = new BillItem()
-                    {
-                        Name = (string)dr["itemNameShort"],
-                        Count = (int)dr["quantity"],
-                        PriceWithVAT = (double)(decimal)dr["price"],
-                        VATPercentage = (int)(decimal)dr["tax"],
-                        BasePrice = (double)(decimal)dr["priceBeforeTax"]
-                    };
-                    billItems.Add(item);
-                }
-                // Return list of bill items
-                return billItems;
+                    Name = (string)dr["itemNameShort"],
+                    Count = (int)dr["quantity"],
+                    PriceWithVAT = (double)(decimal)dr["price"],
+                    VATPercentage = (int)(decimal)dr["tax"],
+                    BasePrice = (double)(decimal)dr["priceBeforeTax"]
+                };
+                billItems.Add(item);
             }
-            catch (Exception)
-            {
-                // Throw exception
-                throw new Exception("Something went wrong while reading bill data from the database.");
-            }
+            // Return list of bill items
+            return billItems;
         }
 
-        //Tries to find an unpaid bill, using a table nr
+        //Tries to find a bill ID
         private int ReadBillIDTable(DataTable dataTable)
         {
-            try
+            //Retrieve billID
+
+            if (dataTable == null)
             {
-                //Retrieve billID
-                int billId;
-
-                DataRow dr = dataTable.Rows[0];
-
-                //If datarow is empty, return billId = 0
-                if (!dr.IsNull("orderID"))
-                {
-                    billId = (int)dr["orderID"];
-                }
-                else
-                {
-                    billId = 0;
-                }
-
-                return billId;
+                return 0;
             }
-            catch (Exception)
-            {
-                // Throw exception
-                throw new Exception("Something went wrong while reading bill data from the database.");
-            }
+            
+            DataRow dr = dataTable.Rows[0];
+            
+            return (int)dr["orderID"];
         }
-
-        
     }
 }
