@@ -674,7 +674,7 @@ namespace GR01_ChapeauSolution
         private void btn_Order_Checkout_Click(object sender, EventArgs e)
         {
             // Open the bill
-            tabC_Body.SelectedIndex = 5;
+            Bill_LoadBillView(tableNumber);
         }
 
         private void btn_Clear_Order_Click(object sender, EventArgs e)
@@ -823,17 +823,17 @@ namespace GR01_ChapeauSolution
         }
 
         //Enable the "Next Screen" button when a Payment method selected
-        private void Bill_radbtn_Cash_Checked(object sender, EventArgs e)
+        private void Bill_radbtn_Cash_CheckedChanged(object sender, EventArgs e)
         {
             Bill_EnablePayButton();
         }
 
-        private void Bill_radbtn_Debit_Checked(object sender, EventArgs e)
+        private void Bill_radbtn_Debit_CheckedChanged(object sender, EventArgs e)
         {
             Bill_EnablePayButton();
         }
 
-        private void Bill_radbtn_Credit_Checked(object sender, EventArgs e)
+        private void Bill_radbtn_Credit_CheckedChanged(object sender, EventArgs e)
         {
             Bill_EnablePayButton();
         }
@@ -993,8 +993,8 @@ namespace GR01_ChapeauSolution
 
         private void LoadPaymentProcessingView()
         {
-            tabC_Body.SelectedTab = tab_CardPayment;
-            PaymentProcess_lbl_TitleFunFact.Text = LoadFunFact();
+            tabC_Body.SelectedTab = tab_ProcessPayment;
+            PaymentProcess_lbl_FunFact.Text = LoadFunFact();
             paymentTimeLeft = 6;
             PaymentProcessTimer1.Tick += PaymentProcessTimer1_Tick;
             PaymentProcessTimer1.Interval = 1500;
@@ -1156,5 +1156,6 @@ namespace GR01_ChapeauSolution
 
         #endregion
 
+        
     }
 }

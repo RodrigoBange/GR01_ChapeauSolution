@@ -139,16 +139,16 @@
             this.Bill_lbl_MainInstruction = new System.Windows.Forms.Label();
             this.Bill_lbl_Title = new System.Windows.Forms.Label();
             this.Bill_lv_VAT = new System.Windows.Forms.ListView();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.VATcolVat = new System.Windows.Forms.ColumnHeader();
+            this.VATcolBasePrice = new System.Windows.Forms.ColumnHeader();
+            this.VATcolVatAmount = new System.Windows.Forms.ColumnHeader();
+            this.VATcolTotal = new System.Windows.Forms.ColumnHeader();
             this.Bill_lv_Bill = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.billColQuantity = new System.Windows.Forms.ColumnHeader();
+            this.billColName = new System.Windows.Forms.ColumnHeader();
+            this.billColVAT = new System.Windows.Forms.ColumnHeader();
+            this.billColBasePrice = new System.Windows.Forms.ColumnHeader();
+            this.billColTotal = new System.Windows.Forms.ColumnHeader();
             this.tab_CashPayment = new System.Windows.Forms.TabPage();
             this.Cash_pnl = new System.Windows.Forms.Panel();
             this.Cash_btn_Back = new System.Windows.Forms.Button();
@@ -1622,6 +1622,7 @@
             this.Bill_btn_Pay.TabIndex = 5;
             this.Bill_btn_Pay.Text = "Next Screen";
             this.Bill_btn_Pay.UseVisualStyleBackColor = false;
+            this.Bill_btn_Pay.Click += new System.EventHandler(this.Bill_btn_Pay_Click);
             // 
             // Bill_GroupBox1
             // 
@@ -1647,6 +1648,7 @@
             this.Bill_radbtn_Credit.TabStop = true;
             this.Bill_radbtn_Credit.Text = "Credit Card (VISA / Amex)";
             this.Bill_radbtn_Credit.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Credit.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Credit_CheckedChanged);
             // 
             // Bill_radbtn_Debit
             // 
@@ -1658,6 +1660,7 @@
             this.Bill_radbtn_Debit.TabStop = true;
             this.Bill_radbtn_Debit.Text = "Debit Card";
             this.Bill_radbtn_Debit.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Debit.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Debit_CheckedChanged);
             // 
             // Bill_radbtn_Cash
             // 
@@ -1669,6 +1672,7 @@
             this.Bill_radbtn_Cash.TabStop = true;
             this.Bill_radbtn_Cash.Text = "Cash";
             this.Bill_radbtn_Cash.UseVisualStyleBackColor = true;
+            this.Bill_radbtn_Cash.CheckedChanged += new System.EventHandler(this.Bill_radbtn_Cash_CheckedChanged);
             // 
             // Bill_lbl_MainInstruction
             // 
@@ -1693,10 +1697,10 @@
             // 
             this.Bill_lv_VAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.Bill_lv_VAT.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
+            this.VATcolVat,
+            this.VATcolBasePrice,
+            this.VATcolVatAmount,
+            this.VATcolTotal});
             this.Bill_lv_VAT.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_lv_VAT.ForeColor = System.Drawing.Color.White;
             this.Bill_lv_VAT.HideSelection = false;
@@ -1707,15 +1711,34 @@
             this.Bill_lv_VAT.UseCompatibleStateImageBehavior = false;
             this.Bill_lv_VAT.View = System.Windows.Forms.View.Details;
             // 
+            // VATcolVat
+            // 
+            this.VATcolVat.Text = "VAT";
+            // 
+            // VATcolBasePrice
+            // 
+            this.VATcolBasePrice.Text = "Base Price";
+            this.VATcolBasePrice.Width = 80;
+            // 
+            // VATcolVatAmount
+            // 
+            this.VATcolVatAmount.Text = "VAT Amount";
+            this.VATcolVatAmount.Width = 90;
+            // 
+            // VATcolTotal
+            // 
+            this.VATcolTotal.Text = "Total";
+            this.VATcolTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Bill_lv_Bill
             // 
             this.Bill_lv_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.Bill_lv_Bill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.billColQuantity,
+            this.billColName,
+            this.billColVAT,
+            this.billColBasePrice,
+            this.billColTotal});
             this.Bill_lv_Bill.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_lv_Bill.ForeColor = System.Drawing.Color.White;
             this.Bill_lv_Bill.HideSelection = false;
@@ -1725,6 +1748,32 @@
             this.Bill_lv_Bill.TabIndex = 0;
             this.Bill_lv_Bill.UseCompatibleStateImageBehavior = false;
             this.Bill_lv_Bill.View = System.Windows.Forms.View.Details;
+            // 
+            // billColQuantity
+            // 
+            this.billColQuantity.Text = "Quantity";
+            this.billColQuantity.Width = 70;
+            // 
+            // billColName
+            // 
+            this.billColName.Text = "Name";
+            this.billColName.Width = 158;
+            // 
+            // billColVAT
+            // 
+            this.billColVAT.Text = "VAT";
+            this.billColVAT.Width = 50;
+            // 
+            // billColBasePrice
+            // 
+            this.billColBasePrice.Text = "Base Price";
+            this.billColBasePrice.Width = 90;
+            // 
+            // billColTotal
+            // 
+            this.billColTotal.Text = "Total Price";
+            this.billColTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.billColTotal.Width = 90;
             // 
             // tab_CashPayment
             // 
@@ -2510,11 +2559,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader billColQuantity;
+        private System.Windows.Forms.ColumnHeader billColName;
+        private System.Windows.Forms.ColumnHeader billColVAT;
+        private System.Windows.Forms.ColumnHeader billColBasePrice;
+        private System.Windows.Forms.ColumnHeader billColTotal;
         private System.Windows.Forms.Button Cash_btn_Back;
         private System.Windows.Forms.Button Cash_btn_Pay;
         private System.Windows.Forms.NumericUpDown PayCash_num_Change;
@@ -2548,5 +2597,9 @@
         private System.Windows.Forms.Label PaymentProcess_lbl_Status;
         private System.Windows.Forms.Label PaymentProcess_lbl_FunFact;
         private System.Windows.Forms.Timer PaymentProcessTimer1;
+        private System.Windows.Forms.ColumnHeader VATcolVat;
+        private System.Windows.Forms.ColumnHeader VATcolBasePrice;
+        private System.Windows.Forms.ColumnHeader VATcolVatAmount;
+        private System.Windows.Forms.ColumnHeader VATcolTotal;
     }
 }
