@@ -12,8 +12,6 @@ using System.Windows.Forms;
 using ChapeauLogic;
 using ChapeauUI.Forms;
 using ChapeauUI;
-using System.Security.Cryptography;
-using ChapeauUI.Properties;
 
 namespace GR01_ChapeauSolution
 {
@@ -37,11 +35,9 @@ namespace GR01_ChapeauSolution
         // General variables
         private int tableNumber = 0;
 
-        Employee employee;
-
         #region General
         // Constructor
-        public Form_Chapeau(Employee employee)
+        public Form_Chapeau()
         {
             // Initialize
             InitializeComponent();
@@ -53,10 +49,8 @@ namespace GR01_ChapeauSolution
             menuService = new MenuService();
             orderService = new OrderService();
             stockService = new StockService();
-            employeeService = new EmployeeService();
-
-            // Set employee
-            this.employee = employee;
+            billService = new BillService();
+            paymentService = new PaymentService();
         }
 
         // On Load
@@ -66,11 +60,25 @@ namespace GR01_ChapeauSolution
             tabC_Body.Appearance = TabAppearance.FlatButtons;
             tabC_Body.ItemSize = new Size(0, 1);
             tabC_Body.SizeMode = TabSizeMode.Fixed;
+
+            // Start tab on load
+            tabC_Body.SelectedTab = tab_Login;
+        }
+
+        private void DisplayUI()
+        {
+            // Display header elements !!Order matters for toggling visibility
+            lbl_OrderCounter.Visible = true;
+            background_OrderCounter.Visible = true;
             btn_User.Visible = true;
             btn_Return.Visible = true;
 
-            // Start tab on load
-            tabC_Body.SelectedTab = tab_Tables;
+            //Set border colors (Due to tab control)
+            border_Bottom.BackColor = Color.White;
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -78,15 +86,21 @@ namespace GR01_ChapeauSolution
             // When tab is changed...
             switch (tabC_Body.SelectedIndex)
             {
-                // Account View 
+                // Login View
                 case 0:
+                    {
+                        lbl_Title.Text = "Login";
+                    }
+                    break;
+                // Account View 
+                case 1:
                     {
                         // Set title
                         lbl_Title.Text = "Account";
                     }
                     break;
                 // Table View 
-                case 1:
+                case 2:
                     {
                         // Set title
                         lbl_Title.Text = "Overview";
@@ -96,7 +110,7 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Order View
-                case 2:
+                case 3:
                     {
                         // Set title
                         lbl_Title.Text = $"Order Table #{tableNumber}";
@@ -126,24 +140,45 @@ namespace GR01_ChapeauSolution
                     }
                     break;
                 // Bill View 
-                case 3:
+                case 4:
                     {
                         // Set title
                         lbl_Title.Text = $"Bill Table #{tableNumber}";
                     }
                     break;
                 // Payment Options View 
-                case 4:
+                case 5:
                     {
                         // Set title
                         lbl_Title.Text = "Payment Options";
                     }
                     break;
                 // Process Payment View 
-                case 5:
+                case 6:
                     {
                         // Set title
                         lbl_Title.Text = "Processing Payment";
+                    }
+                    break;
+                // Management View 
+                case 7:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Management";
+                    }
+                    break;
+                // Bar View 
+                case 8:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Bar Orders";
+                    }
+                    break;
+                // Kitchen View 
+                case 9:
+                    {
+                        // Set title
+                        lbl_Title.Text = "Kitchen Orders";
                     }
                     break;
             }
@@ -154,6 +189,27 @@ namespace GR01_ChapeauSolution
             // Return to table view
             tabC_Body.SelectedTab = tab_Tables;
         }
+#endregion
+
+        #region Login
+        /** LOGIN VIEW METHODS **/
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            // Change tab to Table View
+            tabC_Body.SelectedTab = tab_Tables;
+            lbl_Title.Text = "Overview";
+
+            // Displays UI, might be handy to check what user type logged in, admin or user and send it through
+            DisplayUI();
+        }
+        #endregion
+
+        #region Forgot Password
+        /** FORGOT PASSWORD VIEW METHODS **/
+        private void btn_Forgot_Password_Login_Click(object sender, EventArgs e)
+        {
+            tabC_Body.SelectedTab = tab_Login;
+        }
         #endregion
 
         #region Account
@@ -161,17 +217,29 @@ namespace GR01_ChapeauSolution
         private void btn_User_Click(object sender, EventArgs e)
         {
             tabC_Body.SelectedTab = tab_Account;
-            lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
-            lbl_Account_EmployeeName.Text = employee.EmployeeName;
-            lbl_Account_Role.Text = employee.EmployeeRole;
+
+            // Set colors
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
         }
 
         private void btn_Account_Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
-            employee = null;
+            tabC_Body.SelectedTab = tab_Login;
+         
+            // Hide header and footer elements
+            lbl_OrderCounter.Visible = false;
+            background_OrderCounter.Visible = false;
+            btn_User.Visible = false;
+            btn_Return.Visible = false;
+
+            // Set colors
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorBright);
         }
 
         #endregion
@@ -182,21 +250,15 @@ namespace GR01_ChapeauSolution
         {
             for (int i = 0; i < 10; i++)
             {
-                // Create new Table order
-                C_Table_Order table_order = new C_Table_Order();
+                // Generate dates
+                DateTime startDate = DateTime.Now.AddHours(i);
+                DateTime endDate = DateTime.Now.AddHours(i + 1);
+
+                // Create new Reservation
+                C_Available_Reservation available_Reservation1 = new C_Available_Reservation(startDate, endDate);
 
                 // Add reservation to flow panel
-                flow_TableOverview.Controls.Add(table_order);
-            }
-        }
-
-        private void FreeTable(Button table, int tableNumber)
-        {
-            if (table.Image == Resources.Table_White)
-            {
-                MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber);
-                messageBox.ShowDialog();
-                // DialogResult result = messageBox.ShowDialog();
+                flow_TableOverview.Controls.Add(available_Reservation1);
             }
         }
 
@@ -206,8 +268,7 @@ namespace GR01_ChapeauSolution
             tableNumber = 1;
 
             // Open order view
-            FreeTable(btn_Table_1, 1);
-            //tabC_Body.SelectedTab = tab_Order;
+            tabC_Body.SelectedTab = tab_Order;
         }
 
         private void btn_Table_2_Click(object sender, EventArgs e)

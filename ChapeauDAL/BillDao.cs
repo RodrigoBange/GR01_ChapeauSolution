@@ -18,7 +18,7 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@billId", billId);
 
-            return ReadBillItemTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadBillItemTable(ExecuteSelectQuery(query, sqlParameters));
         }
 
         //Checks if a table has an unpaid bill, and if so, returns it. Otherwise, returns 0
@@ -59,14 +59,13 @@ namespace ChapeauDAL
                     };
                     billItems.Add(item);
                 }
+                // Return list of bill items
+                return billItems;
             }
             else
             {
                 throw new Exception("Something went wrong while reading bill items from the database.");
             }
-
-            // Return list of bill items
-            return billItems;
         }
 
         //Tries to find a bill ID

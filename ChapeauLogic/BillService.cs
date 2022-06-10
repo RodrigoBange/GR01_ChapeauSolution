@@ -8,7 +8,14 @@ namespace ChapeauLogic
 {
     public class BillService
     {
-        private BillDao billDAO = new BillDao();
+        private BillDao billDAO;
+        private PaymentDao paymentDAO;
+
+        public BillService()
+        {
+            billDAO = new BillDao();
+            paymentDAO = new PaymentDao();
+        }
         
         public Bill GetBill(int tableNr)
         {

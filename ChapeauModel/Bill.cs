@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ChapeauModel
 {
+    //Collective list of items registered to a bill, with calculated collective properties
     public class Bill
     {
         //VAT constants
