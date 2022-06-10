@@ -192,5 +192,44 @@ namespace ChapeauDAL
                 return false;
             }
         }
+
+        // Get items from orders
+        public List<OrderItem> GetOrderItems()
+        {
+            // Create query
+            string query = @"SELECT O.orderID, tableID, orderItemID, OI.itemID, orderTime, quantity, itemNameShort FROM [ORDER] AS O 
+                                                JOIN [ORDER_ITEMS] AS OI
+                                                ON O.orderID = OI.orderID
+                                                JOIN [MENU_ITEM] AS MI
+                                                ON OI.itemID = MI.itemID
+                                                WHERE isServed = 0;";
+
+            return ReadTableOrders(ExecuteSelectQuery(query, new SqlParameter[0]));
+        }
+
+        // Create a list with all the items of an order
+        private List<OrderItem> ReadTableOrders(DataTable dataTable)
+        {
+            List<OrderItem> orderItems = new List<OrderItem>();
+               
+            if (dataTable != null)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    OrderItem item = new OrderItem()
+                    {
+                        OrderID = (int)row["orderID"],
+                        TableID = (int)row["tableID"],
+                        OrderItemID = (int)row["orderItemID"],
+                        ItemID = (int)row["itemID"],
+                        OrderTime = (DateTime)row["orderTime"],
+                        Quantity = (int)row["quantity"],
+                        ItemName = (string)row["itemNameShort"],
+                    };
+                    orderItems.Add(item);
+                }                
+            }
+            return orderItems;
+        }
     }
 }

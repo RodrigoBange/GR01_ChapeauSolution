@@ -29,5 +29,10 @@ namespace ChapeauLogic
             // Call orderDAO to check if order exists
             return orderDAO.CheckOrderStatus(tableNumber);
         }
+
+        public List<OrderItem> GetOrderItems()
+        {
+            return orderDAO.GetOrderItems();
+        }
     }
 }

@@ -21,12 +21,12 @@ namespace ChapeauUI.Forms
 
         private void btn_MarkAsOccupied_Click(object sender, EventArgs e)
         {
-            // DialogResult = ;
+            DialogResult = DialogResult.Yes;
         }
 
         private void btn_TakeOrder_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.No;
         }
     }
 }

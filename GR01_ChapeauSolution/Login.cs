@@ -64,13 +64,11 @@ namespace GR01_ChapeauSolution
 
                 // Get the employee form the database
                 Employee employee = employeeService.GetEmployee(employeeID);
-
-                if (employee != null) // Check if the employee exists
+               
+                if (employee.EmployeeId != 0) // Check if the employee exists
                 {                    
                     if (CheckPassword(employee, employeePassword))
                     {
-                        messageBox = new MessageBox_Ok("Login", "Succesfully logged in");
-                        messageBox.ShowDialog();
                         OpenView(employee);
                         return;
                     }
@@ -96,6 +94,7 @@ namespace GR01_ChapeauSolution
             }
             else if (employee.EmployeeRole == "Chef" || employee.EmployeeRole == "Bartender")
             {
+                // Kitchen and bar view is not yet created
                 this.Hide();
                 Form_Chapeau Chapeau = new Form_Chapeau(employee);
                 Chapeau.Show();
