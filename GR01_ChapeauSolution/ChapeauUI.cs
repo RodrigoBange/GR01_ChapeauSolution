@@ -170,14 +170,19 @@ namespace GR01_ChapeauSolution
                 case 4:
                     {
                         // Set title
-                        lbl_Title.Text = "Payment Options";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
                     }
                     break;
                 // Process Payment View 
                 case 5:
                     {
                         // Set title
-                        lbl_Title.Text = "Processing Payment";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
+                    }
+                    break;
+                case 6:
+                    {
+
                     }
                     break;
             }
