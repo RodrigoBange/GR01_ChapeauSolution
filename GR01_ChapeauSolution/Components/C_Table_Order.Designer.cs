@@ -119,12 +119,16 @@
             // 
             // btn_OrderServed10
             // 
+            this.btn_OrderServed10.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed10.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed10.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed10.Location = new System.Drawing.Point(253, 5);
             this.btn_OrderServed10.Name = "btn_OrderServed10";
             this.btn_OrderServed10.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed10.TabIndex = 55;
-            this.btn_OrderServed10.UseVisualStyleBackColor = true;
+            this.btn_OrderServed10.UseVisualStyleBackColor = false;
             this.btn_OrderServed10.Click += new System.EventHandler(this.btn_OrderServed10_Click);
             // 
             // lbl_OrderItems10
@@ -170,12 +174,16 @@
             // 
             // btn_OrderServed9
             // 
+            this.btn_OrderServed9.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed9.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed9.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed9.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed9.Name = "btn_OrderServed9";
             this.btn_OrderServed9.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed9.TabIndex = 54;
-            this.btn_OrderServed9.UseVisualStyleBackColor = true;
+            this.btn_OrderServed9.UseVisualStyleBackColor = false;
             this.btn_OrderServed9.Click += new System.EventHandler(this.btn_OrderServed9_Click);
             // 
             // lbl_OrderItems9
@@ -221,12 +229,16 @@
             // 
             // btn_OrderServed8
             // 
+            this.btn_OrderServed8.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed8.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed8.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed8.Location = new System.Drawing.Point(253, 5);
             this.btn_OrderServed8.Name = "btn_OrderServed8";
             this.btn_OrderServed8.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed8.TabIndex = 53;
-            this.btn_OrderServed8.UseVisualStyleBackColor = true;
+            this.btn_OrderServed8.UseVisualStyleBackColor = false;
             this.btn_OrderServed8.Click += new System.EventHandler(this.btn_OrderServed8_Click);
             // 
             // lbl_OrderItems8
@@ -272,12 +284,16 @@
             // 
             // btn_OrderServed7
             // 
+            this.btn_OrderServed7.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed7.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed7.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed7.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed7.Name = "btn_OrderServed7";
             this.btn_OrderServed7.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed7.TabIndex = 52;
-            this.btn_OrderServed7.UseVisualStyleBackColor = true;
+            this.btn_OrderServed7.UseVisualStyleBackColor = false;
             this.btn_OrderServed7.Click += new System.EventHandler(this.btn_OrderServed7_Click);
             // 
             // lbl_OrderItems7
@@ -323,12 +339,16 @@
             // 
             // btn_OrderServed6
             // 
+            this.btn_OrderServed6.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed6.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed6.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed6.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed6.Name = "btn_OrderServed6";
             this.btn_OrderServed6.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed6.TabIndex = 51;
-            this.btn_OrderServed6.UseVisualStyleBackColor = true;
+            this.btn_OrderServed6.UseVisualStyleBackColor = false;
             this.btn_OrderServed6.Click += new System.EventHandler(this.btn_OrderServed6_Click);
             // 
             // lbl_OrderItems6
@@ -374,12 +394,16 @@
             // 
             // btn_OrderServed5
             // 
+            this.btn_OrderServed5.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed5.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed5.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed5.Location = new System.Drawing.Point(253, 5);
             this.btn_OrderServed5.Name = "btn_OrderServed5";
             this.btn_OrderServed5.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed5.TabIndex = 50;
-            this.btn_OrderServed5.UseVisualStyleBackColor = true;
+            this.btn_OrderServed5.UseVisualStyleBackColor = false;
             this.btn_OrderServed5.Click += new System.EventHandler(this.btn_OrderServed5_Click);
             // 
             // lbl_OrderItems5
@@ -454,12 +478,16 @@
             // 
             // btn_OrderServed4
             // 
+            this.btn_OrderServed4.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed4.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed4.Location = new System.Drawing.Point(240, 8);
+            this.btn_OrderServed4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed4.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed4.Name = "btn_OrderServed4";
             this.btn_OrderServed4.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed4.TabIndex = 49;
-            this.btn_OrderServed4.UseVisualStyleBackColor = true;
+            this.btn_OrderServed4.UseVisualStyleBackColor = false;
             this.btn_OrderServed4.Click += new System.EventHandler(this.btn_OrderServed4_Click);
             // 
             // panel3
@@ -490,12 +518,16 @@
             // 
             // btn_OrderServed3
             // 
+            this.btn_OrderServed3.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed3.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed3.Location = new System.Drawing.Point(240, 8);
+            this.btn_OrderServed3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed3.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed3.Name = "btn_OrderServed3";
             this.btn_OrderServed3.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed3.TabIndex = 48;
-            this.btn_OrderServed3.UseVisualStyleBackColor = true;
+            this.btn_OrderServed3.UseVisualStyleBackColor = false;
             this.btn_OrderServed3.Click += new System.EventHandler(this.btn_OrderServed3_Click);
             // 
             // lbl_TableTime3
@@ -527,12 +559,17 @@
             // 
             // btn_OrderServed2
             // 
+            this.btn_OrderServed2.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed2.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed2.Location = new System.Drawing.Point(240, 6);
+            this.btn_OrderServed2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed2.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed2.Location = new System.Drawing.Point(253, 6);
             this.btn_OrderServed2.Name = "btn_OrderServed2";
             this.btn_OrderServed2.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed2.TabIndex = 47;
-            this.btn_OrderServed2.UseVisualStyleBackColor = true;
+            this.btn_OrderServed2.UseVisualStyleBackColor = false;
             this.btn_OrderServed2.Click += new System.EventHandler(this.btn_OrderServed2_Click);
             // 
             // lbl_OrderItems2
@@ -592,12 +629,17 @@
             // 
             // btn_OrderServed1
             // 
+            this.btn_OrderServed1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_OrderServed1.BackColor = System.Drawing.Color.Transparent;
+            this.btn_OrderServed1.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
             this.btn_OrderServed1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_OrderServed1.Location = new System.Drawing.Point(240, 5);
+            this.btn_OrderServed1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OrderServed1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_OrderServed1.Location = new System.Drawing.Point(253, 5);
             this.btn_OrderServed1.Name = "btn_OrderServed1";
             this.btn_OrderServed1.Size = new System.Drawing.Size(29, 30);
             this.btn_OrderServed1.TabIndex = 46;
-            this.btn_OrderServed1.UseVisualStyleBackColor = true;
+            this.btn_OrderServed1.UseVisualStyleBackColor = false;
             this.btn_OrderServed1.Click += new System.EventHandler(this.btn_OrderServed1_Click);
             // 
             // lbl_TableTime1

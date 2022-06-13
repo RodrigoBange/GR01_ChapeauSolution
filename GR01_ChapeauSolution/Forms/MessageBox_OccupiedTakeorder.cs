@@ -28,5 +28,10 @@ namespace ChapeauUI.Forms
         {
             DialogResult = DialogResult.No;
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }
