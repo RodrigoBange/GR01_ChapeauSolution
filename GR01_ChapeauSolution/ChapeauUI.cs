@@ -2,17 +2,11 @@
 using ChapeauModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapeauLogic;
 using ChapeauUI.Forms;
 using ChapeauUI;
-using System.Security.Cryptography;
 using ChapeauUI.Properties;
 
 namespace GR01_ChapeauSolution
@@ -166,18 +160,36 @@ namespace GR01_ChapeauSolution
                         lbl_Title.Text = $"Bill Table #{tableNumber}";
                     }
                     break;
-                // Payment Options View 
+                // Cash Payment View
                 case 4:
                     {
                         // Set title
-                        lbl_Title.Text = "Payment Options";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
                     }
                     break;
-                // Process Payment View 
+                // Card Payment View
                 case 5:
                     {
                         // Set title
-                        lbl_Title.Text = "Processing Payment";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
+                    }
+                    break;
+                // Process Payment View
+                case 6:
+                    {
+                        lbl_Title.Text = "Process Payment";
+                    }
+                    break;
+                // Payment Failed View
+                case 7:
+                    {
+                        lbl_Title.Text = "Payment Fail";
+                    }
+                    break;
+                // Payment Success View
+                case 8:
+                    {
+                        lbl_Title.Text = "Payment Success";
                     }
                     break;
             }
@@ -273,6 +285,11 @@ namespace GR01_ChapeauSolution
                     tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
                     tables[i - 1].Item2.IsOccupied = true;
                 }
+                else
+                {
+                    tables[i - 1].Item1.BackgroundImage = Resources.Table_White;
+                    tables[i - 1].Item2.IsOccupied = false;
+                }
             }
         }
 
@@ -293,7 +310,13 @@ namespace GR01_ChapeauSolution
                         tables[tableNumber - 1].Item2.IsOccupied = true;
                     }
                     else
+                    {
                         tabC_Body.SelectedTab = tab_Order;
+                        tableService.SetTableOccupied(tableNumber);
+                        tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                        tables[tableNumber - 1].Item2.IsOccupied = true;
+                    }
+                        
                 }
             }
         }
@@ -1006,7 +1029,6 @@ namespace GR01_ChapeauSolution
                 PayCash_num_Change.Value = 0;
             }
         }
-
         
         private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
         {
@@ -1017,8 +1039,14 @@ namespace GR01_ChapeauSolution
         private void Cash_btn_Pay_Click(object sender, EventArgs e)
         {
             //If pay button is pressed, insert payment, go to payment complete view (no process).
-            payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
-            LoadPaymentSuccessfulView();
+            MessageBox_YesNo confirmPay = new MessageBox_YesNo("Confirm Payment", "Are you sure you want to complete this payment?", "");
+            confirmPay.ShowDialog();
+            if (confirmPay.DialogResult == DialogResult.Yes)
+            {
+                payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
+                LoadPaymentSuccessfulView();
+            }
+            
         }
         #endregion
 
@@ -1077,11 +1105,16 @@ namespace GR01_ChapeauSolution
 
         private void PayCard_btn_Pay_Click(object sender, EventArgs e)
         {
-            //Take user input
-            payment.Tip = (double)PayCard_Num_Tip.Value;
-            payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
-            //Load to processing view
-            LoadPaymentProcessingView();
+            MessageBox_YesNo confirmPay = new MessageBox_YesNo("Confirm Payment", "Are you sure you want to process this payment?", "");
+            confirmPay.ShowDialog();
+            if (confirmPay.DialogResult == DialogResult.Yes)
+            {
+                //Take user input
+                payment.Tip = (double)PayCard_Num_Tip.Value;
+                payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
+                //Load to processing view
+                LoadPaymentProcessingView();
+            }
         }
         #endregion
 
