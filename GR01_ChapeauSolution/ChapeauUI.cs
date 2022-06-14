@@ -209,7 +209,7 @@ namespace GR01_ChapeauSolution
                         tabC_Body.SelectedTab = tab_Tables;
                     }
                 }
-            }//Or if the payment complete tab is open, the potentially entered comment is transferred (comment will be checked in service layer). 
+            }//Or if Payment Complete tab is open, the potentially entered comment is transferred
             else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
             {
                 try
@@ -1262,14 +1262,6 @@ namespace GR01_ChapeauSolution
         {
             LoadPaymentProcessingView();
         }
-        #endregion
-
-        #region Kitchen
-        /** KITCHEN VIEW METHODS **/
-        #endregion
-
-        #region Bar
-        /** BAR VIEW METHODS **/
         #endregion
 
         #region Error Management
