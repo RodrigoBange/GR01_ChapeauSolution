@@ -44,10 +44,9 @@ namespace ChapeauUI
             this.Ammount = new System.Windows.Forms.ColumnHeader();
             this.Comment = new System.Windows.Forms.ColumnHeader();
             this.Time = new System.Windows.Forms.ColumnHeader();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnl_Food = new System.Windows.Forms.Panel();
             this.pnl_Kitchen = new System.Windows.Forms.Panel();
-            this.Dinner = new System.Windows.Forms.Button();
-            this.Lunch = new System.Windows.Forms.Button();
             this.lbl_TitleKitchen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listView_Food = new System.Windows.Forms.ListView();
@@ -58,7 +57,8 @@ namespace ChapeauUI
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Lunch = new System.Windows.Forms.Button();
+            this.Dinner = new System.Windows.Forms.Button();
             this.pnl_Bar.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             this.pnl_Food.SuspendLayout();
@@ -198,6 +198,11 @@ namespace ChapeauUI
             this.Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Time.Width = 130;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
             // pnl_Food
             // 
             this.pnl_Food.Controls.Add(this.pnl_Kitchen);
@@ -220,26 +225,6 @@ namespace ChapeauUI
             this.pnl_Kitchen.Name = "pnl_Kitchen";
             this.pnl_Kitchen.Size = new System.Drawing.Size(913, 67);
             this.pnl_Kitchen.TabIndex = 1;
-            // 
-            // Dinner
-            // 
-            this.Dinner.Location = new System.Drawing.Point(114, 32);
-            this.Dinner.Name = "Dinner";
-            this.Dinner.Size = new System.Drawing.Size(94, 29);
-            this.Dinner.TabIndex = 6;
-            this.Dinner.Text = "Dinner";
-            this.Dinner.UseVisualStyleBackColor = true;
-            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
-            // 
-            // Lunch
-            // 
-            this.Lunch.Location = new System.Drawing.Point(14, 32);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.Size = new System.Drawing.Size(94, 29);
-            this.Lunch.TabIndex = 5;
-            this.Lunch.Text = "Lunch";
-            this.Lunch.UseVisualStyleBackColor = true;
-            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
             // 
             // lbl_TitleKitchen
             // 
@@ -323,10 +308,25 @@ namespace ChapeauUI
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 130;
             // 
-            // timer
+            // Lunch
             // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 2000;
+            this.Lunch.Location = new System.Drawing.Point(14, 32);
+            this.Lunch.Name = "Lunch";
+            this.Lunch.Size = new System.Drawing.Size(94, 29);
+            this.Lunch.TabIndex = 5;
+            this.Lunch.Text = "Lunch";
+            this.Lunch.UseVisualStyleBackColor = true;
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
+            // 
+            // Dinner
+            // 
+            this.Dinner.Location = new System.Drawing.Point(114, 32);
+            this.Dinner.Name = "Dinner";
+            this.Dinner.Size = new System.Drawing.Size(94, 29);
+            this.Dinner.TabIndex = 6;
+            this.Dinner.Text = "Dinner";
+            this.Dinner.UseVisualStyleBackColor = true;
+            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
             // 
             // KitchenBar_UI
             // 
@@ -364,6 +364,7 @@ namespace ChapeauUI
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ColumnHeader Checcck;
         private System.Windows.Forms.ColumnHeader Order;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_Ready;
         private System.Windows.Forms.Panel pnl_Food;
         private System.Windows.Forms.Panel pnl_Kitchen;
@@ -379,6 +380,5 @@ namespace ChapeauUI
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button Dinner;
         private System.Windows.Forms.Button Lunch;
-        private System.Windows.Forms.Timer timer;
     }
 }
