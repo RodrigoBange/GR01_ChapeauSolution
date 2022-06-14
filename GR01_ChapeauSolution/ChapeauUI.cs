@@ -1141,14 +1141,6 @@ namespace GR01_ChapeauSolution
         }
         #endregion
 
-        #region Kitchen
-        /** KITCHEN VIEW METHODS **/
-        #endregion
-
-        #region Bar
-        /** BAR VIEW METHODS **/
-        #endregion
-
         #region Error Management
         private void DisplayError(Exception ex)
         {

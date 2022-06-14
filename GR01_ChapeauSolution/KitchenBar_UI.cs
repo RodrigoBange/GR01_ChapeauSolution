@@ -24,28 +24,76 @@ namespace ChapeauUI
             if (this.employee.EmployeeRole == "Chef")
             {
                 // Display Kitchen panel
+<<<<<<< Updated upstream
                 pnl_Kitchen.Visible = true;
                 pnl_Bar.Visible = false;
+=======
+                pnl_Food.Show();
+                pnl_Bar.Hide();
+>>>>>>> Stashed changes
                 btn_User.Show();
                 listView_Bar.CheckBoxes = true;
                 label_Time.Show();
                 label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+                MyTimer(10);
+                
+                FillLunch();
             }
             else if (this.employee.EmployeeRole == "Bartender")
             {
                 // Display Bar panel
+<<<<<<< Updated upstream
                 pnl_Bar.Visible = true;
                 pnl_Kitchen.Visible = false;
+=======
+                pnl_Bar.Show();
+                pnl_Food.Hide();
+>>>>>>> Stashed changes
                 btn_User.Show();
-                FillBar();
                 listView_Bar.CheckBoxes = true;
                 label_Time.Show();
                 label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+                MyTimer(10);
+
+                FillBar();
             }
             
 
         }
+        
 
+        private void MyTimer(int seconds)
+        {
+            Timer timer = new Timer();
+            timer.Interval = (seconds*1000);
+            timer.Tick += new EventHandler(Kitchen_Timer_Tick);
+            timer.Start();
+        }
+
+        private void Kitchen_Timer_Tick(object sender, System.EventArgs e)
+        {
+            if (this.employee.EmployeeRole == "Chef")
+            {
+                for (int i = 0; i < listView_Food.Items.Count; i++)
+                {
+                    if (listView_Food.Items[i].Checked == true)
+                    {
+                        listView_Food.Items[i].Remove();
+                    }
+                }
+            }
+
+            else if (this.employee.EmployeeRole == "Bartender")
+            {
+                for (int i = 0; i < listView_Bar.Items.Count; i++)
+                {
+                    if (listView_Bar.Items[i].Checked == true)
+                    {
+                        listView_Bar.Items[i].Remove();
+                    }
+                }
+            }
+        }
         public void FillBar()
         {
             Kitchen_BarService barService = new Kitchen_BarService();
@@ -116,11 +164,13 @@ namespace ChapeauUI
 
         private void Lunch_Click(object sender, EventArgs e)
         {
+            listView_Food.Items.Clear();
             FillLunch();
         }
 
         private void Dinner_Click(object sender, EventArgs e)
         {
+            listView_Food.Items.Clear();
             FillDinner();
         }
     }
