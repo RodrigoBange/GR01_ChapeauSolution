@@ -30,10 +30,11 @@
         {
             this.lbl_Title = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_Message = new System.Windows.Forms.Label();
             this.pnl_Buttons = new System.Windows.Forms.Panel();
             this.btn_MarkAsOccupied = new System.Windows.Forms.Button();
             this.btn_TakeOrder = new System.Windows.Forms.Button();
-            this.lbl_Message = new System.Windows.Forms.Label();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,21 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 94);
             this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // lbl_Message
+            // 
+            this.lbl_Message.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Message.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Message.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_Message.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lbl_Message.MinimumSize = new System.Drawing.Size(500, 92);
+            this.lbl_Message.Name = "lbl_Message";
+            this.lbl_Message.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.lbl_Message.Size = new System.Drawing.Size(500, 92);
+            this.lbl_Message.TabIndex = 4;
+            this.lbl_Message.Text = "This table is empty";
+            this.lbl_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Message.UseCompatibleTextRendering = true;
             // 
             // pnl_Buttons
             // 
@@ -113,20 +129,18 @@
             this.btn_TakeOrder.UseVisualStyleBackColor = false;
             this.btn_TakeOrder.Click += new System.EventHandler(this.btn_TakeOrder_Click);
             // 
-            // lbl_Message
+            // btn_Exit
             // 
-            this.lbl_Message.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_Message.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Message.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_Message.MaximumSize = new System.Drawing.Size(500, 0);
-            this.lbl_Message.MinimumSize = new System.Drawing.Size(500, 92);
-            this.lbl_Message.Name = "lbl_Message";
-            this.lbl_Message.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.lbl_Message.Size = new System.Drawing.Size(500, 92);
-            this.lbl_Message.TabIndex = 4;
-            this.lbl_Message.Text = "This table is empty";
-            this.lbl_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_Message.UseCompatibleTextRendering = true;
+            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.btn_Exit.BackgroundImage = global::ChapeauUI.Properties.Resources.cross1;
+            this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Exit.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_Exit.Location = new System.Drawing.Point(448, 4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(39, 39);
+            this.btn_Exit.TabIndex = 7;
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // MessageBox_OccupiedTakeorder
             // 
@@ -136,6 +150,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 279);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.pnl_Buttons);
@@ -165,5 +180,6 @@
         private System.Windows.Forms.Button btn_MarkAsOccupied;
         private System.Windows.Forms.Button btn_TakeOrder;
         private System.Windows.Forms.Label lbl_Message;
+        private System.Windows.Forms.Button btn_Exit;
     }
 }

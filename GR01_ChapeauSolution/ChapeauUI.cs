@@ -2,17 +2,11 @@
 using ChapeauModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapeauLogic;
 using ChapeauUI.Forms;
 using ChapeauUI;
-using System.Security.Cryptography;
 using ChapeauUI.Properties;
 
 namespace GR01_ChapeauSolution
@@ -26,7 +20,7 @@ namespace GR01_ChapeauSolution
         MenuService menuService;
         OrderService orderService;
         StockService stockService;
-        EmployeeService employeeService;
+        TableService tableService;
         BillService billService;
         PaymentService paymentService;
         Random rnd;
@@ -36,7 +30,8 @@ namespace GR01_ChapeauSolution
         const string hexColorDark = "#1C1B2D";
 
         // General variables
-        private int tableNumber = 0;
+        private int tableNumber = 1;
+        private List<Tuple<Button, Table>> tables = new List<Tuple<Button, Table>>();
 
         Employee employee;
 
@@ -54,7 +49,7 @@ namespace GR01_ChapeauSolution
             menuService = new MenuService();
             orderService = new OrderService();
             stockService = new StockService();
-            employeeService = new EmployeeService();
+            tableService = new TableService();
             billService = new BillService();
             paymentService = new PaymentService();
             rnd = new Random();
@@ -75,6 +70,27 @@ namespace GR01_ChapeauSolution
 
             // Start tab on load
             tabC_Body.SelectedTab = tab_Tables;
+
+            // Fill table list
+            tables.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_2, new Table(2, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_3, new Table(3, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_4, new Table(4, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_5, new Table(5, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_6, new Table(6, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_7, new Table(7, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_8, new Table(8, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_9, new Table(9, false)));
+            tables.Add(new Tuple<Button, Table>(btn_Table_10, new Table(10, false)));
+
+            // Check for table occupied
+            CheckTableStatuses();
+
+            // Load running orders
+            List<OrderItem> items = new List<OrderItem>();
+            C_Table_Order tab_tableOrder = new C_Table_Order(items);
+            flow_TableOverview.Controls.Add(tab_tableOrder);
+
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -100,8 +116,8 @@ namespace GR01_ChapeauSolution
                         // Set title
                         lbl_Title.Text = "Overview";
 
-                        // Test Reservations
-                        TestAddReservations();
+                        // Check for table occupied
+                        CheckTableStatuses();
                     }
                     break;
                 // Order View
@@ -144,18 +160,36 @@ namespace GR01_ChapeauSolution
                         lbl_Title.Text = $"Bill Table #{tableNumber}";
                     }
                     break;
-                // Payment Options View 
+                // Cash Payment View
                 case 4:
                     {
                         // Set title
-                        lbl_Title.Text = "Payment Options";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
                     }
                     break;
-                // Process Payment View 
+                // Card Payment View
                 case 5:
                     {
                         // Set title
-                        lbl_Title.Text = "Processing Payment";
+                        lbl_Title.Text = $"Payment Table #{tableNumber}";
+                    }
+                    break;
+                // Process Payment View
+                case 6:
+                    {
+                        lbl_Title.Text = "Process Payment";
+                    }
+                    break;
+                // Payment Failed View
+                case 7:
+                    {
+                        lbl_Title.Text = "Payment Fail";
+                    }
+                    break;
+                // Payment Success View
+                case 8:
+                    {
+                        lbl_Title.Text = "Payment Success";
                     }
                     break;
             }
@@ -174,6 +208,17 @@ namespace GR01_ChapeauSolution
                         // Return to table view
                         tabC_Body.SelectedTab = tab_Tables;
                     }
+                }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred (comment will be checked in service layer). 
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                try
+                {
+                    paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+                }
+                catch (Exception ex)
+                {
+                    DisplayError(ex);
                 }
             }
             else
@@ -200,6 +245,17 @@ namespace GR01_ChapeauSolution
                         tabC_Body.SelectedTab = tab_Account;
                     }
                 }
+            }//Or if the payment complete tab is open, the potentially entered comment is transferred (comment will be checked in service layer). 
+            else if (tabC_Body.SelectedTab == tab_PaymentComplete) 
+            {
+                try
+                {
+                    paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
+                }
+                catch (Exception ex)
+                {
+                    DisplayError(ex);
+                }
             }
             else
             {
@@ -220,25 +276,51 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
-        private void TestAddReservations()
+        private void CheckTableStatuses()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i < tables.Count + 1; i++)
             {
-                // Create new Table order
-                C_Table_Order table_order = new C_Table_Order();
-
-                // Add reservation to flow panel
-                flow_TableOverview.Controls.Add(table_order);
+                if (tableService.TableOccupied(i))
+                {
+                    tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
+                    tables[i - 1].Item2.IsOccupied = true;
+                }
+                else
+                {
+                    tables[i - 1].Item1.BackgroundImage = Resources.Table_White;
+                    tables[i - 1].Item2.IsOccupied = false;
+                }
             }
         }
 
-        private void FreeTable(Button table, int tableNumber)
-        {
-            if (table.Image == Resources.Table_White)
+        private void OccupiedTable()
+        {            
+            if (tables[tableNumber - 1].Item2.IsOccupied)
             {
-                MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber);
-                messageBox.ShowDialog();
-                // DialogResult result = messageBox.ShowDialog();
+                tabC_Body.SelectedTab = tab_Order;
+            }
+            else
+            {
+                using (MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber))
+                {
+                    switch (messageBox.ShowDialog())
+                    {
+                        case DialogResult.Yes:
+                            tableService.SetTableOccupied(tableNumber);
+                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            break;
+                        case DialogResult.No:
+                            tabC_Body.SelectedTab = tab_Order;
+                            tableService.SetTableOccupied(tableNumber);
+                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            break;
+                        case DialogResult.Cancel:
+                            messageBox.Hide();
+                            break;
+                    }
+                }
             }
         }
 
@@ -247,9 +329,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 1;
 
-            // Open order view
-            FreeTable(btn_Table_1, 1);
-            //tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_2_Click(object sender, EventArgs e)
@@ -257,8 +338,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 2;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_3_Click(object sender, EventArgs e)
@@ -266,8 +347,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 3;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_4_Click(object sender, EventArgs e)
@@ -275,8 +356,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 4;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_5_Click(object sender, EventArgs e)
@@ -284,8 +365,8 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 5;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_6_Click(object sender, EventArgs e)
@@ -293,15 +374,16 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 6;
 
-            tabC_Body.SelectedIndex = 3;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 7;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
 
         private void btn_Table_8_Click(object sender, EventArgs e)
@@ -309,24 +391,24 @@ namespace GR01_ChapeauSolution
             // Set active table number
             tableNumber = 8;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_9_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 9;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         private void btn_Table_10_Click(object sender, EventArgs e)
         {
             // Set active table number
             tableNumber = 10;
 
-            // Open order view
-            tabC_Body.SelectedTab = tab_Order;
+            // Check if the table is occupied
+            OccupiedTable();
         }
         #endregion
 
@@ -886,7 +968,7 @@ namespace GR01_ChapeauSolution
                 payment.PaymentMethod = PaymentMethod.Debit;
                 LoadDebitPaymentView();
             }
-            else //No payment method selected, display instructions for the user
+            else //No payment method selected, display instructions in an error message for the user
             {
                 MessageBox_Ok messageBox = new MessageBox_Ok("Select Payment Method", "Select a payment method first.");
                 messageBox.ShowDialog();
@@ -905,33 +987,44 @@ namespace GR01_ChapeauSolution
             PayCash_num_Change.Value = 0;
             tabC_Body.SelectedTab = tab_CashPayment;
         }
-
-        //Back button takes you back to bill screen
+        
         private void Cash_btn_Back_Click(object sender, EventArgs e)
         {
+            //Back button takes user back to bill screen (with user input still intact)
             tabC_Body.SelectedTab = tab_Bill;
         }
 
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_AmountGiven_ValueChanged(object sender, EventArgs e)
         {
             //If entered amount given is more than the bill price, calculate change
-            if (PayCash_num_AmountGiven.Value >= (decimal)bill.PriceRemaining)
+            if (PayCash_num_AmountGiven.Value > (decimal)bill.PriceRemaining)
+            {
                 PayCash_num_Change.Value = (PayCash_num_AmountGiven.Value - (decimal)bill.PriceRemaining);
+            }
+            else //If given amount is lower, make the change amount 0
+            {
+                PayCash_num_Change.Value = 0;
+            }
         }
-
-        //Depending on the payment method, calculates values different when new user input is given
+        
         private void PayCash_num_Change_ValueChanged(object sender, EventArgs e)
         {
-            //If they want a certain amount of change, can also reverse-calculate the given amount
+            //If user enters a certain amount of change, system will reverse-calculate the given amount
             PayCash_num_AmountGiven.Value = ((decimal)bill.PriceRemaining + PayCash_num_Change.Value);
         }
 
         private void Cash_btn_Pay_Click(object sender, EventArgs e)
         {
             //If pay button is pressed, insert payment, go to payment complete view (no process).
-            payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
-            LoadPaymentSuccessfulView();
+            MessageBox_YesNo confirmPay = new MessageBox_YesNo("Confirm Payment", "Are you sure you want to complete this payment?", "");
+            confirmPay.ShowDialog();
+            if (confirmPay.DialogResult == DialogResult.Yes)
+            {
+                payment.AmountPaid = (double)PayCash_num_AmountGiven.Value;
+                LoadPaymentSuccessfulView();
+            }
+            
         }
         #endregion
 
@@ -981,19 +1074,25 @@ namespace GR01_ChapeauSolution
                 PayCard_Num_Total.Value = (decimal)bill.PriceRemaining + PayCard_Num_Tip.Value;
             }
         }
+        
         private void PayCard_btn_Back_Click(object sender, EventArgs e)
         {
-            //Back to bill view with user input still loaded
+            //Back button takes user back to bill screen (with user input still intact)
             tabC_Body.SelectedTab = tab_Bill;
         }
 
         private void PayCard_btn_Pay_Click(object sender, EventArgs e)
         {
-            //Take user input
-            payment.Tip = (double)PayCard_Num_Tip.Value;
-            payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
-            //Load to processing view
-            LoadPaymentProcessingView();
+            MessageBox_YesNo confirmPay = new MessageBox_YesNo("Confirm Payment", "Are you sure you want to process this payment?", "");
+            confirmPay.ShowDialog();
+            if (confirmPay.DialogResult == DialogResult.Yes)
+            {
+                //Take user input
+                payment.Tip = (double)PayCard_Num_Tip.Value;
+                payment.AmountPaid = (double)PayCard_Num_Total.Value - (double)PayCard_Num_Tip.Value;
+                //Load to processing view
+                LoadPaymentProcessingView();
+            }
         }
         #endregion
 
@@ -1072,6 +1171,7 @@ namespace GR01_ChapeauSolution
                 {
                     PaymentComplete_btn_BackToTableView.Text = "Back to Table View";
                     bill.IsPaid = true;
+                    tableService.SetTableUnoccupied(tableNumber);
                 }
                 else
                 {
@@ -1101,6 +1201,7 @@ namespace GR01_ChapeauSolution
         {
             try
             {
+                //Insert comment to the database (comment will be checked in service layer)
                 paymentService.InsertComment(PaymentComplete_txt_Comment.Text);
             }
             catch (Exception ex)
@@ -1164,8 +1265,7 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        #endregion
 
-        
+        #endregion
     }
 }

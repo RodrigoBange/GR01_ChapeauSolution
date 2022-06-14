@@ -1,5 +1,6 @@
 ﻿using ChapeauLogic;
 using ChapeauModel;
+using GR01_ChapeauSolution;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,9 @@ namespace ChapeauUI
             if (this.employee.EmployeeRole == "Chef")
             {
                 // Display Kitchen panel
-                pnl_Kitchen.Visible = true;
-                pnl_Bar.Visible = false;
-                btn_User.Show();
+                pnl_Food.Show();
+                pnl_Kitchen.Show();
+                pnl_Bar.Hide();
                 listView_Bar.CheckBoxes = true;
                 label_Time.Show();
                 label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -34,9 +35,9 @@ namespace ChapeauUI
             else if (this.employee.EmployeeRole == "Bartender")
             {
                 // Display Bar panel
-                pnl_Bar.Visible = true;
-                pnl_Kitchen.Visible = false;
-                btn_User.Show();
+                pnl_Bar.Show();
+                pnl_Food.Hide();
+                pnl_Kitchen.Hide();
                 FillBar();
                 listView_Bar.CheckBoxes = true;
                 label_Time.Show();
@@ -122,6 +123,43 @@ namespace ChapeauUI
         private void Dinner_Click(object sender, EventArgs e)
         {
             FillDinner();
+        }
+
+        private void btn_Account_Logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+            employee = null;
+        }
+
+        private void btn_User_Click(object sender, EventArgs e)
+        {
+            // Open account overview
+            pnl_AccountBarKitchen.Show();
+            pnl_Bar.Hide();
+            pnl_Kitchen.Hide();
+            pnl_Food.Hide();
+            
+            //Show employee information
+            lbl_Account_EmployeeID.Text = $"ID: {employee.EmployeeId.ToString()}";
+            lbl_Account_EmployeeName.Text = employee.EmployeeName;
+            lbl_Account_Role.Text = employee.EmployeeRole;
+        }
+
+        private void btn_ReturnBarKitchenView_Click(object sender, EventArgs e)
+        {
+            // Close account overview
+            pnl_AccountBarKitchen.Hide();
+            if (employee.EmployeeRole == "Chef")
+            {
+                pnl_Food.Show();
+                pnl_Kitchen.Show();
+            }
+            else if (employee.EmployeeRole == "Bartender")
+            {
+                pnl_Bar.Show();
+            }
         }
     }
 }

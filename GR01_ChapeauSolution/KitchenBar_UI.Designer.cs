@@ -47,6 +47,9 @@ namespace ChapeauUI
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnl_Food = new System.Windows.Forms.Panel();
             this.pnl_Kitchen = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Dinner = new System.Windows.Forms.Button();
+            this.Lunch = new System.Windows.Forms.Button();
             this.lbl_TitleKitchen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listView_Food = new System.Windows.Forms.ListView();
@@ -57,12 +60,25 @@ namespace ChapeauUI
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.Lunch = new System.Windows.Forms.Button();
-            this.Dinner = new System.Windows.Forms.Button();
+            this.pnl_AccountBarKitchen = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Account_Role = new System.Windows.Forms.Label();
+            this.btn_Account_Logout = new System.Windows.Forms.Button();
+            this.lbl_Account_EmployeeName = new System.Windows.Forms.Label();
+            this.lbl_Account_EmployeeID = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ReturnBarKitchenView = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbl_Title = new System.Windows.Forms.Label();
             this.pnl_Bar.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             this.pnl_Food.SuspendLayout();
             this.pnl_Kitchen.SuspendLayout();
+            this.pnl_AccountBarKitchen.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Bar
@@ -76,7 +92,7 @@ namespace ChapeauUI
             // 
             // pnl_Header
             // 
-            this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
             this.pnl_Header.Controls.Add(this.btn_Ready);
             this.pnl_Header.Controls.Add(this.label_Time);
             this.pnl_Header.Controls.Add(this.btn_User);
@@ -121,7 +137,7 @@ namespace ChapeauUI
             this.btn_User.Size = new System.Drawing.Size(50, 50);
             this.btn_User.TabIndex = 0;
             this.btn_User.UseVisualStyleBackColor = false;
-            this.btn_User.Visible = false;
+            this.btn_User.Click += new System.EventHandler(this.btn_User_Click);
             // 
             // lbl_TitleBar
             // 
@@ -214,7 +230,8 @@ namespace ChapeauUI
             // 
             // pnl_Kitchen
             // 
-            this.pnl_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
+            this.pnl_Kitchen.Controls.Add(this.button1);
             this.pnl_Kitchen.Controls.Add(this.Dinner);
             this.pnl_Kitchen.Controls.Add(this.Lunch);
             this.pnl_Kitchen.Controls.Add(this.lbl_TitleKitchen);
@@ -225,6 +242,43 @@ namespace ChapeauUI
             this.pnl_Kitchen.Name = "pnl_Kitchen";
             this.pnl_Kitchen.Size = new System.Drawing.Size(913, 67);
             this.pnl_Kitchen.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
+            this.button1.BackgroundImage = global::ChapeauUI.Properties.Resources.User_Icon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(845, 16);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_User_Click);
+            // 
+            // Dinner
+            // 
+            this.Dinner.Location = new System.Drawing.Point(114, 32);
+            this.Dinner.Name = "Dinner";
+            this.Dinner.Size = new System.Drawing.Size(94, 29);
+            this.Dinner.TabIndex = 6;
+            this.Dinner.Text = "Dinner";
+            this.Dinner.UseVisualStyleBackColor = true;
+            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
+            // 
+            // Lunch
+            // 
+            this.Lunch.Location = new System.Drawing.Point(14, 32);
+            this.Lunch.Name = "Lunch";
+            this.Lunch.Size = new System.Drawing.Size(94, 29);
+            this.Lunch.TabIndex = 5;
+            this.Lunch.Text = "Lunch";
+            this.Lunch.UseVisualStyleBackColor = true;
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
             // 
             // lbl_TitleKitchen
             // 
@@ -308,25 +362,157 @@ namespace ChapeauUI
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 130;
             // 
-            // Lunch
+            // pnl_AccountBarKitchen
             // 
-            this.Lunch.Location = new System.Drawing.Point(14, 32);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.Size = new System.Drawing.Size(94, 29);
-            this.Lunch.TabIndex = 5;
-            this.Lunch.Text = "Lunch";
-            this.Lunch.UseVisualStyleBackColor = true;
-            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
+            this.pnl_AccountBarKitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnl_AccountBarKitchen.Controls.Add(this.panel1);
+            this.pnl_AccountBarKitchen.Controls.Add(this.panel2);
+            this.pnl_AccountBarKitchen.Location = new System.Drawing.Point(0, 0);
+            this.pnl_AccountBarKitchen.Name = "pnl_AccountBarKitchen";
+            this.pnl_AccountBarKitchen.Size = new System.Drawing.Size(908, 634);
+            this.pnl_AccountBarKitchen.TabIndex = 3;
             // 
-            // Dinner
+            // panel1
             // 
-            this.Dinner.Location = new System.Drawing.Point(114, 32);
-            this.Dinner.Name = "Dinner";
-            this.Dinner.Size = new System.Drawing.Size(94, 29);
-            this.Dinner.TabIndex = 6;
-            this.Dinner.Text = "Dinner";
-            this.Dinner.UseVisualStyleBackColor = true;
-            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.lbl_Account_Role);
+            this.panel1.Controls.Add(this.btn_Account_Logout);
+            this.panel1.Controls.Add(this.lbl_Account_EmployeeName);
+            this.panel1.Controls.Add(this.lbl_Account_EmployeeID);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(3, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(902, 559);
+            this.panel1.TabIndex = 10;
+            // 
+            // lbl_Account_Role
+            // 
+            this.lbl_Account_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Account_Role.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Account_Role.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_Account_Role.Location = new System.Drawing.Point(145, 384);
+            this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_Role.Name = "lbl_Account_Role";
+            this.lbl_Account_Role.Size = new System.Drawing.Size(599, 35);
+            this.lbl_Account_Role.TabIndex = 8;
+            this.lbl_Account_Role.Text = "Role";
+            this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_Account_Logout
+            // 
+            this.btn_Account_Logout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Account_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(122)))), ((int)(((byte)(161)))));
+            this.btn_Account_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Account_Logout.FlatAppearance.BorderSize = 0;
+            this.btn_Account_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Account_Logout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Account_Logout.ForeColor = System.Drawing.Color.White;
+            this.btn_Account_Logout.Location = new System.Drawing.Point(340, 457);
+            this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Account_Logout.Name = "btn_Account_Logout";
+            this.btn_Account_Logout.Size = new System.Drawing.Size(209, 66);
+            this.btn_Account_Logout.TabIndex = 9;
+            this.btn_Account_Logout.Text = "Logout";
+            this.btn_Account_Logout.UseVisualStyleBackColor = false;
+            this.btn_Account_Logout.Click += new System.EventHandler(this.btn_Account_Logout_Click);
+            // 
+            // lbl_Account_EmployeeName
+            // 
+            this.lbl_Account_EmployeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Account_EmployeeName.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Account_EmployeeName.ForeColor = System.Drawing.Color.White;
+            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(319, 328);
+            this.lbl_Account_EmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_EmployeeName.Name = "lbl_Account_EmployeeName";
+            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(256, 55);
+            this.lbl_Account_EmployeeName.TabIndex = 7;
+            this.lbl_Account_EmployeeName.Text = "Name";
+            this.lbl_Account_EmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Account_EmployeeID
+            // 
+            this.lbl_Account_EmployeeID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Account_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Account_EmployeeID.ForeColor = System.Drawing.Color.White;
+            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(319, 283);
+            this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Account_EmployeeID.Name = "lbl_Account_EmployeeID";
+            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(256, 55);
+            this.lbl_Account_EmployeeID.TabIndex = 4;
+            this.lbl_Account_EmployeeID.Text = "Employee ID";
+            this.lbl_Account_EmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::ChapeauUI.Properties.Resources.User_Icon;
+            this.pictureBox2.Location = new System.Drawing.Point(323, 29);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(252, 240);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.panel2.Controls.Add(this.btn_ReturnBarKitchenView);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.lbl_Title);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(908, 66);
+            this.panel2.TabIndex = 1;
+            // 
+            // btn_ReturnBarKitchenView
+            // 
+            this.btn_ReturnBarKitchenView.BackgroundImage = global::ChapeauUI.Properties.Resources.Home_Icon_New1;
+            this.btn_ReturnBarKitchenView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_ReturnBarKitchenView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ReturnBarKitchenView.FlatAppearance.BorderSize = 0;
+            this.btn_ReturnBarKitchenView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ReturnBarKitchenView.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ReturnBarKitchenView.Location = new System.Drawing.Point(1, 0);
+            this.btn_ReturnBarKitchenView.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_ReturnBarKitchenView.Name = "btn_ReturnBarKitchenView";
+            this.btn_ReturnBarKitchenView.Size = new System.Drawing.Size(91, 66);
+            this.btn_ReturnBarKitchenView.TabIndex = 4;
+            this.btn_ReturnBarKitchenView.UseVisualStyleBackColor = true;
+            this.btn_ReturnBarKitchenView.Click += new System.EventHandler(this.btn_ReturnBarKitchenView_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
+            this.button2.BackgroundImage = global::ChapeauUI.Properties.Resources.User_Icon;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(1310, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 50);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Title.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.lbl_Title.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Title.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(908, 66);
+            this.lbl_Title.TabIndex = 1;
+            this.lbl_Title.Text = "Account";
+            this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // KitchenBar_UI
             // 
@@ -336,6 +522,7 @@ namespace ChapeauUI
             this.ClientSize = new System.Drawing.Size(908, 631);
             this.Controls.Add(this.pnl_Food);
             this.Controls.Add(this.pnl_Bar);
+            this.Controls.Add(this.pnl_AccountBarKitchen);
             this.Name = "KitchenBar_UI";
             this.Text = "Form1";
             this.pnl_Bar.ResumeLayout(false);
@@ -344,6 +531,10 @@ namespace ChapeauUI
             this.pnl_Food.ResumeLayout(false);
             this.pnl_Kitchen.ResumeLayout(false);
             this.pnl_Kitchen.PerformLayout();
+            this.pnl_AccountBarKitchen.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,5 +571,17 @@ namespace ChapeauUI
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button Dinner;
         private System.Windows.Forms.Button Lunch;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnl_AccountBarKitchen;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_ReturnBarKitchenView;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_Title;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_Account_EmployeeID;
+        private System.Windows.Forms.Label lbl_Account_EmployeeName;
+        private System.Windows.Forms.Label lbl_Account_Role;
+        private System.Windows.Forms.Button btn_Account_Logout;
+        private System.Windows.Forms.Panel panel1;
     }
 }
