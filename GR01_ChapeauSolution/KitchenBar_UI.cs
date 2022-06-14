@@ -30,7 +30,11 @@ namespace ChapeauUI
                 pnl_Bar.Hide();
                 listView_Bar.CheckBoxes = true;
 
+                kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
+                
+                Clock();
                 MyTimer(10);
+                FillLunch();
             }
             else if (this.employee.EmployeeRole == "Bartender")
             {
@@ -40,6 +44,9 @@ namespace ChapeauUI
                 pnl_Kitchen.Hide();
                 listView_Bar.CheckBoxes = true;
 
+                bar_Clock.Text = DateTime.Now.ToString("HH:mm");
+
+                Clock();
                 MyTimer(10);
                 FillBar();
             }
@@ -79,6 +86,27 @@ namespace ChapeauUI
                 }
             }
         }
+
+        private void Clock()
+        {
+            Timer timer = new Timer();
+            timer.Interval = (30 * 1000);
+            timer.Tick += new EventHandler(Clock_Tick);
+            timer.Start();
+        }
+        private void Clock_Tick(object sender, System.EventArgs e)
+        {
+            if (this.employee.EmployeeRole == "Chef")
+            {
+                kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
+            }
+
+            else if (this.employee.EmployeeRole == "Bartender")
+            {
+                bar_Clock.Text = DateTime.Now.ToString("HH:mm");
+            }
+        }
+
         public void FillBar()
         {
             Kitchen_BarService barService = new Kitchen_BarService();

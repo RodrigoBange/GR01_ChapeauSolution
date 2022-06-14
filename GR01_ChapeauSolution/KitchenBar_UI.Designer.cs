@@ -33,6 +33,7 @@ namespace ChapeauUI
             this.pnl_Bar = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_User = new System.Windows.Forms.Button();
+            this.bar_Clock = new System.Windows.Forms.Label();
             this.lbl_TitleBar = new System.Windows.Forms.Label();
             this.listView_Bar = new System.Windows.Forms.ListView();
             this.Checcck = new System.Windows.Forms.ColumnHeader();
@@ -45,6 +46,7 @@ namespace ChapeauUI
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnl_Food = new System.Windows.Forms.Panel();
             this.pnl_Kitchen = new System.Windows.Forms.Panel();
+            this.kitchen_Clock = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Dinner = new System.Windows.Forms.Button();
             this.Lunch = new System.Windows.Forms.Button();
@@ -91,6 +93,7 @@ namespace ChapeauUI
             // 
             this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
             this.pnl_Header.Controls.Add(this.btn_User);
+            this.pnl_Header.Controls.Add(this.bar_Clock);
             this.pnl_Header.Controls.Add(this.lbl_TitleBar);
             this.pnl_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Header.Location = new System.Drawing.Point(0, 0);
@@ -115,6 +118,16 @@ namespace ChapeauUI
             this.btn_User.TabIndex = 0;
             this.btn_User.UseVisualStyleBackColor = false;
             this.btn_User.Click += new System.EventHandler(this.btn_User_Click);
+            // 
+            // bar_Clock
+            // 
+            this.bar_Clock.AutoSize = true;
+            this.bar_Clock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bar_Clock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.bar_Clock.Location = new System.Drawing.Point(741, 36);
+            this.bar_Clock.Name = "bar_Clock";
+            this.bar_Clock.Size = new System.Drawing.Size(0, 28);
+            this.bar_Clock.TabIndex = 3;
             // 
             // lbl_TitleBar
             // 
@@ -208,6 +221,7 @@ namespace ChapeauUI
             // pnl_Kitchen
             // 
             this.pnl_Kitchen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
+            this.pnl_Kitchen.Controls.Add(this.kitchen_Clock);
             this.pnl_Kitchen.Controls.Add(this.button1);
             this.pnl_Kitchen.Controls.Add(this.Dinner);
             this.pnl_Kitchen.Controls.Add(this.Lunch);
@@ -218,6 +232,16 @@ namespace ChapeauUI
             this.pnl_Kitchen.Name = "pnl_Kitchen";
             this.pnl_Kitchen.Size = new System.Drawing.Size(913, 67);
             this.pnl_Kitchen.TabIndex = 1;
+            // 
+            // kitchen_Clock
+            // 
+            this.kitchen_Clock.AutoSize = true;
+            this.kitchen_Clock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kitchen_Clock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
+            this.kitchen_Clock.Location = new System.Drawing.Point(741, 36);
+            this.kitchen_Clock.Name = "kitchen_Clock";
+            this.kitchen_Clock.Size = new System.Drawing.Size(0, 28);
+            this.kitchen_Clock.TabIndex = 2;
             // 
             // button1
             // 
@@ -495,8 +519,10 @@ namespace ChapeauUI
             this.Text = "Form1";
             this.pnl_Bar.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
+            this.pnl_Header.PerformLayout();
             this.pnl_Food.ResumeLayout(false);
             this.pnl_Kitchen.ResumeLayout(false);
+            this.pnl_Kitchen.PerformLayout();
             this.pnl_AccountBarKitchen.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -546,5 +572,7 @@ namespace ChapeauUI
         private System.Windows.Forms.Label lbl_Account_Role;
         private System.Windows.Forms.Button btn_Account_Logout;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label kitchen_Clock;
+        private System.Windows.Forms.Label bar_Clock;
     }
 }
