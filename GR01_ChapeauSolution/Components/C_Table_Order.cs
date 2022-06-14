@@ -33,42 +33,52 @@ namespace ChapeauUI.Components
                 if (item.TableID == 1)
                 {
                     lbl_OrderItems1.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime1.Text = $"Table 1 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 2)
                 {
                     lbl_OrderItems2.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime2.Text = $"Table 2 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 3)
                 {
                     lbl_OrderItems3.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime3.Text = $"Table 3 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 4)
                 {
                     lbl_OrderItems4.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime4.Text = $"Table 4 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 5)
                 {
                     lbl_OrderItems5.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime5.Text = $"Table 5 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 6)
                 {
                     lbl_OrderItems6.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime6.Text = $"Table 6 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 7)
                 {
                     lbl_OrderItems7.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime7.Text = $"Table 7 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 8)
                 {
                     lbl_OrderItems8.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime8.Text = $"Table 8 - {item.OrderTime:T}";
                 }
                 else if (item.TableID == 9)
                 {
                     lbl_OrderItems9.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime9.Text = $"Table 9 - {item.OrderTime:T}";
                 }
                 else
                 {
                     lbl_OrderItems10.Text += item.ItemName + Environment.NewLine;
+                    lbl_TableTime10.Text = $"Table 10 - {item.OrderTime:T}";
                 }
             }
             lbl_OrderItems1.Text += "\n";
@@ -81,6 +91,47 @@ namespace ChapeauUI.Components
             lbl_OrderItems8.Text += "\n";
             lbl_OrderItems9.Text += "\n";
             lbl_OrderItems10.Text += "\n";
+
+            if (lbl_OrderItems1.Text == "\n")
+            {
+                panel1.Hide();
+            }
+            if (lbl_OrderItems2.Text == "\n")
+            {
+                panel2.Hide();
+            }
+            if (lbl_OrderItems3.Text == "\n")
+            {
+                panel3.Hide();
+            }
+            if (lbl_OrderItems4.Text == "\n")
+            {
+                panel4.Hide();
+            }
+            if (lbl_OrderItems5.Text == "\n")
+            {
+                panel5.Hide();
+            }
+            if (lbl_OrderItems6.Text == "\n")
+            {
+                panel6.Hide();
+            }
+            if (lbl_OrderItems7.Text == "\n")
+            {
+                panel7.Hide();
+            }
+            if (lbl_OrderItems8.Text == "\n")
+            {
+                panel8.Hide();
+            }
+            if (lbl_OrderItems9.Text == "\n")
+            {
+                panel9.Hide();
+            }
+            if (lbl_OrderItems10.Text == "\n")
+            {
+                panel10.Hide();
+            }
         }
 
         private void btn_OrderServed1_Click(object sender, EventArgs e)

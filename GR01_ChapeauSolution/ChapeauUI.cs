@@ -91,6 +91,11 @@ namespace GR01_ChapeauSolution
             C_Table_Order tab_tableOrder = new C_Table_Order(items);
             flow_TableOverview.Controls.Add(tab_tableOrder);
 
+            if (!tab_tableOrder.Controls[0].Controls[8].Visible)
+            {
+                pnl_FoodDrink_2.Controls[0].Visible = false;
+            }
+
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -276,6 +281,11 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
+        private void FoodDrinkOrders_Table1()
+        {
+            
+        }
+
         private void CheckTableStatuses()
         {
             for (int i = 1; i < tables.Count + 1; i++)
@@ -410,11 +420,11 @@ namespace GR01_ChapeauSolution
             // Check if the table is occupied
             OccupiedTable();
         }
-        #endregion
+    #endregion
 
-        #region Order
-        // Variables Order Overview
-        private MenuCategory currentCategory = MenuCategory.Lunch;
+    #region Order
+    // Variables Order Overview
+    private MenuCategory currentCategory = MenuCategory.Lunch;
         private double totalOrderPrice = 0.00;
 
         // Menus
@@ -1267,5 +1277,6 @@ namespace GR01_ChapeauSolution
 
 
         #endregion
+
     }
 }
