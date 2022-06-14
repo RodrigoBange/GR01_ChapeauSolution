@@ -32,8 +32,6 @@ namespace ChapeauUI
             this.components = new System.ComponentModel.Container();
             this.pnl_Bar = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
-            this.btn_Ready = new System.Windows.Forms.Button();
-            this.label_Time = new System.Windows.Forms.Label();
             this.btn_User = new System.Windows.Forms.Button();
             this.lbl_TitleBar = new System.Windows.Forms.Label();
             this.listView_Bar = new System.Windows.Forms.ListView();
@@ -51,7 +49,6 @@ namespace ChapeauUI
             this.Dinner = new System.Windows.Forms.Button();
             this.Lunch = new System.Windows.Forms.Button();
             this.lbl_TitleKitchen = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.listView_Food = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -93,8 +90,6 @@ namespace ChapeauUI
             // pnl_Header
             // 
             this.pnl_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(67)))));
-            this.pnl_Header.Controls.Add(this.btn_Ready);
-            this.pnl_Header.Controls.Add(this.label_Time);
             this.pnl_Header.Controls.Add(this.btn_User);
             this.pnl_Header.Controls.Add(this.lbl_TitleBar);
             this.pnl_Header.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,24 +98,6 @@ namespace ChapeauUI
             this.pnl_Header.Name = "pnl_Header";
             this.pnl_Header.Size = new System.Drawing.Size(913, 67);
             this.pnl_Header.TabIndex = 1;
-            // 
-            // btn_Ready
-            // 
-            this.btn_Ready.Location = new System.Drawing.Point(35, 22);
-            this.btn_Ready.Name = "btn_Ready";
-            this.btn_Ready.Size = new System.Drawing.Size(94, 29);
-            this.btn_Ready.TabIndex = 3;
-            this.btn_Ready.Text = "Ready";
-            this.btn_Ready.UseVisualStyleBackColor = true;
-            this.btn_Ready.Click += new System.EventHandler(this.btn_Ready_Click);
-            // 
-            // label_Time
-            // 
-            this.label_Time.AutoSize = true;
-            this.label_Time.Location = new System.Drawing.Point(782, 28);
-            this.label_Time.Name = "label_Time";
-            this.label_Time.Size = new System.Drawing.Size(0, 20);
-            this.label_Time.TabIndex = 1;
             // 
             // btn_User
             // 
@@ -235,7 +212,6 @@ namespace ChapeauUI
             this.pnl_Kitchen.Controls.Add(this.Dinner);
             this.pnl_Kitchen.Controls.Add(this.Lunch);
             this.pnl_Kitchen.Controls.Add(this.lbl_TitleKitchen);
-            this.pnl_Kitchen.Controls.Add(this.label1);
             this.pnl_Kitchen.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Kitchen.Location = new System.Drawing.Point(0, 0);
             this.pnl_Kitchen.Margin = new System.Windows.Forms.Padding(2);
@@ -293,14 +269,6 @@ namespace ChapeauUI
             this.lbl_TitleKitchen.TabIndex = 4;
             this.lbl_TitleKitchen.Text = "Kitchen View";
             this.lbl_TitleKitchen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(782, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
-            this.label1.TabIndex = 1;
             // 
             // listView_Food
             // 
@@ -527,10 +495,8 @@ namespace ChapeauUI
             this.Text = "Form1";
             this.pnl_Bar.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
-            this.pnl_Header.PerformLayout();
             this.pnl_Food.ResumeLayout(false);
             this.pnl_Kitchen.ResumeLayout(false);
-            this.pnl_Kitchen.PerformLayout();
             this.pnl_AccountBarKitchen.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -551,16 +517,13 @@ namespace ChapeauUI
         private System.Windows.Forms.ListView listView_Bar;
         private System.Windows.Forms.ColumnHeader Comment;
         private System.Windows.Forms.ColumnHeader Time;
-        private System.Windows.Forms.Label label_Time;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ColumnHeader Checcck;
         private System.Windows.Forms.ColumnHeader Order;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btn_Ready;
         private System.Windows.Forms.Panel pnl_Food;
         private System.Windows.Forms.Panel pnl_Kitchen;
         private System.Windows.Forms.Label lbl_TitleKitchen;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView_Food;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
