@@ -29,8 +29,8 @@ namespace ChapeauUI
                 pnl_Kitchen.Show();
                 pnl_Bar.Hide();
                 listView_Bar.CheckBoxes = true;
-                label_Time.Show();
-                label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+
+                MyTimer(10);
             }
             else if (this.employee.EmployeeRole == "Bartender")
             {
@@ -38,15 +38,47 @@ namespace ChapeauUI
                 pnl_Bar.Show();
                 pnl_Food.Hide();
                 pnl_Kitchen.Hide();
-                FillBar();
                 listView_Bar.CheckBoxes = true;
-                label_Time.Show();
-                label_Time.Text = DateTime.Now.ToString("HH:mm:ss");
+
+                MyTimer(10);
+                FillBar();
             }
             
 
         }
 
+        private void MyTimer(int seconds)
+        {
+            Timer timer = new Timer();
+            timer.Interval = (seconds * 1000);
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, System.EventArgs e)
+        {
+            if (this.employee.EmployeeRole == "Chef")
+            {
+                for (int i = 0; i < listView_Food.Items.Count; i++)
+                {
+                    if (listView_Food.Items[i].Checked == true)
+                    {
+                        listView_Food.Items[i].Remove();
+                    }
+                }
+            }
+
+            else if (this.employee.EmployeeRole == "Bartender")
+            {
+                for (int i = 0; i < listView_Bar.Items.Count; i++)
+                {
+                    if (listView_Bar.Items[i].Checked == true)
+                    {
+                        listView_Bar.Items[i].Remove();
+                    }
+                }
+            }
+        }
         public void FillBar()
         {
             Kitchen_BarService barService = new Kitchen_BarService();
@@ -60,7 +92,7 @@ namespace ChapeauUI
                 item1.SubItems.Add(item.ShortName.ToString());
                 item1.SubItems.Add(item.Quantity.ToString());
                 item1.SubItems.Add(item.Comment.ToString());
-                item1.SubItems.Add(item.Date_Time.ToString("HH:mm:ss"));
+                item1.SubItems.Add(item.Date_Time.ToString("HH:mm"));
 
                 listView_Bar.Items.Add(item1);
             }
@@ -79,7 +111,7 @@ namespace ChapeauUI
                 item1.SubItems.Add(item.ShortName.ToString());
                 item1.SubItems.Add(item.Quantity.ToString());
                 item1.SubItems.Add(item.Comment.ToString());
-                item1.SubItems.Add(item.Date_Time.ToString("HH:mm:ss"));
+                item1.SubItems.Add(item.Date_Time.ToString("HH:mm"));
 
                 listView_Food.Items.Add(item1);
             }
@@ -110,18 +142,15 @@ namespace ChapeauUI
             List<KitchenBar> BarList = barService.GetBarItems();
         }
 
-        private void btn_Ready_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Lunch_Click(object sender, EventArgs e)
         {
+            listView_Food.Items.Clear();
             FillLunch();
         }
 
         private void Dinner_Click(object sender, EventArgs e)
         {
+            listView_Food.Items.Clear();
             FillDinner();
         }
 
