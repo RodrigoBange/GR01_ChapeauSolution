@@ -103,8 +103,8 @@ namespace ChapeauDAL
             foreach (OrderItem item in orderItems)
             {
                 // Create query
-                string addToNewestOrderQuery = @"INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, comment) 
-                                                VALUES (@maxOrderID, @itemID, @dateTime, @comment)";
+                string addToNewestOrderQuery = @"INSERT INTO [ORDER_ITEMS] (orderID, itemID, orderTime, quantity, comment) 
+                                                VALUES (@maxOrderID, @itemID, @dateTime, @quantity, @comment)";
 
                 // Set parameters for new order
                 SqlParameter[] sqlParametersAddToNewOrder =
@@ -112,6 +112,7 @@ namespace ChapeauDAL
                     new SqlParameter("@maxOrderID", maxOrderID),
                     new SqlParameter("@itemID", item.ItemID),
                     new SqlParameter("@dateTime", DateTime.Now),
+                    new SqlParameter("@quantity", item.Quantity),
                     new SqlParameter("@comment", item.Comment)
                 };
 
