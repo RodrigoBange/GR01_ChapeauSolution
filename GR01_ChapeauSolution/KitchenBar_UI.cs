@@ -64,27 +64,22 @@ namespace ChapeauUI
 
         private void Timer_Tick(object sender, System.EventArgs e)
         {
-            if (this.employee.EmployeeRole == "Chef")
+            for (int i = 0; i < listView_Food.Items.Count; i++)
             {
-                for (int i = 0; i < listView_Food.Items.Count; i++)
+                if (listView_Food.Items[i].Checked == true)
                 {
-                    if (listView_Food.Items[i].Checked == true)
-                    {
-                        listView_Food.Items[i].Remove();
-                    }
+                    listView_Food.Items[i].Remove();
                 }
             }
 
-            else if (this.employee.EmployeeRole == "Bartender")
+            for (int i = 0; i < listView_Bar.Items.Count; i++)
             {
-                for (int i = 0; i < listView_Bar.Items.Count; i++)
+                if (listView_Bar.Items[i].Checked == true)
                 {
-                    if (listView_Bar.Items[i].Checked == true)
-                    {
-                        listView_Bar.Items[i].Remove();
-                    }
+                    listView_Bar.Items[i].Remove();
                 }
             }
+
         }
 
         private void Clock()
