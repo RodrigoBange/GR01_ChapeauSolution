@@ -16,8 +16,7 @@ namespace ChapeauDAL
                 // Create query
                 string query = @"UPDATE [PRODUCT] 
                                 SET stock = stock - I.quantity 
-                                FROM [PRODUCT] AS P 
-                                INNER JOIN [INGREDIENTS] AS I 
+                                FROM [PRODUCT] AS P INNER JOIN [INGREDIENT] AS I 
                                 ON P.productID = I.productID 
                                 WHERE I.itemID = @itemID";
 
@@ -41,7 +40,7 @@ namespace ChapeauDAL
             {
                 // Create query
                 string query = $@"SELECT itemNameShort FROM [MENU_ITEM] AS M
-                                JOIN [INGREDIENTS] AS I ON M.itemID = I.itemID
+                                JOIN [INGREDIENT] AS I ON M.itemID = I.itemID
                                 JOIN [PRODUCT] AS P ON I.productID = P.productID
                                 WHERE M.itemID = @itemID AND stock < 20;";
 

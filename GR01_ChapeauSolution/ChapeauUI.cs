@@ -128,34 +128,8 @@ namespace GR01_ChapeauSolution
                 // Order View
                 case 2:
                     {
-                        // Set title
-                        lbl_Title.Text = $"Order Table #{tableNumber}";
-
-                        //Set border colors (Tab Control)
-                        border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
-                        border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
-                        border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
-                        border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
-
-                        // Fill menus when tab opens (In case products have been updated)
-                        currentCategory = MenuCategory.Lunch;
-                        LoadMenu();
-
-                        // Check if order exists for checkout button
-                        CheckOrderStatus();
-
-                        // Reset all to default
-                        orderItems.Clear();
-                        flow_Order_Items.Controls.Clear();
-                        totalOrderPrice = 0.00;
-                        lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
-
-                        // Disable Place Order
-                        ActivatePlaceOrder();
-
-                        // Set the width to hide the scrollbar for a modern mobile design
-                        flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
-                        flow_Order_Items.Width = pnl_Order_Orders.Width + SystemInformation.VerticalScrollBarWidth;
+                        // Load the default Order View UI
+                        SetUpOrderViewUI();
                     }
                     break;
                 // Bill View 
@@ -200,6 +174,36 @@ namespace GR01_ChapeauSolution
             }
         }
 
+        /* DEFAULT UI LOADING METHODS */
+        private void SetUpOrderViewUI()
+        {
+            // Set title
+            lbl_Title.Text = $"Order Table #{tableNumber}";
+
+            //Set border colors for order view (Tab Control)
+            border_Left.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            border_Right.BackColor = ColorTranslator.FromHtml(hexColorDark);
+            border_Top.BackColor = ColorTranslator.FromHtml(hexColorBright);
+            border_Bottom.BackColor = ColorTranslator.FromHtml(hexColorDark);
+
+            // Reset all to default
+            ResetOrderView();
+
+            // Load default menu dependent on the time of day
+            LoadDefaultMenu();
+
+            // Check if order exists for checkout button
+            CheckOrderStatus();
+
+            // Disable Place Order
+            ActivatePlaceOrder();
+
+            // Set the width to hide the scrollbar for a modern mobile design
+            flow_Order_Menu.Width = pnl_Order_Menu.Width + SystemInformation.VerticalScrollBarWidth;
+            flow_Order_Items.Width = pnl_Order_Orders.Width + SystemInformation.VerticalScrollBarWidth;
+        }
+
+        /* RETURN BUTTON METHOD */ 
         private void btn_Return_Click(object sender, EventArgs e)
         {
             // If Orderview is open and there are currently items listed in the order...
@@ -422,44 +426,57 @@ namespace GR01_ChapeauSolution
         }
     #endregion
 
-    #region Order
-    // Variables Order Overview
-    private MenuCategory currentCategory = MenuCategory.Lunch;
+        #region Order
+        // Variables Order Overview
+        private MenuCategory currentCategory;
         private double totalOrderPrice = 0.00;
 
-        // Menus
-        public List<MenuItem> lunchMenu;
-        public List<MenuItem> dinnerMenu;
-        public List<MenuItem> drinksMenu;
+        // Menu
+        private List<MenuItem> currentMenu;
 
-        // Order items and display component
-        public List<Tuple<OrderItem, C_Order_OrderItem>> orderItems ;
+        // Order items and their respective display component list
+        private List<Tuple<OrderItem, C_Order_OrderItem>> orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
 
-        /** ORDER VIEW METHODS **/
+
+        /* MENU LOADING METHODS */
+        private void LoadDefaultMenu()
+        {
+            // Get the current time and dinner time
+            TimeSpan currentTime = DateTime.Now.TimeOfDay;
+            TimeSpan dinnerTime = new TimeSpan(17, 0, 0);
+
+            // If its not dinner time yet, set current category to lunch
+            if (currentTime < dinnerTime)
+            {
+                currentCategory = MenuCategory.Lunch;
+            }
+            else // Else set the current category to dinner
+            {
+                currentCategory = MenuCategory.Dinner;
+            }
+
+            // Load Menu
+            LoadMenu();
+        }
+
         private void LoadMenu()
         {
-            // Initialize orderItems
-            orderItems = new List<Tuple<OrderItem, C_Order_OrderItem>>();
-
-            // Reload when opening order view in case of management changing product information
-            // Fill menus with items
             try
             {
-                lunchMenu = menuService.GetMenuItems(MenuCategory.Lunch);
-                dinnerMenu = menuService.GetMenuItems(MenuCategory.Dinner);
-                drinksMenu = menuService.GetMenuItems(MenuCategory.Drinks);
+                // Get menu items
+                currentMenu = menuService.GetMenuItems(currentCategory);
+
+                // Load menu diplay
+                DisplayMenu();
             }
             catch (Exception ex)
             {
                 // Log error and display message
                 DisplayError(ex);
             }
-
-            // Load menu diplay
-            DisplayMenu(MenuCategory.Lunch);
         }
 
-        private void DisplayMenu(MenuCategory menuCategory)
+        private void DisplayMenu()
         {
             // Clear previous menu before loading new menu
             flow_Order_Menu.Controls.Clear();
@@ -467,33 +484,31 @@ namespace GR01_ChapeauSolution
             // Suspend layout
             pnl_Order_Menu.SuspendLayout();
 
-            // Create new list of menuItems to display
-            List<MenuItem> menuItems;
-
-            // Fill list with items
-            if (menuCategory == MenuCategory.Lunch) { menuItems = lunchMenu; }
-            else if (menuCategory == MenuCategory.Dinner) { menuItems = dinnerMenu; }
-            else { menuItems = drinksMenu; }
-
-            // Display menu items and sub category titles
-            for (int i = 0; i < menuItems.Count; i++)
+            // Foreach item in the loaded in menu...
+            for (int i = 0; i < currentMenu.Count; i++)
             {
-                if (i == 0 || (menuItems[i].SubCategory != menuItems[i - 1].SubCategory))
+                // If previous sub category is not the same as equal, create new title component
+                if (i == 0 || currentMenu[i].SubCategory != currentMenu[i - 1].SubCategory)
                 {
                     // Add sub category title
-                    C_Order_MenuItem_Category categoryTitle = new C_Order_MenuItem_Category(menuItems[i].SubCategory);
+                    C_Order_MenuItem_Category categoryTitle = new C_Order_MenuItem_Category(currentMenu[i].SubCategory);
                     flow_Order_Menu.Controls.Add(categoryTitle);
                 }
 
                 // Add menu item
-                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, menuItems[i]);
+                C_Order_MenuItem c_MenuItem = new C_Order_MenuItem(this, currentMenu[i]);
                 flow_Order_Menu.Controls.Add(c_MenuItem);
             }
 
             // Resume layout
             pnl_Order_Menu.ResumeLayout();
+
+            // Set active button styling
+            SetActiveMenuButton();
         }
 
+
+        /* CHECKOUT STATUS CHECK METHOD */
         private void CheckOrderStatus()
         {
             // If an order exists
@@ -515,14 +530,17 @@ namespace GR01_ChapeauSolution
             }
         }
 
+
+        /* ORDER ITEM ADDING AND REMOVAL METHODS */
         public void AddNewOrderItem(MenuItem menuItem)
         {
+            // Bool for checking itemID existance
             bool itemExists = false;
 
             // Check if item already exists in order list
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
-                // If the item has already been added...
+                // If the item has already been added set bool to true...
                 if (item.Item1.ItemID == menuItem.ItemID)
                 {
                     itemExists = true;
@@ -537,7 +555,6 @@ namespace GR01_ChapeauSolution
                 OrderItem orderItem = new OrderItem(menuItem.ItemID, menuItem.Price);
 
                 // Create new OrderItem component 
-                // Requires first to get the MenuItem object with the ID 
                 C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, menuItem.ItemID, menuItem.FullName, menuItem.Price);
 
                 // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
@@ -557,10 +574,9 @@ namespace GR01_ChapeauSolution
 
         public void AddToOrderQuantity(int itemID)
         {
-            // Check if item already exists in order list
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
-                // If the item has already been added...
+                // If the item has the correct itemID
                 if (item.Item1.ItemID == itemID)
                 {
                     // Add to quantity
@@ -582,6 +598,7 @@ namespace GR01_ChapeauSolution
         public void RemoveFromOrderQuantity(int itemID)
         {
             // Check what item has the ID
+            // Counting backwards to avoid looping errors
             for (int i = orderItems.Count -1; i >= 0; i--)
             {
                 if (orderItems[i].Item1.ItemID == itemID)
@@ -612,6 +629,27 @@ namespace GR01_ChapeauSolution
             }
         }
 
+
+        /* ORDER ITEM COMMENT METHOD */
+        public void AddOrderComment(int itemID, string comment)
+        {
+            // Check for item location...
+            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
+            {
+                // If the item has the correct itemID...
+                if (item.Item1.ItemID == itemID)
+                {
+                    // Add comment to order item
+                    item.Item1.Comment = comment;
+
+                    // Return
+                    return;
+                }
+            }
+        }
+
+
+        /* TOTAL PRICE FUNCTIONALITY METHOD */
         private void UpdateTotalPrice(double price)
         {
             // Adjust total price
@@ -621,29 +659,14 @@ namespace GR01_ChapeauSolution
             lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
         }
 
-        public void AddOrderComment(int itemID, string comment)
-        {
-            // Check for item location...
-            foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
-            {
-                // If the item has already been added...
-                if (item.Item1.ItemID == itemID)
-                {
-                    // Add comment to item
-                    item.Item1.Comment = comment;
 
-                    // Return
-                    return;
-                }
-            }
-        }
-
+        /* ORDER CREATION METHODS */
         private void CreateOrder()
         {
             // Create a list of only orders without their components
             List<OrderItem> orders = new List<OrderItem>();
 
-            // Fill the list with all added items of the order
+            // Split the order objects from the relative UI components in a new list
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
                 orders.Add(item.Item1);
@@ -654,36 +677,21 @@ namespace GR01_ChapeauSolution
                 // Check storage status
                 List<string> lowStockItems = stockService.CheckStorageStatus(orders);
 
-                // Check if list is empty
+                // Check if list is empty continue with placing an order
                 if (lowStockItems == null)
                 {
                     using (MessageBox_YesNo messageBox_YN = new MessageBox_YesNo("Confirmation", "You are about to place an order.", "Are you sure you want to continue?"))
                     {
                         if (messageBox_YN.ShowDialog() == DialogResult.Yes)
                         {
-                            // Call orderService to place an order
-                            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
-
-                            // Call stockService to remove stock
-                            stockService.DepleteStock(orders);
-
-                            // Display confirmation
-                            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
-                            {
-                                // When accepted
-                                if (messageBox_W.ShowDialog() == DialogResult.OK)
-                                {
-                                    // Display table overview
-                                    tabC_Body.SelectedTab = tab_Tables;
-                                }
-                            }
+                            // Place order in the database
+                            PlaceOrder(orders);
                         }
                     }
-
                 }
                 else
                 {
-                    // Confirmation of low stock before placing order
+                    // Warning of low stock items before placing order in the database
                     LowStockConfirmation(lowStockItems, orders);
                 }
             }
@@ -692,6 +700,26 @@ namespace GR01_ChapeauSolution
                 // Log and display error
                 DisplayError(ex);
             }            
+        }
+
+        private void PlaceOrder(List<OrderItem> orders)
+        {
+            // Call orderService to place an order
+            orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
+
+            // Call stockService to remove stock
+            stockService.DepleteStock(orders);
+
+            // Display confirmation
+            using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
+            {
+                // When accepted
+                if (messageBox_W.ShowDialog() == DialogResult.OK)
+                {
+                    // Display table overview
+                    tabC_Body.SelectedTab = tab_Tables;
+                }
+            }
         }
 
         private void LowStockConfirmation(List<String> lowStockItems, List<OrderItem> orders)
@@ -713,26 +741,14 @@ namespace GR01_ChapeauSolution
             {
                 if (messageBox.ShowDialog() == DialogResult.Yes)
                 {
-                    // Call orderService to place an order
-                    orderService.PlaceOrder(orders, tableNumber, employee.EmployeeId);
-
-                    // Call stockService to remove from stock
-                    stockService.DepleteStock(orders);
-
-                    // Display confirmation
-                    using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Confirmation", "Order has been succesfully placed."))
-                    {
-                        // When accepted
-                        if (messageBox_W.ShowDialog() == DialogResult.OK) 
-                        {
-                            // Display table overview
-                            tabC_Body.SelectedTab = tab_Tables;
-                        }
-                    }
+                    // Place order
+                    PlaceOrder(orders);
                 }
             }
         }
 
+
+        /* ORDER BUTTON FUNCTIONALITIES */
         private void ActivatePlaceOrder()
         {
             // If there are items added, enable checkout option
@@ -799,6 +815,8 @@ namespace GR01_ChapeauSolution
             }
         }
 
+
+        /* MENU CATEGORY BUTTON METHODS */
         private void btn_Order_LunchMenu_Click(object sender, EventArgs e)
         {
             // Request the lunch menu
@@ -809,7 +827,7 @@ namespace GR01_ChapeauSolution
                 currentCategory = MenuCategory.Lunch;
 
                 // Display menu
-                DisplayMenu(MenuCategory.Lunch);
+                LoadMenu();
             }
         }
 
@@ -823,7 +841,7 @@ namespace GR01_ChapeauSolution
                 currentCategory = MenuCategory.Dinner;
 
                 // Display menu
-                DisplayMenu(MenuCategory.Dinner);
+                LoadMenu();
             }
         }
 
@@ -837,8 +855,41 @@ namespace GR01_ChapeauSolution
                 currentCategory = MenuCategory.Drinks;
 
                 // Display menu
-                DisplayMenu(MenuCategory.Drinks);
+                LoadMenu();
             }
+        }
+
+        private void SetActiveMenuButton()
+        {
+            // Reset all other button border width
+            btn_Order_LunchMenu.FlatAppearance.BorderSize = 1;
+            btn_Order_DinnerMenu.FlatAppearance.BorderSize= 1;
+            btn_Order_DrinksMenu.FlatAppearance.BorderSize = 1;
+
+            // Set new button border width
+            if (currentCategory == MenuCategory.Lunch)
+            {
+                btn_Order_LunchMenu.FlatAppearance.BorderSize = 3;
+            }
+            else if (currentCategory == MenuCategory.Dinner)
+            {
+                btn_Order_DinnerMenu.FlatAppearance.BorderSize = 3;
+            }
+            else if (currentCategory == MenuCategory.Drinks)
+            {
+                btn_Order_DrinksMenu.FlatAppearance.BorderSize = 3;
+            }
+        }
+
+
+        /* RESET ORDER VIEW METHOD*/
+        private void ResetOrderView()
+        {
+            // Reset all to default
+            orderItems.Clear();
+            flow_Order_Items.Controls.Clear();
+            totalOrderPrice = 0.00;
+            lbl_Order_TotalPrice.Text = $"Total : € {totalOrderPrice:N2}";
         }
         #endregion
 
