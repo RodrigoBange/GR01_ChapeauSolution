@@ -127,6 +127,9 @@
   <data name="Home_Icon_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Icon_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ConfirmationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfirmationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Table_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Table_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="tableRed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tableRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +157,14 @@
   <data name="Home_Icon_New1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Icon_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ZZ5H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ZZ5H.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ZZ5H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ZZ5H.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FailureIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FailureIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +178,8 @@
   <data name="Checkout_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checkout_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="foodRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\foodRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crossIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drink2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drink2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,10 +193,7 @@
   <data name="Home_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crossIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crossIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConfirmationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfirmationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cross1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

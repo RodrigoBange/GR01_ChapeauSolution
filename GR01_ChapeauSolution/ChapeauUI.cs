@@ -91,6 +91,11 @@ namespace GR01_ChapeauSolution
             C_Table_Order tab_tableOrder = new C_Table_Order(items);
             flow_TableOverview.Controls.Add(tab_tableOrder);
 
+            if (!tab_tableOrder.Controls[0].Controls[8].Visible)
+            {
+                pnl_FoodDrink_2.Controls[0].Visible = false;
+            }
+
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
@@ -276,6 +281,11 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
+        private void FoodDrinkOrders_Table1()
+        {
+            
+        }
+
         private void CheckTableStatuses()
         {
             for (int i = 1; i < tables.Count + 1; i++)
@@ -303,47 +313,25 @@ namespace GR01_ChapeauSolution
             {
                 using (MessageBox_OccupiedTakeorder messageBox = new MessageBox_OccupiedTakeorder("Table " + tableNumber))
                 {
-                    if (messageBox.ShowDialog() == DialogResult.Yes)
+                    switch (messageBox.ShowDialog())
                     {
-                        tableService.SetTableOccupied(tableNumber);
-                        tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
-                        tables[tableNumber - 1].Item2.IsOccupied = true;
+                        case DialogResult.Yes:
+                            tableService.SetTableOccupied(tableNumber);
+                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            break;
+                        case DialogResult.No:
+                            tabC_Body.SelectedTab = tab_Order;
+                            tableService.SetTableOccupied(tableNumber);
+                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            break;
+                        case DialogResult.Cancel:
+                            messageBox.Hide();
+                            break;
                     }
-                    else
-                    {
-                        tabC_Body.SelectedTab = tab_Order;
-                        tableService.SetTableOccupied(tableNumber);
-                        tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
-                        tables[tableNumber - 1].Item2.IsOccupied = true;
-                    }
-                        
                 }
             }
-        }
-
-        private void UpdateOrders()
-        {
-            List<OrderItem> items = orderService.GetOrderItems();
-            List<OrderItem> tempOrderedOrders = new List<OrderItem>();
-
-            C_Table_Order tab_tableOrder = new C_Table_Order(items);
-
-            foreach (OrderItem item in items)
-            {
-                if (item.TableID == 1)
-                {
-                    
-                }
-            }
-
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (i == 0 || items[i].OrderID != items[i - 1].OrderID)
-                {
-                    tempOrderedOrders.Clear();
-                    tempOrderedOrders.Add(items[i]);
-                }
-            }            
         }
 
         private void btn_Table_1_Click(object sender, EventArgs e)
@@ -432,11 +420,11 @@ namespace GR01_ChapeauSolution
             // Check if the table is occupied
             OccupiedTable();
         }
-        #endregion
+    #endregion
 
-        #region Order
-        // Variables Order Overview
-        private MenuCategory currentCategory = MenuCategory.Lunch;
+    #region Order
+    // Variables Order Overview
+    private MenuCategory currentCategory = MenuCategory.Lunch;
         private double totalOrderPrice = 0.00;
 
         // Menus
@@ -1279,8 +1267,8 @@ namespace GR01_ChapeauSolution
             }
         }
 
+
         #endregion
 
-        
     }
 }
