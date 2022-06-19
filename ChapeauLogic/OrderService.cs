@@ -26,8 +26,15 @@ namespace ChapeauLogic
 
         public bool CheckOrderStatus(int tableNumber)
         {
-            // Call orderDAO to check if order exists
-            return orderDAO.CheckOrderStatus(tableNumber);
+            // Call orderDAO to check if an open order exists for the table
+            if (orderDAO.GetOrderID(tableNumber) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<OrderItem> GetOrderItems()

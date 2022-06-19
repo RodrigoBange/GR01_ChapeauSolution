@@ -21,10 +21,10 @@ namespace ChapeauLogic
         public List<MenuItem> GetMenuItems(MenuCategory category)
         {
             // Get list of all products of certain menu category
-            List<MenuItem> menuList = menuDAO.GetMenuItems(category);
+            List<MenuItem> menuItems = menuDAO.GetMenuItems(category);
 
             // Return list of items
-            return menuList;
+            return menuItems;
         }
     }
 }
