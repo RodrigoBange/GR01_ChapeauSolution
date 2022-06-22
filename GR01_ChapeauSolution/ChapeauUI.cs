@@ -128,7 +128,7 @@ namespace GR01_ChapeauSolution
                 // Order View
                 case 2:
                     {
-                        // Load the default Order View UI
+                        // Set up the default Order View UI
                         SetUpOrderViewUI();
                     }
                     break;
@@ -427,11 +427,11 @@ namespace GR01_ChapeauSolution
     #endregion
 
         #region Order
-        // Variables Order Overview
+        // General variables Order Overview
         private MenuCategory currentCategory;
         private double totalOrderPrice = 0.00;
 
-        // Menu
+        // Current menu list (For display)
         private List<MenuItem> currentMenu;
 
         // Order items and their respective display component list
@@ -511,28 +511,36 @@ namespace GR01_ChapeauSolution
         /* CHECKOUT STATUS CHECK METHOD */
         private void CheckOrderStatus()
         {
-            // If an order exists
-            if (orderService.CheckOrderStatus(tableNumber))
+            try
             {
-                // Activate splitter
-                splitter_Checkout.Visible = true;
+                // If an order exists
+                if (orderService.CheckOrderStatus(tableNumber))
+                {
+                    // Activate splitter
+                    splitter_Checkout.Visible = true;
 
-                // Activate button
-                btn_Order_Checkout.Visible = true;
+                    // Activate button
+                    btn_Order_Checkout.Visible = true;
+                }
+                else
+                {
+                    // Disable splitter
+                    splitter_Checkout.Visible = false;
+
+                    // Disable button
+                    btn_Order_Checkout.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Disable splitter
-                splitter_Checkout.Visible = false;
-
-                // Disable button
-                btn_Order_Checkout.Visible = false;
+                // Log and display error
+                DisplayError(ex);
             }
         }
 
 
         /* ORDER ITEM ADDING AND REMOVAL METHODS */
-        public void AddNewOrderItem(MenuItem menuItem)
+        public void AddOrderItem(MenuItem menuItem)
         {
             // Bool for checking itemID existance
             bool itemExists = false;
@@ -551,25 +559,31 @@ namespace GR01_ChapeauSolution
             // If item doesn't exist, create a new orderItem
             if (!itemExists)
             {
-                // Create new orderItem object with the ID
-                OrderItem orderItem = new OrderItem(menuItem.ItemID, menuItem.Price);
-
-                // Create new OrderItem component 
-                C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, menuItem.ItemID, menuItem.FullName, menuItem.Price);
-
-                // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
-                orderItems.Add(new Tuple<OrderItem, C_Order_OrderItem>(orderItem, orderDisplayItem));
-
-                // Add component to order list
-                flow_Order_Items.Controls.Add(orderDisplayItem);
-
-                // Add to total price
-                UpdateTotalPrice(orderItem.Price);
+                // Create new order item
+                CreateNewOrderItem(menuItem);
 
                 // Activate Place Order button
                 ActivatePlaceOrder();
             }
             else { AddToOrderQuantity(menuItem.ItemID); }
+        }
+
+        private void CreateNewOrderItem(MenuItem menuItem)
+        {
+            // Create new orderItem object with the ID
+            OrderItem orderItem = new OrderItem(menuItem.ItemID, menuItem.Price);
+
+            // Create new OrderItem component 
+            C_Order_OrderItem orderDisplayItem = new C_Order_OrderItem(this, menuItem.ItemID, menuItem.FullName, menuItem.Price);
+
+            // Add new Tuple with OrderItem object and C_Order_OrderItem component to list
+            orderItems.Add(new Tuple<OrderItem, C_Order_OrderItem>(orderItem, orderDisplayItem));
+
+            // Add component to order list in the UI
+            flow_Order_Items.Controls.Add(orderDisplayItem);
+
+            // Add to total price
+            UpdateTotalPrice(orderItem.Price);
         }
 
         public void AddToOrderQuantity(int itemID)
@@ -583,7 +597,7 @@ namespace GR01_ChapeauSolution
                     item.Item1.Quantity++;
                     item.Item2.Quantity++;
 
-                    // Update display
+                    // Update component display
                     item.Item2.UpdateInfo();
 
                     // Add to total price
@@ -607,7 +621,7 @@ namespace GR01_ChapeauSolution
                     orderItems[i].Item1.Quantity--;
                     orderItems[i].Item2.Quantity--;
 
-                    // Update the display information
+                    // Update the component UI display information
                     orderItems[i].Item2.UpdateInfo();
 
                     // Remove from the total price
@@ -619,7 +633,7 @@ namespace GR01_ChapeauSolution
                         // Remove from orderItems
                         orderItems.RemoveAt(i);
 
-                        // Check for checkout functionality
+                        // Check for place order functionality
                         ActivatePlaceOrder();
 
                         // Return
@@ -666,7 +680,7 @@ namespace GR01_ChapeauSolution
             // Create a list of only orders without their components
             List<OrderItem> orders = new List<OrderItem>();
 
-            // Split the order objects from the relative UI components in a new list
+            // Split the order objects from the relative UI components in a separate list
             foreach (Tuple<OrderItem, C_Order_OrderItem> item in orderItems)
             {
                 orders.Add(item.Item1);
@@ -1317,7 +1331,9 @@ namespace GR01_ChapeauSolution
             // Log error
             string filePath = logger.LogError(ex);
 
-            string errorMessage = ex.Message + Environment.NewLine + "Apologies, if this keeps happening please refer the log to your IT specialist." + " Log location: " + Environment.NewLine + filePath;
+            string errorMessage = ex.Message + Environment.NewLine + Environment.NewLine + 
+                "Apologies, please ensure you are connected to the internet. If this keeps happening please refer the log to your IT specialist." + 
+                " Log location: " + Environment.NewLine + Environment.NewLine + filePath;
 
             // Display error 
             using (MessageBox_Ok messageBox_W = new MessageBox_Ok("Oops, something went wrong!", errorMessage))
