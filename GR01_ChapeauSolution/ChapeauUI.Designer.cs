@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.PictureBox img_Drink;
+            System.Windows.Forms.PictureBox picBox_Drink1;
             System.Windows.Forms.PictureBox pictureBox25;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chapeau));
             System.Windows.Forms.PictureBox pictureBox24;
             System.Windows.Forms.PictureBox pictureBox20;
             System.Windows.Forms.PictureBox pictureBox22;
-            System.Windows.Forms.PictureBox pictureBox3;
-            System.Windows.Forms.PictureBox pictureBox5;
-            System.Windows.Forms.PictureBox pictureBox7;
-            System.Windows.Forms.PictureBox pictureBox9;
-            System.Windows.Forms.PictureBox pictureBox11;
-            System.Windows.Forms.PictureBox pictureBox13;
-            System.Windows.Forms.PictureBox pictureBox15;
-            System.Windows.Forms.PictureBox pictureBox17;
-            System.Windows.Forms.PictureBox pictureBox_Drink2;
+            System.Windows.Forms.PictureBox picBox_Drink3;
+            System.Windows.Forms.PictureBox picBox_Drink4;
+            System.Windows.Forms.PictureBox picBox_Drink5;
+            System.Windows.Forms.PictureBox picBox_Drink6;
+            System.Windows.Forms.PictureBox picBox_Drink7;
+            System.Windows.Forms.PictureBox picBox_Drink8;
+            System.Windows.Forms.PictureBox picBox_Drink9;
+            System.Windows.Forms.PictureBox picBox_Drink10;
+            System.Windows.Forms.PictureBox pictureBox18;
+            System.Windows.Forms.PictureBox picBox_Drink2;
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_Return = new System.Windows.Forms.Button();
             this.btn_User = new System.Windows.Forms.Button();
@@ -69,6 +70,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.pnl_TableOverview = new System.Windows.Forms.SplitContainer();
@@ -76,34 +79,32 @@
             this.flow_Tables = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Table_1 = new System.Windows.Forms.Button();
             this.pnl_FoodDrink_1 = new System.Windows.Forms.Panel();
-            this.img_Food = new System.Windows.Forms.PictureBox();
+            this.picBox_Food1 = new System.Windows.Forms.PictureBox();
             this.btn_Table_2 = new System.Windows.Forms.Button();
-            this.pnl_FoodDrink_2 = new System.Windows.Forms.Panel();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.btn_Table_3 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_3 = new System.Windows.Forms.Panel();
+            this.picBox_Food3 = new System.Windows.Forms.PictureBox();
             this.btn_Table_4 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_4 = new System.Windows.Forms.Panel();
+            this.picBox_Food4 = new System.Windows.Forms.PictureBox();
             this.btn_Table_5 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_5 = new System.Windows.Forms.Panel();
+            this.picBox_Food5 = new System.Windows.Forms.PictureBox();
             this.btn_Table_6 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_6 = new System.Windows.Forms.Panel();
+            this.picBox_Food6 = new System.Windows.Forms.PictureBox();
             this.btn_Table_7 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_7 = new System.Windows.Forms.Panel();
+            this.picBox_Food7 = new System.Windows.Forms.PictureBox();
             this.btn_Table_8 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_8 = new System.Windows.Forms.Panel();
+            this.picBox_Food8 = new System.Windows.Forms.PictureBox();
             this.btn_Table_9 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_9 = new System.Windows.Forms.Panel();
+            this.picBox_Food9 = new System.Windows.Forms.PictureBox();
             this.btn_Table_10 = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_10 = new System.Windows.Forms.Panel();
+            this.picBox_Food10 = new System.Windows.Forms.PictureBox();
             this.splitter_TableOverview = new System.Windows.Forms.Splitter();
             this.tab_Order = new System.Windows.Forms.TabPage();
             this.pnl_Order_Menu = new System.Windows.Forms.Panel();
@@ -201,34 +202,37 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
-            img_Drink = new System.Windows.Forms.PictureBox();
+            this.pnl_FoodDrink_2 = new System.Windows.Forms.Panel();
+            this.picBox_Food2 = new System.Windows.Forms.PictureBox();
+            picBox_Drink1 = new System.Windows.Forms.PictureBox();
             pictureBox25 = new System.Windows.Forms.PictureBox();
             pictureBox24 = new System.Windows.Forms.PictureBox();
             pictureBox20 = new System.Windows.Forms.PictureBox();
             pictureBox22 = new System.Windows.Forms.PictureBox();
-            pictureBox3 = new System.Windows.Forms.PictureBox();
-            pictureBox5 = new System.Windows.Forms.PictureBox();
-            pictureBox7 = new System.Windows.Forms.PictureBox();
-            pictureBox9 = new System.Windows.Forms.PictureBox();
-            pictureBox11 = new System.Windows.Forms.PictureBox();
-            pictureBox13 = new System.Windows.Forms.PictureBox();
-            pictureBox15 = new System.Windows.Forms.PictureBox();
-            pictureBox17 = new System.Windows.Forms.PictureBox();
-            pictureBox_Drink2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(img_Drink)).BeginInit();
+            picBox_Drink3 = new System.Windows.Forms.PictureBox();
+            picBox_Drink4 = new System.Windows.Forms.PictureBox();
+            picBox_Drink5 = new System.Windows.Forms.PictureBox();
+            picBox_Drink6 = new System.Windows.Forms.PictureBox();
+            picBox_Drink7 = new System.Windows.Forms.PictureBox();
+            picBox_Drink8 = new System.Windows.Forms.PictureBox();
+            picBox_Drink9 = new System.Windows.Forms.PictureBox();
+            picBox_Drink10 = new System.Windows.Forms.PictureBox();
+            pictureBox18 = new System.Windows.Forms.PictureBox();
+            picBox_Drink2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox_Drink2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox18)).BeginInit();
             this.pnl_Header.SuspendLayout();
             this.pnl_Body.SuspendLayout();
             this.tabC_Body.SuspendLayout();
@@ -244,6 +248,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_TableOverview)).BeginInit();
             this.pnl_TableOverview.Panel1.SuspendLayout();
@@ -251,25 +256,23 @@
             this.pnl_TableOverview.SuspendLayout();
             this.flow_Tables.SuspendLayout();
             this.pnl_FoodDrink_1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Food)).BeginInit();
-            this.pnl_FoodDrink_2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food1)).BeginInit();
+            this.pnl_FoodDrink_3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food3)).BeginInit();
+            this.pnl_FoodDrink_4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food4)).BeginInit();
+            this.pnl_FoodDrink_5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food5)).BeginInit();
+            this.pnl_FoodDrink_6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food6)).BeginInit();
+            this.pnl_FoodDrink_7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food7)).BeginInit();
+            this.pnl_FoodDrink_8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food8)).BeginInit();
+            this.pnl_FoodDrink_9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food9)).BeginInit();
+            this.pnl_FoodDrink_10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food10)).BeginInit();
             this.tab_Order.SuspendLayout();
             this.pnl_Order_Menu.SuspendLayout();
             this.pnl_Order_Orders.SuspendLayout();
@@ -299,21 +302,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
+            this.pnl_FoodDrink_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).BeginInit();
             this.SuspendLayout();
             // 
-            // img_Drink
+            // picBox_Drink1
             // 
-            img_Drink.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            img_Drink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            img_Drink.Dock = System.Windows.Forms.DockStyle.Top;
-            img_Drink.Location = new System.Drawing.Point(0, 0);
-            img_Drink.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            img_Drink.Name = "img_Drink";
-            img_Drink.Size = new System.Drawing.Size(46, 65);
-            img_Drink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            img_Drink.TabIndex = 0;
-            img_Drink.TabStop = false;
-            img_Drink.Visible = false;
+            picBox_Drink1.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink1.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink1.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink1.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink1.Name = "picBox_Drink1";
+            picBox_Drink1.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink1.TabIndex = 0;
+            picBox_Drink1.TabStop = false;
+            picBox_Drink1.Visible = false;
             // 
             // pictureBox25
             // 
@@ -321,7 +327,7 @@
             pictureBox25.Location = new System.Drawing.Point(0, 0);
             pictureBox25.Margin = new System.Windows.Forms.Padding(0);
             pictureBox25.Name = "pictureBox25";
-            pictureBox25.Size = new System.Drawing.Size(47, 55);
+            pictureBox25.Size = new System.Drawing.Size(39, 46);
             pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox25.TabIndex = 1;
             pictureBox25.TabStop = false;
@@ -332,7 +338,7 @@
             pictureBox24.Location = new System.Drawing.Point(0, 0);
             pictureBox24.Margin = new System.Windows.Forms.Padding(0);
             pictureBox24.Name = "pictureBox24";
-            pictureBox24.Size = new System.Drawing.Size(46, 55);
+            pictureBox24.Size = new System.Drawing.Size(38, 46);
             pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox24.TabIndex = 1;
             pictureBox24.TabStop = false;
@@ -344,7 +350,7 @@
             pictureBox20.Location = new System.Drawing.Point(0, 0);
             pictureBox20.Margin = new System.Windows.Forms.Padding(0);
             pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new System.Drawing.Size(47, 47);
+            pictureBox20.Size = new System.Drawing.Size(39, 39);
             pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox20.TabIndex = 1;
             pictureBox20.TabStop = false;
@@ -355,133 +361,132 @@
             pictureBox22.Location = new System.Drawing.Point(0, 0);
             pictureBox22.Margin = new System.Windows.Forms.Padding(0);
             pictureBox22.Name = "pictureBox22";
-            pictureBox22.Size = new System.Drawing.Size(47, 47);
+            pictureBox22.Size = new System.Drawing.Size(39, 39);
             pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox22.TabIndex = 1;
             pictureBox22.TabStop = false;
             // 
-            // pictureBox3
+            // picBox_Drink3
             // 
-            pictureBox3.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox3.Location = new System.Drawing.Point(0, 0);
-            pictureBox3.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(46, 65);
-            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            pictureBox3.Visible = false;
+            picBox_Drink3.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink3.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink3.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink3.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink3.Name = "picBox_Drink3";
+            picBox_Drink3.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink3.TabIndex = 0;
+            picBox_Drink3.TabStop = false;
+            picBox_Drink3.Visible = false;
             // 
-            // pictureBox5
+            // picBox_Drink4
             // 
-            pictureBox5.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox5.Location = new System.Drawing.Point(0, 0);
-            pictureBox5.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new System.Drawing.Size(46, 65);
-            pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
+            picBox_Drink4.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink4.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink4.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink4.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink4.Name = "picBox_Drink4";
+            picBox_Drink4.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink4.TabIndex = 0;
+            picBox_Drink4.TabStop = false;
             // 
-            // pictureBox7
+            // picBox_Drink5
             // 
-            pictureBox7.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox7.Location = new System.Drawing.Point(0, 0);
-            pictureBox7.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new System.Drawing.Size(46, 65);
-            pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 0;
-            pictureBox7.TabStop = false;
-            pictureBox7.Visible = false;
+            picBox_Drink5.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink5.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink5.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink5.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink5.Name = "picBox_Drink5";
+            picBox_Drink5.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink5.TabIndex = 0;
+            picBox_Drink5.TabStop = false;
+            picBox_Drink5.Visible = false;
             // 
-            // pictureBox9
+            // picBox_Drink6
             // 
-            pictureBox9.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox9.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox9.Location = new System.Drawing.Point(0, 0);
-            pictureBox9.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new System.Drawing.Size(46, 65);
-            pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 0;
-            pictureBox9.TabStop = false;
-            pictureBox9.Visible = false;
+            picBox_Drink6.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink6.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink6.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink6.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink6.Name = "picBox_Drink6";
+            picBox_Drink6.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink6.TabIndex = 0;
+            picBox_Drink6.TabStop = false;
+            picBox_Drink6.Visible = false;
             // 
-            // pictureBox11
+            // picBox_Drink7
             // 
-            pictureBox11.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox11.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox11.Location = new System.Drawing.Point(0, 0);
-            pictureBox11.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new System.Drawing.Size(46, 65);
-            pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 0;
-            pictureBox11.TabStop = false;
-            pictureBox11.Visible = false;
+            picBox_Drink7.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink7.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink7.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink7.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink7.Name = "picBox_Drink7";
+            picBox_Drink7.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink7.TabIndex = 0;
+            picBox_Drink7.TabStop = false;
+            picBox_Drink7.Visible = false;
             // 
-            // pictureBox13
+            // picBox_Drink8
             // 
-            pictureBox13.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox13.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox13.Location = new System.Drawing.Point(0, 0);
-            pictureBox13.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new System.Drawing.Size(46, 65);
-            pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 0;
-            pictureBox13.TabStop = false;
-            pictureBox13.Visible = false;
+            picBox_Drink8.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink8.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink8.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink8.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink8.Name = "picBox_Drink8";
+            picBox_Drink8.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink8.TabIndex = 0;
+            picBox_Drink8.TabStop = false;
+            picBox_Drink8.Visible = false;
             // 
-            // pictureBox15
+            // picBox_Drink9
             // 
-            pictureBox15.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox15.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox15.Location = new System.Drawing.Point(0, 0);
-            pictureBox15.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new System.Drawing.Size(46, 65);
-            pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox15.TabIndex = 0;
-            pictureBox15.TabStop = false;
-            pictureBox15.Visible = false;
+            picBox_Drink9.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink9.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink9.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink9.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink9.Name = "picBox_Drink9";
+            picBox_Drink9.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink9.TabIndex = 0;
+            picBox_Drink9.TabStop = false;
+            picBox_Drink9.Visible = false;
             // 
-            // pictureBox17
+            // picBox_Drink10
             // 
-            pictureBox17.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox17.Dock = System.Windows.Forms.DockStyle.Top;
-            pictureBox17.Location = new System.Drawing.Point(0, 0);
-            pictureBox17.Margin = new System.Windows.Forms.Padding(0, 0, 46, 0);
-            pictureBox17.Name = "pictureBox17";
-            pictureBox17.Size = new System.Drawing.Size(46, 65);
-            pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox17.TabIndex = 0;
-            pictureBox17.TabStop = false;
-            pictureBox17.Visible = false;
+            picBox_Drink10.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink10.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink10.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink10.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink10.Name = "picBox_Drink10";
+            picBox_Drink10.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink10.TabIndex = 0;
+            picBox_Drink10.TabStop = false;
+            picBox_Drink10.Visible = false;
             // 
-            // pictureBox_Drink2
+            // pictureBox18
             // 
-            pictureBox_Drink2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Drink2.Image")));
-            pictureBox_Drink2.InitialImage = null;
-            pictureBox_Drink2.Location = new System.Drawing.Point(0, 11);
-            pictureBox_Drink2.Margin = new System.Windows.Forms.Padding(0);
-            pictureBox_Drink2.Name = "pictureBox_Drink2";
-            pictureBox_Drink2.Size = new System.Drawing.Size(47, 47);
-            pictureBox_Drink2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox_Drink2.TabIndex = 2;
-            pictureBox_Drink2.TabStop = false;
+            pictureBox18.Image = global::ChapeauUI.Properties.Resources.tableRed;
+            pictureBox18.Location = new System.Drawing.Point(0, 0);
+            pictureBox18.Margin = new System.Windows.Forms.Padding(0);
+            pictureBox18.Name = "pictureBox18";
+            pictureBox18.Size = new System.Drawing.Size(38, 46);
+            pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox18.TabIndex = 1;
+            pictureBox18.TabStop = false;
             // 
             // pnl_Header
             // 
@@ -493,7 +498,7 @@
             this.pnl_Header.Location = new System.Drawing.Point(0, 0);
             this.pnl_Header.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(786, 79);
+            this.pnl_Header.Size = new System.Drawing.Size(658, 66);
             this.pnl_Header.TabIndex = 0;
             // 
             // btn_Return
@@ -507,7 +512,7 @@
             this.btn_Return.Location = new System.Drawing.Point(1, 0);
             this.btn_Return.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(109, 79);
+            this.btn_Return.Size = new System.Drawing.Size(91, 66);
             this.btn_Return.TabIndex = 4;
             this.btn_Return.UseVisualStyleBackColor = true;
             this.btn_Return.Visible = false;
@@ -522,10 +527,10 @@
             this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.FlatAppearance.BorderSize = 0;
             this.btn_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_User.Location = new System.Drawing.Point(714, 12);
+            this.btn_User.Location = new System.Drawing.Point(598, 10);
             this.btn_User.Margin = new System.Windows.Forms.Padding(1);
             this.btn_User.Name = "btn_User";
-            this.btn_User.Size = new System.Drawing.Size(60, 60);
+            this.btn_User.Size = new System.Drawing.Size(50, 50);
             this.btn_User.TabIndex = 0;
             this.btn_User.UseVisualStyleBackColor = false;
             this.btn_User.Visible = false;
@@ -540,7 +545,7 @@
             this.lbl_Title.Location = new System.Drawing.Point(0, 0);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(786, 79);
+            this.lbl_Title.Size = new System.Drawing.Size(658, 66);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Login";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -549,10 +554,10 @@
             // 
             this.pnl_Body.Controls.Add(this.tabC_Body);
             this.pnl_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Body.Location = new System.Drawing.Point(0, 79);
+            this.pnl_Body.Location = new System.Drawing.Point(0, 66);
             this.pnl_Body.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(786, 961);
+            this.pnl_Body.Size = new System.Drawing.Size(658, 801);
             this.pnl_Body.TabIndex = 0;
             // 
             // tabC_Body
@@ -572,7 +577,7 @@
             this.tabC_Body.Name = "tabC_Body";
             this.tabC_Body.Padding = new System.Drawing.Point(0, 0);
             this.tabC_Body.SelectedIndex = 0;
-            this.tabC_Body.Size = new System.Drawing.Size(786, 961);
+            this.tabC_Body.Size = new System.Drawing.Size(658, 801);
             this.tabC_Body.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabC_Body.TabIndex = 0;
             this.tabC_Body.SelectedIndexChanged += new System.EventHandler(this.SelectedTabChanged);
@@ -581,11 +586,11 @@
             // 
             this.tab_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Account.Controls.Add(this.panel1);
-            this.tab_Account.Location = new System.Drawing.Point(4, 33);
+            this.tab_Account.Location = new System.Drawing.Point(4, 30);
             this.tab_Account.Margin = new System.Windows.Forms.Padding(2);
             this.tab_Account.Name = "tab_Account";
             this.tab_Account.Padding = new System.Windows.Forms.Padding(2);
-            this.tab_Account.Size = new System.Drawing.Size(778, 924);
+            this.tab_Account.Size = new System.Drawing.Size(650, 767);
             this.tab_Account.TabIndex = 10;
             this.tab_Account.Text = "Account";
             // 
@@ -595,9 +600,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(774, 920);
+            this.panel1.Size = new System.Drawing.Size(646, 763);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -608,20 +613,20 @@
             this.panel2.Controls.Add(this.lbl_Account_Role);
             this.panel2.Controls.Add(this.lbl_Account_EmployeeID);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(28, -26);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Location = new System.Drawing.Point(24, -24);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(719, 984);
+            this.panel2.Size = new System.Drawing.Size(599, 820);
             this.panel2.TabIndex = 0;
             // 
             // lbl_Account_EmployeeName
             // 
             this.lbl_Account_EmployeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_EmployeeName.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(210, 497);
+            this.lbl_Account_EmployeeName.Location = new System.Drawing.Point(175, 414);
             this.lbl_Account_EmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_EmployeeName.Name = "lbl_Account_EmployeeName";
-            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(307, 66);
+            this.lbl_Account_EmployeeName.Size = new System.Drawing.Size(256, 55);
             this.lbl_Account_EmployeeName.TabIndex = 6;
             this.lbl_Account_EmployeeName.Text = "Name";
             this.lbl_Account_EmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,10 +639,10 @@
             this.btn_Account_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Account_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Account_Logout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Account_Logout.Location = new System.Drawing.Point(242, 768);
+            this.btn_Account_Logout.Location = new System.Drawing.Point(202, 640);
             this.btn_Account_Logout.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Account_Logout.Name = "btn_Account_Logout";
-            this.btn_Account_Logout.Size = new System.Drawing.Size(251, 79);
+            this.btn_Account_Logout.Size = new System.Drawing.Size(209, 66);
             this.btn_Account_Logout.TabIndex = 5;
             this.btn_Account_Logout.Text = "Logout";
             this.btn_Account_Logout.UseVisualStyleBackColor = false;
@@ -648,10 +653,10 @@
             this.lbl_Account_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_Role.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Account_Role.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_Account_Role.Location = new System.Drawing.Point(5, 569);
+            this.lbl_Account_Role.Location = new System.Drawing.Point(4, 474);
             this.lbl_Account_Role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_Role.Name = "lbl_Account_Role";
-            this.lbl_Account_Role.Size = new System.Drawing.Size(719, 42);
+            this.lbl_Account_Role.Size = new System.Drawing.Size(599, 35);
             this.lbl_Account_Role.TabIndex = 4;
             this.lbl_Account_Role.Text = "Role";
             this.lbl_Account_Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -660,10 +665,10 @@
             // 
             this.lbl_Account_EmployeeID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Account_EmployeeID.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(215, 431);
+            this.lbl_Account_EmployeeID.Location = new System.Drawing.Point(179, 359);
             this.lbl_Account_EmployeeID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Account_EmployeeID.Name = "lbl_Account_EmployeeID";
-            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(307, 66);
+            this.lbl_Account_EmployeeID.Size = new System.Drawing.Size(256, 55);
             this.lbl_Account_EmployeeID.TabIndex = 3;
             this.lbl_Account_EmployeeID.Text = "Employee ID";
             this.lbl_Account_EmployeeID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -672,10 +677,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ChapeauUI.Properties.Resources.User_Icon;
-            this.pictureBox2.Location = new System.Drawing.Point(215, 108);
+            this.pictureBox2.Location = new System.Drawing.Point(179, 90);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(302, 288);
+            this.pictureBox2.Size = new System.Drawing.Size(252, 240);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -687,10 +692,10 @@
             this.tab_Tables.Controls.Add(this.flow_Table_ColorMeaning);
             this.tab_Tables.Controls.Add(this.pnl_TableOverview);
             this.tab_Tables.Controls.Add(this.splitter_TableOverview);
-            this.tab_Tables.Location = new System.Drawing.Point(4, 33);
+            this.tab_Tables.Location = new System.Drawing.Point(4, 30);
             this.tab_Tables.Margin = new System.Windows.Forms.Padding(2);
             this.tab_Tables.Name = "tab_Tables";
-            this.tab_Tables.Size = new System.Drawing.Size(783, 935);
+            this.tab_Tables.Size = new System.Drawing.Size(650, 767);
             this.tab_Tables.TabIndex = 2;
             this.tab_Tables.Text = "Tables";
             // 
@@ -698,10 +703,10 @@
             // 
             this.border_ColorMeaning.BackColor = System.Drawing.Color.White;
             this.border_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Top;
-            this.border_ColorMeaning.Location = new System.Drawing.Point(0, 62);
+            this.border_ColorMeaning.Location = new System.Drawing.Point(0, 52);
             this.border_ColorMeaning.Margin = new System.Windows.Forms.Padding(0);
             this.border_ColorMeaning.Name = "border_ColorMeaning";
-            this.border_ColorMeaning.Size = new System.Drawing.Size(783, 2);
+            this.border_ColorMeaning.Size = new System.Drawing.Size(650, 2);
             this.border_ColorMeaning.TabIndex = 5;
             this.border_ColorMeaning.TabStop = false;
             // 
@@ -711,14 +716,15 @@
             this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel3);
             this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel2);
             this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel4);
+            this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel6);
             this.flow_Table_ColorMeaning.Controls.Add(this.flowLayoutPanel5);
             this.flow_Table_ColorMeaning.Dock = System.Windows.Forms.DockStyle.Top;
             this.flow_Table_ColorMeaning.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.flow_Table_ColorMeaning.Location = new System.Drawing.Point(0, 2);
             this.flow_Table_ColorMeaning.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Table_ColorMeaning.Name = "flow_Table_ColorMeaning";
-            this.flow_Table_ColorMeaning.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.flow_Table_ColorMeaning.Size = new System.Drawing.Size(783, 60);
+            this.flow_Table_ColorMeaning.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.flow_Table_ColorMeaning.Size = new System.Drawing.Size(650, 50);
             this.flow_Table_ColorMeaning.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -727,19 +733,19 @@
             this.flowLayoutPanel3.Controls.Add(this.pictureBox23);
             this.flowLayoutPanel3.Controls.Add(this.label2);
             this.flowLayoutPanel3.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(5, 5);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 5, 1, 5);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 4);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 4, 1, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(257, 58);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(214, 48);
             this.flowLayoutPanel3.TabIndex = 4;
             // 
             // pictureBox23
             // 
             this.pictureBox23.Image = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox23.Location = new System.Drawing.Point(47, 0);
+            this.pictureBox23.Location = new System.Drawing.Point(39, 0);
             this.pictureBox23.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(46, 55);
+            this.pictureBox23.Size = new System.Drawing.Size(38, 46);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 2;
             this.pictureBox23.TabStop = false;
@@ -748,10 +754,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(93, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label2.Location = new System.Drawing.Point(77, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 29);
+            this.label2.Size = new System.Drawing.Size(130, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Running order";
             // 
@@ -760,19 +766,19 @@
             this.flowLayoutPanel2.Controls.Add(pictureBox20);
             this.flowLayoutPanel2.Controls.Add(this.pictureBox21);
             this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(268, 5);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(223, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 1, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(228, 58);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(190, 48);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // pictureBox21
             // 
             this.pictureBox21.Image = global::ChapeauUI.Properties.Resources.foodRed;
-            this.pictureBox21.Location = new System.Drawing.Point(47, 0);
+            this.pictureBox21.Location = new System.Drawing.Point(39, 0);
             this.pictureBox21.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(46, 55);
+            this.pictureBox21.Size = new System.Drawing.Size(38, 46);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
@@ -781,10 +787,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(93, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label1.Location = new System.Drawing.Point(77, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 29);
+            this.label1.Size = new System.Drawing.Size(110, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Order ready";
             // 
@@ -792,41 +798,62 @@
             // 
             this.flowLayoutPanel4.Controls.Add(pictureBox24);
             this.flowLayoutPanel4.Controls.Add(this.label3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(502, 5);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(418, 4);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 1, 4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(103, 58);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(86, 48);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(2, 61);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 6, 0, 0);
+            this.label3.Location = new System.Drawing.Point(40, 5);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 5, 0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 29);
+            this.label3.Size = new System.Drawing.Size(46, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Free";
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(pictureBox18);
+            this.flowLayoutPanel6.Controls.Add(this.label8);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(509, 4);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 1, 4);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(140, 48);
+            this.flowLayoutPanel6.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(40, 5);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 5, 0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 24);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Occupied";
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(pictureBox25);
             this.flowLayoutPanel5.Controls.Add(this.label4);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(611, 5);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(8, 60);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(166, 58);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(138, 48);
             this.flowLayoutPanel5.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(47, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 6, 5, 0);
+            this.label4.Location = new System.Drawing.Point(39, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 5, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 29);
+            this.label4.Size = new System.Drawing.Size(87, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Occupied";
             // 
@@ -842,15 +869,15 @@
             // 
             this.pnl_TableOverview.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.pnl_TableOverview.Panel1.Controls.Add(this.flow_TableOverview);
-            this.pnl_TableOverview.Panel1.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.pnl_TableOverview.Panel1.Padding = new System.Windows.Forms.Padding(0, 50, 0, 0);
             this.pnl_TableOverview.Panel1MinSize = 0;
             // 
             // pnl_TableOverview.Panel2
             // 
             this.pnl_TableOverview.Panel2.Controls.Add(this.flow_Tables);
             this.pnl_TableOverview.Panel2MinSize = 200;
-            this.pnl_TableOverview.Size = new System.Drawing.Size(783, 933);
-            this.pnl_TableOverview.SplitterDistance = 387;
+            this.pnl_TableOverview.Size = new System.Drawing.Size(650, 765);
+            this.pnl_TableOverview.SplitterDistance = 321;
             this.pnl_TableOverview.SplitterWidth = 1;
             this.pnl_TableOverview.TabIndex = 0;
             // 
@@ -858,10 +885,10 @@
             // 
             this.flow_TableOverview.AutoScroll = true;
             this.flow_TableOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_TableOverview.Location = new System.Drawing.Point(0, 60);
+            this.flow_TableOverview.Location = new System.Drawing.Point(0, 50);
             this.flow_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.flow_TableOverview.Name = "flow_TableOverview";
-            this.flow_TableOverview.Size = new System.Drawing.Size(387, 873);
+            this.flow_TableOverview.Size = new System.Drawing.Size(321, 715);
             this.flow_TableOverview.TabIndex = 4;
             // 
             // flow_Tables
@@ -873,29 +900,29 @@
             this.flow_Tables.Controls.Add(this.btn_Table_2);
             this.flow_Tables.Controls.Add(this.pnl_FoodDrink_2);
             this.flow_Tables.Controls.Add(this.btn_Table_3);
-            this.flow_Tables.Controls.Add(this.panel3);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_3);
             this.flow_Tables.Controls.Add(this.btn_Table_4);
-            this.flow_Tables.Controls.Add(this.panel4);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_4);
             this.flow_Tables.Controls.Add(this.btn_Table_5);
-            this.flow_Tables.Controls.Add(this.panel5);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_5);
             this.flow_Tables.Controls.Add(this.btn_Table_6);
-            this.flow_Tables.Controls.Add(this.panel6);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_6);
             this.flow_Tables.Controls.Add(this.btn_Table_7);
-            this.flow_Tables.Controls.Add(this.panel7);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_7);
             this.flow_Tables.Controls.Add(this.btn_Table_8);
-            this.flow_Tables.Controls.Add(this.panel8);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_8);
             this.flow_Tables.Controls.Add(this.btn_Table_9);
-            this.flow_Tables.Controls.Add(this.panel9);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_9);
             this.flow_Tables.Controls.Add(this.btn_Table_10);
-            this.flow_Tables.Controls.Add(this.panel10);
+            this.flow_Tables.Controls.Add(this.pnl_FoodDrink_10);
             this.flow_Tables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow_Tables.Location = new System.Drawing.Point(0, 0);
             this.flow_Tables.Margin = new System.Windows.Forms.Padding(0);
-            this.flow_Tables.MaximumSize = new System.Drawing.Size(526, 0);
+            this.flow_Tables.MaximumSize = new System.Drawing.Size(438, 0);
             this.flow_Tables.Name = "flow_Tables";
-            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 71, 0, 0);
+            this.flow_Tables.Padding = new System.Windows.Forms.Padding(0, 59, 0, 0);
             this.flow_Tables.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flow_Tables.Size = new System.Drawing.Size(395, 933);
+            this.flow_Tables.Size = new System.Drawing.Size(328, 765);
             this.flow_Tables.TabIndex = 0;
             // 
             // btn_Table_1
@@ -906,10 +933,10 @@
             this.btn_Table_1.FlatAppearance.BorderSize = 0;
             this.btn_Table_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_1.Location = new System.Drawing.Point(19, 108);
-            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(19, 37, 0, 41);
+            this.btn_Table_1.Location = new System.Drawing.Point(16, 90);
+            this.btn_Table_1.Margin = new System.Windows.Forms.Padding(16, 31, 0, 34);
             this.btn_Table_1.Name = "btn_Table_1";
-            this.btn_Table_1.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_1.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_1.TabIndex = 0;
             this.btn_Table_1.Text = "1";
             this.btn_Table_1.UseCompatibleTextRendering = true;
@@ -918,28 +945,28 @@
             // 
             // pnl_FoodDrink_1
             // 
-            this.pnl_FoodDrink_1.Controls.Add(this.img_Food);
-            this.pnl_FoodDrink_1.Controls.Add(img_Drink);
-            this.pnl_FoodDrink_1.Location = new System.Drawing.Point(146, 101);
-            this.pnl_FoodDrink_1.Margin = new System.Windows.Forms.Padding(7, 30, 11, 0);
-            this.pnl_FoodDrink_1.MinimumSize = new System.Drawing.Size(46, 125);
+            this.pnl_FoodDrink_1.Controls.Add(this.picBox_Food1);
+            this.pnl_FoodDrink_1.Controls.Add(picBox_Drink1);
+            this.pnl_FoodDrink_1.Location = new System.Drawing.Point(122, 84);
+            this.pnl_FoodDrink_1.Margin = new System.Windows.Forms.Padding(6, 25, 9, 0);
+            this.pnl_FoodDrink_1.MinimumSize = new System.Drawing.Size(38, 104);
             this.pnl_FoodDrink_1.Name = "pnl_FoodDrink_1";
-            this.pnl_FoodDrink_1.Size = new System.Drawing.Size(46, 125);
+            this.pnl_FoodDrink_1.Size = new System.Drawing.Size(38, 104);
             this.pnl_FoodDrink_1.TabIndex = 0;
             // 
-            // img_Food
+            // picBox_Food1
             // 
-            this.img_Food.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.img_Food.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.img_Food.Dock = System.Windows.Forms.DockStyle.Top;
-            this.img_Food.Location = new System.Drawing.Point(0, 65);
-            this.img_Food.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.img_Food.Name = "img_Food";
-            this.img_Food.Size = new System.Drawing.Size(46, 65);
-            this.img_Food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_Food.TabIndex = 0;
-            this.img_Food.TabStop = false;
-            this.img_Food.Visible = false;
+            this.picBox_Food1.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food1.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food1.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food1.Name = "picBox_Food1";
+            this.picBox_Food1.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food1.TabIndex = 0;
+            this.picBox_Food1.TabStop = false;
+            this.picBox_Food1.Visible = false;
             // 
             // btn_Table_2
             // 
@@ -949,39 +976,15 @@
             this.btn_Table_2.FlatAppearance.BorderSize = 0;
             this.btn_Table_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_2.Location = new System.Drawing.Point(203, 108);
-            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 37, 0, 2);
+            this.btn_Table_2.Location = new System.Drawing.Point(169, 90);
+            this.btn_Table_2.Margin = new System.Windows.Forms.Padding(0, 31, 0, 2);
             this.btn_Table_2.Name = "btn_Table_2";
-            this.btn_Table_2.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_2.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_2.TabIndex = 1;
             this.btn_Table_2.Text = "2";
             this.btn_Table_2.UseCompatibleTextRendering = true;
             this.btn_Table_2.UseVisualStyleBackColor = true;
             this.btn_Table_2.Click += new System.EventHandler(this.btn_Table_2_Click);
-            // 
-            // pnl_FoodDrink_2
-            // 
-            this.pnl_FoodDrink_2.Controls.Add(pictureBox_Drink2);
-            this.pnl_FoodDrink_2.Controls.Add(this.pictureBox26);
-            this.pnl_FoodDrink_2.Location = new System.Drawing.Point(330, 101);
-            this.pnl_FoodDrink_2.Margin = new System.Windows.Forms.Padding(7, 30, 0, 0);
-            this.pnl_FoodDrink_2.MinimumSize = new System.Drawing.Size(46, 134);
-            this.pnl_FoodDrink_2.Name = "pnl_FoodDrink_2";
-            this.pnl_FoodDrink_2.Size = new System.Drawing.Size(46, 134);
-            this.pnl_FoodDrink_2.TabIndex = 1;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox26.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox26.TabIndex = 0;
-            this.pictureBox26.TabStop = false;
-            this.pictureBox26.Visible = false;
             // 
             // btn_Table_3
             // 
@@ -991,40 +994,40 @@
             this.btn_Table_3.FlatAppearance.BorderSize = 0;
             this.btn_Table_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_3.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_3.Location = new System.Drawing.Point(19, 271);
-            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(19, 2, 0, 41);
+            this.btn_Table_3.Location = new System.Drawing.Point(16, 226);
+            this.btn_Table_3.Margin = new System.Windows.Forms.Padding(16, 2, 0, 34);
             this.btn_Table_3.Name = "btn_Table_3";
-            this.btn_Table_3.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_3.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_3.TabIndex = 2;
             this.btn_Table_3.Text = "3";
             this.btn_Table_3.UseCompatibleTextRendering = true;
             this.btn_Table_3.UseVisualStyleBackColor = true;
             this.btn_Table_3.Click += new System.EventHandler(this.btn_Table_3_Click);
             // 
-            // panel3
+            // pnl_FoodDrink_3
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(146, 269);
-            this.panel3.Margin = new System.Windows.Forms.Padding(7, 0, 11, 0);
-            this.panel3.MinimumSize = new System.Drawing.Size(46, 134);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(46, 134);
-            this.panel3.TabIndex = 10;
+            this.pnl_FoodDrink_3.Controls.Add(this.picBox_Food3);
+            this.pnl_FoodDrink_3.Controls.Add(picBox_Drink3);
+            this.pnl_FoodDrink_3.Location = new System.Drawing.Point(122, 224);
+            this.pnl_FoodDrink_3.Margin = new System.Windows.Forms.Padding(6, 0, 9, 0);
+            this.pnl_FoodDrink_3.MinimumSize = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_3.Name = "pnl_FoodDrink_3";
+            this.pnl_FoodDrink_3.Size = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_3.TabIndex = 10;
             // 
-            // pictureBox1
+            // picBox_Food3
             // 
-            this.pictureBox1.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.picBox_Food3.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food3.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food3.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food3.Name = "picBox_Food3";
+            this.picBox_Food3.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food3.TabIndex = 0;
+            this.picBox_Food3.TabStop = false;
+            this.picBox_Food3.Visible = false;
             // 
             // btn_Table_4
             // 
@@ -1034,39 +1037,39 @@
             this.btn_Table_4.FlatAppearance.BorderSize = 0;
             this.btn_Table_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_4.Location = new System.Drawing.Point(205, 271);
+            this.btn_Table_4.Location = new System.Drawing.Point(171, 226);
             this.btn_Table_4.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_4.Name = "btn_Table_4";
-            this.btn_Table_4.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_4.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_4.TabIndex = 3;
             this.btn_Table_4.Text = "4";
             this.btn_Table_4.UseCompatibleTextRendering = true;
             this.btn_Table_4.UseVisualStyleBackColor = true;
             this.btn_Table_4.Click += new System.EventHandler(this.btn_Table_4_Click);
             // 
-            // panel4
+            // pnl_FoodDrink_4
             // 
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(pictureBox5);
-            this.panel4.Location = new System.Drawing.Point(334, 269);
-            this.panel4.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.panel4.MinimumSize = new System.Drawing.Size(46, 134);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(46, 134);
-            this.panel4.TabIndex = 11;
+            this.pnl_FoodDrink_4.Controls.Add(this.picBox_Food4);
+            this.pnl_FoodDrink_4.Controls.Add(picBox_Drink4);
+            this.pnl_FoodDrink_4.Location = new System.Drawing.Point(279, 224);
+            this.pnl_FoodDrink_4.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.pnl_FoodDrink_4.MinimumSize = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_4.Name = "pnl_FoodDrink_4";
+            this.pnl_FoodDrink_4.Size = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_4.TabIndex = 11;
             // 
-            // pictureBox4
+            // picBox_Food4
             // 
-            this.pictureBox4.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.picBox_Food4.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food4.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food4.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food4.Name = "picBox_Food4";
+            this.picBox_Food4.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food4.TabIndex = 0;
+            this.picBox_Food4.TabStop = false;
             // 
             // btn_Table_5
             // 
@@ -1076,40 +1079,40 @@
             this.btn_Table_5.FlatAppearance.BorderSize = 0;
             this.btn_Table_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_5.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_5.Location = new System.Drawing.Point(19, 434);
-            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(19, 2, 0, 41);
+            this.btn_Table_5.Location = new System.Drawing.Point(16, 362);
+            this.btn_Table_5.Margin = new System.Windows.Forms.Padding(16, 2, 0, 34);
             this.btn_Table_5.Name = "btn_Table_5";
-            this.btn_Table_5.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_5.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_5.TabIndex = 4;
             this.btn_Table_5.Text = "5";
             this.btn_Table_5.UseCompatibleTextRendering = true;
             this.btn_Table_5.UseVisualStyleBackColor = true;
             this.btn_Table_5.Click += new System.EventHandler(this.btn_Table_5_Click);
             // 
-            // panel5
+            // pnl_FoodDrink_5
             // 
-            this.panel5.Controls.Add(this.pictureBox6);
-            this.panel5.Controls.Add(pictureBox7);
-            this.panel5.Location = new System.Drawing.Point(146, 432);
-            this.panel5.Margin = new System.Windows.Forms.Padding(7, 0, 11, 0);
-            this.panel5.MinimumSize = new System.Drawing.Size(46, 134);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(46, 134);
-            this.panel5.TabIndex = 12;
+            this.pnl_FoodDrink_5.Controls.Add(this.picBox_Food5);
+            this.pnl_FoodDrink_5.Controls.Add(picBox_Drink5);
+            this.pnl_FoodDrink_5.Location = new System.Drawing.Point(122, 360);
+            this.pnl_FoodDrink_5.Margin = new System.Windows.Forms.Padding(6, 0, 9, 0);
+            this.pnl_FoodDrink_5.MinimumSize = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_5.Name = "pnl_FoodDrink_5";
+            this.pnl_FoodDrink_5.Size = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_5.TabIndex = 12;
             // 
-            // pictureBox6
+            // picBox_Food5
             // 
-            this.pictureBox6.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
+            this.picBox_Food5.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food5.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food5.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food5.Name = "picBox_Food5";
+            this.picBox_Food5.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food5.TabIndex = 0;
+            this.picBox_Food5.TabStop = false;
+            this.picBox_Food5.Visible = false;
             // 
             // btn_Table_6
             // 
@@ -1119,40 +1122,40 @@
             this.btn_Table_6.FlatAppearance.BorderSize = 0;
             this.btn_Table_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_6.Location = new System.Drawing.Point(205, 434);
+            this.btn_Table_6.Location = new System.Drawing.Point(171, 362);
             this.btn_Table_6.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_6.Name = "btn_Table_6";
-            this.btn_Table_6.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_6.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_6.TabIndex = 5;
             this.btn_Table_6.Text = "6";
             this.btn_Table_6.UseCompatibleTextRendering = true;
             this.btn_Table_6.UseVisualStyleBackColor = true;
             this.btn_Table_6.Click += new System.EventHandler(this.btn_Table_6_Click);
             // 
-            // panel6
+            // pnl_FoodDrink_6
             // 
-            this.panel6.Controls.Add(this.pictureBox8);
-            this.panel6.Controls.Add(pictureBox9);
-            this.panel6.Location = new System.Drawing.Point(334, 432);
-            this.panel6.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.panel6.MinimumSize = new System.Drawing.Size(46, 134);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(46, 134);
-            this.panel6.TabIndex = 13;
+            this.pnl_FoodDrink_6.Controls.Add(this.picBox_Food6);
+            this.pnl_FoodDrink_6.Controls.Add(picBox_Drink6);
+            this.pnl_FoodDrink_6.Location = new System.Drawing.Point(279, 360);
+            this.pnl_FoodDrink_6.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.pnl_FoodDrink_6.MinimumSize = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_6.Name = "pnl_FoodDrink_6";
+            this.pnl_FoodDrink_6.Size = new System.Drawing.Size(38, 112);
+            this.pnl_FoodDrink_6.TabIndex = 13;
             // 
-            // pictureBox8
+            // picBox_Food6
             // 
-            this.pictureBox8.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox8.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Visible = false;
+            this.picBox_Food6.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food6.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food6.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food6.Name = "picBox_Food6";
+            this.picBox_Food6.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food6.TabIndex = 0;
+            this.picBox_Food6.TabStop = false;
+            this.picBox_Food6.Visible = false;
             // 
             // btn_Table_7
             // 
@@ -1162,40 +1165,40 @@
             this.btn_Table_7.FlatAppearance.BorderSize = 0;
             this.btn_Table_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_7.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_7.Location = new System.Drawing.Point(19, 597);
-            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(19, 2, 0, 41);
+            this.btn_Table_7.Location = new System.Drawing.Point(16, 498);
+            this.btn_Table_7.Margin = new System.Windows.Forms.Padding(16, 2, 0, 34);
             this.btn_Table_7.Name = "btn_Table_7";
-            this.btn_Table_7.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_7.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_7.TabIndex = 6;
             this.btn_Table_7.Text = "7";
             this.btn_Table_7.UseCompatibleTextRendering = true;
             this.btn_Table_7.UseVisualStyleBackColor = true;
             this.btn_Table_7.Click += new System.EventHandler(this.btn_Table_7_Click);
             // 
-            // panel7
+            // pnl_FoodDrink_7
             // 
-            this.panel7.Controls.Add(this.pictureBox10);
-            this.panel7.Controls.Add(pictureBox11);
-            this.panel7.Location = new System.Drawing.Point(146, 595);
-            this.panel7.Margin = new System.Windows.Forms.Padding(7, 0, 11, 0);
-            this.panel7.MinimumSize = new System.Drawing.Size(46, 131);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(46, 131);
-            this.panel7.TabIndex = 14;
+            this.pnl_FoodDrink_7.Controls.Add(this.picBox_Food7);
+            this.pnl_FoodDrink_7.Controls.Add(picBox_Drink7);
+            this.pnl_FoodDrink_7.Location = new System.Drawing.Point(122, 496);
+            this.pnl_FoodDrink_7.Margin = new System.Windows.Forms.Padding(6, 0, 9, 0);
+            this.pnl_FoodDrink_7.MinimumSize = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_7.Name = "pnl_FoodDrink_7";
+            this.pnl_FoodDrink_7.Size = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_7.TabIndex = 14;
             // 
-            // pictureBox10
+            // picBox_Food7
             // 
-            this.pictureBox10.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox10.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Visible = false;
+            this.picBox_Food7.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food7.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food7.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food7.Name = "picBox_Food7";
+            this.picBox_Food7.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food7.TabIndex = 0;
+            this.picBox_Food7.TabStop = false;
+            this.picBox_Food7.Visible = false;
             // 
             // btn_Table_8
             // 
@@ -1205,40 +1208,40 @@
             this.btn_Table_8.FlatAppearance.BorderSize = 0;
             this.btn_Table_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_8.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_8.Location = new System.Drawing.Point(205, 597);
+            this.btn_Table_8.Location = new System.Drawing.Point(171, 498);
             this.btn_Table_8.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_8.Name = "btn_Table_8";
-            this.btn_Table_8.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_8.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_8.TabIndex = 7;
             this.btn_Table_8.Text = "8";
             this.btn_Table_8.UseCompatibleTextRendering = true;
             this.btn_Table_8.UseVisualStyleBackColor = true;
             this.btn_Table_8.Click += new System.EventHandler(this.btn_Table_8_Click);
             // 
-            // panel8
+            // pnl_FoodDrink_8
             // 
-            this.panel8.Controls.Add(this.pictureBox12);
-            this.panel8.Controls.Add(pictureBox13);
-            this.panel8.Location = new System.Drawing.Point(334, 595);
-            this.panel8.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.panel8.MinimumSize = new System.Drawing.Size(46, 131);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(46, 131);
-            this.panel8.TabIndex = 15;
+            this.pnl_FoodDrink_8.Controls.Add(this.picBox_Food8);
+            this.pnl_FoodDrink_8.Controls.Add(picBox_Drink8);
+            this.pnl_FoodDrink_8.Location = new System.Drawing.Point(279, 496);
+            this.pnl_FoodDrink_8.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.pnl_FoodDrink_8.MinimumSize = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_8.Name = "pnl_FoodDrink_8";
+            this.pnl_FoodDrink_8.Size = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_8.TabIndex = 15;
             // 
-            // pictureBox12
+            // picBox_Food8
             // 
-            this.pictureBox12.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox12.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 0;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
+            this.picBox_Food8.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food8.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food8.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food8.Name = "picBox_Food8";
+            this.picBox_Food8.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food8.TabIndex = 0;
+            this.picBox_Food8.TabStop = false;
+            this.picBox_Food8.Visible = false;
             // 
             // btn_Table_9
             // 
@@ -1248,40 +1251,40 @@
             this.btn_Table_9.FlatAppearance.BorderSize = 0;
             this.btn_Table_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_9.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_9.Location = new System.Drawing.Point(19, 760);
-            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(19, 2, 0, 2);
+            this.btn_Table_9.Location = new System.Drawing.Point(16, 634);
+            this.btn_Table_9.Margin = new System.Windows.Forms.Padding(16, 2, 0, 2);
             this.btn_Table_9.Name = "btn_Table_9";
-            this.btn_Table_9.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_9.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_9.TabIndex = 8;
             this.btn_Table_9.Text = "9";
             this.btn_Table_9.UseCompatibleTextRendering = true;
             this.btn_Table_9.UseVisualStyleBackColor = true;
             this.btn_Table_9.Click += new System.EventHandler(this.btn_Table_9_Click);
             // 
-            // panel9
+            // pnl_FoodDrink_9
             // 
-            this.panel9.Controls.Add(this.pictureBox14);
-            this.panel9.Controls.Add(pictureBox15);
-            this.panel9.Location = new System.Drawing.Point(146, 758);
-            this.panel9.Margin = new System.Windows.Forms.Padding(7, 0, 11, 0);
-            this.panel9.MinimumSize = new System.Drawing.Size(46, 131);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(46, 131);
-            this.panel9.TabIndex = 16;
+            this.pnl_FoodDrink_9.Controls.Add(this.picBox_Food9);
+            this.pnl_FoodDrink_9.Controls.Add(picBox_Drink9);
+            this.pnl_FoodDrink_9.Location = new System.Drawing.Point(122, 632);
+            this.pnl_FoodDrink_9.Margin = new System.Windows.Forms.Padding(6, 0, 9, 0);
+            this.pnl_FoodDrink_9.MinimumSize = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_9.Name = "pnl_FoodDrink_9";
+            this.pnl_FoodDrink_9.Size = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_9.TabIndex = 16;
             // 
-            // pictureBox14
+            // picBox_Food9
             // 
-            this.pictureBox14.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox14.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 0;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Visible = false;
+            this.picBox_Food9.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food9.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food9.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food9.Name = "picBox_Food9";
+            this.picBox_Food9.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food9.TabIndex = 0;
+            this.picBox_Food9.TabStop = false;
+            this.picBox_Food9.Visible = false;
             // 
             // btn_Table_10
             // 
@@ -1291,40 +1294,40 @@
             this.btn_Table_10.FlatAppearance.BorderSize = 0;
             this.btn_Table_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Table_10.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Table_10.Location = new System.Drawing.Point(205, 760);
+            this.btn_Table_10.Location = new System.Drawing.Point(171, 634);
             this.btn_Table_10.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Table_10.Name = "btn_Table_10";
-            this.btn_Table_10.Size = new System.Drawing.Size(120, 120);
+            this.btn_Table_10.Size = new System.Drawing.Size(100, 100);
             this.btn_Table_10.TabIndex = 9;
             this.btn_Table_10.Text = "10";
             this.btn_Table_10.UseCompatibleTextRendering = true;
             this.btn_Table_10.UseVisualStyleBackColor = true;
             this.btn_Table_10.Click += new System.EventHandler(this.btn_Table_10_Click);
             // 
-            // panel10
+            // pnl_FoodDrink_10
             // 
-            this.panel10.Controls.Add(this.pictureBox16);
-            this.panel10.Controls.Add(pictureBox17);
-            this.panel10.Location = new System.Drawing.Point(334, 758);
-            this.panel10.Margin = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.panel10.MinimumSize = new System.Drawing.Size(46, 131);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(46, 131);
-            this.panel10.TabIndex = 17;
+            this.pnl_FoodDrink_10.Controls.Add(this.picBox_Food10);
+            this.pnl_FoodDrink_10.Controls.Add(picBox_Drink10);
+            this.pnl_FoodDrink_10.Location = new System.Drawing.Point(279, 632);
+            this.pnl_FoodDrink_10.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.pnl_FoodDrink_10.MinimumSize = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_10.Name = "pnl_FoodDrink_10";
+            this.pnl_FoodDrink_10.Size = new System.Drawing.Size(38, 109);
+            this.pnl_FoodDrink_10.TabIndex = 17;
             // 
-            // pictureBox16
+            // picBox_Food10
             // 
-            this.pictureBox16.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox16.Location = new System.Drawing.Point(0, 65);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(0, 127, 0, 0);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(46, 65);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 0;
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Visible = false;
+            this.picBox_Food10.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food10.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food10.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food10.Name = "picBox_Food10";
+            this.picBox_Food10.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food10.TabIndex = 0;
+            this.picBox_Food10.TabStop = false;
+            this.picBox_Food10.Visible = false;
             // 
             // splitter_TableOverview
             // 
@@ -1333,7 +1336,7 @@
             this.splitter_TableOverview.Location = new System.Drawing.Point(0, 0);
             this.splitter_TableOverview.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_TableOverview.Name = "splitter_TableOverview";
-            this.splitter_TableOverview.Size = new System.Drawing.Size(783, 2);
+            this.splitter_TableOverview.Size = new System.Drawing.Size(650, 2);
             this.splitter_TableOverview.TabIndex = 0;
             this.splitter_TableOverview.TabStop = false;
             // 
@@ -1343,10 +1346,10 @@
             this.tab_Order.Controls.Add(this.pnl_Order_Menu);
             this.tab_Order.Controls.Add(this.pnl_Order_Orders);
             this.tab_Order.Controls.Add(this.pnl_Order_Categories);
-            this.tab_Order.Location = new System.Drawing.Point(4, 33);
+            this.tab_Order.Location = new System.Drawing.Point(4, 30);
             this.tab_Order.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Order.Name = "tab_Order";
-            this.tab_Order.Size = new System.Drawing.Size(778, 924);
+            this.tab_Order.Size = new System.Drawing.Size(650, 767);
             this.tab_Order.TabIndex = 3;
             this.tab_Order.Text = "Order";
             // 
@@ -1355,10 +1358,10 @@
             this.pnl_Order_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(78)))));
             this.pnl_Order_Menu.Controls.Add(this.flow_Order_Menu);
             this.pnl_Order_Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_Order_Menu.Location = new System.Drawing.Point(0, 60);
+            this.pnl_Order_Menu.Location = new System.Drawing.Point(0, 50);
             this.pnl_Order_Menu.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Order_Menu.Name = "pnl_Order_Menu";
-            this.pnl_Order_Menu.Size = new System.Drawing.Size(401, 864);
+            this.pnl_Order_Menu.Size = new System.Drawing.Size(334, 717);
             this.pnl_Order_Menu.TabIndex = 0;
             // 
             // flow_Order_Menu
@@ -1369,7 +1372,7 @@
             this.flow_Order_Menu.Location = new System.Drawing.Point(0, 0);
             this.flow_Order_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Menu.Name = "flow_Order_Menu";
-            this.flow_Order_Menu.Size = new System.Drawing.Size(401, 864);
+            this.flow_Order_Menu.Size = new System.Drawing.Size(334, 717);
             this.flow_Order_Menu.TabIndex = 0;
             this.flow_Order_Menu.WrapContents = false;
             // 
@@ -1386,10 +1389,10 @@
             this.pnl_Order_Orders.Controls.Add(this.btn_Order_Checkout);
             this.pnl_Order_Orders.Controls.Add(this.splitter_OrderMenu);
             this.pnl_Order_Orders.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_Order_Orders.Location = new System.Drawing.Point(399, 60);
+            this.pnl_Order_Orders.Location = new System.Drawing.Point(334, 50);
             this.pnl_Order_Orders.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Order_Orders.Name = "pnl_Order_Orders";
-            this.pnl_Order_Orders.Size = new System.Drawing.Size(379, 864);
+            this.pnl_Order_Orders.Size = new System.Drawing.Size(316, 717);
             this.pnl_Order_Orders.TabIndex = 0;
             // 
             // flow_Order_Items
@@ -1397,11 +1400,11 @@
             this.flow_Order_Items.AutoScroll = true;
             this.flow_Order_Items.Dock = System.Windows.Forms.DockStyle.Left;
             this.flow_Order_Items.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flow_Order_Items.Location = new System.Drawing.Point(1, 49);
+            this.flow_Order_Items.Location = new System.Drawing.Point(1, 41);
             this.flow_Order_Items.Margin = new System.Windows.Forms.Padding(0);
             this.flow_Order_Items.Name = "flow_Order_Items";
-            this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.flow_Order_Items.Size = new System.Drawing.Size(378, 644);
+            this.flow_Order_Items.Padding = new System.Windows.Forms.Padding(4, 4, 4, 0);
+            this.flow_Order_Items.Size = new System.Drawing.Size(315, 533);
             this.flow_Order_Items.TabIndex = 0;
             this.flow_Order_Items.WrapContents = false;
             // 
@@ -1410,10 +1413,10 @@
             this.splitter_ClearOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(151)))), ((int)(((byte)(169)))));
             this.splitter_ClearOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter_ClearOrder.Enabled = false;
-            this.splitter_ClearOrder.Location = new System.Drawing.Point(1, 48);
+            this.splitter_ClearOrder.Location = new System.Drawing.Point(1, 40);
             this.splitter_ClearOrder.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_ClearOrder.Name = "splitter_ClearOrder";
-            this.splitter_ClearOrder.Size = new System.Drawing.Size(378, 1);
+            this.splitter_ClearOrder.Size = new System.Drawing.Size(315, 1);
             this.splitter_ClearOrder.TabIndex = 3;
             this.splitter_ClearOrder.TabStop = false;
             this.splitter_ClearOrder.Visible = false;
@@ -1428,7 +1431,7 @@
             this.btn_Clear_Order.Location = new System.Drawing.Point(1, 0);
             this.btn_Clear_Order.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Clear_Order.Name = "btn_Clear_Order";
-            this.btn_Clear_Order.Size = new System.Drawing.Size(378, 48);
+            this.btn_Clear_Order.Size = new System.Drawing.Size(315, 40);
             this.btn_Clear_Order.TabIndex = 0;
             this.btn_Clear_Order.Text = "Clear order";
             this.btn_Clear_Order.UseVisualStyleBackColor = false;
@@ -1440,10 +1443,10 @@
             this.splitter_Orders_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(100)))), ((int)(((byte)(119)))));
             this.splitter_Orders_Price.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Orders_Price.Enabled = false;
-            this.splitter_Orders_Price.Location = new System.Drawing.Point(1, 693);
+            this.splitter_Orders_Price.Location = new System.Drawing.Point(1, 574);
             this.splitter_Orders_Price.Margin = new System.Windows.Forms.Padding(0);
             this.splitter_Orders_Price.Name = "splitter_Orders_Price";
-            this.splitter_Orders_Price.Size = new System.Drawing.Size(378, 1);
+            this.splitter_Orders_Price.Size = new System.Drawing.Size(315, 1);
             this.splitter_Orders_Price.TabIndex = 0;
             this.splitter_Orders_Price.TabStop = false;
             // 
@@ -1451,10 +1454,10 @@
             // 
             this.lbl_Order_TotalPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_Order_TotalPrice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(1, 694);
+            this.lbl_Order_TotalPrice.Location = new System.Drawing.Point(1, 575);
             this.lbl_Order_TotalPrice.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_Order_TotalPrice.Name = "lbl_Order_TotalPrice";
-            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(378, 49);
+            this.lbl_Order_TotalPrice.Size = new System.Drawing.Size(315, 41);
             this.lbl_Order_TotalPrice.TabIndex = 0;
             this.lbl_Order_TotalPrice.Text = "Total : € 0,00";
             this.lbl_Order_TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1469,10 +1472,10 @@
             this.btn_Order_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Confirm.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Confirm.Location = new System.Drawing.Point(1, 743);
+            this.btn_Order_Confirm.Location = new System.Drawing.Point(1, 616);
             this.btn_Order_Confirm.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Order_Confirm.Name = "btn_Order_Confirm";
-            this.btn_Order_Confirm.Size = new System.Drawing.Size(378, 60);
+            this.btn_Order_Confirm.Size = new System.Drawing.Size(315, 50);
             this.btn_Order_Confirm.TabIndex = 0;
             this.btn_Order_Confirm.Text = "Confirm order";
             this.btn_Order_Confirm.UseVisualStyleBackColor = false;
@@ -1484,10 +1487,10 @@
             this.splitter_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.splitter_Checkout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter_Checkout.Enabled = false;
-            this.splitter_Checkout.Location = new System.Drawing.Point(1, 803);
+            this.splitter_Checkout.Location = new System.Drawing.Point(1, 666);
             this.splitter_Checkout.Margin = new System.Windows.Forms.Padding(1);
             this.splitter_Checkout.Name = "splitter_Checkout";
-            this.splitter_Checkout.Size = new System.Drawing.Size(378, 1);
+            this.splitter_Checkout.Size = new System.Drawing.Size(315, 1);
             this.splitter_Checkout.TabIndex = 2;
             this.splitter_Checkout.TabStop = false;
             // 
@@ -1500,10 +1503,10 @@
             this.btn_Order_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_Checkout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Order_Checkout.ForeColor = System.Drawing.Color.White;
-            this.btn_Order_Checkout.Location = new System.Drawing.Point(1, 804);
+            this.btn_Order_Checkout.Location = new System.Drawing.Point(1, 667);
             this.btn_Order_Checkout.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Order_Checkout.Name = "btn_Order_Checkout";
-            this.btn_Order_Checkout.Size = new System.Drawing.Size(378, 60);
+            this.btn_Order_Checkout.Size = new System.Drawing.Size(315, 50);
             this.btn_Order_Checkout.TabIndex = 1;
             this.btn_Order_Checkout.Text = "Checkout ";
             this.btn_Order_Checkout.UseVisualStyleBackColor = false;
@@ -1517,7 +1520,7 @@
             this.splitter_OrderMenu.Location = new System.Drawing.Point(0, 0);
             this.splitter_OrderMenu.Margin = new System.Windows.Forms.Padding(1);
             this.splitter_OrderMenu.Name = "splitter_OrderMenu";
-            this.splitter_OrderMenu.Size = new System.Drawing.Size(1, 864);
+            this.splitter_OrderMenu.Size = new System.Drawing.Size(1, 717);
             this.splitter_OrderMenu.TabIndex = 0;
             this.splitter_OrderMenu.TabStop = false;
             this.splitter_OrderMenu.Visible = false;
@@ -1529,7 +1532,7 @@
             this.pnl_Order_Categories.Location = new System.Drawing.Point(0, 0);
             this.pnl_Order_Categories.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_Order_Categories.Name = "pnl_Order_Categories";
-            this.pnl_Order_Categories.Size = new System.Drawing.Size(778, 60);
+            this.pnl_Order_Categories.Size = new System.Drawing.Size(650, 50);
             this.pnl_Order_Categories.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -1538,11 +1541,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_LunchMenu);
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_DinnerMenu);
             this.flowLayoutPanel1.Controls.Add(this.btn_Order_DrinksMenu);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(60, 5, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(775, 59);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(50, 4, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(646, 49);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_Order_LunchMenu
@@ -1551,10 +1554,10 @@
             this.btn_Order_LunchMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_LunchMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_LunchMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_LunchMenu.Location = new System.Drawing.Point(60, 5);
-            this.btn_Order_LunchMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_LunchMenu.Location = new System.Drawing.Point(50, 4);
+            this.btn_Order_LunchMenu.Margin = new System.Windows.Forms.Padding(0, 0, 25, 0);
             this.btn_Order_LunchMenu.Name = "btn_Order_LunchMenu";
-            this.btn_Order_LunchMenu.Size = new System.Drawing.Size(199, 49);
+            this.btn_Order_LunchMenu.Size = new System.Drawing.Size(166, 41);
             this.btn_Order_LunchMenu.TabIndex = 0;
             this.btn_Order_LunchMenu.Text = "Lunch";
             this.btn_Order_LunchMenu.UseCompatibleTextRendering = true;
@@ -1567,10 +1570,10 @@
             this.btn_Order_DinnerMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_DinnerMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_DinnerMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_DinnerMenu.Location = new System.Drawing.Point(289, 5);
-            this.btn_Order_DinnerMenu.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.btn_Order_DinnerMenu.Location = new System.Drawing.Point(241, 4);
+            this.btn_Order_DinnerMenu.Margin = new System.Windows.Forms.Padding(0, 0, 25, 0);
             this.btn_Order_DinnerMenu.Name = "btn_Order_DinnerMenu";
-            this.btn_Order_DinnerMenu.Size = new System.Drawing.Size(199, 49);
+            this.btn_Order_DinnerMenu.Size = new System.Drawing.Size(166, 41);
             this.btn_Order_DinnerMenu.TabIndex = 1;
             this.btn_Order_DinnerMenu.Text = "Dinner";
             this.btn_Order_DinnerMenu.UseCompatibleTextRendering = true;
@@ -1583,10 +1586,10 @@
             this.btn_Order_DrinksMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Order_DrinksMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Order_DrinksMenu.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Order_DrinksMenu.Location = new System.Drawing.Point(518, 5);
+            this.btn_Order_DrinksMenu.Location = new System.Drawing.Point(432, 4);
             this.btn_Order_DrinksMenu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Order_DrinksMenu.Name = "btn_Order_DrinksMenu";
-            this.btn_Order_DrinksMenu.Size = new System.Drawing.Size(199, 49);
+            this.btn_Order_DrinksMenu.Size = new System.Drawing.Size(166, 41);
             this.btn_Order_DrinksMenu.TabIndex = 2;
             this.btn_Order_DrinksMenu.Text = "Drinks";
             this.btn_Order_DrinksMenu.UseCompatibleTextRendering = true;
@@ -1597,10 +1600,10 @@
             // 
             this.tab_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_Bill.Controls.Add(this.pnl_Bill);
-            this.tab_Bill.Location = new System.Drawing.Point(4, 33);
+            this.tab_Bill.Location = new System.Drawing.Point(4, 30);
             this.tab_Bill.Margin = new System.Windows.Forms.Padding(1);
             this.tab_Bill.Name = "tab_Bill";
-            this.tab_Bill.Size = new System.Drawing.Size(783, 935);
+            this.tab_Bill.Size = new System.Drawing.Size(650, 767);
             this.tab_Bill.TabIndex = 4;
             this.tab_Bill.Text = "Bill";
             // 
@@ -1622,18 +1625,18 @@
             this.pnl_Bill.Location = new System.Drawing.Point(0, 0);
             this.pnl_Bill.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Bill.Name = "pnl_Bill";
-            this.pnl_Bill.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.pnl_Bill.Size = new System.Drawing.Size(783, 935);
+            this.pnl_Bill.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.pnl_Bill.Size = new System.Drawing.Size(650, 767);
             this.pnl_Bill.TabIndex = 1;
             // 
             // Bill_lbl_RemainingPrice
             // 
             this.Bill_lbl_RemainingPrice.AutoSize = true;
             this.Bill_lbl_RemainingPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_RemainingPrice.Location = new System.Drawing.Point(659, 798);
-            this.Bill_lbl_RemainingPrice.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_RemainingPrice.Location = new System.Drawing.Point(549, 665);
+            this.Bill_lbl_RemainingPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_RemainingPrice.Name = "Bill_lbl_RemainingPrice";
-            this.Bill_lbl_RemainingPrice.Size = new System.Drawing.Size(103, 29);
+            this.Bill_lbl_RemainingPrice.Size = new System.Drawing.Size(85, 24);
             this.Bill_lbl_RemainingPrice.TabIndex = 11;
             this.Bill_lbl_RemainingPrice.Text = "lefttopay";
             // 
@@ -1641,10 +1644,10 @@
             // 
             this.Bill_lbl_amountPaid.AutoSize = true;
             this.Bill_lbl_amountPaid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_amountPaid.Location = new System.Drawing.Point(659, 757);
-            this.Bill_lbl_amountPaid.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_amountPaid.Location = new System.Drawing.Point(549, 631);
+            this.Bill_lbl_amountPaid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_amountPaid.Name = "Bill_lbl_amountPaid";
-            this.Bill_lbl_amountPaid.Size = new System.Drawing.Size(57, 29);
+            this.Bill_lbl_amountPaid.Size = new System.Drawing.Size(47, 24);
             this.Bill_lbl_amountPaid.TabIndex = 10;
             this.Bill_lbl_amountPaid.Text = "paid";
             // 
@@ -1652,10 +1655,10 @@
             // 
             this.Bill_lbl_TotalAmount.AutoSize = true;
             this.Bill_lbl_TotalAmount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_TotalAmount.Location = new System.Drawing.Point(659, 713);
-            this.Bill_lbl_TotalAmount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_TotalAmount.Location = new System.Drawing.Point(549, 594);
+            this.Bill_lbl_TotalAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_TotalAmount.Name = "Bill_lbl_TotalAmount";
-            this.Bill_lbl_TotalAmount.Size = new System.Drawing.Size(62, 29);
+            this.Bill_lbl_TotalAmount.Size = new System.Drawing.Size(51, 24);
             this.Bill_lbl_TotalAmount.TabIndex = 9;
             this.Bill_lbl_TotalAmount.Text = "Total";
             // 
@@ -1663,10 +1666,10 @@
             // 
             this.Bill_lbl_TitleLeft.AutoSize = true;
             this.Bill_lbl_TitleLeft.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_TitleLeft.Location = new System.Drawing.Point(527, 798);
-            this.Bill_lbl_TitleLeft.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_TitleLeft.Location = new System.Drawing.Point(439, 665);
+            this.Bill_lbl_TitleLeft.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_TitleLeft.Name = "Bill_lbl_TitleLeft";
-            this.Bill_lbl_TitleLeft.Size = new System.Drawing.Size(123, 29);
+            this.Bill_lbl_TitleLeft.Size = new System.Drawing.Size(103, 24);
             this.Bill_lbl_TitleLeft.TabIndex = 8;
             this.Bill_lbl_TitleLeft.Text = "Left to pay:";
             // 
@@ -1674,10 +1677,10 @@
             // 
             this.Bill_lbl_TitlePaid.AutoSize = true;
             this.Bill_lbl_TitlePaid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_TitlePaid.Location = new System.Drawing.Point(509, 757);
-            this.Bill_lbl_TitlePaid.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_TitlePaid.Location = new System.Drawing.Point(424, 631);
+            this.Bill_lbl_TitlePaid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_TitlePaid.Name = "Bill_lbl_TitlePaid";
-            this.Bill_lbl_TitlePaid.Size = new System.Drawing.Size(144, 29);
+            this.Bill_lbl_TitlePaid.Size = new System.Drawing.Size(121, 24);
             this.Bill_lbl_TitlePaid.TabIndex = 7;
             this.Bill_lbl_TitlePaid.Text = "Already paid:";
             // 
@@ -1685,10 +1688,10 @@
             // 
             this.Bill_lbl_TitleTotal.AutoSize = true;
             this.Bill_lbl_TitleTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_TitleTotal.Location = new System.Drawing.Point(582, 713);
-            this.Bill_lbl_TitleTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_TitleTotal.Location = new System.Drawing.Point(485, 594);
+            this.Bill_lbl_TitleTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_TitleTotal.Name = "Bill_lbl_TitleTotal";
-            this.Bill_lbl_TitleTotal.Size = new System.Drawing.Size(68, 29);
+            this.Bill_lbl_TitleTotal.Size = new System.Drawing.Size(56, 24);
             this.Bill_lbl_TitleTotal.TabIndex = 6;
             this.Bill_lbl_TitleTotal.Text = "Total:";
             // 
@@ -1696,10 +1699,10 @@
             // 
             this.Bill_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Bill_btn_Pay.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_btn_Pay.Location = new System.Drawing.Point(551, 833);
-            this.Bill_btn_Pay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_btn_Pay.Location = new System.Drawing.Point(459, 694);
+            this.Bill_btn_Pay.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_btn_Pay.Name = "Bill_btn_Pay";
-            this.Bill_btn_Pay.Size = new System.Drawing.Size(191, 78);
+            this.Bill_btn_Pay.Size = new System.Drawing.Size(159, 65);
             this.Bill_btn_Pay.TabIndex = 5;
             this.Bill_btn_Pay.Text = "Next Screen";
             this.Bill_btn_Pay.UseVisualStyleBackColor = false;
@@ -1712,11 +1715,11 @@
             this.Bill_GroupBox1.Controls.Add(this.Bill_radbtn_Cash);
             this.Bill_GroupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.Bill_GroupBox1.Location = new System.Drawing.Point(47, 746);
-            this.Bill_GroupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_GroupBox1.Location = new System.Drawing.Point(39, 622);
+            this.Bill_GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_GroupBox1.Name = "Bill_GroupBox1";
-            this.Bill_GroupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Bill_GroupBox1.Size = new System.Drawing.Size(341, 182);
+            this.Bill_GroupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.Bill_GroupBox1.Size = new System.Drawing.Size(284, 152);
             this.Bill_GroupBox1.TabIndex = 4;
             this.Bill_GroupBox1.TabStop = false;
             this.Bill_GroupBox1.Text = "Payment Method";
@@ -1724,10 +1727,10 @@
             // Bill_radbtn_Credit
             // 
             this.Bill_radbtn_Credit.AutoSize = true;
-            this.Bill_radbtn_Credit.Location = new System.Drawing.Point(10, 115);
-            this.Bill_radbtn_Credit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_radbtn_Credit.Location = new System.Drawing.Point(8, 96);
+            this.Bill_radbtn_Credit.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_radbtn_Credit.Name = "Bill_radbtn_Credit";
-            this.Bill_radbtn_Credit.Size = new System.Drawing.Size(287, 33);
+            this.Bill_radbtn_Credit.Size = new System.Drawing.Size(245, 28);
             this.Bill_radbtn_Credit.TabIndex = 2;
             this.Bill_radbtn_Credit.TabStop = true;
             this.Bill_radbtn_Credit.Text = "Credit Card (VISA / Amex)";
@@ -1737,10 +1740,10 @@
             // Bill_radbtn_Debit
             // 
             this.Bill_radbtn_Debit.AutoSize = true;
-            this.Bill_radbtn_Debit.Location = new System.Drawing.Point(10, 74);
-            this.Bill_radbtn_Debit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_radbtn_Debit.Location = new System.Drawing.Point(8, 62);
+            this.Bill_radbtn_Debit.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_radbtn_Debit.Name = "Bill_radbtn_Debit";
-            this.Bill_radbtn_Debit.Size = new System.Drawing.Size(143, 33);
+            this.Bill_radbtn_Debit.Size = new System.Drawing.Size(120, 28);
             this.Bill_radbtn_Debit.TabIndex = 1;
             this.Bill_radbtn_Debit.TabStop = true;
             this.Bill_radbtn_Debit.Text = "Debit Card";
@@ -1750,10 +1753,10 @@
             // Bill_radbtn_Cash
             // 
             this.Bill_radbtn_Cash.AutoSize = true;
-            this.Bill_radbtn_Cash.Location = new System.Drawing.Point(10, 35);
-            this.Bill_radbtn_Cash.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_radbtn_Cash.Location = new System.Drawing.Point(8, 29);
+            this.Bill_radbtn_Cash.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_radbtn_Cash.Name = "Bill_radbtn_Cash";
-            this.Bill_radbtn_Cash.Size = new System.Drawing.Size(85, 33);
+            this.Bill_radbtn_Cash.Size = new System.Drawing.Size(71, 28);
             this.Bill_radbtn_Cash.TabIndex = 0;
             this.Bill_radbtn_Cash.TabStop = true;
             this.Bill_radbtn_Cash.Text = "Cash";
@@ -1763,10 +1766,10 @@
             // Bill_lbl_MainInstruction
             // 
             this.Bill_lbl_MainInstruction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_MainInstruction.Location = new System.Drawing.Point(47, 611);
-            this.Bill_lbl_MainInstruction.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_MainInstruction.Location = new System.Drawing.Point(39, 509);
+            this.Bill_lbl_MainInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_MainInstruction.Name = "Bill_lbl_MainInstruction";
-            this.Bill_lbl_MainInstruction.Size = new System.Drawing.Size(230, 106);
+            this.Bill_lbl_MainInstruction.Size = new System.Drawing.Size(192, 88);
             this.Bill_lbl_MainInstruction.TabIndex = 3;
             this.Bill_lbl_MainInstruction.Text = "Select a payment method to advance to the next screen.";
             // 
@@ -1774,10 +1777,10 @@
             // 
             this.Bill_lbl_Title.AutoSize = true;
             this.Bill_lbl_Title.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Bill_lbl_Title.Location = new System.Drawing.Point(366, 18);
-            this.Bill_lbl_Title.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Bill_lbl_Title.Location = new System.Drawing.Point(305, 15);
+            this.Bill_lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bill_lbl_Title.Name = "Bill_lbl_Title";
-            this.Bill_lbl_Title.Size = new System.Drawing.Size(54, 37);
+            this.Bill_lbl_Title.Size = new System.Drawing.Size(46, 31);
             this.Bill_lbl_Title.TabIndex = 2;
             this.Bill_lbl_Title.Text = "Bill";
             // 
@@ -1792,10 +1795,10 @@
             this.Bill_lv_VAT.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_lv_VAT.ForeColor = System.Drawing.Color.White;
             this.Bill_lv_VAT.HideSelection = false;
-            this.Bill_lv_VAT.Location = new System.Drawing.Point(300, 570);
-            this.Bill_lv_VAT.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_lv_VAT.Location = new System.Drawing.Point(250, 475);
+            this.Bill_lv_VAT.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_lv_VAT.Name = "Bill_lv_VAT";
-            this.Bill_lv_VAT.Size = new System.Drawing.Size(438, 123);
+            this.Bill_lv_VAT.Size = new System.Drawing.Size(366, 103);
             this.Bill_lv_VAT.TabIndex = 1;
             this.Bill_lv_VAT.UseCompatibleStateImageBehavior = false;
             this.Bill_lv_VAT.View = System.Windows.Forms.View.Details;
@@ -1831,10 +1834,10 @@
             this.Bill_lv_Bill.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bill_lv_Bill.ForeColor = System.Drawing.Color.White;
             this.Bill_lv_Bill.HideSelection = false;
-            this.Bill_lv_Bill.Location = new System.Drawing.Point(47, 59);
-            this.Bill_lv_Bill.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Bill_lv_Bill.Location = new System.Drawing.Point(39, 49);
+            this.Bill_lv_Bill.Margin = new System.Windows.Forms.Padding(4);
             this.Bill_lv_Bill.Name = "Bill_lv_Bill";
-            this.Bill_lv_Bill.Size = new System.Drawing.Size(693, 501);
+            this.Bill_lv_Bill.Size = new System.Drawing.Size(578, 418);
             this.Bill_lv_Bill.TabIndex = 0;
             this.Bill_lv_Bill.UseCompatibleStateImageBehavior = false;
             this.Bill_lv_Bill.View = System.Windows.Forms.View.Details;
@@ -1869,10 +1872,10 @@
             // 
             this.tab_CashPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_CashPayment.Controls.Add(this.Cash_pnl);
-            this.tab_CashPayment.Location = new System.Drawing.Point(4, 33);
+            this.tab_CashPayment.Location = new System.Drawing.Point(4, 30);
             this.tab_CashPayment.Margin = new System.Windows.Forms.Padding(1);
             this.tab_CashPayment.Name = "tab_CashPayment";
-            this.tab_CashPayment.Size = new System.Drawing.Size(783, 935);
+            this.tab_CashPayment.Size = new System.Drawing.Size(650, 767);
             this.tab_CashPayment.TabIndex = 5;
             this.tab_CashPayment.Text = "PayCash";
             // 
@@ -1894,37 +1897,37 @@
             this.Cash_pnl.Location = new System.Drawing.Point(0, 0);
             this.Cash_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.Cash_pnl.Name = "Cash_pnl";
-            this.Cash_pnl.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.Cash_pnl.Size = new System.Drawing.Size(783, 935);
+            this.Cash_pnl.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.Cash_pnl.Size = new System.Drawing.Size(650, 767);
             this.Cash_pnl.TabIndex = 3;
             // 
             // PayCash_lbl_Instruction2
             // 
             this.PayCash_lbl_Instruction2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_Instruction2.Location = new System.Drawing.Point(12, 493);
-            this.PayCash_lbl_Instruction2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCash_lbl_Instruction2.Location = new System.Drawing.Point(10, 411);
+            this.PayCash_lbl_Instruction2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCash_lbl_Instruction2.Name = "PayCash_lbl_Instruction2";
-            this.PayCash_lbl_Instruction2.Size = new System.Drawing.Size(215, 74);
+            this.PayCash_lbl_Instruction2.Size = new System.Drawing.Size(179, 62);
             this.PayCash_lbl_Instruction2.TabIndex = 11;
             this.PayCash_lbl_Instruction2.Text = "Partial payments are also possible.";
             // 
             // PayCash_lbl_Instruction1
             // 
             this.PayCash_lbl_Instruction1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_Instruction1.Location = new System.Drawing.Point(12, 379);
-            this.PayCash_lbl_Instruction1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCash_lbl_Instruction1.Location = new System.Drawing.Point(10, 316);
+            this.PayCash_lbl_Instruction1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCash_lbl_Instruction1.Name = "PayCash_lbl_Instruction1";
-            this.PayCash_lbl_Instruction1.Size = new System.Drawing.Size(254, 142);
+            this.PayCash_lbl_Instruction1.Size = new System.Drawing.Size(212, 118);
             this.PayCash_lbl_Instruction1.TabIndex = 10;
             this.PayCash_lbl_Instruction1.Text = "Enter the amount the guest gives in order to calculate the change.";
             // 
             // Cash_btn_Back
             // 
             this.Cash_btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
-            this.Cash_btn_Back.Location = new System.Drawing.Point(209, 193);
-            this.Cash_btn_Back.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Cash_btn_Back.Location = new System.Drawing.Point(174, 161);
+            this.Cash_btn_Back.Margin = new System.Windows.Forms.Padding(4);
             this.Cash_btn_Back.Name = "Cash_btn_Back";
-            this.Cash_btn_Back.Size = new System.Drawing.Size(113, 41);
+            this.Cash_btn_Back.Size = new System.Drawing.Size(94, 34);
             this.Cash_btn_Back.TabIndex = 9;
             this.Cash_btn_Back.Text = "Back";
             this.Cash_btn_Back.UseVisualStyleBackColor = false;
@@ -1934,10 +1937,10 @@
             // 
             this.Cash_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Cash_btn_Pay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_btn_Pay.Location = new System.Drawing.Point(245, 708);
-            this.Cash_btn_Pay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Cash_btn_Pay.Location = new System.Drawing.Point(204, 590);
+            this.Cash_btn_Pay.Margin = new System.Windows.Forms.Padding(4);
             this.Cash_btn_Pay.Name = "Cash_btn_Pay";
-            this.Cash_btn_Pay.Size = new System.Drawing.Size(269, 53);
+            this.Cash_btn_Pay.Size = new System.Drawing.Size(224, 44);
             this.Cash_btn_Pay.TabIndex = 8;
             this.Cash_btn_Pay.Text = "Complete Payment";
             this.Cash_btn_Pay.UseVisualStyleBackColor = false;
@@ -1949,15 +1952,15 @@
             this.PayCash_num_Change.DecimalPlaces = 2;
             this.PayCash_num_Change.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_num_Change.ForeColor = System.Drawing.Color.White;
-            this.PayCash_num_Change.Location = new System.Drawing.Point(286, 571);
-            this.PayCash_num_Change.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCash_num_Change.Location = new System.Drawing.Point(238, 476);
+            this.PayCash_num_Change.Margin = new System.Windows.Forms.Padding(4);
             this.PayCash_num_Change.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.PayCash_num_Change.Name = "PayCash_num_Change";
-            this.PayCash_num_Change.Size = new System.Drawing.Size(180, 37);
+            this.PayCash_num_Change.Size = new System.Drawing.Size(150, 32);
             this.PayCash_num_Change.TabIndex = 7;
             this.PayCash_num_Change.ValueChanged += new System.EventHandler(this.PayCash_num_Change_ValueChanged);
             // 
@@ -1967,15 +1970,15 @@
             this.PayCash_num_AmountGiven.DecimalPlaces = 2;
             this.PayCash_num_AmountGiven.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCash_num_AmountGiven.ForeColor = System.Drawing.Color.White;
-            this.PayCash_num_AmountGiven.Location = new System.Drawing.Point(286, 410);
-            this.PayCash_num_AmountGiven.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCash_num_AmountGiven.Location = new System.Drawing.Point(238, 342);
+            this.PayCash_num_AmountGiven.Margin = new System.Windows.Forms.Padding(4);
             this.PayCash_num_AmountGiven.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.PayCash_num_AmountGiven.Name = "PayCash_num_AmountGiven";
-            this.PayCash_num_AmountGiven.Size = new System.Drawing.Size(180, 37);
+            this.PayCash_num_AmountGiven.Size = new System.Drawing.Size(150, 32);
             this.PayCash_num_AmountGiven.TabIndex = 6;
             this.PayCash_num_AmountGiven.ValueChanged += new System.EventHandler(this.PayCash_num_AmountGiven_ValueChanged);
             // 
@@ -1983,10 +1986,10 @@
             // 
             this.PayCash_lbl_TitleChange.AutoSize = true;
             this.PayCash_lbl_TitleChange.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_TitleChange.Location = new System.Drawing.Point(286, 539);
-            this.PayCash_lbl_TitleChange.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCash_lbl_TitleChange.Location = new System.Drawing.Point(238, 449);
+            this.PayCash_lbl_TitleChange.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCash_lbl_TitleChange.Name = "PayCash_lbl_TitleChange";
-            this.PayCash_lbl_TitleChange.Size = new System.Drawing.Size(93, 29);
+            this.PayCash_lbl_TitleChange.Size = new System.Drawing.Size(77, 24);
             this.PayCash_lbl_TitleChange.TabIndex = 5;
             this.PayCash_lbl_TitleChange.Text = "Change:";
             // 
@@ -1994,10 +1997,10 @@
             // 
             this.PayCash_TitleAmountGiven.AutoSize = true;
             this.PayCash_TitleAmountGiven.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_TitleAmountGiven.Location = new System.Drawing.Point(286, 378);
-            this.PayCash_TitleAmountGiven.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCash_TitleAmountGiven.Location = new System.Drawing.Point(238, 315);
+            this.PayCash_TitleAmountGiven.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCash_TitleAmountGiven.Name = "PayCash_TitleAmountGiven";
-            this.PayCash_TitleAmountGiven.Size = new System.Drawing.Size(157, 29);
+            this.PayCash_TitleAmountGiven.Size = new System.Drawing.Size(132, 24);
             this.PayCash_TitleAmountGiven.TabIndex = 4;
             this.PayCash_TitleAmountGiven.Text = "Amount given:";
             // 
@@ -2005,10 +2008,10 @@
             // 
             this.PayCash_lbl_BillTotal.AutoSize = true;
             this.PayCash_lbl_BillTotal.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(431, 281);
-            this.PayCash_lbl_BillTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCash_lbl_BillTotal.Location = new System.Drawing.Point(359, 234);
+            this.PayCash_lbl_BillTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCash_lbl_BillTotal.Name = "PayCash_lbl_BillTotal";
-            this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(104, 35);
+            this.PayCash_lbl_BillTotal.Size = new System.Drawing.Size(91, 29);
             this.PayCash_lbl_BillTotal.TabIndex = 3;
             this.PayCash_lbl_BillTotal.Text = "amount";
             // 
@@ -2016,10 +2019,10 @@
             // 
             this.Cash_lbl_AmountTitle.AutoSize = true;
             this.Cash_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_lbl_AmountTitle.Location = new System.Drawing.Point(228, 281);
-            this.Cash_lbl_AmountTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Cash_lbl_AmountTitle.Location = new System.Drawing.Point(190, 234);
+            this.Cash_lbl_AmountTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cash_lbl_AmountTitle.Name = "Cash_lbl_AmountTitle";
-            this.Cash_lbl_AmountTitle.Size = new System.Drawing.Size(189, 35);
+            this.Cash_lbl_AmountTitle.Size = new System.Drawing.Size(164, 29);
             this.Cash_lbl_AmountTitle.TabIndex = 2;
             this.Cash_lbl_AmountTitle.Text = "Amount to Pay:";
             // 
@@ -2027,10 +2030,10 @@
             // 
             this.Cash_lbl_Method.AutoSize = true;
             this.Cash_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_lbl_Method.Location = new System.Drawing.Point(446, 154);
-            this.Cash_lbl_Method.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Cash_lbl_Method.Location = new System.Drawing.Point(372, 128);
+            this.Cash_lbl_Method.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cash_lbl_Method.Name = "Cash_lbl_Method";
-            this.Cash_lbl_Method.Size = new System.Drawing.Size(75, 37);
+            this.Cash_lbl_Method.Size = new System.Drawing.Size(62, 31);
             this.Cash_lbl_Method.TabIndex = 1;
             this.Cash_lbl_Method.Text = "Cash";
             // 
@@ -2038,10 +2041,10 @@
             // 
             this.Cash_lbl_MethodTitle.AutoSize = true;
             this.Cash_lbl_MethodTitle.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cash_lbl_MethodTitle.Location = new System.Drawing.Point(209, 154);
-            this.Cash_lbl_MethodTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Cash_lbl_MethodTitle.Location = new System.Drawing.Point(174, 128);
+            this.Cash_lbl_MethodTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cash_lbl_MethodTitle.Name = "Cash_lbl_MethodTitle";
-            this.Cash_lbl_MethodTitle.Size = new System.Drawing.Size(245, 37);
+            this.Cash_lbl_MethodTitle.Size = new System.Drawing.Size(201, 31);
             this.Cash_lbl_MethodTitle.TabIndex = 0;
             this.Cash_lbl_MethodTitle.Text = "Payment Method: ";
             // 
@@ -2049,10 +2052,10 @@
             // 
             this.tab_CardPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.tab_CardPayment.Controls.Add(this.Card_pnl);
-            this.tab_CardPayment.Location = new System.Drawing.Point(4, 33);
+            this.tab_CardPayment.Location = new System.Drawing.Point(4, 30);
             this.tab_CardPayment.Margin = new System.Windows.Forms.Padding(1);
             this.tab_CardPayment.Name = "tab_CardPayment";
-            this.tab_CardPayment.Size = new System.Drawing.Size(783, 935);
+            this.tab_CardPayment.Size = new System.Drawing.Size(650, 767);
             this.tab_CardPayment.TabIndex = 6;
             this.tab_CardPayment.Text = "PayCard";
             // 
@@ -2074,37 +2077,37 @@
             this.Card_pnl.Location = new System.Drawing.Point(0, 0);
             this.Card_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.Card_pnl.Name = "Card_pnl";
-            this.Card_pnl.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.Card_pnl.Size = new System.Drawing.Size(783, 935);
+            this.Card_pnl.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.Card_pnl.Size = new System.Drawing.Size(650, 767);
             this.Card_pnl.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(12, 382);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(10, 318);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(215, 120);
+            this.label7.Size = new System.Drawing.Size(179, 100);
             this.label7.TabIndex = 13;
             this.label7.Text = "The tip can be entered manually or calculated by altering the total amount.";
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 521);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(10, 434);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(215, 74);
+            this.label5.Size = new System.Drawing.Size(179, 62);
             this.label5.TabIndex = 12;
             this.label5.Text = "Partial payments are also possible.";
             // 
             // PayCard_btn_Back
             // 
             this.PayCard_btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
-            this.PayCard_btn_Back.Location = new System.Drawing.Point(210, 193);
-            this.PayCard_btn_Back.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCard_btn_Back.Location = new System.Drawing.Point(175, 161);
+            this.PayCard_btn_Back.Margin = new System.Windows.Forms.Padding(4);
             this.PayCard_btn_Back.Name = "PayCard_btn_Back";
-            this.PayCard_btn_Back.Size = new System.Drawing.Size(113, 41);
+            this.PayCard_btn_Back.Size = new System.Drawing.Size(94, 34);
             this.PayCard_btn_Back.TabIndex = 9;
             this.PayCard_btn_Back.Text = "Back";
             this.PayCard_btn_Back.UseVisualStyleBackColor = false;
@@ -2114,10 +2117,10 @@
             // 
             this.PayCard_btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PayCard_btn_Pay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_btn_Pay.Location = new System.Drawing.Point(262, 709);
-            this.PayCard_btn_Pay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCard_btn_Pay.Location = new System.Drawing.Point(218, 591);
+            this.PayCard_btn_Pay.Margin = new System.Windows.Forms.Padding(4);
             this.PayCard_btn_Pay.Name = "PayCard_btn_Pay";
-            this.PayCard_btn_Pay.Size = new System.Drawing.Size(238, 54);
+            this.PayCard_btn_Pay.Size = new System.Drawing.Size(198, 45);
             this.PayCard_btn_Pay.TabIndex = 8;
             this.PayCard_btn_Pay.Text = "Process Payment";
             this.PayCard_btn_Pay.UseVisualStyleBackColor = false;
@@ -2129,15 +2132,15 @@
             this.PayCard_Num_Total.DecimalPlaces = 2;
             this.PayCard_Num_Total.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_Num_Total.ForeColor = System.Drawing.Color.White;
-            this.PayCard_Num_Total.Location = new System.Drawing.Point(293, 577);
-            this.PayCard_Num_Total.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCard_Num_Total.Location = new System.Drawing.Point(244, 481);
+            this.PayCard_Num_Total.Margin = new System.Windows.Forms.Padding(4);
             this.PayCard_Num_Total.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.PayCard_Num_Total.Name = "PayCard_Num_Total";
-            this.PayCard_Num_Total.Size = new System.Drawing.Size(180, 37);
+            this.PayCard_Num_Total.Size = new System.Drawing.Size(150, 32);
             this.PayCard_Num_Total.TabIndex = 7;
             this.PayCard_Num_Total.ValueChanged += new System.EventHandler(this.PayCard_Num_Total_ValueChanged);
             // 
@@ -2147,15 +2150,15 @@
             this.PayCard_Num_Tip.DecimalPlaces = 2;
             this.PayCard_Num_Tip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCard_Num_Tip.ForeColor = System.Drawing.Color.White;
-            this.PayCard_Num_Tip.Location = new System.Drawing.Point(293, 418);
-            this.PayCard_Num_Tip.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PayCard_Num_Tip.Location = new System.Drawing.Point(244, 348);
+            this.PayCard_Num_Tip.Margin = new System.Windows.Forms.Padding(4);
             this.PayCard_Num_Tip.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.PayCard_Num_Tip.Name = "PayCard_Num_Tip";
-            this.PayCard_Num_Tip.Size = new System.Drawing.Size(180, 37);
+            this.PayCard_Num_Tip.Size = new System.Drawing.Size(150, 32);
             this.PayCard_Num_Tip.TabIndex = 6;
             this.PayCard_Num_Tip.ValueChanged += new System.EventHandler(this.PayCard_Num_Tip_ValueChanged);
             // 
@@ -2163,10 +2166,10 @@
             // 
             this.PayCard_lbl_TitleTotalAmount.AutoSize = true;
             this.PayCard_lbl_TitleTotalAmount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_TitleTotalAmount.Location = new System.Drawing.Point(293, 545);
-            this.PayCard_lbl_TitleTotalAmount.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_TitleTotalAmount.Location = new System.Drawing.Point(244, 454);
+            this.PayCard_lbl_TitleTotalAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_TitleTotalAmount.Name = "PayCard_lbl_TitleTotalAmount";
-            this.PayCard_lbl_TitleTotalAmount.Size = new System.Drawing.Size(151, 29);
+            this.PayCard_lbl_TitleTotalAmount.Size = new System.Drawing.Size(127, 24);
             this.PayCard_lbl_TitleTotalAmount.TabIndex = 5;
             this.PayCard_lbl_TitleTotalAmount.Text = "Total amount:";
             // 
@@ -2174,10 +2177,10 @@
             // 
             this.PayCard_lbl_TipTitle.AutoSize = true;
             this.PayCard_lbl_TipTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_TipTitle.Location = new System.Drawing.Point(293, 384);
-            this.PayCard_lbl_TipTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_TipTitle.Location = new System.Drawing.Point(244, 320);
+            this.PayCard_lbl_TipTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_TipTitle.Name = "PayCard_lbl_TipTitle";
-            this.PayCard_lbl_TipTitle.Size = new System.Drawing.Size(50, 29);
+            this.PayCard_lbl_TipTitle.Size = new System.Drawing.Size(41, 24);
             this.PayCard_lbl_TipTitle.TabIndex = 4;
             this.PayCard_lbl_TipTitle.Text = "Tip:";
             // 
@@ -2185,10 +2188,10 @@
             // 
             this.PayCard_lbl_AmountToPay.AutoSize = true;
             this.PayCard_lbl_AmountToPay.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_AmountToPay.Location = new System.Drawing.Point(432, 281);
-            this.PayCard_lbl_AmountToPay.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_AmountToPay.Location = new System.Drawing.Point(360, 234);
+            this.PayCard_lbl_AmountToPay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_AmountToPay.Name = "PayCard_lbl_AmountToPay";
-            this.PayCard_lbl_AmountToPay.Size = new System.Drawing.Size(104, 35);
+            this.PayCard_lbl_AmountToPay.Size = new System.Drawing.Size(91, 29);
             this.PayCard_lbl_AmountToPay.TabIndex = 3;
             this.PayCard_lbl_AmountToPay.Text = "amount";
             // 
@@ -2196,10 +2199,10 @@
             // 
             this.PayCard_lbl_AmountTitle.AutoSize = true;
             this.PayCard_lbl_AmountTitle.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_AmountTitle.Location = new System.Drawing.Point(229, 281);
-            this.PayCard_lbl_AmountTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_AmountTitle.Location = new System.Drawing.Point(191, 234);
+            this.PayCard_lbl_AmountTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_AmountTitle.Name = "PayCard_lbl_AmountTitle";
-            this.PayCard_lbl_AmountTitle.Size = new System.Drawing.Size(189, 35);
+            this.PayCard_lbl_AmountTitle.Size = new System.Drawing.Size(164, 29);
             this.PayCard_lbl_AmountTitle.TabIndex = 2;
             this.PayCard_lbl_AmountTitle.Text = "Amount to Pay:";
             // 
@@ -2207,10 +2210,10 @@
             // 
             this.PayCard_lbl_Method.AutoSize = true;
             this.PayCard_lbl_Method.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_Method.Location = new System.Drawing.Point(450, 154);
-            this.PayCard_lbl_Method.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_Method.Location = new System.Drawing.Point(375, 128);
+            this.PayCard_lbl_Method.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_Method.Name = "PayCard_lbl_Method";
-            this.PayCard_lbl_Method.Size = new System.Drawing.Size(73, 37);
+            this.PayCard_lbl_Method.Size = new System.Drawing.Size(61, 31);
             this.PayCard_lbl_Method.TabIndex = 1;
             this.PayCard_lbl_Method.Text = "Card";
             // 
@@ -2218,20 +2221,20 @@
             // 
             this.PayCard_lbl_TitleMethod.AutoSize = true;
             this.PayCard_lbl_TitleMethod.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PayCard_lbl_TitleMethod.Location = new System.Drawing.Point(210, 154);
-            this.PayCard_lbl_TitleMethod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PayCard_lbl_TitleMethod.Location = new System.Drawing.Point(175, 128);
+            this.PayCard_lbl_TitleMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayCard_lbl_TitleMethod.Name = "PayCard_lbl_TitleMethod";
-            this.PayCard_lbl_TitleMethod.Size = new System.Drawing.Size(245, 37);
+            this.PayCard_lbl_TitleMethod.Size = new System.Drawing.Size(201, 31);
             this.PayCard_lbl_TitleMethod.TabIndex = 0;
             this.PayCard_lbl_TitleMethod.Text = "Payment Method: ";
             // 
             // tab_ProcessPayment
             // 
             this.tab_ProcessPayment.Controls.Add(this.pnl_ProcessPayment);
-            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 33);
-            this.tab_ProcessPayment.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tab_ProcessPayment.Location = new System.Drawing.Point(4, 30);
+            this.tab_ProcessPayment.Margin = new System.Windows.Forms.Padding(4);
             this.tab_ProcessPayment.Name = "tab_ProcessPayment";
-            this.tab_ProcessPayment.Size = new System.Drawing.Size(783, 935);
+            this.tab_ProcessPayment.Size = new System.Drawing.Size(650, 767);
             this.tab_ProcessPayment.TabIndex = 13;
             this.tab_ProcessPayment.Text = "ProcessPayment";
             this.tab_ProcessPayment.UseVisualStyleBackColor = true;
@@ -2247,27 +2250,27 @@
             this.pnl_ProcessPayment.Location = new System.Drawing.Point(0, 0);
             this.pnl_ProcessPayment.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_ProcessPayment.Name = "pnl_ProcessPayment";
-            this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.pnl_ProcessPayment.Size = new System.Drawing.Size(783, 935);
+            this.pnl_ProcessPayment.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.pnl_ProcessPayment.Size = new System.Drawing.Size(650, 767);
             this.pnl_ProcessPayment.TabIndex = 4;
             // 
             // PaymentProcess_lbl_FunFact
             // 
             this.PaymentProcess_lbl_FunFact.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_FunFact.Location = new System.Drawing.Point(114, 599);
-            this.PaymentProcess_lbl_FunFact.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentProcess_lbl_FunFact.Location = new System.Drawing.Point(95, 499);
+            this.PaymentProcess_lbl_FunFact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaymentProcess_lbl_FunFact.Name = "PaymentProcess_lbl_FunFact";
-            this.PaymentProcess_lbl_FunFact.Size = new System.Drawing.Size(533, 109);
+            this.PaymentProcess_lbl_FunFact.Size = new System.Drawing.Size(444, 91);
             this.PaymentProcess_lbl_FunFact.TabIndex = 13;
             this.PaymentProcess_lbl_FunFact.Text = "FunFact";
             // 
             // PaymentProcess_lbl_Status
             // 
             this.PaymentProcess_lbl_Status.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(133, 390);
-            this.PaymentProcess_lbl_Status.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentProcess_lbl_Status.Location = new System.Drawing.Point(111, 325);
+            this.PaymentProcess_lbl_Status.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaymentProcess_lbl_Status.Name = "PaymentProcess_lbl_Status";
-            this.PaymentProcess_lbl_Status.Size = new System.Drawing.Size(514, 83);
+            this.PaymentProcess_lbl_Status.Size = new System.Drawing.Size(428, 69);
             this.PaymentProcess_lbl_Status.TabIndex = 12;
             this.PaymentProcess_lbl_Status.Text = "Processing";
             this.PaymentProcess_lbl_Status.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2276,20 +2279,20 @@
             // 
             this.PaymentProcess_lbl_TitleFunFact.AutoSize = true;
             this.PaymentProcess_lbl_TitleFunFact.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentProcess_lbl_TitleFunFact.Location = new System.Drawing.Point(114, 545);
-            this.PaymentProcess_lbl_TitleFunFact.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentProcess_lbl_TitleFunFact.Location = new System.Drawing.Point(95, 454);
+            this.PaymentProcess_lbl_TitleFunFact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaymentProcess_lbl_TitleFunFact.Name = "PaymentProcess_lbl_TitleFunFact";
-            this.PaymentProcess_lbl_TitleFunFact.Size = new System.Drawing.Size(110, 32);
+            this.PaymentProcess_lbl_TitleFunFact.Size = new System.Drawing.Size(93, 27);
             this.PaymentProcess_lbl_TitleFunFact.TabIndex = 3;
             this.PaymentProcess_lbl_TitleFunFact.Text = "Fun Fact:";
             // 
             // Process_ProcessGIF
             // 
             this.Process_ProcessGIF.Image = global::ChapeauUI.Properties.Resources.ZZ5H;
-            this.Process_ProcessGIF.Location = new System.Drawing.Point(298, 121);
-            this.Process_ProcessGIF.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Process_ProcessGIF.Location = new System.Drawing.Point(248, 101);
+            this.Process_ProcessGIF.Margin = new System.Windows.Forms.Padding(4);
             this.Process_ProcessGIF.Name = "Process_ProcessGIF";
-            this.Process_ProcessGIF.Size = new System.Drawing.Size(194, 194);
+            this.Process_ProcessGIF.Size = new System.Drawing.Size(162, 162);
             this.Process_ProcessGIF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Process_ProcessGIF.TabIndex = 0;
             this.Process_ProcessGIF.TabStop = false;
@@ -2297,10 +2300,10 @@
             // tab_PaymentFailed
             // 
             this.tab_PaymentFailed.Controls.Add(this.pnl_PaymentFailed);
-            this.tab_PaymentFailed.Location = new System.Drawing.Point(4, 33);
-            this.tab_PaymentFailed.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tab_PaymentFailed.Location = new System.Drawing.Point(4, 30);
+            this.tab_PaymentFailed.Margin = new System.Windows.Forms.Padding(4);
             this.tab_PaymentFailed.Name = "tab_PaymentFailed";
-            this.tab_PaymentFailed.Size = new System.Drawing.Size(783, 935);
+            this.tab_PaymentFailed.Size = new System.Drawing.Size(650, 767);
             this.tab_PaymentFailed.TabIndex = 12;
             this.tab_PaymentFailed.Text = "PaymentFailed";
             this.tab_PaymentFailed.UseVisualStyleBackColor = true;
@@ -2317,17 +2320,17 @@
             this.pnl_PaymentFailed.Location = new System.Drawing.Point(0, 0);
             this.pnl_PaymentFailed.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_PaymentFailed.Name = "pnl_PaymentFailed";
-            this.pnl_PaymentFailed.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.pnl_PaymentFailed.Size = new System.Drawing.Size(783, 935);
+            this.pnl_PaymentFailed.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.pnl_PaymentFailed.Size = new System.Drawing.Size(650, 767);
             this.pnl_PaymentFailed.TabIndex = 4;
             // 
             // PaymentFailure_lbl_MainInstruction
             // 
             this.PaymentFailure_lbl_MainInstruction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailure_lbl_MainInstruction.Location = new System.Drawing.Point(114, 509);
-            this.PaymentFailure_lbl_MainInstruction.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentFailure_lbl_MainInstruction.Location = new System.Drawing.Point(95, 424);
+            this.PaymentFailure_lbl_MainInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaymentFailure_lbl_MainInstruction.Name = "PaymentFailure_lbl_MainInstruction";
-            this.PaymentFailure_lbl_MainInstruction.Size = new System.Drawing.Size(514, 74);
+            this.PaymentFailure_lbl_MainInstruction.Size = new System.Drawing.Size(428, 62);
             this.PaymentFailure_lbl_MainInstruction.TabIndex = 12;
             this.PaymentFailure_lbl_MainInstruction.Text = "Select what you want to do next. We can retry with the same settings, or choose a" +
     "nother method.";
@@ -2335,10 +2338,10 @@
             // PaymentFailure_lbl_Title
             // 
             this.PaymentFailure_lbl_Title.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailure_lbl_Title.Location = new System.Drawing.Point(139, 361);
-            this.PaymentFailure_lbl_Title.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentFailure_lbl_Title.Location = new System.Drawing.Point(116, 301);
+            this.PaymentFailure_lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaymentFailure_lbl_Title.Name = "PaymentFailure_lbl_Title";
-            this.PaymentFailure_lbl_Title.Size = new System.Drawing.Size(514, 95);
+            this.PaymentFailure_lbl_Title.Size = new System.Drawing.Size(428, 79);
             this.PaymentFailure_lbl_Title.TabIndex = 11;
             this.PaymentFailure_lbl_Title.Text = "Something went wrong in the card terminal!";
             this.PaymentFailure_lbl_Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2347,10 +2350,10 @@
             // 
             this.PaymentFailure_btn_TryAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PaymentFailure_btn_TryAgain.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailure_btn_TryAgain.Location = new System.Drawing.Point(431, 606);
-            this.PaymentFailure_btn_TryAgain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentFailure_btn_TryAgain.Location = new System.Drawing.Point(359, 505);
+            this.PaymentFailure_btn_TryAgain.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentFailure_btn_TryAgain.Name = "PaymentFailure_btn_TryAgain";
-            this.PaymentFailure_btn_TryAgain.Size = new System.Drawing.Size(238, 86);
+            this.PaymentFailure_btn_TryAgain.Size = new System.Drawing.Size(198, 72);
             this.PaymentFailure_btn_TryAgain.TabIndex = 10;
             this.PaymentFailure_btn_TryAgain.Text = "Try Again";
             this.PaymentFailure_btn_TryAgain.UseVisualStyleBackColor = false;
@@ -2360,10 +2363,10 @@
             // 
             this.PaymentFailure_btn_ChangeMethod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PaymentFailure_btn_ChangeMethod.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentFailure_btn_ChangeMethod.Location = new System.Drawing.Point(114, 606);
-            this.PaymentFailure_btn_ChangeMethod.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentFailure_btn_ChangeMethod.Location = new System.Drawing.Point(95, 505);
+            this.PaymentFailure_btn_ChangeMethod.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentFailure_btn_ChangeMethod.Name = "PaymentFailure_btn_ChangeMethod";
-            this.PaymentFailure_btn_ChangeMethod.Size = new System.Drawing.Size(238, 86);
+            this.PaymentFailure_btn_ChangeMethod.Size = new System.Drawing.Size(198, 72);
             this.PaymentFailure_btn_ChangeMethod.TabIndex = 9;
             this.PaymentFailure_btn_ChangeMethod.Text = "Change Payment Method";
             this.PaymentFailure_btn_ChangeMethod.UseVisualStyleBackColor = false;
@@ -2372,10 +2375,10 @@
             // PaymentFail_PicFail
             // 
             this.PaymentFail_PicFail.Image = global::ChapeauUI.Properties.Resources.FailureIcon;
-            this.PaymentFail_PicFail.Location = new System.Drawing.Point(298, 121);
-            this.PaymentFail_PicFail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentFail_PicFail.Location = new System.Drawing.Point(248, 101);
+            this.PaymentFail_PicFail.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentFail_PicFail.Name = "PaymentFail_PicFail";
-            this.PaymentFail_PicFail.Size = new System.Drawing.Size(194, 194);
+            this.PaymentFail_PicFail.Size = new System.Drawing.Size(162, 162);
             this.PaymentFail_PicFail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PaymentFail_PicFail.TabIndex = 1;
             this.PaymentFail_PicFail.TabStop = false;
@@ -2383,10 +2386,10 @@
             // tab_PaymentComplete
             // 
             this.tab_PaymentComplete.Controls.Add(this.pnl_PaymentComplete);
-            this.tab_PaymentComplete.Location = new System.Drawing.Point(4, 33);
-            this.tab_PaymentComplete.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tab_PaymentComplete.Location = new System.Drawing.Point(4, 30);
+            this.tab_PaymentComplete.Margin = new System.Windows.Forms.Padding(4);
             this.tab_PaymentComplete.Name = "tab_PaymentComplete";
-            this.tab_PaymentComplete.Size = new System.Drawing.Size(783, 935);
+            this.tab_PaymentComplete.Size = new System.Drawing.Size(650, 767);
             this.tab_PaymentComplete.TabIndex = 11;
             this.tab_PaymentComplete.Text = "PaymentComplete";
             this.tab_PaymentComplete.UseVisualStyleBackColor = true;
@@ -2402,18 +2405,18 @@
             this.pnl_PaymentComplete.Location = new System.Drawing.Point(0, 0);
             this.pnl_PaymentComplete.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_PaymentComplete.Name = "pnl_PaymentComplete";
-            this.pnl_PaymentComplete.Padding = new System.Windows.Forms.Padding(109, 0, 109, 0);
-            this.pnl_PaymentComplete.Size = new System.Drawing.Size(783, 935);
+            this.pnl_PaymentComplete.Padding = new System.Windows.Forms.Padding(91, 0, 91, 0);
+            this.pnl_PaymentComplete.Size = new System.Drawing.Size(650, 767);
             this.pnl_PaymentComplete.TabIndex = 4;
             // 
             // PaymentComplete_btn_BackToTableView
             // 
             this.PaymentComplete_btn_BackToTableView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PaymentComplete_btn_BackToTableView.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PaymentComplete_btn_BackToTableView.Location = new System.Drawing.Point(250, 660);
-            this.PaymentComplete_btn_BackToTableView.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentComplete_btn_BackToTableView.Location = new System.Drawing.Point(208, 550);
+            this.PaymentComplete_btn_BackToTableView.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentComplete_btn_BackToTableView.Name = "PaymentComplete_btn_BackToTableView";
-            this.PaymentComplete_btn_BackToTableView.Size = new System.Drawing.Size(290, 95);
+            this.PaymentComplete_btn_BackToTableView.Size = new System.Drawing.Size(242, 79);
             this.PaymentComplete_btn_BackToTableView.TabIndex = 14;
             this.PaymentComplete_btn_BackToTableView.Text = "Boutton";
             this.PaymentComplete_btn_BackToTableView.UseVisualStyleBackColor = false;
@@ -2424,11 +2427,11 @@
             this.PaymentComplete_txt_Comment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
             this.PaymentComplete_txt_Comment.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.PaymentComplete_txt_Comment.ForeColor = System.Drawing.Color.White;
-            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(204, 499);
-            this.PaymentComplete_txt_Comment.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentComplete_txt_Comment.Location = new System.Drawing.Point(170, 416);
+            this.PaymentComplete_txt_Comment.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentComplete_txt_Comment.Multiline = true;
             this.PaymentComplete_txt_Comment.Name = "PaymentComplete_txt_Comment";
-            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(371, 89);
+            this.PaymentComplete_txt_Comment.Size = new System.Drawing.Size(310, 75);
             this.PaymentComplete_txt_Comment.TabIndex = 13;
             this.PaymentComplete_txt_Comment.Text = "Ask the guest for a review and enter it here.";
             this.PaymentComplete_txt_Comment.Click += new System.EventHandler(this.PaymentComplete_txt_Comment_Click);
@@ -2436,10 +2439,10 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(134, 374);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(112, 312);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(514, 49);
+            this.label6.Size = new System.Drawing.Size(428, 41);
             this.label6.TabIndex = 12;
             this.label6.Text = "Payment Successful !";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2447,10 +2450,10 @@
             // PaymentComplete_PicSuccess
             // 
             this.PaymentComplete_PicSuccess.Image = global::ChapeauUI.Properties.Resources.ConfirmationIcon;
-            this.PaymentComplete_PicSuccess.Location = new System.Drawing.Point(298, 121);
-            this.PaymentComplete_PicSuccess.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PaymentComplete_PicSuccess.Location = new System.Drawing.Point(248, 101);
+            this.PaymentComplete_PicSuccess.Margin = new System.Windows.Forms.Padding(4);
             this.PaymentComplete_PicSuccess.Name = "PaymentComplete_PicSuccess";
-            this.PaymentComplete_PicSuccess.Size = new System.Drawing.Size(194, 194);
+            this.PaymentComplete_PicSuccess.Size = new System.Drawing.Size(162, 162);
             this.PaymentComplete_PicSuccess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PaymentComplete_PicSuccess.TabIndex = 1;
             this.PaymentComplete_PicSuccess.TabStop = false;
@@ -2458,49 +2461,88 @@
             // border_Left
             // 
             this.border_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.border_Left.Location = new System.Drawing.Point(0, 85);
+            this.border_Left.Location = new System.Drawing.Point(0, 71);
             this.border_Left.Margin = new System.Windows.Forms.Padding(0);
             this.border_Left.Name = "border_Left";
-            this.border_Left.Size = new System.Drawing.Size(5, 950);
+            this.border_Left.Size = new System.Drawing.Size(4, 792);
             this.border_Left.TabIndex = 2;
             this.border_Left.TabStop = false;
             // 
             // border_Right
             // 
             this.border_Right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.border_Right.Location = new System.Drawing.Point(781, 85);
+            this.border_Right.Location = new System.Drawing.Point(654, 71);
             this.border_Right.Margin = new System.Windows.Forms.Padding(0);
             this.border_Right.Name = "border_Right";
-            this.border_Right.Size = new System.Drawing.Size(5, 950);
+            this.border_Right.Size = new System.Drawing.Size(4, 792);
             this.border_Right.TabIndex = 1;
             this.border_Right.TabStop = false;
             // 
             // border_Bottom
             // 
             this.border_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.border_Bottom.Location = new System.Drawing.Point(0, 1035);
+            this.border_Bottom.Location = new System.Drawing.Point(0, 863);
             this.border_Bottom.Margin = new System.Windows.Forms.Padding(0);
             this.border_Bottom.Name = "border_Bottom";
-            this.border_Bottom.Size = new System.Drawing.Size(786, 5);
+            this.border_Bottom.Size = new System.Drawing.Size(658, 4);
             this.border_Bottom.TabIndex = 3;
             this.border_Bottom.TabStop = false;
             // 
             // border_Top
             // 
             this.border_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.border_Top.Location = new System.Drawing.Point(0, 79);
+            this.border_Top.Location = new System.Drawing.Point(0, 66);
             this.border_Top.Margin = new System.Windows.Forms.Padding(0);
             this.border_Top.Name = "border_Top";
-            this.border_Top.Size = new System.Drawing.Size(786, 6);
+            this.border_Top.Size = new System.Drawing.Size(658, 5);
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
             // 
+            // pnl_FoodDrink_2
+            // 
+            this.pnl_FoodDrink_2.Controls.Add(this.picBox_Food2);
+            this.pnl_FoodDrink_2.Controls.Add(picBox_Drink2);
+            this.pnl_FoodDrink_2.Location = new System.Drawing.Point(275, 84);
+            this.pnl_FoodDrink_2.Margin = new System.Windows.Forms.Padding(6, 25, 9, 0);
+            this.pnl_FoodDrink_2.MinimumSize = new System.Drawing.Size(38, 104);
+            this.pnl_FoodDrink_2.Name = "pnl_FoodDrink_2";
+            this.pnl_FoodDrink_2.Size = new System.Drawing.Size(38, 104);
+            this.pnl_FoodDrink_2.TabIndex = 18;
+            // 
+            // picBox_Food2
+            // 
+            this.picBox_Food2.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food2.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food2.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food2.Name = "picBox_Food2";
+            this.picBox_Food2.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food2.TabIndex = 0;
+            this.picBox_Food2.TabStop = false;
+            this.picBox_Food2.Visible = false;
+            // 
+            // picBox_Drink2
+            // 
+            picBox_Drink2.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink2.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink2.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink2.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink2.Name = "picBox_Drink2";
+            picBox_Drink2.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink2.TabIndex = 0;
+            picBox_Drink2.TabStop = false;
+            picBox_Drink2.Visible = false;
+            // 
             // Form_Chapeau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.ClientSize = new System.Drawing.Size(786, 1040);
+            this.ClientSize = new System.Drawing.Size(658, 867);
             this.Controls.Add(this.border_Right);
             this.Controls.Add(this.border_Left);
             this.Controls.Add(this.border_Top);
@@ -2513,26 +2555,26 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(808, 1096);
-            this.MinimumSize = new System.Drawing.Size(808, 1096);
+            this.MaximumSize = new System.Drawing.Size(676, 921);
+            this.MinimumSize = new System.Drawing.Size(676, 856);
             this.Name = "Form_Chapeau";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Restaurant Chapeau Ordering System";
             this.Load += new System.EventHandler(this.FormChapeau_Load);
-            ((System.ComponentModel.ISupportInitialize)(img_Drink)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox_Drink2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox18)).EndInit();
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Body.ResumeLayout(false);
             this.tabC_Body.ResumeLayout(false);
@@ -2551,6 +2593,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
             this.pnl_TableOverview.Panel1.ResumeLayout(false);
@@ -2560,25 +2604,23 @@
             this.pnl_TableOverview.ResumeLayout(false);
             this.flow_Tables.ResumeLayout(false);
             this.pnl_FoodDrink_1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_Food)).EndInit();
-            this.pnl_FoodDrink_2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food1)).EndInit();
+            this.pnl_FoodDrink_3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food3)).EndInit();
+            this.pnl_FoodDrink_4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food4)).EndInit();
+            this.pnl_FoodDrink_5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food5)).EndInit();
+            this.pnl_FoodDrink_6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food6)).EndInit();
+            this.pnl_FoodDrink_7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food7)).EndInit();
+            this.pnl_FoodDrink_8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food8)).EndInit();
+            this.pnl_FoodDrink_9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food9)).EndInit();
+            this.pnl_FoodDrink_10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food10)).EndInit();
             this.tab_Order.ResumeLayout(false);
             this.pnl_Order_Menu.ResumeLayout(false);
             this.pnl_Order_Orders.ResumeLayout(false);
@@ -2614,6 +2656,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
+            this.pnl_FoodDrink_2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2655,7 +2700,7 @@
         private System.Windows.Forms.FlowLayoutPanel flow_Tables;
         private System.Windows.Forms.Button btn_Table_1;
         private System.Windows.Forms.Panel pnl_FoodDrink_1;
-        private System.Windows.Forms.PictureBox img_Food;
+        private System.Windows.Forms.PictureBox picBox_Food1;
         private System.Windows.Forms.Button btn_Table_2;
         private System.Windows.Forms.Button btn_Table_3;
         private System.Windows.Forms.Button btn_Table_4;
@@ -2762,23 +2807,25 @@
         private System.Windows.Forms.Label PayCash_lbl_Instruction1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnl_FoodDrink_3;
+        private System.Windows.Forms.PictureBox picBox_Food3;
+        private System.Windows.Forms.Panel pnl_FoodDrink_4;
+        private System.Windows.Forms.PictureBox picBox_Food4;
+        private System.Windows.Forms.Panel pnl_FoodDrink_5;
+        private System.Windows.Forms.PictureBox picBox_Food5;
+        private System.Windows.Forms.Panel pnl_FoodDrink_6;
+        private System.Windows.Forms.PictureBox picBox_Food6;
+        private System.Windows.Forms.Panel pnl_FoodDrink_7;
+        private System.Windows.Forms.PictureBox picBox_Food7;
+        private System.Windows.Forms.Panel pnl_FoodDrink_8;
+        private System.Windows.Forms.PictureBox picBox_Food8;
+        private System.Windows.Forms.Panel pnl_FoodDrink_9;
+        private System.Windows.Forms.PictureBox picBox_Food9;
+        private System.Windows.Forms.Panel pnl_FoodDrink_10;
+        private System.Windows.Forms.PictureBox picBox_Food10;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel pnl_FoodDrink_2;
-        private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox picBox_Food2;
     }
 }

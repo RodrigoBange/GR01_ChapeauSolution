@@ -7,29 +7,56 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace ChapeauUI.Components
 {
     public partial class C_Table_Order : UserControl
     {
         List<OrderItem> items = new List<OrderItem>();
+        List<Label> tableOrderLabels = new List<Label>();
+        List<Label> tableTimeLabels = new List<Label>();
 
         public C_Table_Order(List<OrderItem> items)
         {
             InitializeComponent();
 
             OrderService orderService = new OrderService();
-            loadOrderItems(orderService.GetOrderItems());
+            LoadOrderItems(orderService.GetOrderItems());
             this.items = items;
+        }
 
+        private void FillLabelsLists()
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                Label labelOrderItems = (Label)this.Controls.OfType<Label>().Where(lbl => lbl.Name == "lbl_OrderItems" + i);
+                Label labelTimes = (Label)this.Controls.OfType<Label>().Where(lbl => lbl.Name == "lbl_TableTime" + i);
+                tableOrderLabels.Add(labelOrderItems);
+                tableTimeLabels.Add(labelTimes);
+            }
         }
 
         // Load items to the running orders view
-        private void loadOrderItems(List<OrderItem> orderItems)
+        private void LoadOrderItems(List<OrderItem> orderItems)
         {
-            
+            //FillLabelsLists();
+
             foreach (OrderItem item in orderItems)
             {
+                //foreach (Label label in tableOrderLabels)
+                //{
+                //    if (item.TableID == tableOrderLabels.IndexOf(label) + 1)
+                //        label.Text += item.ItemName + Environment.NewLine;
+                //}
+
+                //foreach (Label label in tableTimeLabels)
+                //{
+                //    if (item.TableID == tableTimeLabels.IndexOf(label) + 1)
+                //        label.Text += $"Table {tableTimeLabels.IndexOf(label) + 1} - {item.OrderTime:T}";
+                //}
+
+
                 if (item.TableID == 1)
                 {
                     lbl_OrderItems1.Text += item.ItemName + Environment.NewLine;

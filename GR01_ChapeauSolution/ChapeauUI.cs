@@ -30,10 +30,10 @@ namespace GR01_ChapeauSolution
         const string hexColorDark = "#1C1B2D";
 
         // General variables
-        private int tableNumber = 1;
-        private List<Tuple<Button, Table>> tables = new List<Tuple<Button, Table>>();
-
         Employee employee;
+        private int tableNumber;
+        private List<Table> listTables;
+        private List<Tuple<Button, listTables>> tables = new List<Tuple<Button, listTables>>();
 
         #region General
         // Constructor
@@ -72,7 +72,7 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Tables;
 
             // Fill table list
-            tables.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
+            tables.Add(new Tuple<Button, listTables>(btn_Table_1, Tabl);
             tables.Add(new Tuple<Button, Table>(btn_Table_2, new Table(2, false)));
             tables.Add(new Tuple<Button, Table>(btn_Table_3, new Table(3, false)));
             tables.Add(new Tuple<Button, Table>(btn_Table_4, new Table(4, false)));
@@ -122,6 +122,7 @@ namespace GR01_ChapeauSolution
                         lbl_Title.Text = "Overview";
 
                         // Check for table occupied
+                        listTables = tableService.GetAllTables();
                         CheckTableStatuses();
                     }
                     break;
@@ -285,24 +286,27 @@ namespace GR01_ChapeauSolution
 
         #region Table View
         /** TABLE VIEW METHODS **/
-        private void FoodDrinkOrders_Table1()
-        {
-            
-        }
 
         private void CheckTableStatuses()
         {
-            for (int i = 1; i < tables.Count + 1; i++)
+            foreach(Table table in listTables)
+            {
+                if (table.IsOccupied)
+                {
+                    
+                }
+            }
+            for (int i = 1; i < listTables.Count + 1; i++)
             {
                 if (tableService.TableOccupied(i))
                 {
-                    tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
-                    tables[i - 1].Item2.IsOccupied = true;
+                    listTables[i - 1].Item1.BackgroundImage = Resources.tableRed;
+                    listTables[i - 1].Item2.IsOccupied = true;
                 }
                 else
                 {
-                    tables[i - 1].Item1.BackgroundImage = Resources.Table_White;
-                    tables[i - 1].Item2.IsOccupied = false;
+                    listTables[i - 1].Item1.BackgroundImage = Resources.Table_White;
+                    listTables[i - 1].Item2.IsOccupied = false;
                 }
             }
         }
@@ -338,10 +342,15 @@ namespace GR01_ChapeauSolution
             }
         }
 
+        private void btn_Table_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btn_Table_1_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 1;
+            tableNumber = listTables[0].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -350,7 +359,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_2_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 2;
+            tableNumber = listTables[1].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -359,7 +368,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_3_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 3;
+            tableNumber = listTables[2].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -368,7 +377,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_4_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 4;
+            tableNumber = listTables[3].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -377,7 +386,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_5_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 5;
+            tableNumber = listTables[4].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -386,7 +395,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_6_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 6;
+            tableNumber = listTables[5].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -394,7 +403,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_7_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 7;
+            tableNumber = listTables[6].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -403,7 +412,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_8_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 8;
+            tableNumber = listTables[7].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -411,7 +420,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_9_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 9;
+            tableNumber = listTables[8].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -419,7 +428,7 @@ namespace GR01_ChapeauSolution
         private void btn_Table_10_Click(object sender, EventArgs e)
         {
             // Set active table number
-            tableNumber = 10;
+            tableNumber = listTables[9].TableID;
 
             // Check if the table is occupied
             OccupiedTable();
@@ -1328,6 +1337,5 @@ namespace GR01_ChapeauSolution
 
 
         #endregion
-
     }
 }

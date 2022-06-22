@@ -31,29 +31,9 @@ namespace GR01_ChapeauSolution
             }
         }
 
-        // Check if the password is correct
-        private bool CheckPassword(Employee employee, string employeePassword)
-        {
-            // Encrypt password
-            PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
-            HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
-            string convertedPassword = convertedHash.Digest;
-
-            // Check if entered password is correct password
-            if (convertedPassword == employee.Hash)
-            {
-                // Succesfully logged in
-                return true;     
-            }
-            else
-            {
-                // Incorrect password
-                return false;
-            }
-        }
-
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            PasswordService passwordService = new PasswordService();
             MessageBox_Ok messageBox;
 
             //Check if the fields are empty
@@ -68,7 +48,7 @@ namespace GR01_ChapeauSolution
                
                 if (employee.EmployeeId != 0) // Check if the employee exists
                 {                    
-                    if (CheckPassword(employee, employeePassword))
+                    if (passwordService.CheckPassword(employee, employeePassword))
                     {
                         OpenView(employee);
                         return;
@@ -105,23 +85,23 @@ namespace GR01_ChapeauSolution
         private void CreateUser() // Create users to add in the database
         {
             string password = "password1";
-            PasswordWithSaltHasher passwordWithSaltHasher = new PasswordWithSaltHasher();
+            PasswordService passwordWithSaltHasher = new PasswordService();
             HashWithSaltResult hashWithSaltResult = passwordWithSaltHasher.HashWithSalt(password, 64, SHA256.Create());
 
             string password2 = "password2";
-            PasswordWithSaltHasher passwordWithSaltHasher2 = new PasswordWithSaltHasher();
+            PasswordService passwordWithSaltHasher2 = new PasswordService();
             HashWithSaltResult hashWithSaltResult2 = passwordWithSaltHasher2.HashWithSalt(password2, 64, SHA256.Create());
 
             string password3 = "password3";
-            PasswordWithSaltHasher passwordWithSaltHasher3 = new PasswordWithSaltHasher();
+            PasswordService passwordWithSaltHasher3 = new PasswordService();
             HashWithSaltResult hashWithSaltResult3 = passwordWithSaltHasher3.HashWithSalt(password3, 64, SHA256.Create());
 
             string password4 = "password4";
-            PasswordWithSaltHasher passwordWithSaltHasher4 = new PasswordWithSaltHasher();
+            PasswordService passwordWithSaltHasher4 = new PasswordService();
             HashWithSaltResult hashWithSaltResult4 = passwordWithSaltHasher4.HashWithSalt(password4, 64, SHA256.Create());
 
             string password5 = "password5";
-            PasswordWithSaltHasher passwordWithSaltHasher5 = new PasswordWithSaltHasher();
+            PasswordService passwordWithSaltHasher5 = new PasswordService();
             HashWithSaltResult hashWithSaltResult5 = passwordWithSaltHasher5.HashWithSalt(password5, 64, SHA256.Create());
 
             employeeService.CreateEmployee("Alba Placeres", "Waiter", hashWithSaltResult.Salt, hashWithSaltResult.Digest);
