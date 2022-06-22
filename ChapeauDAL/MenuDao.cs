@@ -55,12 +55,12 @@ namespace ChapeauDAL
 
         private List<MenuItem> ReadTables(DataTable dataTable)
         {
-            // Create new list of MenuItem objects
-            List<MenuItem> menuItems = new List<MenuItem>();
-
             // If datatable contains values...
-            if (dataTable != null)
+            if (dataTable != null && dataTable.Rows.Count > 0)
             {
+                // Create new list of MenuItem objects
+                List<MenuItem> menuItems = new List<MenuItem>();
+
                 // For each data row, create new MenuItem object and fill data
                 foreach (DataRow dr in dataTable.Rows)
                 {
@@ -76,14 +76,14 @@ namespace ChapeauDAL
                     // Add new MenuItem object to the list of menu items 
                     menuItems.Add(item);
                 }
+
+                // Return list of menu items 
+                return menuItems;
             }
             else
             {
-                throw new Exception("There is an issue retrieving the menu data from the database.");
+                throw new Exception("An issue occurred while trying to retrieve the menu data from the database.");
             }
-
-            // Return list of menu items 
-            return menuItems;
         }
     }
 }

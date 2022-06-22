@@ -20,6 +20,12 @@ namespace ChapeauUI.Components
         public double Price { get; set; }
         public int Quantity { get; set; }
 
+        // Calculated Property
+        private double TotalPrice 
+        { 
+            get { return Price * Quantity; } 
+        }
+
         // Constructor
         public C_Order_OrderItem(Form_Chapeau form, int itemID, string itemName, double price)
         {
@@ -67,7 +73,7 @@ namespace ChapeauUI.Components
             {
                 // Update display information
                 lbl_Count.Text = Quantity.ToString();
-                lbl_ProductTotalPrice.Text = $"€ {Price * Quantity:N2}";
+                lbl_ProductTotalPrice.Text = $"€ {TotalPrice:N2}";
             }
             else
             {

@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_Message = new System.Windows.Forms.Label();
             this.pnl_Buttons = new System.Windows.Forms.Panel();
             this.btn_Ok = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,40 +50,29 @@
             this.lbl_Title.Text = "Title";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
-            this.flowLayoutPanel1.Controls.Add(this.lbl_Message);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 56);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(598, 113);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // lbl_Message
             // 
+            this.lbl_Message.AutoSize = true;
+            this.lbl_Message.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.lbl_Message.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_Message.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Message.Location = new System.Drawing.Point(1, 56);
             this.lbl_Message.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_Message.MaximumSize = new System.Drawing.Size(600, 0);
-            this.lbl_Message.MinimumSize = new System.Drawing.Size(600, 110);
+            this.lbl_Message.MaximumSize = new System.Drawing.Size(598, 0);
+            this.lbl_Message.MinimumSize = new System.Drawing.Size(598, 113);
             this.lbl_Message.Name = "lbl_Message";
             this.lbl_Message.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lbl_Message.Size = new System.Drawing.Size(600, 110);
+            this.lbl_Message.Size = new System.Drawing.Size(598, 113);
             this.lbl_Message.TabIndex = 3;
             this.lbl_Message.Text = "Message text";
-            this.lbl_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Message.UseCompatibleTextRendering = true;
             // 
             // pnl_Buttons
             // 
             this.pnl_Buttons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.pnl_Buttons.Controls.Add(this.btn_Ok);
-            this.pnl_Buttons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Buttons.Location = new System.Drawing.Point(1, 169);
+            this.pnl_Buttons.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.pnl_Buttons.Name = "pnl_Buttons";
             this.pnl_Buttons.Size = new System.Drawing.Size(598, 80);
             this.pnl_Buttons.TabIndex = 6;
@@ -106,7 +93,7 @@
             this.btn_Ok.UseVisualStyleBackColor = false;
             this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
-            // MessageBox_Warning
+            // MessageBox_Ok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -114,8 +101,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 250);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnl_Buttons);
+            this.Controls.Add(this.lbl_Message);
             this.Controls.Add(this.lbl_Title);
             this.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
@@ -123,11 +110,10 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(600, 800);
             this.MinimumSize = new System.Drawing.Size(600, 250);
-            this.Name = "MessageBox_Warning";
+            this.Name = "MessageBox_Ok";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MessageBox_Warning";
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.pnl_Buttons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,7 +123,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Title;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lbl_Message;
         private System.Windows.Forms.Panel pnl_Buttons;
         private System.Windows.Forms.Button btn_Ok;

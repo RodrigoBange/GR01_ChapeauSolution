@@ -42,7 +42,7 @@ namespace ChapeauUI.Components
         private async void AddItem_Click(object sender, EventArgs e)
         {
             // Add new item
-            chapeauForm.AddNewOrderItem(menuItem);
+            chapeauForm.AddOrderItem(menuItem);
 
             // Color changing event with delay to simulate button click
             this.BackColor = ColorTranslator.FromHtml(hexColorDark);

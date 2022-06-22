@@ -35,7 +35,7 @@ namespace ChapeauUI
             string filePath = Path.Combine(writePath, "Log.txt");
 
             // Write data to Log file
-            using (StreamWriter writer = new StreamWriter(filePath))
+            using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 // Date of error
                 writer.WriteLine(DateTime.Now);
