@@ -332,7 +332,7 @@ namespace ChapeauUI
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Drink Name";
+            this.columnHeader4.Text = "Food Name";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 140;
             // 
