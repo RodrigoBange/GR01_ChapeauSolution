@@ -91,15 +91,8 @@ namespace ChapeauUI
         }
         private void Clock_Tick(object sender, System.EventArgs e)
         {
-            if (this.employee.EmployeeRole == "Chef")
-            {
-                kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
-            }
-
-            else if (this.employee.EmployeeRole == "Bartender")
-            {
-                bar_Clock.Text = DateTime.Now.ToString("HH:mm");
-            }
+            bar_Clock.Text = DateTime.Now.ToString("HH:mm");
+            kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
         }
 
         public void FillBar()

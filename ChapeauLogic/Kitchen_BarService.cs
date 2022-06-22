@@ -30,7 +30,7 @@ namespace ChapeauLogic
 
         public List<KitchenBar> GetDinnerItems()
         {
-            return kitchen_BarDao.GetDinnerhItems();
+            return kitchen_BarDao.GetDinnerItems();
         }
     }
 }
