@@ -33,7 +33,7 @@ namespace GR01_ChapeauSolution
         Employee employee;
         private int tableNumber;
         private List<Table> listTables;
-        private List<Tuple<Button, listTables>> tables = new List<Tuple<Button, listTables>>();
+        private List<Tuple<Button, Table>> tables = new List<Tuple<Button, Table>>();
 
         #region General
         // Constructor
@@ -72,7 +72,7 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Tables;
 
             // Fill table list
-            tables.Add(new Tuple<Button, listTables>(btn_Table_1, Tabl);
+            tables.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
             tables.Add(new Tuple<Button, Table>(btn_Table_2, new Table(2, false)));
             tables.Add(new Tuple<Button, Table>(btn_Table_3, new Table(3, false)));
             tables.Add(new Tuple<Button, Table>(btn_Table_4, new Table(4, false)));
@@ -296,17 +296,17 @@ namespace GR01_ChapeauSolution
                     
                 }
             }
-            for (int i = 1; i < listTables.Count + 1; i++)
+            for (int i = 1; i < tables.Count + 1; i++)
             {
                 if (tableService.TableOccupied(i))
                 {
-                    listTables[i - 1].Item1.BackgroundImage = Resources.tableRed;
-                    listTables[i - 1].Item2.IsOccupied = true;
+                    tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
+                    tables[i - 1].Item2.IsOccupied = true;
                 }
                 else
                 {
-                    listTables[i - 1].Item1.BackgroundImage = Resources.Table_White;
-                    listTables[i - 1].Item2.IsOccupied = false;
+                    tables[i - 1].Item1.BackgroundImage = Resources.Table_White;
+                    tables[i - 1].Item2.IsOccupied = false;
                 }
             }
         }
