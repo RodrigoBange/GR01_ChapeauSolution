@@ -32,5 +32,10 @@ namespace ChapeauLogic
         {
             return kitchen_BarDao.GetDinnerItems();
         }
+
+        public void isPrepared(int orderItemID)
+        {
+            kitchen_BarDao.isPrepared(orderItemID);
+        }
     }
 }

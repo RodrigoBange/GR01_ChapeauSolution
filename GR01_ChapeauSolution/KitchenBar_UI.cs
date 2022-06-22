@@ -31,9 +31,8 @@ namespace ChapeauUI
                 listView_Bar.CheckBoxes = true;
 
                 kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
-                
+
                 Clock();
-                MyTimer(10);
                 FillLunch();
             }
             else if (this.employee.EmployeeRole == "Bartender")
@@ -47,38 +46,9 @@ namespace ChapeauUI
                 bar_Clock.Text = DateTime.Now.ToString("HH:mm");
 
                 Clock();
-                MyTimer(10);
                 FillBar();
             }
-            
 
-        }
-
-        private void MyTimer(int seconds)
-        {
-            Timer timer = new Timer();
-            timer.Interval = (seconds * 1000);
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, System.EventArgs e)
-        {
-            for (int i = 0; i < listView_Food.Items.Count; i++)
-            {
-                if (listView_Food.Items[i].Checked == true)
-                {
-                    listView_Food.Items[i].Remove();
-                }
-            }
-
-            for (int i = 0; i < listView_Bar.Items.Count; i++)
-            {
-                if (listView_Bar.Items[i].Checked == true)
-                {
-                    listView_Bar.Items[i].Remove();
-                }
-            }
 
         }
 
@@ -91,8 +61,33 @@ namespace ChapeauUI
         }
         private void Clock_Tick(object sender, System.EventArgs e)
         {
+            Kitchen_BarService UpdateService = new Kitchen_BarService();
+
             bar_Clock.Text = DateTime.Now.ToString("HH:mm");
             kitchen_Clock.Text = DateTime.Now.ToString("HH:mm");
+
+            for (int i = 0; i < listView_Food.Items.Count; i++)
+            {
+                if (listView_Food.Items[i].Checked == true)
+                {
+                    int foodID = (int)listView_Food.Items[i].Tag;
+                    UpdateService.isPrepared(foodID);
+
+                    listView_Food.Items[i].Remove();
+                }
+            }
+
+            for (int i = 0; i < listView_Bar.Items.Count; i++)
+            {
+                if (listView_Bar.Items[i].Checked == true)
+                {
+
+                    int drinkID = (int)listView_Bar.Items[i].Tag;
+                    UpdateService.isPrepared(drinkID);
+
+                    listView_Bar.Items[i].Remove();
+                }
+            }
         }
 
         public void FillBar()
@@ -109,6 +104,7 @@ namespace ChapeauUI
                 item1.SubItems.Add(item.Quantity.ToString());
                 item1.SubItems.Add(item.Comment.ToString());
                 item1.SubItems.Add(item.Date_Time.ToString("HH:mm"));
+                item1.Tag = item.orderItemID;
 
                 listView_Bar.Items.Add(item1);
             }
@@ -128,6 +124,7 @@ namespace ChapeauUI
                 item1.SubItems.Add(item.Quantity.ToString());
                 item1.SubItems.Add(item.Comment.ToString());
                 item1.SubItems.Add(item.Date_Time.ToString("HH:mm"));
+                item1.Tag = item.orderItemID;
 
                 listView_Food.Items.Add(item1);
             }
@@ -147,6 +144,7 @@ namespace ChapeauUI
                 item1.SubItems.Add(item.Quantity.ToString());
                 item1.SubItems.Add(item.Comment.ToString());
                 item1.SubItems.Add(item.Date_Time.ToString("HH:mm:ss"));
+                item1.Tag = item.orderItemID;
 
                 listView_Food.Items.Add(item1);
             }
