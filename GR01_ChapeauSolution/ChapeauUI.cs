@@ -289,13 +289,6 @@ namespace GR01_ChapeauSolution
 
         private void CheckTableStatuses()
         {
-            foreach(Table table in listTables)
-            {
-                if (table.IsOccupied)
-                {
-                    
-                }
-            }
             for (int i = 1; i < tables.Count + 1; i++)
             {
                 if (tableService.TableOccupied(i))
