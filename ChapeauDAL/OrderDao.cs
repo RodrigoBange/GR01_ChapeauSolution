@@ -139,7 +139,7 @@ namespace ChapeauDAL
                                                 ON O.orderID = OI.orderID
                                                 JOIN [MENU_ITEM] AS MI
                                                 ON OI.itemID = MI.itemID
-                                                WHERE isServed = 0;";
+                                                WHERE isServed =  0 AND isPaid = 0;";
 
             return ReadTableOrders(ExecuteSelectQuery(query));
         }
@@ -167,6 +167,23 @@ namespace ChapeauDAL
                 }                
             }
             return orderItems;
+        }
+
+        public void SetOrderServed(int orderItemID)
+        {
+            // Creating query
+            string query = @"UPDATE [ORDER_ITEM]
+                            SET isServed = 1
+                            WHERE orderItemID = @orderItemID;";
+
+            // Set sql parameter
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@orderItemID", orderItemID)
+            };
+
+            // Excuting query
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }

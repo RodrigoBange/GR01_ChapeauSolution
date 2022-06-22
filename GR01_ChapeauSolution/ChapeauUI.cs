@@ -88,8 +88,7 @@ namespace GR01_ChapeauSolution
             CheckTableStatuses();
 
             // Load running orders
-            List<OrderItem> items = new List<OrderItem>();
-            C_Table_Order tab_tableOrder = new C_Table_Order(items);
+            C_Table_Order tab_tableOrder = new C_Table_Order();
             flow_TableOverview.Controls.Add(tab_tableOrder);
 
             if (!tab_tableOrder.Controls[0].Controls[8].Visible)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.PictureBox picBox_Drink1;
             System.Windows.Forms.PictureBox pictureBox25;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chapeau));
             System.Windows.Forms.PictureBox pictureBox24;
@@ -45,6 +44,7 @@
             System.Windows.Forms.PictureBox picBox_Drink10;
             System.Windows.Forms.PictureBox pictureBox18;
             System.Windows.Forms.PictureBox picBox_Drink2;
+            System.Windows.Forms.PictureBox picBox_Drink1;
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btn_Return = new System.Windows.Forms.Button();
             this.btn_User = new System.Windows.Forms.Button();
@@ -81,6 +81,8 @@
             this.pnl_FoodDrink_1 = new System.Windows.Forms.Panel();
             this.picBox_Food1 = new System.Windows.Forms.PictureBox();
             this.btn_Table_2 = new System.Windows.Forms.Button();
+            this.pnl_FoodDrink_2 = new System.Windows.Forms.Panel();
+            this.picBox_Food2 = new System.Windows.Forms.PictureBox();
             this.btn_Table_3 = new System.Windows.Forms.Button();
             this.pnl_FoodDrink_3 = new System.Windows.Forms.Panel();
             this.picBox_Food3 = new System.Windows.Forms.PictureBox();
@@ -202,9 +204,6 @@
             this.border_Bottom = new System.Windows.Forms.PictureBox();
             this.border_Top = new System.Windows.Forms.PictureBox();
             this.PaymentProcessTimer1 = new System.Windows.Forms.Timer(this.components);
-            this.pnl_FoodDrink_2 = new System.Windows.Forms.Panel();
-            this.picBox_Food2 = new System.Windows.Forms.PictureBox();
-            picBox_Drink1 = new System.Windows.Forms.PictureBox();
             pictureBox25 = new System.Windows.Forms.PictureBox();
             pictureBox24 = new System.Windows.Forms.PictureBox();
             pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -219,7 +218,7 @@
             picBox_Drink10 = new System.Windows.Forms.PictureBox();
             pictureBox18 = new System.Windows.Forms.PictureBox();
             picBox_Drink2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).BeginInit();
+            picBox_Drink1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox20)).BeginInit();
@@ -233,6 +232,8 @@
             ((System.ComponentModel.ISupportInitialize)(picBox_Drink9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(picBox_Drink10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).BeginInit();
             this.pnl_Header.SuspendLayout();
             this.pnl_Body.SuspendLayout();
             this.tabC_Body.SuspendLayout();
@@ -257,6 +258,8 @@
             this.flow_Tables.SuspendLayout();
             this.pnl_FoodDrink_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Food1)).BeginInit();
+            this.pnl_FoodDrink_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).BeginInit();
             this.pnl_FoodDrink_3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Food3)).BeginInit();
             this.pnl_FoodDrink_4.SuspendLayout();
@@ -302,24 +305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).BeginInit();
-            this.pnl_FoodDrink_2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picBox_Drink1
-            // 
-            picBox_Drink1.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            picBox_Drink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            picBox_Drink1.Dock = System.Windows.Forms.DockStyle.Top;
-            picBox_Drink1.Location = new System.Drawing.Point(0, 0);
-            picBox_Drink1.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
-            picBox_Drink1.Name = "picBox_Drink1";
-            picBox_Drink1.Size = new System.Drawing.Size(38, 54);
-            picBox_Drink1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            picBox_Drink1.TabIndex = 0;
-            picBox_Drink1.TabStop = false;
-            picBox_Drink1.Visible = false;
             // 
             // pictureBox25
             // 
@@ -487,6 +473,34 @@
             pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox18.TabIndex = 1;
             pictureBox18.TabStop = false;
+            // 
+            // picBox_Drink2
+            // 
+            picBox_Drink2.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink2.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink2.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink2.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink2.Name = "picBox_Drink2";
+            picBox_Drink2.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink2.TabIndex = 0;
+            picBox_Drink2.TabStop = false;
+            picBox_Drink2.Visible = false;
+            // 
+            // picBox_Drink1
+            // 
+            picBox_Drink1.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
+            picBox_Drink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            picBox_Drink1.Dock = System.Windows.Forms.DockStyle.Top;
+            picBox_Drink1.Location = new System.Drawing.Point(0, 0);
+            picBox_Drink1.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
+            picBox_Drink1.Name = "picBox_Drink1";
+            picBox_Drink1.Size = new System.Drawing.Size(38, 54);
+            picBox_Drink1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picBox_Drink1.TabIndex = 0;
+            picBox_Drink1.TabStop = false;
+            picBox_Drink1.Visible = false;
             // 
             // pnl_Header
             // 
@@ -986,6 +1000,32 @@
             this.btn_Table_2.UseVisualStyleBackColor = true;
             this.btn_Table_2.Click += new System.EventHandler(this.btn_Table_2_Click);
             // 
+            // pnl_FoodDrink_2
+            // 
+            this.pnl_FoodDrink_2.Controls.Add(this.picBox_Food2);
+            this.pnl_FoodDrink_2.Controls.Add(picBox_Drink2);
+            this.pnl_FoodDrink_2.Location = new System.Drawing.Point(275, 84);
+            this.pnl_FoodDrink_2.Margin = new System.Windows.Forms.Padding(6, 25, 9, 0);
+            this.pnl_FoodDrink_2.MinimumSize = new System.Drawing.Size(38, 104);
+            this.pnl_FoodDrink_2.Name = "pnl_FoodDrink_2";
+            this.pnl_FoodDrink_2.Size = new System.Drawing.Size(38, 104);
+            this.pnl_FoodDrink_2.TabIndex = 18;
+            this.pnl_FoodDrink_2.Visible = false;
+            // 
+            // picBox_Food2
+            // 
+            this.picBox_Food2.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
+            this.picBox_Food2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBox_Food2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBox_Food2.Location = new System.Drawing.Point(0, 54);
+            this.picBox_Food2.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
+            this.picBox_Food2.Name = "picBox_Food2";
+            this.picBox_Food2.Size = new System.Drawing.Size(38, 54);
+            this.picBox_Food2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_Food2.TabIndex = 0;
+            this.picBox_Food2.TabStop = false;
+            this.picBox_Food2.Visible = false;
+            // 
             // btn_Table_3
             // 
             this.btn_Table_3.BackgroundImage = global::ChapeauUI.Properties.Resources.Table_White;
@@ -1057,6 +1097,7 @@
             this.pnl_FoodDrink_4.Name = "pnl_FoodDrink_4";
             this.pnl_FoodDrink_4.Size = new System.Drawing.Size(38, 112);
             this.pnl_FoodDrink_4.TabIndex = 11;
+            this.pnl_FoodDrink_4.Visible = false;
             // 
             // picBox_Food4
             // 
@@ -2498,45 +2539,6 @@
             this.border_Top.TabIndex = 4;
             this.border_Top.TabStop = false;
             // 
-            // pnl_FoodDrink_2
-            // 
-            this.pnl_FoodDrink_2.Controls.Add(this.picBox_Food2);
-            this.pnl_FoodDrink_2.Controls.Add(picBox_Drink2);
-            this.pnl_FoodDrink_2.Location = new System.Drawing.Point(275, 84);
-            this.pnl_FoodDrink_2.Margin = new System.Windows.Forms.Padding(6, 25, 9, 0);
-            this.pnl_FoodDrink_2.MinimumSize = new System.Drawing.Size(38, 104);
-            this.pnl_FoodDrink_2.Name = "pnl_FoodDrink_2";
-            this.pnl_FoodDrink_2.Size = new System.Drawing.Size(38, 104);
-            this.pnl_FoodDrink_2.TabIndex = 18;
-            // 
-            // picBox_Food2
-            // 
-            this.picBox_Food2.BackgroundImage = global::ChapeauUI.Properties.Resources.food;
-            this.picBox_Food2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBox_Food2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picBox_Food2.Location = new System.Drawing.Point(0, 54);
-            this.picBox_Food2.Margin = new System.Windows.Forms.Padding(0, 106, 0, 0);
-            this.picBox_Food2.Name = "picBox_Food2";
-            this.picBox_Food2.Size = new System.Drawing.Size(38, 54);
-            this.picBox_Food2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBox_Food2.TabIndex = 0;
-            this.picBox_Food2.TabStop = false;
-            this.picBox_Food2.Visible = false;
-            // 
-            // picBox_Drink2
-            // 
-            picBox_Drink2.BackgroundImage = global::ChapeauUI.Properties.Resources.drink2;
-            picBox_Drink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            picBox_Drink2.Dock = System.Windows.Forms.DockStyle.Top;
-            picBox_Drink2.Location = new System.Drawing.Point(0, 0);
-            picBox_Drink2.Margin = new System.Windows.Forms.Padding(0, 0, 38, 0);
-            picBox_Drink2.Name = "picBox_Drink2";
-            picBox_Drink2.Size = new System.Drawing.Size(38, 54);
-            picBox_Drink2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            picBox_Drink2.TabIndex = 0;
-            picBox_Drink2.TabStop = false;
-            picBox_Drink2.Visible = false;
-            // 
             // Form_Chapeau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -2561,7 +2563,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Restaurant Chapeau Ordering System";
             this.Load += new System.EventHandler(this.FormChapeau_Load);
-            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox20)).EndInit();
@@ -2575,6 +2576,8 @@
             ((System.ComponentModel.ISupportInitialize)(picBox_Drink9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(picBox_Drink10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(picBox_Drink1)).EndInit();
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Body.ResumeLayout(false);
             this.tabC_Body.ResumeLayout(false);
@@ -2605,6 +2608,8 @@
             this.flow_Tables.ResumeLayout(false);
             this.pnl_FoodDrink_1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Food1)).EndInit();
+            this.pnl_FoodDrink_2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).EndInit();
             this.pnl_FoodDrink_3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Food3)).EndInit();
             this.pnl_FoodDrink_4.ResumeLayout(false);
@@ -2656,9 +2661,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.border_Right)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.border_Top)).EndInit();
-            this.pnl_FoodDrink_2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Food2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(picBox_Drink2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2699,8 +2701,6 @@
         private System.Windows.Forms.FlowLayoutPanel flow_TableOverview;
         private System.Windows.Forms.FlowLayoutPanel flow_Tables;
         private System.Windows.Forms.Button btn_Table_1;
-        private System.Windows.Forms.Panel pnl_FoodDrink_1;
-        private System.Windows.Forms.PictureBox picBox_Food1;
         private System.Windows.Forms.Button btn_Table_2;
         private System.Windows.Forms.Button btn_Table_3;
         private System.Windows.Forms.Button btn_Table_4;
@@ -2827,5 +2827,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel pnl_FoodDrink_2;
         private System.Windows.Forms.PictureBox picBox_Food2;
+        private System.Windows.Forms.Panel pnl_FoodDrink_1;
+        private System.Windows.Forms.PictureBox picBox_Food1;
     }
 }

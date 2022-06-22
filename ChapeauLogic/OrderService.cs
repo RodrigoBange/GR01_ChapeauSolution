@@ -41,5 +41,10 @@ namespace ChapeauLogic
         {
             return orderDAO.GetOrderItems();
         }
+
+        public void SetOrderServed(int orderItemID)
+        {
+            orderDAO.SetOrderServed(orderItemID);
+        }
     }
 }

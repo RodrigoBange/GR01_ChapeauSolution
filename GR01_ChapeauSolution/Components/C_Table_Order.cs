@@ -14,28 +14,55 @@ namespace ChapeauUI.Components
     public partial class C_Table_Order : UserControl
     {
         List<OrderItem> items = new List<OrderItem>();
-        List<Label> tableOrderLabels = new List<Label>();
-        List<Label> tableTimeLabels = new List<Label>();
+        OrderService orderService = new OrderService();
 
-        public C_Table_Order(List<OrderItem> items)
+        public C_Table_Order()
         {
             InitializeComponent();
+            this.items = orderService.GetOrderItems();
+            LoadOrderItems(this.items);
 
-            OrderService orderService = new OrderService();
-            LoadOrderItems(orderService.GetOrderItems());
-            this.items = items;
+            Clock();
         }
 
-        private void FillLabelsLists()
+        private void Clock()
         {
-            for (int i = 1; i < 11; i++)
-            {
-                Label labelOrderItems = (Label)this.Controls.OfType<Label>().Where(lbl => lbl.Name == "lbl_OrderItems" + i);
-                Label labelTimes = (Label)this.Controls.OfType<Label>().Where(lbl => lbl.Name == "lbl_TableTime" + i);
-                tableOrderLabels.Add(labelOrderItems);
-                tableTimeLabels.Add(labelTimes);
-            }
+            Timer timer = new Timer();
+            timer.Interval = (10 * 1000);
+            timer.Tick += new EventHandler(Clock_Tick);
+            timer.Start();
         }
+        private void Clock_Tick(object sender, System.EventArgs e)
+        {
+            ClearLabels();
+            this.items = orderService.GetOrderItems();
+            LoadOrderItems(this.items);
+        }
+
+        private void ClearLabels()
+        {
+            lbl_OrderItems1.Text = "";
+            lbl_TableTime1.Text = "";
+            lbl_OrderItems2.Text = "";
+            lbl_TableTime2.Text = "";
+            lbl_OrderItems3.Text = "";
+            lbl_TableTime3.Text = "";
+            lbl_OrderItems4.Text = "";
+            lbl_TableTime4.Text = "";
+            lbl_OrderItems5.Text = "";
+            lbl_TableTime5.Text = "";
+            lbl_OrderItems6.Text = "";
+            lbl_TableTime6.Text = "";
+            lbl_OrderItems7.Text = "";
+            lbl_TableTime7.Text = "";
+            lbl_OrderItems8.Text = "";
+            lbl_TableTime8.Text = "";
+            lbl_OrderItems9.Text = "";
+            lbl_TableTime9.Text = "";
+            lbl_OrderItems10.Text = "";
+            lbl_TableTime10.Text = "";
+        }
+
 
         // Load items to the running orders view
         private void LoadOrderItems(List<OrderItem> orderItems)
@@ -44,19 +71,6 @@ namespace ChapeauUI.Components
 
             foreach (OrderItem item in orderItems)
             {
-                //foreach (Label label in tableOrderLabels)
-                //{
-                //    if (item.TableID == tableOrderLabels.IndexOf(label) + 1)
-                //        label.Text += item.ItemName + Environment.NewLine;
-                //}
-
-                //foreach (Label label in tableTimeLabels)
-                //{
-                //    if (item.TableID == tableTimeLabels.IndexOf(label) + 1)
-                //        label.Text += $"Table {tableTimeLabels.IndexOf(label) + 1} - {item.OrderTime:T}";
-                //}
-
-
                 if (item.TableID == 1)
                 {
                     lbl_OrderItems1.Text += item.ItemName + Environment.NewLine;
@@ -123,91 +137,132 @@ namespace ChapeauUI.Components
             {
                 panel1.Hide();
             }
+            else
+                panel1.Show();
             if (lbl_OrderItems2.Text == "\n")
             {
                 panel2.Hide();
             }
+            else
+                panel2.Show();
             if (lbl_OrderItems3.Text == "\n")
             {
                 panel3.Hide();
             }
+            else
+                panel3.Show();
             if (lbl_OrderItems4.Text == "\n")
             {
                 panel4.Hide();
             }
+            else
+                panel4.Show();
             if (lbl_OrderItems5.Text == "\n")
             {
                 panel5.Hide();
             }
+            else
+                panel5.Show();
             if (lbl_OrderItems6.Text == "\n")
             {
                 panel6.Hide();
             }
+            else
+                panel6.Show();
             if (lbl_OrderItems7.Text == "\n")
             {
                 panel7.Hide();
             }
+            else
+                panel7.Show();
             if (lbl_OrderItems8.Text == "\n")
             {
                 panel8.Hide();
             }
+            else
+                panel8.Show();
             if (lbl_OrderItems9.Text == "\n")
             {
                 panel9.Hide();
             }
+            else
+                panel9.Show();
             if (lbl_OrderItems10.Text == "\n")
             {
                 panel10.Hide();
+            }
+            else
+                panel10.Show();
+        }
+
+        private void ServeOrder(int tableID)
+        {
+            foreach (OrderItem item in items)
+            {
+                if (item.TableID == tableID)
+                {
+                    orderService.SetOrderServed(item.OrderItemID);
+                }
             }
         }
 
         private void btn_OrderServed1_Click(object sender, EventArgs e)
         {
+            ServeOrder(1);
             panel1.Visible = false;
         }
 
         private void btn_OrderServed2_Click(object sender, EventArgs e)
         {
+            ServeOrder(2);
             panel2.Visible = false;
         }
 
         private void btn_OrderServed3_Click(object sender, EventArgs e)
         {
+            ServeOrder(3);
             panel3.Visible = false;
         }
 
         private void btn_OrderServed4_Click(object sender, EventArgs e)
         {
+            ServeOrder(4);
             panel4.Visible = false;
         }
 
         private void btn_OrderServed5_Click(object sender, EventArgs e)
         {
+            ServeOrder(5);
             panel5.Visible = false;
         }
 
         private void btn_OrderServed6_Click(object sender, EventArgs e)
         {
+            ServeOrder(6);
             panel6.Visible = false;
         }
 
         private void btn_OrderServed7_Click(object sender, EventArgs e)
         {
+            ServeOrder(7);
             panel7.Visible = false;
         }
 
         private void btn_OrderServed8_Click(object sender, EventArgs e)
         {
+            ServeOrder(8);
             panel8.Visible = false;
         }
 
         private void btn_OrderServed9_Click(object sender, EventArgs e)
         {
+            ServeOrder(9);
             panel9.Visible = false;
         }
 
         private void btn_OrderServed10_Click(object sender, EventArgs e)
         {
+            ServeOrder(10);
             panel10.Visible = false;
         }
     }
