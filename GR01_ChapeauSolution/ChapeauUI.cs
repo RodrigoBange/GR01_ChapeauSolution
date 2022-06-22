@@ -33,7 +33,7 @@ namespace GR01_ChapeauSolution
         Employee employee;
         private int tableNumber;
         private List<Table> listTables;
-        private List<Tuple<Button, Table>> tables = new List<Tuple<Button, Table>>();
+        private List<Tuple<Button, Table>> tablesButtons = new List<Tuple<Button, Table>>();
 
         #region General
         // Constructor
@@ -72,16 +72,17 @@ namespace GR01_ChapeauSolution
             tabC_Body.SelectedTab = tab_Tables;
 
             // Fill table list
-            tables.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_2, new Table(2, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_3, new Table(3, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_4, new Table(4, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_5, new Table(5, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_6, new Table(6, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_7, new Table(7, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_8, new Table(8, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_9, new Table(9, false)));
-            tables.Add(new Tuple<Button, Table>(btn_Table_10, new Table(10, false)));
+            // tablesButtons.Add(new Tuple<Button, Table>(btn_Table_1, new Table(1, false)));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_1, listTables[0]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_2, listTables[1]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_3, listTables[2]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_4, listTables[3]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_5, listTables[4]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_6, listTables[5]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_7, listTables[6]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_8, listTables[7]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_9, listTables[8]));
+            tablesButtons.Add(new Tuple<Button, Table>(btn_Table_10, listTables[9]));
 
             // Check for table occupied
             CheckTableStatuses();
@@ -289,24 +290,24 @@ namespace GR01_ChapeauSolution
 
         private void CheckTableStatuses()
         {
-            for (int i = 1; i < tables.Count + 1; i++)
+            for (int i = 1; i < tablesButtons.Count + 1; i++)
             {
                 if (tableService.TableOccupied(i))
                 {
-                    tables[i - 1].Item1.BackgroundImage = Resources.tableRed;
-                    tables[i - 1].Item2.IsOccupied = true;
+                    tablesButtons[i - 1].Item1.BackgroundImage = Resources.tableRed;
+                    tablesButtons[i - 1].Item2.IsOccupied = true;
                 }
                 else
                 {
-                    tables[i - 1].Item1.BackgroundImage = Resources.Table_White;
-                    tables[i - 1].Item2.IsOccupied = false;
+                    tablesButtons[i - 1].Item1.BackgroundImage = Resources.Table_White;
+                    tablesButtons[i - 1].Item2.IsOccupied = false;
                 }
             }
         }
 
         private void OccupiedTable()
         {            
-            if (tables[tableNumber - 1].Item2.IsOccupied)
+            if (tablesButtons[tableNumber - 1].Item2.IsOccupied)
             {
                 tabC_Body.SelectedTab = tab_Order;
             }
@@ -318,14 +319,14 @@ namespace GR01_ChapeauSolution
                     {
                         case DialogResult.Yes:
                             tableService.SetTableOccupied(tableNumber);
-                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
-                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            tablesButtons[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tablesButtons[tableNumber - 1].Item2.IsOccupied = true;
                             break;
                         case DialogResult.No:
                             tabC_Body.SelectedTab = tab_Order;
                             tableService.SetTableOccupied(tableNumber);
-                            tables[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
-                            tables[tableNumber - 1].Item2.IsOccupied = true;
+                            tablesButtons[tableNumber - 1].Item1.BackgroundImage = Resources.tableRed;
+                            tablesButtons[tableNumber - 1].Item2.IsOccupied = true;
                             break;
                         case DialogResult.Cancel:
                             messageBox.Hide();
