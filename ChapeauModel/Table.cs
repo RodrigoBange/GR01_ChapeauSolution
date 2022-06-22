@@ -8,6 +8,11 @@ namespace ChapeauModel
     {
         public int TableID { get; set; }
         public bool IsOccupied { get; set; }
-        public int ButtonID { get; set; }
+
+        public Table(int tableID, bool isOccupied)
+        {
+            TableID = tableID;
+            IsOccupied = isOccupied;
+        }   
     }
 }

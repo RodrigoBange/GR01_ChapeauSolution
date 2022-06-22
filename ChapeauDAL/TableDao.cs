@@ -11,14 +11,14 @@ namespace ChapeauDAL
     {
         public bool TableOccupied(int tableNumber)
         {
-            // Creating qeury
+            // Creating qury
             string query = @"SELECT isOccupied FROM [TABLE]
-                             WHERE tableID = @tableID";
+                             WHERE tableID = @tableNumber";
 
             // Set sql parameter
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@tableID", tableNumber)
+                new SqlParameter("@tableNumber", tableNumber)
             };
 
             // Excuting query
@@ -70,30 +70,6 @@ namespace ChapeauDAL
 
             // Excuting query
             ExecuteEditQuery(query, sqlParameters);
-        }
-
-        public List<Table> GetAllTables()
-        {
-            string query = "SELECT tableID, buttonID, isOccupied FROM [TABLE]";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return LoadListTables(ExecuteSelectQuery(query, sqlParameters));
-        }
-
-        private List<Table> LoadListTables(DataTable dataTable)
-        {
-            List<Table> tables = new List<Table>();
-
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                Table table = new Table()
-                {
-                    TableID = (int)dr["tableID"],
-                    ButtonID = (int)dr["buttonID"],
-                    IsOccupied = (bool)dr["isOccupied"],
-                };
-                tables.Add(table);
-            }
-            return tables;
         }
     }
 }

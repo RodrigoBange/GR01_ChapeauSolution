@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ChapeauLogic
 {
-    public class PasswordService
+    public class PasswordWithSaltHasher
     {
         // Create new password
         public HashWithSaltResult HashWithSalt(string password, int saltLength, HashAlgorithm hashAlgo)
@@ -51,27 +51,6 @@ namespace ChapeauLogic
 
             // Create a new HashWithSaltResult object and return
             return new HashWithSaltResult(Convert.ToBase64String(saltBytes), Convert.ToBase64String(digestBytes));
-        }
-
-        // Check if password is correct
-        public bool CheckPassword(Employee employee, string employeePassword)
-        {
-            // Encrypt password
-            PasswordService pwHasher = new PasswordService();
-            HashWithSaltResult convertedHash = pwHasher.ConvertedHashWithSalt(employeePassword, employee.Salt);
-            string convertedPassword = convertedHash.Digest;
-
-            // Check if entered password is correct password
-            if (convertedPassword == employee.Hash)
-            {
-                // Succesfully logged in
-                return true;
-            }
-            else
-            {
-                // Incorrect password
-                return false;
-            }
         }
     }
 }

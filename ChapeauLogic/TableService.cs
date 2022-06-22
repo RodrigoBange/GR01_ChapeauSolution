@@ -1,5 +1,4 @@
 ﻿using ChapeauDAL;
-using ChapeauModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,12 +31,6 @@ namespace ChapeauLogic
         {
             // Set table as unoccupied
             tableDao.SetTableUnOccupied(tableNumber);
-        }
-
-        public List<Table> GetAllTables()
-        {
-            // Get list of tables
-            return tableDao.GetAllTables();
         }
     }
 }
