@@ -13,23 +13,35 @@ namespace ChapeauDAL
         //Gets all items
         public List<KitchenBar> GetBarItems()
         {
-            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=3;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=3 AND isPrepared!=1;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadBarItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public List<KitchenBar> GetLunchItems()
         {
-            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=1;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=1 AND isPrepared!=1;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadLunchItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public List<KitchenBar> GetDinnerItems()
         {
-            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=2;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=2 AND isPrepared!=1;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadDinnerItems(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public void isPrepared(int orderItemID)
+        {
+            string query = "UPDATE [ORDER_ITEM] SET IsPrepared=1 WHERE orderItemID=@orderItemID;";
+
+            SqlParameter[] sqlParameters = 
+            {
+                new SqlParameter("@orderItemID", orderItemID),
+            };
+
+            ExecuteEditQuery(query, sqlParameters);
         }
 
 
@@ -51,6 +63,7 @@ namespace ChapeauDAL
                         Date_Time = (DateTime)dr["orderTime"],
                         Status = (bool)dr["isServed"],
                         Comment = (string)dr["comment"],
+                        orderItemID = (int)dr["orderItemID"]
                     };
                     LunchItems.Add(LunchItem);
                 }
@@ -80,6 +93,7 @@ namespace ChapeauDAL
                         Date_Time = (DateTime)dr["orderTime"],
                         Status = (bool)dr["isServed"],
                         Comment = (string)dr["comment"],
+                        orderItemID=(int)dr["orderItemID"]
                     };
                     DinnerItems.Add(DinnerItem);
                 }
@@ -109,6 +123,7 @@ namespace ChapeauDAL
                         Date_Time = (DateTime)dr["orderTime"],
                         Status = (bool)dr["isServed"],
                         Comment = (string)dr["comment"],
+                        orderItemID = (int)dr["orderItemID"]
                     };
                     BarItems.Add(BarItem);
                 }
