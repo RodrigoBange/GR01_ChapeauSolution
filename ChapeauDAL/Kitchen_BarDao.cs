@@ -13,21 +13,21 @@ namespace ChapeauDAL
         //Gets all items
         public List<KitchenBar> GetBarItems()
         {
-            string query = "SELECT [ORDER].orderID AS [orderId], itemType AS [item_Type], itemNameShort AS [ShortName], quantity AS [Quantity], comment AS [Comment], orderTime AS [Date_Time], isServed AS [Status], [DRINKS_MENU].itemID AS isDrink FROM [ORDER] JOIN [ORDER_ITEMS] on ORDER_ITEMS.orderID=[ORDER].orderID JOIN [MENU_ITEM] on [MENU_ITEM].itemID=[ORDER_ITEMS].itemID JOIN [DRINKS_MENU] on [DRINKS_MENU].itemID=[ORDER_ITEMS].itemID ORDER BY [ORDER].orderID, Menu_Item.itemID;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=3;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadBarItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public List<KitchenBar> GetLunchItems()
         {
-            string query = "SELECT [ORDER].orderID AS [orderId], itemType AS [item_Type], itemNameShort AS [ShortName], quantity AS [Quantity], comment AS [Comment], orderTime AS [Date_Time], isServed AS [Status] FROM [ORDER] JOIN [ORDER_ITEMS] on ORDER_ITEMS.orderID=[ORDER].orderID JOIN [MENU_ITEM] on [MENU_ITEM].itemID=[ORDER_ITEMS].itemID JOIN [LUNCH_MENU] on [LUNCH_MENU].itemID=[ORDER_ITEMS].itemID ORDER BY [ORDER].orderID, Menu_Item.itemID;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=1;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadLunchItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<KitchenBar> GetDinnerhItems()
+        public List<KitchenBar> GetDinnerItems()
         {
-            string query = "SELECT [ORDER].orderID AS [orderId], itemType AS [item_Type], itemNameShort AS [ShortName], quantity AS [Quantity], comment AS [Comment], orderTime AS [Date_Time], isServed AS [Status] FROM [ORDER] JOIN [ORDER_ITEMS] on ORDER_ITEMS.orderID=[ORDER].orderID JOIN [MENU_ITEM] on [MENU_ITEM].itemID=[ORDER_ITEMS].itemID JOIN [DINNER_MENU] on [DINNER_MENU].itemID=[ORDER_ITEMS].itemID ORDER BY [ORDER].orderID, Menu_Item.itemID;";
+            string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=2;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadDinnerItems(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -45,12 +45,12 @@ namespace ChapeauDAL
                     KitchenBar LunchItem = new KitchenBar()
                     {
                         OrderID = (int)dr["orderId"],
-                        Item_Type = (string)dr["item_Type"],
-                        ShortName = (string)dr["ShortName"],
-                        Quantity = (int)dr["Quantity"],
-                        Date_Time = (DateTime)dr["Date_Time"],
-                        Status = (bool)dr["Status"],
-                        Comment = (string)dr["Comment"],
+                        Item_Type = (string)dr["itemType"],
+                        ShortName = (string)dr["itemNameShort"],
+                        Quantity = (int)dr["quantity"],
+                        Date_Time = (DateTime)dr["orderTime"],
+                        Status = (bool)dr["isServed"],
+                        Comment = (string)dr["comment"],
                     };
                     LunchItems.Add(LunchItem);
                 }
@@ -74,12 +74,12 @@ namespace ChapeauDAL
                     KitchenBar DinnerItem = new KitchenBar()
                     {
                         OrderID = (int)dr["orderId"],
-                        Item_Type = (string)dr["item_Type"],
-                        ShortName = (string)dr["ShortName"],
-                        Quantity = (int)dr["Quantity"],
-                        Date_Time = (DateTime)dr["Date_Time"],
-                        Status = (bool)dr["Status"],
-                        Comment = (string)dr["Comment"],
+                        Item_Type = (string)dr["itemType"],
+                        ShortName = (string)dr["itemNameShort"],
+                        Quantity = (int)dr["quantity"],
+                        Date_Time = (DateTime)dr["orderTime"],
+                        Status = (bool)dr["isServed"],
+                        Comment = (string)dr["comment"],
                     };
                     DinnerItems.Add(DinnerItem);
                 }
@@ -103,12 +103,12 @@ namespace ChapeauDAL
                     KitchenBar BarItem = new KitchenBar()
                     {
                         OrderID = (int)dr["orderId"],
-                        Item_Type = (string)dr["item_Type"],
-                        ShortName = (string)dr["ShortName"],
-                        Quantity = (int)dr["Quantity"],
-                        Date_Time = (DateTime)dr["Date_Time"],
-                        Status = (bool)dr["Status"],
-                        Comment = (string)dr["Comment"],
+                        Item_Type = (string)dr["itemType"],
+                        ShortName = (string)dr["itemNameShort"],
+                        Quantity = (int)dr["quantity"],
+                        Date_Time = (DateTime)dr["orderTime"],
+                        Status = (bool)dr["isServed"],
+                        Comment = (string)dr["comment"],
                     };
                     BarItems.Add(BarItem);
                 }
