@@ -14,10 +14,10 @@ namespace ChapeauDAL
             // Get the orderID from the database for an open order (Returns 0 if none exist)
             int orderID = GetOrderID(tableNumber);
 
-            // If orderID exists...
+            // If an orderID exists...
             if (orderID != 0)
             {
-                // Add new order items
+                // Add new order items to existing order
                 AddNewOrder(orderItems, orderID);
             }
             else
@@ -28,7 +28,7 @@ namespace ChapeauDAL
                 // Get the orderID of the new table order from the database
                 orderID = GetOrderID(tableNumber);
 
-                // Add new order items
+                // Add order items to the new order
                 AddNewOrder(orderItems, orderID);
             }
         }
@@ -36,42 +36,60 @@ namespace ChapeauDAL
         /* CREATING NEW ORDER METHODS */
         private void AddNewOrder(List<OrderItem> orderItems, int orderID)
         {
-            foreach (OrderItem item in orderItems)
+            try
             {
-                // Create query
-                string query = @"INSERT INTO [ORDER_ITEM] (orderID, itemID, orderTime, comment, quantity) 
-                               VALUES (@orderID, @itemID, @dateTime, @comment, @quantity)";
+                // Get the current time of order placement
+                DateTime orderTime = DateTime.Now;
 
-                // Set parameters for new order
-                SqlParameter[] sqlParametersAddToNewOrder =
+                foreach (OrderItem item in orderItems)
                 {
+                    // Create query
+                    string query = @"INSERT INTO [ORDER_ITEM] (orderID, itemID, orderTime, comment, quantity) 
+                                    VALUES (@orderID, @itemID, @dateTime, @comment, @quantity)";
+
+                    // Set parameters for new order
+                    SqlParameter[] sqlParametersAddToNewOrder =
+                    {
                     new SqlParameter("@orderID", orderID),
                     new SqlParameter("@itemID", item.ItemID),
-                    new SqlParameter("@dateTime", DateTime.Now),
+                    new SqlParameter("@dateTime", orderTime),
                     new SqlParameter("@comment", item.Comment),
-                    new SqlParameter("@quantity", item.Quantity)                    
-                };
+                    new SqlParameter("@quantity", item.Quantity)
+                    };
 
-                // Add item to database
-                ExecuteEditQuery(query, sqlParametersAddToNewOrder);
+                    // Add item to database
+                    ExecuteEditQuery(query, sqlParametersAddToNewOrder);
+                }
             }
+            catch (Exception ex)
+            {
+                throw new Exception("An issue occurred while trying to place the order.", ex);
+            }
+
         }
 
         private void CreateNewOrder(int tableNumber, int employeeID)
         {
-            // Create query to create a new order in [ORDER] table with the table number and employee ID
-            string newOrderQuery = @"INSERT INTO [ORDER] (tableID, employeeID) 
-                                    VALUES (@tableNumber, @employeeID)";
-
-            // Set parameters
-            SqlParameter[] sqlParameters =
+            try
             {
+                // Create query to create a new order in [ORDER] table with the table number and employee ID
+                string newOrderQuery = @"INSERT INTO [ORDER] (tableID, employeeID) 
+                                        VALUES (@tableNumber, @employeeID)";
+
+                // Set parameters
+                SqlParameter[] sqlParameters =
+                {
                 new SqlParameter("@tableNumber", tableNumber),
                 new SqlParameter("@employeeID", employeeID)
-            };
+                };
 
-            // Create new order in database
-            ExecuteEditQuery(newOrderQuery, sqlParameters);
+                // Create new order in database
+                ExecuteEditQuery(newOrderQuery, sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An issue occurred while trying to create a new order.", ex);
+            }
         }
 
         /* RETRIEVAL OF EXISTING ORDER ID METHODS */
@@ -102,12 +120,13 @@ namespace ChapeauDAL
                 }
                 else 
                 { 
+                    // If no records exists, return 0
                     return 0; 
                 }
             }
             else
             {
-                throw new Exception("An issue occurred retrieving the order ID from the database.");
+                throw new Exception("An issue occurred trying to retrieve the order ID from the database.");
             }
         }
 

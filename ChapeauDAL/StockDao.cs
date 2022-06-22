@@ -11,24 +11,32 @@ namespace ChapeauDAL
     {
         public void DepleteStock(List<OrderItem> orderItems)
         {
-            foreach (OrderItem item in orderItems)
+            try
             {
-                // Create query
-                string query = @"UPDATE [PRODUCT] 
+                foreach (OrderItem item in orderItems)
+                {
+                    // Create query
+                    string query = @"UPDATE [PRODUCT] 
                                 SET stock = stock - I.quantity 
                                 FROM [PRODUCT] AS P INNER JOIN [INGREDIENT] AS I 
                                 ON P.productID = I.productID 
                                 WHERE I.itemID = @itemID";
 
-                // Set SqlParameter
-                SqlParameter[] sqlParameters =
-                {
+                    // Set SqlParameter
+                    SqlParameter[] sqlParameters =
+                    {
                     new SqlParameter("@itemID", item.ItemID)
-                };
+                    };
 
-                // Deplete item stock in database
-                ExecuteEditQuery(query, sqlParameters);
+                    // Deplete item stock in database
+                    ExecuteEditQuery(query, sqlParameters);
+                }
             }
+            catch (Exception ex)
+            {
+                throw new Exception("An issue occurred while trying to update stock depletion.", ex);
+            }
+
         }
 
         public List<string> CheckStorageStatus(List<OrderItem> orderItems)
@@ -63,15 +71,19 @@ namespace ChapeauDAL
         private string ReadStorageData(DataTable dataTable)
         {
             // If a record has been found
-            if (dataTable != null && dataTable.Rows.Count > 0)
+            if (dataTable != null)
             {
-                // Return item name
-                return dataTable.Rows[0]["itemNameShort"].ToString();
+                if (dataTable.Rows.Count > 0)
+                {
+                    // Return item name
+                    return dataTable.Rows[0]["itemNameShort"].ToString();
+                }
+                else { return null; }
             }
             else
             {
-                // If a record hasn't been found
-                return null;
+                // If the datatable is null, return error
+                throw new Exception("An error occurred retrieving the stock status from the database.");
             }
         }
     }

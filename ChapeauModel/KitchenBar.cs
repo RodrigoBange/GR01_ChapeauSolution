@@ -15,6 +15,7 @@ namespace ChapeauModel
         public int Quantity { get; set; }
         public DateTime Date_Time { get; set; }
         public bool Status { get; set; }
+        public int orderItemID { get; set; }
         public string Comment
         {
             get { return comment; }
