@@ -14,22 +14,19 @@ namespace ChapeauDAL
         public List<KitchenBar> GetBarItems()
         {
             string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=3 AND isPrepared!=1;";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadBarItems(ExecuteSelectQuery(query, sqlParameters));
+            return ReadBarItems(ExecuteSelectQuery(query));
         }
 
         public List<KitchenBar> GetLunchItems()
         {
             string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=1 AND isPrepared!=1;";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadLunchItems(ExecuteSelectQuery(query, sqlParameters));
+            return ReadLunchItems(ExecuteSelectQuery(query));
         }
 
         public List<KitchenBar> GetDinnerItems()
         {
             string query = "SELECT [ORDER_ITEM].orderID, itemType, itemNameShort, quantity, comment, orderTime, isServed, orderItemID FROM ORDER_ITEM JOIN MENU_ITEM_MENU on [ORDER_ITEM].itemID=[MENU_ITEM_MENU].itemID JOIN MENU_ITEM on [ORDER_ITEM].itemID=[MENU_ITEM].itemID JOIN MENU on [MENU_ITEM_MENU].menuID=[MENU].menuID WHERE MENU.menuID=2 AND isPrepared!=1;";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadDinnerItems(ExecuteSelectQuery(query, sqlParameters));
+            return ReadDinnerItems(ExecuteSelectQuery(query));
         }
 
         public void isPrepared(int orderItemID)
